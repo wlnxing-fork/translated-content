@@ -1,11 +1,6 @@
 ---
 title: related_applications
 slug: Web/Manifest/related_applications
-tags:
-  - Manifest
-  - Web
-  - related_applications
-translation_of: Web/Manifest/related_applications
 ---
 
 {{QuickLinksWithSubpages('/ru/docs/Web/Manifest')}}
@@ -38,7 +33,8 @@ translation_of: Web/Manifest/related_applications
 
 Поле `related_applications` field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform — for example, a native Android application obtainable through the Google Play Store. Предполагается, что такие приложения являются альтернативами веб-сайту манифеста, который предоставляет аналогичные/эквивалентные функции - как эквивалент нативного приложения.
 
-> **Примечание:** Разработчик может указать, что нативные приложения предпочтительнее, чем веб-приложение, установив значение `prefer_related_applications` в `true`.
+> [!NOTE]
+> Разработчик может указать, что нативные приложения предпочтительнее, чем веб-приложение, установив значение `prefer_related_applications` в `true`.
 
 ## Пример
 
@@ -65,12 +61,10 @@ translation_of: Web/Manifest/related_applications
 | `url`      | URL, по которому может быть найдено приложение.                                                                                 |
 | `id`       | ID, используемое для представления приложения на определённой платформе.                                                        |
 
-## Specification
+## Спецификации
 
-| Specification                                                                                                | Status                       | Comment             | Feedback                                                                         |
-| ------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------------------- | -------------------------------------------------------------------------------- |
-| {{SpecName('Manifest', '#related_applications-member', 'related_applications')}} | {{Spec2('Manifest')}} | Initial definition. | [Web App Manifest Working Group drafts](https://github.com/w3c/manifest/issues/) |
+{{Specifications}}
 
-## Browser compatibility
+## Совместимость с браузерами
 
 {{Compat}}

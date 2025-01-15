@@ -1,8 +1,9 @@
 ---
-title: Request.json()
+title: "Request: json() メソッド"
+short-title: json()
 slug: Web/API/Request/json
 l10n:
-  sourceCommit: e0e09b1df51489867f2e74c18586d168ba5e00d1
+  sourceCommit: 954612667bafd71241a93e8554e8f11afc474ff3
 ---
 
 {{APIRef("Fetch API")}}
@@ -29,15 +30,15 @@ JavaScript のオブジェクトに解決する {{jsxref("Promise")}} です。�
 ## 例
 
 ```js
-const obj = {hello: 'world'};
+const obj = { hello: "world" };
 
-const request = new Request('/myEndpoint', {
-  method: 'POST',
-  body: JSON.stringify(obj)
- });
+const request = new Request("/myEndpoint", {
+  method: "POST",
+  body: JSON.stringify(obj),
+});
 
 request.json().then((data) => {
-  // do something with the data sent in the request
+  // リクエストで送信されたデータに対して何らかの処理をする
 });
 ```
 

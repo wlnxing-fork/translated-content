@@ -3,7 +3,7 @@ title: boolean
 slug: Web/XPath/Functions/boolean
 ---
 
-{{ XsltRef() }}
+{{XsltSidebar}}{{ XsltRef() }}
 
 `boolean` 関数は式を評価し、 true または false を返します。
 
@@ -31,7 +31,7 @@ boolean( expression )
 
 ## 定義
 
-[XPath 1.0 4.3](http://www.w3.org/TR/xpath#function-boolean)
+[XPath 1.0 4.3](https://www.w3.org/TR/xpath#function-boolean)
 
 ## Gecko の対応
 

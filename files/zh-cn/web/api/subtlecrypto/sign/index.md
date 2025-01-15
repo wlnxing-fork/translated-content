@@ -77,7 +77,8 @@ HMAC 算法根据 [FIPS 198-1 标准](https://csrc.nist.gov/csrc/media/publicati
 
 ## 示例
 
-> **备注：** 你可以在 Github 上[尝试可用的示例](https://mdn.github.io/dom-examples/web-crypto/sign-verify/index.html)。
+> [!NOTE]
+> 你可以在 Github 上[尝试可用的示例](https://mdn.github.io/dom-examples/web-crypto/sign-verify/index.html)。
 
 ### RSASSA-PKCS1-v1_5
 
@@ -99,7 +100,7 @@ let encoded = getMessageEncoding();
 let signature = await window.crypto.subtle.sign(
   "RSASSA-PKCS1-v1_5",
   privateKey,
-  encoded
+  encoded,
 );
 ```
 
@@ -126,7 +127,7 @@ let signature = await window.crypto.subtle.sign(
     saltLength: 32,
   },
   privateKey,
-  encoded
+  encoded,
 );
 ```
 
@@ -150,10 +151,10 @@ let encoded = getMessageEncoding();
 let signature = await window.crypto.subtle.sign(
   {
     name: "ECDSA",
-    hash: {name: "SHA-384"},
+    hash: { name: "SHA-384" },
   },
   privateKey,
-  encoded
+  encoded,
 );
 ```
 
@@ -174,11 +175,7 @@ function getMessageEncoding() {
 }
 
 let encoded = getMessageEncoding();
-let signature = await window.crypto.subtle.sign(
-  "HMAC",
-  key,
-  encoded
-);
+let signature = await window.crypto.subtle.sign("HMAC", key, encoded);
 ```
 
 ## 规范

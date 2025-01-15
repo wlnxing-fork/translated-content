@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: figure ロール'
+title: "ARIA: figure ロール"
 slug: Web/Accessibility/ARIA/Roles/figure_role
 ---
 
@@ -7,8 +7,7 @@ ARIA の図表 (`figure`) ロールは、適切な意味論がまだ存在しな
 
 ```html
 <div role="figure" aria-labelledby="caption">
-  <img src="image.png"
-      alt="画像の完全な代替説明">
+  <img src="image.png" alt="画像の完全な代替説明" />
   <p id="caption">図表 1: キャプション</p>
 </div>
 ```
@@ -47,22 +46,19 @@ ARIA の図表 (`figure`) ロールは、適切な意味論がまだ存在しな
 ラベルを画面に表示したくないが、支援技術のユーザーにわかりやすいラベルを提供したい場合は、図表コンテナーに `aria-label` 属性を使用できます。
 
 ```html
-<div role="figure" aria-label="図表を説明するテキスト。">
-  ...
-</div>
+<div role="figure" aria-label="図表を説明するテキスト。">...</div>
 ```
 
 `aria-label` は `<figure>` と一緒に使うことができます。
 
 ```html
-<figure aria-label="図表を説明するテキスト。">
-  ...
-</figure>
+<figure aria-label="図表を説明するテキスト。">...</figure>
 ```
 
 一般的には、本文から図表を参照するべきですが、図表は参照元の要素と同じ場所に表示する必要はありません。
 
-> **メモ:** 可能な限り、適切な意味論の HTML 要素を使用して図表とそのキャプション ({{htmlelement("figure")}} と {{htmlelement("figcaption")}}) をマークアップするべきです。 詳しくは、[ベストプラクティス](#best_practices)を参照してください。
+> [!NOTE]
+> 可能な限り、適切な意味論の HTML 要素を使用して図表とそのキャプション ({{htmlelement("figure")}} と {{htmlelement("figcaption")}}) をマークアップするべきです。 詳しくは、[ベストプラクティス](#best_practices)を参照してください。
 
 ### 関連する WAI-ARIA のロール、ステート、プロパティ
 
@@ -105,9 +101,10 @@ ARIA の図表 (`figure`) ロールは、適切な意味論がまだ存在しな
 
 ```html
 <figure>
-  <img src="diagram.png"
-       alt="素晴らしい4つの層と相対的な優先順位を示すダイヤグラム —
-       音楽、猫、自然、そしてアイスクリーム">
+  <img
+    src="diagram.png"
+    alt="素晴らしい4つの層と相対的な優先順位を示すダイヤグラム —
+       音楽、猫、自然、そしてアイスクリーム" />
   <pre><code>
     let awesome = ['音楽', '猫', '自然', 'アイスクリーム'];
   </code></pre>
@@ -115,7 +112,7 @@ ARIA の図表 (`figure`) ロールは、適切な意味論がまだ存在しな
 </figure>
 ```
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 

@@ -1,7 +1,6 @@
 ---
 title: Herança em JavaScript
 slug: Learn/JavaScript/Objects/Classes_in_JavaScript
-original_slug: Learn/JavaScript/Objects/Inheritance
 ---
 
 {{LearnSidebar}}{{PreviousMenuNext("Learn/JavaScript/Objects/Object_prototypes", "Learn/JavaScript/Objects/JSON", "Learn/JavaScript/Objects")}}
@@ -15,12 +14,12 @@ Com a maior parte dos detalhes principais do OOJS agora explicados, este artigo 
       <td>
         Conhecimento básico de computação, conhecimento básico de HTML e CSS,
         familiaridade com com o básico de Javascript (veja
-        <a href="/en-US/docs/Learn/JavaScript/First_steps">Primeiros passos</a>
+        <a href="/pt-BR/docs/Learn/JavaScript/First_steps">Primeiros passos</a>
         e
-        <a href="/en-US/docs/Learn/JavaScript/Building_blocks"
+        <a href="/pt-BR/docs/Learn/JavaScript/Building_blocks"
           >Construindo blocos</a
         >) e OOJS básico (veja
-        <a href="/en-US/docs/Learn/JavaScript/Object-oriented/Introduction"
+        <a href="/pt-BR/docs/Learn/JavaScript/Object-oriented/Introduction"
           >Introdução a objetos</a
         >).
       </td>
@@ -40,29 +39,30 @@ Vamos explorar como fazer isso com um exemplo concreto.
 
 ## Começando
 
-Primeiro de tudo, faça uma cópia local do arquivo [oojs-class-inheritance-start.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-start.html) (veja também [ao vivo](http://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-start.html)). Aqui dentro você encontrará o mesmo exemplo de construtor `Person()` que utilizamos durante todo o módulo, com uma pequena diferença — definimos apenas as propriedades dentro do construtor:
+Primeiro de tudo, faça uma cópia local do arquivo [oojs-class-inheritance-start.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-start.html) (veja também [ao vivo](https://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-start.html)). Aqui dentro você encontrará o mesmo exemplo de construtor `Person()` que utilizamos durante todo o módulo, com uma pequena diferença — definimos apenas as propriedades dentro do construtor:
 
 ```js
 function Person(first, last, age, gender, interests) {
   this.name = {
     first,
-    last
+    last,
   };
   this.age = age;
   this.gender = gender;
   this.interests = interests;
-};
+}
 ```
 
 Os métodos são _todos_ definidos no protótipo do construtor. Por exemplo:
 
 ```js
-Person.prototype.greeting = function() {
-  alert('Hi! I\'m ' + this.name.first + '.');
+Person.prototype.greeting = function () {
+  alert("Hi! I'm " + this.name.first + ".");
 };
 ```
 
-> **Nota:** No código fonte, você também verá os métodos `bio()` e `farewell()` definidos. Depois você verá como eles podem ser herdados por outros construtores.
+> [!NOTE]
+> No código fonte, você também verá os métodos `bio()` e `farewell()` definidos. Depois você verá como eles podem ser herdados por outros construtores.
 
 Digamos que quiséssemos criar uma classe `Teacher`, como a que descrevemos em nossa definição inicial orientada a objetos, que herda todos os membros de `Person`, mas também inclui:
 
@@ -81,7 +81,7 @@ function Teacher(first, last, age, gender, interests, subject) {
 }
 ```
 
-Isto parece similar ao construtor Person de várias maneiras, mas há algo estranho aqui que nós não vimos antes — a função [`call()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call). Esta função basicamente permite chamar uma função definida em outro lugar, mas no contexto atual. O primeiro parâmetro especifica o valor `this` que você deseja usar ao executar a função, e os outros parâmetros são aqueles que devem ser passados para a função quando ela é invocada.
+Isto parece similar ao construtor Person de várias maneiras, mas há algo estranho aqui que nós não vimos antes — a função [`call()`](/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function/call). Esta função basicamente permite chamar uma função definida em outro lugar, mas no contexto atual. O primeiro parâmetro especifica o valor `this` que você deseja usar ao executar a função, e os outros parâmetros são aqueles que devem ser passados para a função quando ela é invocada.
 
 Nós queremos que o construtor `Teacher()` pegue os mesmos parâmetros que o construtor `Person()` de onde ele está herdando, então especificamos todos eles como parâmetros na chamada `call()`.
 
@@ -93,7 +93,7 @@ Como nota, poderíamos simplesmente ter feito isso:
 function Teacher(first, last, age, gender, interests, subject) {
   this.name = {
     first,
-    last
+    last,
   };
   this.age = age;
   this.gender = gender;
@@ -122,7 +122,7 @@ function BlueGlassBrick() {
   Brick.call(this);
 
   this.opacity = 0.5;
-  this.color = 'blue';
+  this.color = "blue";
 }
 ```
 
@@ -134,21 +134,22 @@ Tudo está bem até agora, mas nós temos um problema. Nós definimos um novo co
 
 1. Adicione a seguinte linha abaixo da sua adição anterior:
 
-    ```js
-    Teacher.prototype = Object.create(Person.prototype);
-    ```
+   ```js
+   Teacher.prototype = Object.create(Person.prototype);
+   ```
 
-    Aqui nosso amigo [`create()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) vem para o resgate novamente. Nesse caso, estamos usando para criar um novo objeto e torná-lo o valor de `Teacher.prototype`. O novo objeto tem `Person.prototype` como seu protótipo e, portanto, herdará, se e quando necessário, todos os métodos disponíveis no `Person.prototype`.
+   Aqui nosso amigo [`create()`](/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/create) vem para o resgate novamente. Nesse caso, estamos usando para criar um novo objeto e torná-lo o valor de `Teacher.prototype`. O novo objeto tem `Person.prototype` como seu protótipo e, portanto, herdará, se e quando necessário, todos os métodos disponíveis no `Person.prototype`.
 
 2. Precisamos fazer mais uma coisa antes de prosseguirmos. Depois de adicionar a última linha, a propriedade `constructor` de `Teacher.prototype` agora é igual a `Person()`, porque apenas definimos `Teacher.prototype` para fazer referência a um objeto que herda suas propriedades de `Person.prototype`! Tente salvar seu código, carregar a página em um navegador e inserir `Teacher.prototype.constructor` no console para verificar.
 3. Isso pode se tornar um problema, então precisamos definir isso corretamente. Você pode fazer isso voltando ao seu código-fonte e adicionando a seguinte linha na parte inferior:
 
-    ```js
-    Object.defineProperty(Teacher.prototype, 'constructor', {
-        value: Teacher,
-        enumerable: false, // so that it does not appear in 'for in' loop
-        writable: true });
-    ```
+   ```js
+   Object.defineProperty(Teacher.prototype, "constructor", {
+     value: Teacher,
+     enumerable: false, // so that it does not appear in 'for in' loop
+     writable: true,
+   });
+   ```
 
 4. Agora, se você salvar e atualizar, entrar em `Teacher.prototype.constructor` deve retornar `Teacher()`, conforme desejado, além de estarmos herdando de `Person()`!
 
@@ -159,18 +160,36 @@ Para finalizar nosso código, precisamos definir uma nova função `greeting()` 
 A maneira mais fácil de fazer isso é defini-lo no protótipo do `Teacher()` — adicione o seguinte na parte inferior do seu código:
 
 ```js
-Teacher.prototype.greeting = function() {
+Teacher.prototype.greeting = function () {
   var prefix;
 
-  if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
-    prefix = 'Mr.';
-  } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
-    prefix = 'Mrs.';
+  if (
+    this.gender === "male" ||
+    this.gender === "Male" ||
+    this.gender === "m" ||
+    this.gender === "M"
+  ) {
+    prefix = "Mr.";
+  } else if (
+    this.gender === "female" ||
+    this.gender === "Female" ||
+    this.gender === "f" ||
+    this.gender === "F"
+  ) {
+    prefix = "Mrs.";
   } else {
-    prefix = 'Mx.';
+    prefix = "Mx.";
   }
 
-  alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
+  alert(
+    "Hello. My name is " +
+      prefix +
+      " " +
+      this.name.last +
+      ", and I teach " +
+      this.subject +
+      ".",
+  );
 };
 ```
 
@@ -181,7 +200,14 @@ Isso alerta a saudação do professor, que também usa um prefixo de nome apropr
 Agora que você digitou todo o código, tente criar uma instância de objeto do `Teacher()` colocando o seguinte na parte inferior do seu JavaScript (ou algo semelhante à sua escolha):
 
 ```js
-var teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');
+var teacher1 = new Teacher(
+  "Dave",
+  "Griffiths",
+  31,
+  "male",
+  ["football", "cookery"],
+  "mathematics",
+);
 ```
 
 Agora salve e atualize e tente acessar as propriedades e os métodos do novo objeto `teacher1`, por exemplo:
@@ -197,26 +223,28 @@ teacher1.farewell();
 
 Tudo isso deve funcionar bem. As consultas nas linhas 1, 2, 3 e 6 acessam membros herdados do construtor genérico `Person()` (class). A consulta na linha 4 acessa um membro que está disponível somente no construtor mais especializado `Teacher()` (class). A consulta na linha 5 teria acessado um membro herdado de `Person()`, exceto pelo fato de que `Teacher()` tem seu próprio membro com o mesmo nome, portanto, a consulta acessa esse membro.
 
-> **Nota:** If you have trouble getting this to work, compare your code to our [finished version](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-finished.html) (see it [running live](http://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-finished.html) also).
+> [!NOTE]
+> If you have trouble getting this to work, compare your code to our [finished version](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-finished.html) (see it [running live](https://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-finished.html) also).
 
 A técnica que abordamos aqui não é a única maneira de criar classes herdadas em JavaScript, mas funciona bem e dá uma boa idéia sobre como implementar a herança em JavaScript.
 
 Você também pode estar interessado em conferir alguns dos novos recursos {{glossary("ECMAScript")}} que nos permitem fazer herança mais claramente em JavaScript (veja [Classes](/pt-BR/docs/Web/JavaScript/Reference/Classes)). Nós não cobrimos esses aqui, pois eles ainda não são suportados amplamente pelos navegadores. Todas as outras construções de código que discutimos neste conjunto de artigos são suportadas desde o IE9 ou anterior, e existem maneiras de obter suporte anterior a isso.
 
-Uma maneira comum é usar uma biblioteca JavaScript — a maioria das opções populares tem um conjunto fácil de funcionalidade disponível para fazer herança com mais facilidade e rapidez. [CoffeeScript](http://coffeescript.org/#classes) por exemplo, fornece `class`, `extends`, etc.
+Uma maneira comum é usar uma biblioteca JavaScript — a maioria das opções populares tem um conjunto fácil de funcionalidade disponível para fazer herança com mais facilidade e rapidez. [CoffeeScript](https://coffeescript.org/#classes) por exemplo, fornece `class`, `extends`, etc.
 
 ## Um exercício adicional
 
-Em nossa [seção de teoria OOP](/pt-BR/docs/Learn/JavaScript/Objects/Object-oriented_JS#Object-oriented_programming_from_10000_meters), incluímos também uma classe `Student` como um conceito, que herda todos os recursos de `Person`, e também tem um método `greeting()` diferente de `Person` que é muito mais informal do que a saudação do `Teacher`. Dê uma olhada na aparência da saudação do aluno nessa seção e tente implementar seu próprio construtor `Student()` que herda todos os recursos de `Person()`, e implemente a função `greeting()` diferente.
+Em nossa [seção de teoria OOP](/pt-BR/docs/conflicting/Learn/JavaScript/Objects/Classes_in_JavaScript#object-oriented_programming_from_10000_meters), incluímos também uma classe `Student` como um conceito, que herda todos os recursos de `Person`, e também tem um método `greeting()` diferente de `Person` que é muito mais informal do que a saudação do `Teacher`. Dê uma olhada na aparência da saudação do aluno nessa seção e tente implementar seu próprio construtor `Student()` que herda todos os recursos de `Person()`, e implemente a função `greeting()` diferente.
 
-> **Nota:** If you have trouble getting this to work, have a look at our [finished version](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-student.html) (see it [running live](http://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-student.html) also).
+> [!NOTE]
+> If you have trouble getting this to work, have a look at our [finished version](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/oojs-class-inheritance-student.html) (see it [running live](https://mdn.github.io/learning-area/javascript/oojs/advanced/oojs-class-inheritance-student.html) also).
 
 ## Sumário de membro do objeto
 
 Resumindo, você basicamente tem três tipos de propriedade / método para se preocupar:
 
 1. Aqueles definidos dentro de uma função construtora que são dadas a instâncias de objetos. Estes são bastante fáceis de detectar — em seu próprio código personalizado, eles são os membros definidos dentro de um construtor usando as linhas `this.x = x` ; no código do navegador, eles são os membros disponíveis apenas para instâncias de objetos (geralmente criados chamando um construtor usando a palavra-chave `new`, por exemplo, `var myInstance = new myConstructor()`).
-2. Aqueles definidos diretamente no próprio construtor, que estão disponíveis apenas no construtor. Geralmente, eles estão disponíveis apenas em objetos de navegador internos e são reconhecidos por serem encadeados diretamente em um construtor, não em uma instância. Por exemplo, [`Object.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys).
+2. Aqueles definidos diretamente no próprio construtor, que estão disponíveis apenas no construtor. Geralmente, eles estão disponíveis apenas em objetos de navegador internos e são reconhecidos por serem encadeados diretamente em um construtor, não em uma instância. Por exemplo, [`Object.keys()`](/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/keys).
 3. Aqueles definidos no protótipo de um construtor, que são herdados por todas as instâncias e herdam as classes de objetos. Estes incluem qualquer membro definido na propriedade de protótipo de um Construtor, por ex. `myConstructor.prototype.x()`.
 
 Se você não tem certeza de qual é qual, não se preocupe com isso ainda — você ainda está aprendendo e a familiaridade virá com a prática.
@@ -225,7 +253,8 @@ Se você não tem certeza de qual é qual, não se preocupe com isso ainda — v
 
 O ECMAScript 2015 introduz a [sintaxe de classe](/pt-BR/docs/Web/JavaScript/Reference/Classes) em JavaScript como uma maneira de escrever classes reutilizáveis usando uma sintaxe mais fácil e mais limpa, que é mais semelhante a classes em C ++ ou Java. Nesta seção, converteremos os exemplos Pessoa e Professor da herança protótipo para as classes, para mostrar como é feito.
 
-> **Nota:** Essa forma moderna de escrever classes é suportada em todos os navegadores modernos, mas ainda vale a pena saber como a herança prototípica subjacente, caso você trabalhe em um projeto que exija suporte a um navegador que não suporte essa sintaxe (mais notavelmente o Internet Explorer) .
+> [!NOTE]
+> Essa forma moderna de escrever classes é suportada em todos os navegadores modernos, mas ainda vale a pena saber como a herança prototípica subjacente, caso você trabalhe em um projeto que exija suporte a um navegador que não suporte essa sintaxe (mais notavelmente o Internet Explorer) .
 
 Vejamos uma versão reescrita do exemplo Person, estilo de classe:
 
@@ -234,7 +263,7 @@ class Person {
   constructor(first, last, age, gender, interests) {
     this.name = {
       first,
-      last
+      last,
     };
     this.age = age;
     this.gender = gender;
@@ -243,32 +272,33 @@ class Person {
 
   greeting() {
     console.log(`Hi! I'm ${this.name.first}`);
-  };
+  }
 
   farewell() {
     console.log(`${this.name.first} has left the building. Bye for now!`);
-  };
+  }
 }
 ```
 
 A declaração [class](/pt-BR/docs/Web/JavaScript/Reference/Statements/class) indica que estamos criando uma nova classe. Dentro deste bloco, definimos todos os recursos da classe:
 
-- O método [`constructor()`](/en-US/docs/Web/JavaScript/Reference/Classes/constructor) define a função construtora que representa nossa classe `Person`.
+- O método [`constructor()`](/pt-BR/docs/Web/JavaScript/Reference/Classes/constructor) define a função construtora que representa nossa classe `Person`.
 - `greeting()` e `farewell()` são métodos de classe. Quaisquer métodos que você deseja associar à classe são definidos dentro dela, após o construtor. Neste exemplo, usamos [template literals](/pt-BR/docs/Web/JavaScript/Reference/Template_literals) em vez de concatenação de string para facilitar a leitura do código.
 
 Agora podemos instanciar instâncias de objeto usando o operador [`new`](/pt-BR/docs/Web/JavaScript/Reference/Operators/new), da mesma maneira que fizemos antes:
 
 ```js
-let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+let han = new Person("Han", "Solo", 25, "male", ["Smuggling"]);
 han.greeting();
 // Hi! I'm Han
 
-let leia = new Person('Leia', 'Organa', 19, 'female', ['Government']);
+let leia = new Person("Leia", "Organa", 19, "female", ["Government"]);
 leia.farewell();
 // Leia has left the building. Bye for now
 ```
 
-> **Nota:** Sob o capô, suas classes estão sendo convertidas em modelos de herança protótipos — isso é apenas açúcar sintático. Mas tenho certeza que você concordará que é mais fácil escrever.
+> [!NOTE]
+> Sob o capô, suas classes estão sendo convertidas em modelos de herança protótipos — isso é apenas açúcar sintático. Mas tenho certeza que você concordará que é mais fácil escrever.
 
 ### Herança com sintaxe de classe
 
@@ -281,15 +311,15 @@ class Teacher extends Person {
   constructor(first, last, age, gender, interests, subject, grade) {
     this.name = {
       first,
-      last
+      last,
     };
 
-  this.age = age;
-  this.gender = gender;
-  this.interests = interests;
-  // subject and grade are specific to Teacher
-  this.subject = subject;
-  this.grade = grade;
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+    // subject and grade are specific to Teacher
+    this.subject = subject;
+    this.grade = grade;
   }
 }
 ```
@@ -311,16 +341,25 @@ class Teacher extends Person {
 Quando instanciamos instâncias de objeto `Teacher` , podemos agora chamar métodos e propriedades definidos em `Teacher` e `Person`, como seria de esperar:
 
 ```js
-let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+let snape = new Teacher(
+  "Severus",
+  "Snape",
+  58,
+  "male",
+  ["Potions"],
+  "Dark arts",
+  5,
+);
 snape.greeting(); // Hi! I'm Severus.
 snape.farewell(); // Severus has left the building. Bye for now.
-snape.age // 58
+snape.age; // 58
 snape.subject; // Dark arts
 ```
 
 Como fizemos com Teachers, poderíamos criar outras subclasses de `Person` para torná-las mais especializadas sem modificar a classe base.
 
-> **Nota:** You can find this example on GitHub as [es2015-class-inheritance.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/es2015-class-inheritance.html) ([see it live also](https://mdn.github.io/learning-area/javascript/oojs/advanced/es2015-class-inheritance.html)).
+> [!NOTE]
+> You can find this example on GitHub as [es2015-class-inheritance.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/es2015-class-inheritance.html) ([see it live also](https://mdn.github.io/learning-area/javascript/oojs/advanced/es2015-class-inheritance.html)).
 
 ## Getters e Setters
 
@@ -362,16 +401,17 @@ O exemplo abaixo mostra os dois recursos em ação:
 
 ```js
 // Check the default value
-console.log(snape.subject) // Returns "Dark arts"
+console.log(snape.subject); // Returns "Dark arts"
 
 // Change the value
-snape.subject="Balloon animals" // Sets _subject to "Balloon animals"
+snape.subject = "Balloon animals"; // Sets _subject to "Balloon animals"
 
 // Check it again and see if it matches the new value
-console.log(snape.subject) // Returns "Balloon animals"
+console.log(snape.subject); // Returns "Balloon animals"
 ```
 
-> **Nota:** You can find this example on GitHub as [es2015-getters-setters.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/es2015-getters-setters.html) ([see it live also](https://mdn.github.io/learning-area/javascript/oojs/advanced/es2015-getters-setters.html)).
+> [!NOTE]
+> You can find this example on GitHub as [es2015-getters-setters.html](https://github.com/mdn/learning-area/blob/master/javascript/oojs/advanced/es2015-getters-setters.html) ([see it live also](https://mdn.github.io/learning-area/javascript/oojs/advanced/es2015-getters-setters.html)).
 
 ## Quando você usaria a herança em JavaScript?
 
@@ -381,7 +421,8 @@ De certa forma, você usa herança o tempo todo. Sempre que você usa vários re
 
 Em termos de usar a herança em seu próprio código, você provavelmente não a usará com frequência, principalmente no começo e em pequenos projetos. É uma perda de tempo usar objetos e herança apenas por causa dela quando você não precisa deles. Mas à medida que suas bases de código aumentam, é mais provável que você encontre uma necessidade para isso. Se você estiver começando a criar vários objetos com recursos semelhantes, criar um tipo de objeto genérico para conter toda a funcionalidade compartilhada e herdar esses recursos em tipos de objetos mais especializados pode ser conveniente e útil.
 
-> **Nota:** Por causa da maneira como o JavaScript funciona, com a cadeia de protótipos, etc., o compartilhamento de funcionalidade entre objetos é frequentemente chamado de **delegação**. Os objetos especializados delegam a funcionalidade a um tipo de objeto genérico.
+> [!NOTE]
+> Por causa da maneira como o JavaScript funciona, com a cadeia de protótipos, etc., o compartilhamento de funcionalidade entre objetos é frequentemente chamado de **delegação**. Os objetos especializados delegam a funcionalidade a um tipo de objeto genérico.
 
 Ao usar a herança, você é aconselhado a não ter muitos níveis de herança, e manter um controle cuidadoso de onde você define seus métodos e propriedades. É possível começar a escrever código que modifica temporariamente os protótipos dos objetos do navegador interno, mas você não deve fazer isso a menos que tenha um bom motivo. Demasiada herança pode levar a confusão sem fim, e dor infinita quando você tenta depurar esse código.
 
@@ -389,7 +430,7 @@ Em última análise, os objetos são apenas outra forma de reutilização de có
 
 ## Alternativas para estender a cadeia de protótipos
 
-Em JavaScript, existem várias maneiras diferentes de estender o protótipo de um objeto além do que mostramos acima. Para saber mais sobre as outras formas, visite nosso artigo [Herança e a cadeia de protótipos](/pt-BR/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#Different_ways_to_create_objects_and_the_resulting_prototype_chain).
+Em JavaScript, existem várias maneiras diferentes de estender o protótipo de um objeto além do que mostramos acima. Para saber mais sobre as outras formas, visite nosso artigo [Herança e a cadeia de protótipos](/pt-BR/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#different_ways_to_create_objects_and_the_resulting_prototype_chain).
 
 ## Sumário
 

@@ -27,7 +27,7 @@ slug: Web/API/SourceBufferList
 
 _親インターフェイスである {{domxref("EventTarget")}} からメソッドを継承します。_
 
-- [`SourceBufferList`: indexed property getter](/ja/docs/Web/API/SourceBufferList/SourceBuffer)
+- [`SourceBufferList`: indexed property getter](/ja/docs/Web/API/SourceBufferList)
   - : このゲッターにより、リスト内の `SourceBuffer` オブジェクトに配列演算子（つまり `[]`）でアクセスできます。
 
 ## 例
@@ -40,7 +40,7 @@ _親インターフェイスである {{domxref("EventTarget")}} からメソッ
 
 ## ブラウザーの互換性
 
-{{Compat("api.SourceBufferList")}}
+{{Compat}}
 
 ## 関連情報
 

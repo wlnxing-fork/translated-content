@@ -1,13 +1,6 @@
 ---
 title: spellcheck
 slug: Web/HTML/Global_attributes/spellcheck
-tags:
-  - Attribut
-  - Attribut universel
-  - HTML
-  - Reference
-translation_of: Web/HTML/Global_attributes/spellcheck
-original_slug: Web/HTML/Attributs_universels/spellcheck
 ---
 
 {{HTMLSidebar("Global_attributes")}}
@@ -142,4 +135,4 @@ La valeur par défaut sera différente selon l'élément et le navigateur :
 
 ## Voir aussi
 
-- [Les différents attributs universels](/fr/docs/Web/HTML/Attributs_universels)
+- [Les différents attributs universels](/fr/docs/Web/HTML/Global_attributes)

@@ -1,12 +1,6 @@
 ---
 title: Bluetooth
 slug: Web/API/Bluetooth
-tags:
-  - API
-  - Bluetooth
-  - Web Bluetooth API
-  - Экспериментальное
-translation_of: Web/API/Bluetooth
 ---
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}
@@ -37,7 +31,7 @@ _Наследует свойства от родителя {{domxref("EventTarge
 ### События
 
 - {{domxref("Bluetooth.onavailabilitychanged")}}
-  - : Обработчик событий, который запускается при возникновении события типа {{event("availabilitychanged")}}.
+  - : Обработчик событий, который запускается при возникновении события [`availabilitychanged`](/ru/docs/Web/Events/availabilitychanged).
 
 ## Методы
 

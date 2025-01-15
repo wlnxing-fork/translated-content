@@ -1,14 +1,16 @@
 ---
-title: ':autofill'
+title: ":autofill"
 slug: Web/CSS/:autofill
-original_slug: Web/CSS/:-webkit-autofill
 ---
 
 {{CSSRef}}
 
 **`:autofill`** は CSS の[擬似クラス](/ja/docs/Web/CSS/Pseudo-classes)で、 {{HTMLElement("input")}} 要素の値がブラウザーによって自動補完された時に一致します。このクラスはユーザーがフィールドを編集すると一致しなくなります。
 
-> **メモ:** 多くのブラウザーのユーザーエージェントスタイルシートでは、 `:-webkit-autofill` スタイル定義に `!important` を使用しており、 JavaScript によるハックで解決しない限り、ウェブページから上書きすることができません。例えば、 Chrome では内部スタイルシートで次のようになっています。
+{{EmbedInteractiveExample("pages/tabbed/pseudo-class-autofill.html", "tabbed-shorter")}}
+
+> [!NOTE]
+> 多くのブラウザーのユーザーエージェントスタイルシートでは、 `:-webkit-autofill` スタイル定義に `!important` を使用しており、 JavaScript によるハックで解決しない限り、ウェブページから上書きすることができません。例えば、 Chrome では内部スタイルシートで次のようになっています。
 >
 > ```css
 > background-color: rgb(232, 240, 254) !important;
@@ -44,7 +46,8 @@ input:autofill {
 
 ```html
 <form method="post" action="">
-  <label for="email">Email</label> <input type="email" name="email" id="email" autocomplete="email">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" autocomplete="email" />
 </form>
 ```
 

@@ -1,7 +1,6 @@
 ---
 title: letter-spacing
 slug: Web/CSS/letter-spacing
-translation_of: Web/CSS/letter-spacing
 ---
 
 {{CSSRef}}
@@ -13,13 +12,13 @@ translation_of: Web/CSS/letter-spacing
 ## Синтаксис
 
 ```css
-/* Значения - ключевые слова */
+/* Ключевые слова */
 letter-spacing: normal;
 
 /* Значения <length> */
 letter-spacing: 0.3em;
 letter-spacing: 3px;
-letter-spacing: .3px;
+letter-spacing: 0.3px;
 
 /* Глобальные значения */
 letter-spacing: inherit;
@@ -53,18 +52,28 @@ letter-spacing: unset;
 ### CSS
 
 ```css
-.normal   { letter-spacing: normal; }
-.em-wide  { letter-spacing: 0.4em; }
-.em-wider { letter-spacing: 1em; }
-.em-tight { letter-spacing: -0.05em; }
-.px-wide  { letter-spacing: 6px; }
+.normal {
+  letter-spacing: normal;
+}
+.em-wide {
+  letter-spacing: 0.4em;
+}
+.em-wider {
+  letter-spacing: 1em;
+}
+.em-tight {
+  letter-spacing: -0.05em;
+}
+.px-wide {
+  letter-spacing: 6px;
+}
 ```
 
 ### Результат
 
 {{ EmbedLiveSample('Примеры', 440, 185) }}
 
-## Проблемы доступности
+## Доступность
 
 Большие положительные или отрицательные значения свойства `letter-spacing` могут сделать текст, к которому применяется форматирование, нечитаемым. При очень больших положительных значениях этого свойства, буквы в тексте будут настолько далеко друг от друга, что не будут восприниматься как цельные слова. При очень больших отрицательных значениях буквы будут перекрываться друг другом до такой степени, что слова могут стать неразличимы.
 
@@ -79,7 +88,7 @@ letter-spacing: unset;
 
 {{cssinfo}}
 
-## Браузерная совместимость
+## Совместимость с браузерами
 
 {{Compat}}
 

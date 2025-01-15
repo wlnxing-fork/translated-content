@@ -1,7 +1,6 @@
 ---
 title: var()
 slug: Web/CSS/var
-original_slug: Web/CSS/var()
 ---
 
 {{CSSRef}}
@@ -18,7 +17,8 @@ original_slug: Web/CSS/var()
 
 {{csssyntax}}
 
-> **メモ:** 代替の構文は、カスタムプロパティの構文と同様にカンマを使用できます。たとえば `var(--foo, red, blue)` では、 `red, blue` を代替として定義します。つまり、最初のカンマから関数の最後にかけてのすべてが、代替値と見なされます。
+> [!NOTE]
+> 代替の構文は、カスタムプロパティの構文と同様にカンマを使用できます。たとえば `var(--foo, red, blue)` では、 `red, blue` を代替として定義します。つまり、最初のカンマから関数の最後にかけてのすべてが、代替値と見なされます。
 
 ### 値
 
@@ -47,7 +47,10 @@ body {
 /* 代替 */
 /* コンポーネント内のスタイル: */
 .component .header {
-  color: var(--header-color, blue); /* header-color という変数は設定されていないため、代替値である blue がセットされます */
+  color: var(
+    --header-color,
+    blue
+  ); /* header-color という変数は設定されていないため、代替値である blue がセットされます */
 }
 
 .component .text {

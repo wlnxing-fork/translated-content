@@ -1,13 +1,13 @@
 ---
-title: Map() constructor
+title: Map() 생성자
 slug: Web/JavaScript/Reference/Global_Objects/Map/Map
 l10n:
-  sourceCommit: effd5de5e42bfe045c3bf44b2d7b14f4d6146785
+  sourceCommit: 70f09675ddcfc75a3bb66d2dce4cf82738948a37
 ---
 
 {{JSRef}}
 
-**`Map()`constructor(생성자)** 는 {{jsxref("Map")}} 객체를 생성합니다.
+**`Map()`** 생성자는 {{jsxref("Map")}} 객체를 생성합니다.
 
 ## 구문
 
@@ -32,9 +32,9 @@ new Map(iterable)
 
 ```js
 const myMap = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three'],
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
 ]);
 ```
 
@@ -48,8 +48,7 @@ const myMap = new Map([
 
 ## 같이 보기
 
-- A polyfill of `Map` is available in
-  [`core-js`](https://github.com/zloirock/core-js#map)
+- [`core-js`에서의 `Map` 폴리필](https://github.com/zloirock/core-js#map)
 - {{jsxref("Set")}}
 - {{jsxref("WeakMap")}}
 - {{jsxref("WeakSet")}}

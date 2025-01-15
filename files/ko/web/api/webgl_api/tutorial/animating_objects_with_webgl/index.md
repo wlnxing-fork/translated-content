@@ -37,7 +37,7 @@ mvPopMatrix();
 실제로 애니메이션 효과가 나타나도록 하려면 `squareRotation` 값을 시간이 지남에 따라 계속 변경해주는 코드를 추가해야 합니다. `lastSquareUpdateTime`이라는 변수에 마지막으로 다시 그렸던 시각을 저장하고, 다음과 같은 코드를 `drawScene()`에 추가합니다:
 
 ```js
-var currentTime = (new Date).getTime();
+var currentTime = new Date().getTime();
 if (lastSquareUpdateTime) {
   var delta = currentTime - lastSquareUpdateTime;
 
@@ -91,7 +91,7 @@ mvTranslate([squareXOffset, squareYOffset, squareZOffset]);
 
 이제 정사각형이 화면에서 좌, 우, 위, 아래, 앞, 뒤로 완전히 자기멋대로 움직이면서 회전하는 것을 볼 수 있습니다. 어찌보면 바탕화면 보호기 같기도 합니다.
 
-WebGL이 지원되는 브라우저라면, [여기](/samples/webgl/sample4/index.html)에서 실제 동작하는 예제를 확인할 수 있습니다.
+WebGL이 지원되는 브라우저라면, [여기](http://mdn.github.io/webgl-examples/tutorial/sample4/index.html)에서 실제 동작하는 예제를 확인할 수 있습니다.
 
 ## 추가적인 행렬 연산
 
@@ -111,7 +111,7 @@ function mvPushMatrix(m) {
 
 function mvPopMatrix() {
   if (!mvMatrixStack.length) {
-    throw("Can't pop from an empty matrix stack.");
+    throw "Can't pop from an empty matrix stack.";
   }
 
   mvMatrix = mvMatrixStack.pop();
@@ -119,7 +119,7 @@ function mvPopMatrix() {
 }
 
 function mvRotate(angle, v) {
-  var inRadians = angle * Math.PI / 180.0;
+  var inRadians = (angle * Math.PI) / 180.0;
 
   var m = Matrix.Rotation(inRadians, $V([v[0], v[1], v[2]])).ensure4x4();
   multMatrix(m);

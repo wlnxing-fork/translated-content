@@ -7,7 +7,8 @@ slug: Web/HTTP/Headers/User-Agent
 
 **User-Agent** {{Glossary("request header", "リクエストヘッダー")}}は、サーバーやネットワークピアがアプリケーション、オペレーティングシステム、ベンダーや、リクエストしている{{Glossary("user agent", "ユーザーエージェント")}}のバージョン等を識別できるようにする特性文字列です。
 
-> **警告:** ブラウザーによって異なるウェブページやサービスを提供することが、通常は悪い考えである理由については、[ユーザーエージェント文字列を用いたブラウザーの判定](/ja/docs/Web/HTTP/Browser_detection_using_the_user_agent)をお読みください。
+> [!WARNING]
+> ブラウザーによって異なるウェブページやサービスを提供することが、通常は悪い考えである理由については、[ユーザーエージェント文字列を用いたブラウザーの判定](/ja/docs/Web/HTTP/Browser_detection_using_the_user_agent)をお読みください。
 
 <table class="properties">
   <tbody>
@@ -123,14 +124,14 @@ Googlebot/2.1 (+http://www.google.com/bot.html)
 
 ## 仕様書
 
-| 仕様書                                           | 題名                                                          |
-| ------------------------------------------------ | ------------------------------------------------------------- |
+| 仕様書                               | 題名                                                          |
+| ------------------------------------ | ------------------------------------------------------------- |
 | {{RFC(7231, "User-Agent", "5.5.3")}} | Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content |
-| {{RFC(2616, "User-Agent", "14.43")}} | Hypertext Transfer Protocol -- HTTP/1.1                       |
+| {{RFC(2616, "User-Agent", "14.43")}} | Hypertext Transfer Protocol — HTTP/1.1                        |
 
 ## ブラウザーの互換性
 
-{{Compat("http.headers.User-Agent")}}
+{{Compat}}
 
 ## 関連情報
 

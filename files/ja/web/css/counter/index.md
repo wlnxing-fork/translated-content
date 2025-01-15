@@ -1,7 +1,6 @@
 ---
 title: counter()
 slug: Web/CSS/counter
-original_slug: Web/CSS/counter()
 ---
 
 {{CSSRef}}
@@ -16,7 +15,9 @@ counter(countername);
 counter(countername, upper-roman)
 ```
 
-[カウンター](/ja/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters)自身には視覚的効果が何もありません。 `counter()` 関数 (および {{cssxref("counters()")}} 関数) は開発者が定義した文字列 (または画像) を返すことでカウンターは利用価値が生まれます。
+{{EmbedInteractiveExample("pages/tabbed/function-counter.html", "tabbed-shorter")}}
+
+[カウンター](/ja/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters)自身には視覚的効果が何もありません。 `counter()` 関数 (および {{cssxref("counters()")}} 関数) は開発者が定義した文字列 (または画像) を返すことでカウンターは利用価値が生まれます。
 
 > **メモ:** `counter()` 関数は CSS プロパティとも併用できますが、 {{CSSxRef("content")}} 以外のプロパティにおける対応は実験的であり、型または単位の引数への対応は限られています。
 >
@@ -29,7 +30,7 @@ counter(countername, upper-roman)
 - {{cssxref("&lt;custom-ident&gt;")}}
   - : カウンターを識別する名前であり、{{cssxref("counter-reset")}} および {{cssxref("counter-increment")}} に用いた名前と、大文字小文字まで同一でなければなりません。名前をダッシュ 2 つで始めることはできず、また `none`, `unset`, `initial`, `inherit` という名前は禁止です。
 - `<counter-style>`
-  - : {{cssxref("&lt;list-style-type&gt;")}} 名、 {{cssxref("&lt;@counter-style&gt;")}} 名、 {{cssxref("symbols()")}} 関数の何れかです。カウンタースタイル名には `numeric`, `alphabetic`, `symbolic` などの単純な定義済みスタイル、より複雑なアジアやエチオピアのカウンタースタイル、その他の[定義済みカウンタースタイル](/ja/docs/Web/CSS/CSS_Counter_Styles)があります。省略された場合は、既定で `decimal` になります。
+  - : {{cssxref("&lt;list-style-type&gt;")}} 名、 {{cssxref("&lt;@counter-style&gt;")}} 名、 {{cssxref("symbols()")}} 関数の何れかです。カウンタースタイル名には `numeric`, `alphabetic`, `symbolic` などの単純な定義済みスタイル、より複雑なアジアやエチオピアのカウンタースタイル、その他の[定義済みカウンタースタイル](/ja/docs/Web/CSS/CSS_counter_styles)があります。省略された場合は、既定で `decimal` になります。
 
 ### 形式文法
 
@@ -59,8 +60,8 @@ li {
   counter-increment: listCounter;
 }
 li::after {
-  content: "[" counter(listCounter) "] == ["
-               counter(listCounter, upper-roman) "]";
+  content: "[" counter(listCounter) "] == [" counter(listCounter, upper-roman)
+    "]";
 }
 ```
 
@@ -91,7 +92,7 @@ li {
 }
 li::after {
   content: "[" counter(count, decimal-leading-zero) "] == ["
-               counter(count, lower-alpha) "]";
+    counter(count, lower-alpha) "]";
 }
 ```
 
@@ -109,9 +110,9 @@ li::after {
 
 ## 関連情報
 
-- [CSS カウンターの使用](/ja/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters)
+- [CSS カウンターの使用](/ja/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters)
 - {{cssxref("counter-reset")}}
 - {{cssxref("counter-set")}}
 - {{cssxref("counter-increment")}}
 - {{cssxref("@counter-style")}}
-- CSS の [`counters()`](/ja/docs/Web/CSS/counters()) 関数
+- CSS の [`counters()`](</ja/docs/Web/CSS/counters()>) 関数

@@ -1,17 +1,6 @@
 ---
 title: runtime.onBrowserUpdateAvailable
 slug: Mozilla/Add-ons/WebExtensions/API/runtime/onBrowserUpdateAvailable
-tags:
-  - API
-  - Add-ons
-  - Event
-  - Extensions
-  - Non-standard
-  - Reference
-  - WebExtensions
-  - onBrowserUpdateAvailable
-  - runtime
-translation_of: Mozilla/Add-ons/WebExtensions/API/runtime/onBrowserUpdateAvailable
 ---
 
 {{AddonSidebar}}{{Deprecated_header}}
@@ -21,9 +10,9 @@ Lancé lorsqu'une mise à jour pour le navigateur est disponible, mais qu'elle n
 ## Syntaxe
 
 ```js
-browser.runtime.onBrowserUpdateAvailable.addListener(listener)
-browser.runtime.onBrowserUpdateAvailable.removeListener(listener)
-browser.runtime.onBrowserUpdateAvailable.hasListener(listener)
+browser.runtime.onBrowserUpdateAvailable.addListener(listener);
+browser.runtime.onBrowserUpdateAvailable.removeListener(listener);
+browser.runtime.onBrowserUpdateAvailable.hasListener(listener);
 ```
 
 Les événements ont trois fonctions :
@@ -55,14 +44,16 @@ function handleBrowserUpdateAvailable() {
   // handle event
 }
 
-browser.runtime.onBrowserUpdateAvailable.addListener(handleBrowserUpdateAvailable);
+browser.runtime.onBrowserUpdateAvailable.addListener(
+  handleBrowserUpdateAvailable,
+);
 ```
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API Chromium [`chrome.runtime`](https://developer.chrome.com/extensions/runtime#event-onConnect). Cette documentation est dérivée de [`runtime.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/runtime.json) dans le code de Chromium code.
+> Cette API est basée sur l'API Chromium [`chrome.runtime`](https://developer.chrome.com/docs/extensions/reference/api/runtime#event-onConnect). Cette documentation est dérivée de [`runtime.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/runtime.json) dans le code de Chromium code.
 >
 > Les données de compatibilité relatives à Microsoft Edge sont fournies par Microsoft Corporation et incluses ici sous la licence Creative Commons Attribution 3.0 pour les États-Unis.
 

@@ -5,13 +5,13 @@ slug: Web/API/Document
 
 {{APIRef("DOM")}}
 
-**`Document`** 接口表示任何在浏览器中载入的网页，并作为网页内容的入口，也就是 [DOM 树](/zh-CN/docs/Using_the_W3C_DOM_Level_1_Core)。
+**`Document`** 接口表示任何在浏览器中载入的网页，并作为网页内容的入口，也就是 [DOM 树](/zh-CN/docs/Web/API/Document_Object_Model/Using_the_Document_Object_Model)。
 
 DOM 树包含了像 {{HTMLElement("body")}}、{{HTMLElement("table")}} 这样的元素，以及[大量其他元素](/zh-CN/docs/Web/HTML/Element)。它向网页文档本身提供了全局操作功能，能解决如何获取页面的 URL，如何在文档中创建一个新的元素这样的问题。
 
 {{inheritanceDiagram}}
 
-`Document` 接口描述了任何类型的文档的通用属性与方法。根据不同的文档类型（例如 [HTML](/zh-CN/docs/HTML)、[XML](/zh-CN/docs/XML)、[SVG](/zh-CN/docs/Web/SVG)，...），还能使用更多 API：使用 `"text/html"` 作为内容类型（content type）的 HTML 文档，还实现了 {{DOMxRef("HTMLDocument")}} 接口，而 XML 和 SVG 文档则（额外）实现了 {{DOMxRef("XMLDocument")}} 接口。
+`Document` 接口描述了任何类型的文档的通用属性与方法。根据不同的文档类型（例如 [HTML](/zh-CN/docs/Web/HTML)、[XML](/zh-CN/docs/Web/XML)、[SVG](/zh-CN/docs/Web/SVG)，...），还能使用更多 API：使用 `"text/html"` 作为内容类型（content type）的 HTML 文档，还实现了 {{DOMxRef("HTMLDocument")}} 接口，而 XML 和 SVG 文档则（额外）实现了 {{DOMxRef("XMLDocument")}} 接口。
 
 ## 构造函数
 
@@ -413,13 +413,13 @@ HTML 文档的 `Document` 接口继承自 {{DOMxRef("HTMLDocument")}} 接口，�
 ### 过渡事件
 
 - {{DOMxRef("Document/transitioncancel_event", "transitioncancel")}}
-  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)取消时触发。
+  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)取消时触发。
 - {{DOMxRef("Document/transitionend_event", "transitionend")}}
-  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)完成时触发。
+  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)完成时触发。
 - {{DOMxRef("Document/transitionrun_event", "transitionrun")}}
-  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)第一次创建时触发。
+  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)第一次创建时触发。
 - {{DOMxRef("Document/transitionstart_event", "transitionstart")}}
-  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)实际开始时触发。
+  - : 在 [CSS 过渡](/zh-CN/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)实际开始时触发。
 
 ## 规范
 

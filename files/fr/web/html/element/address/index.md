@@ -1,22 +1,6 @@
 ---
-title: '<address> : l''élément d''adresse de contact'
+title: "<address> : l'élément d'adresse de contact"
 slug: Web/HTML/Element/address
-tags:
-  - Address
-  - Author
-  - Contact
-  - Contact Information
-  - Element
-  - Email
-  - Email Address
-  - HTML
-  - HTML sections
-  - HTML:Flow content
-  - HTML:Palpable Content
-  - Reference
-  - Web
-translation_of: Web/HTML/Element/address
-browser-compat: html.elements.address
 ---
 
 {{HTMLSidebar}}
@@ -144,26 +128,26 @@ Cet élément n'a pas d'autres attributs que les [attributs universels](/fr/docs
 - Cet élément ne doit pas contenir plus d'informations que l'information de contact, par exemple une date de publication (qui appartiendrait à l'élément [`<time>`](/fr/docs/Web/HTML/Element/time)).
 - Typiquement un élément `<address>` peut être placé dans l'élément [`<footer>`](/fr/docs/Web/HTML/Element/footer) de la section courante, s'il y en a une.
 
-## Exemple
+## Exemples
 
 ```html
 <address>
   Vous pouvez contacter l'auteur à l'adresse
-  <a href="http://www.undomaine.com/contact">www.undomaine.com</a>.<br>
+  <a href="http://www.undomaine.com/contact">www.undomaine.com</a>.<br />
   Si vous relevez quelques bogues que ce soient, merci de contacter
-  <a href="mailto:webmaster@somedomain.com">le webmaster</a>.<br>
-  Vous pouvez aussi venir nous voir :<br>
-  Mozilla Foundation<br>
-  1981 Landings Drive<br>
-  Building K<br>
-  Mountain View, CA 94043-0801<br>
+  <a href="mailto:webmaster@somedomain.com">le webmaster</a>.<br />
+  Vous pouvez aussi venir nous voir :<br />
+  Mozilla Foundation<br />
+  1981 Landings Drive<br />
+  Building K<br />
+  Mountain View, CA 94043-0801<br />
   USA
 </address>
 ```
 
 ### Résultat
 
-{{EmbedLiveSample("Exemple", "100%", 190)}}
+{{EmbedLiveSample("Exemples", "100%", 190)}}
 
 Bien que le rendu par défaut du texte de l'élément `<address>` utilise le même style par défaut que les éléments [`<i>`](/fr/docs/Web/HTML/Element/i) ou [`<em>`](/fr/docs/Web/HTML/Element/em), il est plus approprié d'utiliser cet élément lorsque l'on traite d'informations de contact, étant donné qu'il apporte des informations sémantiques supplémentaires.
 
@@ -178,4 +162,4 @@ Bien que le rendu par défaut du texte de l'élément `<address>` utilise le mê
 ## Voir aussi
 
 - Les autres éléments liés aux sections d'un document : [`<body>`](/fr/docs/Web/HTML/Element/body), [`<nav>`](/fr/docs/Web/HTML/Element/nav), [`<article>`](/fr/docs/Web/HTML/Element/article), [`<aside>`](/fr/docs/Web/HTML/Element/aside), [`<h1>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<h2>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<h3>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<h4>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<h5>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<h6>`](/fr/docs/Web/HTML/Element/Heading_Elements), [`<hgroup>`](/fr/docs/Web/HTML/Element/hgroup), [`<footer>`](/fr/docs/Web/HTML/Element/footer), [`<section>`](/fr/docs/Web/HTML/Element/section), [`<header>`](/fr/docs/Web/HTML/Element/header) ;
-- [Sections et titres d'un document HTML5](/fr/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines)
+- [Sections et titres d'un document HTML5](/fr/docs/Web/HTML/Element/Heading_Elements)

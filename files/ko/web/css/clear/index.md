@@ -9,19 +9,20 @@ slug: Web/CSS/clear
 
 {{EmbedInteractiveExample("pages/css/clear.html")}}
 
-비부동 블록에 적용되는 경우, 모든 관련 부동체(floats)의 [마진 경계](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) 아래로까지 요소의 [보더 경계](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)를 아래로 내립니다. 이 움직임(이 일어나는 경우)은 [마진 상쇄](/ko/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)가 일어나지 않도록 합니다.
+비부동 블록에 적용되는 경우, 모든 관련 부동체(floats)의 [마진 경계](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) 아래로까지 요소의 [보더 경계](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)를 아래로 내립니다. 이 움직임(이 일어나는 경우)은 [마진 상쇄](/ko/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)가 일어나지 않도록 합니다.
 
-부동 요소에 적용되는 경우, 모든 관련 부동체의 [마진 경계](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) 아래로 요소의 [마진 경계](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)를 옮깁니다. 이는 나중(later) 부동체의 위치에 영향을 줍니다, 나중 부동체가 앞선(earlier) 부동체보다 높게 위치될 수 없기에.
+부동 요소에 적용되는 경우, 모든 관련 부동체의 [마진 경계](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) 아래로 요소의 [마진 경계](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)를 옮깁니다. 이는 나중(later) 부동체의 위치에 영향을 줍니다, 나중 부동체가 앞선(earlier) 부동체보다 높게 위치될 수 없기에.
 
-해제(cleared)와 관련된 부동체는 같은 [블록 형성 문맥](/ko/docs/Web/Guide/CSS/Block_formatting_context) 내 앞선 부동체입니다.
+해제(cleared)와 관련된 부동체는 같은 [블록 형성 문맥](/ko/docs/Web/CSS/CSS_display/Block_formatting_context) 내 앞선 부동체입니다.
 
-> **참고:** **주의:** 요소가 그 안에 모든 부동 요소를 포함하고 싶은 경우, 컨테이너도 부동하거나 컨테이너의 {{cssxref("::after")}} 대체 [가상 요소](/ko/docs/Web/CSS/Pseudo-elements)에 `clear`를 쓸 수 있습니다.
+> [!NOTE]
+> 요소가 그 안에 모든 부동 요소를 포함하고 싶은 경우, 컨테이너도 부동하거나 컨테이너의 {{cssxref("::after")}} 대체 [가상 요소](/ko/docs/Web/CSS/Pseudo-elements)에 `clear`를 쓸 수 있습니다.
 >
 > ```css
 > #container::after {
->    content: "";
->    display: block;
->    clear: both;
+>   content: "";
+>   display: block;
+>   clear: both;
 > }
 > ```
 
@@ -69,7 +70,10 @@ clear: unset;
 
 ```html
 <div class="wrapper">
-  <p class="black">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.</p>
+  <p class="black">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet
+    diam. Duis mattis varius dui. Suspendisse eget dolor.
+  </p>
   <p class="red">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
   <p class="left">This paragraph clears left.</p>
 </div>
@@ -78,9 +82,9 @@ clear: unset;
 #### CSS
 
 ```css
-.wrapper{
-  border:1px solid black;
-  padding:10px;
+.wrapper {
+  border: 1px solid black;
+  padding: 10px;
 }
 .left {
   border: 1px solid black;
@@ -97,7 +101,7 @@ clear: unset;
   float: left;
   margin: 0;
   background-color: pink;
-  width:20%;
+  width: 20%;
 }
 p {
   width: 50%;
@@ -112,7 +116,10 @@ p {
 
 ```html
 <div class="wrapper">
-  <p class="black">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.</p>
+  <p class="black">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet
+    diam. Duis mattis varius dui. Suspendisse eget dolor.
+  </p>
   <p class="red">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
   <p class="right">This paragraph clears right.</p>
 </div>
@@ -121,9 +128,9 @@ p {
 #### CSS
 
 ```css
-.wrapper{
-  border:1px solid black;
-  padding:10px;
+.wrapper {
+  border: 1px solid black;
+  padding: 10px;
 }
 .right {
   border: 1px solid black;
@@ -134,13 +141,13 @@ p {
   margin: 0;
   background-color: black;
   color: #fff;
-  width:20%;
+  width: 20%;
 }
 .red {
   float: right;
   margin: 0;
   background-color: pink;
-  width:20%;
+  width: 20%;
 }
 p {
   width: 50%;
@@ -155,8 +162,15 @@ p {
 
 ```html
 <div class="wrapper">
-  <p class="black">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor. Fusce pulvinar lacus ac dui.</p>
-  <p class="red">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.</p>
+  <p class="black">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet
+    diam. Duis mattis varius dui. Suspendisse eget dolor. Fusce pulvinar lacus
+    ac dui.
+  </p>
+  <p class="red">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus sit amet
+    diam. Duis mattis varius dui. Suspendisse eget dolor.
+  </p>
   <p class="both">This paragraph clears both.</p>
 </div>
 ```
@@ -164,9 +178,9 @@ p {
 #### CSS
 
 ```css
-.wrapper{
-  border:1px solid black;
-  padding:10px;
+.wrapper {
+  border: 1px solid black;
+  padding: 10px;
 }
 .both {
   border: 1px solid black;
@@ -177,13 +191,13 @@ p {
   margin: 0;
   background-color: black;
   color: #fff;
-  width:20%;
+  width: 20%;
 }
 .red {
   float: right;
   margin: 0;
   background-color: pink;
-  width:20%;
+  width: 20%;
 }
 p {
   width: 45%;
@@ -202,4 +216,4 @@ p {
 
 ## See also
 
-- [CSS basic box model](/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [CSS basic box model](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)

@@ -23,15 +23,16 @@ La siguiente función añade tres elementos de datos en el almacen local para el
 
 ```js
 function populateStorage() {
-  localStorage.setItem('bgcolor', 'yellow');
-  localStorage.setItem('font', 'Helvetica');
-  localStorage.setItem('image', 'cats.png');
+  localStorage.setItem("bgcolor", "yellow");
+  localStorage.setItem("font", "Helvetica");
+  localStorage.setItem("image", "cats.png");
 
   localStorage.length; // should return 3
 }
 ```
 
-> **Nota:** Para un ejemplo real, vea nuestro [Web Storage Demo](https://github.com/mdn/web-storage-demo).
+> [!NOTE]
+> Para un ejemplo real, vea nuestro [Web Storage Demo](https://github.com/mdn/web-storage-demo).
 
 ## Especificaciones
 

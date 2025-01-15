@@ -3,7 +3,7 @@ title: function-available
 slug: Web/XPath/Functions/function-available
 ---
 
-{{ XsltRef() }}
+{{XsltSidebar}}{{ XsltRef() }}
 
 `function-available`関数は、指定された関数が使用可能かどうかを判断し、論理値 true または false を返します。
 
@@ -24,7 +24,7 @@ function-available(name )
 
 ### 定義
 
-[XPath 1.0 15](http://www.w3.org/TR/xslt#function-function-available)
+[XPath 1.0 15](https://www.w3.org/TR/xslt#function-function-available)
 
 ### Gecko のサポート
 

@@ -26,7 +26,7 @@ SyntaxError: Identifier "x" has already been declared (Chrome)
 
 ```js example-bad
 function f(arg) {
-  let arg = 'foo';
+  let arg = "foo";
 }
 
 // SyntaxError: redeclaration of formal parameter "arg"
@@ -36,11 +36,11 @@ If you want to change the value of "arg" in the function body, you can do so, bu
 
 ```js example-good
 function f(arg) {
-  arg = 'foo';
+  arg = "foo";
 }
 
 function f(arg) {
-  let bar = 'foo';
+  let bar = "foo";
 }
 ```
 
@@ -53,4 +53,4 @@ function f(arg) {
 - [`let`](/zh-TW/docs/Web/JavaScript/Reference/Statements/let)
 - [`const`](/zh-TW/docs/Web/JavaScript/Reference/Statements/const)
 - [`var`](/zh-TW/docs/Web/JavaScript/Reference/Statements/var)
-- 在 [JavaScript 教學](/zh-TW/docs/Web/JavaScript/Guide)內[宣告變數](/zh-TW/docs/Web/JavaScript/Guide/Grammar_and_Types#Declarations)
+- 在 [JavaScript 教學](/zh-TW/docs/Web/JavaScript/Guide)內[宣告變數](/zh-TW/docs/Web/JavaScript/Guide/Grammar_and_types#declarations)

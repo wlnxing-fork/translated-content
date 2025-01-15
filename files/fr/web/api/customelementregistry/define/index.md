@@ -50,7 +50,8 @@ Aucune ([`undefined`](/fr/docs/Web/JavaScript/Reference/Global_Objects/undefined
 - [`TypeError`](/fr/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
   - : Exception levée si le deuxième argument passé n'est pas un constructeur.
 
-> **Note :** Si vous rencontrez l'exception `NotSupportedError` lors d'un appel à `define()`, cela ne signifie pas nécessairement que c'est cette méthode qui échoue. Il s'agit plutôt généralement d'un problème lié à [`Element.attachShadow()`](/fr/docs/Web/API/Element/attachShadow).
+> [!NOTE]
+> Si vous rencontrez l'exception `NotSupportedError` lors d'un appel à `define()`, cela ne signifie pas nécessairement que c'est cette méthode qui échoue. Il s'agit plutôt généralement d'un problème lié à [`Element.attachShadow()`](/fr/docs/Web/API/Element/attachShadow).
 
 ## Exemples
 
@@ -68,31 +69,33 @@ class PopUpInfo extends HTMLElement {
     super();
 
     // On crée une racine sombre
-    const shadow = this.attachShadow({mode: 'open'});
+    const shadow = this.attachShadow({ mode: "open" });
 
     // On crée quelques éléments <span>
-    const wrapper = document.createElement('span');
-    wrapper.setAttribute('class', 'wrapper');
+    const wrapper = document.createElement("span");
+    wrapper.setAttribute("class", "wrapper");
 
-    const icon = document.createElement('span');
-    icon.setAttribute('class', 'icon');
-    icon.setAttribute('tabindex', 0);
+    const icon = document.createElement("span");
+    icon.setAttribute("class", "icon");
+    icon.setAttribute("tabindex", 0);
 
-    const info = document.createElement('span');
-    info.setAttribute('class', 'info');
+    const info = document.createElement("span");
+    info.setAttribute("class", "info");
 
     // On prend le contenu de l'attribut et on le place
     // dans le fragment d'informations
-    const text = this.getAttribute('data-text');
+    const text = this.getAttribute("data-text");
     info.textContent = text;
 
     // On insère l'icône
-    const img = document.createElement('img');
-    img.src = this.hasAttribute('img') ? this.getAttribute('img') : 'img/default.png';
+    const img = document.createElement("img");
+    img.src = this.hasAttribute("img")
+      ? this.getAttribute("img")
+      : "img/default.png";
     icon.appendChild(img);
 
     // On met en forme
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     console.log(style.isConnected);
 
     style.textContent = `
@@ -132,7 +135,7 @@ class PopUpInfo extends HTMLElement {
 }
 
 // On définit le nouvel élément
-customElements.define('popup-info', PopUpInfo);
+customElements.define("popup-info", PopUpInfo);
 ```
 
 #### HTML
@@ -143,7 +146,8 @@ customElements.define('popup-info', PopUpInfo);
   data-text="Le cryptogramme visuel de votre carte permet une meilleure sécurité. Il s'agit d'une séquence de 3 ou 4 chiffres au dos de votre carte."></popup-info>
 ```
 
-> **Note :** Les constructeurs pour les éléments personnalisés autonomes doivent étendre [`HTMLElement`](/fr/docs/Web/API/HTMLElement).
+> [!NOTE]
+> Les constructeurs pour les éléments personnalisés autonomes doivent étendre [`HTMLElement`](/fr/docs/Web/API/HTMLElement).
 
 ### Élément personnalisé natif
 
@@ -161,18 +165,21 @@ class WordCount extends HTMLParagraphElement {
     // On compte les mots dans l'élément parent
     const wcParent = this.parentNode;
 
-    function countWords(node){
+    function countWords(node) {
       const text = node.innerText || node.textContent;
-      return text.trim().split(/\s+/g).filter((a) => a.trim().length > 0).length;
+      return text
+        .trim()
+        .split(/\s+/g)
+        .filter((a) => a.trim().length > 0).length;
     }
 
     const count = `Mots : ${countWords(wcParent)}`;
 
     // On crée une racine sombre
-    const shadow = this.attachShadow({mode: 'open'});
+    const shadow = this.attachShadow({ mode: "open" });
 
     // On crée un nœud texte et on y inscrit le nombre de mot
-    const text = document.createElement('span');
+    const text = document.createElement("span");
     text.textContent = count;
 
     // On l'ajoute à la racine sombre
@@ -188,7 +195,7 @@ class WordCount extends HTMLParagraphElement {
 }
 
 // On définit le nouvel élément
-customElements.define('word-count', WordCount, { extends: 'p' });
+customElements.define("word-count", WordCount, { extends: "p" });
 ```
 
 #### HTML
@@ -203,12 +210,14 @@ Si la classe utilisée pour l'élément contient une propriété statique nommé
 
 ```js
 class PopUpInfo extends HTMLElement {
-  static get disabledFeatures() { return ['shadow']; }
+  static get disabledFeatures() {
+    return ["shadow"];
+  }
 
   constructor() {
     super();
 
-    const shadow = this.attachShadow({mode: 'open'});
+    const shadow = this.attachShadow({ mode: "open" });
     // Cela entraînera une erreur lors de la définition de
     // l'élément.
   }

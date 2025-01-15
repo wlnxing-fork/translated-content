@@ -78,8 +78,8 @@ background-size: unset;
 
 单张图片的背景大小可以使用以下三种方法中的一种来规定：
 
-- 使用关键词 [`contain`](/zh-CN/docs/Web/CSS/background-size#contain)
-- 使用关键词 [`cover`](/zh-CN/docs/Web/CSS/background-size#cover)
+- 使用关键词 [`contain`](#contain)
+- 使用关键词 [`cover`](#cover)
 - 设定宽度和高度值
 
 当通过宽度和高度值来设定尺寸时，你可以提供一或者两个数值：
@@ -87,7 +87,7 @@ background-size: unset;
 - 如果仅有一个数值被给定，这个数值将作为宽度值大小，高度值将被设定为 `auto`。
 - 如果有两个数值被给定，第一个将作为宽度值大小，第二个作为高度值大小。
 
-`每个值可以是<length>`, 是 [`<percentage>`](/zh-CN/docs/Web/CSS/background-size#percentage), 或者 [`auto`](/zh-CN/docs/Web/CSS/background-size#auto).
+`每个值可以是<length>`, 是 [`<percentage>`](#percentage), 或者 [`auto`](#auto).
 
 ### 属性值
 
@@ -104,11 +104,13 @@ background-size: unset;
 
 位图一定有固有尺寸与固有比例，矢量图可能两者都有，也可能只有一个。渐变视为只有固有尺寸或者只有固有比例的图片。
 
-> **备注：** This behavior changed in Gecko 8.0. Before this, gradients were treated as images with no intrinsic dimensions, with an intrinsic proportion identical to that of the background positioning area.
+> [!NOTE]
+> This behavior changed in Gecko 8.0. Before this, gradients were treated as images with no intrinsic dimensions, with an intrinsic proportion identical to that of the background positioning area.
 
 由 {{cssxref("-moz-element")}} 生成的背景图片，(which actually match an element) are currently treated as images with the dimensions of the element, or of the background positioning area if the element is SVG, with the corresponding intrinsic proportion.
 
-> **备注：** This is not the currently-specified behavior, which is that the intrinsic dimensions and proportion should be those of the element in all cases.
+> [!NOTE]
+> This is not the currently-specified behavior, which is that the intrinsic dimensions and proportion should be those of the element in all cases.
 
 背景图片大小计算：
 
@@ -125,13 +127,13 @@ background-size: unset;
 
 ### Formal syntax
 
-[如何阅读 CSS 语法。](/docs/Web/CSS/Value_definition_syntax)
+[如何阅读 CSS 语法。](/zh-CN/docs/Web/CSS/Value_definition_syntax)
 
 {{csssyntax}}
 
 ## 案例
 
-[`background-size: cover 演示`](http://whereswalden.com/files/mozilla/background-size/page-cover.html) 与 [`background-size: contain 演示`](http://whereswalden.com/files/mozilla/background-size/page-contain.html) 在新窗口打开，这样你可以看到当背景区大小变化时 `contain` 与 `cover` 是怎样的。 [系列演示：`background-size` 及其与`background-*属性`的关联](http://whereswalden.com/files/mozilla/background-size/more-examples.html) 很好的说明了单独使用 `background-size` 及与其他属性共同使用。
+[`background-size: cover` 演示](https://whereswalden.com/files/mozilla/background-size/page-cover.html)与 [`background-size: contain` 演示](https://whereswalden.com/files/mozilla/background-size/page-contain.html)在新窗口打开，这样你可以看到当背景区大小变化时 `contain` 与 `cover` 是怎样的。 [系列演示：`background-size` 及其与 `background-*` 属性的关联](https://whereswalden.com/files/mozilla/background-size/more-examples.html)很好的说明了单独使用 `background-size` 及与其他属性共同使用。
 
 ## 示例
 
@@ -164,22 +166,23 @@ background-size: unset;
 
 ## 备注
 
-如果用渐变作为背景并且对它使用了`background-size` ，最好不要只用一个 auto，或者只指定一个宽度值 (例如 `background-size: 50%`)。对这两种情况 Firefox 8 有所改变，并且目前各浏览器表现不一致，不是全部浏览器都完全支持 [CSS3 `background-size` 规范](http://www.w3.org/TR/css3-background/#the-background-size) 与 [CSS3 Image Values gradient 规范](http://dev.w3.org/csswg/css3-images/#gradients) 。
+如果用渐变作为背景并且对它使用了`background-size` ，最好不要只用一个 auto，或者只指定一个宽度值 (例如 `background-size: 50%`)。对这两种情况 Firefox 8 有所改变，并且目前各浏览器表现不一致，不是全部浏览器都完全支持 [CSS3 `background-size` 规范](https://www.w3.org/TR/css3-background/#the-background-size) 与 [CSS3 Image Values gradient 规范](https://dev.w3.org/csswg/css3-images/#gradients) 。
 
 ```css
 .bar {
-       width: 50px; height: 100px;
-       background-image: gradient(...);
+  width: 50px;
+  height: 100px;
+  background-image: gradient(...);
 
-       /* 不推荐 */
-       background-size: 25px;
-       background-size: 50%;
-       background-size: auto 50px;
-       background-size: auto 50%;
+  /* 不推荐 */
+  background-size: 25px;
+  background-size: 50%;
+  background-size: auto 50px;
+  background-size: auto 50%;
 
-       /* 可行 */
-       background-size: 25px 50px;
-       background-size: 50% 50%;
+  /* 可行 */
+  background-size: 25px 50px;
+  background-size: 50% 50%;
 }
 ```
 
@@ -213,17 +216,17 @@ While this property was added in Firefox 3.6, it is possible to stretch a image 
 .foo {
   background-image: url(bg-image.png);
 
-  -webkit-background-size: 100% 100%;           /* Safari 3.0 */
-     -moz-background-size: 100% 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
-       -o-background-size: 100% 100%;           /* Opera 9.5 */
-          background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+  -webkit-background-size: 100% 100%; /* Safari 3.0 */
+  -moz-background-size: 100% 100%; /* Gecko 1.9.2 (Firefox 3.6) */
+  -o-background-size: 100% 100%; /* Opera 9.5 */
+  background-size: 100% 100%; /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
 
-  -moz-border-image: url(bg-image.png) 0;    /* Gecko 1.9.1 (Firefox 3.5) */
+  -moz-border-image: url(bg-image.png) 0; /* Gecko 1.9.1 (Firefox 3.5) */
 }
 ```
 
 ## 参见
 
-- [CSS Reference](/zh-CN/docs/CSS/CSS_Reference)
-- [Multiple backgrounds](/zh-CN/docs/CSS/Multiple_backgrounds)
-- [Scaling background images](/zh-CN/docs/CSS/Scaling_background_images)
+- [CSS Reference](/zh-CN/docs/Web/CSS/Reference)
+- [Multiple backgrounds](/zh-CN/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
+- [Scaling background images](/zh-CN/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)

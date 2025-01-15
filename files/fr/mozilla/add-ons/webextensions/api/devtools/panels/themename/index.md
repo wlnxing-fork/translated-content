@@ -1,19 +1,9 @@
 ---
 title: devtools.panels.themeName
 slug: Mozilla/Add-ons/WebExtensions/API/devtools/panels/themeName
-tags:
-  - API
-  - Add-ons
-  - DevTools
-  - Reference
-  - WebExtensions
-  - devtools.panels
-  - themeName
-translation_of: Mozilla/Add-ons/WebExtensions/API/devtools.panels/themeName
-original_slug: Mozilla/Add-ons/WebExtensions/API/devtools.panels/themeName
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Le nom du thème de **devtools** actuellement sélectionné.
 
@@ -29,7 +19,7 @@ Il s'agit d'une chaîne dont les valeurs possibles sont :
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
 > Cette API est basée sur l'API Chromium [`chrome.devtools.panels`](https://developer.chrome.com/extensions/devtools_panels).
 >

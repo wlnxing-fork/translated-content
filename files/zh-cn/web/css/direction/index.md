@@ -64,11 +64,11 @@ blockquote {
 
 ```html
 <blockquote>
-<p>这个段落用中文书写的，但是方向是从右到左，是错误的。<p>
+  <p>这个段落用中文书写的，但是方向是从右到左，是错误的。</p>
 </blockquote>
 
 <blockquote>
-<p>هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.<p>
+  <p>هذه الفقرة باللغة العربية ، لذا يجب الانتقال من اليمين إلى اليسار.</p>
 </blockquote>
 ```
 
@@ -86,4 +86,4 @@ blockquote {
 
 - {{Cssxref("unicode-bidi")}}
 - {{Cssxref("writing-mode")}}
-- HTML 的 {{htmlattrxref("dir")}} 全局属性
+- HTML 的 [`dir`](/zh-CN/docs/Web/HTML/Global_attributes#dir) 全局属性

@@ -1,11 +1,6 @@
 ---
 title: CanvasRenderingContext2D.lineJoin
 slug: Web/API/CanvasRenderingContext2D/lineJoin
-tags:
-  - API
-  - Canvas
-  - Property
-translation_of: Web/API/CanvasRenderingContext2D/lineJoin
 ---
 
 {{APIRef}}
@@ -14,7 +9,8 @@ translation_of: Web/API/CanvasRenderingContext2D/lineJoin
 
 Смотрите также главу [Applying styles and color](/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) в [Canvas Tutorial](/ru/docs/Web/API/Canvas_API/Tutorial).
 
-> **Примечание:** Lines can be drawn with the {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}, {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}}, and {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} methods.
+> [!NOTE]
+> Lines can be drawn with the {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}, {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}}, and {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} methods.
 
 ## Синтаксис
 
@@ -49,12 +45,12 @@ ctx.lineJoin = "bevel" || "round" || "miter";
 
 #### JavaScript
 
-```html
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+```js
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 20;
-ctx.lineJoin = 'round';
+ctx.lineJoin = "round";
 ctx.beginPath();
 ctx.moveTo(20, 20);
 ctx.lineTo(190, 100);
@@ -75,9 +71,9 @@ ctx.stroke();
 <canvas id="canvas" width="150" height="150"></canvas>
 ```
 
-```html
-var ctx = document.getElementById('canvas').getContext('2d');
-var lineJoin = ['round', 'bevel', 'miter'];
+```js
+var ctx = document.getElementById("canvas").getContext("2d");
+var lineJoin = ["round", "bevel", "miter"];
 ctx.lineWidth = 10;
 
 for (let i = 0; i < lineJoin.length; i++) {
@@ -101,10 +97,6 @@ for (let i = 0; i < lineJoin.length; i++) {
 ## Совместимость с браузерами
 
 {{Compat}}
-
-## Особенность WebKit/Blink
-
-- В браузерах на базе Webkit и Blink помимо этого свойства, также поддерживается нестандартный метод `ctx.setLineJoin()`.
 
 ## Смотрите также
 

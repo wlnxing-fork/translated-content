@@ -17,7 +17,8 @@ A _string_ original é mantida sem modificação.
 const newStr = str.replaceAll(regexp|substr, newSubstr|function)
 ```
 
-> **Nota:** quando usar uma `regexp`, você deve colocar o sinalizador (flag) global "`g`". Do contrário, será retornado um `TypeError`: "_replaceAll must be called with a global RegExp_".
+> [!NOTE]
+> Quando usar uma `regexp`, você deve colocar o sinalizador (flag) global "`g`". Do contrário, será retornado um `TypeError`: "_replaceAll must be called with a global RegExp_".
 
 ### Parâmetros
 
@@ -48,12 +49,12 @@ Este método não muda o objeto {{jsxref("String")}} original. Ele simplesmente 
 
 A _string_ de substituição pode incluir os seguimentos padrões especiais de substituição:
 
-| Padrão   | Insere                                                                                                                                                                                                                          |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `$$`     | Insere um `"$"`.                                                                                                                                                                                                                |
-| `$&`     | Insere a _substring_ correspondente.                                                                                                                                                                                            |
-| `` $` `` | Insere a porção da _string_ que precede a _substring_ correspondente.                                                                                                                                                           |
-| `$'`     | Insere a porção da _string_ que sucede a _substring_ correspondente.                                                                                                                                                            |
+| Padrão   | Insere                                                                                                                                                                                                                  |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$$`     | Insere um `"$"`.                                                                                                                                                                                                        |
+| `$&`     | Insere a _substring_ correspondente.                                                                                                                                                                                    |
+| `` $` `` | Insere a porção da _string_ que precede a _substring_ correspondente.                                                                                                                                                   |
+| `$'`     | Insere a porção da _string_ que sucede a _substring_ correspondente.                                                                                                                                                    |
 | `$n`     | Onde `n` é um inteiro positivo menor que 100, insere a _`n`_-ésima _string_ submatch entre parênteses, desde que o primeiro argumento seja um objeto {{jsxref("RegExp")}}. Note que isso é indexado começando pelo `1`. |
 
 ### Especificando uma função como parâmetro
@@ -64,12 +65,12 @@ Note que a função será chamada múltiplas vezes para cada ocorrência a ser s
 
 Os argumentos para funções são os seguintes:
 
-| Nome possível | Valor fornecido                                                                                                                                                                                                                                                                                          |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `match`       | A _substring_ correspondida. (Corresponde ao `$&` acima.)                                                                                                                                                                                                                                                |
+| Nome possível | Valor fornecido                                                                                                                                                                                                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `match`       | A _substring_ correspondida. (Corresponde ao `$&` acima.)                                                                                                                                                                                                                                        |
 | `p1, p2, ...` | A _n_-ésima string encontrada por um grupo de captura entre parênteses, desde que o primeiro argumento para `replace()` seja uma {{jsxref("RegExp")}}. (Corresponde a `$1`, `$2`, etc. acima.) Por exemplo, se `/(\a+)(\b+)/`, foi dado, `p1` é a correspondência para `\a+`, e `p2` para `\b+`. |
-| `offset`      | O deslocamento da substring correspondente em toda a string sendo examinada. (Por exemplo, se toda a string for '`abcd`' e a substring correspondente for '`bc`', este argumento será `1`.)                                                                                                              |
-| `string`      | A _string_ inteira será examinada.                                                                                                                                                                                                                                                                       |
+| `offset`      | O deslocamento da substring correspondente em toda a string sendo examinada. (Por exemplo, se toda a string for '`abcd`' e a substring correspondente for '`bc`', este argumento será `1`.)                                                                                                      |
+| `string`      | A _string_ inteira será examinada.                                                                                                                                                                                                                                                               |
 
 (O número exato de argumentos depende se o primeiro argumento é um objeto {{jsxref("RegExp")}} — e, se então, quantas _subcorrespondências_ entre parênteses são especificadas.)
 
@@ -78,7 +79,7 @@ Os argumentos para funções são os seguintes:
 ### Usando `replaceAll()`
 
 ```js
-'aabbcc'.replaceAll('b', '.');
+"aabbcc".replaceAll("b", ".");
 // 'aa..cc'
 ```
 
@@ -94,19 +95,17 @@ TypeError: replaceAll must be called with a global RegExp
 Já o código abaixo vai funcionar:
 
 ```js example-good
-'aabbcc'.replaceAll(/b/g, '.');
-"aa..cc"
+"aabbcc".replaceAll(/b/g, ".");
+("aa..cc");
 ```
 
 ## Especificações
 
-| Especificação                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------ |
-| {{SpecName('ESDraft', '#sec-string.prototype.replaceall', 'String.prototype.replaceAll')}} |
+{{Specifications}}
 
 ## Compatibilidade com navegadores
 
-{{Compat("javascript.builtins.String.replaceAll")}}
+{{Compat}}
 
 ## Veja também
 

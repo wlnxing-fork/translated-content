@@ -1,7 +1,6 @@
 ---
 title: expresión function*
 slug: Web/JavaScript/Reference/Operators/function*
-original_slug: Web/JavaScript/Referencia/Operadores/function*
 ---
 
 {{jsSidebar("Operators")}}
@@ -38,8 +37,8 @@ Una expresión `function*` es muy similar y tiene casi la misma sintaxis que una
 El siguiente ejemplo define una función generadora sin nombre y la asigna a `x`. La función produce el cuadrado de su argumento:
 
 ```js
-var x = function*(y) {
-   yield y * y;
+var x = function* (y) {
+  yield y * y;
 };
 ```
 
@@ -55,7 +54,7 @@ var x = function*(y) {
 
 - {{jsxref("Statements/function*", "Sentencia function*")}}
 - Objeto {{jsxref("GeneratorFunction")}}
-- [El protocolo iterable](/es/docs/Web/JavaScript/Referencia/Iteration_protocols)
+- [El protocolo iterable](/es/docs/Web/JavaScript/Reference/Iteration_protocols)
 - {{jsxref("Operators/yield", "yield")}}
 - {{jsxref("Operators/yield*", "yield*")}}
 - Objeto {{jsxref("Function")}}

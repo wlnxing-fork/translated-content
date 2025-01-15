@@ -1,18 +1,11 @@
 ---
 title: class
 slug: Web/HTML/Global_attributes/class
-tags:
-  - Attribut
-  - Attribut universel
-  - HTML
-  - Reference
-translation_of: Web/HTML/Global_attributes/class
-original_slug: Web/HTML/Attributs_universels/class
 ---
 
 {{HTMLSidebar("Global_attributes")}}
 
-L'[attribut universel](/fr/docs/Web/HTML/Attributs_universels) **`class`** indique une liste de classes associées à l'élément courant. Les classes permettent de manipuler les éléments, via CSS ou JavaScript en utilisant [les sélecteurs de classe](/fr/docs/Web/CSS/Sélecteurs_de_classe) ou des fonctions telles que {{domxref("document.getElementsByClassName")}}.
+L'[attribut universel](/fr/docs/Web/HTML/Global_attributes) **`class`** indique une liste de classes associées à l'élément courant. Les classes permettent de manipuler les éléments, via CSS ou JavaScript en utilisant [les sélecteurs de classe](/fr/docs/Web/CSS/Class_selectors) ou des fonctions telles que {{domxref("document.getElementsByClassName")}}.
 
 {{EmbedInteractiveExample("pages/tabbed/attribute-class.html","tabbed-standard")}}
 
@@ -28,4 +21,4 @@ Bien que la spécification ne précise aucune contrainte quant aux noms utilisé
 
 ## Voir aussi
 
-- [Tous les attributs universels](/fr/docs/Web/HTML/Attributs_universels)
+- [Tous les attributs universels](/fr/docs/Web/HTML/Global_attributes)

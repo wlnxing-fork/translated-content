@@ -3,6 +3,8 @@ title: HTML での画像の使用
 slug: Web/Media/images
 ---
 
+{{QuickLinksWithSubpages("/ja/docs/Web/Media")}}
+
 {{Glossary("HTML")}} の {{HTMLElement("img")}} 要素で HTML 文書に画像を埋め込むことができ、 {{HTMLElement("picture")}} 要素を使用すると[レスポンシブ画像](/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)を使用することができます。このガイドでは、ウェブサイトへの画像の追加を扱うリソースへのリンクを紹介します。
 
 ## リファレンス
@@ -12,7 +14,7 @@ slug: Web/Media/images
 ### HTML
 
 - {{HTMLElement("img")}}
-  - : **HTML の `<img>` 要素**は、ウェブページに画像を埋め込むために使用されます。画像の振る舞いを制御する幅広い属性に対応しており、画像を見られない人のために {{htmlattrxref("alt", "img")}} テキストのような重要な情報を追加することができます。
+  - : **HTML の `<img>` 要素**は、ウェブページに画像を埋め込むために使用されます。画像の振る舞いを制御する幅広い属性に対応しており、画像を見られない人のために [`alt`](/ja/docs/Web/HTML/Element/img#alt) テキストのような重要な情報を追加することができます。
 - {{HTMLElement("picture")}}
   - : **HTML の `<picture>` 要素**は、 0 個以上の {{HTMLElement("source")}} 要素と 1 個の {{HTMLElement("img")}} 要素を含み、様々な画面や端末のシナリオのために画像の別な版を提供します。ブラウザーは、子要素であるそれぞれの `<source>` 要素を考慮して、それらの中から最適なものを選択します。
 
@@ -31,7 +33,7 @@ slug: Web/Media/images
 
 - [画像ファイルの種類と形式ガイド](/ja/docs/Web/Media/Formats/Image_types)
   - : ウェブブラウザーが一般的に対応ている様々な画像ファイルの種類について、それぞれの使用例、機能、互換性の要素などの詳細を含めて解説しています。さらに、この記事では、与えられた状況に最適な画像ファイルタイプを選択するためのガイダンスを提供します。
-- [メディアのコンテナー要素の width および height 属性をアスペクト比に対応付ける](/ja/docs/Web/Media/images/aspect_ratio_mapping)
+- [メディアのコンテナー要素の width および height 属性をアスペクト比に対応付ける](/ja/docs/Learn/Performance/Multimedia)
   - : これにより、ブラウザーが画像を読み込む方法が変更され、アスペクト比がブラウザーによって初期段階で計算され、後で読み込まれる前に画像の表示サイズを修正することができます。
 
 ## その他のトピック

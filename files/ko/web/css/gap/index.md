@@ -9,8 +9,6 @@ l10n:
 
 [CSS](/ko/docs/Web/CSS) **`gap`** 속성은 행과 열 사이의 간격 ({{glossary("gutters")}})을 설정합니다. {{CSSxRef("row-gap")}}과 {{CSSxRef("column-gap")}}의 [단축 속성](/ko/docs/Web/CSS/Shorthand_properties)입니다.
 
-<div class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples">https://github.com/mdn/interactive-examples</a> and send us a pull request.</div>
-
 {{EmbedInteractiveExample("pages/css/gap.html")}}
 
 `grid-gap` 은 해당 속성의 별칭입니다.
@@ -153,9 +151,8 @@ gap: revert-layer;
 
 ```html
 <p class="content-box">
-  This is some multi-column text with a 40px column
-  gap created with the CSS <code>gap</code> property.
-  Don't you think that's fun and exciting? I sure do!
+  This is some multi-column text with a 40px column gap created with the CSS
+  <code>gap</code> property. Don't you think that's fun and exciting? I sure do!
 </p>
 ```
 
@@ -183,4 +180,4 @@ gap: revert-layer;
 ## 같이 보기
 
 - 관련 CSS 속성: {{CSSxRef("row-gap")}}, {{CSSxRef("column-gap")}}
-- 그리드 레이아웃 안내서: _[Basic concepts of grid layout - Gutters](/ko/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Gutters)_
+- 그리드 레이아웃 안내서: _[Basic concepts of grid layout - Gutters](/ko/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#gutters)_

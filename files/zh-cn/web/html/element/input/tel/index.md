@@ -11,10 +11,11 @@ slug: Web/HTML/Element/input/tel
 
 尽管 `tel` 类型的输入在功能上和 `text` 输入一致，但它们确实有用；其中最明显的就是移动浏览器（特别是在手机上），可能会选择提供为输入电话号码而优化的自定义键盘。使用电话号码的特定输入类型也使添加自定义验证和处理电话号码更方便。
 
-> **备注：** 不支持 `tel` 类型的浏览器会回退为标准 {{HTMLElement("input/text", "text")}} 类型输入。
+> [!NOTE]
+> 不支持 `tel` 类型的浏览器会回退为标准 {{HTMLElement("input/text", "text")}} 类型输入。
 
 ```html
-<input id="telNo" type="tel">
+<input id="telNo" type="tel" />
 ```
 
 <table class="properties">
@@ -26,13 +27,13 @@ slug: Web/HTML/Element/input/tel
   <tr>
    <td><strong>事件</strong></td>
    <td>
-   {{domxref("HTMLElement/change_event", "change")}} 和 {{domxref("HTMLElement/input_event", "input")}}
+   {{domxref("HTMLElement/change_event", "change")}} 和 {{domxref("Element/input_event", "input")}}
    </td>
   </tr>
   <tr>
    <td><strong>支持的通用属性</strong></td>
       <td>
-        {{htmlattrxref("autocomplete", "input")}}、{{htmlattrxref("list", "input")}}、{{htmlattrxref("maxlength", "input")}}、{{htmlattrxref("minlength", "input")}}、{{htmlattrxref("pattern", "input")}}、{{htmlattrxref("placeholder", "input")}}、{{htmlattrxref("readonly", "input")}} 和 {{htmlattrxref("size", "input")}}
+        <a href="/zh-CN/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#list"><code>list</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#maxlength"><code>maxlength</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#minlength"><code>minlength</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#pattern"><code>pattern</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#placeholder"><code>placeholder</code></a>、<a href="/zh-CN/docs/Web/HTML/Element/input#readonly"><code>readonly</code></a> 和 <a href="/zh-CN/docs/Web/HTML/Element/input#size"><code>size</code></a>
       </td>
   </tr>
   <tr>
@@ -52,7 +53,7 @@ slug: Web/HTML/Element/input/tel
 
 ## 值
 
-{{HTMLElement("input")}} 元素的 {{htmlattrxref("value", "input")}} 属性包含表示一个电话号码的字符串或者一个空字符串（`""`）。
+{{HTMLElement("input")}} 元素的 [`value`](/zh-CN/docs/Web/HTML/Element/input#value) 属性包含表示一个电话号码的字符串或者一个空字符串（`""`）。
 
 ## 额外属性
 
@@ -60,23 +61,23 @@ slug: Web/HTML/Element/input/tel
 
 ### list
 
-list 属性的值是位于同一文档中的 {{HTMLElement("datalist")}} 元素的 {{domxref("Element.id", "id")}}。{{HTMLElement("datalist")}} 提供了一个预定义的值列表，向用户建议向这个输入框输入的值。列表中任何与 {{htmlattrxref("type", "input")}} 不兼容的值都不包括在建议选项中。所提供的值是建议，并不是必需的：用户可以从这个预定义的列表中选择，或者提供不同的值。
+list 属性的值是位于同一文档中的 {{HTMLElement("datalist")}} 元素的 {{domxref("Element.id", "id")}}。{{HTMLElement("datalist")}} 提供了一个预定义的值列表，向用户建议向这个输入框输入的值。列表中任何与 [`type`](/zh-CN/docs/Web/HTML/Element/input#type) 不兼容的值都不包括在建议选项中。所提供的值是建议，并不是必需的：用户可以从这个预定义的列表中选择，或者提供不同的值。
 
 ### maxlength
 
 用户可以在电话号码字段中输入的最大字符数（作为 UTF-16 编码单位）。这必须是一个不低于 0 的整数值。如果没有指定 `maxlength`，或者指定了一个无效的值，则电话号码字段没有最大长度。这个值也必须大于或等于 `minlength` 的值。
 
-如果输入字段的文本长度大于 `maxlength` UTF-16 编码单位长度，则输入将无法通过[约束验证](/zh-CN/docs/Web/Guide/HTML/Constraint_validation)。
+如果输入字段的文本长度大于 `maxlength` UTF-16 编码单位长度，则输入将无法通过[约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)。
 
 ### minlength
 
 用户可以在电话号码字段中输入的最小字符数（作为 UTF-16 编码单位）。这必须是一个小于或等于 `maxlength` 所指定的值的非负整数。如果没有指定 `minlength`，或者指定了一个无效的值，电话号码的输入就没有最小长度。
 
-如果输入字段的文本长度小于 `maxlength` UTF-16 编码单位长度，则输入将无法通过[约束验证](/zh-CN/docs/Web/Guide/HTML/Constraint_validation)。
+如果输入字段的文本长度小于 `maxlength` UTF-16 编码单位长度，则输入将无法通过[约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)。
 
 ### pattern
 
-如果指定了 `pattern` 属性，则该 input 的 {{htmlattrxref("value")}} 将必须要满足其所指定的正则表达式，以通过[约束验证](/zh-CN/docs/Web/Guide/HTML/Constraint_validation)。它必须是一个合法的 {{jsxref("RegExp")}} 类型 JavaScript 正则表达式，其具体使用方法记载到了我们的[正则表达式指南](/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)中。在编译正则表达式时，使用了 `'u'` 标志，故所指定模式将视为 Unicode 码点，而非 ASCII。在模式文本中，不可以指定正斜杠符号。
+如果指定了 `pattern` 属性，则该 input 的 [`value`](/zh-CN/docs/Web/HTML/Global_attributes#value) 将必须要满足其所指定的正则表达式，以通过[约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)。它必须是一个合法的 {{jsxref("RegExp")}} 类型 JavaScript 正则表达式，其具体使用方法记载到了我们的[正则表达式指南](/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions)中。在编译正则表达式时，使用了 `'u'` 标志，故所指定模式将视为 Unicode 码点，而非 ASCII。在模式文本中，不可以指定正斜杠符号。
 
 具体介绍和示例请参阅[模式验证](#模式验证)部分。
 
@@ -86,13 +87,15 @@ list 属性的值是位于同一文档中的 {{HTMLElement("datalist")}} 元素�
 
 如果控件的内容具有方向（{{Glossary("LTR")}} 或 {{Glossary("RTL")}}），但需要以相反的方向性呈现占位符，可以使用 Unicode 双向算法格式化字符来覆盖占位符内的方向性；更多信息请参见[如何使用 Unicode 控件处理 bidi 文本](https://www.w3.org/International/questions/qa-bidi-unicode-controls)。
 
-> **备注：** 如果可以的话，避免使用 `placeholder` 属性。它在语义上不如其他解释表单的方式有用，而且会对你的内容造成意想不到的技术问题。参见 [`<input>` 标签](/zh-CN/docs/Web/HTML/Element/input#标签)获取更多信息。
+> [!NOTE]
+> 如果可以的话，避免使用 `placeholder` 属性。它在语义上不如其他解释表单的方式有用，而且会对你的内容造成意想不到的技术问题。参见 [`<input>` 标签](/zh-CN/docs/Web/HTML/Element/input#标签)获取更多信息。
 
 ### readonly
 
 一个布尔属性，如果存在，意味着这个字段不能被用户编辑。但是，它的 `value` 仍然可以由 JavaScript 代码通过设置 {{domxref("HTMLInputElement")}} 的 `value` 属性来改变。
 
-> **备注：** 由于只读字段不可以拥有值，`required` 对指定了 `readonly` 属性的输入字段不起作用。
+> [!NOTE]
+> 由于只读字段不可以拥有值，`required` 对指定了 `readonly` 属性的输入字段不起作用。
 
 ### size
 
@@ -117,11 +120,11 @@ Safari 的扩展，`autocorrect` 属性是一个字符串，表示在用户编�
 
 Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 或 <kbd>Return</kbd> 键时，提供的操作帮助。
 
-该属性已经废弃：作为替代，请使用全局属性 {{htmlattrxref("enterkeyhint")}}。
+该属性已经废弃：作为替代，请使用全局属性 [`enterkeyhint`](/zh-CN/docs/Web/HTML/Global_attributes#enterkeyhint)。
 
 ## 使用 tel 输入
 
-电话号码是网络上非常普遍收集的数据类型。例如，在创建任何类型的注册或电子商务网站时，无论出于商业目的还是出于紧急联系目的，您都可能需要向用户索要电话号码。鉴于通常输入的电话号码是多少，不幸的是，用于验证电话号码的“一刀切”解决方案是不实际的。
+电话号码是网络上非常普遍收集的数据类型。例如，在创建任何类型的注册或电子商务网站时，无论出于商业目的还是出于紧急联系目的，你都可能需要向用户索要电话号码。鉴于通常输入的电话号码是多少，不幸的是，用于验证电话号码的“一刀切”解决方案是不实际的。
 
 幸运的是，你可以考虑自己网站的要求，并自行实施适当的验证级别。有关详细信息，请参阅下面的[验证](#验证)部分。
 
@@ -164,7 +167,7 @@ Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 
 
 #### 输入元素的物理长度
 
-可以使用 {{htmlattrxref("size", "input")}} 属性来控制输入框的物理大小，通过它，你可以指定输入框依次可以显示多少个字符。在以下示例中，`tel` 编辑框具有 20 个字符的宽度：
+可以使用 [`size`](/zh-CN/docs/Web/HTML/Element/input#size) 属性来控制输入框的物理大小，通过它，你可以指定输入框依次可以显示多少个字符。在以下示例中，`tel` 编辑框具有 20 个字符的宽度：
 
 ```html
 <input id="telNo" name="telNo" type="tel" size="20" />
@@ -174,7 +177,7 @@ Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 
 
 #### 元素值的长度
 
-`size` 和电话号码的长度限制是分开的，你可以使用 {{htmlattrxref("minlength", "input")}} 属性为输入的电话号码指定一个最小长度，以字符为单位；同样，使用 {{htmlattrxref("maxlength", "input")}} 来设置输入电话号码的最大长度。
+`size` 和电话号码的长度限制是分开的，你可以使用 [`minlength`](/zh-CN/docs/Web/HTML/Element/input#minlength) 属性为输入的电话号码指定一个最小长度，以字符为单位；同样，使用 [`maxlength`](/zh-CN/docs/Web/HTML/Element/input#maxlength) 来设置输入电话号码的最大长度。
 
 下面的示例创建了一个 20 个字符的电话号码输入框，要求内容不少于 9 个字符且不超过 14 个字符。
 
@@ -190,13 +193,14 @@ Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 
 
 {{EmbedLiveSample("元素值的长度", 600, 40) }}
 
-> **备注：** 上述属性确实会影响[验证](#验证)——如果值的长度小于 9 个字符，或者大于 14 个，上述示例的输入将被视为无效。大多数浏览器甚至不会让你输入超过最大长度的值。
+> [!NOTE]
+> 上述属性确实会影响[验证](#验证)——如果值的长度小于 9 个字符，或者大于 14 个，上述示例的输入将被视为无效。大多数浏览器甚至不会让你输入超过最大长度的值。
 
 ### 提供默认选项
 
 #### 使用 value 属性提供简单默认选项
 
-与往常一样，你可以通过设置其 {{htmlattrxref("value", "input")}} 属性为 `tel` 输入框提供默认值：
+与往常一样，你可以通过设置其 [`value`](/zh-CN/docs/Web/HTML/Element/input#value) 属性为 `tel` 输入框提供默认值：
 
 ```html
 <input id="telNo" name="telNo" type="tel" value="333-4444-4444" />
@@ -206,7 +210,7 @@ Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 
 
 #### 提供建议值
 
-你可以更进一步，提供一个默认电话号码的列表，让用户从中选择。要做到这一点，使用 {{htmlattrxref("list", "input")}} 属性。这不会将用户限制在这些选项中，但确实能让他们更快选择常用的电话号码。这也为 {{htmlattrxref("autocomplete", "input")}} 提供提示。`list` 属性指定了一个 {{HTMLElement("datalist")}} 元素的 ID，该元素又包含了每个建议值的一个 {{HTMLElement("option")}} 元素；每个 `option` 的 `value` 是电话号码输入框的相应建议值。
+你可以更进一步，提供一个默认电话号码的列表，让用户从中选择。要做到这一点，使用 [`list`](/zh-CN/docs/Web/HTML/Element/input#list) 属性。这不会将用户限制在这些选项中，但确实能让他们更快选择常用的电话号码。这也为 [`autocomplete`](/zh-CN/docs/Web/HTML/Element/input#autocomplete) 提供提示。`list` 属性指定了一个 {{HTMLElement("datalist")}} 元素的 ID，该元素又包含了每个建议值的一个 {{HTMLElement("option")}} 元素；每个 `option` 的 `value` 是电话号码输入框的相应建议值。
 
 ```html
 <label for="telNo">电话号码：</label>
@@ -232,11 +236,12 @@ Mozilla 的扩展，当用户编辑该字段时按下键盘的 <kbd>Enter</kbd> 
 
 正如我们之前谈到的那样，为电话号码提供一种通用的客户端验证解决方案是相当困难的。所以，我们能做些什么？让我们考虑一些选项。
 
-> **警告：** HTML 表单验证*不能*替代服务器端脚本，以确保输入的数据在被允许进入数据库之前是正确的格式。对于有些人来说，调整 HTML 代码是非常容易的，这样他们就可以绕过验证，或者完全删除它。也有人可能完全绕过你的 HTML，直接提交数据到你的服务器。如果你的服务器端代码无法验证接收到的数据，那么当格式不正确的数据（或数据太大，类型错误等等）输入到数据库时，可能会导致灾难。
+> [!WARNING]
+> HTML 表单验证*不能*替代服务器端脚本，以确保输入的数据在被允许进入数据库之前是正确的格式。对于有些人来说，调整 HTML 代码是非常容易的，这样他们就可以绕过验证，或者完全删除它。也有人可能完全绕过你的 HTML，直接提交数据到你的服务器。如果你的服务器端代码无法验证接收到的数据，那么当格式不正确的数据（或数据太大，类型错误等等）输入到数据库时，可能会导致灾难。
 
 ### 要求电话号码必填
 
-你可以利用 {{htmlattrxref("required", "input")}} 属性令空的输入无效，并阻止其提交到你的服务器。例如，使用以下 HTML 代码：
+你可以利用 [`required`](/zh-CN/docs/Web/HTML/Element/input#required) 属性令空的输入无效，并阻止其提交到你的服务器。例如，使用以下 HTML 代码：
 
 ```html
 <form>
@@ -288,16 +293,14 @@ input:valid + span::after {
 
 ### 模式验证
 
-如果你想进一步限制输入的数字，使它们也必须符合特定的模式，你可以使用 {{htmlattrxref("pattern", "input")}} 属性，它的值是{{Glossary("regular expression", "正则表达式")}}，输入的值必须符合这个正则表达式。
+如果你想进一步限制输入的数字，使它们也必须符合特定的模式，你可以使用 [`pattern`](/zh-CN/docs/Web/HTML/Element/input#pattern) 属性，它的值是{{Glossary("regular expression", "正则表达式")}}，输入的值必须符合这个正则表达式。
 
 在这个示例中我们将使用同样的 CSS 代码，但是 HTML 代码将做一些修改：
 
 ```html
 <form>
   <div>
-    <label for="telNo">
-      以 xxx-xxx-xxxx 格式输入一个电话号码：
-    </label>
+    <label for="telNo"> 以 xxx-xxx-xxxx 格式输入一个电话号码： </label>
     <input
       id="telNo"
       name="telNo"
@@ -349,7 +352,7 @@ input:valid + span::after {
 
 在这个示例中，我们展示了一个简单的界面，其中有一个 {{htmlelement("select")}} 元素，让用户选择他们所在的国家，还有一组 `<input type="tel">` 元素，让他们输入电话号码的每一部分；显然你应该有多个 `tel` 输入。
 
-每个输入都有一个 {{htmlattrxref("placeholder", "input")}} 属性，以向视力正常的用户显示一个关于输入内容的提示，一个 {{htmlattrxref("pattern", "input")}} 来执行所需部分的特定字符数。和一个 [`aria-label`](/zh-CN/docs/Web/Accessibility/ARIA/Attributes/aria-label )属性，以包含一个提示，向屏幕阅读器用户宣读要输入的信息。
+每个输入都有一个 [`placeholder`](/zh-CN/docs/Web/HTML/Element/input#placeholder) 属性，以向视力正常的用户显示一个关于输入内容的提示，一个 [`pattern`](/zh-CN/docs/Web/HTML/Element/input#pattern) 来执行所需部分的特定字符数。和一个 [`aria-label`](/zh-CN/docs/Web/Accessibility/ARIA/Attributes/aria-label)属性，以包含一个提示，向屏幕阅读器用户宣读要输入的信息。
 
 ```html
 <form>
@@ -422,7 +425,7 @@ selectElem.onchange = () => {
 
     inputElems[1].placeholder = "First part";
     inputElems[1].pattern = "[0-9]{3}";
-    inputElems[1].setAttribute("aria-label","First part of number");
+    inputElems[1].setAttribute("aria-label", "First part of number");
 
     inputElems[2].placeholder = "Second part";
     inputElems[2].pattern = "[0-9]{4}";
@@ -444,13 +447,13 @@ selectElem.onchange = () => {
 
     inputElems[1].placeholder = "First part";
     inputElems[1].pattern = "[0-9]{2,4}";
-    inputElems[1].setAttribute("aria-label","First part of number");
+    inputElems[1].setAttribute("aria-label", "First part of number");
 
     inputElems[2].placeholder = "Second part";
     inputElems[2].pattern = "[0-9]{4}";
-    inputElems[2].setAttribute("aria-label","Second part of number");
+    inputElems[2].setAttribute("aria-label", "Second part of number");
   }
-}
+};
 ```
 
 示例的显示效果如下所示：
@@ -500,11 +503,10 @@ input:valid + span::after {
 
 ## 参见
 
-- [HTML 表单指南](/zh-CN/docs/Learn/Forms)
-- [表单无障碍性](/zh-CN/docs/Web/Accessibility/ARIA/forms)
+- [HTML 表单指南](/zh-CN/docs/Learn_web_development/Extensions/Forms)
 - 相关的 {{HTMLElement("input")}} 元素
 
   - [`<input type="text">`](/zh-CN/docs/Web/HTML/Element/input/text)
   - [`<input type="email">`](/zh-CN/docs/Web/HTML/Element/input/email)
 
-- [CSS 属性兼容性](/zh-CN/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [CSS 属性兼容性](/zh-CN/docs/Learn_web_development/Extensions/Forms)

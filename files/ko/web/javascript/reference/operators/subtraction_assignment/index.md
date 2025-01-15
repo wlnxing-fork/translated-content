@@ -12,7 +12,7 @@ slug: Web/JavaScript/Reference/Operators/Subtraction_assignment
 ## 구문
 
 ```js
-x -= y // x = x - y
+x -= y; // x = x - y
 ```
 
 ## 예제
@@ -23,8 +23,8 @@ x -= y // x = x - y
 // bar = 5
 // 위와 같은 변수를 가정할 때
 
-bar -= 2     // 3
-bar -= 'foo' // NaN
+bar -= 2; // 3
+bar -= "foo"; // NaN
 ```
 
 ## 명세
@@ -37,5 +37,5 @@ bar -= 'foo' // NaN
 
 ## 같이 보기
 
-- [JavaScript 안내서의 할당 연산자](/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#할당_연산자)
+- [JavaScript 안내서의 할당 연산자](/ko/docs/Web/JavaScript/Guide/Expressions_and_operators#%ed%95%a0%eb%8b%b9_%ec%97%b0%ec%82%b0%ec%9e%90)
 - [빼기 연산자](/ko/docs/Web/JavaScript/Reference/Operators/Subtraction)

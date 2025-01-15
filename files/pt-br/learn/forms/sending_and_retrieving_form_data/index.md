@@ -1,10 +1,9 @@
 ---
 title: Sending form data
 slug: Learn/Forms/Sending_and_retrieving_form_data
-original_slug: Web/Guide/HTML/Forms/Sending_and_retrieving_form_data
 ---
 
-Em muitos casos, a finalidade de [HTML Form](/pt-BR/docs/HTML/Forms) Um é enviar dados para um servidor. O servidor processa os dados e envia uma resposta ao usuário. Isso parece simples, mas é importante manter algumas coisas em mente para garantir que os dados não danifiquem o servidor ou causem problemas para seus usuários.
+Em muitos casos, a finalidade de [HTML Form](/pt-BR/docs/Learn/Forms) Um é enviar dados para um servidor. O servidor processa os dados e envia uma resposta ao usuário. Isso parece simples, mas é importante manter algumas coisas em mente para garantir que os dados não danifiquem o servidor ou causem problemas para seus usuários.
 
 ## Para onde vão os dados?
 
@@ -12,7 +11,7 @@ Aqui nós discutiremos o que acontece com os dadosquando um formulário é envia
 
 ### Sobre a arquitetura cliente / servidor
 
-A web é baseada em uma arquitetura cliente / servidor muito básica que pode ser resumida da seguinte forma: um cliente (normalmente um navegador da Web) envia um pedido a um servidor (na maioria das vezes um servidor web como [Apache](http://httpd.apache.org/), [Nginx](http://nginx.com/), [IIS](http://www.iis.net/), [Tomcat](http://tomcat.apache.org/), etc.), usando o [HTTP protocol](/pt-BR/docs/HTTP). O servidor responde a solicitação usando o mesmo protocolo.
+A web é baseada em uma arquitetura cliente / servidor muito básica que pode ser resumida da seguinte forma: um cliente (normalmente um navegador da Web) envia um pedido a um servidor (na maioria das vezes um servidor web como [Apache](https://httpd.apache.org/), [Nginx](http://nginx.com/), [IIS](http://www.iis.net/), [Tomcat](http://tomcat.apache.org/), etc.), usando o [HTTP protocol](/pt-BR/docs/Web/HTTP). O servidor responde a solicitação usando o mesmo protocolo.
 
 ![A basic schema of the Web client/server architecture](/files/4291/client-server.png)
 
@@ -20,9 +19,9 @@ No lado do cliente, um formulário HTML é nada mais do que uma maneira convenie
 
 ### No lado do cliente: definindo como enviar os dados
 
-O elemento {{HTMLElement("form")}} define como os dados serão enviados. Todos os seus atributos são projetados para permitir que você configure o pedido a ser enviado quando um usuário acessa um botão de envio. Os dois atributos mais importantes são:{{htmlattrxref("action","form")}} e {{htmlattrxref("method","form")}}.
+O elemento {{HTMLElement("form")}} define como os dados serão enviados. Todos os seus atributos são projetados para permitir que você configure o pedido a ser enviado quando um usuário acessa um botão de envio. Os dois atributos mais importantes são:[`action`](/pt-BR/docs/Web/HTML/Element/form#action) e [`method`](/pt-BR/docs/Web/HTML/Element/form#method).
 
-#### o atributo {{htmlattrxref("action","form")}}
+#### o atributo [`action`](/pt-BR/docs/Web/HTML/Element/form#action)
 
 Este atributo define para onde os dados são enviados. Seu valor deve ser um URL válido. Se esse atributo não for fornecido, os dados serão enviados para o URL da página que contém o formulário.
 
@@ -31,32 +30,32 @@ Este atributo define para onde os dados são enviados. Seu valor deve ser um URL
 Neste exemplo, os dados são enviados para `http://foo.com`:
 
 ```html
-<form action="http://foo.com">
+<form action="http://foo.com"></form>
 ```
 
 Aqui, os dados são enviados para o mesmo servidor que hospeda a página do formulário, mas para um URL diferente no servidor:
 
 ```html
-<form action="/somewhere_else">
+<form action="/somewhere_else"></form>
 ```
 
 Quando especificado sem atributos, como abaixo, o atributo {{HTMLElement("form")}} faz com que os dados sejam enviados para a página que inclui o formulário:
 
 ```html
-<form>
+<form></form>
 ```
 
-Muitas páginas mais antigas usam a seguinte notação para indicar que os dados devem ser enviados para a mesma página que contém o formulário; Isso era necessário porque até HTML5, o atributo {{htmlattrxref ( "action", "form")}} era obrigatório. Isso não é mais necessário.
+Muitas páginas mais antigas usam a seguinte notação para indicar que os dados devem ser enviados para a mesma página que contém o formulário; Isso era necessário porque até HTML5, o atributo [`action`](/pt-BR/docs/Web/HTML/Element/form#action) era obrigatório. Isso não é mais necessário.
 
 ```html
-<form action="#">
+<form action="#"></form>
 ```
 
-> **Nota:** **Nota: É possível especificar um URL que use o protocolo HTTPS (HTTP seguro). Quando você fizer isso, os dados são criptografados junto com o resto da solicitação, mesmo se o formulário em si é hospedado em uma página insegura acessada usando HTTP. Por outro lado, se o formulário estiver hospedado na página segura, mas você especificar um URL HTTP inseguro com o atributo {{htmlattrxref ( "action", "form")}}, todos os navegadores exibirão um aviso de segurança para o usuário cada vez que Tente enviar dados porque os dados não serão criptografados.**
+> **Nota:** **Nota: É possível especificar um URL que use o protocolo HTTPS (HTTP seguro). Quando você fizer isso, os dados são criptografados junto com o resto da solicitação, mesmo se o formulário em si é hospedado em uma página insegura acessada usando HTTP. Por outro lado, se o formulário estiver hospedado na página segura, mas você especificar um URL HTTP inseguro com o atributo [`action`](/pt-BR/docs/Web/HTML/Element/form#action), todos os navegadores exibirão um aviso de segurança para o usuário cada vez que Tente enviar dados porque os dados não serão criptografados.**
 
-#### o atributo {{htmlattrxref("method","form")}}
+#### o atributo [`method`](/pt-BR/docs/Web/HTML/Element/form#method)
 
-Este atributo define como os dados são enviados. o [HTTP protocol](/pt-BR/docs/HTTP)
+Este atributo define como os dados são enviados. o [HTTP protocol](/pt-BR/docs/Web/HTTP)
 
 Fornece várias maneiras de executar um pedido; Os dados de formulários HTML podem ser enviados através de pelo menos dois deles: o método GET eo método POST.
 
@@ -66,12 +65,14 @@ Para entender a diferença entre esses dois métodos, vamos dar um passo atrás 
 
 O método GET é o método usado pelo navegador para pedir ao servidor para enviar de volta um determinado recurso: "Hey servidor, eu quero obter este recurso." Nesse caso, o navegador envia um corpo vazio. Como o corpo está vazio, se um formulário é enviado usando esse método, os dados enviados para o servidor são anexados ao URL.
 
-###### Exemplo<br>Considere o seguinte formulário:
+###### Exemplo
+
+Considere o seguinte formulário:
 
 ```html
 <form action="http://foo.com" method="get">
-  <input name="say" value="Hi">
-  <input name="to" value="Mom">
+  <input name="say" value="Hi" />
+  <input name="to" value="Mom" />
   <button>Envie meus cumprimentos</button>
 </form>
 ```
@@ -93,8 +94,8 @@ Considere esta forma (a mesma acima):
 
 ```html
 <form action="http://foo.com" method="post">
-  <input name="say" value="Hi">
-  <input name="to" value="Mom">
+  <input name="say" value="Hi" />
+  <input name="to" value="Mom" />
   <button>Send my greetings</button>
 </form>
 ```
@@ -112,7 +113,7 @@ say=Hi&to=Mom
 
 O cabeçalho Content-Length indica o tamanho do corpo eo cabeçalho Content-Type indica o tipo de recurso enviado para o servidor. Vamos discutir esses cabeçalhos em um pouco.
 
-Obviamente, as solicitações HTTP nunca são exibidas para o usuário (se você quiser vê-las, você precisa usar ferramentas como o Firefox [Web Console](/pt-BR/docs/Tools/Web_Console) ou o [Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/)). A única coisa exibida para o usuário é o URL chamado. Assim, com uma solicitação GET, o usuário verá os dados em sua barra de URL, mas com uma solicitação POST, eles não. Isso pode ser muito importante por duas razões:
+Obviamente, as solicitações HTTP nunca são exibidas para o usuário (se você quiser vê-las, você precisa usar ferramentas como o Firefox [Web Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) ou o [Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/)). A única coisa exibida para o usuário é o URL chamado. Assim, com uma solicitação GET, o usuário verá os dados em sua barra de URL, mas com uma solicitação POST, eles não. Isso pode ser muito importante por duas razões:
 
 1. Se você precisar enviar uma senha (ou qualquer parte sensível de dados), nunca use o método GET ou corre o risco de exibi-lo na barra de URL.
 2. Se você precisar enviar uma grande quantidade de dados, o método POST é preferido porque alguns navegadores limitam o tamanho dos URLs. Além disso, muitos servidores limitam o comprimento dos URLs que aceitam.
@@ -169,7 +170,7 @@ Oi Mãe
 
 #### Outros idiomas e frameworks
 
-Há muitas outras tecnologias do lado do servidor que você pode usar para o tratamento de formulários, incluindo [Perl](/pt-BR/docs/), [Java](/pt-BR/docs/), [.Net](http://www.microsoft.com/net), [Ruby](/pt-BR/docs/), etc. Basta escolher o que você mais gosta. Dito isto, é importante notar que é muito incomum usar essas tecnologias diretamente porque isso pode ser complicado. É mais comum usar um dos muitos frameworks agradáveis que facilitam o manuseio de formulários, como:
+Há muitas outras tecnologias do lado do servidor que você pode usar para o tratamento de formulários, incluindo [Perl](/pt-BR/docs/Web), [Java](/pt-BR/docs/Web), [.Net](https://www.microsoft.com/net), [Ruby](/pt-BR/docs/Web), etc. Basta escolher o que você mais gosta. Dito isto, é importante notar que é muito incomum usar essas tecnologias diretamente porque isso pode ser complicado. É mais comum usar um dos muitos frameworks agradáveis que facilitam o manuseio de formulários, como:
 
 - [Symfony](http://symfony.com/) Para PHP
 - [Django](https://www.djangoproject.com/) Para Python
@@ -183,25 +184,25 @@ Vale a pena notar que mesmo usando essas estruturas, trabalhar com formulários 
 
 Arquivos são um caso especial com formulários HTML. Eles são dados binários - ou considerados como tal - onde todos os outros dados são dados de texto. Porque HTTP é um protocolo de texto, há requisitos especiais para manipular dados binários.
 
-### o {{htmlattrxref("enctype","form")}} atributo
+### o [`enctype`](/pt-BR/docs/Web/HTML/Element/form#enctype) atributo
 
 Esse atributo permite especificar o valor do cabeçalho HTTP Content-Type. Este cabeçalho é muito importante porque informa ao servidor que tipo de dados está sendo enviado. Por padrão, seu valor é application / x-www-form-urlencoded. Em termos humanos, isso significa: "Este é o formulário de dados que foi codificado em forma de URL."
 
 Mas se você quiser enviar arquivos, você precisa fazer duas coisas:
 
-- Colocou o {{htmlattrxref("method","form")}} Atributo para POST porque o conteúdo do arquivo não pode ser colocado dentro de um parâmetro de URL usando um formulário.
-- Defina o valor de {{htmlattrxref("enctype","form")}} Para multipart / form-data porque os dados serão divididos em várias partes, uma para cada arquivo mais uma para o texto do corpo do formulário que pode ser enviado com eles.
+- Colocou o [`method`](/pt-BR/docs/Web/HTML/Element/form#method) Atributo para POST porque o conteúdo do arquivo não pode ser colocado dentro de um parâmetro de URL usando um formulário.
+- Defina o valor de [`enctype`](/pt-BR/docs/Web/HTML/Element/form#enctype) Para multipart / form-data porque os dados serão divididos em várias partes, uma para cada arquivo mais uma para o texto do corpo do formulário que pode ser enviado com eles.
 
 Por exemplo:
 
 ```html
 <form method="post" enctype="multipart/form-data">
-  <input type="file" name="myFile">
+  <input type="file" name="myFile" />
   <button>Send the file</button>
 </form>
 ```
 
-> **Nota:** **Nota: Alguns navegadores suportam**{{htmlattrxref("multiple","input")}} Atributo no {{HTMLElement("input")}} Elemento para enviar mais de um arquivo com apenas um elemento de entrada. Como o servidor lida com esses arquivos realmente depende da tecnologia usada no servidor. Como mencionado anteriormente, usando um quadro fará sua vida muito mais fácil.
+> **Nota:** **Nota: Alguns navegadores suportam**[`multiple`](/pt-BR/docs/Web/HTML/Element/input#multiple) Atributo no {{HTMLElement("input")}} Elemento para enviar mais de um arquivo com apenas um elemento de entrada. Como o servidor lida com esses arquivos realmente depende da tecnologia usada no servidor. Como mencionado anteriormente, usando um quadro fará sua vida muito mais fácil.
 
 > **Aviso:** **Aviso: Muitos servidores são configurados com um limite de tamanho para arquivos e solicitações HTTP, a fim de evitar abusos. É importante verificar esse limite com o administrador do servidor antes de enviar um arquivo.**
 
@@ -217,7 +218,7 @@ Dependendo do que você está fazendo, existem alguns problemas de segurança mu
 
 Cross-Site Scripting (XSS) e Cross-Site Request Forgery (CSRF) são tipos comuns de ataques que ocorrem quando você exibe dados enviados por um usuário para o usuário ou para outro usuário.
 
-O XSS permite que os invasores injetem scripts do lado do cliente em páginas da Web vistas por outros usuários. Uma vulnerabilidade de scripts entre sites pode ser usada por atacantes para ignorar controles de acesso, como o [same origin policy](/pt-BR/docs/JavaScript/Same_origin_policy_for_JavaScript). O efeito desses ataques pode variar de um pequeno incômodo a um risco de segurança significativo.
+O XSS permite que os invasores injetem scripts do lado do cliente em páginas da Web vistas por outros usuários. Uma vulnerabilidade de scripts entre sites pode ser usada por atacantes para ignorar controles de acesso, como o [same origin policy](/pt-BR/docs/Web/Security/Same-origin_policy). O efeito desses ataques pode variar de um pequeno incômodo a um risco de segurança significativo.
 
 CSRF são semelhantes aos ataques XSS, já que eles começam da mesma maneira - injetando script do lado do cliente em páginas da Web - mas seu destino é diferente. Os invasores do CSRF tentam aumentar os privilégios para aqueles de um usuário com privilégios mais altos (como um administrador do site) para executar uma ação que não deve ser capaz de fazer (por exemplo, enviar dados para um usuário não confiável).
 
@@ -251,7 +252,7 @@ You should avoid many/most problems if you follow these three rules, but it's al
 
 ## Conclusion
 
-As you can see, sending form data is easy, but securing an application can be tricky. Just remember that a front-end developer is not the one who should define the security model of the data. Yes, as we'll see, it's possible to [perform client side data validation](/pt-BR/docs/HTML/Forms/Data_form_validation) but the server can't trust this validation because it has no way to truly know what really happens on the client side.
+As you can see, sending form data is easy, but securing an application can be tricky. Just remember that a front-end developer is not the one who should define the security model of the data. Yes, as we'll see, it's possible to [perform client side data validation](/pt-BR/docs/Learn/Forms/Form_validation) but the server can't trust this validation because it has no way to truly know what really happens on the client side.
 
 ## See also
 

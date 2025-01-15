@@ -1,7 +1,6 @@
 ---
 title: Sobre esta referência
 slug: conflicting/Web/JavaScript/Reference
-original_slug: Web/JavaScript/Reference/About
 ---
 
 {{JsSidebar}}
@@ -11,7 +10,7 @@ O JavaScript é uma linguagem interpretada que se destina a ser utilizado dentro
 
 ## Onde encontrar mais informações sobre JavaScript ?
 
-Você pode verificar a documentação do _core_ da linguagem e seus novos recursos ( [ECMAScript](/pt-BR/docs/Web/JavaScript/Language_Resources) puro em sua maior parte), incluindo também :
+Você pode verificar a documentação do _core_ da linguagem e seus novos recursos ( [ECMAScript](/pt-BR/docs/conflicting/Web/JavaScript/JavaScript_technologies_overview) puro em sua maior parte), incluindo também :
 
 - [Guia de JavaScript](/pt-BR/docs/Web/JavaScript/Guide)
 - [Referência de JavaScript](/pt-BR/docs/Web/JavaScript/Reference)

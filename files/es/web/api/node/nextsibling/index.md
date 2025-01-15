@@ -19,8 +19,8 @@ Gecko-based browsers insert text nodes into a document to represent whitespace i
 Therefore a node obtained, for example, using [`Node.firstChild`](/es/docs/Web/API/Node/firstChild) or [`Node.previousSibling`](/es/docs/Web/API/Node/previousSibling) may refer to a
 whitespace text node rather than the actual element the author intended to get.
 
-See [Whitespace in the DOM](/es/docs/Web/Guide/DOM/Whitespace_in_the_DOM) and
-[W3C DOM 3 FAQ: Why are some Text nodes empty?](http://www.w3.org/DOM/faq.html#emptytext)
+See [Whitespace in the DOM](/es/docs/Web/API/Document_Object_Model/Whitespace) and
+[W3C DOM 3 FAQ: Why are some Text nodes empty?](https://www.w3.org/DOM/faq.html#emptytext)
 for more information.
 
 {{domxref("Element.nextElementSibling")}} debe ser utilizado para obtener el siguiente elemento ignorando cualquier nodo en blanco.
@@ -32,20 +32,19 @@ for more information.
 <div id="div-02">Este es el div-02</div>
 
 <script type="text/javascript">
-var el = document.getElementById('div-01').nextSibling,
+  var el = document.getElementById("div-01").nextSibling,
     i = 1;
 
-console.log('Hermanos de div-01:');
+  console.log("Hermanos de div-01:");
 
-while (el) {
-  console.log(i + '. ' + el.nodeName);
-  el = el.nextSibling;
-  i++;
-}
-
+  while (el) {
+    console.log(i + ". " + el.nodeName);
+    el = el.nextSibling;
+    i++;
+  }
 </script>
 
-/**************************************************
+<!--
   Lo siguiente se escribe en la consola cuando carga:
 
       Nodos hermanos del div-01
@@ -55,7 +54,7 @@ while (el) {
       3. #text
       4. SCRIPT
 
-**************************************************/
+-->
 ```
 
 En el ejemplo anterior, se puede observar que los nodos `#text` se insertan en el DOM, donde se produce un espacio en blanco en el marcado entre las etiquetas (es decir, después de la etiqueta de cierre de un elemento y antes de la etiqueta de apertura del siguiente). No se crea ningún espacio en blanco entre los elementos insertados por la sentencia `document.write`.

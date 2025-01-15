@@ -1,7 +1,6 @@
 ---
 title: arguments.length
 slug: Web/JavaScript/Reference/Functions/arguments/length
-original_slug: Web/JavaScript/Referencia/Funciones/arguments/length
 ---
 
 {{jsSidebar("Functions")}}
@@ -34,7 +33,8 @@ function adder(base /*, n2, ... */) {
 }
 ```
 
-> **Nota:** Tenga en cuenta la diferencia entre {{jsxref("Function.length")}} y arguments.length
+> [!NOTE]
+> Tenga en cuenta la diferencia entre {{jsxref("Function.length")}} y arguments.length
 
 ## Especificaciones
 

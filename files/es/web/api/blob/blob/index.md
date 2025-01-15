@@ -34,7 +34,7 @@ Un nuevo objeto {{domxref("Blob")}} conteniendo la información especificada.
 
 ```js
 var unaParteDeArchivo = ['<a id="a"><b id="b">hey!</b></a>']; // un array de un solo DOMString
-var oMiBlob = new Blob(unaParteDeArchivo, {type : 'text/html'}); // el blob
+var oMiBlob = new Blob(unaParteDeArchivo, { type: "text/html" }); // el blob
 ```
 
 ## Especificaciones
@@ -47,4 +47,4 @@ var oMiBlob = new Blob(unaParteDeArchivo, {type : 'text/html'}); // el blob
 
 ## Vea también
 
-- La interfaz deprecada {{domxref("BlobBuilder")}}, la cual es reemplazada por este constructor.
+- La interfaz obsoleta {{domxref("BlobBuilder")}}, la cual es reemplazada por este constructor.

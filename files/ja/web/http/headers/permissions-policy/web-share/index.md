@@ -1,7 +1,6 @@
 ---
-title: 'Feature-Policy: web-share'
+title: "Feature-Policy: web-share"
 slug: Web/HTTP/Headers/Permissions-Policy/web-share
-original_slug: Web/HTTP/Headers/Feature-Policy/web-share
 ---
 
 {{HTTPSidebar}} {{SeeCompatTable}}
@@ -34,5 +33,5 @@ Feature-Policy: web-share <allowlist>;
 ## 関連情報
 
 - {{HTTPHeader('Feature-Policy')}} ヘッダー
-- [機能ポリシー](/ja/docs/Web/HTTP/Feature_Policy)
+- [機能ポリシー](/ja/docs/Web/HTTP/Permissions_Policy)
 - [機能ポリシーの使用](/ja/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy)

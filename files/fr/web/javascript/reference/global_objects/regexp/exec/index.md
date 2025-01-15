@@ -1,14 +1,6 @@
 ---
 title: RegExp.prototype.exec()
 slug: Web/JavaScript/Reference/Global_Objects/RegExp/exec
-tags:
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-  - RegExp
-translation_of: Web/JavaScript/Reference/Global_Objects/RegExp/exec
-original_slug: Web/JavaScript/Reference/Objets_globaux/RegExp/exec
 ---
 
 {{JSRef}}
@@ -24,7 +16,7 @@ Les objets représentant des expressions rationnelles gardent un état en mémoi
 ## Syntaxe
 
 ```js
-regexObj.exec(chaîne)
+regexObj.exec(chaîne);
 ```
 
 ### Paramètres
@@ -46,8 +38,8 @@ Si on a l'exemple suivant :
 // On a une correspondance si on a "quick brown" suivi par "jumps", on ignore les caractères entre
 // On garde en mémoire "brown" et "jumps"
 // On ignore la casse
-var re = /quick\s(brown).+?(jumps)/ig;
-var result = re.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
+var re = /quick\s(brown).+?(jumps)/gi;
+var result = re.exec("The Quick Brown Fox Jumps Over The Lazy Dog");
 ```
 
 Le tableau suivant montre l'état résultant suite à ce script :
@@ -143,11 +135,11 @@ Par exemple, si on utilise le fragment de code suivant :
 
 ```js
 var maRegex = /ab*/g;
-var str = 'abbcdefabh';
+var str = "abbcdefabh";
 var monTableau;
 while ((monTableau = maRegex.exec(str)) !== null) {
-  var msg = 'Trouvé ' + monTableau[0] + '. ';
-  msg += 'Prochaine correspondance à partir de ' + maRegex.lastIndex;
+  var msg = "Trouvé " + monTableau[0] + ". ";
+  msg += "Prochaine correspondance à partir de " + maRegex.lastIndex;
   console.log(msg);
 }
 ```
@@ -159,14 +151,15 @@ Trouvé abb. Prochaine correspondance à partir de 3
 Trouvé ab. Prochaine correspondance à partir de 9
 ```
 
-> **Attention :** Il ne faut pas placer un littéral d'expression rationnelle (ou le constructeur {{jsxref("RegExp")}}) au sein de la condition `while` car cela créerait un boucle infinie s'il y a une correspondance car la propriété {{jsxref("RegExp.lastIndex", "lastIndex")}} serait redéfinie à chaque itération. Il faut également s'assurer que le drapeau global est défini sinon on aura également une boucle.
+> [!WARNING]
+> Il ne faut pas placer un littéral d'expression rationnelle (ou le constructeur {{jsxref("RegExp")}}) au sein de la condition `while` car cela créerait un boucle infinie s'il y a une correspondance car la propriété {{jsxref("RegExp.lastIndex", "lastIndex")}} serait redéfinie à chaque itération. Il faut également s'assurer que le drapeau global est défini sinon on aura également une boucle.
 
 ### Utiliser `exec()` avec des littéraux
 
 Il est aussi possible d'utiliser `exec()` sans créer d'objet {{jsxref("RegExp")}} explicite :
 
 ```js
-var matches = /(coucou \S+)/.exec('Ceci est un coucou monde !');
+var matches = /(coucou \S+)/.exec("Ceci est un coucou monde !");
 console.log(matches[1]);
 ```
 
@@ -182,7 +175,7 @@ Cela affichera 'coucou monde !'.
 
 ## Voir aussi
 
-- Le chapitre sur [les expressions rationnelles](/fr/docs/Web/JavaScript/Guide/Expressions_régulières) du [Guide JavaScript](/fr/docs/Web/JavaScript/Guide)
+- Le chapitre sur [les expressions rationnelles](/fr/docs/Web/JavaScript/Guide/Regular_expressions) du [Guide JavaScript](/fr/docs/Web/JavaScript/Guide)
 - {{jsxref("RegExp")}}
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("String.prototype.matchAll()")}}

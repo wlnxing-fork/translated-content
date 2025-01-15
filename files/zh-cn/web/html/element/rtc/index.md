@@ -38,19 +38,19 @@ slug: Web/HTML/Element/rtc
 
 ## 属性
 
-该元素仅仅包含 [全局属性](/zh-CN/docs/HTML/Global_attributes)
+该元素仅仅包含 [全局属性](/zh-CN/docs/Web/HTML/Global_attributes)
 
 ## 示例
 
 ```html
 <ruby>
-   <rb>旧</rb>
-   <rb>金</rb>
-   <rb>山</rb>
-   <rt>jiù</rt>
-   <rt>jīn</rt>
-   <rt>shān</rt>
-   <rtc>San Francisco</rtc>
+  <rb>旧</rb>
+  <rb>金</rb>
+  <rb>山</rb>
+  <rt>jiù</rt>
+  <rt>jīn</rt>
+  <rt>shān</rt>
+  <rtc>San Francisco</rtc>
 </ruby>
 ```
 
@@ -62,7 +62,7 @@ slug: Web/HTML/Element/rtc
 
 {{Compat}}
 
-## 另见
+## 参见
 
 - {{HTMLElement("ruby")}}
 - {{HTMLElement("rp")}}

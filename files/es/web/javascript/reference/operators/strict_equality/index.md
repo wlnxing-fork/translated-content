@@ -1,7 +1,6 @@
 ---
 title: Igualdad Estricta (===)
 slug: Web/JavaScript/Reference/Operators/Strict_equality
-original_slug: Web/JavaScript/Referencia/Operadores/Strict_equality
 ---
 
 {{jsSidebar("Operators")}}
@@ -18,7 +17,7 @@ x === y
 
 ## Descripción
 
-Los operadores de estricta igualdad (`===` y `!==`) usan el [Algoritmo Estricto Comparativo de Igualdad](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.6)para comparar dos operandos:
+Los operadores de estricta igualdad (`===` y `!==`) usan el [Algoritmo Estricto Comparativo de Igualdad](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.6)para comparar dos operandos:
 
 - Si los operandos son de diferente tipo de valor, produce `false`.
 - Si ambos operandos son objetos, produce `true` solo si se refiere al mismo objeto.
@@ -37,41 +36,41 @@ La diferencia más notable entre este operador y el operador de [igualdad](/es/d
 ### Comparando operandos del mismo tipo
 
 ```js
-console.log("hello" === "hello");   // true
-console.log("hello" === "hola");    // false
+console.log("hello" === "hello"); // true
+console.log("hello" === "hola"); // false
 
-console.log(3 === 3);               // true
-console.log(3 === 4);               // false
+console.log(3 === 3); // true
+console.log(3 === 4); // false
 
-console.log(true === true);         // true
-console.log(true === false);        // false
+console.log(true === true); // true
+console.log(true === false); // false
 
-console.log(null === null);         // true
+console.log(null === null); // true
 ```
 
 ### Comparando operandos de distinto tipo
 
 ```js
-console.log("3" === 3);           // false
+console.log("3" === 3); // false
 
-console.log(true === 1);          // false
+console.log(true === 1); // false
 
-console.log(null === undefined);  // false
+console.log(null === undefined); // false
 ```
 
 ### Comparando objetos
 
 ```js
 const object1 = {
-  name: "hello"
-}
+  name: "hello",
+};
 
 const object2 = {
-  name: "hello"
-}
+  name: "hello",
+};
 
-console.log(object1 === object2);  // false
-console.log(object1 === object1);  // true
+console.log(object1 === object2); // false
+console.log(object1 === object1); // true
 ```
 
 ## Especificaciones

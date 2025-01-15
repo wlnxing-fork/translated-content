@@ -57,13 +57,14 @@ slug: Web/API/AudioNode/channelCountMode
   </tbody>
 </table>
 
-> **참고:** 명세서의 구 버전에서는, {{domxref("ChannelSplitterNode")}}의 기본값은 max였습니다.
+> [!NOTE]
+> 명세서의 구 버전에서는, {{domxref("ChannelSplitterNode")}}의 기본값은 max였습니다.
 
 ## 구문
 
 ```js
 var oscillator = audioCtx.createOscillator();
-oscillator.channelCountMode = 'explicit';
+oscillator.channelCountMode = "explicit";
 ```
 
 ### 값
@@ -83,7 +84,7 @@ var gainNode = audioCtx.createGain();
 oscillator.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-oscillator.channelCountMode = 'explicit';
+oscillator.channelCountMode = "explicit";
 ```
 
 ## 명세서

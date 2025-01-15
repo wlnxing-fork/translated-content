@@ -1,7 +1,11 @@
 ---
 title: 属性（JavaScript）
 slug: Glossary/Property/JavaScript
+l10n:
+  sourceCommit: ada5fa5ef15eadd44b549ecf906423b4a2092f34
 ---
+
+{{GlossarySidebar}}
 
 **JavaScript 属性**是一个[对象](/zh-CN/docs/Web/JavaScript/Data_structures#object)的成员，它将键与值联系起来。JavaScript 对象是一种数据结构，它存储了属性的集合。
 
@@ -28,11 +32,11 @@ const obj = {
 
 在[类](/zh-CN/docs/Web/JavaScript/Reference/Classes)的概念中，属性可以分为*实例属性*和*静态属性*，前者由每个实例拥有，后者由类拥有，持有所有实例共有的数据。在[继承](/zh-CN/docs/Web/JavaScript/Reference/Classes)的概念下，属性也可以分为*自有属性*和*继承属性*，前者由对象本身拥有，后者由对象的原型链中的对象拥有。
 
-关于读写属性的更多信息，请参见[使用对象](/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects)。
+关于读写属性的更多信息，请参见[使用对象](/zh-CN/docs/Web/JavaScript/Guide/Working_with_objects)。
 
 ## 参见
 
 - 维基百科上的[属性（计算机科学）](<https://en.wikipedia.org/wiki/Property_(programming)>)词条
-- [JavaScript 面向对象编程介绍](/zh-CN/docs/Learn/JavaScript/Objects)
+- [JavaScript 面向对象编程介绍](/zh-CN/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects)
 - [对象属性](/zh-CN/docs/Web/JavaScript/Data_structures#属性)
 - [属性的可枚举性和所有权](/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)

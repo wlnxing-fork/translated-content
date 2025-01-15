@@ -1,8 +1,9 @@
 ---
 title: Round Trip Time (ラウンドトリップタイム)
 slug: Glossary/Round_Trip_Time
-original_slug: Glossary/Round_Trip_Time_(RTT)
 ---
+
+{{GlossarySidebar}}
 
 **ラウンドトリップタイム (RTT)** とは、データパケットが宛先に送信されるのにかかる時間と、そのパケットの確認応答が発信元で受信されるのにかかる時間の長さです。ネットワークとサーバー間の RTT は、`ping` コマンドを使用して計測できます。
 
@@ -23,5 +24,5 @@ round-trip min/avg/max/stddev = 23.781/26.828/34.904/4.114 ms
 
 ## 関連情報
 
-- [Time to First Byte (TTFB)](/ja/docs/Glossary/time_to_first_byte)
+- [Time to First Byte (TTFB)](/ja/docs/Glossary/Time_to_first_byte)
 - [レイテンシー](/ja/docs/Glossary/Latency)

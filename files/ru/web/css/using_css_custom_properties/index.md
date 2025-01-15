@@ -1,15 +1,9 @@
 ---
 title: Использование переменных в CSS
 slug: Web/CSS/Using_CSS_custom_properties
-tags:
-  - CSS
-  - CSS переменные
-  - Web
-  - Руководства
-translation_of: Web/CSS/Using_CSS_custom_properties
 ---
 
-{{SeeCompatTable}}
+{{CSSRef}}
 
 **CSS переменные** (**пользовательские CSS-свойства**) это сущности, определяемые автором CSS, хранящие конкретные значения, которые можно повторно использовать в документе. Они устанавливаются с использованием custom property нотации (например. **`--main-color: black;`**) и доступны через функцию [var()](/ru/docs/Web/CSS/var) (например. `color: var(--main-color);`) .
 
@@ -35,7 +29,8 @@ element {
 }
 ```
 
-> **Примечание:** В более ранней спецификации префикс для переменных был `var-` , но позже был изменён на `--`. Firefox 31 и выше следуют новой спецификации.({{bug(985838)}})
+> [!NOTE]
+> В более ранней спецификации префикс для переменных был `var-` , но позже был изменён на `--`. Firefox 31 и выше следуют новой спецификации.([Firefox bug 985838](https://bugzil.la/985838))
 
 ## Первый шаг с CSS Переменными
 
@@ -81,10 +76,10 @@ element {
 
 ```html
 <div>
-    <div class="one"></div>
-    <div class="two">Text <span class="five">- more text</span></div>
-    <input class="three">
-    <textarea class="four">Lorem Ipsum</textarea>
+  <div class="one"></div>
+  <div class="two">Text <span class="five">- more text</span></div>
+  <input class="three" />
+  <textarea class="four">Lorem Ipsum</textarea>
 </div>
 ```
 
@@ -136,10 +131,10 @@ element {
 
 ```html hidden
 <div>
-    <div class="one"></div>
-    <div class="two">Text <span class="five">- more text</span></div>
-    <input class="three">
-    <textarea class="four">Lorem Ipsum</textarea>
+  <div class="one"></div>
+  <div class="two">Text <span class="five">- more text</span></div>
+  <input class="three" />
+  <textarea class="four">Lorem Ipsum</textarea>
 </div>
 ```
 
@@ -187,17 +182,26 @@ element {
 }
 
 .three {
-  background-color: var(--my-var, var(--my-background, pink)); /* pink если --my-var и --my-background не определены */
+  background-color: var(
+    --my-var,
+    var(--my-background, pink)
+  ); /* pink если --my-var и --my-background не определены */
 }
 
 .three {
-  background-color: var(--my-var, --my-background, pink); /* "--my-background, pink" будет воспринят как значение в случае, если --my-var не определена */
+  background-color: var(
+    --my-var,
+    --my-background,
+    pink
+  ); /* "--my-background, pink" будет воспринят как значение в случае, если --my-var не определена */
 }
 ```
 
-> **Примечание:** В замещаемых значениях можно использовать запятые по аналогии с [пользовательскими свойствами](https://www.w3.org/TR/css-variables/#custom-property). Например, var(--foo, red, blue) определить red, blue как замещающее значение (от первой запятой и до конца определения функции)
+> [!NOTE]
+> В замещаемых значениях можно использовать запятые по аналогии с [пользовательскими свойствами](https://www.w3.org/TR/css-variables/#custom-property). Например, var(--foo, red, blue) определить red, blue как замещающее значение (от первой запятой и до конца определения функции)
 
-> **Примечание:** Данный метод также вызывает проблемы с производительностью. Он отображает страницу медленнее чем обычно, т.к. требует время на разбор.
+> [!NOTE]
+> Данный метод также вызывает проблемы с производительностью. Он отображает страницу медленнее чем обычно, т.к. требует время на разбор.
 
 ## Обоснованность и полезность
 
@@ -207,4 +211,4 @@ element {
 
 ## Совместимость с браузерами
 
-{{Compat("css.properties.custom-property")}}
+{{Compat}}

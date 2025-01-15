@@ -48,7 +48,7 @@ result = "foo" && 4; // 结果被赋值为 4
 
 考虑如下伪代码。
 
-```
+```plain
 (some falsy expression) && expr
 ```
 
@@ -64,19 +64,19 @@ function B() {
   return true;
 }
 console.log(A() && B());
-// 由于调用了 A 函数，故会输出 "called A" 到控制台，
+// 由于调用了 A 函数，故会输出“调用了 A”到控制台，
 // && 求值结果为 false（A 函数返回 false），然后输出 false 到控制台；
 // 与运算符在这里短路，忽略了 B 函数
 ```
 
 ### 运算符优先级
 
-与运算符的优先级高于或运算符，这意味着 `&&` 运算符在 `||` 运算符前执行（参见[运算符优先级](/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)）。
+与运算符的优先级高于或运算符，这意味着 `&&` 运算符在 `||` 运算符前执行（参见[运算符优先级](/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_precedence)）。
 
 ```js
-true || false && false; // true
+true || (false && false); // true
 true && (false || false); // false
-(2 === 3) || (4 < 0) && (1 === 1); // false
+2 === 3 || (4 < 0 && 1 === 1); // false
 ```
 
 ## 示例

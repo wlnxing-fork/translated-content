@@ -1,7 +1,6 @@
 ---
 title: var()
 slug: Web/CSS/var
-original_slug: Web/CSS/var()
 ---
 
 {{CSSRef}}{{SeeCompatTable}}
@@ -60,4 +59,4 @@ body {
 
 ## Ver también
 
-- [Usando variables CSS](/es/docs/Web/CSS/Using_CSS_variables)
+- [Usando variables CSS](/es/docs/Web/CSS/Using_CSS_custom_properties)

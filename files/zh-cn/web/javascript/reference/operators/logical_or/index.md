@@ -56,11 +56,11 @@ console.log(B() || A());
 
 ### 运算符优先级
 
-以下表达式看起来等价，但实际上不是，因为 `&&` 运算符比 `||` 运算符先执行（参见[运算符优先级](/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)）。
+以下表达式看起来等价，但实际上不是，因为 `&&` 运算符比 `||` 运算符先执行（参见[运算符优先级](/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_precedence)）。
 
-```js
-true || false && false      // 返回 true，因为 && 先执行
-(true || false) && false    // 返回 false，因为分组运算符优先级更高
+```js-nolint
+true || false && false; // 返回 true，因为 && 先执行
+(true || false) && false; // 返回 false，因为分组运算符优先级更高
 ```
 
 ## 示例
@@ -82,7 +82,8 @@ false || ""; // f || f returns ""
 false || varObject; // f || object returns varObject
 ```
 
-> **备注：** 如果你使用这个操作符为某些变量提供默认值，要注意任何*假*值都不会被使用。如果你只需要过滤掉 [`null`](/zh-CN/docs/Web/JavaScript/Reference/Operators/null) 或 {{jsxref("undefined")}}，可以考虑使用[空值合并运算符](/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)。
+> [!NOTE]
+> 如果你使用这个操作符为某些变量提供默认值，要注意任何*假*值都不会被使用。如果你只需要过滤掉 [`null`](/zh-CN/docs/Web/JavaScript/Reference/Operators/null) 或 {{jsxref("undefined")}}，可以考虑使用[空值合并运算符](/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)。
 
 ### 布尔值转化规则
 

@@ -5,7 +5,8 @@ slug: Web/CSS/page-break-inside
 
 {{CSSRef}}
 
-> **警告:** このプロパティは {{cssxref("break-inside")}} プロパティによって置き換えられました。
+> [!WARNING]
+> このプロパティは {{cssxref("break-inside")}} プロパティによって置き換えられました。
 
 CSS の **`page-break-inside`** プロパティは、現在の要素の*内側の* 改ページを調整します。
 
@@ -20,6 +21,8 @@ page-break-inside: initial;
 page-break-inside: revert;
 page-break-inside: unset;
 ```
+
+{{EmbedInteractiveExample("pages/css/page-break-inside.html")}}
 
 ## 構文
 
@@ -62,16 +65,18 @@ page-break-inside: unset;
     <span>リスト</span>
     <ol>
       <li>one</li>
-<!--       <li>two</li> -->
+      <!-- <li>two</li> -->
     </ol>
   </section>
   <ul>
     <li>one</li>
-<!--     <li>two</li> -->
+    <!-- <li>two</li> -->
   </ul>
   <p>Tこれは第二段落です。</p>
   <p>これは第三段落です。文章の量が多くなっています。</p>
-  <p>これは第四段落です。第三段落よりも、さらにもう少しだけ、文章の量が多くなっています。</p>
+  <p>
+    これは第四段落です。第三段落よりも、さらにもう少しだけ、文章の量が多くなっています。
+  </p>
 </div>
 ```
 
@@ -86,7 +91,10 @@ page-break-inside: unset;
   column-width: 100px;
 }
 
-.list, ol, ul, p {
+.list,
+ol,
+ul,
+p {
   break-inside: avoid;
 }
 
@@ -94,7 +102,9 @@ p {
   background-color: #8ca0ff;
 }
 
-ol, ul, .list {
+ol,
+ul,
+.list {
   margin: 0.5em 0;
   display: block;
   background-color: orange;

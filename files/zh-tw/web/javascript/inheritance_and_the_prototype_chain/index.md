@@ -19,7 +19,8 @@ JavaScript 是個沒有實做 `class` 關鍵字的動態語言，所以會對那
 
 JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬性）並擁有一個原型物件的鏈結，當物件試圖存取一個物件的屬性時，其不僅會尋找該物件，也會尋找該物件的原型、原型的原型……直到找到相符合的屬性，或是到達原型鏈的尾端。
 
-> **備註：** 遵照 ECMAScript 標準的 `someObject.[[Prototype]]` 標記，用於指派 `someObject` 的原型。從 ECMAScript 2015 開始， `[[Prototype]]` 使用 {{jsxref("Object.getPrototypeOf()")}} 與 {{jsxref("Object.setPrototypeOf()")}} 這兩個訪問器（accessors）訪問，等同於非標準，但各大瀏覽器已實做的 `__proto__` 屬性。
+> [!NOTE]
+> 遵照 ECMAScript 標準的 `someObject.[[Prototype]]` 標記，用於指派 `someObject` 的原型。從 ECMAScript 2015 開始， `[[Prototype]]` 使用 {{jsxref("Object.getPrototypeOf()")}} 與 {{jsxref("Object.setPrototypeOf()")}} 這兩個訪問器（accessors）訪問，等同於非標準，但各大瀏覽器已實做的 `__proto__` 屬性。
 >
 > 不要把 `someObject.[[Prototype]]` 與函式屬性 `func.prototype` 混淆了。它在函式被用作建構子的時候，指定 `[[Prototype]]` 要分派到所有由給定函式建立的物件實例（instance）。**`Object.prototype`** 屬性代表了原型屬性 {{jsxref("Object")}}。
 
@@ -28,9 +29,9 @@ JavaScript 物件是一「包」動態的屬性（也就是**它自己**的屬�
 ```js
 // 利用含有 a 與 b 屬性的 f 函式，建立一個 o 物件：
 let f = function () {
-   this.a = 1;
-   this.b = 2;
-}
+  this.a = 1;
+  this.b = 2;
+};
 let o = new f(); // {a: 1, b: 2}
 
 // 接著針對 f 函式的原型添加屬性
@@ -76,9 +77,9 @@ Javascript 並沒有其他基於類別語言那般定義的方法。在 Javascri
 ```js
 var o = {
   a: 2,
-  m: function() {
+  m: function () {
     return this.a + 1;
-  }
+  },
 };
 
 console.log(o.m()); // 3
@@ -99,7 +100,7 @@ console.log(p.m()); // 5
 ### 含有語法結構的物件
 
 ```js
-var o = {a: 1};
+var o = { a: 1 };
 
 // 新建的 o 有個自己的 [[Prototype]] 稱為 Object.prototype
 // o 自己並沒有稱為「hasOwnProperty」的屬性
@@ -108,7 +109,7 @@ var o = {a: 1};
 // Object.prototype 作為其原型多了個 null
 // o ---> Object.prototype ---> null
 
-var a = ['yo', 'whadup', '?'];
+var a = ["yo", "whadup", "?"];
 
 // 從 Array.prototype 繼承的陣列，含有諸如 indexOf、forEach……之類的方法
 // 原型鏈看起來就像：
@@ -133,9 +134,9 @@ function Graph() {
 }
 
 Graph.prototype = {
-  addVertex: function(v) {
+  addVertex: function (v) {
     this.vertices.push(v);
-  }
+  },
 };
 
 var g = new Graph();
@@ -148,7 +149,7 @@ var g = new Graph();
 ECMAScript 5 引入了新方法：{{jsxref("Object.create()")}}。呼叫這個方法就可以建立新的物件。這個物件的原型，為函式的第一個參數。
 
 ```js
-var a = {a: 1};
+var a = { a: 1 };
 // a ---> Object.prototype ---> null
 
 var b = Object.create(a);
@@ -169,7 +170,7 @@ console.log(d.hasOwnProperty);
 ECMAScript 2015 引入了新的[類別](/zh-TW/docs/Web/JavaScript/Reference/Classes)實做。儘管對那些基於類別的開發者來說，這種結構體令他們感到熟悉，它們依舊不一樣。JavaScript 依舊是基於原型的。新的關鍵字包括 {{jsxref("Statements/class", "class")}}、{{jsxref("Classes/constructor", "constructor")}}、{{jsxref("Classes/static", "static")}}、{{jsxref("Classes/extends", "extends")}}、{{jsxref("Operators/super", "super")}}。
 
 ```js
-'use strict';
+"use strict";
 
 class Polygon {
   constructor(height, width) {
@@ -203,16 +204,16 @@ var square = new Square(2);
 要檢查物件*本身*有沒有指定的屬性、也不需要查找整個原型鏈時，你必須使用由 `Object.prototype` 繼承的 [`hasOwnProperty`](/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) 方法。
 
 ```js
-console.log(g.hasOwnProperty('vertices'));
+console.log(g.hasOwnProperty("vertices"));
 // true
 
-console.log(g.hasOwnProperty('nope'));
+console.log(g.hasOwnProperty("nope"));
 // false
 
-console.log(g.hasOwnProperty('addVertex'));
+console.log(g.hasOwnProperty("addVertex"));
 // false
 
-console.log(g.__proto__.hasOwnProperty('addVertex'));
+console.log(g.__proto__.hasOwnProperty("addVertex"));
 // true
 ```
 
@@ -240,13 +241,13 @@ function A(a) {
 // 在 A.prototype.varA 會永遠被 this.varA 鬼隱（shadowed）的情況下，
 // 把 varA 包在給定函式的原型內，其意義為何？
 A.prototype = {
-  varA: null,  // 難道不能因為原型啥都沒作，就把 varA 打斷嗎？
-      // 也許他打算要分配隱藏類別的空間，以便實行最佳化？
-      // https://developers.google.com/speed/articles/optimizing-javascript#Initializing instance variables
-      // 如果 varA 沒有針對每個實例作單一初始化，那麼不就要變有效的？
-  doSomething: function() {
+  varA: null, // 難道不能因為原型啥都沒作，就把 varA 打斷嗎？
+  // 也許他打算要分配隱藏類別的空間，以便實行最佳化？
+  // https://developers.google.com/speed/articles/optimizing-javascript#Initializing instance variables
+  // 如果 varA 沒有針對每個實例作單一初始化，那麼不就要變有效的？
+  doSomething: function () {
     // ...
-  }
+  },
 };
 
 function B(a, b) {
@@ -258,17 +259,18 @@ B.prototype = Object.create(A.prototype, {
     value: null,
     enumerable: true,
     configurable: true,
-    writable: true
+    writable: true,
   },
   doSomething: {
-    value: function() { // override
+    value: function () {
+      // override
       A.prototype.doSomething.apply(this, arguments); // call super
       // ...
     },
     enumerable: true,
     configurable: true,
-    writable: true
-  }
+    writable: true,
+  },
 });
 B.prototype.constructor = B;
 

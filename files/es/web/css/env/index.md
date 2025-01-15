@@ -1,8 +1,9 @@
 ---
 title: env()
 slug: Web/CSS/env
-original_slug: Web/CSS/env()
 ---
+
+{{CSSRef}}
 
 La función [CSS](/es/docs/Web/CSS) **`env()`** puede ser utilizada para insertar el valor de una variable de entorno, que sea global para un documento en particular, al contrario de una [propiedad personalizada](/es/docs/Web/CSS/--_). Entonces, la funcion env() puede ser utilizada para remplazar el valor en ubicaciones arbitrarias, de la misma manera que la función [var()](/es/docs/Web/CSS/var).
 

@@ -1,16 +1,6 @@
 ---
 title: IDBRequest
 slug: Web/API/IDBRequest
-tags:
-  - API
-  - Database
-  - IDBRequest
-  - IndexedDB
-  - Interface
-  - Reference
-  - Storage
-  - TopicStub
-translation_of: Web/API/IDBRequest
 ---
 
 {{APIRef("IndexedDB")}}
@@ -53,9 +43,9 @@ _Pas de méthodes spécifiques, mais hérite des méthodes de {{domxref("EventTa
 On peut écouter les évènement avec `addEventListener()` ou bien en assignant un gestionnaire d'évènement à la propriété `oneventname` de cette interface.
 
 - {{domxref("IDBRequest.onerror","onerror")}}
-  - : Le gestionnaire d'événement **`onerror`** de l'interface **`IDBRequest`** capte l'événement [`error`](/fr/docs/Web/Events/error), déclenché quand une requête renvoie une erreur.
+  - : Le gestionnaire d'événement **`onerror`** de l'interface **`IDBRequest`** capte l'événement [`error`](/fr/docs/Web/API/HTMLElement/error_event), déclenché quand une requête renvoie une erreur.
 - {{domxref("IDBRequest.onsuccess","onsuccess")}}
-  - : Le gestionnaire d'événement **`onsuccess`** de l'interface **`IDBRequest`** capte l'événement [`success`](/fr/docs/Web/Events/success), déclenché quand la requête réussie.
+  - : Le gestionnaire d'événement **`onsuccess`** de l'interface **`IDBRequest`** capte l'événement [`success`](/fr/docs/Web/API/IDBRequest/success_event), déclenché quand la requête réussie.
 
 ## Exemple
 
@@ -69,12 +59,12 @@ var DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
 // Ces deux gestionnaires d'événement interviennent quand la dase de
 // de données s'ouvre ou non.
-DBOpenRequest.onerror = function(event) {
-  note.innerHTML += '<li>Error loading database.</li>';
+DBOpenRequest.onerror = function (event) {
+  note.innerHTML += "<li>Error loading database.</li>";
 };
 
-DBOpenRequest.onsuccess = function(event) {
-  note.innerHTML += '<li>Database initialised.</li>';
+DBOpenRequest.onsuccess = function (event) {
+  note.innerHTML += "<li>Database initialised.</li>";
 
   // Affecte le resutat de l'ouverture à la variable.
   db = DBOpenRequest.result;

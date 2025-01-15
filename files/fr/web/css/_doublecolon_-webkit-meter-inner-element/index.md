@@ -1,12 +1,6 @@
 ---
-title: '::-webkit-meter-inner-element'
+title: "::-webkit-meter-inner-element"
 slug: Web/CSS/::-webkit-meter-inner-element
-tags:
-  - CSS
-  - Non-standard
-  - Pseudo-element
-  - Reference
-translation_of: Web/CSS/::-webkit-meter-inner-element
 ---
 
 {{CSSRef}}{{Non-standard_header}}
@@ -42,7 +36,8 @@ meter::-webkit-meter-inner-element {
 
 {{EmbedLiveSample('Exemples', '100%', 50)}}
 
-> **Note :** Cela ne fonctionne que pour les navigateurs Webkit/Blink.
+> [!NOTE]
+> Cela ne fonctionne que pour les navigateurs Webkit/Blink.
 
 ## Spécifications
 

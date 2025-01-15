@@ -1,7 +1,6 @@
 ---
 title: O que está no cabeçalho? Metadados em HTML
 slug: Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-original_slug: Aprender/HTML/Introducao_ao_HTML/The_head_metadata_in_HTML
 ---
 
 {{LearnSidebar}}{{PreviousMenuNext("Learn/HTML/Introduction_to_HTML/Getting_started", "Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals", "Learn/HTML/Introduction_to_HTML")}}
@@ -41,13 +40,13 @@ O {{glossary("Head", "head")}} de um documento HTML é a parte que não é exibi
 
 ## O que há no cabeçalho HTML?
 
-Vamos rever o simples [Documento HTML que abordamos no artigo anterior:](/pt-BR/docs/Aprender/HTML/Introducao_ao_HTML/Getting_started#Anatomia_de_um_elemento_HTML)
+Vamos rever o simples [Documento HTML que abordamos no artigo anterior:](/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Getting_started#anatomia_de_um_elemento_html)
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Minha página de teste</title>
   </head>
   <body>
@@ -60,12 +59,12 @@ O cabeçalho HTML é o conteúdo do elemento {{htmlelement("head")}} — ao cont
 
 ```html
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Minha página de teste</title>
 </head>
 ```
 
-Em páginas maiores, o cabeçalho pode ter mais conteúdo. Tente acessar um dos seus sites favoritos e use as [ferramentas de desenvolvimento](/pt-BR/docs/Learn/Common_questions/ferramentas_de_desenvolvimento_do_navegador) para verificar o conteúdo do cabeçalho. Nosso objetivo aqui não é mostrar a você como usar tudo o que é possível pôr no cabeçalho, mas te ensinar a usar as coisas mais obvias que você vai querer incluir no cabeçalho, e lhe dar alguma familiaridade. Vamos começar.
+Em páginas maiores, o cabeçalho pode ter mais conteúdo. Tente acessar um dos seus sites favoritos e use as [ferramentas de desenvolvimento](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools) para verificar o conteúdo do cabeçalho. Nosso objetivo aqui não é mostrar a você como usar tudo o que é possível pôr no cabeçalho, mas te ensinar a usar as coisas mais obvias que você vai querer incluir no cabeçalho, e lhe dar alguma familiaridade. Vamos começar.
 
 ## Adicionando um título
 
@@ -78,18 +77,18 @@ Nós já vimos o elemento {{htmlelement("title")}} em ação — ele pode ser us
 
 1. Para começar esta aprendizagem ativa, gostaríamos que você fosse ao nosso depósito GitHub e baixasse uma cópia do nossa página [title-example.html](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/the-html-head/title-example.html). Para fazer isso:
 
-    1. Copie e cole o código em um novo arquivo de texto no seu editor e salve-o com o nome de index.html em um lugar de fácil acesso.
-    2. Pressione o botão "Raw" na página do GitHub, que faz com que o código bruto apareça (possivelmente em uma nova guia do navegador). Em seguida, escolha o menu _Arquivo do navegador> Salvar página como ..._ e escolha um local adequado para salvar o arquivo.
+   1. Copie e cole o código em um novo arquivo de texto no seu editor e salve-o com o nome de index.html em um lugar de fácil acesso.
+   2. Pressione o botão "Raw" na página do GitHub, que faz com que o código bruto apareça (possivelmente em uma nova guia do navegador). Em seguida, escolha o menu _Arquivo do navegador> Salvar página como ..._ e escolha um local adequado para salvar o arquivo.
 
 2. Agora abra o arquivo no seu navegador. Você deve ver algo assim:
 
-    ![A simple web page with the title set to \<title> element, and the \<h1> set to \<h1> element.](title-example.png)Agora deve ser completamente óbvio onde o conteúdo `<h1>` aparece e onde o conteúdo `<title>` aparece!
+   ![A simple web page with the title set to 'title' element, and the 'h1' set to 'h1' element.](title-example.png)Agora deve ser completamente óbvio onde o conteúdo `<h1>` aparece e onde o conteúdo `<title>` aparece!
 
 3. Você também deve tentar abrir o código no seu editor, editar o conteúdo desses elementos e atualizar a página no seu navegador. divirta-se.
 
 O conteúdo do elemento `<title>` também é usado de outras maneiras. Por exemplo, se você tentar favoritar a página, (_Favoritos > Adicionar página aos favoritos_ ou o ícone da estrela na barra de URL no Fireofx), você verá o conteúdo `<title>` preenchido como o nome sugerido do favorito.
 
-![A webpage being bookmarked in firefox; the bookmark name has been automatically filled in with the contents of the \<title> element ](bookmark-example.png)
+![A webpage being bookmarked in firefox; the bookmark name has been automatically filled in with the contents of the 'title' element ](bookmark-example.png)
 
 Os conteúdos `<title>` também são usados nos resultados de pesquisa, conforme você verá abaixo.
 
@@ -102,7 +101,7 @@ Metadados é dado descreve dados, e HTML possui uma maneira "oficial" de adicion
 No exemplo que vimos acima, esta linha foi incluída:
 
 ```html
-<meta charset="utf-8">
+<meta charset="utf-8" />
 ```
 
 Este elemento simplesmente especifica a codificação de caracteres do documento — o conjunto de caracteres que o documento está autorizado a usar. `utf-8` é um conjunto de caracteres universal que inclui praticamente qualquer caractere de qualquer linguagem humana. Isso significa que sua página web poderá lidar com a exibição de qualquer idioma; portanto, é uma boa idéia configurar isso em todas as páginas web que você cria! Por exemplo, sua página poderia lidar com o Inglês e Japonês muito bem:
@@ -111,7 +110,8 @@ Este elemento simplesmente especifica a codificação de caracteres do documento
 
 ![a web page containing English and Japanese characters, with the character encoding set to latin. The Japanese characters don't display correctly](bad-encoding.png)
 
-> **Nota:** Alguns navegadores (como o Chrome) corrigem automaticamente as codificações incorretas, então, dependendo do navegador que você usar, você pode não ver esse problema. Ainda assim, você deve definir uma codificação do `utf-8` em sua página, para evitar problemas em outros navegadores.
+> [!NOTE]
+> Alguns navegadores (como o Chrome) corrigem automaticamente as codificações incorretas, então, dependendo do navegador que você usar, você pode não ver esse problema. Ainda assim, você deve definir uma codificação do `utf-8` em sua página, para evitar problemas em outros navegadores.
 
 ### Aprendizagem ativa: Experimento com a codificação de caracteres
 
@@ -131,15 +131,17 @@ Muitos elementos `<meta>` incluem atributos de `name` e `content`:
 Dois desses meta-elementos que são úteis para incluir na sua página definem o autor da página e fornecem uma descrição concisa da página. Vejamos um exemplo:
 
 ```html
-<meta name="author" content="Chris Mills">
-<meta name="description" content="A Área de Aprendizagem do MDN tem como objetivo
+<meta name="author" content="Chris Mills" />
+<meta
+  name="description"
+  content="A Área de Aprendizagem do MDN tem como objetivo
 proporcionar iniciantes em Web com tudo o que eles precisam saber
-para começar a desenvolver sites e aplicativos.">
+para começar a desenvolver sites e aplicativos." />
 ```
 
 Especificar um autor é útil de muitas maneiras: é útil para poder descobrir quem escreveu a página, se quiser enviar perguntas sobre o conteúdo que você gostaria de contacta-la. Alguns sistemas de gerenciamento de conteúdo possuem ferramentas para extrair automaticamente as informações do autor da página e disponibilizá-las para seus propósitos.
 
-Especificar uma descrição que inclua palavras-chave relacionadas ao conteúdo da sua página é útil porque tem potencial para tornar sua página mais alta nas pesquisas relevantes realizadas nos mecanismos de busca (tais atividades são denominadas [Search Engine Optimization](/pt-BR/docs/Glossario/SEO) ou {{glossary("SEO")}}.
+Especificar uma descrição que inclua palavras-chave relacionadas ao conteúdo da sua página é útil porque tem potencial para tornar sua página mais alta nas pesquisas relevantes realizadas nos mecanismos de busca (tais atividades são denominadas [Search Engine Optimization](/pt-BR/docs/Glossary/SEO) ou {{glossary("SEO")}}.
 
 ### Aprendizagem ativa: Uso da descrição nos motores de busca
 
@@ -148,38 +150,46 @@ A descrição também é usada nas páginas de resultados do mecanismo de pesqui
 1. Vá para a [página inicial da Mozilla Developer Network.](/en-US/)
 2. Veja a fonte da página (botão direito do mouse/
 
-    <kbd>Ctrl</kbd>
+   <kbd>Ctrl</kbd>
 
-    \+ clique na página, escolha _Ver código-fonte da página_ no menu de contexto).
+   \+ clique na página, escolha _Ver código-fonte da página_ no menu de contexto).
 
 3. Encontre a meta tag de descrição. Isso parecerá assim:
 
-    ```html
-    <meta name="description" content="A Mozilla Developer Network (MDN) fornece
-    informações sobre tecnologias Open Web, incluindo HTML, CSS e API para ambos
-    Sites e aplicativos HTML5. Ele também documenta produtos Mozilla, como o sistema operacional Firefox.">
-    ```
+   ```html
+   <meta
+     name="description"
+     content="A Mozilla Developer Network (MDN) fornece
+   informações sobre tecnologias Open Web, incluindo HTML, CSS e API para ambos
+   Sites e aplicativos HTML5. Ele também documenta produtos Mozilla, como o sistema operacional Firefox." />
+   ```
 
 4. Agora, procure por "Mozilla Developer Network" no seu motor de busca favorito (Utilizamos o Yahoo.) Você notará a descrição `<meta>` e `<title>` elemento usado no resultado da pesquisa — definitivamente vale a pena ter!
 
-    ![A Yahoo search result for "Mozilla Developer Network"](search-result.png)
+   ![A Yahoo search result for "Mozilla Developer Network"](search-result.png)
 
-> **Nota:** No Google, você verá algumas subpáginas relevantes do MDN listadas abaixo do principal link da página inicial do MDN — estes são chamados de sitelinks e são configuráveis nas [Ferramentas para webmasters do Google](http://www.google.com/webmasters/tools/) — uma maneira de melhorar os resultados de pesquisa do seu site no mecanismo de pesquisa do Google.
+> [!NOTE]
+> No Google, você verá algumas subpáginas relevantes do MDN listadas abaixo do principal link da página inicial do MDN — estes são chamados de sitelinks e são configuráveis nas [Ferramentas para webmasters do Google](https://www.google.com/webmasters/tools/) — uma maneira de melhorar os resultados de pesquisa do seu site no mecanismo de pesquisa do Google.
 
-> **Nota:** Muitos recursos `<meta>` simplesmente não são mais usados. Por exemplo, a palavra-chave `<meta>` elemento (`<meta name="keywords" content="preencha, suas, palavras-chave, aqui">`) — que é suposto fornecer palavras-chave para os motores de busca para determinar a relevância dessa página para diferentes termos de pesquisa — são ignorados pelos motores de busca, porque os spammers estavam apenas preenchendo a lista de palavras-chave com centenas de palavras-chave, influenciando os resultados.
+> [!NOTE]
+> Muitos recursos `<meta>` simplesmente não são mais usados. Por exemplo, a palavra-chave `<meta>` elemento (`<meta name="keywords" content="preencha, suas, palavras-chave, aqui">`) — que é suposto fornecer palavras-chave para os motores de busca para determinar a relevância dessa página para diferentes termos de pesquisa — são ignorados pelos motores de busca, porque os spammers estavam apenas preenchendo a lista de palavras-chave com centenas de palavras-chave, influenciando os resultados.
 
 ### Outros tipos de metadados
 
 Ao navegar pela web, você também encontrará outros tipos de metadados. Muitos dos recursos que você verá em sites são criações proprietárias, projetados para fornecer a determinados sites (como sites de redes sociais) informações específicas que eles podem usar.
 
-Por exemplo, [Open Graph Data](http://ogp.me/) é um protocolo de metadados que o Facebook inventou para fornecer metadados mais ricos para sites. No código-fonte MDN, você encontrará isso:
+Por exemplo, [Open Graph Data](https://ogp.me/) é um protocolo de metadados que o Facebook inventou para fornecer metadados mais ricos para sites. No código-fonte MDN, você encontrará isso:
 
 ```html
-<meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png">
-<meta property="og:description" content="A Mozilla Developer Network (MDN) fornece
+<meta
+  property="og:image"
+  content="https://developer.mozilla.org/mdn-social-share.png" />
+<meta
+  property="og:description"
+  content="A Mozilla Developer Network (MDN) fornece
 informações sobre tecnologias Open Web, incluindo HTML, CSS e APIs para ambos os sites da Web
-e aplicativos HTML5. Ele também documenta produtos Mozilla, como o sistema operacional Firefox.">
-<meta property="og:title" content="Mozilla Developer Network">
+e aplicativos HTML5. Ele também documenta produtos Mozilla, como o sistema operacional Firefox." />
+<meta property="og:title" content="Mozilla Developer Network" />
 ```
 
 Um efeito disso é que, quando você liga a MDN no facebook, o link aparece junto com uma imagem e descrição: uma experiência mais rica para usuários.
@@ -187,7 +197,7 @@ Um efeito disso é que, quando você liga a MDN no facebook, o link aparece junt
 ![Open graph protocol data from the MDN homepage as displayed on facebook, showing an image, title, and description.](facebook-output.png)O Twitter também possui seus próprios metadados proprietários, o que tem um efeito semelhante quando o URL do site é exibido no twitter.com. Por exemplo:
 
 ```html
-<meta name="twitter:title" content="Mozilla Developer Network">
+<meta name="twitter:title" content="Mozilla Developer Network" />
 ```
 
 ## Adicionando ícones personalizados ao seu site
@@ -201,9 +211,9 @@ Um favicon pode ser adicionado à sua página:
 1. Salvando-o no mesmo diretório que a página de índice do site, salvo no formato `.ico` (a maioria dos navegadores suportará favicons em formatos mais comuns como `.gif` ou `.png`, mas usar o formato ICO irá garantir que ele funcione tão bem como o Internet Explorer 6 .)
 2. Adicionando a seguinte linha ao HTML `<head>` para fazer referência a ele:
 
-    ```html
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    ```
+   ```html
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+   ```
 
 Aqui está um exemplo de um favicon em um painel de faforitos:
 
@@ -213,22 +223,36 @@ Há muitos outros tipos de ícones para considerar nestes dias também. Por exem
 
 ```html
 <!-- iPad de terceira geração com tela retina de alta resolução: -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="https://developer.mozilla.org/static/img/favicon144.png" />
 <!-- iPhone com tela retina de alta resolução: -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="114x114"
+  href="https://developer.mozilla.org/static/img/favicon114.png" />
 <!-- iPad de primeira e segunda geração: -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="72x72"
+  href="https://developer.mozilla.org/static/img/favicon72.png" />
 <!-- iPhone não-Retina, iPod Touch e dispositivos Android 2.1+: -->
-<link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.png">
+<link
+  rel="apple-touch-icon-precomposed"
+  href="https://developer.mozilla.org/static/img/favicon57.png" />
 <!-- favicon básico -->
-<link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.png">
+<link
+  rel="shortcut icon"
+  href="https://developer.mozilla.org/static/img/favicon32.png" />
 ```
 
 Os comentários explicam onde cada ícone é usado - esses elementos cobrem coisas como fornecer um ícone de alta resolução agradável para usar quando o site é salvo na tela inicial do iPad.
 
 Não se preocupe muito com a implementação de todos esses tipos de ícone agora — este é um recurso bastante avançado, e você não precisará ter conhecimento disso para avançar no curso. O objetivo principal aqui é permitir que você saiba o que são essas coisas, no caso de você encontrá-las enquanto navega no código-fonte dos outros sites.
 
-> **Nota:** Se o seu site usa uma Política de Segurança de Conteúdo (CSP) para aumentar sua segurança, a política se aplica ao favicon. Se você encontrar problemas com o favicon não carregando, verifique se a diretiva [`img-src`](/pt-BR/docs/Web/HTTP/Headers/Content-Security-Policy/img-src) do cabeçalho [`Content-Security-Policy`](/pt-BR/docs/Web/HTTP/Headers/Content-Security-Policy) não está impedindo o acesso a ele.
+> [!NOTE]
+> Se o seu site usa uma Política de Segurança de Conteúdo (CSP) para aumentar sua segurança, a política se aplica ao favicon. Se você encontrar problemas com o favicon não carregando, verifique se a diretiva [`img-src`](/pt-BR/docs/Web/HTTP/Headers/Content-Security-Policy/img-src) do cabeçalho [`Content-Security-Policy`](/pt-BR/docs/Web/HTTP/Headers/Content-Security-Policy) não está impedindo o acesso a ele.
 
 ## Aplicando CSS e JavaScript ao HTML
 
@@ -237,7 +261,7 @@ Todos os sites que você usar nos dias atuais empregarão o {{glossary("CSS")}} 
 - O elemento {{htmlelement("link")}} sempre vai no cabeçalho do seu documento. Isso requer dois atributos, rel = "stylesheet", que indica que é a folha de estilo do documento e href, que contém o caminho para o arquivo de folha de estilo:
 
   ```html
-  <link rel="stylesheet" href="meu-arquivo-css.css">
+  <link rel="stylesheet" href="meu-arquivo-css.css" />
   ```
 
 - O elemento {{htmlelement("script")}} não precisa ir no cabeçalho; na verdade, muitas vezes é melhor colocá-lo na parte inferior do corpo do documento (antes da tag `</body>` de fechamento), para garantir que todo o conteúdo HTML tenha sido lido pelo navegador antes de tentar aplicar o JavaScript nele (se o JavaScript tentar acessar um elemento que ainda não existe, o navegador gerará um erro.)
@@ -246,7 +270,8 @@ Todos os sites que você usar nos dias atuais empregarão o {{glossary("CSS")}} 
   <script src="meu-arquivo-js.js"></script>
   ```
 
-  > **Nota:** O elemento `<script>` pode parecer um elemento vazio, mas não é, e, portanto, precisa de uma tag de fechamento. Em vez de apontar para um arquivo de script externo, você também pode escolher colocar seu script dentro do elemento `<script>`.
+  > [!NOTE]
+  > O elemento `<script>` pode parecer um elemento vazio, mas não é, e, portanto, precisa de uma tag de fechamento. Em vez de apontar para um arquivo de script externo, você também pode escolher colocar seu script dentro do elemento `<script>`.
 
 ### Aprendizagem ativa: aplicar CSS e JavaScript a uma página
 
@@ -261,14 +286,15 @@ Se for feito corretamente, quando você salvar seu HTML e atualizar seu navegado
 - O JavaScript adicionou uma lista vazia à página. Agora, quando você clica em qualquer lugar da lista, uma caixa de diálogo aparecerá pedindo para que você, insira algum texto para um novo item de lista. Quando você pressiona o botão OK, um novo item será adicionado à lista contendo o texto. Quando você clica em um item de lista existente, uma caixa de diálogo será exibida permitindo que você altere o texto do item.
 - O CSS fez com que o plano de fundo ficasse verde e o texto se tornasse maior. Ele também estilizou parte do conteúdo que o JavaScript adicionou à página (a barra vermelha com a borda preta é o estilo que o CSS adicionou à lista gerada por JS).
 
-> **Nota:** Se você ficar preso neste exercício e não conseguir aplicar o CSS/JS, tente verificar nossa página de exemplo [css-and-js.html](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/the-html-head/css-and-js.html).
+> [!NOTE]
+> Se você ficar preso neste exercício e não conseguir aplicar o CSS/JS, tente verificar nossa página de exemplo [css-and-js.html](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/the-html-head/css-and-js.html).
 
 ## Definir o idioma principal do documento
 
 Finalmente, vale a pena mencionar que você pode (e realmente deveria) definir o idioma da sua página. Isso pode ser feito adicionando o [atributo lang](/pt-BR/docs/Web/HTML/Global_attributes/lang) à tag HTML de abertura (como visto no [meta-example.html](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/the-html-head/meta-example.html) e mostrado abaixo).
 
 ```html
-<html lang="pt-BR">
+<html lang="pt-BR"></html>
 ```
 
 Isso é útil de várias maneiras. O seu documento HTML será indexado de forma mais eficaz pelos motores de busca se o seu idioma for definido (permitindo que ele apareça corretamente em resultados específicos do idioma, por exemplo), e é útil para pessoas com deficiências visuais usando leitores de tela (por exemplo, a palavra "seis" existe em Francês e Inglês, mas é pronunciado de forma diferente.)

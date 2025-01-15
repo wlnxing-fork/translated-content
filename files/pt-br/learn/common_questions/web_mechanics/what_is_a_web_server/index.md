@@ -1,7 +1,6 @@
 ---
 title: O que é um servidor web (web server)?
 slug: Learn/Common_questions/Web_mechanics/What_is_a_web_server
-original_slug: Learn/Common_questions/What_is_a_web_server
 ---
 
 Neste artigo vamos revisar o que são web servers, como eles funcionam, e por que eles são importantes.
@@ -54,7 +53,7 @@ Por exemplo, para produzir as páginas finalizadas que você vê em seu navegado
 
 ## Aprendizado ativo
 
-_Ainda não há aprendizado ativo disponível. [Por favor, considere contribuir](/pt-BR/docs/MDN/Getting_started)._
+_Ainda não há aprendizado ativo disponível. [Por favor, considere contribuir](/pt-BR/docs/MDN/Community/Contributing/Getting_started)._
 
 ## Entrando a fundo
 
@@ -71,9 +70,9 @@ Técnicamente, você pode servir todos esses arquivos em seu próprio computador
 - tem o mesmo endereço IP sempre (nem todos {{Glossary("ISP", "ISPs")}} fornecem um endereço IP fixo para linhas domésticas)
 - é mantido por um provedor de terceiros
 
-Por todas essas razões, encontrar um bom provedor de servidores é a chave para criar seu próprio _website_. Pesquise pelos vários serviços oferecidos e escolha aquele que melhor se alinha às suas necessidades e ao bolso (os serviçoes variam em uma faixa desde zero até milhares de dólares por mês). Você pode encontrar mais detalhes [nesse artigo](/en-US/Learn/How_much_does_it_cost#Hosting).
+Por todas essas razões, encontrar um bom provedor de servidores é a chave para criar seu próprio _website_. Pesquise pelos vários serviços oferecidos e escolha aquele que melhor se alinha às suas necessidades e ao bolso (os serviçoes variam em uma faixa desde zero até milhares de dólares por mês). Você pode encontrar mais detalhes [nesse artigo](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/How_much_does_it_cost#hosting).
 
-Uma vez que você escolheu uma solução de servidores web, você só precisa [fazer o _upload_ dos seus arquivos para o servidor _web_](/pt-BR/docs/Learn/Upload_files_to_a_web_server).
+Uma vez que você escolheu uma solução de servidores web, você só precisa [fazer o _upload_ dos seus arquivos para o servidor _web_](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/Upload_files_to_a_web_server).
 
 ### Comunicando através do HTTP
 
@@ -96,7 +95,7 @@ O HTTP fornece regras claras sobre como um cliente e um servidor se comunicam. A
 
 1. Ao receber uma requisição, um servidor HTTP primeiramente confirma se a URL requisitada corresponde ao arquivo existente.
 2. Se confirmar, o servidor web envia o conteúdo do arquivo de volta ao navegador. Senão, o servidor de aplicações cria o arquivo necessário.
-3. Se nenhum dos processos for possível, o servidor web retorna uma mensagem de erro ao navegador, mais conhecido como "404 Not Found". (Esse erro é tão comum que muitos desevolvedores web passam um bom tempo criando [páginas de erro do 404](http://www.404notfound.fr/).)
+3. Se nenhum dos processos for possível, o servidor web retorna uma mensagem de erro ao navegador, mais conhecido como "404 Not Found". (Esse erro é tão comum que muitos desevolvedores web passam um bom tempo criando páginas de erro do 404.)
 
 ### Conteúdo estático vs. dinâmico
 
@@ -104,7 +103,7 @@ A grosso modo, um servidor pode fornecer tanto um conteúdo estático quanto din
 
 "Dinâmico" significa que o servidor processa o conteúdo ou o gera a partir de um banco de dados. Essa solução fornece mais flexibilidade, mas a arquitetura fica mais difícil de lidar, fazendo com que seja dramaticamente mais complexo desenvolver o website.
 
-Veja por exemplo a página na qual está lendo agora. No servidor web que a hospeda, há um servidor de aplicações que pega o conteúdo do artigo de um banco de dados, o formata, coloca dentro de um template HTML e lhe envia o resultado. Nesse caso, o servidor de aplicações é chamado de [Kuma](/pt-BR/docs/MDN/Kuma) e é desevolvido em [Python](https://www.python.org/) (usando o framework [Django](https://www.djangoproject.com/) ). A equipe da Mozilla desenvolveu o Kuma devido a necessidades específicas do MDN, mas há muitas aplicações similares em muitas outras tecnologias..
+Veja por exemplo a página na qual está lendo agora. No servidor web que a hospeda, há um servidor de aplicações que pega o conteúdo do artigo de um banco de dados, o formata, coloca dentro de um template HTML e lhe envia o resultado. Nesse caso, o servidor de aplicações é chamado de [Kuma](https://github.com/mdn/yari/tree/main/docs) e é desevolvido em [Python](https://www.python.org/) (usando o framework [Django](https://www.djangoproject.com/) ). A equipe da Mozilla desenvolveu o Kuma devido a necessidades específicas do MDN, mas há muitas aplicações similares em muitas outras tecnologias..
 
 Existem tantos servidores de aplicações que é muito difícil sugerir algum em particular. Alguns servidores de aplicações atendem à categorias específicas de websites como blogs, wikis ou lojas virtuais. Outros, os chamados {{Glossary("CMS", "CMSs")}} (sistemas de gerenciamento de conteúdo), são mais genéricos. Se estiver desenvolvendo um website dinâmico, reserve um tempo para escolher uma ferramenta que atenda às suas necessidades. A menos que queria aprender sobre o desenvolvimento de um servidor web (que é uma área interessante por si só!), não há necessidade de criar seu próprio servidor de aplicação. Estará apenas reinventando a roda.
 
@@ -112,6 +111,6 @@ Existem tantos servidores de aplicações que é muito difícil sugerir algum em
 
 Agora que está familiarizado com os servidores web, você pode:
 
-- ler sobre [quanto custa desenvolver para a web](/pt-BR/docs/Learn/How_much_does_it_cost) (em inglês)
-- aprender mais sobre os [vários softwares necessários para criar um site](/pt-BR/docs/Learn/What_software_do_I_need) (em inglês)
-- partir para a prática de [como fazer o upload de arquivos em um servidor web](/pt-BR/docs/Learn/Upload_files_to_a_web_server) (em inglês).
+- ler sobre [quanto custa desenvolver para a web](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/How_much_does_it_cost) (em inglês)
+- aprender mais sobre os [vários softwares necessários para criar um site](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/What_software_do_I_need) (em inglês)
+- partir para a prática de [como fazer o upload de arquivos em um servidor web](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/Upload_files_to_a_web_server) (em inglês).

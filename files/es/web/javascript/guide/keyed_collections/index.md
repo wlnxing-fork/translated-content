@@ -17,18 +17,18 @@ El siguiente código muestra algunas operaciones básicas con un `Map`. Consulta
 
 ```js
 let sayings = new Map();
-sayings.set('dog', 'woof');
-sayings.set('cat', 'meow');
-sayings.set('elephant', 'toot');
+sayings.set("dog", "woof");
+sayings.set("cat", "meow");
+sayings.set("elephant", "toot");
 sayings.size; // 3
-sayings.get('dog'); // woof
-sayings.get('fox'); // undefined
-sayings.has('bird'); // false
-sayings.delete('dog');
-sayings.has('dog'); // false
+sayings.get("dog"); // woof
+sayings.get("fox"); // undefined
+sayings.has("bird"); // false
+sayings.delete("dog");
+sayings.has("dog"); // false
 
 for (let [key, value] of sayings) {
-  console.log(key + ' goes ' + value);
+  console.log(key + " goes " + value);
 }
 // "cat goes meow"
 // "elephant goes toot"
@@ -60,7 +60,7 @@ Una diferencia con los objetos `Map` es que las claves en `WeakMap` no son enume
 
 Para obtener más información y código de ejemplo, consulta también "¿Por qué mapa _Débil_?" en la página de referencia de {{JSxRef("WeakMap")}}.
 
-Un caso de uso de los objetos `WeakMap` es almacenar datos privados para un objeto u ocultar detalles de implementación. El siguiente ejemplo es de la publicación del blog de Nick Fitzgerald ["Ocultar detalles de implementación con WeakMaps de ECMAScript 6"](http://fitzgeraldnick.com/weblog/53/). Los datos y métodos privados pertenecen al objeto y se almacenan en `privates` del objeto `WeakMap`. Todo lo expuesto en la instancia y el prototipo es público; todo lo demás es inaccesible desde el mundo exterior porque `privates` no se exporta desde el módulo.
+Un caso de uso de los objetos `WeakMap` es almacenar datos privados para un objeto u ocultar detalles de implementación. El siguiente ejemplo es de la publicación del blog de Nick Fitzgerald ["Ocultar detalles de implementación con WeakMaps de ECMAScript 6"](https://fitzgeraldnick.com/weblog/53/). Los datos y métodos privados pertenecen al objeto y se almacenan en `privates` del objeto `WeakMap`. Todo lo expuesto en la instancia y el prototipo es público; todo lo demás es inaccesible desde el mundo exterior porque `privates` no se exporta desde el módulo.
 
 ```js
 const privates = new WeakMap();
@@ -91,11 +91,11 @@ El siguiente código muestra algunas operaciones básicas con un `Set`. Además,
 ```js
 let mySet = new Set();
 mySet.add(1);
-mySet.add('algún texto');
-mySet.add('foo');
+mySet.add("algún texto");
+mySet.add("foo");
 
 mySet.has(1); // true
-mySet.delete('foo');
+mySet.delete("foo");
 mySet.size; // 2
 
 for (let item of mySet) console.log(item);
@@ -107,7 +107,8 @@ for (let item of mySet) console.log(item);
 
 Puedes crear un {{JSxRef("Array")}} a partir de un `Set` usando {{JSxRef("Array.from")}} o el {{JSxRef("Operators/Spread_operator", "operador de propagación")}}. Además, el constructor `Set` acepta un `Array` para convertirlo en la otra dirección.
 
-> **Nota:** Recuerda que los objetos `Set` almacenan _valores únicos_, por lo que cualquier elemento duplicado de un arreglo se elimina al realizar la conversión.
+> [!NOTE]
+> Recuerda que los objetos `Set` almacenan _valores únicos_, por lo que cualquier elemento duplicado de un arreglo se elimina al realizar la conversión.
 
 ```js
 Array.from(mySet);

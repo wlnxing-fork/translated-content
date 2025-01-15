@@ -3,11 +3,13 @@ title: 漸層
 slug: Web/SVG/Tutorial/Gradients
 ---
 
+{{SVGRef}}
+
 {{ PreviousNext("Web/SVG/Tutorial/Fills_and_Strokes", "Web/SVG/Tutorial/Patterns") }}
 
 除了基本的 fill 和 stroke 之外，我們還有一個更令人興奮的功能：給邊框和填充設置漸層。
 
-漸層的類型有兩種，線形漸層和放射形漸層。線形漸層沿直線變化，在 defs 元素裡創建一個 {{SVGElement('linearGradient')}} 元素，就創建了一個線形漸層。漸變**必須**有一個`id`屬性，否則它不能被其他元素引用，等於白做了。
+漸層的類型有兩種，線形漸層和放射形漸層。線形漸層沿直線變化，在 defs 元素裡創建一個 {{SVGElement('linearGradient')}} 元素，就創建了一個線形漸層。漸變**必須**有一個 `id` 屬性，否則它不能被其他元素引用，等於白做了。
 
 ## 線形漸層
 
@@ -66,7 +68,8 @@ Linear gradients change along a straight line. To insert one, you create a {{SVG
  <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
 ```
 
-> **備註：** 你也可以在漸變中使用`xlink:href`屬性，它可以將一個漸變的屬性和 stop 節點，引入到另一個漸變中。在下面的例子裡，我們就不需要在 Gradient2 裡重新創建許多 stop 節點。
+> [!NOTE]
+> 你也可以在漸變中使用`xlink:href`屬性，它可以將一個漸變的屬性和 stop 節點，引入到另一個漸變中。在下面的例子裡，我們就不需要在 Gradient2 裡重新創建許多 stop 節點。
 >
 > ```xml
 >  <linearGradient id="Gradient1">
@@ -78,7 +81,7 @@ Linear gradients change along a straight line. To insert one, you create a {{SVG
 >     xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Gradient1"/>
 > ```
 >
-> 這裡我直接在元素裡定義了 xlink 的命名空間，通常我們會在文檔的頂部定義它。在 [talk about images](/zh-TW/SVG/Tutorial/Other_content_in_SVG) 有更多相關內容。
+> 這裡我直接在元素裡定義了 xlink 的命名空間，通常我們會在文檔的頂部定義它。在 [talk about images](/zh-TW/docs/Web/SVG/Tutorial/Other_content_in_SVG) 有更多相關內容。
 
 ## 放射形漸層
 
@@ -267,7 +270,7 @@ Linear gradients change along a straight line. To insert one, you create a {{SVG
   gradientUnits="userSpaceOnUse"></radialGradient>
 ```
 
-你還可以使用`gradientTransform`屬性創建其他類型的變換，但現在我們還沒說到[introduced transforms](/zh-TW/SVG/Tutorial/Basic_Transformations)，所以這些內容會留到後面再講。
+你還可以使用`gradientTransform`屬性創建其他類型的變換，但現在我們還沒說到[introduced transforms](/zh-TW/docs/Web/SVG/Tutorial/Basic_Transformations)，所以這些內容會留到後面再講。
 
 當圖形對象的不是方形時，還有一個需要注意的處理方式：`gradientUnits="objectBoundingBox"`。但是它太複雜了，需要其他專家來講解。
 

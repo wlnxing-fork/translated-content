@@ -1,15 +1,9 @@
 ---
 title: Conception d'une page web
 slug: Learn/Common_questions/Design_and_accessibility/Common_web_layouts
-tags:
-  - Beginner
-  - CSS
-  - Design
-  - HTML
-  - NeedsActiveLearning
-translation_of: Learn/Common_questions/Common_web_layouts
-original_slug: Learn/Common_questions/Common_web_layouts
 ---
+
+{{QuicklinksWithSubPages("Learn/Common_questions")}}
 
 Lorsque vous concevez des pages pour votre site Internet, il est utile d'avoir en tête les modèles de mise en page les plus fréquemment utilisés.
 
@@ -77,7 +71,7 @@ Ce sont là des règles générales dont vous pouvez vous inspirer. Bien entendu
 
 ## Pédagogie active
 
-_Aucun exercice pratique n'est disponible actuellement. [S.V.P., pensez à contribuer&nbsp;!](/fr/docs/MDN/Débuter_sur_MDN)_
+_Aucun exercice pratique n'est disponible actuellement. [S.V.P., pensez à contribuer&nbsp;!](/fr/docs/MDN/Community/Contributing/Getting_started)_
 
 ## Aller plus loin
 
@@ -129,5 +123,5 @@ Comme vous pouvez le voir, il est possible de créer des sites sensationnels ave
 
 Deux options s'offrent maintenant à vous&nbsp;:
 
-- Approfondir vos connaissances [sur les bases de la conception web](/fr/Apprendre/Commencer_avec_le_web).
-- Mettre le tout en pratique en [créant votre toute première page web](/fr/Learn/HTML/Write_a_simple_page_in_HTML).
+- Approfondir vos connaissances [sur les bases de la conception web](/fr/docs/Learn/Getting_started_with_the_web).
+- Mettre le tout en pratique en [créant votre toute première page web](/fr/docs/Learn/HTML/Write_a_simple_page_in_HTML).

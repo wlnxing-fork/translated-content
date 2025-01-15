@@ -5,90 +5,77 @@ slug: Web/JavaScript/Reference/Global_Objects/String/codePointAt
 
 {{JSRef}}
 
-**`codePointAt()`** 方法返回 一个 Unicode 编码点值的非负整数。
+{{jsxref("String")}} 的 **`codePointAt()`** 方法返回一个非负整数，该整数是从给定索引开始的字符的 Unicode 码位值。请注意，索引仍然基于 UTF-16 码元，而不是 Unicode 码位。
+
+{{EmbedInteractiveExample("pages/js/string-codepointat.html","shorter")}}
 
 ## 语法
 
-```plain
-str.codePointAt(pos)
+```js-nolint
+codePointAt(index)
 ```
 
 ### 参数
 
-- `pos`
-  - : 这个字符串中需要转码的元素的位置。
+- `index`
+  - : 需要返回的字符的（从零开始的）索引。会被[转换为整数](/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number#整数转换)——`undefined` 会转换为 0。
 
 ### 返回值
 
-返回值是在字符串中的给定索引的编码单元体现的数字，如果在索引处没找到元素则返回 {{jsxref("undefined")}} 。
+一个非负整数，表示给定 `index` 处字符的码位值。
+
+- 如果 `index` 超出了 `0` – `str.length - 1` 的范围，`codePointAt()` 返回 {{jsxref("undefined")}}。
+- 如果 `index` 处的元素是一个 UTF-16 前导代理（leading surrogate），则返回代理*对*的码位。
+- 如果 `index` 处的元素是一个 UTF-16 后尾代理（trailing surrogate），则*只*返回后尾代理的码元。
 
 ## 描述
 
-如果在指定的位置没有元素则返回 {{jsxref("undefined")}}。如果在索引处开始没有 UTF-16 代理对，将直接返回在那个索引处的编码单元。
+字符串中的字符从左到右进行索引。第一个字符的索引为 `0`，而字符串 `str` 中最后一个字符的索引为 `str.length - 1`。
 
-Surrogate Pair 是 UTF-16 中用于扩展字符而使用的编码方式，是一种采用四个字节 (两个 UTF-16 编码) 来表示一个字符，称作代理对。
+Unicode 码位范围从 `0` 到 `1114111`（`0x10FFFF`）。在 UTF-16 中，每个字符串索引是一个取值范围为 `0` – `65535` 的码元。较高的码位由一个由*一对* 16 位代理伪字符表示。因此，`codePointAt()` 返回的码位可能跨越两个字符串索引。有关 Unicode 的信息，请参阅 [UTF-16 字符、Unicode 码位和字素簇](/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String#utf-16_字符、unicode_码位和字素簇)。
 
 ## 示例
 
-### 使用 `codePointAt()`
+### 使用 codePointAt()
 
 ```js
-'ABC'.codePointAt(1);          // 66
-'\uD800\uDC00'.codePointAt(0); // 65536
+"ABC".codePointAt(0); // 65
+"ABC".codePointAt(0).toString(16); // 41
 
-'XYZ'.codePointAt(42); // undefined
+"😍".codePointAt(0); // 128525
+"\ud83d\ude0d".codePointAt(0); // 128525
+"\ud83d\ude0d".codePointAt(0).toString(16); // 1f60d
+
+"😍".codePointAt(1); // 56845
+"\ud83d\ude0d".codePointAt(1); // 56845
+"\ud83d\ude0d".codePointAt(1).toString(16); // de0d
+
+"ABC".codePointAt(42); // undefined
 ```
 
-## 替补支持（Polyfill）
+### 在循环中使用 codePointAt()
 
-给原生不支持 ECMAScript 6 的浏览器使用`codePointAt()`方法的的一个字符串扩展方法。
+因为使用字符串索引进行循环会导致同一码位被访问两次（一次是前导代理，一次是后尾代理），而第二次调用 `codePointAt()` 时*只*返回后尾代理项，所以最好避免使用索引进行循环。
+
+```js example-bad
+const str = "\ud83d\udc0e\ud83d\udc71\u2764";
+
+for (let i = 0; i < str.length; i++) {
+  console.log(str.codePointAt(i).toString(16));
+}
+// '1f40e'、'dc0e'、'1f471'、'dc71'、'2764'
+```
+
+相反，可以使用 [`for...of`](/zh-CN/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_语句) 语句或[字符串展开语法](/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax)，这两种方法都会调用字符串的 [`[Symbol.iterator]()`](/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator)，从而按照码位进行迭代。然后，可以使用 `codePointAt(0)` 获取每个元素的码位值。
 
 ```js
-/*! http://mths.be/codepointat v0.1.0 by @mathias */
-if (!String.prototype.codePointAt) {
-  (function() {
-    'use strict'; // 严格模式，needed to support `apply`/`call` with `undefined`/`null`
-    var codePointAt = function(position) {
-      if (this == null) {
-        throw TypeError();
-      }
-      var string = String(this);
-      var size = string.length;
-      // 变成整数
-      var index = position ? Number(position) : 0;
-      if (index != index) { // better `isNaN`
-        index = 0;
-      }
-      // 边界
-      if (index < 0 || index >= size) {
-        return undefined;
-      }
-      // 第一个编码单元
-      var first = string.charCodeAt(index);
-      var second;
-      if ( // 检查是否开始 surrogate pair
-        first >= 0xD800 && first <= 0xDBFF && // high surrogate
-        size > index + 1 // 下一个编码单元
-      ) {
-        second = string.charCodeAt(index + 1);
-        if (second >= 0xDC00 && second <= 0xDFFF) { // low surrogate
-          // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
-          return (first - 0xD800) * 0x400 + second - 0xDC00 + 0x10000;
-        }
-      }
-      return first;
-    };
-    if (Object.defineProperty) {
-      Object.defineProperty(String.prototype, 'codePointAt', {
-        'value': codePointAt,
-        'configurable': true,
-        'writable': true
-      });
-    } else {
-      String.prototype.codePointAt = codePointAt;
-    }
-  }());
+for (const codePoint of str) {
+  console.log(codePoint.codePointAt(0).toString(16));
 }
+// '1f40e'、'1f471'、'2764'
+
+[...str].map((cp) => cp.codePointAt(0).toString(16));
+// ['1f40e', '1f471', '2764']
 ```
 
 ## 规范
@@ -99,8 +86,9 @@ if (!String.prototype.codePointAt) {
 
 {{Compat}}
 
-## 相关链接
+## 参见
 
+- [`core-js` 中 `String.prototype.codePointAt` 的 polyfill](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.fromCodePoint()")}}
 - {{jsxref("String.fromCharCode()")}}
 - {{jsxref("String.prototype.charCodeAt()")}}

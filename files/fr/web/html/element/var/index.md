@@ -1,12 +1,6 @@
 ---
-title: '<var> : l''élément de variable'
+title: "<var> : l'élément de variable"
 slug: Web/HTML/Element/var
-tags:
-  - Element
-  - HTML
-  - Reference
-  - Web
-translation_of: Web/HTML/Element/var
 ---
 
 {{HTMLSidebar}}
@@ -17,7 +11,7 @@ L'élément HTML **`<var>`** représente une variable dans une expression mathé
 
 ## Attributs
 
-Cet élément inclut [les attributs universels](/fr/docs/Web/HTML/Attributs_universels).
+Cet élément inclut [les attributs universels](/fr/docs/Web/HTML/Global_attributes).
 
 ## Notes d'utilisation
 
@@ -37,7 +31,10 @@ La plupart des navigateurs appliquent la propriété {{cssxref("font-style")}} a
 
 ```css
 var {
-  font: bold 15px "Courier", "Courier New", monospace;
+  font:
+    bold 15px "Courier",
+    "Courier New",
+    monospace;
 }
 ```
 
@@ -64,7 +61,10 @@ var {
 
 ```css
 var {
-  font: bold 15px "Courier", "Courier New", monospace;
+  font:
+    bold 15px "Courier",
+    "Courier New",
+    monospace;
 }
 ```
 
@@ -73,8 +73,8 @@ var {
 ```html
 <p>
   Les variables <var>minSpeed</var> et <var>maxSpeed</var> contrôlent les
-  vitesses minimale et maximale de l'appareil et sont exprimées en tours
-  par minute.
+  vitesses minimale et maximale de l'appareil et sont exprimées en tours par
+  minute.
 </p>
 ```
 
@@ -116,7 +116,7 @@ var {
     </tr>
     <tr>
       <th scope="row">Omission de balises</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Aucune, la balise d'ouverture et la balise de fermeture sont obligatoires.</td>
     </tr>
     <tr>
       <th scope="row">Parents autorisés</th>

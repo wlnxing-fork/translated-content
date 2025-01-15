@@ -1,8 +1,9 @@
 ---
-title: HTMLMediaElement.play()
+title: "HTMLMediaElement: play() メソッド"
+short-title: play()
 slug: Web/API/HTMLMediaElement/play
 l10n:
-  sourceCommit: af967bb052695baa631c004b9b149c6f91920776
+  sourceCommit: d16706e4e930c57161d473287374a9286c663147
 ---
 
 {{APIRef("HTML DOM")}}
@@ -10,7 +11,7 @@ l10n:
 {{domxref("HTMLMediaElement")}} の **`play()`** メソッドは、メディアの再生を開始しようとします。
 再生が正常に開始されると解決するプロミス ({{jsxref("Promise")}}) を返します。
 
-パーミッションの問題など、何らかの理由で再生を開始しなかった場合、そのプロミスは拒否されます。
+権限の問題など、何らかの理由で再生を開始しなかった場合、そのプロミスは拒否されます。
 
 ## 構文
 
@@ -26,7 +27,8 @@ play()
 
 再生が開始されたときに解決される、または何らかの理由で再生を開始できない場合は拒否されるプロミス ({{jsxref("Promise")}}) です。
 
-> **メモ:** 古いブラウザーは `play()` から値を返さない可能性があります。
+> [!NOTE]
+> 古いブラウザーは `play()` から値を返さない可能性があります。
 
 ### 例外
 
@@ -34,7 +36,7 @@ play()
 
 - `NotAllowedError` {{domxref("DOMException")}}
   - : ユーザーエージェント（ブラウザー）またはオペレーティングシステムが、現在のコンテキストまたは状況においてメディアの再生を許可しない場合に提供されます。
-  ブラウザーは、例えば[許可ポリシー](/ja/docs/Web/HTTP/Permissions_Policy) のため、ユーザーが明示的に "play" ボタンをクリックしてメディア再生を始めるように要求することがあります。
+    ブラウザーは、例えば[許可ポリシー](/ja/docs/Web/HTTP/Permissions_Policy) のため、ユーザーが明示的に "play" ボタンをクリックしてメディア再生を始めるように要求することがあります。
 - `NotSupportedError` {{domxref("DOMException")}}
   - : メディアソース（例えば {{domxref("MediaStream")}}, {{domxref("MediaSource")}}, {{domxref("Blob")}}, または {{domxref("File")}} として指定可能）が、対応しているメディア形式を表していない場合に提供されます。
 

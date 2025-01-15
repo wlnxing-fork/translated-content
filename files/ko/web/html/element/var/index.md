@@ -1,5 +1,5 @@
 ---
-title: '<var>: 변수 요소'
+title: "<var>: 변수 요소"
 slug: Web/HTML/Element/var
 ---
 
@@ -34,7 +34,7 @@ slug: Web/HTML/Element/var
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -81,7 +81,7 @@ slug: Web/HTML/Element/var
 
 `<var>`를 사용해 수학 등식의 변수명을 나타내는 간단한 예제입니다.
 
-```html
+```plain
 A simple equation:
   x = y + 2
 ```

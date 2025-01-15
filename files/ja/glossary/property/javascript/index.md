@@ -3,9 +3,11 @@ title: Property (プロパティ) (JavaScript)
 slug: Glossary/Property/JavaScript
 ---
 
+{{GlossarySidebar}}
+
 **JavaScript プロパティ**は、多くの場合データ構造と関連付けられた属性を記述する、オブジェクトの特性です。
 
-プロパティは 2 種類あります。
+[クラス](/ja/docs/Web/JavaScript/Reference/Classes)の文脈において、プロパティは 2 種類あります。
 
 - *インスタンスプロパティ*は、特定のオブジェクトインスタンスに固有のデータを保持します。
 - *静的プロパティ*は、すべてのオブジェクトインスタンス間で共有されるデータを保持します。
@@ -17,4 +19,4 @@ slug: Glossary/Property/JavaScript
 ### 一般知識
 
 - Wikipedia 上の記事「[プロパティ](https://ja.wikipedia.org/wiki/プロパティ)」
-- [オブジェクト志向 JavaScript 入門](/ja/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
+- [オブジェクト志向 JavaScript 入門](/ja/docs/Learn/JavaScript/Objects)

@@ -10,7 +10,7 @@ l10n:
     <li><a href="/ja/docs/Web/Accessibility/ARIA/Annotations">ARIA アノテーション</a></li>
     <li><a href="/ja/docs/Web/Accessibility/ARIA/ARIA_Guides">ARIA ガイド</a></li>
     <li><a href="/ja/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">ARIA ライブリージョン</a></li>
-    <li><a href="/ja/docs/Web/Accessibility/ARIA/ARIA_Screen_Reader_Implementors_Guide">ARIA 画面リーダー実装ガイド</a></li>
+    <li><a href="/ja/docs/Web/Accessibility/ARIA/ARIA_Screen_Reader_Implementors_Guide">ARIA スクリーンリーダー実装ガイド</a></li>
     <li><a href="/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques">ARIA の使用: ロール、ステート、プロパティ</a></li>
     <li><a href="/ja/docs/Web/Accessibility/ARIA/forms">ウェブフォーム</a></li>
     <li><a href="/ja/docs/Web/Accessibility/ARIA/How_to_file_ARIA-related_bugs">ARIA に関するバグの報告方法</a></li>
@@ -184,4 +184,4 @@ ARIA は、要素に適用できる意味づけを定義しており、これら
 
 ### MicrosoftEdge 固有のプロパティ
 
-- [`x-ms-aria-flowfrom`](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/x-ms-aria-flowfrom) {{Non-standard_Inline}}
+- [`x-ms-aria-flowfrom`](/ja/docs/Web/Accessibility/ARIA) {{Non-standard_Inline}}

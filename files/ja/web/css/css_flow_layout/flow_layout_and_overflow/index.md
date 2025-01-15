@@ -1,6 +1,6 @@
 ---
 title: フローレイアウトとオーバーフロー
-slug: Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Overflow
+slug: Web/CSS/CSS_flow_layout/Flow_layout_and_overflow
 ---
 
 コンテナーに収まらない量のコンテンツがある場合、オーバーフローが発生します。どのようにオーバーフローが動作するかを理解することは、 CSS で制約された寸法で要素を扱うのに重要です。このガイドでは、通常フローで作業中にオーバーフローがどのように起こるかを説明します。
@@ -11,7 +11,7 @@ Giving an element a fixed height and width, then adding significant content to t
 
 {{EmbedGHLiveSample("css-examples/flow/overflow/overflow.html", '100%', 700)}}
 
-The content goes into the box. Once it fills the box, it continues to overflow in a visible way, displaying content outside the box, potentially displaying under subsequent content. The property that controls how overflow behaves is the [`overflow`](/ja/docs//Web/CSS/overflow) property which has an initial value of `visible`. This is why we can see the overflow content.
+The content goes into the box. Once it fills the box, it continues to overflow in a visible way, displaying content outside the box, potentially displaying under subsequent content. The property that controls how overflow behaves is the [`overflow`](/ja/docs/Web/CSS/overflow) property which has an initial value of `visible`. This is why we can see the overflow content.
 
 ## オーバーフローの制御
 
@@ -23,7 +23,7 @@ Using a value of `scroll` contains the content in its box and add scrollbars to 
 
 {{EmbedGHLiveSample("css-examples/flow/overflow/scroll.html", '100%', 700)}}
 
-Using a value of `auto` will display the content with no scrollbars if the content fits inside the box. If it doesn’t fit then scrollbars will be added. Comparing the next example with the example for `overflow: scroll` you should see `overflow scroll` has horizontal and vertical scrollbars when it only needs vertical scrolling. The `auto` example below only adds the scrollbar in the direct we need to scroll.
+Using a value of `auto` will display the content with no scrollbars if the content fits inside the box. If it doesn't fit then scrollbars will be added. Comparing the next example with the example for `overflow: scroll` you should see `overflow scroll` has horizontal and vertical scrollbars when it only needs vertical scrolling. The `auto` example below only adds the scrollbar in the direct we need to scroll.
 
 {{EmbedGHLiveSample("css-examples/flow/overflow/auto.html", '100%', 700)}}
 
@@ -37,7 +37,7 @@ The overflow property is in reality a shorthand for the [`overflow-x`](/ja/docs/
 
 ## フロー関係のプロパティ
 
-In the guide to [Writing Modes and Flow Layout](/ja/docs/Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Writing_Modes), we looked at the newer properties of `block-size` and `inline-size` which make more sense when working with different writing modes than tying our layout to the physical dimensions of the screen. The Level 3 Overflow Module also includes flow relative properties for overflow - [`overflow-block`](/ja/docs/Web/CSS/@media/overflow-block) and [`overflow-inline`](/ja/docs/Web/CSS/@media/overflow-inline). These correspond to `overflow-x` and `overflow-y` but the mapping depends on the writing mode of the document.
+In the guide to [Writing Modes and Flow Layout](/ja/docs/Web/CSS/CSS_flow_layout/Flow_layout_and_writing_modes), we looked at the newer properties of `block-size` and `inline-size` which make more sense when working with different writing modes than tying our layout to the physical dimensions of the screen. The Level 3 Overflow Module also includes flow relative properties for overflow - [`overflow-block`](/ja/docs/Web/CSS/@media/overflow-block) and [`overflow-inline`](/ja/docs/Web/CSS/@media/overflow-inline). These correspond to `overflow-x` and `overflow-y` but the mapping depends on the writing mode of the document.
 
 These properties currently do not have implementations in browsers, so you will need to use the physical properties at the present time and adjust for your writing mode.
 

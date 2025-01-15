@@ -1,7 +1,6 @@
 ---
 title: yield*
 slug: Web/JavaScript/Reference/Operators/yield*
-original_slug: Web/JavaScript/Referencia/Operadores/yield*
 ---
 
 {{jsSidebar("Operators")}}
@@ -96,9 +95,9 @@ console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
 console.log(iterator.next()); // { value: 3, done: false }
 console.log(iterator.next()); // { value: undefined, done: true },
-                              // g4() returned { value: "foo", done: true } at this point
+// g4() returned { value: "foo", done: true } at this point
 
-console.log(result);          // "foo"
+console.log(result); // "foo"
 ```
 
 ## Especificaciones
@@ -111,7 +110,7 @@ console.log(result);          // "foo"
 
 ## Ver también
 
-- [Protocolos de iteración](/es/docs/Web/JavaScript/Referencia/Iteration_protocols)
+- [Protocolos de iteración](/es/docs/Web/JavaScript/Reference/Iteration_protocols)
 - {{jsxref("Statements/function*", "function*")}}
 - {{jsxref("Operators/function*", "function* expression")}}
 - {{jsxref("Operators/yield", "yield")}}

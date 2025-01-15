@@ -1,12 +1,11 @@
 ---
 title: animation-timing-function
 slug: Web/CSS/animation-timing-function
-translation_of: Web/CSS/animation-timing-function
 ---
 
 {{CSSRef}}
 
-[CSS](/ru/docs/CSS) свойство **`animation-timing-function`** задаёт как происходит анимация в течении длительности каждого цикла.
+[CSS](/ru/docs/Web/CSS) свойство **`animation-timing-function`** задаёт как происходит анимация в течении длительности каждого цикла.
 
 {{EmbedInteractiveExample("pages/css/animation-timing-function.html")}}
 
@@ -25,7 +24,7 @@ animation-timing-function: step-start;
 animation-timing-function: step-end;
 
 /* Function values */
-animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 animation-timing-function: steps(4, end);
 
 /* Steps Function keywords */
@@ -37,7 +36,7 @@ animation-timing-function: steps(6, start);
 animation-timing-function: steps(8, end);
 
 /* Multiple animations */
-animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1, 0.1);
 
 /* Global values */
 animation-timing-function: inherit;
@@ -58,7 +57,7 @@ animation-timing-function: unset;
 
 ## Примеры
 
-См. [CSS animations](/ru/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
+См. [CSS animations](/ru/docs/Web/CSS/CSS_animations/Using_CSS_animations).
 
 ## Спецификации
 
@@ -70,5 +69,5 @@ animation-timing-function: unset;
 
 Смотрите также
 
-- [Использование CSS-анимаций](/ru/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Использование CSS-анимаций](/ru/docs/Web/CSS/CSS_animations/Using_CSS_animations)
 - {{domxref("AnimationEvent", "AnimationEvent")}}

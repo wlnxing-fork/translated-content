@@ -1,11 +1,6 @@
 ---
 title: <rect>
 slug: Web/SVG/Element/rect
-tags:
-  - NeedsUpdate
-  - SVG
-translation_of: Web/SVG/Element/rect
-original_slug: Web/SVG/Элемент/rect
 ---
 
 {{SVGRef}}
@@ -14,10 +9,10 @@ original_slug: Web/SVG/Элемент/rect
 
 ## Контекст использования
 
-| Категория              | Простая фигура, Графический элемент                                                                                                                                                                                   |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Разрешённое содержимое | Любое количество указанных элементов в любом порядке: [Элементы анимации](/en/SVG/Element#Animation) » [Элементы описания](/en/SVG/Element#Descriptive) » |
-| Нормативный документ   | [SVG 1.1 (2ое издание)](http://www.w3.org/TR/SVG/shapes.html#RectElement)                                                                                                                                             |
+| Категория              | Простая фигура, Графический элемент                                                                                                                             |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Разрешённое содержимое | Любое количество указанных элементов в любом порядке: [Элементы анимации](/en-US/SVG/Element#animation) » [Элементы описания](/en-US/SVG/Element#descriptive) » |
+| Нормативный документ   | [SVG 1.1 (2ое издание)](https://www.w3.org/TR/SVG/shapes.html#RectElement)                                                                                      |
 
 ## Пример
 
@@ -54,17 +49,6 @@ original_slug: Web/SVG/Элемент/rect
 
 ## Атрибуты
 
-### Глобальные атрибуты
-
-- [Атрибуты условной обработки](/en/SVG/Attribute#ConditionalProccessing)
-- [Атрибуты ядра](/en/SVG/Attribute#Core)
-- [Атрибуты графических собы](/en/SVG/Attribute#GraphicalEvent)тий
-- [Атрибуты представления](/en/SVG/Attribute#Presentation)
-- {{ SVGAttr("class") }}
-- {{ SVGAttr("style") }}
-- {{ SVGAttr("externalResourcesRequired") }}
-- {{ SVGAttr("transform") }}
-
 ### Специальные атрибуты
 
 - {{ SVGAttr("x") }}
@@ -76,7 +60,7 @@ original_slug: Web/SVG/Элемент/rect
 
 ## DOM Интерфейс
 
-Данный элемент реализует интерфейс [`SVGRectElement`](/en/DOM/SVGRectElement).
+Данный элемент реализует интерфейс [`SVGRectElement`](/en-US/DOM/SVGRectElement).
 
 ## Совместимость с браузерами
 

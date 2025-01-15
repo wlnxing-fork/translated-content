@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: contentinfo ロール'
+title: "ARIA: contentinfo ロール"
 slug: Web/Accessibility/ARIA/Roles/contentinfo_role
 ---
 
@@ -33,7 +33,6 @@ slug: Web/Accessibility/ARIA/Roles/contentinfo_role
 
 ```html
 <body>
-
   <!-- 他のページのコンテンツ -->
 
   <div role="contentinfo">
@@ -44,7 +43,10 @@ slug: Web/Accessibility/ARIA/Roles/contentinfo_role
       <li><a href="#">MDN について</a></li>
       <li><a href="#">フィードバック</a></li>
     </ul>
-    <p>© 2005-2018 Mozilla および各貢献者 コンテンツは <a href="#">これらのライセンス</a> の下で公開されています。</p>
+    <p>
+      © 2005-2018 Mozilla および各貢献者 コンテンツは
+      <a href="#">これらのライセンス</a> の下で公開されています。
+    </p>
   </div>
 </body>
 ```
@@ -73,14 +75,17 @@ slug: Web/Accessibility/ARIA/Roles/contentinfo_role
 
 ```html
 <body>
-
   ...
 
   <article>
     <h2>毎日パッタイ</h2>
     <!-- 記事のコンテンツ -->
     <footer aria-label="毎日パッタイのメタデータ">
-      <p><a href="#">リサ</a>によって<time datetime="2018-09-23 12:17">5月16日</time>に投稿されました。</p>
+      <p>
+        <a href="#">リサ</a>によって<time datetime="2018-09-23 12:17"
+          >5月16日</time
+        >に投稿されました。
+      </p>
     </footer>
   </article>
 
@@ -108,7 +113,7 @@ slug: Web/Accessibility/ARIA/Roles/contentinfo_role
 
 - [ランドマークブラウザー拡張](https://matatk.agrip.org.uk/landmarks/) (英語)
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
@@ -118,10 +123,10 @@ slug: Web/Accessibility/ARIA/Roles/contentinfo_role
 
 - {{htmlelement("footer")}}: フッター要素
 - [contentinfo (role): Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/#contentinfo)
-- [HTML のセクションとアウトラインの使用](/ja/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines)
+- [HTML のセクションとアウトラインの使用](/ja/docs/Web/HTML/Element/Heading_Elements)
 - [ランドマークロール: ARIA を使用する: ロール、ステート、プロパティ](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles)
 - [Using WAI-ARIA Landmarks – 2013 | The Paciello Group](https://developer.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)
 - [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [The Footer Element Update | HTML5 Doctor](http://html5doctor.com/the-footer-element-update/)
+- [The Footer Element Update | HTML5 Doctor](https://html5doctor.com/the-footer-element-update/)
 
 1. [**WAI-ARIA ロール**](/ja/docs/Web/Accessibility/ARIA/Roles){{ListSubpagesForSidebar("/ja/docs/Web/Accessibility/ARIA/Roles")}}

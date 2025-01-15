@@ -14,14 +14,16 @@ elemento = elementoBase.querySelector(seletores);
 ```
 
 - `elemento` e `elementoBase` são objetos {{domxref("element")}}.
-- `selectores` é um grupo de [selectores](/pt-BR/docs/Web/Guide/CSS/Getting_Started/Selectors).
+- `selectores` é um grupo de [selectores](/pt-BR/docs/Learn/CSS/Building_blocks/Selectors).
 
 ## Exemplo
 
 Neste exemplo é retornado o primeiro elemento `style` que, ou não tem nenhum atributo type, ou tem o atributo type igual a `text/css`:
 
 ```js
-var el = document.body.querySelector("style[type='text/css'], style:not([type])");
+var el = document.body.querySelector(
+  "style[type='text/css'], style:not([type])",
+);
 ```
 
 ## Notas
@@ -44,7 +46,7 @@ O argumento de string do `querySelector` deve seguir a sintaxe CSS. Veja exemplo
 
 ## Veja Também
 
-- [`element.querySelectorAll`](/pt-BR/docs/DOM/Element.querySelectorAll)
-- [`document.querySelector`](/pt-BR/docs/DOM/Document.querySelector)
-- [`document.querySelectorAll`](/pt-BR/docs/DOM/Document.querySelectorAll)
+- [`element.querySelectorAll`](/pt-BR/docs/Web/API/Element/querySelectorAll)
+- [`document.querySelector`](/pt-BR/docs/Web/API/Document/querySelector)
+- [`document.querySelectorAll`](/pt-BR/docs/Web/API/Document/querySelectorAll)
 - [Code snippets for querySelector](/pt-BR/docs/Code_snippets/QuerySelector)

@@ -11,7 +11,8 @@ l10n:
 
 > **メモ:** {{domxref("Blob.text()")}} メソッドは、ファイルをテキストとして読み取るための新しいプロミスベースの API です。
 
-> **メモ:** このメソッドは、ファイルの内容全体をメモリーに読み込みますので、巨大なファイルには適していません。巨大なファイルには [`readAsArrayBuffer()`](/ja/docs/Web/API/FileReader/readAsArrayBuffer) の方が適しています。
+> [!NOTE]
+> このメソッドは、ファイルの内容全体をメモリーに読み込みますので、巨大なファイルには適していません。巨大なファイルには [`readAsArrayBuffer()`](/ja/docs/Web/API/FileReader/readAsArrayBuffer) の方が適しています。
 
 ## 構文
 
@@ -44,14 +45,18 @@ readAsText(blob, encoding)
 
 ```js
 function previewFile() {
-  const content = document.querySelector('.content');
-  const [file] = document.querySelector('input[type=file]').files;
+  const content = document.querySelector(".content");
+  const [file] = document.querySelector("input[type=file]").files;
   const reader = new FileReader();
 
-  reader.addEventListener("load", () => {
-    // this will then display a text file
-    content.innerText = reader.result;
-  }, false);
+  reader.addEventListener(
+    "load",
+    () => {
+      // this will then display a text file
+      content.innerText = reader.result;
+    },
+    false,
+  );
 
   if (file) {
     reader.readAsText(file);

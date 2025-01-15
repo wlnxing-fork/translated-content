@@ -15,7 +15,8 @@ frameEl = window.frameElement;
 
 - `frame El` es el elemento dentro del cual está empotrada la ventana. Si la ventana no está incrustada dentro de otro documento, o si el documento en el que está empotrada tiene un origen diferente (como procede de un dominio diferente), este valor será `null`.
 
-> **Nota:** A pesar del nombre de esta propiedad, funciona para documentos empotrados en cualquier forma o método de incrustación, incluyendo {{HTMLElement("object")}}, {{HTMLElement("iframe")}}, or {{HTMLElement("embed")}}.
+> [!NOTE]
+> A pesar del nombre de esta propiedad, funciona para documentos empotrados en cualquier forma o método de incrustación, incluyendo {{HTMLElement("object")}}, {{HTMLElement("iframe")}}, or {{HTMLElement("embed")}}.
 
 ## Ejemplo
 
@@ -23,7 +24,7 @@ frameEl = window.frameElement;
 var frameEl = window.frameElement;
 // Si estamos empotrados, cambia la URL de elemento contenedor to 'http://mozilla.org/'
 if (frameEl) {
-  frameEl.src = 'http://mozilla.org/';
+  frameEl.src = "http://mozilla.org/";
 }
 ```
 

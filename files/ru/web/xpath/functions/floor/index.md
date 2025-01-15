@@ -1,10 +1,9 @@
 ---
 title: Floor
 slug: Web/XPath/Functions/floor
-translation_of: Web/XPath/Functions/floor
-original_slug: Web/XPath/Funkcje/floor
 ---
-{{ XsltRef() }}
+
+{{XsltSidebar}}
 
 Функция `floor` принимает десятичное число и возвращает наибольшее целое, меньшее или равное исходному.
 
@@ -25,7 +24,7 @@ floor( number )
 
 ### Определено
 
-[XPath 1.0 4.4](http://www.w3.org/TR/xpath#function-floor)
+[XPath 1.0 4.4](https://www.w3.org/TR/xpath#function-floor)
 
 ### Поддержка Gecko
 

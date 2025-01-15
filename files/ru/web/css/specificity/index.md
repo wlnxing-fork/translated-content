@@ -1,27 +1,20 @@
 ---
 title: Специфичность
 slug: Web/CSS/Specificity
-tags:
-  - CSS
-  - specifity
-  - Порядок применения правил
-  - Примеры
-  - Руководство
-  - Специфичность селектора
-translation_of: Web/CSS/Specificity
 ---
 
 {{cssref}}
 
 ## Определение
 
-**Специфичность** - это способ, с помощью которого браузеры определяют, какие значения свойств CSS наиболее соответствуют элементу и, следовательно, будут применены. Специфичность основана на правилах соответствия, состоящих из [селекторов CSS](/ru/docs/Web/CSS/Reference#Selectors) различных типов.
+**Специфичность** - это способ, с помощью которого браузеры определяют, какие значения свойств CSS наиболее соответствуют элементу и, следовательно, будут применены. Специфичность основана на правилах соответствия, состоящих из [селекторов CSS](/ru/docs/Web/CSS/Reference#selectors) различных типов.
 
 ## Как вычисляется специфичность?
 
-Специфичность представляет собой вес, придаваемый конкретному правилу CSS. Вес правила определяется количеством каждого из [типов селекторов](#Selector_Types) в данном правиле. Если у нескольких правил специфичность одинакова, то к элементу применяется последнее по порядку правило CSS. Специфичность имеет значение только в том случае, если один элемент соответствует нескольким правилам. Согласно спецификации CSS, правило для непосредственно соответствующего элемента всегда будет иметь больший приоритет, чем правила, унаследованные от предка.
+Специфичность представляет собой вес, придаваемый конкретному правилу CSS. Вес правила определяется количеством каждого из [типов селекторов](#selector_types) в данном правиле. Если у нескольких правил специфичность одинакова, то к элементу применяется последнее по порядку правило CSS. Специфичность имеет значение только в том случае, если один элемент соответствует нескольким правилам. Согласно спецификации CSS, правило для непосредственно соответствующего элемента всегда будет иметь больший приоритет, чем правила, унаследованные от предка.
 
-> **Примечание:** Примечание: Взаимное расположение элементов в дереве документа не влияет на специфичность.
+> [!NOTE]
+> Взаимное расположение элементов в дереве документа не влияет на специфичность.
 
 ### Типы селекторов
 
@@ -51,17 +44,23 @@ translation_of: Web/CSS/Specificity
 1. Лучше использовать каскадные свойства CSS
 2. Использовать более специфичные правила. Чтобы сделать правило более специфичным и повысить его приоритет, укажите один элемент или несколько перед нужным вам элементом:
 
-    ```html
-    <div id="test">
-      <span>Text</span>
-    </div>
-    ```
+   ```html
+   <div id="test">
+     <span>Text</span>
+   </div>
+   ```
 
-    ```css
-    div#test span { color: green }
-    div span { color: blue }
-    span { color: red }
-    ```
+   ```css
+   div#test span {
+     color: green;
+   }
+   div span {
+     color: blue;
+   }
+   span {
+     color: red;
+   }
+   ```
 
 Вне зависимости от порядка следования правил, текст всегда будет зелёным, поскольку у этого правила наибольшая специфичность (при этом, правило для голубого цвета имеет преимущество перед правилом для красного, несмотря на порядок следования).
 
@@ -80,47 +79,55 @@ translation_of: Web/CSS/Specificity
 
 ```css
 #someElement p {
-    color: blue;
+  color: blue;
 }
 
 p.awesome {
-    color: red;
+  color: red;
 }
 ```
 
 Как сделать цвет текста в абзацах `awesome` красным всегда, даже если они расположены внутри `#someElement`? Без `!important` у первого правила специфичность больше и оно имеет преимущество перед вторым.
 
-**Как преодолеть !important**
+**Как преодолеть !important:**
 
 A) Просто добавьте ещё одно правило с модификатором `!important`, у которого селектор имеет большую специфичность (благодаря добавлению типа элемента (тэга), идентификатора (атрибута id) или класса к селектору).
 
 Пример большей специфичности:
 
 ```css
-table td    {height: 50px !important;}
-.myTable td {height: 50px !important;}
-#myTable td {height: 50px !important;}
+table td {
+  height: 50px !important;
+}
+.myTable td {
+  height: 50px !important;
+}
+#myTable td {
+  height: 50px !important;
+}
 ```
 
 Б) Или добавьте правило с модификатором `!important` и таким же селектором, но расположенное в файле после существующего (при прочих равных выигрывает последнее объявленное правило):
 
 ```css
-td {height: 50px !important;}
+td {
+  height: 50px !important;
+}
 ```
 
 В) Или перепишите первоначальное правило без использования `!important`.
 
 **С более подробной информацией можно ознакомиться по следующим ссылкам:**
 
-[Когда надо использовать `!important` в CSS?](http://stackoverflow.com/questions/3706819/what-are-the-implications-of-using-important-in-css)
+[Когда надо использовать `!important` в CSS?](https://stackoverflow.com/questions/3706819/what-are-the-implications-of-using-important-in-css)
 
-[Что означает `!important` в CSS?](http://stackoverflow.com/questions/9245353/what-does-important-in-css-mean)
+[Что означает `!important` в CSS?](https://stackoverflow.com/questions/9245353/what-does-important-in-css-mean)
 
-[Когда в CSS надо использовать модификатор `!important`](http://stackoverflow.com/questions/5701149/when-to-use-important-property-in-css)
+[Когда в CSS надо использовать модификатор `!important`](https://stackoverflow.com/questions/5701149/when-to-use-important-property-in-css)
 
-[Как преодолеть `!important`](http://stackoverflow.com/questions/11178673/how-to-override-important)
+[Как преодолеть `!important`](https://stackoverflow.com/questions/11178673/how-to-override-important)
 
-[Как использовать модификатор `!important` в CSS чтобы сэкономить время](http://stackoverflow.com/questions/2042497/when-to-use-important-to-save-the-day-when-working-with-css)
+[Как использовать модификатор `!important` в CSS чтобы сэкономить время](https://stackoverflow.com/questions/2042497/when-to-use-important-to-save-the-day-when-working-with-css)
 
 ### Не исключение - `:not()`
 
@@ -198,9 +205,9 @@ html h1 {
 
 ```html
 <html>
-<body>
-  <h1>Вот заголовок!</h1>
-</body>
+  <body>
+    <h1>Вот заголовок!</h1>
+  </body>
 </html>
 ```
 
@@ -227,9 +234,9 @@ h1 {
 
 ```html
 <html>
-<body id="parent">
-  <h1>Вот заголовок!</h1>
-</body>
+  <body id="parent">
+    <h1>Вот заголовок!</h1>
+  </body>
 </html>
 ```
 
@@ -248,11 +255,11 @@ h1 {
   - [@-правила](/ru/docs/Web/CSS/At-rule)
   - [комментарии](/ru/docs/Web/CSS/Comments)
   - [специфичность](/ru/docs/Web/CSS/Specificity)
-  - [наследование](/ru/docs/Web/CSS/inheritance)
-  - [блочная модель](/ru/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [наследование](/ru/docs/Web/CSS/Inheritance)
+  - [блочная модель](/ru/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [режимы компоновки](/ru/docs/Web/CSS/Layout_mode)
   - [модели визуального форматирования](/ru/docs/Web/CSS/Visual_formatting_model)
-  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значения
     - [начальные](/ru/docs/Web/CSS/initial_value)
     - [вычисленные](/ru/docs/Web/CSS/computed_value)

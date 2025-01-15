@@ -1,5 +1,5 @@
 ---
-title: '<bdo>: 양방향 텍스트 재정의 요소'
+title: "<bdo>: 양방향 텍스트 재정의 요소"
 slug: Web/HTML/Element/bdo
 ---
 
@@ -37,7 +37,7 @@ slug: Web/HTML/Element/bdo
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -70,7 +70,7 @@ slug: Web/HTML/Element/bdo
 
 이 요소는 [전역 특성](/ko/docs/Web/HTML/Global_attributes)을 포함합니다.
 
-- {{htmlattrdef("dir")}}
+- `dir`
 
   - : 요소 콘텐츠의 텍스트 쓰기 방향. 가능한 값은 다음과 같습니다.
 

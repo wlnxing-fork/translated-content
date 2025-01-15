@@ -1,7 +1,6 @@
 ---
 title: debugger
 slug: Web/JavaScript/Reference/Statements/debugger
-original_slug: Web/JavaScript/Referencia/Sentencias/debugger
 ---
 
 {{jsSidebar("Statements")}}
@@ -20,15 +19,15 @@ El siguiente ejemplo muestra un bloque de código donde ha sido insertada una se
 
 ```js
 function codigoPotencialmenteDefectuoso() {
-    debugger;
-    // realizar paso a paso o examinar código que contiene
-    // potenciales errores
+  debugger;
+  // realizar paso a paso o examinar código que contiene
+  // potenciales errores
 }
 ```
 
 Cuando el depurador es invocado, la ejecución se detiene en la sentencia debugger. Es como un punto de interrupción en el script.
 
-[![Paused at a debugger statement.](screen_shot_2014-02-07_at_9.14.35_am.png)](<screen_shot_2014-02-07_at_9.14.35_am.png>)
+![Paused at a debugger statement.](screen_shot_2014-02-07_at_9.14.35_am.png)
 
 ## Especificaciones
 
@@ -41,4 +40,4 @@ Cuando el depurador es invocado, la ejecución se detiene en la sentencia debugg
 ## Vea también
 
 - [Debugging JavaScript](/es/docs/Debugging_JavaScript)
-- [The Debugger in the Firefox Developer Tools](/es/docs/Tools/Debugger)
+- [The Debugger in the Firefox Developer Tools](https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html)

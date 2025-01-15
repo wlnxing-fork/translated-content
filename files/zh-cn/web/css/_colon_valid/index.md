@@ -1,9 +1,9 @@
 ---
-title: ':valid'
+title: ":valid"
 slug: Web/CSS/:valid
 ---
 
-{{ CSSRef() }}
+{{CSSRef}}
 
 `:valid` CSS [伪类](/zh-CN/docs/Web/CSS/Pseudo-classes)表示内容[验证](/zh-CN/docs/Web/HTML/HTML5/Constraint_validation)正确的{{ HTMLElement("input") }} 或其他 {{ HTMLElement("form") }} 元素。这能简单地将校验字段展示为一种能让用户辨别出其输入数据的正确性的样式。
 
@@ -42,4 +42,4 @@ input:valid {
 ## 参见
 
 - {{ cssxref(":invalid") }}, {{ cssxref(":required") }}, {{ cssxref(":optional") }}
-- [Form data validation](/zh-CN/docs/Learn/HTML/Forms/Form_validation)
+- [Form data validation](/zh-CN/docs/Learn_web_development/Extensions/Forms/Form_validation)

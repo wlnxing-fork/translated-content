@@ -1,7 +1,6 @@
 ---
-title: 'Permissions-Policy: camera'
+title: "Permissions-Policy: camera"
 slug: Web/HTTP/Headers/Permissions-Policy/camera
-original_slug: Web/HTTP/Headers/Feature-Policy/camera
 ---
 
 {{HTTPSidebar}}
@@ -10,8 +9,8 @@ HTTP {{HTTPHeader("Permissions-Policy")}} 标头当中的 `camera` 指令控制�
 
 ## 语法
 
-```
-Permissions-Policy: camera <allowlist>;
+```http
+Permissions-Policy: camera=<allowlist>;
 ```
 
 - \<allowlist>
@@ -32,5 +31,5 @@ Permissions-Policy: camera <allowlist>;
 ## 参见
 
 - {{HTTPHeader("Permissions-Policy")}} 标头
-- [Feature Policy](/zh-CN/docs/Web/HTTP/Feature_Policy)
+- [Feature Policy](/zh-CN/docs/Web/HTTP/Permissions_Policy)
 - [使用 Feature Policy](/zh-CN/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy)

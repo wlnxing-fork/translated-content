@@ -1,12 +1,11 @@
 ---
-title: 'Feature-Policy: autoplay'
+title: "Feature-Policy: autoplay"
 slug: Web/HTTP/Headers/Permissions-Policy/autoplay
-original_slug: Web/HTTP/Headers/Feature-Policy/autoplay
 ---
 
 {{HTTPSidebar}} {{SeeCompatTable}}
 
-HTTP の {{HTTPHeader("Feature-Policy")}} ヘッダーにおける `autoplay` ディレクティブは、現在の文書で {{domxref("HTMLMediaElement")}} インターフェイスによってメディアの自動再生をリクエストすることを許可するかどうかを制御します。このポリシーが有効であれば、 {{domxref("HTMLMediaElement.play()")}} から返却された {{jsxref("Promise")}} が {{domxref("DOMException")}} で拒否されます。 {{HTMLElement("audio")}} および {{HTMLElement("video")}} 要素の {{htmlattrxref("autoplay", "audio")}} 属性は無視されます。
+HTTP の {{HTTPHeader("Feature-Policy")}} ヘッダーにおける `autoplay` ディレクティブは、現在の文書で {{domxref("HTMLMediaElement")}} インターフェイスによってメディアの自動再生をリクエストすることを許可するかどうかを制御します。このポリシーが有効であれば、 {{domxref("HTMLMediaElement.play()")}} から返却された {{jsxref("Promise")}} が {{domxref("DOMException")}} で拒否されます。 {{HTMLElement("audio")}} および {{HTMLElement("video")}} 要素の [`autoplay`](/ja/docs/Web/HTML/Element/audio#autoplay) 属性は無視されます。
 
 自動再生や自動再生ブロックの詳細については、 [メディアおよび Web Audio API の自動再生ガイド](/ja/docs/Web/Media/Autoplay_guide) の記事を参照してください。
 
@@ -35,5 +34,5 @@ Feature-Policy: autoplay <allowlist>;
 ## 関連情報
 
 - {{HTTPHeader("Feature-Policy")}} ヘッダー
-- [機能ポリシー](/ja/docs/Web/HTTP/Feature_Policy)
+- [機能ポリシー](/ja/docs/Web/HTTP/Permissions_Policy)
 - [機能ポリシーの使用](/ja/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy)

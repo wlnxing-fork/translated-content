@@ -9,7 +9,8 @@ l10n:
 
 連絡先ピッカー API (Contact Picker API) は、ユーザーが連絡先リストから項目を選択し、選択した項目の限定された詳細をウェブサイトやアプリケーションで共有できるようにします。
 
-> **メモ:** この API は[ウェブワーカー](/ja/docs/Web/API/Web_Workers_API)では使用できません（{{domxref("WorkerNavigator")}} に公開されていません）。
+> [!NOTE]
+> この API は[ウェブワーカー](/ja/docs/Web/API/Web_Workers_API)では使用できません（{{domxref("WorkerNavigator")}} に公開されていません）。
 
 ## 連絡先ピッカー API の概念と使用法
 
@@ -37,7 +38,7 @@ l10n:
 以下のコードは、連絡先ピッカー API に対応しているかどうかを調べるものです。
 
 ```js
-const supported = 'contacts' in navigator;
+const supported = "contacts" in navigator;
 ```
 
 ### 対応しているプロパティを調べる
@@ -47,19 +48,19 @@ const supported = 'contacts' in navigator;
 ```js
 async function checkProperties() {
   const supportedProperties = await navigator.contacts.getProperties();
-  if (supportedProperties.includes('name')) {
+  if (supportedProperties.includes("name")) {
     // 名前に対応したコードを実行
   }
-  if (supportedProperties.includes('email')) {
+  if (supportedProperties.includes("email")) {
     // メールアドレスに対応したコードを実行
   }
-  if (supportedProperties.includes('tel')) {
+  if (supportedProperties.includes("tel")) {
     // 電話番号に対応したコードを実行
   }
-  if (supportedProperties.includes('address')) {
+  if (supportedProperties.includes("address")) {
     // 住所に対応したコードを実行
   }
-  if (supportedProperties.includes('icon')) {
+  if (supportedProperties.includes("icon")) {
     // アバターに対応したコードを実行
   }
 }
@@ -72,15 +73,15 @@ async function checkProperties() {
 そして、`select()` メソッドを使用して、ユーザーに連絡先ピッカーインターフェイスを表示し、選択された結果を処理する非同期関数を定義しています。
 
 ```js
-const props = ['name', 'email', 'tel', 'address', 'icon'];
-const opts = {multiple: true};
+const props = ["name", "email", "tel", "address", "icon"];
+const opts = { multiple: true };
 
 async function getContacts() {
   try {
-      const contacts = await navigator.contacts.select(props, opts);
-      handleResults(contacts);
+    const contacts = await navigator.contacts.select(props, opts);
+    handleResults(contacts);
   } catch (ex) {
-      // Handle any errors here.
+    // Handle any errors here.
   }
 }
 ```

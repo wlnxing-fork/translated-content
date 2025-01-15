@@ -1,8 +1,9 @@
 ---
 title: XHR (XMLHttpRequest)
 slug: Glossary/XMLHttpRequest
-original_slug: Glossary/XHR_(XMLHttpRequest)
 ---
+
+{{GlossarySidebar}}
 
 {{domxref("XMLHttpRequest")}} (XHR) é uma {{Glossary("API")}} {{Glossary("JavaScript")}} para criar requisições {{Glossary("AJAX")}}. Os métodos desta API fornecem opções para enviar requisições entre o {{Glossary("browser")}} e o {{Glossary("server")}}.
 
@@ -10,10 +11,10 @@ original_slug: Glossary/XHR_(XMLHttpRequest)
 
 ### Geral
 
-- {{interwiki("wikipedia", "XMLHttpRequest")}} on Wikipedia
+- [XMLHttpRequest](https://pt.wikipedia.org/wiki/XMLHttpRequest) on Wikipedia
 - [Synchronous vs. Asynchronous Communications](http://peoplesofttutorial.com/difference-between-synchronous-and-asynchronous-messaging/)
 
 ### Informações técnicas
 
 - O objeto {{domxref("XMLHttpRequest")}}.
-- Veja como utilizar o [XMLHttpRequest na documentação](/pt-BR/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest).
+- Veja como utilizar o [XMLHttpRequest na documentação](/pt-BR/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest).

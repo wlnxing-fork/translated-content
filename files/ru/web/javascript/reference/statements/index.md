@@ -1,11 +1,6 @@
 ---
 title: Инструкции и объявления
 slug: Web/JavaScript/Reference/Statements
-tags:
-  - JavaScript
-  - Reference
-  - statements
-translation_of: Web/JavaScript/Reference/Statements
 ---
 
 {{jsSidebar("Statements")}}
@@ -49,11 +44,11 @@ translation_of: Web/JavaScript/Reference/Statements
 - {{jsxref("Statements/function", "function")}}
   - : Объявляет функцию с указанными параметрами.
 - {{experimental_inline}} {{jsxref("Statements/function*", "function*")}}
-  - : Функции-генераторы, упрощающие написание [итераторов](/ru/docs/Web/JavaScript/Guide/The_Iterator_protocol).
+  - : Функции-генераторы, упрощающие написание [итераторов](/ru/docs/Web/JavaScript/Reference/Iteration_protocols).
 - {{jsxref("Statements/return", "return")}}
   - : Определяет значение, возвращаемое из функции.
 - {{experimental_inline}} {{jsxref("Statements/yield", "yield")}}
-  - : Смотрите статьи [Что нового в JavaScript 1.7](/ru/docs/Web/JavaScript/New_in_JavaScript/1.7) и [Итераторы и генераторы](/ru/docs/JavaScript/Guide/Iterators_and_Generators).
+  - : Смотрите статьи [Что нового в JavaScript 1.7](/ru/docs/Web/JavaScript/New_in_JavaScript/1.7) и [Итераторы и генераторы](/ru/docs/Web/JavaScript/Guide/Iterators_and_generators).
 
 ### Итерации
 
@@ -66,7 +61,7 @@ translation_of: Web/JavaScript/Reference/Statements
 - {{jsxref("Statements/for...in", "for...in")}}
   - : В случайном порядке проходит по перечислимым свойствам объекта. Выполняет инструкции для каждого уникального свойства.
 - {{experimental_inline}} {{jsxref("Statements/for...of", "for...of")}}
-  - : Проходит по итерируемым объектам (включающим в себя {{jsxref("Global_Objects/Array", "массивы", "", 1)}}, массивоподобные объекты и [итераторы с генераторами](/ru/docs/JavaScript/Guide/Iterators_and_Generators)), выполняя пользовательский хук с инструкциями, исполняющимися для значения каждого уникального свойства.
+  - : Проходит по итерируемым объектам (включающим в себя {{jsxref("Global_Objects/Array", "массивы", "", 1)}}, массивоподобные объекты и [итераторы с генераторами](/ru/docs/Web/JavaScript/Guide/Iterators_and_generators)), выполняя пользовательский хук с инструкциями, исполняющимися для значения каждого уникального свойства.
 - {{jsxref("Statements/while", "while")}}
   - : Создаёт цикл, выполняющий указанную инструкцию до тех пор, пока проверяющее условие равно `true`. Условие вычисляется перед выполнением инструкции..
 

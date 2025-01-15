@@ -1,12 +1,14 @@
 ---
-title: 'ARIA: tab ロール'
+title: "ARIA: tab ロール"
 slug: Web/Accessibility/ARIA/Roles/tab_role
 ---
 
 ARIA のタブ (`tab`) ロールは、タブリスト (`tablist`) 内のインタラクティブな要素を示し、アクティブ化されると、関連するタブパネル ([`tabpanel`](/ja/docs/Web/Accessibility/ARIA/Roles/Tabpanel_Role)) を表示します。
 
 ```html
-<button role="tab" aria-selected="true" aria-controls="tabpanel-id" id="tab-id">Tab label</button>
+<button role="tab" aria-selected="true" aria-controls="tabpanel-id" id="tab-id">
+  Tab label
+</button>
 ```
 
 ## 説明
@@ -37,7 +39,8 @@ ARIA のタブ (`tab`) ロールは、タブリスト (`tablist`) 内のイン�
 
 ### 必要な JavaScript 機能
 
-> **メモ:** JavaScript を使用せずにタブのような機能を構築する方法はありますが、コンテンツを含むアクセス可能なタブに上記で必要とされるのと同じ機能のセットを提供する HTML と CSS のみの代替の組み合わせはありません。
+> [!NOTE]
+> JavaScript を使用せずにタブのような機能を構築する方法はありますが、コンテンツを含むアクセス可能なタブに上記で必要とされるのと同じ機能のセットを提供する HTML と CSS のみの代替の組み合わせはありません。
 
 ## 例
 
@@ -46,15 +49,30 @@ ARIA のタブ (`tab`) ロールは、タブリスト (`tablist`) 内のイン�
 ```html
 <div class="tabs">
   <div role="tablist" aria-label="Sample Tabs">
-    <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          First Tab
-        </button>
-    <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
-          Second Tab
-        </button>
-    <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" tabindex="-1">
-          Third Tab
-        </button>
+    <button
+      role="tab"
+      aria-selected="true"
+      aria-controls="panel-1"
+      id="tab-1"
+      tabindex="0">
+      First Tab
+    </button>
+    <button
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-2"
+      id="tab-2"
+      tabindex="-1">
+      Second Tab
+    </button>
+    <button
+      role="tab"
+      aria-selected="false"
+      aria-controls="panel-3"
+      id="tab-3"
+      tabindex="-1">
+      Third Tab
+    </button>
   </div>
   <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
     <p>Content for the first panel</p>
@@ -118,14 +136,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const tabList = document.querySelector('[role="tablist"]');
 
   // 各タブに click イベントハンドラーを追加します
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener("click", changeTabs);
   });
 
   // タブリストのタブ間の矢印ナビゲーションを有効にします
   let tabFocus = 0;
 
-  tabList.addEventListener("keydown", e => {
+  tabList.addEventListener("keydown", (e) => {
     // 右に移動
     if (e.keyCode === 39 || e.keyCode === 37) {
       tabs[tabFocus].setAttribute("tabindex", -1);
@@ -158,7 +176,7 @@ function changeTabs(e) {
   // タブから現在すべての選択状態を取り除きます
   parent
     .querySelectorAll('[aria-selected="true"]')
-    .forEach(t => t.setAttribute("aria-selected", false));
+    .forEach((t) => t.setAttribute("aria-selected", false));
 
   // このタブを選択されたタブとして設定します
   target.setAttribute("aria-selected", true);
@@ -166,7 +184,7 @@ function changeTabs(e) {
   // すべてのタブパネルを非表示にします
   grandparent
     .querySelectorAll('[role="tabpanel"]')
-    .forEach(p => p.setAttribute("hidden", true));
+    .forEach((p) => p.setAttribute("hidden", true));
 
   // 選択されたパネルを表示します
   grandparent.parentNode
@@ -181,7 +199,7 @@ function changeTabs(e) {
 
 自分で追加する必要はなく、代わりに、組み込みの機能的でアクセス可能な機能のために、ボタン (`button`) 要素をタブ (`tab`) ロールと一緒に使用することをお勧めします。 タブ (`tab`) ロールを持つ要素の Tab キー機能を制御するには、すべての非アクティブ要素を `tabindex=-1` に設定し、アクティブ要素を `tabindex=0` に設定することをお勧めします。
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 

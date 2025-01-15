@@ -1,10 +1,6 @@
 ---
 title: Node
 slug: Web/API/Node
-tags:
-  - API
-  - DOM
-translation_of: Web/API/Node
 ---
 
 {{APIRef("DOM")}}
@@ -32,7 +28,7 @@ _Наследует свойства от родителей {{domxref("EventTar
 - {{domxref("Node.localName")}}{{readonlyInline}}
   - : Возвращает {{domxref("DOMString")}} представляющий локальную часть условного имени элемента. В Firefox 3.5 и более ранних версиях, свойство локального имени в верхнем регистре для HTML-элементов (но не XHTML элементов). В более поздних версиях, такого не произошло, и свойство находится в нижнем регистре для HTML и XHTML. Хотя недавние спецификации требуют от `localName` быть определённым как интерфейс {{domxref("Element")}}, но браузеры основанные на Gecko все ещё реализуют его как интерфейс {{domxref("Node")}}.
 - {{domxref("Node.namespaceURI")}}{{readonlyInline}}
-  - : Пространство имён URI данного узла или `null,` если нет пространства имён. В Firefox 3.5 и более ранних версиях, HTML-элементы не имеют пространства имён. В более поздних версиях, HTML-элементы находятся в пространстве имён [`http://www.w3.org/1999/xhtml`](http://www.w3.org/1999/xhtml) для деревьев HTML и XML.
+  - : Пространство имён URI данного узла или `null,` если нет пространства имён. В Firefox 3.5 и более ранних версиях, HTML-элементы не имеют пространства имён. В более поздних версиях, HTML-элементы находятся в пространстве имён [`http://www.w3.org/1999/xhtml`](https://www.w3.org/1999/xhtml) для деревьев HTML и XML.
     Хотя недавние спецификации требуют `namespaceURI` быть определённым как интерфейс {{domxref("Element")}}, но браузеры основанные на Gecko все ещё реализуют его как интерфейс {{domxref("Node")}}.
 - {{domxref("Node.nextSibling")}} {{readonlyInline}}
   - : Возвращает {{domxref("Node")}} представляющий следующий узел в древе или `null,` если не такого узла.
@@ -44,19 +40,19 @@ _Наследует свойства от родителей {{domxref("EventTar
 
   - : Возвращает беззнаковое короткое число `(unsigned short`) представляющее тип узла. Возможные значения:
 
-    | Имя                                                      | Значение |
-    | -------------------------------------------------------- | -------- |
-    | `ELEMENT_NODE`                                           | `1`      |
+    | Имя                                             | Значение |
+    | ----------------------------------------------- | -------- |
+    | `ELEMENT_NODE`                                  | `1`      |
     | `ATTRIBUTE_NODE` {{deprecated_inline()}}        | `2`      |
-    | `TEXT_NODE`                                              | `3`      |
+    | `TEXT_NODE`                                     | `3`      |
     | `CDATA_SECTION_NODE` {{deprecated_inline()}}    | `4`      |
     | `ENTITY_REFERENCE_NODE` {{deprecated_inline()}} | `5`      |
     | `ENTITY_NODE` {{deprecated_inline()}}           | `6`      |
-    | `PROCESSING_INSTRUCTION_NODE`                            | `7`      |
-    | `COMMENT_NODE`                                           | `8`      |
-    | `DOCUMENT_NODE`                                          | `9`      |
-    | `DOCUMENT_TYPE_NODE`                                     | `10`     |
-    | `DOCUMENT_FRAGMENT_NODE`                                 | `11`     |
+    | `PROCESSING_INSTRUCTION_NODE`                   | `7`      |
+    | `COMMENT_NODE`                                  | `8`      |
+    | `DOCUMENT_NODE`                                 | `9`      |
+    | `DOCUMENT_TYPE_NODE`                            | `10`     |
+    | `DOCUMENT_FRAGMENT_NODE`                        | `11`     |
     | `NOTATION_NODE` {{deprecated_inline()}}         | `12`     |
 
 - {{domxref("Node.nodeValue")}}
@@ -103,8 +99,6 @@ _Наследует методы от своих родителей {{domxref("E
   - : …
 - {{domxref("Node.isSameNode()")}}
   - : …
-- {{domxref("Node.isSupported()")}}
-  - : Возвращает [`Boolean`](/ru/docs/Web/API/Boolean) флаг содержащий результаты теста, реализует ли реализация DOM конкретную особенность и поддерживается ли эта особенность конкретным узлом.
 - {{domxref("Node.lookupPrefix()")}}
   - : …
 - {{domxref("Node.lookupNamespaceURI()")}}
@@ -125,7 +119,7 @@ _Наследует методы от своих родителей {{domxref("E
 Следующая функция рекурсивный цикл всех дочерних узлов узла и она исполняет вызов функции относительно их (и себя относительно родительского узла).
 
 ```js
-function DOMComb (oParent, oCallback) {
+function DOMComb(oParent, oCallback) {
   if (oParent.hasChildNodes()) {
     for (var oNode = oParent.firstChild; oNode; oNode = oNode.nextSibling) {
       DOMComb(oNode, oCallback);
@@ -143,22 +137,24 @@ DOMComb(parentNode, callbackFunction);
 
 #### Описание
 
-Рекурсивный цикл всех дочерних узлов `parentNode` и самого `parentNode`, выполняет `callbackFunction` относительно их как [`эти`](/ru/docs/JavaScript/Reference/Operators/this) объекты.
+Рекурсивный цикл всех дочерних узлов `parentNode` и самого `parentNode`, выполняет `callbackFunction` относительно их как [`эти`](/ru/docs/Web/JavaScript/Reference/Operators/this) объекты.
 
 #### Параметры
 
 - `parentNode`
   - : Родительский узел (`Node Object`).
 - `callbackFunction`
-  - : Колбэк-функции ([`Function`](/ru/docs/JavaScript/Reference/Global_Objects/Function)).
+  - : Колбэк-функции ([`Function`](/ru/docs/Web/JavaScript/Reference/Global_Objects/Function)).
 
 #### Пример использования
 
 Следующий пример отправляет в `console.log` текстовое содержимое body:
 
 ```js
-function printContent () {
-  if (this.nodeValue) { console.log(this.nodeValue); }
+function printContent() {
+  if (this.nodeValue) {
+    console.log(this.nodeValue);
+  }
 }
 
 onload = function () {
@@ -170,7 +166,9 @@ onload = function () {
 
 ```js
 Element.prototype.removeAll = function () {
-  while (this.firstChild) { this.removeChild(this.firstChild); }
+  while (this.firstChild) {
+    this.removeChild(this.firstChild);
+  }
   return this;
 };
 ```

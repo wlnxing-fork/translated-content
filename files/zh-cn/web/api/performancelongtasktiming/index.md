@@ -1,14 +1,13 @@
 ---
 title: Long Tasks API
 slug: Web/API/PerformanceLongTaskTiming
-original_slug: Web/API/Long_Tasks_API
 ---
 
 {{DefaultAPISidebar("Long Tasks")}}
 
 ## 目的
 
-*Long Tasks，*这是一个实验性 API，它可以直观地告诉我们哪些任务执行耗费了 50 毫秒或更多时间。50 毫秒这个阈值标准来源于《[RAIL Model](https://developers.google.com/web/fundamentals/performance/rail)》中 ["Response: process events in under 50ms"](https://developers.google.com/web/fundamentals/performance/rail#response) 章节。
+_Long Tasks_，这是一个实验性 API，它可以直观地告诉我们哪些任务执行耗费了 50 毫秒或更多时间。
 
 阻塞主线程达 50 毫秒或以上的任务会导致以下问题：
 
@@ -37,19 +36,19 @@ original_slug: Web/API/Long_Tasks_API
 
 即执行任务的容器清单。针对没有在顶层页面容器内执行的任务，`containerId`、`containerName`和`containerSrc`字段可以用来提供任务源信息。
 
-## 用法
+## 示例
 
 ```js
-var observer = new PerformanceObserver(function(list) {
-    var perfEntries = list.getEntries();
-    for (var i = 0; i < perfEntries.length; i++) {
-        // Process long task notifications:
-        // report back for analytics and monitoring
-        // ...
-    }
+var observer = new PerformanceObserver(function (list) {
+  var perfEntries = list.getEntries();
+  for (var i = 0; i < perfEntries.length; i++) {
+    // Process long task notifications:
+    // report back for analytics and monitoring
+    // ...
+  }
 });
 // register observer for long task notifications
-observer.observe({entryTypes: ["longtask"]});
+observer.observe({ entryTypes: ["longtask"] });
 // Long script execution after this will result in queueing
 // and receiving "longtask" entries in the observer.
 ```

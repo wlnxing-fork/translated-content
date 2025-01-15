@@ -1,14 +1,6 @@
 ---
 title: Date.prototype.setMonth()
 slug: Web/JavaScript/Reference/Global_Objects/Date/setMonth
-tags:
-  - Date
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Date/setMonth
-original_slug: Web/JavaScript/Reference/Objets_globaux/Date/setMonth
 ---
 
 {{JSRef}}
@@ -26,7 +18,7 @@ dateObj.setMonth(valeurMois[, valeurJour])
 ### Versions antérieures à JavaScript 1.3
 
 ```js
-dateObj.setMonth(valeurMois)
+dateObj.setMonth(valeurMois);
 ```
 
 ### Paramètres
@@ -46,7 +38,8 @@ Si le paramètre `valeurJour` n'est pas utilisé, la valeur renvoyée par la mé
 
 Si un paramètre que vous renseignez n'est pas dans les limites attendues, `setMonth()` tentera de mettre à jour la date en conséquence. Par exemple, si la valeur 15 est utilisée pour `valeurMois`, l'année sera incrémenté de 1 (année + 1), et 3 sera utilisé pour le mois.
 
-> **Note :** Attention aux jours du mois lorsqu'on utilise `setMonth()`. En effet, `setMonth()` cherchera à aboutir à une date correcte et on peut avoir des surprises pour les transitions entre les mois. Ainsi, en 2016 (où février a eu 29 jours), on aura le cas suivant :
+> [!NOTE]
+> Attention aux jours du mois lorsqu'on utilise `setMonth()`. En effet, `setMonth()` cherchera à aboutir à une date correcte et on peut avoir des surprises pour les transitions entre les mois. Ainsi, en 2016 (où février a eu 29 jours), on aura le cas suivant :
 >
 > ```js
 > var finDuMois = new Date(2016, 7, 31); // le 31 août 2016

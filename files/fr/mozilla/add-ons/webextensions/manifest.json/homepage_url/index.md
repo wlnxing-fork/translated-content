@@ -1,11 +1,6 @@
 ---
 title: homepage_url
 slug: Mozilla/Add-ons/WebExtensions/manifest.json/homepage_url
-tags:
-  - Add-ons
-  - Extensions
-  - WebExtensions
-translation_of: Mozilla/Add-ons/WebExtensions/manifest.json/homepage_url
 ---
 
 {{AddonSidebar}}
@@ -33,9 +28,9 @@ translation_of: Mozilla/Add-ons/WebExtensions/manifest.json/homepage_url
 
 URL pour la page d'accueil de l'extension.
 
-Si la clé [dévelopeur](/fr/Add-ons/WebExtensions/manifest.json/developer) est fournie et qu'elle contient la propriété "url", cela remplacera la clé "homepage_url".
+Si la clé [dévelopeur](/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json/developer) est fournie et qu'elle contient la propriété "url", cela remplacera la clé "homepage_url".
 
-c'est une [proriété localisable](/fr/Add-ons/WebExtensions/Internationalization#Internationalizing_manifest.json).
+c'est une [proriété localisable](/fr/docs/Mozilla/Add-ons/WebExtensions/Internationalization#internationalizing_manifest.json).
 
 ## Exemple
 

@@ -6,15 +6,16 @@ slug: Web/API/Node/isSameNode
 {{APIRef("DOM")}} {{Deprecated_Header}}
 **`Node.isSameNode()`** comprueba si dos nodos son iguales, es decir si hacen referencia al mismo objecto.
 
-> **Advertencia:** This method is no longer implemented in recent browsers.
+> [!WARNING]
+> This method is no longer implemented in recent browsers.
 >
 > ```js
 > // Instead of using
-> node1.isSameNode(node2)
+> node1.isSameNode(node2);
 >
 > // use
-> node1 === node2 // or
-> node1 == node2
+> node1 === node2; // or
+> node1 == node2;
 > ```
 
 ## Sintaxis

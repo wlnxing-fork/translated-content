@@ -1,12 +1,6 @@
 ---
 title: Array.prototype.concat()
 slug: Web/JavaScript/Reference/Global_Objects/Array/concat
-tags:
-  - Array
-  - JavaScript
-  - Method
-  - Prototype
-translation_of: Web/JavaScript/Reference/Global_Objects/Array/concat
 ---
 
 {{JSRef}}
@@ -39,7 +33,8 @@ var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
 - Ссылки на объекты (но не фактические объекты): метод `concat` копирует ссылки на объекты в новый массив. И оригинал, и новый массив ссылаются на один и тот же объект. То есть, если объект по ссылке будет изменён, изменения будут видны и в новом, и в исходном массивах.
 - Строки, числа и булевы значения (но не объекты {{jsxref("Global_Objects/String", "String")}}, {{jsxref("Global_Objects/Number", "Number")}} или {{jsxref("Global_Objects/Boolean", "Boolean")}}): метод `concat` копирует значения строк и чисел в новый массив.
 
-> **Примечание:** Соединение массивов и/или значений в новый массив оставит соединяемые массивы/значения неизменными. Кроме того, любая операция над новым массивом (если только элемент не является ссылкой) не будет затрагивать исходные массивы и наоборот.
+> [!NOTE]
+> Соединение массивов и/или значений в новый массив оставит соединяемые массивы/значения неизменными. Кроме того, любая операция над новым массивом (если только элемент не является ссылкой) не будет затрагивать исходные массивы и наоборот.
 
 ## Примеры
 
@@ -48,8 +43,8 @@ var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
 Следующий код соединяет два массива:
 
 ```js
-var alpha = ['a', 'b', 'c'],
-    numeric = [1, 2, 3];
+var alpha = ["a", "b", "c"],
+  numeric = [1, 2, 3];
 
 var alphaNumeric = alpha.concat(numeric);
 
@@ -62,8 +57,8 @@ console.log(alphaNumeric); // Результат: ['a', 'b', 'c', 1, 2, 3]
 
 ```js
 var num1 = [1, 2, 3],
-    num2 = [4, 5, 6],
-    num3 = [7, 8, 9];
+  num2 = [4, 5, 6],
+  num3 = [7, 8, 9];
 
 var nums = num1.concat(num2, num3);
 
@@ -75,7 +70,7 @@ console.log(nums); // Результат: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Следующий код соединяет три значения в массив:
 
 ```js
-var alpha = ['a', 'b', 'c'];
+var alpha = ["a", "b", "c"];
 
 var alphaNumeric = alpha.concat(1, [2, 3]);
 

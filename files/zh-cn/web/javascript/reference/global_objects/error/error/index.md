@@ -22,7 +22,8 @@ Error(message, fileName)
 Error(message, fileName, lineNumber)
 ```
 
-> **备注：** 调用 `Error()` 时，可以使用关键字 [`new`](/zh-CN/docs/Web/JavaScript/Reference/Operators/new)，也可以不使用。两种声明方式均能创建一个新的 `Error` 实例。
+> [!NOTE]
+> 调用 `Error()` 时，可以使用关键字 [`new`](/zh-CN/docs/Web/JavaScript/Reference/Operators/new)，也可以不使用。两种声明方式均能创建一个新的 `Error` 实例。
 
 ### 参数
 
@@ -68,11 +69,11 @@ try {
 JavaScript 只有在 `options` 参数为对象时才会尝试读取 `options.cause` 属性，这样可以避免与另一种非标准的 `Error(message, fileName, lineNumber)` 函数签名产生歧义，后者要求第二个参数必须是字符串。如果你省略了 `options` 参数，或者将原始值作为 `options` 传入，又或者传递的对象中没有 `cause` 属性，那么创建的 `Error` 对象将不会包含 `cause` 属性。
 
 ```js
-// 省略 options 
+// 省略 options
 const error1 = new Error("Error message");
 console.log("cause" in error1); // false
 
-// 传递原始值 
+// 传递原始值
 const error2 = new Error("Error message", "");
 console.log("cause" in error2); // false
 

@@ -21,7 +21,7 @@ a >>> b
 
 以十进制（以 10 为基数）数字 `9` 和 `-9` 的 32 位二进制表示为例：
 
-```
+```plain
      9 (base 10): 00000000000000000000000000001001 (base 2)
     -9 (base 10): 11111111111111111111111111110111 (base 2)
 ```
@@ -32,7 +32,7 @@ a >>> b
 
 对于正数 `9`，零填充右移和[符号传播右移](/zh-CN/docs/Web/JavaScript/Reference/Operators/Right_shift)产生相同的结果：`9 >>> 2` 产生 `2`，与 `9 >> 2` 相同：
 
-```
+```plain
       9 (base 10): 00000000000000000000000000001001 (base 2)
                    --------------------------------
 9 >>  2 (base 10): 00000000000000000000000000000010 (base 2) = 2 (base 10)
@@ -43,7 +43,7 @@ a >>> b
 
 但是，请注意 `-9` 会发生什么情况：`-9 >> 2`（[符号传播右移](/zh-CN/docs/Web/JavaScript/Reference/Operators/Right_shift)）产生 `-3`，但 `-9 >>> 2`（零填充右移）产生 1073741821：
 
-```
+```plain
       -9 (base 10): 11111111111111111111111111110111 (base 2)
                     --------------------------------
 -9 >>  2 (base 10): 11111111111111111111111111111101 (base 2) = -3 (base 10)
@@ -75,5 +75,5 @@ a >>> b
 
 ## 参见
 
-- [JS 指南：位运算符](/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_Operators#位运算符)
+- [JS 指南：位运算符](/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_operators#位运算符)
 - [无符号右移赋值运算符](/zh-CN/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift_assignment)

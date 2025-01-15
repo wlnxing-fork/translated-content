@@ -32,7 +32,8 @@ l10n:
 
 セルには、 [`aria-colindex`](/ja/docs/Web/Accessibility/ARIA/Attributes/aria-colindex), [`aria-colspan`](/ja/docs/Web/Accessibility/ARIA/Attributes/aria-colspan), [`aria-rowindex`](/ja/docs/Web/Accessibility/ARIA/Attributes/aria-rowindex), [`aria-rowspan`](/ja/docs/Web/Accessibility/ARIA/Attributes/aria-rowspan) など、表形式データ構造内のセルの位置を明確にする多数のプロパティ属性を含めることができます。
 
-> **メモ:** 可能であれば、ネイティブな HTML 表要素 ({{HTMLElement('table')}} を、表の行要素 ({{HTMLElement('tr')}} および表のセル要素 ({{HTMLElement('td')}} と共に使用することを強く推奨します。
+> [!NOTE]
+> 可能であれば、ネイティブな HTML 表要素 ({{HTMLElement('table')}} を、表の行要素 ({{HTMLElement('tr')}} および表のセル要素 ({{HTMLElement('td')}} と共に使用することを強く推奨します。
 
 ### 関連する WAI-ARIA のロール、ステート、プロパティ
 
@@ -90,8 +91,12 @@ ARIA の第一のルールは、要素を転用して、ARIA のロール、ス�
   </div>
   <div role="rowgroup">
     <div role="row">
-      <span role="columnheader" aria-sort="none" aria-rowindex="1">ARIA ロール</span>
-      <span role="columnheader" aria-sort="none" aria-rowindex="1">意味論的な要素</span>
+      <span role="columnheader" aria-sort="none" aria-rowindex="1"
+        >ARIA ロール</span
+      >
+      <span role="columnheader" aria-sort="none" aria-rowindex="1"
+        >意味論的な要素</span
+      >
     </div>
   </div>
   <div role="rowgroup">
@@ -132,7 +137,9 @@ ARIA の第一のルールは、要素を転用して、ARIA のロール、ス�
   </caption>
   <thead role="rowgroup">
     <tr role="row">
-      <th role="columnheader" aria-sort="none" aria-rowindex="1">ARIA ロール</th>
+      <th role="columnheader" aria-sort="none" aria-rowindex="1">
+        ARIA ロール
+      </th>
       <th role="columnheader" aria-sort="none" aria-rowindex="1">
         意味論的な要素
       </th>
@@ -165,14 +172,14 @@ ARIA の第一のルールは、要素を転用して、ARIA のロール、ス�
 
 {{HTMLElement('td')}} に適用すると、`display: grid;` などで意味づけが削除された場合に、その要素にセルの意味づけを返します。
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
 ## 関連情報
 
 - [role="row"](/ja/docs/Web/Accessibility/ARIA/Roles/row_role)
-- [`role="gridcell"`](/en-US/docs/Web/Accessibility/ARIA/Roles/gridcell_role)
+- [`role="gridcell"`](/ja/docs/Web/Accessibility/ARIA/Roles/gridcell_role)
 - [HTML `<td>` 要素](/ja/docs/Web/HTML/Element/td)
 - [HTML `<th>` 要素](/ja/docs/Web/HTML/Element/th)
 - [HTML 表の高度な機能とアクセシビリティ](/ja/docs/Learn/HTML/Tables/Advanced)

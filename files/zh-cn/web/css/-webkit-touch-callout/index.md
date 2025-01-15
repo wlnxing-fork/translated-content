@@ -1,5 +1,5 @@
 ---
-title: '-webkit-touch-callout'
+title: "-webkit-touch-callout"
 slug: Web/CSS/-webkit-touch-callout
 ---
 
@@ -13,17 +13,17 @@ slug: Web/CSS/-webkit-touch-callout
 
 ## 语法
 
-```
-Formal syntax: default | none
-```
+```css
+/* 关键字值 */
+-webkit-touch-callout: default;
+-webkit-touch-callout: none;
 
-```html
--webkit-touch-callout: default   /* displays the callout */
--webkit-touch-callout: none      /* disables the callout */
-
--webkit-touch-callout: initial
--webkit-touch-callout: inherit
--webkit-touch-callout: unset
+/* 全局值 */
+-webkit-touch-callout: initial;
+-webkit-touch-callout: inherit;
+-webkit-touch-callout: revert;
+-webkit-touch-callout: revert-layer;
+-webkit-touch-callout: unset;
 ```
 
 ### 可能的值

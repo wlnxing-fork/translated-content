@@ -1,7 +1,6 @@
 ---
 title: eval
 slug: Web/JavaScript/Reference/Global_Objects/eval
-original_slug: Web/JavaScript/Referencia/Objetos_globales/eval
 ---
 
 {{jsSidebar("Objects")}}
@@ -51,8 +50,9 @@ Si utiliza la función `eval()` _indirectamente_, invocándola a través de una 
 
 ```js
 function test() {
-  var x = 2, y = 4;
-  console.log(eval("x + y"));  // Llamada directa, utiliza el ámbito local, el resultado es 6
+  var x = 2,
+    y = 4;
+  console.log(eval("x + y")); // Llamada directa, utiliza el ámbito local, el resultado es 6
   var geval = eval;
   console.log(geval("x + y")); // Llamada indirecta, utiliza el ámbito global, através de ReferenceError por que `x` es indefinida
 }
@@ -75,7 +75,7 @@ var campo = getNombreCampo(3);
 document.write("El campo llamado ", campo, " tiene un valor de ", eval(campo + ".value"));
 ```
 
-Sin embargo, `eval()` no es necesario en este código. De hecho, su uso aquí no se recomienda. En su lugar, utilice los [operadores de miembro](/es/Web/JavaScript/Referencia/Operadores/Miembros) (art. en inglés), que son mucho más rápidos y seguros:
+Sin embargo, `eval()` no es necesario en este código. De hecho, su uso aquí no se recomienda. En su lugar, utilice los [operadores de miembro](/es/docs/Web/JavaScript/Reference/Operators/Property_accessors) (art. en inglés), que son mucho más rápidos y seguros:
 
 ```js
 var campo = getFieldName(3);
@@ -86,26 +86,26 @@ Considere ahora este nuevo ejemplo, en donde la propiedad del objeto a ser acces
 
 ```js
 var obj = { a: 20, b: 30 };
-var nombreProp = obtenerNombreProp();  // devuelve "a" o "b"
+var nombreProp = obtenerNombreProp(); // devuelve "a" o "b"
 
-eval( "var resultado = obj." + nombreProp );
+eval("var resultado = obj." + nombreProp);
 ```
 
-Y con el uso de los [accesores de propiedades](/es/docs/Web/JavaScript/Reference/Operators/Property_Accessors) (artículo en inglés), el cual es mucho más rápido y seguro, sería así:
+Y con el uso de los [accesores de propiedades](/es/docs/Web/JavaScript/Reference/Operators/Property_accessors) (artículo en inglés), el cual es mucho más rápido y seguro, sería así:
 
 ```js
 var obj = { a: 20, b: 30 };
 var nombreProp = obtenerNombreProp(); // devuelve "a" o "b"
-var resultado = obj[ nombreProp ];  //  obj[ "a" ] es el mismo que obj.a
+var resultado = obj[nombreProp]; //  obj[ "a" ] es el mismo que obj.a
 ```
 
 Puede incluso utilizar este método para acceder a las propiedades de los descendientes. Utilizando `eval()` esto sería de la siguiente forma:
 
 ```js
-var obj = {a: {b: {c: 0}}};
-var propPath = getPropPath();  // returns e.g. "a.b.c"
+var obj = { a: { b: { c: 0 } } };
+var propPath = getPropPath(); // returns e.g. "a.b.c"
 
-eval( "var result = obj." + propPath );
+eval("var result = obj." + propPath);
 ```
 
 Evitando `eval()`, esto podría hacerse dividiendo la ruta de propiedad y haciendo un bucle a través de las diferentes propiedades:
@@ -113,14 +113,14 @@ Evitando `eval()`, esto podría hacerse dividiendo la ruta de propiedad y hacien
 ```js
 function getDescendantProp(obj, desc) {
   var arr = desc.split(".");
-  while(arr.length) {
+  while (arr.length) {
     obj = obj[arr.shift()];
   }
   return obj;
 }
 
-var obj = {a: {b: {c: 0}}};
-var propPath = getPropPath();  // returns e.g. "a.b.c"
+var obj = { a: { b: { c: 0 } } };
+var propPath = getPropPath(); // returns e.g. "a.b.c"
 var result = getDescendantProp(obj, propPath);
 ```
 
@@ -129,15 +129,15 @@ Estableciendo una propiedad que funcione de modo similar:
 ```js
 function setDescendantProp(obj, desc, value) {
   var arr = desc.split(".");
-  while(arr.length > 1) {
+  while (arr.length > 1) {
     obj = obj[arr.shift()];
   }
   obj[arr[0]] = value;
 }
 
-var obj = {a: {b: {c: 0}}};
-var propPath = getPropPath();  // returns e.g. "a.b.c"
-var result = setDescendantProp(obj, propPath, 1);  // test.a.b.c will now be 1
+var obj = { a: { b: { c: 0 } } };
+var propPath = getPropPath(); // returns e.g. "a.b.c"
+var result = setDescendantProp(obj, propPath, 1); // test.a.b.c will now be 1
 ```
 
 ### Utilice funciones en lugar de evaluar fragmentos de código
@@ -162,7 +162,7 @@ Observe, que ya que la sintaxis de JSON es limitada en comparación con la sinta
 
 ### Pasar datos en lugar de código
 
-Por ejemplo, una extensión diseñada para arrastar contenido de páginas web podría tener reglas de arrastre definidas en [XPath](/es/docs/XPath) (art. en inglés) en lugar de código JavaScript.
+Por ejemplo, una extensión diseñada para arrastar contenido de páginas web podría tener reglas de arrastre definidas en [XPath](/es/docs/Web/XPath) (art. en inglés) en lugar de código JavaScript.
 
 ### Ejecutar código sin privilegos limitados
 
@@ -195,19 +195,19 @@ var str = "if (x == 5) {alert('z is 42'); z = 42;} else z = 0; ";
 document.write("<P>z es ", eval(str));
 ```
 
-### La última espresión es evaluada
+### La última expresión es evaluada
 
 `eval()` devuelve el valor de la última expresión evaluada
 
 ```js
 var str = "if ( a ) { 1+1; } else { 1+2; }";
 var a = true;
-var b = eval(str);  // devuelve 2
+var b = eval(str); // devuelve 2
 
 console.log("b is : " + b);
 
 a = false;
-b = eval(str);  // devuelve 3
+b = eval(str); // devuelve 3
 
 console.log("b is : " + b);
 ```
@@ -215,10 +215,10 @@ console.log("b is : " + b);
 ### `eval` como una cadena de caracteres (string) definiendo funciones requiere "(" y ")" como prefijo y sufijo
 
 ```js
-var fctStr1 = "function a() {}"
-var fctStr2 = "(function a() {})"
-var fct1 = eval(fctStr1)  // devuelve undefined
-var fct2 = eval(fctStr2)  // deuelve una función
+var fctStr1 = "function a() {}";
+var fctStr2 = "(function a() {})";
+var fct1 = eval(fctStr1); // devuelve undefined
+var fct2 = eval(fctStr2); // deuelve una función
 ```
 
 ## Especificaciones
@@ -232,4 +232,4 @@ var fct2 = eval(fctStr2)  // deuelve una función
 ## Vea También
 
 - {{jsxref("Objetos_globales/uneval", "uneval()")}}
-- [Miembros de operadores](/es/docs/Web/JavaScript/Referencia/Operadores/Miembros)
+- [Miembros de operadores](/es/docs/Web/JavaScript/Reference/Operators/Property_accessors)

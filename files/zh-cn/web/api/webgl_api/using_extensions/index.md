@@ -7,7 +7,8 @@ slug: Web/API/WebGL_API/Using_Extensions
 
 WebGL，像它的姐妹 API（OpenGL 和 OpenGL ES），支持使用扩展（extension）。可在 [khronos webgl extension registry](https://www.khronos.org/registry/webgl/extensions/) 查看完整的扩展列表。
 
-> **备注：** 不像别的 GL API，在 WebGL 中，扩展只有在明确需要的情况下才会加载。
+> [!NOTE]
+> 不像别的 GL API，在 WebGL 中，扩展只有在明确需要的情况下才会加载。
 
 ## 规范扩展名、供应商前缀和首选项
 
@@ -34,7 +35,7 @@ const ext =
 WebGL 扩展以“ANGLE”、“OES”、“EXT”、“WEBGL”为前缀。这些前缀反映了来源和意图：
 
 - `ANGLE_`：由 [ANGLE library](https://en.wikipedia.org/wiki/ANGLE_%28software%29) 的作者编写的扩展。
-- `OES_` 和 `KHR_`：由各自的架构审查委员会（Khronos)批准的对 OpenGL ES（OES）或 OpenGL API 扩展的功能的镜像。
+- `OES_` 和 `KHR_`：由各自的架构审查委员会（Khronos）批准的对 OpenGL ES（OES）或 OpenGL API 扩展的功能的镜像。
 - `OVR_`：针对虚拟现实进行优化的扩展。
 - `EXT_`：从其他 OpenGL ES 或 OpenGL API 扩展镜像的扩展。
 - `WEBGL_`：特定于 WebGL 的扩展，旨在与多种 Web 浏览器兼容。它也应该用于源自 OpenGL ES 或 OpenGL API 的扩展，但其行为已被显著改变。

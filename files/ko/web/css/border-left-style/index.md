@@ -9,7 +9,8 @@ slug: Web/CSS/border-left-style
 
 {{EmbedInteractiveExample("pages/css/border-left-style.html")}}
 
-> **참고:** 명세는 서로 다른 스타일의 테두리가 꼭지점에서 만날 때 어떻게 그려야 할지는 정의하고 있지 않습니다.
+> [!NOTE]
+> 명세는 서로 다른 스타일의 테두리가 꼭지점에서 만날 때 어떻게 그려야 할지는 정의하고 있지 않습니다.
 
 ## 구문
 
@@ -69,23 +70,44 @@ border-left-style: unset;
 /* Define look of the table */
 table {
   border-width: 2px;
-  background-color: #52E385;
+  background-color: #52e385;
 }
-tr, td {
+tr,
+td {
   padding: 3px;
 }
 
 /* border-left-style example classes */
-.b1 {border-left-style: none;}
-.b2 {border-left-style: hidden;}
-.b3 {border-left-style: dotted;}
-.b4 {border-left-style: dashed;}
-.b5 {border-left-style: solid;}
-.b6 {border-left-style: double;}
-.b7 {border-left-style: groove;}
-.b8 {border-left-style: ridge;}
-.b9 {border-left-style: inset;}
-.b10 {border-left-style: outset;}
+.b1 {
+  border-left-style: none;
+}
+.b2 {
+  border-left-style: hidden;
+}
+.b3 {
+  border-left-style: dotted;
+}
+.b4 {
+  border-left-style: dashed;
+}
+.b5 {
+  border-left-style: solid;
+}
+.b6 {
+  border-left-style: double;
+}
+.b7 {
+  border-left-style: groove;
+}
+.b8 {
+  border-left-style: ridge;
+}
+.b9 {
+  border-left-style: inset;
+}
+.b10 {
+  border-left-style: outset;
+}
 ```
 
 #### 결과

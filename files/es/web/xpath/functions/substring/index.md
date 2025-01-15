@@ -1,10 +1,9 @@
 ---
 title: substring
 slug: Web/XPath/Functions/substring
-original_slug: Web/XPath/Funciones/substring
 ---
 
-{{ XsltRef() }}
+{{XsltSidebar}}{{ XsltRef() }}
 
 La función `substring` devuelve una parte de una cadena dada.
 
@@ -17,9 +16,11 @@ substring( string , start [, length] )
 ### Argumentos
 
 - `string`
+
   - : La cadena a evaluar.
 
 - `start`
+
   - : La posición dentro de `string` donde comienza la subcadena.
 
 - `length` (opcional)
@@ -35,7 +36,7 @@ Como en otras funciones XPath, la posición no está basada en cero. El primer c
 
 ### Definido
 
-[XPath 1.0 4.2](http://www.w3.org/TR/xpath#function-substring)
+[XPath 1.0 4.2](https://www.w3.org/TR/xpath#function-substring)
 
 ### Soporte en Gecko
 

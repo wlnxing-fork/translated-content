@@ -11,11 +11,12 @@ HTML `autocomplete` 属性允许 web 开发人员指定{{Glossary("user agent","
 
 建议值的来源通常取决于浏览器。通常，值来自用户曾经输入过的值，但它们也可能来自预先配置的值。例如，浏览器可能允许用户保存其姓名、地址、电话号码和电子邮件地址，以实现自动完成目的。也许浏览器提供了保存加密的信用卡信息的功能，以便自动完成身份验证功能。
 
-如果一个 {{HTMLElement("input")}}、{{HTMLElement("select")}} 或 {{HTMLElement("textarea")}} 元素没有 `autocomplete` 属性，则该浏览器将使用该元素的表单所有者的 `autocomplete` 属性，它们可以是元素的后代 {{HTMLElement("form")}} 元素，或由该元素的 {{htmlattrxref("form", "input")}} 属性指定的 `<form>` 元素的 `id`。
+如果一个 {{HTMLElement("input")}}、{{HTMLElement("select")}} 或 {{HTMLElement("textarea")}} 元素没有 `autocomplete` 属性，则该浏览器将使用该元素的表单所有者的 `autocomplete` 属性，它们可以是元素的后代 {{HTMLElement("form")}} 元素，或由该元素的 [`form`](/zh-CN/docs/Web/HTML/Element/input#form) 属性指定的 `<form>` 元素的 `id`。
 
-更多信息，请参见 {{HTMLElement("form")}} 中的 {{htmlattrxref("autocomplete", "form")}} 属性。
+更多信息，请参见 {{HTMLElement("form")}} 中的 [`autocomplete`](/zh-CN/docs/Web/HTML/Element/form#autocomplete) 属性。
 
-> **备注：** 为了提供自动完成功能，用户代理可能需要 `<input>`/`<select>`/`<textarea>` 元素具有如下条件：
+> [!NOTE]
+> 为了提供自动完成功能，用户代理可能需要 `<input>`/`<select>`/`<textarea>` 元素具有如下条件：
 >
 > 1. 具有 `name` 和/或 `id` 属性
 > 2. 作为 `<form>` 元素的后代
@@ -29,7 +30,8 @@ HTML `autocomplete` 属性允许 web 开发人员指定{{Glossary("user agent","
 
   - : 浏览器不允许为此字段自动输入或选择一个值。文档或应用程序可能提供其自己的自动完成功能，或者出于安全方面的考虑，要求不要自动输入该字段的值。
 
-    > **备注：** 在大多数现代浏览器中，`autocomplete` 设置为“`off`”不会阻止密码管理器询问用户是否要保存用户名和密码信息，或者自动在网站的登录表单中填写这些值。请参阅 [autocomplete 属性与登录表单](/zh-CN/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#autocomplete_属性和登录字段)一文。
+    > [!NOTE]
+    > 在大多数现代浏览器中，`autocomplete` 设置为“`off`”不会阻止密码管理器询问用户是否要保存用户名和密码信息，或者自动在网站的登录表单中填写这些值。请参阅 [autocomplete 属性与登录表单](/zh-CN/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion#autocomplete_属性和登录字段)一文。
 
 - "`on`"
   - : 允许浏览器自动完成输入。没有提供有关该字段中期望的数据类型的指导，因此浏览器可以使用自己的判断。
@@ -55,7 +57,7 @@ HTML `autocomplete` 属性允许 web 开发人员指定{{Glossary("user agent","
 - "`username`"
   - : 用户名或账户名。
 - "`new-password`"
-  - : 新密码。创建新账户或更改密码时，应将其用于“输入新密码”或“确认新密码”字段，而不是通常出现的“输入当前密码”字段。浏览器可以使用它来避免意外填写现有密码，并在创建安全密码时提供帮助（参见[使用 autocomplete="new-password" 阻止自动填充](/zh-CN/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#使用_autocompletenew-password_阻止自动填充)）。
+  - : 新密码。创建新账户或更改密码时，应将其用于“输入新密码”或“确认新密码”字段，而不是通常出现的“输入当前密码”字段。浏览器可以使用它来避免意外填写现有密码，并在创建安全密码时提供帮助（参见[使用 autocomplete="new-password" 阻止自动填充](/zh-CN/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion#使用_autocompletenew-password_阻止自动填充)）。
 - "`current-password`"
   - : 用户的当前密码。
 - "`one-time-code`"
@@ -142,7 +144,8 @@ HTML `autocomplete` 属性允许 web 开发人员指定{{Glossary("user agent","
 
 有关更多详细信息，请参见 [WHATWG 标准](https://html.spec.whatwg.org/multipage/forms.html#autofill)。
 
-> **备注：** 与其他浏览器不同，`autocomplete` 属性还控制 Firefox [是否在整个页面加载期间保持](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) `<input>` 元素、`<textarea>` 元素、或整个 `<form>` 元素的动态禁用状态和动态选择状态（如果适用）。持久性功能默认情况下处于启用状态。将 `autocomplete` 属性的值设置为 `off` 将禁用此特性。即使 `autocomplete` 属性通常由于其 `type` 而不适用，也可以这样做。参见 [Firefox bug 654072](https://bugzil.la/654072)。
+> [!NOTE]
+> 与其他浏览器不同，`autocomplete` 属性还控制 Firefox [是否在整个页面加载期间保持](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) `<input>` 元素、`<textarea>` 元素、或整个 `<form>` 元素的动态禁用状态和动态选择状态（如果适用）。持久性功能默认情况下处于启用状态。将 `autocomplete` 属性的值设置为 `off` 将禁用此特性。即使 `autocomplete` 属性通常由于其 `type` 而不适用，也可以这样做。参见 [Firefox bug 654072](https://bugzil.la/654072)。
 
 ## 示例
 
@@ -201,7 +204,7 @@ TN99 8ZZ
 
 中国可以使用多达三个行政级别：省、市和区。
 
-6位数的邮政编码并不总是需要的，但在提供时，为了清楚起见，将其与标签分开放置。例如：
+6 位数的邮政编码并不总是需要的，但在提供时，为了清楚起见，将其与标签分开放置。例如：
 
 北京市东城区建国门北大街 8 号华润大厦 17 层 1708 单元
 邮编：100005
@@ -231,5 +234,5 @@ TN99 8ZZ
 - {{htmlelement("select")}} 元素。
 - {{htmlelement("textarea")}} 元素。
 - {{htmlelement("form")}} 元素。
-- [HTML 表单](/zh-CN/docs/Learn/Forms)
+- [HTML 表单](/zh-CN/docs/Learn_web_development/Extensions/Forms)
 - 所有[全局属性](/zh-CN/docs/Web/HTML/Global_attributes)。

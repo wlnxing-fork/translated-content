@@ -35,14 +35,14 @@ Las peticiones HTTP son mensajes enviados por un cliente, para iniciar una acci�
 1. Un _[método HTTP](/es/docs/Web/HTTP/Methods)_, un verbo como: {{HTTPMethod("GET")}}, {{HTTPMethod("PUT")}} o {{HTTPMethod("POST")}}) o un nombre como: {{HTTPMethod("HEAD")}} o {{HTTPMethod("OPTIONS")}}), que describan la acción que se pide sea realizada. Por ejemplo, `GET` indica que un archivo ha de ser enviado hacia el cliente, o `POST` indica que hay datos que van a ser enviados hacia el servidor (creando o modificando un recurso, o generando un documento temporal para ser enviado).
 2. El objetivo de una petición, normalmente es una {{glossary("URL")}}, o la dirección completa del protocolo, puerto y dominio también suelen ser especificados por el contexto de la petición. El formato del objetivo de la petición varia según los distintos métodos HTTP. Puede ser:
 
-    - Una dirección absoluta, seguida de un signo de cierre de interrogación `'?'` y un texto de consulta. Este es el formato más comun, conocido como el formato original ('_origin form_' en inglés), se usa en los métodos `GET`, `POST`, `HEAD`, y `OPTIONS` .
-      `POST / HTTP 1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0`
-    - Una URL completa; conocido como el formato absoluto, usado mayormente con `GET` cuando se conecta a un proxy.
-      `GET http://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1`
-    - El componente de autoriade de una URL, formado por el nombre del domínio y opcionalmente el puerto (el puerto precedido por el simbolo `':'` ), se denomina a este formato como el formato de autoridad. Unicamente se usa con `CONNECT` cuando se establece un tunel HTTP.
-      `CONNECT developer.mozilla.org:80 HTTP/1.1`
-    - El formato de asterisco, se utliza un asterisco (`'*'`) junto con las opciones: `OPTIONS` , representando al servidor entero en conjunto.
-      `OPTIONS * HTTP/1.1`
+   - Una dirección absoluta, seguida de un signo de cierre de interrogación `'?'` y un texto de consulta. Este es el formato más comun, conocido como el formato original ('_origin form_' en inglés), se usa en los métodos `GET`, `POST`, `HEAD`, y `OPTIONS` .
+     `POST / HTTP 1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0`
+   - Una URL completa; conocido como el formato absoluto, usado mayormente con `GET` cuando se conecta a un proxy.
+     `GET http://developer.mozilla.org/es/docs/Web/HTTP/Messages HTTP/1.1`
+   - El componente de autoriade de una URL, formado por el nombre del domínio y opcionalmente el puerto (el puerto precedido por el simbolo `':'` ), se denomina a este formato como el formato de autoridad. Unicamente se usa con `CONNECT` cuando se establece un tunel HTTP.
+     `CONNECT developer.mozilla.org:80 HTTP/1.1`
+   - El formato de asterisco, se utliza un asterisco (`'*'`) junto con las opciones: `OPTIONS` , representando al servidor entero en conjunto.
+     `OPTIONS * HTTP/1.1`
 
 3. la versión de HTTP, la cual define la estructura de los mensajes, actuando como indicador, de la versión que espera que se use para la respuesta.
 
@@ -65,7 +65,7 @@ La parte final de la petición el el cuerpo. No todas las peticiones llevan uno:
 Los cuerpos pueden ser dividos en dos categorias:
 
 - Cuerpos con un único dato, que consisten en un único archivo defindo por las dos cabeceras: {{HTTPHeader("Content-Type")}} y {{HTTPHeader("Content-Length")}}.
-- [Cuerpos con múltiples datos](/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types#multipartform-data), que están formados por distintos contenidos, normalmente estan asociados con los [formularios HTML](/es/docs/Web/Guide/HTML/Forms).
+- [Cuerpos con múltiples datos](/es/docs/Web/HTTP/MIME_types#multipartform-data), que están formados por distintos contenidos, normalmente estan asociados con los [formularios HTML](/es/docs/Learn/Forms).
 
 ## Respuestas HTTP
 
@@ -99,7 +99,7 @@ De forma general, los cuerpos se pueden diferenciar en tres categorias:
 
 - Cuerpos con un único dato, consisten en un simple archivo, de longitud conocida y definido en las cabeceras: {{HTTPHeader("Content-Type")}} y {{HTTPHeader("Content-Length")}}.
 - Cuerpos con un único dato, consisten en un simple archivo, de longitud desconocida, y codificado en partes, indicadas con {{HTTPHeader("Transfer-Encoding")}} valor `chunked` (que significa: 'partido' en inglés).
-- [Cuerpos con múltiples datos](/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types#multipartform-data), consisten de varios datos, cada uno con una sección distinta de información. Este caso es relativamente raro y poco común.
+- [Cuerpos con múltiples datos](/es/docs/Web/HTTP/MIME_types#multipartform-data), consisten de varios datos, cada uno con una sección distinta de información. Este caso es relativamente raro y poco común.
 
 ## Tramas HTTP/2
 

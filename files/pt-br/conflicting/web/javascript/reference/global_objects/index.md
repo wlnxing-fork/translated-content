@@ -1,7 +1,6 @@
 ---
 title: uneval()
 slug: conflicting/Web/JavaScript/Reference/Global_Objects
-original_slug: Web/JavaScript/Reference/Global_Objects/uneval
 ---
 
 {{jsSidebar("Objects")}}{{Non-standard_header}}
@@ -19,7 +18,8 @@ uneval(object)
 - `object`
   - : A JavaScript expression or statement.
 
-> **Nota:** Você não obterá uma representação em JSON válida para o Objeto..
+> [!NOTE]
+> Você não obterá uma representação em JSON válida para o Objeto..
 
 ## Descrição
 

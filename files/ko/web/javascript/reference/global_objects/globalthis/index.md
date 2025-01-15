@@ -25,7 +25,8 @@ slug: Web/JavaScript/Reference/Global_Objects/globalThis
 
 `globalThis` 속성은 환경에 무관하게 전역 `this` 값, 즉 전역 객체에 접근하는 표준 방법을 제공합니다. `window`, `self` 등 유사한 속성과는 다르게 window와 non-window 컨텍스트 모두에서의 동작을 보장합니다. 따라서 코드를 구동하는 환경을 모르더라도 전역 객체에 일관된 방식으로 접근할 수 있습니다. 이름을 기억하는 데 도움이 되도록 전역 범위에서 `this` 값은 `globalThis`라는 점만 기억하세요.
 
-> **참고:** 브라우저와 Node의 경우에서 `globalThis`는 일반적으로 전역 객체와 동일한 개념입니다(즉, `globalThis`에 속성을 추가하면 전역 변수가 됨). 그러나 호스트는 전역 객체와 관련이 없는 `globalThis`에 대해 다른 값을 제공할 수 있습니다.
+> [!NOTE]
+> 브라우저와 Node의 경우에서 `globalThis`는 일반적으로 전역 객체와 동일한 개념입니다(즉, `globalThis`에 속성을 추가하면 전역 변수가 됨). 그러나 호스트는 전역 객체와 관련이 없는 `globalThis`에 대해 다른 값을 제공할 수 있습니다.
 
 ### HTML과 WindowProxy
 
@@ -58,20 +59,22 @@ function check(it) {
 }
 
 const globalObject =
-  check(typeof window === 'object' && window) ||
-  check(typeof self === 'object' && self) ||
-  check(typeof global === 'object' && global) ||
+  check(typeof window === "object" && window) ||
+  check(typeof self === "object" && self) ||
+  check(typeof global === "object" && global) ||
   // 엄격 모드에서 실행할 때 undefined를 반환합니다.
-  (function () { return this; })() ||
-  Function('return this')();
+  (function () {
+    return this;
+  })() ||
+  Function("return this")();
 ```
 
 전역 객체를 얻은 후 새로운 전역을 정의할 수 있습니다. 예를 들어 [`Intl`](/ko/docs/Web/JavaScript/Reference/Global_Objects/Intl)에 대한 구현을 추가합니다.
 
 ```js
-if (typeof globalObject.Intl === 'undefined') {
+if (typeof globalObject.Intl === "undefined") {
   // No Intl in this environment; define our own on the global scope
-  Object.defineProperty(globalObject, 'Intl', {
+  Object.defineProperty(globalObject, "Intl", {
     value: {
       // Our Intl implementation
     },
@@ -85,8 +88,8 @@ if (typeof globalObject.Intl === 'undefined') {
 `globalThis`를 사용할 수 있으므로 환경 전체에 대한 추가 검색이 더 이상 필요하지 않습니다.
 
 ```js
-if (typeof globalThis.Intl === 'undefined') {
-  Object.defineProperty(globalThis, 'Intl', {
+if (typeof globalThis.Intl === "undefined") {
+  Object.defineProperty(globalThis, "Intl", {
     value: {
       // Our Intl implementation
     },

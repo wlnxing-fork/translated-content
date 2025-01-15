@@ -15,7 +15,7 @@ slug: Web/API/Element/attributes
 var attrs = element.attributes;
 ```
 
-반환하는 개체는 `Attr` 노드를 포함하는 [NamedNodeMap](http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1780488922) 형입니다. 요소가 지정된 속성이 없으면, 반환하는 개체는 길이가 0입니다. 이 속성은 읽기 전용입니다.
+반환하는 개체는 `Attr` 노드를 포함하는 [NamedNodeMap](https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1780488922) 형입니다. 요소가 지정된 속성이 없으면, 반환하는 개체는 길이가 0입니다. 이 속성은 읽기 전용입니다.
 
 ## 예시
 
@@ -32,49 +32,49 @@ var atts = para.attributes;
 여러분은 문서에서 "p1" 요소의 모든 속성값을 찍는 다음 예에서처럼 요소의 속성을 열거(enumerate)할 때 오직 찾아보기로 접근(access by index)을 써야 합니다.
 
 ```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <html>
-
   <head>
-  <title>Attributes example</title>
-  <script type="text/javascript">
-    function showFirstAttr()
-    {
-    var firstPara = document.getElementById("p1");
-    var outputText = document.getElementById("result");
+    <title>Attributes example</title>
+    <script type="text/javascript">
+      function showFirstAttr() {
+        var firstPara = document.getElementById("p1");
+        var outputText = document.getElementById("result");
 
-    // 먼저, paragraph에 어떤 속성이 있는지 검증
-    if (firstPara.hasAttributes())
-    {
-      var attrs = firstPara.attributes;
-      var text = "";
-      for(var i=attrs.length-1; i>=0; i--) {
-        text += attrs[i].name + "->" + attrs[i].value;
+        // 먼저, paragraph에 어떤 속성이 있는지 검증
+        if (firstPara.hasAttributes()) {
+          var attrs = firstPara.attributes;
+          var text = "";
+          for (var i = attrs.length - 1; i >= 0; i--) {
+            text += attrs[i].name + "->" + attrs[i].value;
+          }
+          outputText.value = text;
+        } else {
+          outputText.value = "No attributes to show";
+        }
       }
-      outputText.value = text;
-    } else {
-      outputText.value = "No attributes to show"
-    };
-    }
-  </script>
+    </script>
   </head>
 
-<body>
-  <p id="p1" style="color: green;">Sample Paragraph</p>
-  <form action="">
-  <p><input type="button" value="Show first attribute name and value"
-      onclick="showFirstAttr();">
-  <input id="result" type="text" value=""></p>
-  </form>
-</body>
+  <body>
+    <p id="p1" style="color: green;">Sample Paragraph</p>
+    <form action="">
+      <p>
+        <input
+          type="button"
+          value="Show first attribute name and value"
+          onclick="showFirstAttr();" />
+        <input id="result" type="text" value="" />
+      </p>
+    </form>
+  </body>
 </html>
 ```
 
 `NamedNodeMap`은 배열처럼 반복될 수 있지만, `join`, `split` 등과 같은 `Array`에 있는 어떤 특수 메소드는 없습니다.
 
-이름으로 특정 속성에 접근하려면, [getAttribute](/ko/DOM/element.getAttribute) 메소드를 쓰세요.
+이름으로 특정 속성에 접근하려면, [getAttribute](/ko/docs/DOM/element.getAttribute) 메소드를 쓰세요.
 
 ## 명세
 

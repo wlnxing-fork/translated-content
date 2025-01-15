@@ -7,7 +7,8 @@ slug: Web/API/Element/mousewheel_event
 
 *过时*且*非标准*的 `mousewheel` 事件在{{ domxref("Element", "元素", "", 1) }}上异步触发，以在操作鼠标滚轮或类似设备时提供更新。`mousewheel` 事件从未成为任何标准的一部分，虽然它被多个浏览器实现，但 Firefox 从未实现过该事件。
 
-> **备注：** 请改用标准的 `wheel` 事件，而不是这个过时的事件。
+> [!NOTE]
+> 请改用标准的 `wheel` 事件，而不是这个过时的事件。
 
 ## 语法
 
@@ -42,13 +43,14 @@ _该接口继承了其祖先接口 {{DOMxRef("MouseEvent")}}、{{DOMxRef("UIEven
   - : 返回一个表示 Z 轴滚动量的双精度浮点数（`double`）。
 
 - {{DOMxRef("WheelEvent.deltaMode")}} {{ReadOnlyInline}}
+
   - : 返回一个无符号长整型（`unsigned long`)，其表示 `delta*` 值的滚动数量的单位。允许的值如下：
 
-    | 常量                          | 值     | 描述                                                                         |
-    | ---------------------------- | ------ | ---------------------------------------------------------------------------- |
-    | `WheelEvent.DOM_DELTA_PIXEL` | `0x00` | `delta*` 值以像素为单位为准。                                                   |
+    | 常量                         | 值     | 描述                                                                                    |
+    | ---------------------------- | ------ | --------------------------------------------------------------------------------------- |
+    | `WheelEvent.DOM_DELTA_PIXEL` | `0x00` | `delta*` 值以像素为单位为准。                                                           |
     | `WheelEvent.DOM_DELTA_LINE`  | `0x01` | `delta*` 值以行为单位指定。每次鼠标单击滚动一个内容行，而计算行高度的方法取决于浏览器。 |
-    | `WheelEvent.DOM_DELTA_PAGE`  | `0x02` | `delta*` 值以页为单位指定。每次鼠标单击滚动一个页面的内容。                         |
+    | `WheelEvent.DOM_DELTA_PAGE`  | `0x02` | `delta*` 值以页为单位指定。每次鼠标单击滚动一个页面的内容。                             |
 
 - {{DOMxRef("WheelEvent.wheelDelta")}} {{ReadOnlyInline}} {{deprecated_inline}}
 
@@ -66,7 +68,8 @@ _该接口继承了其祖先接口 {{DOMxRef("MouseEvent")}}、{{DOMxRef("UIEven
 
 {{domxref("UIEvent/detail", "detail")}} 属性的值始终为零，除了 Opera 之外。Opera 使用 `detail` 属性与仅适用于 Firefox 的 {{domxref("Element.DOMMouseScroll_event", "DOMMouseScroll")}} 事件的 `detail` 值类似，该值表示以行为单位的滚动距离，负值表示滚动向底部或右侧移动，正值表示向顶部或左侧滚动。
 
-> **备注：** 在 macOS 上，滚动距离（以及 `detail` 的值）是根据加速滚动距离计算的。
+> [!NOTE]
+> 在 macOS 上，滚动距离（以及 `detail` 的值）是根据加速滚动距离计算的。
 
 ## wheelDelta、wheelDeltaX 和 wheelDeltaY 的值
 
@@ -82,7 +85,7 @@ IE 和 Opera（Presto）仅支持 `wheelDelta` 属性，不支持水平滚动。
 
 在 Windows 上，该值与 `WM_MOUSEWHEEL` 或 `WM_MOUSEHWHEEL` 的 delta 值相同。并且，即使系统设置的滚动量为页面滚动，该值也不会改变，即该值与 Windows 上的 IE 相同。
 
-在 Linux上，本机滚轮事件每次的值为 `120` 或 `-120`。这使得行为与 Windows 上的 IE 和 Chrome 相同。
+在 Linux 上，本机滚轮事件每次的值为 `120` 或 `-120`。这使得行为与 Windows 上的 IE 和 Chrome 相同。
 
 如果**设备**支持连续滚动（例如，MacBook 的触摸板或可以平滑旋转的鼠标滚轮），则该值从加速滚动量计算而得。在这种情况下，该值与 Safari 一致。
 

@@ -1,7 +1,6 @@
 ---
 title: Estrutura de documento e sites
 slug: Learn/HTML/Introduction_to_HTML/Document_and_website_structure
-original_slug: Aprender/HTML/Introducao_ao_HTML/Estrutura_de_documento_e_sites
 ---
 
 {{LearnSidebar}}{{PreviousMenuNext("Learn/HTML/Introduction_to_HTML/Advanced_text_formatting", "Learn/HTML/Introduction_to_HTML/Debugging_HTML", "Learn/HTML/Introduction_to_HTML")}}Além de definir as partes individuais de sua página (como "um parágrafo" ou "uma imagem"),
@@ -64,9 +63,10 @@ O exemplo simples mostrado acima não é bonito, mas é perfeitamente aceitável
 
 Isso ocorre porque os visuais não contam toda a história. Usamos cor e tamanho de fonte para chamar a atenção dos usuários para as partes mais úteis do conteúdo, como o menu de navegação e links relacionados, mas sobre pessoas com deficiência visual, por exemplo, que podem não encontrar conceitos como "rosa" e "grande". fonte "muito útil?
 
-> **Nota:** Nota: as pessoas daltônicas representam cerca de 4% da população mundial ou, em outras palavras, aproximadamente 1 em cada 12 homens e 1 em cada 200 mulheres são daltônicas. Cegos e deficientes visuais representam cerca de 4-5% da população mundial (em 2012 havia 285 milhões de pessoas no mundo, enquanto a população total era de cerca de 7 bilhões).
+> [!NOTE]
+> Nota: as pessoas daltônicas representam cerca de 4% da população mundial ou, em outras palavras, aproximadamente 1 em cada 12 homens e 1 em cada 200 mulheres são daltônicas. Cegos e deficientes visuais representam cerca de 4-5% da população mundial (em 2012 havia 285 milhões de pessoas no mundo, enquanto a população total era de cerca de 7 bilhões).
 
-Em seu código HTML, você pode marcar seções de conteúdo com base em sua funcionalidade. Você pode usar elementos que representam as seções de conteúdo descritas acima sem ambigüidade, e tecnologias assistivas, como leitores de tela, podem reconhecer esses elementos e ajudar com tarefas como "localizar a navegação principal". "ou" encontre o conteúdo principal. " Como mencionamos anteriormente no curso, há um número de [consequências de não usar a estrutura de elemento e semâtica certas para o trabalho certo.](/pt-BR/docs/Aprender/HTML/Introducao_ao_HTML/Fundamentos_textuais_HTML#Por_que_precisamos_de_estrutura)
+Em seu código HTML, você pode marcar seções de conteúdo com base em sua funcionalidade. Você pode usar elementos que representam as seções de conteúdo descritas acima sem ambigüidade, e tecnologias assistivas, como leitores de tela, podem reconhecer esses elementos e ajudar com tarefas como "localizar a navegação principal". "ou" encontre o conteúdo principal. " Como mencionamos anteriormente no curso, há um número de [consequências de não usar a estrutura de elemento e semâtica certas para o trabalho certo.](/pt-BR/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#por_que_precisamos_de_estrutura)
 
 Para implementar essa marcação semântica, o HTML fornece tags dedicadas que você pode usar para representar essas seções, por exemplo:
 
@@ -80,14 +80,17 @@ Para implementar essa marcação semântica, o HTML fornece tags dedicadas que v
 Nosso exemplo visto acima é representado pelo seguinte código (você também pode [encontrar o exemplo em nosso repositório GitHub](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/document_and_website_structure/index.html)). Gostaríamos que você olhasse o exemplo acima e, em seguida, examine a listagem abaixo para ver quais partes compõem a seção do visual.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
     <title>My page title</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet"
+      type="text/css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- as três linhas abaixo são uma correção para que elementos semânticos HTML5 funcionem em versões antigas do Internet Explorer-->
     <!--[if lt IE 9]>
@@ -110,34 +113,57 @@ Nosso exemplo visto acima é representado pelo seguinte código (você também p
         <li><a href="#">Contact</a></li>
       </ul>
 
-       <!-- Um formulário de pesquisa é uma outra maneira não linear comum de navegar por um site. -->
+      <!-- Um formulário de pesquisa é uma outra maneira não linear comum de navegar por um site. -->
 
-       <form>
-         <input type="search" name="q" placeholder="Search query">
-         <input type="submit" value="Go!">
-       </form>
-     </nav>
+      <form>
+        <input type="search" name="q" placeholder="Search query" />
+        <input type="submit" value="Go!" />
+      </form>
+    </nav>
 
     <!-- Esse é o conteúdo principal da nossa página -->
     <main>
-
       <!-- Contém um artigo -->
       <article>
         <h2>Article heading</h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam
+          lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam
+          viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent
+          et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt
+          congue enim, ut porta lorem lacinia consectetur.
+        </p>
 
         <h3>Subsection</h3>
 
-        <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
+        <p>
+          Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem.
+          Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.
+        </p>
 
-        <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
+        <p>
+          Pelientesque auctor nisi id magna consequat sagittis. Curabitur
+          dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet.
+          Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.
+        </p>
 
         <h3>Another subsection</h3>
 
-        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+        <p>
+          Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum
+          soclis natoque penatibus et manis dis parturient montes, nascetur
+          ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem
+          facilisis semper ac in est.
+        </p>
 
-        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
+        <p>
+          Vivamus fermentum semper porta. Nunc diam velit, adipscing ut
+          tristique vitae sagittis vel odio. Maecenas convallis ullamcorper
+          ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi
+          diam iaculis velit, is fringille sem nunc vet mi.
+        </p>
       </article>
 
       <!-- O contéudo do elemento aside pode ser aninhado dentro do conteúdo do elemento main -->
@@ -152,7 +178,6 @@ Nosso exemplo visto acima é representado pelo seguinte código (você também p
           <li><a href="#">Oh well...</a></li>
         </ul>
       </aside>
-
     </main>
 
     <!-- Esse é o rodapé principal que vai ser usado em todas as páginas do nosso website -->
@@ -160,7 +185,6 @@ Nosso exemplo visto acima é representado pelo seguinte código (você também p
     <footer>
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
     </footer>
-
   </body>
 </html>
 ```
@@ -173,21 +197,26 @@ Reserve um tempo para examinar o código e entendê-lo - os comentários dentro 
 
 - {{HTMLElement('main')}} é para o conteúdo único dessa página.Use \<main> apenas uma vez por página, e o coloca diretamente dentro do {{HTMLElement('body')}}. Não é ideal aninhar ele dentro de qualquer outro elemento senão o elemento \<body>.
 - {{HTMLElement('article')}} inclui um bloco de conteúdo relacionado o qual faz sentido por si só, sem o restante da página (por exemplo, uma postagem singular dum blog).
-- {{HTMLElement('section')}} é similar com \<article>, mas ele é mais para agrupar uma única parte de página que constitui em um único pedaço de funcionalidade (por exemplo, um minimapa, ou um conjunto de manchetes e resumo). É considerado boa prática começar cada seção com um [título](/pt-BR/docs/Aprender/HTML/Introducao_ao_HTML/Fundamentos_textuais_HTML); observe também que você pode dividir um \<article>s em diferentes \<section>s, ou \<section>s em diferentes \<article>s, dependendo do contexto.
+- {{HTMLElement('section')}} é similar com \<article>, mas ele é mais para agrupar uma única parte de página que constitui em um único pedaço de funcionalidade (por exemplo, um minimapa, ou um conjunto de manchetes e resumo). É considerado boa prática começar cada seção com um [título](/pt-BR/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals); observe também que você pode dividir um \<article>s em diferentes \<section>s, ou \<section>s em diferentes \<article>s, dependendo do contexto.
 - {{HTMLElement('aside')}} é para conteúdo que não está relacionados diretamente com os conteúdos principais, mas que podem providenciar informações complementares a esses (entradas de glossários, biografia do autor, links relacionados, etc.).
-- {{HTMLElement('header')}} representa um grupo de conteúdo introdutório. Se ele for um elemento filho do {{HTMLElement('body')}}, Ele é um header global da página do site, mas se for um elemento filho de um {{HTMLElement('article')}} ou {{HTMLElement('section')}}, é definido como um header específico para essa seção ( tenta não confundir isso com [títulos e cabeçalhos](/pt-BR/docs/Aprender/HTML/Introducao_ao_HTML/The_head_metadata_in_HTML#Adicionando_um_título)).
+- {{HTMLElement('header')}} representa um grupo de conteúdo introdutório. Se ele for um elemento filho do {{HTMLElement('body')}}, Ele é um header global da página do site, mas se for um elemento filho de um {{HTMLElement('article')}} ou {{HTMLElement('section')}}, é definido como um header específico para essa seção ( tenta não confundir isso com [títulos e cabeçalhos](/pt-BR/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adicionando_um_título)).
 - {{HTMLElement('nav')}} contém a funcionalidade principal de navegação da página. Links secundários, etc., não iria na navegação
 - {{HTMLElement('footer')}} representa um grupo de conteúdo final da página.
 
 ### Elementos de layout não-semânticos
 
-Às vezes, você se depara numa situação em que não consegue encontrar um elemento semântico ideal para agrupar alguns itens ou agrupar algum conteúdo. Nesses momentos, convém agrupar um conjunto de elementos para afetá-los todos como uma única entidade com alguns {{glossary("CSS")}} ou {{glossary("JavaScript")}}. Para casos como esses, HTML oferece os elementos {{HTMLElement("div")}} e {{HTMLElement("span")}}. Você deve usá-los preferencialmente com um atributo {{htmlattrxref('class')}} adequado, para fornecer a eles algum tipo de rótulo para que possam ser facilmente referenciados.
+Às vezes, você se depara numa situação em que não consegue encontrar um elemento semântico ideal para agrupar alguns itens ou agrupar algum conteúdo. Nesses momentos, convém agrupar um conjunto de elementos para afetá-los todos como uma única entidade com alguns {{glossary("CSS")}} ou {{glossary("JavaScript")}}. Para casos como esses, HTML oferece os elementos {{HTMLElement("div")}} e {{HTMLElement("span")}}. Você deve usá-los preferencialmente com um atributo [`class`](/pt-BR/docs/Web/HTML/Global_attributes#class) adequado, para fornecer a eles algum tipo de rótulo para que possam ser facilmente referenciados.
 
 {{HTMLElement("span")}} é um elemento não-semântico embutido, que você deve usar apenas se não conseguir pensar em um elemento de texto semântico melhor para agrupar seu conteúdo ou se não quiser adicionar um significado específico. Por exemplo:
 
 ```html
-<p>O rei voltou bêbado para o quarto às 01:00, a cerveja não fez nada para ajudá-lo
-enquanto ele cambaleando pela porta <span class="editor-note">[Nota do editor: Neste ponto da peça, as luzes devem estar baixas]</span>.</p>
+<p>
+  O rei voltou bêbado para o quarto às 01:00, a cerveja não fez nada para
+  ajudá-lo enquanto ele cambaleando pela porta
+  <span class="editor-note"
+    >[Nota do editor: Neste ponto da peça, as luzes devem estar baixas]</span
+  >.
+</p>
 ```
 
 Nesse caso, a nota do editor deve meramente fornecer orientação extra para o diretor da peça; não é suposto ter um significado semântico extra. Para usuários observador, talvez o CSS fosse usado para distanciar a nota um pouco do texto principal.
@@ -199,12 +228,13 @@ Nesse caso, a nota do editor deve meramente fornecer orientação extra para o d
   <h2>Carrinho de compras</h2>
   <ul>
     <li>
-      <p><a href=""><strong>Brincos de prata</strong></a>: $99.95.</p>
-      <img src="../products/3333-0985/thumb.png" alt="Brincos de prata">
+      <p>
+        <a href=""><strong>Brincos de prata</strong></a
+        >: $99.95.
+      </p>
+      <img src="../products/3333-0985/thumb.png" alt="Brincos de prata" />
     </li>
-    <li>
-      ...
-    </li>
+    <li>...</li>
   </ul>
   <p>Preço total: $237.89</p>
 </div>
@@ -212,7 +242,8 @@ Nesse caso, a nota do editor deve meramente fornecer orientação extra para o d
 
 Este não é realmente um `<aside>`, pois não está necessariamente relacionado ao conteúdo principal da página (você deseja visualizá-lo de qualquer lugar). Nem sequer garante particularmente o uso de uma `<section>`, pois não faz parte do conteúdo principal da página. Portanto, um \<div> é bom neste caso. Incluímos um cabeçalho como orientação para ajudar os usuários de leitores de tela a encontrá-lo.
 
-> **Aviso:** Divs são tão convenientes de usar que é fácil usá-los demais. Como eles não carregam valor semântico, eles apenas confundem seu código HTML. Tome cuidado para usá-los somente quando não houver uma solução semântica melhor e tente reduzir ao mínimo o uso deles, caso contrário, será difícil atualizar e manter seus documentos.
+> [!WARNING]
+> Divs são tão convenientes de usar que é fácil usá-los demais. Como eles não carregam valor semântico, eles apenas confundem seu código HTML. Tome cuidado para usá-los somente quando não houver uma solução semântica melhor e tente reduzir ao mínimo o uso deles, caso contrário, será difícil atualizar e manter seus documentos.
 
 ### Quebras de linha e regras horizontais
 
@@ -221,10 +252,12 @@ Dois elementos que você ocasionalmente vai usar e desejerá conhecer são {{htm
 `<br>` cria uma quebra de linha em um parágrafo; é a única maneira de forçar uma estrutura rígida em uma situação em que você deseja uma série de linhas curtas fixas, como em um endereço postal ou um poema. Por exemplo:
 
 ```html
-<p>Era uma vez um homem chamado O'Dell<br>
-Que adorava escrever HTML<br>
-Mas sua estrutura era ruim, sua semântica era triste<br>
-e sua marcação não leu muito bem.</p>
+<p>
+  Era uma vez um homem chamado O'Dell<br />
+  Que adorava escrever HTML<br />
+  Mas sua estrutura era ruim, sua semântica era triste<br />
+  e sua marcação não leu muito bem.
+</p>
 ```
 
 Sem os elementos `<br>`, o parágrafo seria apenas renderizado em uma longa linha (como dissemos anteriormente no curso, o HTML ignora a maioria dos espaços em branco); com elementos `<br>` no código, a marcação é renderizada assim
@@ -264,7 +297,8 @@ Depois de planejar o conteúdo de uma página da Web simples, o próximo passo l
 
 Tente realizar o exercício acima para um site de sua própria criação. Sobre o que você gostaria de criar um site?
 
-> **Nota:** Salve seu trabalho em algum lugar; você pode precisar mais tarde.
+> [!NOTE]
+> Salve seu trabalho em algum lugar; você pode precisar mais tarde.
 
 ## Resumo
 

@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: complementary ロール'
+title: "ARIA: complementary ロール"
 slug: Web/Accessibility/ARIA/Roles/complementary_role
 ---
 
@@ -26,13 +26,25 @@ slug: Web/Accessibility/ARIA/Roles/complementary_role
 <div role="complementary">
   <h2>トレンド記事</h2>
   <ul>
-     <li><a href="#">あなたがすべての気分を感じさせる18のツイート</a></li>
-     <li><a href="#">私は完璧な昼食用の容器を見つけたので、それを探すのを停止する</a></li>
-     <li><a href="#">最終的に私たちがこれらの食品と呼ぶべきものを決定する時が来た</a></li>
-     <li><a href="#">Tumblr で今週見た17の本当に良い投稿</a></li>
-     <li><a href="#">10の親のハック、私たちはそれらを試したので、働くことを知っている</a></li>
-   </ul>
- </div>
+    <li><a href="#">あなたがすべての気分を感じさせる18のツイート</a></li>
+    <li>
+      <a href="#"
+        >私は完璧な昼食用の容器を見つけたので、それを探すのを停止する</a
+      >
+    </li>
+    <li>
+      <a href="#"
+        >最終的に私たちがこれらの食品と呼ぶべきものを決定する時が来た</a
+      >
+    </li>
+    <li><a href="#">Tumblr で今週見た17の本当に良い投稿</a></li>
+    <li>
+      <a href="#"
+        >10の親のハック、私たちはそれらを試したので、働くことを知っている</a
+      >
+    </li>
+  </ul>
+</div>
 ```
 
 ## アクセシビリティに関する懸念
@@ -73,7 +85,7 @@ slug: Web/Accessibility/ARIA/Roles/complementary_role
 
 - [ランドマークブラウザー拡張](https://matatk.agrip.org.uk/landmarks/) (英語)
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
@@ -85,10 +97,10 @@ TBD
 
 - {{htmlelement("aside")}}: 余談要素
 - [complementary (role): Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/#complementary)
-- [HTML のセクションとアウトラインの使用](/ja/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines)
+- [HTML のセクションとアウトラインの使用](/ja/docs/Web/HTML/Element/Heading_Elements)
 - [ランドマークロール: ARIA を使用する: ロール、ステート、プロパティ](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles)
 - [Using WAI-ARIA Landmarks – 2013 | The Paciello Group](https://developer.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)
 - [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [Aside Revisited | HTML5 Doctor](http://html5doctor.com/aside-revisited/)
+- [Aside Revisited | HTML5 Doctor](https://html5doctor.com/aside-revisited/)
 
 1. [**WAI-ARIA ロール**](/ja/docs/Web/Accessibility/ARIA/Roles){{ListSubpagesForSidebar("/ja/docs/Web/Accessibility/ARIA/Roles")}}

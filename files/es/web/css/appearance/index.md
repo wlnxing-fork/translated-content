@@ -1,5 +1,5 @@
 ---
-title: '-moz-appearance (-webkit-appearance)'
+title: "-moz-appearance (-webkit-appearance)"
 slug: Web/CSS/appearance
 ---
 
@@ -126,7 +126,7 @@ Esta propiedad es frecuentemente utilizada en hojas de estilo [XUL](/es/docs/Moz
 | `treetwistyopen`                   |                                                                                                                                                                                                                 |
 | `treeview`                         |                                                                                                                                                                                                                 |
 | `-moz-mac-unified-toolbar`         | **Mac OS X only**. This causes the toolbar and title bar to render using the unified toolbar style common to Mac OS X 10.4 and later applications.                                                              |
-| `-moz-win-borderless-glass`        | **Windows Vista and later only**. This style applies the Aero Glass effect -- but without a border -- to the element.                                                                                           |
+| `-moz-win-borderless-glass`        | **Windows Vista and later only**. This style applies the Aero Glass effect — but without a border — to the element.                                                                                             |
 | `-moz-win-browsertabbar-toolbox`   | **Windows Vista and later only**. This toolbox style is meant to be used for the tab bar in a browser.                                                                                                          |
 | `-moz-win-communicationstext`      |                                                                                                                                                                                                                 |
 | `-moz-win-communications-toolbox`  | **Windows Vista and later only**. This toolbox style is meant to be used in communications and productivity applications. Corresponding foreground color is `-moz-win-communicationstext`.                      |
@@ -168,5 +168,5 @@ La propiedad `appearance` no se encuentra actualmente presente en ninguna nueva 
 
 ## Ver también
 
-- [Definición de `appearance` en CSS 3 Interfaz Básico de Usuario](http://www.w3.org/TR/2004/CR-css3-ui-20040511/#appearance) (Candidata a Recomendación desde 2004-05-11), desactualizada (La propiedad `appearance` se ha abandonado en las nuevas versiones de esta especificación.)
-- [Características CSS3 abandonadas en la UI especificación.](http://wiki.csswg.org/spec/css4-ui#dropped-css3-features)
+- [Definición de `appearance` en CSS 3 Interfaz Básico de Usuario](https://www.w3.org/TR/2004/CR-css3-ui-20040511/#appearance) (Candidata a Recomendación desde 2004-05-11), desactualizada (La propiedad `appearance` se ha abandonado en las nuevas versiones de esta especificación.)
+- [Características CSS3 abandonadas en la UI especificación.](https://wiki.csswg.org/spec/css4-ui#dropped-css3-features)

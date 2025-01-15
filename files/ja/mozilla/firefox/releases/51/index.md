@@ -35,8 +35,8 @@ l10n:
 - [`for...of`](/ja/docs/Web/JavaScript/Reference/Statements/for...of) ループ内で {{jsxref("Statements/const", "const")}} を使用すると {{jsxref("SyntaxError")}} が発生せず、イテレーションのたびに新たなバインディングを行うようになりました ([Firefox バグ 1101653](https://bugzil.la/1101653))。
 - 非推奨の [for each...in](/ja/docs/Web/JavaScript/Reference/Statements/for_each...in) ループは、[コンソールで警告が発生する](/ja/docs/Web/JavaScript/Reference/Errors/For-each-in_loops_are_deprecated) ようになりました ([Firefox バグ 1293205](https://bugzil.la/1293205))。標準化された [`for...of`](/ja/docs/Web/JavaScript/Reference/Statements/for...of) ループを使用するように、コードを移行してください。
 - [ジェネレーター関数](/ja/docs/Web/JavaScript/Reference/Statements/function*) は [label](/ja/docs/Web/JavaScript/Reference/Statements/label) を持つことができなくなりました。また、ラベル名として "`let`" が許可されなくなりました ([Firefox バグ 1288459](https://bugzil.la/1288459))。
-- 非推奨の [古いジェネレーター関数](/ja/docs/Web/JavaScript/Reference/Statements/Legacy_generator_function) を [メソッド定義](/ja/docs/Web/JavaScript/Reference/Functions/Method_definitions) 内で使用すると、エラーが発生するようになりました ([Firefox バグ 1199296](https://bugzil.la/1199296))。
-- [反復子プロトコル](/ja/docs/Web/JavaScript/Reference/Iteration_protocols#反復子_iterator_プロトコル) の `next()` メソッドは、返値がオブジェクトではない場合に {{jsxref("TypeError")}} が発生するようになりました ([Firefox バグ 1016936](https://bugzil.la/1016936))。
+- 非推奨の [古いジェネレーター関数](/ja/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features) を [メソッド定義](/ja/docs/Web/JavaScript/Reference/Functions/Method_definitions) 内で使用すると、エラーが発生するようになりました ([Firefox バグ 1199296](https://bugzil.la/1199296))。
+- [イテレータープロトコル](/ja/docs/Web/JavaScript/Reference/Iteration_protocols#イテレータープロトコル) の `next()` メソッドは、返値がオブジェクトではない場合に {{jsxref("TypeError")}} が発生するようになりました ([Firefox バグ 1016936](https://bugzil.la/1016936))。
 
 ### 開発者ツール
 
@@ -70,7 +70,7 @@ l10n:
   - {{domxref("IDBObjectStore.getKey()")}} メソッドをサポートしました ([Firefox バグ 1271506](https://bugzil.la/1271506))。
   - {{domxref("IDBCursor.continuePrimaryKey()")}} メソッドをサポートしました ([Firefox バグ 1271505](https://bugzil.la/1271505))。
   - バイナリーキーをサポートしました ([Firefox バグ 1271500](https://bugzil.la/1271500))。
-  - ["What’s new in IndexedDB 2.0?" – Mozilla hacks](https://hacks.mozilla.org/2016/10/whats-new-in-indexeddb-2-0/) もご覧ください。
+  - ["What's new in IndexedDB 2.0?" – Mozilla hacks](https://hacks.mozilla.org/2016/10/whats-new-in-indexeddb-2-0/) もご覧ください。
 
 ### Canvas
 
@@ -99,7 +99,7 @@ l10n:
 
 - {{domxref("XMLHttpRequest.responseXML")}} プロパティは、受信したデータを解析する際にパースエラーが発生した場合に、先頭に \<parsererror> ノードを置いた部分的な {{domxref("Document")}} を返さないようになりました。代わりに、正しく `null` を返します ([Firefox バグ 289714](https://bugzil.la/289714))。
 - 最新の仕様書に合わせて、{{domxref("XMLHttpRequest.setRequestHeader()", "setRequestHeader()")}} で {{HTTPHeader("Accept")}} ヘッダーを設定していない {{domxref("XMLHttpRequest")}} は、値として `*/*` を設定した Accept ヘッダーを送信するようになりました ([Firefox バグ 918752](https://bugzil.la/918752))。
-- {{domxref("XMLHttpRequest.open()")}} で、パラメーター `username` および `password` を省略した場合の既定値を、仕様書に従って `null` にするよう修正しました ([Firefox バグ 933759](https://bugzil.la/933759))。
+- {{domxref("XMLHttpRequest.open()")}} で、引数 `username` および `password` を省略した場合の既定値を、仕様書に従って `null` にするよう修正しました ([Firefox バグ 933759](https://bugzil.la/933759))。
 
 ### WebRTC
 
@@ -117,7 +117,7 @@ l10n:
 
 - {{domxref("DOMImplementation.hasFeature()")}} は、どのような場合でも `true` を返すようになりました ([Firefox バグ 984778](https://bugzil.la/984778))。
 - {{domxref("HTMLInputElement")}} および {{domxref("HTMLTextAreaElement")}} の `selectionStart` および `selectionEnd` プロパティが、テキストが選択されていない場合に 0 ではなく、現在のテキスト入力カーソルの位置を正しく返すようになりました ([Firefox バグ 1287655](https://bugzil.la/1287655))。
-- {{domxref("HTMLImageElement")}} インターフェイスと対応する {{HTMLElement("img")}} 要素で {{htmlattrxref("onerror")}} イベントハンドラーをサポートしました。 {{domxref("Element/error_event", "error")}} イベントを、[画像の読み込みや解釈を行おうとしてエラーが発生](/ja/docs/Web/API/HTMLImageElement#errors)したときに、要素に送信します。
+- {{domxref("HTMLImageElement")}} インターフェイスと対応する {{HTMLElement("img")}} 要素で `onerror` イベントハンドラーをサポートしました。 {{domxref("Element/error_event", "error")}} イベントを、[画像の読み込みや解釈を行おうとしてエラーが発生](/ja/docs/Web/API/HTMLImageElement#errors)したときに、要素に送信します。
 - {{domxref("Animation.effect", "effect")}} プロパティに値を設定して、ウェブアニメーション ({{domxref("Animation")}}) のエフェクトを変更できるようになりました。以前は、このプロパティが読み取り専用でした ([Firefox バグ 1049975](https://bugzil.la/1049975))。
 - Permissions API の {{domxref("Permissions.revoke()")}} メソッドを追加しました。設定項目 (`dom.permissions.revoke.enable`) で制御しており、設計や存在自体について [Web Application Security Working Group](https://www.w3.org/2011/webappsec/) で議論されているため、デフォルトで無効化しています。
 - [ストレージ API](/ja/docs/Web/API/Storage_API) の {{domxref("NavigatorStorage.storage", "navigator.storage")}} プロパティおよび {{domxref("StorageManager.estimate()")}} メソッドを、必要なサポートコードと共に実装しました。ストレージユニットの永続化機能は未実装です。[Firefox バグ 1267941](https://bugzil.la/1267941) をご覧ください。
@@ -154,7 +154,7 @@ l10n:
 - [レガシーアドオンに WebExtension を埋め込む](/ja/docs/Mozilla/Add-ons/WebExtensions/Embedded_WebExtensions) ことが可能になりました ([Firefox バグ 1252215](https://bugzil.la/1252215))。
 - [クリップボードへのアクセス](/ja/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard) をサポートしました ([Firefox バグ 1197451](https://bugzil.la/1197451))。
 - {{WebExtAPIRef("tabs.executeScript()")}} のコールバックに渡す引数を修正しました ([Firefox バグ 1290157](https://bugzil.la/1290157))。
-- WebExtension をアンインストールするとき、[localStorage](/ja/docs/Web/API/Storage/LocalStorage) を消去するようになりました ([Firefox バグ 1213990](https://bugzil.la/1213990))。
+- WebExtension をアンインストールするとき、[localStorage](/ja/docs/Web/API/Window/localStorage) を消去するようになりました ([Firefox バグ 1213990](https://bugzil.la/1213990))。
 - Web Extensions で変更された {{HTTPHeader("Content-Type")}} ヘッダーを考慮するようになりました ([Firefox バグ 1304331](https://bugzil.la/1304331))。
 
 ### その他
@@ -167,7 +167,7 @@ l10n:
   - ソーシャルチャット機能を削除しました。
   - Social Status API を削除しました。
   - Share panel を除く、すべての [ソーシャルウィジェット](/ja/docs/Mozilla/Projects/Social_API/Widgets) を削除しました。social sidebar や flyover panel などが含まれます。
-  - 削除した API のためにサポートしていたユーザインターフェイスや機能も、同様に削除しました。
+  - 削除した API のためにサポートしていたユーザーインターフェイスや機能も、同様に削除しました。
   - 削除した機能をサポートする、[Social service provider manifest](/ja/docs/Mozilla/Projects/Social_API/Manifest) のプロパティを廃止しました。
 
 - ファイル拡張子と MIME タイプの関連付けを与えるために `mimeTypes.rdf` をアドオンが使用する場合に、`"ext-to-type-mapping"` カテゴリーで項目を登録することが必要になりました ([Firefox バグ 306471](https://bugzil.la/306471))。

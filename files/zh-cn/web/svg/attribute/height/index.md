@@ -13,11 +13,12 @@ slug: Web/SVG/Attribute/height
 
 ```html
 <?xml version="1.0"?>
-<svg width="120" height="120"
-     viewBox="0 0 120 120"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <rect x="10" y="10" width="100" height="100"/>
+<svg
+  width="120"
+  height="120"
+  viewBox="0 0 120 120"
+  xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="100" height="100" />
 </svg>
 ```
 
@@ -25,7 +26,7 @@ slug: Web/SVG/Attribute/height
 
 下列元素可以使用 `height` 属性：
 
-- [滤镜元素](/zh-CN/SVG/Element#FilterPrimitive) »
+- [滤镜元素](/zh-CN/docs/Web/SVG/Element#filterprimitive) »
 - {{ SVGElement("filter") }}
 - {{ SVGElement("foreignObject") }}
 - {{ SVGElement("image") }}
@@ -35,7 +36,7 @@ slug: Web/SVG/Attribute/height
 - {{ SVGElement("use") }}
 - {{ SVGElement("mask") }}
 
-## 用法
+## use
 
 对于 {{SVGElement('use')}} 元素，`height` 定义了引用元素的垂直长度。
 

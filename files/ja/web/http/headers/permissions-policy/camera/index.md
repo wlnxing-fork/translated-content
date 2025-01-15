@@ -1,7 +1,6 @@
 ---
-title: 'Feature-Policy: camera'
+title: "Feature-Policy: camera"
 slug: Web/HTTP/Headers/Permissions-Policy/camera
-original_slug: Web/HTTP/Headers/Feature-Policy/camera
 ---
 
 {{HTTPSidebar}} {{SeeCompatTable}}
@@ -32,5 +31,5 @@ Feature-Policy: camera <allowlist>;
 ## 関連情報
 
 - {{HTTPHeader("Feature-Policy")}} ヘッダー
-- [機能ポリシー](/ja/docs/Web/HTTP/Feature_Policy)
+- [機能ポリシー](/ja/docs/Web/HTTP/Permissions_Policy)
 - [機能ポリシーの使用](/ja/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy)

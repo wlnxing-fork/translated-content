@@ -1,8 +1,9 @@
 ---
 title: Contraste del color
 slug: Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast
-original_slug: Web/Accesibilidad/Understanding_WCAG/Perceivable/Color_contraste
 ---
+
+{{AccessibilitySidebar}}
 
 El [contraste del color](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) entre el fondo y el contenido del primer plano (que suele ser texto) debe ser lo suficientemente alto como para garantizar la legibilidad.
 
@@ -52,9 +53,7 @@ Ambos fragmentos de texto tienen color negro por defecto.
 El `<div>` "good" tiene un color de fondo púrpura claro, lo que hace que el texto sea fácil de leer:
 
 ```html hidden
-    <div class="good">
-      Good contrast
-    </div>
+<div class="good">Good contrast</div>
 ```
 
 ```css hidden
@@ -81,9 +80,7 @@ div {
 El `<div>` "bad", por otro lado, tiene un color de fondo púrpura muy oscuro, lo que hace que el texto sea mucho más difícil de leer:
 
 ```html hidden
-    <div class="bad">
-      Bad contrast
-    </div>
+<div class="bad">Bad contrast</div>
 ```
 
 ```css hidden
@@ -111,9 +108,9 @@ Al elegir un esquema de color para tu sitio web, selecciona colores de primer pl
 
 Si incluyes contenido no textual, como vídeo o animación, debes seguir 1.4.11 (nuevamente, ver más abajo).
 
-Para verificar el contraste a medida que seleccionas los colores puedes utlizar una herramienta como [Color Contrast Checker](http://webaim.org/resources/contrastchecker/) de WebAIM.
+Para verificar el contraste a medida que seleccionas los colores puedes utlizar una herramienta como [Color Contrast Checker](https://webaim.org/resources/contrastchecker/) de WebAIM.
 
-También puedes comprobar el contraste de color sobre la marcha utilizando las herramientas para desarrolladores de Firefox— ver nuestra guía [Accessibility inspector](/es/docs/Tools/Accessibility_inspector), y en particular la sección [Check for accessibility issues](/es/docs/Tools/Accessibility_inspector#Check_for_accessibility_issues). Prueba a usarlo en los ejemplos en vivo en la sección de descripción.
+También puedes comprobar el contraste de color sobre la marcha utilizando las herramientas para desarrolladores de Firefox— ver nuestra guía [Accessibility inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html), y en particular la sección [Check for accessibility issues](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check_for_accessibility_issues). Prueba a usarlo en los ejemplos en vivo en la sección de descripción.
 
 ## Criterios de conformidad relacionados con WCAG
 
@@ -136,6 +133,6 @@ También puedes comprobar el contraste de color sobre la marcha utilizando las h
 
 ## Ver también
 
-- [Color and color contrast](/es/docs/Learn/Accessibility/CSS_and_JavaScript#Color_and_color_contrast)
-- [Multiple labels](/es/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form#Multiple_labels)
+- [Color and color contrast](/es/docs/Learn/Accessibility/CSS_and_JavaScript#color_and_color_contrast)
+- [Multiple labels](/es/docs/Learn/Forms/How_to_structure_a_web_form#multiple_labels)
 - [Understanding Non-Text Contrast](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html)

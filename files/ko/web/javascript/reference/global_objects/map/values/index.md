@@ -1,12 +1,13 @@
 ---
 title: Map.prototype.values()
 slug: Web/JavaScript/Reference/Global_Objects/Map/values
+l10n:
+  sourceCommit: 27180875516cc311342e74b596bfb589b7211e0c
 ---
 
 {{JSRef}}
 
-**`values()`** 메서드는 `Map`객체에 삽입한 순서대로 요소의 값을 가지는 새로운
-[반복자](/ko/docs/Web/JavaScript/Guide/Iterators_and_Generators) 객체를 반환합니다.
+{{jsxref("Map")}} 인스턴스의 **`values()`** 메서드는 맵의 각 아이템의 값을 삽입 순서대로 순회하는 새로운 [맵 반복자](/ko/docs/Web/JavaScript/Reference/Global_Objects/Iterator) 객체를 반환합니다.
 
 {{EmbedInteractiveExample("pages/js/map-prototype-values.html")}}
 
@@ -16,9 +17,13 @@ slug: Web/JavaScript/Reference/Global_Objects/Map/values
 values()
 ```
 
+### 매개변수
+
+없음.
+
 ### 반환 값
 
-새로운 {{jsxref("Map")}}의 반복자 객체
+새로운 [순회 가능한 반복자 객체](/ko/docs/Web/JavaScript/Reference/Global_Objects/Iterator).
 
 ## 예제
 
@@ -26,9 +31,9 @@ values()
 
 ```js
 const myMap = new Map();
-myMap.set('0', 'foo');
-myMap.set(1, 'bar');
-myMap.set({}, 'baz');
+myMap.set("0", "foo");
+myMap.set(1, "bar");
+myMap.set({}, "baz");
 
 const mapIter = myMap.values();
 

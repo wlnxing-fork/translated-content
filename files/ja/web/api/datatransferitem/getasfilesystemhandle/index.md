@@ -32,22 +32,22 @@ getAsFileSystemHandle()
 この例では、`getAsFileSystemHandle` メソッドを使用して、ドロップした項目に対して {{domxref('FileSystemHandle','ファイルハンドル')}} を返します。
 
 ```js
-elem.addEventListener('dragover', (e) => {
+elem.addEventListener("dragover", (e) => {
   // ナビゲーションを防ぐ
   e.preventDefault();
 });
-elem.addEventListener('drop', async (e) => {
+elem.addEventListener("drop", async (e) => {
   // ナビゲーションを防ぐ
   e.preventDefault();
 
   // すべてのアイテムを処理する
   for (const item of e.dataTransfer.items) {
     // ファイルやディレクトリーの項目では、kind は 'file' になる
-    if (item.kind === 'file') {
-    const entry = await item.getAsFileSystemHandle();
-      if (entry.kind === 'file') {
+    if (item.kind === "file") {
+      const entry = await item.getAsFileSystemHandle();
+      if (entry.kind === "file") {
         // 項目がファイルのとき、コードを実行する
-      } else if (entry.kind === 'directory') {
+      } else if (entry.kind === "directory") {
         // 項目がディレクトリーのとき、コードを実行する
       }
     }
@@ -65,5 +65,5 @@ elem.addEventListener('drop', async (e) => {
 
 ## 関連情報
 
-- [ファイルシステムアクセス API](/ja/docs/Web/API/File_System_Access_API)
+- [ファイルシステムアクセス API](/ja/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://web.dev/file-system-access/)

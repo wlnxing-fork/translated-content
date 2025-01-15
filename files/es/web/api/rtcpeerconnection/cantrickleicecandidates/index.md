@@ -18,7 +18,8 @@ Si no es compatible, o no puede saberlo, puede buscar un valor falso para esta p
 
 Un valor booleano que es `true` si el par remoto puede aceptar candidatos _trickled ICE_ y `false` si no puede. Si no se ha establecido un par remoto, este valor es `null`.
 
-> **Nota:** El valor de esta propiedad se determina una vez que el par local ha llamado a {{domxref("RTCPeerConnection.setRemoteDescription()")}}; el agente ICE utiliza la descripción proporcionada para determinar si el par remoto admite o no candidatos _trickled ICE_.
+> [!NOTE]
+> El valor de esta propiedad se determina una vez que el par local ha llamado a {{domxref("RTCPeerConnection.setRemoteDescription()")}}; el agente ICE utiliza la descripción proporcionada para determinar si el par remoto admite o no candidatos _trickled ICE_.
 
 ## Ejemplos
 
@@ -31,12 +32,12 @@ function waitToCompleteIceGathering(pc) {
       "icegatheringstatechange",
       (e) =>
         e.target.iceGatheringState === "complete" &&
-        resolve(pc.localDescription)
+        resolve(pc.localDescription),
     );
   });
 }
 
-// El siguiente código podría usarse para manejar una oferta de un par 
+// El siguiente código podría usarse para manejar una oferta de un par
 // cuando no se sabe si es compatible con trickle ICE.
 async function newPeer(remoteOffer) {
   await pc.setRemoteDescription(remoteOffer);
@@ -50,7 +51,7 @@ async function newPeer(remoteOffer) {
 
 pc.addEventListener(
   "icecandidate",
-  (e) => pc.canTrickleIceCandidates && sendCandidateToPeer(e.candidate)
+  (e) => pc.canTrickleIceCandidates && sendCandidateToPeer(e.candidate),
 );
 ```
 

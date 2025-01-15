@@ -2,6 +2,7 @@
 title: CSS 자료형
 slug: Web/CSS/CSS_Types
 ---
+
 {{cssref}}
 
 **CSS 자료형**은 CSS 속성과 함수가 받아들이는, 키워드와 단위를 포함한 일반적인 값을 정의합니다. 자료형은 [Component value type](https://www.w3.org/TR/css3-values/#component-types)의 특별한 종류입니다.
@@ -64,4 +65,4 @@ slug: Web/CSS/CSS_Types
 ## 같이 보기
 
 - [CSS 단위와 값](/ko/docs/Web/CSS/CSS_Values_and_Units)
-- [CSS 단위와 값 소개](/ko/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+- [CSS 단위와 값 소개](/ko/docs/Learn/CSS/Building_blocks/Values_and_units)

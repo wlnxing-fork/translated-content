@@ -1,7 +1,6 @@
 ---
 title: float
 slug: Web/CSS/float
-original_slug: CSS/float
 ---
 
 {{CSSRef}}
@@ -14,24 +13,25 @@ original_slug: CSS/float
 
 由于 `float` 意味着使用块布局，它在某些情况下会修改 {{cssxref("display")}} 值的计算值：
 
-| 指定值                | 计算值          |
-| -------------------- | -------------- |
-| `inline`             | `block`        |
-| `inline-block`       | `block`        |
-| `inline-table`       | `table`        |
-| `table-row`          | `block`        |
-| `table-row-group`    | `block`        |
-| `table-column`       | `block`        |
-| `table-column-group` | `block`        |
-| `table-cell`         | `block`        |
-| `table-caption`      | `block`        |
-| `table-header-group` | `block`        |
-| `table-footer-group` | `block`        |
-| `inline-flex`        | `flex`         |
-| `inline-grid`        | `grid`         |
-| _other_              | _unchanged_    |
+| 指定值               | 计算值      |
+| -------------------- | ----------- |
+| `inline`             | `block`     |
+| `inline-block`       | `block`     |
+| `inline-table`       | `table`     |
+| `table-row`          | `block`     |
+| `table-row-group`    | `block`     |
+| `table-column`       | `block`     |
+| `table-column-group` | `block`     |
+| `table-cell`         | `block`     |
+| `table-caption`      | `block`     |
+| `table-header-group` | `block`     |
+| `table-footer-group` | `block`     |
+| `inline-flex`        | `flex`      |
+| `inline-grid`        | `grid`      |
+| _other_              | _unchanged_ |
 
-> **备注：** 如果要在 JavaScript 中把 `float` 属性当作 {{domxref("HTMLElement.style")}} 对象的一个成员来操作，那么在旧版本的浏览器中，你必须拼写成 `cssFloat`。另外还要注意到在 Internet Explorer 8 和更老的 IE 当中，要使用 `styleFloat` 属性。这是 DOM 驼峰命名和 CSS 所用的连字符分隔命名法对应关系中的一个特例（这是因为在 JavaScript 中“float”是一个保留字，因为同样的原因，“class”被改成了“className” 、`<label>` 的“for”被改成了“htmlFor”）。
+> [!NOTE]
+> 如果要在 JavaScript 中把 `float` 属性当作 {{domxref("HTMLElement.style")}} 对象的一个成员来操作，那么在旧版本的浏览器中，你必须拼写成 `cssFloat`。另外还要注意到在 Internet Explorer 8 和更老的 IE 当中，要使用 `styleFloat` 属性。这是 DOM 驼峰命名和 CSS 所用的连字符分隔命名法对应关系中的一个特例（这是因为在 JavaScript 中“float”是一个保留字，因为同样的原因，“class”被改成了“className” 、`<label>` 的“for”被改成了“htmlFor”）。
 
 ## 语法
 
@@ -77,7 +77,7 @@ float: unset;
 
 ### 浮动元素是如何定位的
 
-正如我们前面提到的那样，当一个元素浮动之后，它会被移出正常的文档流，然后向左或者向右平移，一直平移直到碰到了所处的容器的边框，或者碰到**另外一个浮动的元素**。
+正如我们前面提到的那样，当一个元素浮动之后，它会被移出正常的文档流，然后向左或者向右平移，一直平移直到碰到了所处盒子的边界，或者碰到**另外一个浮动的元素**。
 
 在下面的图片中，有三个红色的正方形。其中有两个向左浮动，一个向右浮动。要注意到第二个向左浮动的正方形被放在第一个向左浮动的正方形的右边。如果还有更多的正方形这样浮动，它们会继续向右堆放，直到填满容器一整行，之后换行至下一行。
 
@@ -90,11 +90,13 @@ float: unset;
   <div class="left">1</div>
   <div class="left">2</div>
   <div class="right">3</div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-     Morbi tristique sapien ac erat tincidunt, sit amet dignissim
-     lectus vulputate. Donec id iaculis velit. Aliquam vel
-     malesuada erat. Praesent non magna ac massa aliquet tincidunt
-     vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique
+    sapien ac erat tincidunt, sit amet dignissim lectus vulputate. Donec id
+    iaculis velit. Aliquam vel malesuada erat. Praesent non magna ac massa
+    aliquet tincidunt vel in massa. Phasellus feugiat est vel leo finibus
+    congue.
+  </p>
 </section>
 ```
 
@@ -143,5 +145,5 @@ div {
 
 ## 参见
 
-- [块级格式化上下文（Block formatting context）](/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)
+- [区块格式化上下文](/zh-CN/docs/Web/CSS/CSS_display/Block_formatting_context)
 - 使用 {{cssxref("clear")}} 强制元素移至浮动元素下方。

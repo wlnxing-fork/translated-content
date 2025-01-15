@@ -1,7 +1,6 @@
 ---
 title: dl
 slug: Web/HTML/Element/dl
-original_slug: Web/HTML/Elemento/dl
 ---
 
 {{HTMLSidebar}}
@@ -45,7 +44,7 @@ El contenido para este ejemplo interactivo se encuentra almacenado en un reposit
     </tr>
     <tr>
       <th scope="row">Omisión de Tag</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Ninguna, tanto la etiqueta inicial como la final son obligatorias.</td>
     </tr>
     <tr>
       <th scope="row">Padres permitidos</th>
@@ -72,7 +71,7 @@ El contenido para este ejemplo interactivo se encuentra almacenado en un reposit
 
 ## Atributos
 
-Los atributos de este elemento incluyen los [atributos globales](/es/docs/Web/HTML/Atributos_Globales).
+Los atributos de este elemento incluyen los [atributos globales](/es/docs/Web/HTML/Global_attributes).
 
 ## Ejemplos
 
@@ -82,10 +81,8 @@ Los atributos de este elemento incluyen los [atributos globales](/es/docs/Web/HT
 <dl>
   <dt>Firefox</dt>
   <dd>
-    A free, open source, cross-platform,
-    graphical web browser developed by the
-    Mozilla Corporation and hundreds of
-    volunteers.
+    A free, open source, cross-platform, graphical web browser developed by the
+    Mozilla Corporation and hundreds of volunteers.
   </dd>
 
   <!-- Other terms and descriptions -->
@@ -104,10 +101,8 @@ Salida:
   <dt>Mozilla Firefox</dt>
   <dt>Fx</dt>
   <dd>
-    A free, open source, cross-platform,
-    graphical web browser developed by the
-    Mozilla Corporation and hundreds of
-    volunteers.
+    A free, open source, cross-platform, graphical web browser developed by the
+    Mozilla Corporation and hundreds of volunteers.
   </dd>
 
   <!-- Other terms and descriptions -->
@@ -124,16 +119,12 @@ Salida:
 <dl>
   <dt>Firefox</dt>
   <dd>
-    A free, open source, cross-platform,
-    graphical web browser developed by the
-    Mozilla Corporation and hundreds of
-    volunteers.
+    A free, open source, cross-platform, graphical web browser developed by the
+    Mozilla Corporation and hundreds of volunteers.
   </dd>
   <dd>
-    The Red Panda also known as the Lesser
-    Panda, Wah, Bear Cat or Firefox, is a
-    mostly herbivorous mammal, slightly larger
-    than a domestic cat (60 cm long).
+    The Red Panda also known as the Lesser Panda, Wah, Bear Cat or Firefox, is a
+    mostly herbivorous mammal, slightly larger than a domestic cat (60 cm long).
   </dd>
 
   <!-- Other terms and descriptions -->
@@ -175,7 +166,7 @@ dt::after {
 
 ### Encapsulado de grupos nombre-valor en elementos {{HTMLElement("div")}}
 
-[WHATWG](/es/docs/Glossary/WHATWG) HTML permite encapsular cada grupo nombre-valor de un elemento {{HTMLElement("dl")}} en un elemento {{HTMLElement("div")}}. Esto puede ser útil cuando se utilizan [microdatos](/es/docs/Web/HTML/Microdata), o cuando [atributos globales](/es/docs/Web/HTML/Atributos_Globales) apliquen a todo el grupo, o por motivos de estilo.
+[WHATWG](/es/docs/Glossary/WHATWG) HTML permite encapsular cada grupo nombre-valor de un elemento {{HTMLElement("dl")}} en un elemento {{HTMLElement("div")}}. Esto puede ser útil cuando se utilizan [microdatos](/es/docs/Web/HTML/Microdata), o cuando [atributos globales](/es/docs/Web/HTML/Global_attributes) apliquen a todo el grupo, o por motivos de estilo.
 
 ```html
 <dl>

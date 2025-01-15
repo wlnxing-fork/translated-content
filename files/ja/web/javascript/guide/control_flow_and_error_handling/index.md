@@ -9,7 +9,7 @@ JavaScript は、特に制御フロー文についてはコンパクトな文の
 
 [JavaScript リファレンス](/ja/docs/Web/JavaScript/Reference/Statements)には、この章で紹介する文についての完全な詳細が載っています。また、JavaScript のコードではセミコロン (`;`) 文字で文を区切ります。
 
-あらゆる JavaScript の式は、文でもあります。式に関する詳細については[式と演算子](/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators)を参照ください。
+あらゆる JavaScript の式は、文でもあります。式に関する詳細については[式と演算子](/ja/docs/Web/JavaScript/Guide/Expressions_and_operators)を参照ください。
 
 ## ブロック文
 
@@ -36,7 +36,8 @@ while (x < 10) {
 
 ここでは `{ x++; }` がブロック文となります。
 
-> **メモ:** ECMAScript 2015 (6th edition) より前の JavaScript にはブロックスコープが**ありません**。古い JavaScript では、ブロック内で導入された変数のスコープは、そのブロックがある関数やスクリプトになり、それらの変数を設定した影響は、そのブロックを越えて持続します。つまり、*ブロック文はスコープを定義しない*ということです。
+> [!NOTE]
+> ECMAScript 2015 (6th edition) より前の JavaScript にはブロックスコープが**ありません**。古い JavaScript では、ブロック内で導入された変数のスコープは、そのブロックがある関数やスクリプトになり、それらの変数を設定した影響は、そのブロックを越えて持続します。つまり、*ブロック文はスコープを定義しない*ということです。
 >
 > 「単独の」ブロックも正しい構文ですが、C や Java のブロックで提供されるものとは異なる結果をもたらします。例えば、
 >
@@ -70,7 +71,7 @@ if (condition) {
 }
 ```
 
-条件は、`true` または `false` と評価される任意の式にすることができます。（`true` と `false` の評価の説明については、[Boolean](/ja/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description) を参照してください。）
+条件は、`true` または `false` と評価される任意の式にすることができます。（`true` と `false` の評価の説明については、[Boolean](/ja/docs/Web/JavaScript/Reference/Global_Objects/Boolean#description) を参照してください。）
 
 条件が `true` と評価された場合、`statement_1` が実行されます。そうでなければ、`statement_2` が実行されます。`statement_1` と `statement_2` は、入れ子になった `if` 文も含めて、任意の文にすることができます。
 
@@ -108,7 +109,7 @@ if (condition) {
 
 例えば、このようにはコードを*書かない*でください。
 
-```js example-bad
+```js-nolint example-bad
 // "x == y" と読み間違えるおそれがある。
 if (x = y) {
   /* ここに文が来る */
@@ -136,7 +137,8 @@ if ((x = y)) {
 
 上記以外の—オブジェクトを含む—すべての値は、条件文に渡されると `true` と評価されます。
 
-> **メモ:** プリミティブな真偽値の `true` と `false` を、{{jsxref("Boolean")}} オブジェクトの true や false という値と混同しないでください。
+> [!NOTE]
+> プリミティブな真偽値の `true` と `false` を、{{jsxref("Boolean")}} オブジェクトの true や false という値と混同しないでください。
 >
 > 例:
 >
@@ -156,8 +158,9 @@ function checkData() {
     return true;
   } else {
     alert(
-        'Enter exactly three characters. ' +
-        `${document.form1.threeChar.value} is not valid.`);
+      "Enter exactly three characters. " +
+        `${document.form1.threeChar.value} is not valid.`,
+    );
     return false;
   }
 }
@@ -203,26 +206,26 @@ JavaScript は上記の switch 文を次のように評価します。
 
 ```js
 switch (fruittype) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Apples':
-    console.log('Apples are $0.32 a pound.');
+  case "Apples":
+    console.log("Apples are $0.32 a pound.");
     break;
-  case 'Bananas':
-    console.log('Bananas are $0.48 a pound.');
+  case "Bananas":
+    console.log("Bananas are $0.48 a pound.");
     break;
-  case 'Cherries':
-    console.log('Cherries are $3.00 a pound.');
+  case "Cherries":
+    console.log("Cherries are $3.00 a pound.");
     break;
-  case 'Mangoes':
-    console.log('Mangoes are $0.56 a pound.');
+  case "Mangoes":
+    console.log("Mangoes are $0.56 a pound.");
     break;
-  case 'Papayas':
-    console.log('Mangoes and papayas are $2.79 a pound.');
+  case "Papayas":
+    console.log("Mangoes and papayas are $2.79 a pound.");
     break;
   default:
-   console.log(`Sorry, we are out of ${fruittype}.`);
+    console.log(`Sorry, we are out of ${fruittype}.`);
 }
 console.log("Is there anything else you'd like?");
 ```
@@ -238,7 +241,7 @@ console.log("Is there anything else you'd like?");
 
 JavaScript では、ほぼどのようなオブジェクトでも例外として投げることができます。とはいえ、必ずしも投げられるオブジェクトすべてが同等に作られているわけではありません。数値や文字列をエラーとして投げる方法がよく用いられますが、こうした用途のために特別に作られた例外データ型を使用した方がより効率的な場合もあります。
 
-- [ECMAScript 例外](/ja/docs/Web/JavaScript/Reference/Global_Objects#Fundamental_objects)
+- [ECMAScript 例外](/ja/docs/Web/JavaScript/Reference/Global_Objects#fundamental_objects)
 - {{domxref("DOMException")}} と {{domxref("DOMError")}}
 
 ### `throw` 文
@@ -252,29 +255,34 @@ throw expression;
 特定の型の式だけではなく、あらゆる式を投げることができます。下記のコードでは、さまざまな型の例外を投げています。
 
 ```js
-throw 'Error2';   // 文字列型
-throw 42;         // 数値型
-throw true;       // 論理型
-throw {toString: function() { return "これはオブジェクトです！"; } };
+throw "Error2"; // 文字列型
+throw 42; // 数値型
+throw true; // 論理型
+throw {
+  toString: function () {
+    return "これはオブジェクトです！";
+  },
+};
 ```
 
-> **メモ:** 例外を投げる際にオブジェクトを指定することができます。そして、`catch` ブロックでそのオブジェクトのプロパティを参照することができます。
+> [!NOTE]
+> 例外を投げる際にオブジェクトを指定することができます。そして、`catch` ブロックでそのオブジェクトのプロパティを参照することができます。
 
 ```js
 // UserException というオブジェクト型を作成
 function UserException(message) {
   this.message = message;
-  this.name = 'UserException';
+  this.name = "UserException";
 }
 
 // 文字列として使用されるとき（例 : エラーコンソール上）に
 // 例外を整形する
-UserException.prototype.toString = function() {
+UserException.prototype.toString = function () {
   return `${this.name}: "${this.message}"`;
-}
+};
 
 // UserException のインスタンスを作成し、それを投げる
-throw new UserException('Value too high');
+throw new UserException("Value too high");
 ```
 
 ### `try...catch` 文
@@ -290,20 +298,32 @@ throw new UserException('Value too high');
 ```js
 function getMonthName(mo) {
   mo = mo - 1; // 月の数字を配列のインデックスに合わせる (1 = Jan, 12 = Dec)
-  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
-                'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   if (months[mo]) {
     return months[mo];
   } else {
-    throw 'InvalidMonthNo'; // throw キーワードが使われている
+    throw "InvalidMonthNo"; // throw キーワードが使われている
   }
 }
 
-try { // 実行を試みる文
+try {
+  // 実行を試みる文
   monthName = getMonthName(myMonth); // この関数が例外を投げる場合がある
-}
-catch (e) {
-  monthName = 'unknown';
+} catch (e) {
+  monthName = "unknown";
   logMyErrors(e); // 例外オブジェクトをエラーハンドラーに渡す
 }
 ```
@@ -326,11 +346,10 @@ JavaScript は `catch` ブロックに入るときにこの識別子を作成し
 
 ```js
 try {
-  throw 'myException'; // 例外を生成
-}
-catch (err) {
+  throw "myException"; // 例外を生成
+} catch (err) {
   // ここには例外を扱う文が入る
-  logMyErrors(err);    // 例外オブジェクトをエラーハンドラに渡す
+  logMyErrors(err); // 例外オブジェクトをエラーハンドラに渡す
 }
 ```
 
@@ -350,7 +369,7 @@ catch (err) {
 openMyFile();
 try {
   writeMyFile(theData); // ここでエラーが投げられる可能性がある
-} catch(e) {
+} catch (e) {
   handleError(e); // エラーを受け取り、それを処理する
 } finally {
   closeMyFile(); // 常にリソースが閉じられる
@@ -363,19 +382,19 @@ try {
 function f() {
   try {
     console.log(0);
-    throw 'bogus';
-  } catch(e) {
+    throw "bogus";
+  } catch (e) {
     console.log(1);
-    return true;    // この返値は、finally ブロックが
-                    // 完了するまで保留となる
+    return true; // この返値は、finally ブロックが
+    // 完了するまで保留となる
     console.log(2); // ここまで到達しない
   } finally {
     console.log(3);
-    return false;   // 直前の "return" が上書きされる
+    return false; // 直前の "return" が上書きされる
     console.log(4); // ここまで到達しない
   }
   // ここで "return false" が実行される
-  console.log(5);   // ここまで到達しない
+  console.log(5); // ここまで到達しない
 }
 console.log(f()); // 0, 1, 3, false
 ```
@@ -385,11 +404,11 @@ console.log(f()); // 0, 1, 3, false
 ```js
 function f() {
   try {
-    throw 'bogus';
-  } catch(e) {
+    throw "bogus";
+  } catch (e) {
     console.log('caught inner "bogus"');
     throw e; // この throw 文は finally ブロックが
-             // 完了するまで保留になる
+    // 完了するまで保留になる
   } finally {
     return false; // 直前の "throw" が上書きされる
   }
@@ -398,7 +417,7 @@ function f() {
 
 try {
   console.log(f());
-} catch(e) {
+} catch (e) {
   // ここには到達しない
   // f() を実行した際、`finally` ブロックが false を返し、
   // 上記の `catch` の中にある `throw` を上書する
@@ -419,7 +438,7 @@ try {
 1. `finally` ブロックを含む必要があります。そして、
 2. 囲んでいる `try...catch` 文の `catch` ブロックがエラーの照合先としてチェックされます。
 
-詳しくは、[`try...catch`](/ja/docs/Web/JavaScript/Reference/Statements/try...catch) の中の [nested try-blocks](/ja/docs/Web/JavaScript/Reference/Statements/try...catch#Nested_try-blocks) を参照してください。
+詳しくは、[`try...catch`](/ja/docs/Web/JavaScript/Reference/Statements/try...catch) の中の [nested try-blocks](/ja/docs/Web/JavaScript/Reference/Statements/try...catch#nested_try-blocks) を参照してください。
 
 ### Error オブジェクトの活用
 

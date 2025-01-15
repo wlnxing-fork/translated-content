@@ -1,8 +1,9 @@
 ---
 title: HTML
 slug: Glossary/HTML
-original_slug: Glossario/HTML
 ---
+
+{{GlossarySidebar}}
 
 HTML (HyperText Markup Language) é uma linguagem descritiva que especifica a estrutura de uma página web.
 
@@ -26,11 +27,11 @@ Um arquivo HTML normalmente é salvo com uma extensão .htm ou .html, é disponi
 
 ### Conhecimento Geral
 
-- {{interwiki("wikipedia", "HTML", "HTML")}} na Wikipedia
+- [HTML](https://pt.wikipedia.org/wiki/HTML) na Wikipedia
 
 ### Aprendendo HTML
 
-- [Nosso tutorial de HTML](/pt-BR/docs/Aprender/HTML)
+- [Nosso tutorial de HTML](/pt-BR/docs/Learn/HTML)
 - [O curso web no codeacademy.com](https://www.codecademy.com/learn/web)
 
 ### Referência Técnica

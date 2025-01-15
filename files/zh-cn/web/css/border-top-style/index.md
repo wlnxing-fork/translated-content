@@ -3,13 +3,14 @@ title: border-top-style
 slug: Web/CSS/border-top-style
 ---
 
-{{ CSSRef}}
+{{CSSRef}}
 
-**`border-top-style`** [CSS](/zh-CN/CSS) 设置元素上边框的 {{cssxref("border")}}.
+**`border-top-style`** [CSS](/zh-CN/docs/Web/CSS) 设置元素上边框的 {{cssxref("border")}}.
 
 {{EmbedInteractiveExample("pages/css/border-top-style.html")}}
 
-> **备注：** 此规范并未定义不同样式的边框边角处如何连接。
+> [!NOTE]
+> 此规范并未定义不同样式的边框边角处如何连接。
 
 ## 语法
 
@@ -69,23 +70,44 @@ border-top-style: unset;
 /* Define look of the table */
 table {
   border-width: 2px;
-  background-color: #52E385;
+  background-color: #52e385;
 }
-tr, td {
+tr,
+td {
   padding: 3px;
 }
 
 /* border-top-style example classes */
-.b1 {border-top-style: none;}
-.b2 {border-top-style: hidden;}
-.b3 {border-top-style: dotted;}
-.b4 {border-top-style: dashed;}
-.b5 {border-top-style: solid;}
-.b6 {border-top-style: double;}
-.b7 {border-top-style: groove;}
-.b8 {border-top-style: ridge;}
-.b9 {border-top-style: inset;}
-.b10 {border-top-style: outset;}
+.b1 {
+  border-top-style: none;
+}
+.b2 {
+  border-top-style: hidden;
+}
+.b3 {
+  border-top-style: dotted;
+}
+.b4 {
+  border-top-style: dashed;
+}
+.b5 {
+  border-top-style: solid;
+}
+.b6 {
+  border-top-style: double;
+}
+.b7 {
+  border-top-style: groove;
+}
+.b8 {
+  border-top-style: ridge;
+}
+.b9 {
+  border-top-style: inset;
+}
+.b10 {
+  border-top-style: outset;
+}
 ```
 
 #### 输出结果

@@ -5,7 +5,7 @@ slug: Web/JavaScript/Reference/Statements/const
 
 {{jsSidebar("Statements")}}
 
-Constantes possuem escopo de bloco, semelhantes às variáveis declaradas usando o palavra-chave [`let`](/pt-BR/docs/Web/JavaScript/Reference/Statements/let). O valor de uma constante não pode ser alterado por uma atribuição, e ela não pod ser redeclarada.
+Constantes possuem escopo de bloco, semelhantes às variáveis declaradas usando o palavra-chave [`let`](/pt-BR/docs/Web/JavaScript/Reference/Statements/let). O valor de uma constante não pode ser alterado por uma atribuição, e ela não pode ser redeclarada.
 
 {{EmbedInteractiveExample("pages/js/statement-const.html")}}
 
@@ -22,7 +22,7 @@ const name1 = value1 [, name2 = value2 [, ... [, nameN = valueN]]]];
 - `nameN`
   - : Nome da constante. Pode ser qualquer [identificador](/pt-BR/docs/Glossary/Identifier) válido.
 - `valueN`
-  - : Valor atribuido a constante. Pode ser qualquer [expressão](/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) válida, incluindo uma função.
+  - : Valor atribuido a constante. Pode ser qualquer [expressão](/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators#expressions) válida, incluindo uma função.
 
 ## Descrição
 
@@ -32,7 +32,7 @@ Toda constante requer um inicializador, ou seja, é preciso especificar um valor
 
 A declaração **`const`** cria uma referência somente leitura a um valor. Isso **não** significa que esse valor é imutável, apenas que o identificador da variável constante não pode ser alterado. Se o conteúdo do identificador for um objeto, isso significa que o conteúdo do objeto (ex. seus parâmetros) podem ser alterados.
 
-Todas as considerações de ["temporal dead zone"](/pt-BR/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let) se aplicam tanto a **[`let`](/pt-BR/docs/Web/JavaScript/Reference/Statements/let)** quanto a **`const`**.
+Todas as considerações de ["temporal dead zone"](/pt-BR/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_and_errors_with_let) se aplicam tanto a **[`let`](/pt-BR/docs/Web/JavaScript/Reference/Statements/let)** quanto a **`const`**.
 
 Uma constante não pode ter o mesmo nome que uma função ou variável que esteja no mesmo escopo.
 
@@ -101,10 +101,7 @@ MY_ARRAY = ['B'];
 
 ## Especificações
 
-| Especificação                                                                                                        | Status                       | Comentário         |
-| -------------------------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------ |
-| {{SpecName('ES6', '#sec-let-and-const-declarations', 'Let and Const Declarations')}}     | {{Spec2('ES6')}}         | Nenhuma mudança.   |
-| {{SpecName('ESDraft', '#sec-let-and-const-declarations', 'Let and Const Declarations')}} | {{Spec2('ESDraft')}} | Definição inicial. |
+{{Specifications}}
 
 ## Compatibilidade com navegadores
 
@@ -116,7 +113,7 @@ Em versões anteriores do Firefox & Chrome e a partir de Safari 5.1.7 e Opera 12
 
 ### Observações específicas para Firefox
 
-A declaração `const` foi implementada no Firefox muito antes de `const` aparecer na especificação ECMAScript 6. For `const` ES6 compliance see {{bug(950547)}} and {{bug(611388)}}.
+A declaração `const` foi implementada no Firefox muito antes de `const` aparecer na especificação ECMAScript 6. For `const` ES6 compliance see [Erro do Firefox 950547](https://bugzil.la/950547) and [Erro do Firefox 611388](https://bugzil.la/611388).
 
 - Iniciando com o Gecko 36:
 
@@ -128,4 +125,4 @@ A declaração `const` foi implementada no Firefox muito antes de `const` aparec
 
 - [`var`](/pt-BR/docs/Web/JavaScript/Reference/Statements/var)
 - [`let`](/pt-BR/docs/Web/JavaScript/Reference/Statements/let)
-- [Guia de constantes em JavaScript](/pt-BR/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Constants)
+- [Guia de constantes em JavaScript](/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types#constants)

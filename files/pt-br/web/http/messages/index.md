@@ -1,8 +1,8 @@
 ---
 title: Mensagens HTTP
 slug: Web/HTTP/Messages
-original_slug: Web/HTTP/Mensagens
 ---
+
 {{HTTPSidebar}}
 
 Dados são trocados entre servidor e cliente por meio de mensagens HTTP. Há dois tipos de mensagens: _requisições_ (requests) enviadas pelo cliente para disparar uma ação no servidor, e _respostas_ (responses), a réplica do servidor.
@@ -35,14 +35,14 @@ Requisições HTTP são mensagens enviadas pelo cliente para iniciar uma ação 
 1. Um _[método HTTP](/pt-BR/docs/Web/HTTP/Methods)_, um verbo (como {{HTTPMethod("GET")}}, {{HTTPMethod("PUT")}} ou {{HTTPMethod("POST")}}) ou um nome (como {{HTTPMethod("HEAD")}} ou {{HTTPMethod("OPTIONS")}}), que descrevem a ação a ser executada. Por exemplo, `GET` indica que um recurso deve ser obtido ou `POST` significa que dados são inseridos no servidor (criando ou modificando um recurso, ou gerando um documento temporário para mandar de volta).
 2. O _alvo da requisição_, normalmente um {{glossary("URL")}}, ou o caminho absoluto do protocolo, porta e domínio são em geral caracterizados pelo contexto da requisição. O formato deste alvo varia conforme o método HTTP. Pode ser
 
-    - Um caminho absoluto, seguido de um `'?'` e o texto da consulta. Esta é a forma mais comum, conhecida como a _forma original_, e é usada com os métodos `GET`, `POST`, `HEAD`, e `OPTIONS`.
-      `POST / HTTP/1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0`
-    - Uma URL completa, conhecida como a _forma absoluta_, usada principalmente com `GET` quando conectado a um proxy.
-      `GET http://developer.mozilla.org/pt-BR/docs/Web/HTTP/Messages HTTP/1.1`
-    - O componente autoridade de um URL, que consiste no nome do domínio e opcionalmente uma porta (prefixada por `':'`), chamada de _forma autoridade_. Só usada com `CONNECT` ao estabelecer um túnel HTTP.
-      `CONNECT developer.mozilla.org:80 HTTP/1.1`
-    - A _forma asterisco_, um simples asterisco (`'*'`), usada com `OPTIONS`. Representa o servidor como um todo.
-      `OPTIONS * HTTP/1.1`
+   - Um caminho absoluto, seguido de um `'?'` e o texto da consulta. Esta é a forma mais comum, conhecida como a _forma original_, e é usada com os métodos `GET`, `POST`, `HEAD`, e `OPTIONS`.
+     `POST / HTTP/1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0`
+   - Uma URL completa, conhecida como a _forma absoluta_, usada principalmente com `GET` quando conectado a um proxy.
+     `GET http://developer.mozilla.org/pt-BR/docs/Web/HTTP/Messages HTTP/1.1`
+   - O componente autoridade de um URL, que consiste no nome do domínio e opcionalmente uma porta (prefixada por `':'`), chamada de _forma autoridade_. Só usada com `CONNECT` ao estabelecer um túnel HTTP.
+     `CONNECT developer.mozilla.org:80 HTTP/1.1`
+   - A _forma asterisco_, um simples asterisco (`'*'`), usada com `OPTIONS`. Representa o servidor como um todo.
+     `OPTIONS * HTTP/1.1`
 
 3. A _versão HTTP_, que define a estrutura do restante da mensagem, atuando como um indicador da versão esperada para uso na resposta.
 
@@ -65,7 +65,7 @@ A parte final da requisição é o corpo. Nem todas as requisições tem um: as 
 Corpos podem ser divididos, a grosso modo, em duas categorias:
 
 - Corpos de recurso-simples, consistindo em um único arquivo, definido pelos dois cabeçalhos: {{HTTPHeader("Content-Type")}} e {{HTTPHeader("Content-Length")}}.
-- [Corpos de recurso-múltiplo](/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types#multipartform-data), consistindo em um corpo de múltiplas partes, cada uma contendo uma porção diferente de informação. Este é tipicamente associado à [Formulários HTML](/pt-BR/docs/Web/Guide/HTML/Forms).
+- [Corpos de recurso-múltiplo](/pt-BR/docs/Web/HTTP/MIME_types#multipartform-data), consistindo em um corpo de múltiplas partes, cada uma contendo uma porção diferente de informação. Este é tipicamente associado à [Formulários HTML](/pt-BR/docs/Learn/Forms).
 
 ## Respostas HTTP
 
@@ -99,7 +99,7 @@ Corpos podem ser divididos, a grosso modo, em três categorias:
 
 - Corpos de recurso simples que consistem em um único arquivo de tamanho conhecido, definido pelos dois cabeçalhos: {{HTTPHeader("Content-Type")}} e {{HTTPHeader("Content-Length")}}.
 - Corpos de recurso simples que consistem em um único arquivo de tamanho desconhecido, codificado aos pedaços com {{HTTPHeader("Transfer-Encoding")}} ajustado para `chunked`.
-- [Corpos de recurso múltiplo](/pt-BR/docs/Web/HTTP/Basics_of_HTTP/MIME_types#multipartform-data), que consiste em um corpo com múltiplas partes, cada uma contendo diferentes seções de informação. Estes são relativamente raros.
+- [Corpos de recurso múltiplo](/pt-BR/docs/Web/HTTP/MIME_types#multipartform-data), que consiste em um corpo com múltiplas partes, cada uma contendo diferentes seções de informação. Estes são relativamente raros.
 
 ## Quadros HTTP/2
 

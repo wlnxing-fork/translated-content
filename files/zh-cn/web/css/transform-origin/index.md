@@ -3,7 +3,7 @@ title: transform-origin
 slug: Web/CSS/transform-origin
 ---
 
-{{ CSSRef }}
+{{CSSRef}}
 
 **`transform-origin`** CSS 属性让你更改一个元素变形的原点。
 
@@ -430,10 +430,10 @@ transform-origin: 100% -30%;
 
 {{Cssinfo}}
 
-## 浏览器兼容
+## 浏览器兼容性
 
 {{Compat}}
 
 ## 参见
 
-- [使用 CSS 变形](/zh-CN/docs/CSS/Using_CSS_transforms)
+- [使用 CSS 变形](/zh-CN/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)

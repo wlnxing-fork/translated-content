@@ -9,7 +9,6 @@ slug: Web/SVG/Attribute/x
 
 你可以在以下 SVG 元素中使用该属性：
 
-- {{SVGElement("altGlyph")}}
 - {{SVGElement("cursor")}}
 - {{SVGElement("feBlend")}}
 - {{SVGElement("feColorMatrix")}}
@@ -102,7 +101,8 @@ svg {
   </tbody>
 </table>
 
-> **备注：** 从 SVG2 开始，`x` 变为*几何属性*，这意味着该元素也可以用作使用的元素的 CSS 属性。
+> [!NOTE]
+> 从 SVG2 开始，`x` 变为*几何属性*，这意味着该元素也可以用作使用的元素的 CSS 属性。
 
 ## 规范
 

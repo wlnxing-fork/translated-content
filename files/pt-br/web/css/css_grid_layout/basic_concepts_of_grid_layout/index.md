@@ -1,9 +1,9 @@
 ---
 title: Conceitos básicos de Grid Layout
-slug: Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+slug: Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout
 ---
 
-[CSS Grid Layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout) introduz um sistema bi-dimensional de grid (literalmente "grades") para CSS. Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface. Esse artigo apresenta o CSS Grid Layout e a terminologia que é parte da especificação CSS Grid Layout Level 1. As funcionalidades demonstradas neste resumo serão posteriormente explicadas em maiores detalhes nas demais seções desse guia.
+[CSS Grid Layout](/pt-BR/docs/Web/CSS/CSS_grid_layout) introduz um sistema bi-dimensional de grid (literalmente "grades") para CSS. Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface. Esse artigo apresenta o CSS Grid Layout e a terminologia que é parte da especificação CSS Grid Layout Level 1. As funcionalidades demonstradas neste resumo serão posteriormente explicadas em maiores detalhes nas demais seções desse guia.
 
 ## O que é grid?
 
@@ -29,7 +29,7 @@ Estão previstas funcionalidades de alinhamento que possibilitam controlar o ali
 
 Em uma célula do grid podem ser posicionados mais de um item da página e também é possível que se defina sobreposição parcial de áreas. Esse controle de layers é feito com uso de {{cssxref("z-index")}}.
 
-CSS Grid Layout é uma poderosa especificação que se for combinada com outras partes do CSS, tal como [flexbox](/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout), possibilita a criação de layouts que até então eram impossíveis de serem criados com CSS. Tudo começa com a criação de um grid dentro de um **grid container**.
+CSS Grid Layout é uma poderosa especificação que se for combinada com outras partes do CSS, tal como [flexbox](/pt-BR/docs/Web/CSS/CSS_flexible_box_layout), possibilita a criação de layouts que até então eram impossíveis de serem criados com CSS. Tudo começa com a criação de um grid dentro de um **grid container**.
 
 ## Grid container
 
@@ -39,11 +39,11 @@ No exemplo mostrado a seguir um elemento div container ao qual foi atribuída a 
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
@@ -56,30 +56,32 @@ Façamos de `.wrapper` um grid container.
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
 {{ EmbedLiveSample('The_Grid_container', '200', '330') }}
 
-Todos os elementos filhos diretos agora são grid items. Observando a renderização em um navegador web você não notará nenhuma diferença em relação a renderização já conhecida de um elemento container com seus cinco elementos filhos, pois no exemplo foi criado um grid constítuido de uma única coluna para acomodar os elementos filhos. A partir desse ponto você pode achar mais útil trabalhar no _Firefox Developer Edition_, que possui o [Grid Inspector](/pt-BR/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts) disponÍvel como parte das Ferramentas do desenvolvedor. Se você ver este exemplo no Firefox e inspecionar o Grid, você verá um pequeno ícone ao lado do valor Grid (na propiedade _display_ do elemento container). Clique nele e o Grid neste elemento será sobreposto na janela do navegador.
+Todos os elementos filhos diretos agora são grid items. Observando a renderização em um navegador web você não notará nenhuma diferença em relação a renderização já conhecida de um elemento container com seus cinco elementos filhos, pois no exemplo foi criado um grid constítuido de uma única coluna para acomodar os elementos filhos. A partir desse ponto você pode achar mais útil trabalhar no _Firefox Developer Edition_, que possui o [Grid Inspector](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html) disponÍvel como parte das Ferramentas do desenvolvedor. Se você ver este exemplo no Firefox e inspecionar o Grid, você verá um pequeno ícone ao lado do valor Grid (na propiedade _display_ do elemento container). Clique nele e o Grid neste elemento será sobreposto na janela do navegador.
 
 ![Using the Grid Highlighter in DevTools to view a grid](1-grid-inspector.png)
 
@@ -99,11 +101,11 @@ Agora criei um grid com três colunas fixas de 200px. Os itens filhos serão dis
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
@@ -115,24 +117,26 @@ Agora criei um grid com três colunas fixas de 200px. Os itens filhos serão dis
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -144,11 +148,11 @@ Nas propriedades de grid podem ser utilizadas quaisquer unidades de medida. Para
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
@@ -160,24 +164,26 @@ Nas propriedades de grid podem ser utilizadas quaisquer unidades de medida. Para
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -249,11 +255,11 @@ No exemplo abaixo usamos `grid-auto-rows` para garantir que as trilhas criadas n
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
@@ -266,24 +272,26 @@ No exemplo abaixo usamos `grid-auto-rows` para garantir que as trilhas criadas n
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -304,38 +312,41 @@ Grid tem uma solução para isso com a função {{cssxref("minmax", "minmax()")}
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two
-   <p>I have some more content in.</p>
+  <div>One</div>
+  <div>
+    Two
+    <p>I have some more content in.</p>
 
-<p>This makes me taller than 100 pixels.</p>
-</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+    <p>This makes me taller than 100 pixels.</p>
+  </div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
@@ -359,58 +370,60 @@ O segundo item inicia na linha da coluna 1, e expande uma linha. Esse é o padr�
 
 ```html
 <div class="wrapper">
-   <div class="box1">One</div>
-   <div class="box2">Two</div>
-   <div class="box3">Three</div>
-   <div class="box4">Four</div>
-   <div class="box5">Five</div>
+  <div class="box1">One</div>
+  <div class="box2">Two</div>
+  <div class="box3">Three</div>
+  <div class="box4">Four</div>
+  <div class="box5">Five</div>
 </div>
 ```
 
 ```css
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
 }
 .box1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .box2 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-row-end: 5;
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-row-end: 5;
 }
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
 {{ EmbedLiveSample('Positioning_items_against_lines', '220', '410') }}
 
-Não esqueça que o [Grid Inspector](/pt-BR/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts) pode ser usado no Firefox Developer Tools para ver como os itens estão posicionados no grid.
+Não esqueça que o [Grid Inspector](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html) pode ser usado no Firefox Developer Tools para ver como os itens estão posicionados no grid.
 
 ## Células do grid
 
@@ -430,42 +443,44 @@ _Gutters_ ou _alleys_ (espaçamentos ou separadores) entre células do grid pode
 
 ```css
 .wrapper {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-column-gap: 10px;
-   grid-row-gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
 }
 ```
 
 ```html
 <div class="wrapper">
-   <div>One</div>
-   <div>Two</div>
-   <div>Three</div>
-   <div>Four</div>
-   <div>Five</div>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
 </div>
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .wrapper > div {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -479,15 +494,15 @@ Um item de grid pode se tornar um container de grid. No exemplo a seguir, temos 
 
 ```html
 <div class="wrapper">
-   <div class="box box1">
-       <div class="nested">a</div>
-       <div class="nested">b</div>
-        <div class="nested">c</div>
-    </div>
-    <div class="box box2">Two</div>
-    <div class="box box3">Three</div>
-    <div class="box box4">Four</div>
-    <div class="box box5">Five</div>
+  <div class="box box1">
+    <div class="nested">a</div>
+    <div class="nested">b</div>
+    <div class="nested">c</div>
+  </div>
+  <div class="box box2">Two</div>
+  <div class="box box3">Three</div>
+  <div class="box box4">Four</div>
+  <div class="box box5">Five</div>
 </div>
 ```
 
@@ -497,34 +512,36 @@ Se definimos `box1` como `display: grid` podemos dar uma definição de tracks e
 
 ```css
 .box1 {
-   grid-column-start: 1;
-   grid-column-end: 4;
-   grid-row-start: 1;
-   grid-row-end: 3;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .box {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -536,7 +553,8 @@ Nesse caso o grid aninhado não possui relação com o pai. Como é possível pe
 
 No nível das especificações do grid tem uma _feature_ chamada _subgrid_ que nos permitiria criar grids aninhados que usa aquilo que foi definido no grid pai.
 
-> **Nota:** Subgrids ainda não foram implementados em nenhum browser, e as especificações são sujeitas a mudanças.
+> [!NOTE]
+> Subgrids ainda não foram implementados em nenhum browser, e as especificações são sujeitas a mudanças.
 
 Na especificação atual, no exemplo acima editaríamos o grid aninhado usando `display: subgrid` ao invés de `display: grid`, e remover o que havia sido definido. O grid aninhado vai usar as propriedades definidas no pai para dispor os itens.
 
@@ -544,11 +562,11 @@ Note que o grid aninhado está nas duas dimensões — linhas e colunas. Não h�
 
 ```css
 .box1 {
-   grid-column-start: 1;
-   grid-column-end: 4;
-   grid-row-start: 1;
-   grid-row-end: 3;
-   display: subgrid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: subgrid;
 }
 ```
 
@@ -558,52 +576,54 @@ Itens de uma mesma grade podem ocupar uma mesma célula. Se retornarmos ao nosso
 
 ```html
 <div class="wrapper">
-   <div class="box box1">One</div>
-   <div class="box box2">Two</div>
-   <div class="box box3">Three</div>
-   <div class="box box4">Four</div>
-   <div class="box box5">Five</div>
+  <div class="box box1">One</div>
+  <div class="box box2">Two</div>
+  <div class="box box3">Three</div>
+  <div class="box box4">Four</div>
+  <div class="box box5">Five</div>
 </div>
 ```
 
 ```css
 .wrapper {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-auto-rows: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
 }
 .box1 {
-   grid-column-start: 1;
-   grid-column-end: 4;
-   grid-row-start: 1;
-   grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .box2 {
-   grid-column-start: 1;
-   grid-row-start: 2;
-   grid-row-end: 4;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .box {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -617,54 +637,56 @@ Podemos controlar a ordem na qual os itens irão empilhar-se usando a propriedad
 
 ```css
 .wrapper {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-auto-rows: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
 }
 .box1 {
-   grid-column-start: 1;
-   grid-column-end: 4;
-   grid-row-start: 1;
-   grid-row-end: 3;
-   z-index: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  z-index: 2;
 }
 .box2 {
-   grid-column-start: 1;
-   grid-row-start: 2;
-   grid-row-end: 4;
-   z-index: 1;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  z-index: 1;
 }
 ```
 
 ```html hidden
 <div class="wrapper">
-    <div class="box box1">One</div>
-    <div class="box box2">Two</div>
-   <div class="box box3">Three</div>
-   <div class="box box4">Four</div>
-   <div class="box box5">Five</div>
+  <div class="box box1">One</div>
+  <div class="box box2">Two</div>
+  <div class="box box3">Three</div>
+  <div class="box box4">Four</div>
+  <div class="box box5">Five</div>
 </div>
 ```
 
 ```css hidden
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 .wrapper {
-    border: 2px solid #f76707;
-    border-radius: 5px;
-    background-color: #fff4e6;
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
 }
 .box {
-    border: 2px solid #ffa94d;
-    border-radius: 5px;
-    background-color: #ffd8a8;
-    padding: 1em;
-    color: #d9480f;
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
 }
 .nested {
-    border: 2px solid #ffec99;
-    border-radius: 5px;
-    background-color: #fff9db;
-    padding: 1em;
+  border: 2px solid #ffec99;
+  border-radius: 5px;
+  background-color: #fff9db;
+  padding: 1em;
 }
 ```
 
@@ -676,48 +698,48 @@ Nesse artigo abordamos um pouco da especificação do Grid Layout. Pratique com 
 
 1. [**CSS**](/pt-BR/docs/Web/CSS)
 2. [**CSS Reference**](/pt-BR/docs/Web/CSS/Reference)
-3. [CSS Grid Layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout)
+3. [CSS Grid Layout](/pt-BR/docs/Web/CSS/CSS_grid_layout)
 4. **Guias**
 
-    1. [Basics concepts of grid layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
-    2. [Relationship to other layout methods](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
-    3. [Line-based placement](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
-    4. [Grid template areas](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
-    5. [Layout using named grid lines](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
-    6. [Auto-placement in grid layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout)
-    7. [Box alignment in grid layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
-    8. [Grids, logical values and writing modes](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid,_Logical_Values_and_Writing_Modes)
-    9. [CSS Grid Layout and Accessibility](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility)
-    10. [CSS Grid Layout and Progressive Enhancement](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement)
-    11. [Realizing common layouts using grids](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout)
+   1. [Basics concepts of grid layout](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+   2. [Relationship to other layout methods](/pt-BR/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods)
+   3. [Line-based placement](/pt-BR/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
+   4. [Grid template areas](/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
+   5. [Layout using named grid lines](/pt-BR/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines)
+   6. [Auto-placement in grid layout](/pt-BR/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
+   7. [Box alignment in grid layout](/pt-BR/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+   8. [Grids, logical values and writing modes](/pt-BR/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
+   9. [CSS Grid Layout and Accessibility](/pt-BR/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
+   10. [CSS Grid Layout and Progressive Enhancement](/pt-BR/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
+   11. [Realizing common layouts using grids](/pt-BR/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
 5. **Propriedades**
 
-    1. [grid](/pt-BR/docs/Web/CSS/grid)
-    2. [grid-area](/pt-BR/docs/Web/CSS/grid-area)
-    3. [grid-auto-columns](/pt-BR/docs/Web/CSS/grid-auto-columns)
-    4. [grid-auto-flow](/pt-BR/docs/Web/CSS/grid-auto-flow)
-    5. [grid-auto-rows](/pt-BR/docs/Web/CSS/grid-auto-rows)
-    6. [grid-column](/pt-BR/docs/Web/CSS/grid-column)
-    7. [grid-column-end](/pt-BR/docs/Web/CSS/grid-column-end)
-    8. [grid-column-gap](/pt-BR/docs/Web/CSS/grid-column-gap)
-    9. [grid-column-start](/pt-BR/docs/Web/CSS/grid-column-start)
-    10. [grid-gap](/pt-BR/docs/Web/CSS/grid-gap)
-    11. [grid-row](/pt-BR/docs/Web/CSS/grid-row)
-    12. [grid-row-end](/pt-BR/docs/Web/CSS/grid-row-end)
-    13. [grid-row-gap](/pt-BR/docs/Web/CSS/grid-row-gap)
-    14. [grid-row-start](/pt-BR/docs/Web/CSS/grid-row-start)
-    15. [grid-template](/pt-BR/docs/Web/CSS/grid-template)
-    16. [grid-template-areas](/pt-BR/docs/Web/CSS/grid-template-areas)
-    17. [grid-template-colunms](/pt-BR/docs/Web/CSS/grid-template-columns)
-    18. [grid-template-rows](/pt-BR/docs/Web/CSS/grid-template-rows)
+   1. [grid](/pt-BR/docs/Web/CSS/grid)
+   2. [grid-area](/pt-BR/docs/Web/CSS/grid-area)
+   3. [grid-auto-columns](/pt-BR/docs/Web/CSS/grid-auto-columns)
+   4. [grid-auto-flow](/pt-BR/docs/Web/CSS/grid-auto-flow)
+   5. [grid-auto-rows](/pt-BR/docs/Web/CSS/grid-auto-rows)
+   6. [grid-column](/pt-BR/docs/Web/CSS/grid-column)
+   7. [grid-column-end](/pt-BR/docs/Web/CSS/grid-column-end)
+   8. [grid-column-gap](/pt-BR/docs/Web/CSS/column-gap)
+   9. [grid-column-start](/pt-BR/docs/Web/CSS/grid-column-start)
+   10. [grid-gap](/pt-BR/docs/Web/CSS/gap)
+   11. [grid-row](/pt-BR/docs/Web/CSS/grid-row)
+   12. [grid-row-end](/pt-BR/docs/Web/CSS/grid-row-end)
+   13. [grid-row-gap](/pt-BR/docs/Web/CSS/row-gap)
+   14. [grid-row-start](/pt-BR/docs/Web/CSS/grid-row-start)
+   15. [grid-template](/pt-BR/docs/Web/CSS/grid-template)
+   16. [grid-template-areas](/pt-BR/docs/Web/CSS/grid-template-areas)
+   17. [grid-template-colunms](/pt-BR/docs/Web/CSS/grid-template-columns)
+   18. [grid-template-rows](/pt-BR/docs/Web/CSS/grid-template-rows)
 
 6. **Glossário**
 
-    1. [Grid lines](/pt-BR/docs/Glossary/Grid_lines)
-    2. [Grid tracks](/pt-BR/docs/Glossary/Grid_tracks)
-    3. [Grid cell](/pt-BR/docs/Glossary/Grid_cell)
-    4. [Grid areas](/pt-BR/docs/Glossary/Grid_areas)
-    5. [Gutters](/pt-BR/docs/Glossary/Gutters)
-    6. [Grid row](/pt-BR/docs/Glossary/Grid_rows)
-    7. [Grid column](/pt-BR/docs/Glossary/Grid_column)
+   1. [Grid lines](/pt-BR/docs/Glossary/Grid_lines)
+   2. [Grid tracks](/pt-BR/docs/Glossary/Grid_tracks)
+   3. [Grid cell](/pt-BR/docs/Glossary/Grid_cell)
+   4. [Grid areas](/pt-BR/docs/Glossary/Grid_Areas)
+   5. [Gutters](/pt-BR/docs/Glossary/Gutters)
+   6. [Grid row](/pt-BR/docs/Glossary/Grid_Row)
+   7. [Grid column](/pt-BR/docs/Glossary/Grid_column)

@@ -32,11 +32,11 @@ slug: Web/HTML/Element/slot
     </tr>
     <tr>
       <th scope="row">이벤트</th>
-      <td>{{event("slotchange")}}</td>
+      <td>{{domxref("HTMLSlotElement/slotchange_event", "slotchange")}}</td>
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -61,7 +61,7 @@ slug: Web/HTML/Element/slot
 
 이 요소는 [전역 특성](/ko/docs/Web/HTML/Global_attributes)을 포함합니다.
 
-- {{htmlattrdef("name")}}
+- `name`
   - : 슬롯의 이름.
 
 ## 예제
@@ -69,8 +69,14 @@ slug: Web/HTML/Element/slot
 ```html
 <template id="element-details-template">
   <style>
-    details {font-family: "Open Sans Light", Helvetica, Arial, sans-serif }
-    .name {font-weight: bold; color: #217ac0; font-size: 120% }
+    details {
+      font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
+    }
+    .name {
+      font-weight: bold;
+      color: #217ac0;
+      font-size: 120%;
+    }
     h4 {
       margin: 10px 0 -8px 0;
       background: #217ac0;
@@ -79,12 +85,20 @@ slug: Web/HTML/Element/slot
       border: 1px solid #cee9f9;
       border-radius: 4px;
     }
-    .attributes { margin-left: 22px; font-size: 90% }
-    .attributes p { margin-left: 16px; font-style: italic }
+    .attributes {
+      margin-left: 22px;
+      font-size: 90%;
+    }
+    .attributes p {
+      margin-left: 16px;
+      font-style: italic;
+    }
   </style>
   <details>
     <summary>
-      <code class="name">&lt;<slot name="element-name">NEED NAME</slot>&gt;</code>
+      <code class="name"
+        >&lt;<slot name="element-name">NEED NAME</slot>&gt;</code
+      >
       <i class="desc"><slot name="description">NEED DESCRIPTION</slot></i>
     </summary>
     <div class="attributes">
@@ -92,11 +106,12 @@ slug: Web/HTML/Element/slot
       <slot name="attributes"><p>None</p></slot>
     </div>
   </details>
-  <hr>
+  <hr />
 </template>
 ```
 
-> **참고:** 온전한 예제는 [element-details](https://github.com/mdn/web-components-examples/tree/master/element-details)([라이브로 보기](https://mdn.github.io/web-components-examples/element-details/))에서 볼 수 있습니다. 설명은 [템플릿과 슬롯 사용하기](/ko/docs/Web/Web_Components/Using_templates_and_slots)에서 확인할 수 있습니다.
+> [!NOTE]
+> 온전한 예제는 [element-details](https://github.com/mdn/web-components-examples/tree/master/element-details)([라이브로 보기](https://mdn.github.io/web-components-examples/element-details/))에서 볼 수 있습니다. 설명은 [템플릿과 슬롯 사용하기](/ko/docs/Web/API/Web_components/Using_templates_and_slots)에서 확인할 수 있습니다.
 
 ## 명세
 

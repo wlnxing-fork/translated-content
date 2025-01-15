@@ -5,7 +5,6 @@ l10n:
   sourceCommit: fcd80ee4c8477b6f73553bfada841781cf74cf46
 ---
 
-
 {{JSRef}}
 
 El método estático **`Object.keys()`** devuelve un arreglo de propiedades enumerables propias de un objeto dado.
@@ -79,7 +78,8 @@ console.log(Object.keys("foo")); // ['0', '1', '2']
 console.log(Object.keys(100)); // []
 ```
 
-> **Nota:** En ES5, si el argumento para `Object.keys()` no es un objeto, causará {{jsxref("TypeError")}}.
+> [!NOTE]
+> En ES5, si el argumento para `Object.keys()` no es un objeto, causará {{jsxref("TypeError")}}.
 
 ## Especificaciones
 

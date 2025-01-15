@@ -1,7 +1,7 @@
 ---
 title: Firefox 108 for developers
 slug: Mozilla/Firefox/Releases/108
-l10n: 
+l10n:
   sourceCommit: edeb48d22b0865ede34c8ca70cd2eb60010cbf9c
 ---
 
@@ -20,10 +20,10 @@ l10n:
 
 - 設定項目 `layout.css.trig.enabled` の既定値を `true` に設定して、[三角関数](/ja/docs/Web/CSS/CSS_Functions#trigonometric_functions) が使用可能になりました。
   `sin()`、`cos()`、`tan()`、`asin()`、`acos()`、`atan()`、`atan2()` 関数を使用できます ([Firefox バグ 1774589](https://bugzil.la/1774589)、[Firefox バグ 1787070](https://bugzil.la/1787070))。
-- [数学関数](/ja/docs/Web/CSS/CSS_Functions#math_functions) で `pi` や `e` のようなよく知られた定数を使用できるようにするため、CSS の [`<calc-constant>`](/ja/docs/Web/CSS/calc-constant) 型を実装しました ([Firefox バグ 1682444](https://bugzil.la/1682444)、[Firefox バグ 1787070](https://bugzil.la/1787070))。
+- [数学関数](/ja/docs/Web/CSS/CSS_Functions#math_functions) で `pi` や `e` のようなよく知られた定数を使用できるようにするため、CSS の [`<calc-constant>`](/ja/docs/Web/CSS/calc-keyword) 型を実装しました ([Firefox バグ 1682444](https://bugzil.la/1682444)、[Firefox バグ 1787070](https://bugzil.la/1787070))。
 - 設定項目 `layout.css.container-queries.enabled` で、コンテナークエリーの長さの単位をサポートしました。
   この設定を `true` にすると、クエリーコンテナーの寸法に比例する長さの単位である`cqw`、`cqh`、`cqi`、`cqb`、`cqmin`、`cqmax` を使用できます。
-  これらの単位について、詳しくは [CSS Container Queries](/ja/docs/Web/CSS/CSS_Container_Queries#container_query_length_units) の文書をご覧ください ([Firefox バグ 1744231](https://bugzil.la/1744231))。
+  これらの単位について、詳しくは [CSS Container Queries](/ja/docs/Web/CSS/CSS_containment/Container_queries#container_query_length_units) の文書をご覧ください ([Firefox バグ 1744231](https://bugzil.la/1744231))。
 - 設定項目 `layout.css.font-variant-emoji.enabled` で、[`font-variant-emoji`](/ja/docs/Web/CSS/font-variant-emoji) プロパティをサポートしました。設定項目の既定値は `false` です。このプロパティで、絵文字を表示するときの既定の表現スタイルを設定できます ([Firefox バグ 1461589](https://bugzil.la/1461589))。
 
 ### JavaScript

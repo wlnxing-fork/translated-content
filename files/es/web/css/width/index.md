@@ -6,9 +6,9 @@ slug: Web/CSS/width
 {{CSSRef}}
 
 La propiedad [CSS](/es/docs/Web/CSS) **`width`** establece el ancho de un elemento.
-Por defecto, establece el ancho del [área de contenido](/es/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area),
+Por defecto, establece el ancho del [área de contenido](/es/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#content_area),
 pero si el {{cssxref("box-sizing")}} se establece en `border-box`,
-establece el ancho del [área del borde](/es/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#border_area).
+establece el ancho del [área del borde](/es/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#border_area).
 
 {{EmbedInteractiveExample("pages/css/width.html")}}
 
@@ -79,7 +79,9 @@ p.goldie {
 ```
 
 ```html
-<p class="goldie">La comunidad de Mozilla produce una gran cantidad de software excelente.</p>
+<p class="goldie">
+  La comunidad de Mozilla produce una gran cantidad de software excelente.
+</p>
 ```
 
 {{EmbedLiveSample('Default_width', '500px', '64px')}}
@@ -130,15 +132,17 @@ p.goldie {
 ```css
 p.maxgreen {
   background: lightgreen;
-  width: intrinsic;           /* Safari/WebKit usa un nombre no estándar */
-  width: -moz-max-content;    /* Firefox/Gecko */
+  width: intrinsic; /* Safari/WebKit usa un nombre no estándar */
+  width: -moz-max-content; /* Firefox/Gecko */
   width: -webkit-max-content; /* Chrome */
   width: max-content;
 }
 ```
 
 ```html
-<p class="maxgreen">La comunidad de Mozilla produce una gran cantidad de software excelente.</p>
+<p class="maxgreen">
+  La comunidad de Mozilla produce una gran cantidad de software excelente.
+</p>
 ```
 
 {{EmbedLiveSample('', '500px', '64px')}}
@@ -155,7 +159,9 @@ p.minblue {
 ```
 
 ```html
-<p class="minblue">La comunidad de Mozilla produce una gran cantidad de software excelente.</p>
+<p class="minblue">
+  La comunidad de Mozilla produce una gran cantidad de software excelente.
+</p>
 ```
 
 {{EmbedLiveSample('', '500px', '155px')}}
@@ -170,7 +176,7 @@ p.minblue {
 
 ## Véase también
 
-- [El modelo de caja](/es/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [El modelo de caja](/es/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}

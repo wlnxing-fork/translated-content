@@ -12,9 +12,9 @@ Todos los lenguajes de programación tienen estructuras de datos integradas, per
 JavaScript es un lenguaje _débilmente tipado_ y _dinámico_. Las variables en JavaScript no están asociadas directamente con ningún tipo de valor en particular, y a cualquier variable se le puede asignar (y reasignar) valores de todos los tipos:
 
 ```js
-let foo = 42;    // foo ahora es un número
-foo     = 'bar'; // foo ahora es un string
-foo     = true;  // foo ahora es un booleano
+let foo = 42; // foo ahora es un número
+foo = "bar"; // foo ahora es un string
+foo = true; // foo ahora es un booleano
 ```
 
 ## Estructuras y tipos de datos
@@ -31,7 +31,7 @@ El último estándar ECMAScript define nueve tipos:
   - {{Glossary("Symbol")}}: `typeof instance === "symbol"`
 
 - {{Glossary("Null")}}: `typeof instance === "object"`. Tipo {{Glossary("Primitive", "primitivo")}} especial que tiene un uso adicional para su valor: si el objeto no se hereda, se muestra `null`;
-- {{Glossary("Object")}}: `typeof instance === "object"`. Tipo estructural especial que no es de datos pero para cualquier instancia de objeto [construido](/es/docs/Learn/JavaScript/Objects#The_Constructor) que también se utiliza como estructuras de datos: new {{jsxref("Object")}}, new {{jsxref("Array")}}, new {{jsxref("Map")}}, new {{jsxref("Set")}}, new {{jsxref("WeakMap")}}, new {{jsxref("WeakSet")}}, new {{jsxref("Date")}} y casi todo lo hecho con la [palabra clave `new`](/es/docs/Web/JavaScript/Reference/Operators/new);
+- {{Glossary("Object")}}: `typeof instance === "object"`. Tipo estructural especial que no es de datos pero para cualquier instancia de objeto [construido](/es/docs/Learn/JavaScript/Objects#the_constructor) que también se utiliza como estructuras de datos: new {{jsxref("Object")}}, new {{jsxref("Array")}}, new {{jsxref("Map")}}, new {{jsxref("Set")}}, new {{jsxref("WeakMap")}}, new {{jsxref("WeakSet")}}, new {{jsxref("Date")}} y casi todo lo hecho con la [palabra clave `new`](/es/docs/Web/JavaScript/Reference/Operators/new);
 - {{Glossary("Function")}}: una estructura sin datos, aunque también responde al operador `typeof`: `typeof instance === "function"`. Esta simplemente es una forma abreviada para funciones, aunque cada constructor de funciones se deriva del constructor `Object`.
 
 Ten en cuenta que el único propósito valioso del uso del operador `typeof` es verificar el tipo de dato. Si deseamos verificar cualquier Tipo Estructural derivado de `Object`, no tiene sentido usar `typeof` para eso, ya que siempre recibiremos "`object`". La forma correcta de comprobar qué tipo de Objeto estamos usando es la palabra clave {{jsxref("Operators/instanceof", "instanceof")}}. Pero incluso en ese caso, puede haber conceptos erróneos.
@@ -75,7 +75,8 @@ Infinity
 
 Aunque un `number` a menudo representa solo su valor, JavaScript proporciona {{jsxref("Operators/Bitwise_Operators", "operadores binarios (bitwise)")}}.
 
-> **Nota:** Aunque los operadores bit a bit se _pueden_ usar para representar múltiples valores Booleanos dentro de un solo número usando el [enmascaramiento de bits](<https://es.wikipedia.org/wiki/Máscara_(informática)>), esto generalmente se considera una mala práctica. JavaScript ofrece otros medios para representar un conjunto de valores booleanos (como un arreglo de valores booleanos o un objeto con valores booleanos asignados a propiedades con nombre). El enmascaramiento de bits también tiende a hacer que el código sea más difícil de leer, comprender y mantener.
+> [!NOTE]
+> Aunque los operadores bit a bit se _pueden_ usar para representar múltiples valores Booleanos dentro de un solo número usando el [enmascaramiento de bits](<https://es.wikipedia.org/wiki/Máscara_(informática)>), esto generalmente se considera una mala práctica. JavaScript ofrece otros medios para representar un conjunto de valores booleanos (como un arreglo de valores booleanos o un objeto con valores booleanos asignados a propiedades con nombre). El enmascaramiento de bits también tiende a hacer que el código sea más difícil de leer, comprender y mantener.
 
 Posiblemente sea necesario utilizar estas técnicas en entornos muy restringidos, como cuando se intenta hacer frente a las limitaciones del almacenamiento local, o en casos extremos (como cuando cada bit de la red cuenta). Esta técnica solo se debe considerar cuando sea la última medida que se pueda tomar para optimizar el tamaño.
 
@@ -137,11 +138,12 @@ En ciencias de la computación, un objeto es un valor en la memoria al que posib
 
 ### Propiedades
 
-En JavaScript, los objetos se pueden ver como una colección de propiedades. Con la [sintaxis de objeto literal](/es/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Object_literals), se inicia un conjunto limitado de propiedades; luego se pueden agregar y eliminar propiedades. Los valores de propiedad pueden ser valores de cualquier tipo, incluidos otros objetos, lo que permite construir estructuras de datos complejas. Las propiedades se identifican mediante valores _clave_. Un valor _clave_ es un valor de cadena o un símbolo.
+En JavaScript, los objetos se pueden ver como una colección de propiedades. Con la [sintaxis de objeto literal](/es/docs/Web/JavaScript/Guide/Grammar_and_types#object_literals), se inicia un conjunto limitado de propiedades; luego se pueden agregar y eliminar propiedades. Los valores de propiedad pueden ser valores de cualquier tipo, incluidos otros objetos, lo que permite construir estructuras de datos complejas. Las propiedades se identifican mediante valores _clave_. Un valor _clave_ es un valor de cadena o un símbolo.
 
 Hay dos tipos de propiedades de objeto que tienen ciertos atributos: la propiedad _data_ y la propiedad _accessor_.
 
-> **Nota:** Cada propiedad tiene _atributos correspondientes_. Los atributos, internamente los utiliza el motor JavaScript, por lo que no puedes acceder a ellos directamente. Es por eso que los atributos se enumeran entre corchetes dobles, en lugar de simples.Consulta {{jsxref("Object.defineProperty()")}} para obtener más información.
+> [!NOTE]
+> Cada propiedad tiene _atributos correspondientes_. Los atributos, internamente los utiliza el motor JavaScript, por lo que no puedes acceder a ellos directamente. Es por eso que los atributos se enumeran entre corchetes dobles, en lugar de simples.Consulta {{jsxref("Object.defineProperty()")}} para obtener más información.
 
 #### Propiedad `Data`
 
@@ -156,7 +158,7 @@ Asocia una clave con un valor y tiene los siguientes atributos:
 | [[Enumerable]]   | `Boolean`                    | Si es `true`, la propiedad se enumerará en bucles [`for...in`](/es/docs/Web/JavaScript/Reference/Statements/for...in). Consulta también [Enumerabilidad y posesión de propiedades](/es/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). | `false`              |
 | [[Configurable]] | `Boolean`                    | Si es `false`, la propiedad no se puede eliminar, no se puede cambiar a una propiedad de acceso descriptor y los atributos que no sean [[Value]] y [[Writable]] no se pueden cambiar.                                                                  | `false`              |
 
-**Atributos obsoletos (a partir de ECMAScript 3, renombrado en ECMAScript 5)**
+**Atributos obsoletos (a partir de ECMAScript 3, renombrado en ECMAScript 5).**
 
 | Atributo     | Tipo      | Descripción                                       |
 | ------------ | --------- | ------------------------------------------------- |
@@ -170,8 +172,8 @@ Asocia una clave con una de las dos funciones de acceso (`get` y `set`) para rec
 
 | Atributo         | Tipo                            | Descripción                                                                                                                                                                                                          | Valor predeterminado |
 | ---------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| [[Get]]          | Objeto `Function` o `undefined` | La función se llama con una lista de argumentos vacía y recupera el valor de la propiedad cada vez que se realiza un acceso al valor. Consulta también [`get`](/es/docs/Web/JavaScript/Reference/Operators/get).     | `undefined`          |
-| [[Set]]          | Objeto `Function` o `undefined` | La función se llama con un argumento que contiene el valor asignado y se ejecuta siempre que se intenta cambiar una propiedad específica. Consulta también [`set`](/es/docs/Web/JavaScript/Reference/Operators/set). | `undefined`          |
+| [[Get]]          | Objeto `Function` o `undefined` | La función se llama con una lista de argumentos vacía y recupera el valor de la propiedad cada vez que se realiza un acceso al valor. Consulta también [`get`](/es/docs/Web/JavaScript/Reference/Functions/get).     | `undefined`          |
+| [[Set]]          | Objeto `Function` o `undefined` | La función se llama con un argumento que contiene el valor asignado y se ejecuta siempre que se intenta cambiar una propiedad específica. Consulta también [`set`](/es/docs/Web/JavaScript/Reference/Functions/set). | `undefined`          |
 | [[Enumerable]]   | `Boolean`                       | Si es `true`, la propiedad se enumerará en bucles [`for...in`](/es/docs/Web/JavaScript/Reference/Statements/for...in).                                                                                               | `false`              |
 | [[Configurable]] | `Boolean`                       | Si es `false`, la propiedad no se puede eliminar y no se puede cambiar a una propiedad de datos.                                                                                                                     | `false`              |
 
@@ -187,25 +189,25 @@ Al representar fechas, la mejor opción es utilizar la utilidad [`Date` incorpor
 
 ### Colecciones indexadas: arreglos y arreglos tipados
 
-[Los arreglos](/es/docs/JavaScript/Reference/Global_Objects/Array) son objetos regulares para los que existe una relación particular entre las propiedades de clave entera y la Propiedad `length`.
+[Los arreglos](/es/docs/Web/JavaScript/Reference/Global_Objects/Array) son objetos regulares para los que existe una relación particular entre las propiedades de clave entera y la Propiedad `length`.
 
-Además, los arreglos heredan de `Array.prototype`, que les proporciona un puñado de convenientes métodos para manipular arreglos. Por ejemplo, [`indexOf`](/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) (buscando un valor en el arreglo) o [`push`](/es/docs/JavaScript/Reference/Global_Objects/Array/push) (agrega un elemento al arreglo), y así sucesivamente. Esto hace que el `Array` sea un candidato perfecto para representar listas o conjuntos.
+Además, los arreglos heredan de `Array.prototype`, que les proporciona un puñado de convenientes métodos para manipular arreglos. Por ejemplo, [`indexOf`](/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) (buscando un valor en el arreglo) o [`push`](/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push) (agrega un elemento al arreglo), y así sucesivamente. Esto hace que el `Array` sea un candidato perfecto para representar listas o conjuntos.
 
-Los [Arreglos tipados](/es/docs/Web/JavaScript/Typed_arrays) son nuevos en JavaScript con ECMAScript 2015 y presentan una vista similar a un arreglo de un búfer de datos binarios subyacente. La siguiente tabla ayuda a determinar los tipos de datos equivalentes en C:
+Los [Arreglos tipados](/es/docs/Web/JavaScript/Guide/Typed_arrays) son nuevos en JavaScript con ECMAScript 2015 y presentan una vista similar a un arreglo de un búfer de datos binarios subyacente. La siguiente tabla ayuda a determinar los tipos de datos equivalentes en C:
 
-| Tipo                                     | Intervalo de valores           | Tamaño en bytes | Descripción                                                                               | Tipo de IDL web           | Tipo C equivalente               |
-| ---------------------------------------- | ------------------------------ | --------------- | ----------------------------------------------------------------------------------------- | ------------------------- | -------------------------------- |
+| Tipo                            | Intervalo de valores           | Tamaño en bytes | Descripción                                                                               | Tipo de IDL web           | Tipo C equivalente               |
+| ------------------------------- | ------------------------------ | --------------- | ----------------------------------------------------------------------------------------- | ------------------------- | -------------------------------- |
 | {{jsxref("Int8Array")}}         | `-128` a `127`                 | 1               | Dos enteros complementarios de 8 bits con signo                                           | `byte`                    | `int8_t`                         |
-| {{jsxref("Uint8Array")}}         | `0` a `255`                    | 1               | Entero de 8-bit sin signo                                                                 | `octet`                   | `uint8_t`                        |
+| {{jsxref("Uint8Array")}}        | `0` a `255`                    | 1               | Entero de 8-bit sin signo                                                                 | `octet`                   | `uint8_t`                        |
 | {{jsxref("Uint8ClampedArray")}} | `0` a `255`                    | 1               | Entero de 8 bits sin signo (sujeto)                                                       | `octet`                   | `uint8_t`                        |
-| {{jsxref("Int16Array")}}         | `-32768` a `32767`             | 2               | Dos enteros complementarios de 16 bits con signo                                          | `short`                   | `int16_t`                        |
-| {{jsxref("Uint16Array")}}         | `0` a `65535`                  | 2               | Entero de 16 bits sin signo                                                               | `Short sin signo`         | `uint16_t`                       |
-| {{jsxref("Int32Array")}}         | `-2147483648` a `2147483647`   | 4               | dos enteros complementarios de 32 bits con signo                                          | `long`                    | `int32_t`                        |
-| {{jsxref("Uint32Array")}}         | `0` a `4294967295`             | 4               | Enteros de 32 bits sin signo                                                              | `long sin signo`          | `uint32_t`                       |
-| {{jsxref("Float32Array")}}     | `1.2`×`10-38` a `3.4`×`1038`   | 4               | Número de coma flotante IEEE de 32 bits (7 dígitos significativos, p. ej., `1.1234567`)   | `float sin restricciones` | `float`                          |
-| {{jsxref("Float64Array")}}     | `5.0`×`10-324` a `1.8`×`10308` | 8               | Número de coma flotante IEEE de 64 bits (16 dígitos significativos, p. ej., `1.123...15`) | `doble sin restricciones` | `double`                         |
+| {{jsxref("Int16Array")}}        | `-32768` a `32767`             | 2               | Dos enteros complementarios de 16 bits con signo                                          | `short`                   | `int16_t`                        |
+| {{jsxref("Uint16Array")}}       | `0` a `65535`                  | 2               | Entero de 16 bits sin signo                                                               | `Short sin signo`         | `uint16_t`                       |
+| {{jsxref("Int32Array")}}        | `-2147483648` a `2147483647`   | 4               | dos enteros complementarios de 32 bits con signo                                          | `long`                    | `int32_t`                        |
+| {{jsxref("Uint32Array")}}       | `0` a `4294967295`             | 4               | Enteros de 32 bits sin signo                                                              | `long sin signo`          | `uint32_t`                       |
+| {{jsxref("Float32Array")}}      | `1.2`×`10-38` a `3.4`×`1038`   | 4               | Número de coma flotante IEEE de 32 bits (7 dígitos significativos, p. ej., `1.1234567`)   | `float sin restricciones` | `float`                          |
+| {{jsxref("Float64Array")}}      | `5.0`×`10-324` a `1.8`×`10308` | 8               | Número de coma flotante IEEE de 64 bits (16 dígitos significativos, p. ej., `1.123...15`) | `doble sin restricciones` | `double`                         |
 | {{jsxref("BigInt64Array")}}     | `-263` a `263-1`               | 8               | Dos enteros complementarios de 64 bits con signo                                          | `bigint`                  | `int64_t (long long con signo)`  |
-| {{jsxref("BigUint64Array")}}     | `0` a `264-1`                  | 8               | Entero de 64 bits sin signo                                                               | `bigint`                  | `uint64_t (long long sin signo)` |
+| {{jsxref("BigUint64Array")}}    | `0` a `264-1`                  | 8               | Entero de 64 bits sin signo                                                               | `bigint`                  | `uint64_t (long long sin signo)` |
 
 ### Colecciones con clave: mapas, conjuntos, `WeakMaps`, `WeakSets`
 
@@ -234,10 +236,6 @@ JavaScript tiene una biblioteca estándar de objetos integrados.
 El operador `typeof` te puede ayudar a encontrar el tipo de tu variable.
 
 Lee la [página de referencia](/es/docs/Web/JavaScript/Reference/Operators/typeof) para obtener más detalles y casos extremos.
-
-## Especificaciones
-
-{{Specifications}}
 
 ## Ve también
 

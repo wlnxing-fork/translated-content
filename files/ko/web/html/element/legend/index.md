@@ -9,8 +9,6 @@ slug: Web/HTML/Element/legend
 
 {{EmbedInteractiveExample("pages/tabbed/legend.html", "tabbed-standard")}}
 
-<p class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples">https://github.com/mdn/interactive-examples </a>and send us a pull request.</p>
-
 <table class="properties">
   <tbody>
     <tr>
@@ -29,7 +27,7 @@ slug: Web/HTML/Element/legend
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>

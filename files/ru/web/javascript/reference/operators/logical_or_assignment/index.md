@@ -1,13 +1,6 @@
 ---
 title: Присваивание логического ИЛИ (||=)
 slug: Web/JavaScript/Reference/Operators/Logical_OR_assignment
-tags:
-  - JavaScript
-  - Language feature
-  - Logical Operator
-  - Operator
-  - Reference
-browser-compat: javascript.operators.logical_or_assignment
 ---
 
 {{jsSidebar("Operators")}}
@@ -19,7 +12,7 @@ browser-compat: javascript.operators.logical_or_assignment
 ## Синтаксис
 
 ```js
-expr1 ||= expr2
+expr1 ||= expr2;
 ```
 
 ## Описание
@@ -57,7 +50,7 @@ x = x || y;
 Если в элементе с идентификатором "lyrics" нет содержимого, то следующее выражение вставит в него надпись:
 
 ```js
-document.getElementById('lyrics').textContent ||= 'Нет слов.'
+document.getElementById("lyrics").textContent ||= "Нет слов.";
 ```
 
 В данном примере сокращённое вычисление очень сильно выручает, поскольку элемент будет обновляться только при необходимости, что позволит избежать подобных эффектов вроде ненужного рендеринга, потери фокуса и т.д.
@@ -68,14 +61,14 @@ document.getElementById('lyrics').textContent ||= 'Нет слов.'
 
 {{Specifications}}
 
-## Поддержка браузерами
+## Совместимость с браузерами
 
 {{Compat}}
 
 ## Смотрите также
 
 - [Логическое ИЛИ(||)](/ru/docs/Web/JavaScript/Reference/Operators/Logical_OR)
-- [Оператор нулевого слияния (`??`)](/ru/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [Оператор нулевого слияния (`??`)](/ru/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [Оператор присваивания побитового ИЛИ (`|=`)](/ru/docs/Web/JavaScript/Reference/Operators/Bitwise_OR_assignment)
 - {{Glossary("Truthy", "Истиноподобное значение")}}
 - {{Glossary("Falsy", "Ложноподобное значение")}}

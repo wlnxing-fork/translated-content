@@ -5,7 +5,7 @@ slug: Web/HTML/Element/input
 
 {{HTMLSidebar}}
 
-[HTML](/zh-CN/docs/Web/HTML) **`<input>`** 元素用于为基于 Web 的表单创建交互式控件，以便接受来自用户的数据。取决于设备和{{Glossary("user agent", "用户代理")}}不同，表单可以使用各种类型的输入数据和控件。`<input>` 元素是目前是 HTML 中最强大、最复杂的元素之一，因为它有大量的输入类型和属性组合。
+[HTML](/zh-CN/docs/Web/HTML) **`<input>`** 元素用于为基于 Web 的表单创建交互式控件，以便接受来自用户的数据。取决于设备和{{Glossary("user agent", "用户代理")}}不同，表单可以使用各种类型的输入数据和控件。`<input>` 元素是目前 HTML 中最强大、最复杂的元素之一，因为它有大量的输入类型和属性组合。
 
 {{EmbedInteractiveExample("pages/tabbed/input-text.html", "tabbed-shorter")}}
 
@@ -319,13 +319,15 @@ slug: Web/HTML/Element/input
 
   - : 一个布尔属性，如果存在，表示当页面加载完毕（或包含该元素的 `<dialog>` 显示完毕）时，该 input 元素应该自动拥有焦点。
 
-    > **备注：** 具有 `autofocus` 属性的元素可能在 {{domxref("Window/DOMContentLoaded_event", "DOMContentLoaded")}} 事件触发前获得焦点。
+    > [!NOTE]
+    > 具有 `autofocus` 属性的元素可能在 {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} 事件触发前获得焦点。
 
     文档中只有一个表单元素可以具有 `autofocus` 属性。如果放置了多于一个元素，会聚焦第一个具有该属性的元素。
 
     `autofocus` 不能应用于类型为 `hidden` 的输入控件上，因为隐藏的控件不可聚焦。
 
-    > **警告：** 自动聚焦表单控件会使使用读屏技术的视力障碍者和有认知障碍的人感到困惑。当指定了 `autofocus` 时，读屏器会将用户“传送”到表单控件上，而不会事先警告他们。
+    > [!WARNING]
+    > 自动聚焦表单控件会使使用读屏技术的视力障碍者和有认知障碍的人感到困惑。当指定了 `autofocus` 时，读屏器会将用户“传送”到表单控件上，而不会事先警告他们。
 
     在应用 `autofocus` 属性时，要仔细考虑无障碍问题。自动聚焦于一个控件会导致页面在加载时滚动。焦点也会导致动态键盘在某些触摸设备上显示。虽然屏幕阅读器会宣布收到焦点的表单控件的标签，但屏幕阅读器不会宣布标签之前的任何内容，在小设备上的视力良好的用户同样会错过前面的内容所创造的背景。
 
@@ -337,7 +339,8 @@ slug: Web/HTML/Element/input
 
   - : 布尔属性，对于 `radio` 和 `checkbox` 类型有效。如果在 `radio` 类型上出现，代表该单选按钮是当前同名称组中所选定的那一个。如果在 `checkbox` 类型上出现，代表页面加载时，默认选择该复选框，这并*不*代表复选框当前是否选择：如果复选框状态改变，该内容属性不会反馈这种改变，只会更新 [`HTMLInputElement` 的 `checked` IDL 属性](/zh-CN/docs/Web/API/HTMLInputElement)。
 
-    > **备注：** 与其他输入控件不同，复选框和单选按钮的值只会在 `checked` 状态时才会包括在提交的数据中。如果当前是 `checked` 状态，复选框的名称和值就会被提交。
+    > [!NOTE]
+    > 与其他输入控件不同，复选框和单选按钮的值只会在 `checked` 状态时才会包括在提交的数据中。如果当前是 `checked` 状态，复选框的名称和值就会被提交。
     >
     > 例如，`name` 为 `fruit` 的复选框含有 `value` 为 `cherry` 的一项，且该复选框为选中状态，提交的表单数据将包含 `fruit=cherry`；如果复选框为非活动状态，它不会列入到表单数据中。复选框和单选按钮的默认 `value` 值为 `on`。
 
@@ -364,7 +367,8 @@ slug: Web/HTML/Element/input
 
     具体来说，禁用的输入不会接收 {{domxref("Element/click_event", "click")}} 事件，而且禁用的输入不会随表单提交。
 
-    > **备注：** 虽然规范中没有要求，但 Firefox 默认会在不同的页面加载中[保持 `<input>` 的动态禁用状态](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing)。使用 [`autocomplete`](#autocomplete) 属性来控制这个特性。
+    > [!NOTE]
+    > 虽然规范中没有要求，但 Firefox 默认会在不同的页面加载中[保持 `<input>` 的动态禁用状态](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing)。使用 [`autocomplete`](#autocomplete) 属性来控制这个特性。
 
 - `form`
 
@@ -372,7 +376,8 @@ slug: Web/HTML/Element/input
 
     `form` 属性可以让你在文档的任何地方放置一个输入控件，但在文档的其他地方包含一个表单。
 
-    > **备注：** 一个输入只能与一个表单相关。
+    > [!NOTE]
+    > 一个输入只能与一个表单相关。
 
 - `formaction`
   - : 仅对 `image` 和 `submit` 输入类型有效。参见 {{HTMLElement("input/submit", "submit")}} 输入类型介绍以获得更多信息。
@@ -461,21 +466,25 @@ slug: Web/HTML/Element/input
 
     此段代码运行后，`guestName` 将成为 `guest` 字段的 {{domxref("HTMLInputElement")}}，`hatSize` 将成为 `hat-size` 字段的 {{domxref("HTMLInputElement")}}。
 
-    > **警告：** 避免给表单元素一个与表单内置属性相对应的 `name`，因为这样你就会用这个对相应输入的引用来覆盖预定义的属性或方法。
+    > [!WARNING]
+    > 避免给表单元素一个与表单内置属性相对应的 `name`，因为这样你就会用这个对相应输入的引用来覆盖预定义的属性或方法。
+
 - `pattern`
 
-  - : 对 `text`、`search`、`url`、`tel`、`email` 和 `password` 类型有效。为了使 `value` 通过[约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)，必须满足 `pattern` 属性给定的正则表达式。它必须是 {{jsxref("RegExp")}} 类型的有效 JavaScript 正则表达式，并且已在我们的[正则表达式指南](/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)中进行了说明；在编译正则表达式时指定了 `'u'` 标志，因此该模式被视为 Unicode 代码点的序列，而不是 ASCII。模式文本周围无需指定正斜杠。
+  - : 对 `text`、`search`、`url`、`tel`、`email` 和 `password` 类型有效。为了使 `value` 通过[约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)，必须满足 `pattern` 属性给定的正则表达式。它必须是 {{jsxref("RegExp")}} 类型的有效 JavaScript 正则表达式，并且已在我们的[正则表达式指南](/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions)中进行了说明；在编译正则表达式时指定了 `'u'` 标志，因此该模式被视为 Unicode 代码点的序列，而不是 ASCII。模式文本周围无需指定正斜杠。
 
     如果 `pattern` 属性存在，但是未指定模式或无效，则不应用任何正则表达式，并且将完全忽略此属性。如果模式属性是有效的，并且该非空值与模式不匹配，约束验证将阻止表单提交。
 
-    > **备注：** 如果使用了 `pattern` 属性，要在附近告知用户所期望的输入格式。你可以包含 [`title`](#title) 属性来解释满足模式的需求说明，大多数浏览器将它们显示为工具提示（tooltip）。对于无障碍来说，视觉的解释是必要的，工具提示是一种改进点。
-    参见[客户端验证](#客户端验证)一节以了解更多信息。
+    > [!NOTE]
+    > 如果使用了 `pattern` 属性，要在附近告知用户所期望的输入格式。你可以包含 [`title`](#title) 属性来解释满足模式的需求说明，大多数浏览器将它们显示为工具提示（tooltip）。对于无障碍来说，视觉的解释是必要的，工具提示是一种改进点。
+    > 参见[客户端验证](#客户端验证)一节以了解更多信息。
 
 - `placeholder`
 
   - : 对 `text`、`search`、`url`、`tel`、`email`、`password` 和 `number` 有效。`placeholder` 属性可向用户提供有关该字段中需要什么样的信息的简短提示。它应该是一个单词或短语来说明预期的数据类型，而不是说明性消息。文本中*不得*包含回车符或换行符。例如，某个字段需要收集用户的姓氏，其标签为“First Name”，一个适合的占位文字可能是“如 Mustafa”。
 
     > **备注：** `placeholder` 属性在语义上不如其他解释表单的方式有用，而且会对你的内容造成意想不到的技术问题。参见[标签](#标签)以获得更多信息。
+
 - `readonly`
 
   - : 一个布尔属性，如果存在，则表示该字段不能由用户编辑。`readonly` 属性支持 `text`、`search`、`url`、`tel`、`email`、`date`、`month`、`week`、`time`、`datetime-local`、`number` 和 `password` 输入类型。
@@ -503,7 +512,7 @@ slug: Web/HTML/Element/input
     如果没有明确包含它：
 
     - `step` 对于类型为 `number` 和 `range` 的默认值为 1。
-    - 每一种日期/事件输入类型有一个适合的默认 `step` 值，请查阅相关的页面以获取：[`date`](/zh-CN/docs/Web/HTML/Element/Input/date#step)、[`datetime-local`](/zh-CN/docs/Web/HTML/Element/Input/datetime-local#step)、[`month`](/zh-CN/docs/Web/HTML/Element/input/month#step)、[`time`](/zh-CN/docs/Web/HTML/Element/Input/time#step) 和 [`week`](/zh-CN/docs/Web/HTML/Element/Input/week#step)。
+    - 每一种日期/事件输入类型有一个适合的默认 `step` 值，请查阅相关的页面以获取：[`date`](/zh-CN/docs/Web/HTML/Element/input/date#step)、[`datetime-local`](/zh-CN/docs/Web/HTML/Element/input/datetime-local#step)、[`month`](/zh-CN/docs/Web/HTML/Element/input/month#step)、[`time`](/zh-CN/docs/Web/HTML/Element/input/time#step) 和 [`week`](/zh-CN/docs/Web/HTML/Element/input/week#step)。
 
     值必须为一个正数（整数或小数）或特殊值 `any`（意味着不指定任何步进值，任意值都可以接受（除其他制约因素如 [`min`](#min) 或 [`max`](#min) 之外））。
 
@@ -511,12 +520,14 @@ slug: Web/HTML/Element/input
 
     例如，如果存在这样一个元素 `<input type="number" min="10" step="2">`，那么任何大于等于 `10` 的偶整数都是有效的。如果省略（`<input type="number">`），任何整数都有效，但浮点数（如 `4.2`）无效，因为 `step` 默认为`1`。为了使 `4.2` 有效，`step` 必须被设置为 `any`、0.1、0.2 或任何 `min` 值以 `.2` 结尾的数字，例如 `<input type="number" min="-5.2">`。
 
-    > **备注：** 当用户输入的数据不符合步进配置时，该值在约束验证中被认为是无效的，将匹配 `:invalid` 伪类。
-    参见[客户端验证](#客户端验证)以获取更多信息。
+    > [!NOTE]
+    > 当用户输入的数据不符合步进配置时，该值在约束验证中被认为是无效的，将匹配 `:invalid` 伪类。
+    > 参见[客户端验证](#客户端验证)以获取更多信息。
 
 - `tabindex`
 
   - : 对所有元素有效的全局属性，包括所有的输入类型，是一个整数属性，表示该元素如果参与顺序键盘导航，是否可以接受输入焦点（可聚焦）。由于除了隐藏类型的输入外，所有的输入类型都是可聚焦的，这个属性不应该用在表单控件上，因为这样做需要管理文档中所有元素的聚焦顺序，如果设置错误，就有可能损害可用性和无障碍性。
+
 - `title`
 
   - : 对所有元素有效的全局属性，包括所有的输入类型，包含一个代表与它所属的元素相关的咨询信息的文本。这样的信息通常以工具提示的形式呈现给用户（但不必要）。标题不应作为表单控件用途的主要解释。相反，可以使用 {{htmlelement('label')}} 元素，其 `for` 属性设置为表单控件的 [`id`](#id) 属性。参见下面的[标签](#标签)。
@@ -529,7 +540,7 @@ slug: Web/HTML/Element/input
 
 - `value`
 
-  - : 输入控件的值。当在 HTML 中指定时，这是初始值。从那时起，它可以在任何时候用 JavaScript 访问相应的 {{domxref("HTMLInputElement")}} 对象的 `value` 属性，用于改变或检索。`value` 属性总是可选的，不过对于 `checkbox'、`radio` 和 `hidden` 来说，应该被认为是必须的。
+  - : 输入控件的值。当在 HTML 中指定时，这是初始值。从那时起，它可以在任何时候用 JavaScript 访问相应的 {{domxref("HTMLInputElement")}} 对象的 `value` 属性，用于改变或检索。`value` 属性总是可选的，不过对于 `checkbox'、`radio`和`hidden` 来说，应该被认为是必须的。
 
 - `width`
 
@@ -775,7 +786,7 @@ input:checked + label {
 
 ### 属性选择器
 
-使用[属性选择器](/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors)，可以根据表单控件的 [`type`](#type) 来锁定不同类型的表单控件。CSS 属性选择器只需根据一个属性的存在或一个给定属性的值来匹配元素。
+使用[属性选择器](/zh-CN/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors)，可以根据表单控件的 [`type`](#type) 来锁定不同类型的表单控件。CSS 属性选择器只需根据一个属性的存在或一个给定属性的值来匹配元素。
 
 ```css
 /* 匹配密码输入 */
@@ -825,7 +836,10 @@ input[pattern] {
 ```css
 input.custom {
   caret-color: red;
-  font: 16px "Helvetica", "Arial", "sans-serif";
+  font:
+    16px "Helvetica",
+    "Arial",
+    "sans-serif";
 }
 ```
 
@@ -841,13 +855,13 @@ input.custom {
 
 关于在 HTML 中为元素添加颜色的更多信息，参见：
 
-- [使用 CSS 为 HTML 元素添加颜色](/zh-CN/docs/Web/CSS/CSS_Colors/Applying_color)。
+- [使用 CSS 为 HTML 元素添加颜色](/zh-CN/docs/Web/CSS/CSS_colors/Applying_color)。
 
 还可以参考：
 
-- [为 HTML 表单赋予样式](/zh-CN/docs/Learn/Forms/Styling_web_forms)
-- [HTML 表单高级样式化](/zh-CN/docs/Learn/Forms/Advanced_form_styling) 和
-- [CSS 属性兼容性表格](/zh-CN/docs/Learn/Forms/Property_compatibility_table_for_form_controls)。
+- [为 HTML 表单赋予样式](/zh-CN/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [HTML 表单高级样式化](/zh-CN/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling) 和
+- [CSS 属性兼容性表格](/zh-CN/docs/Learn_web_development/Extensions/Forms)。
 
 ## 额外特性
 
@@ -889,15 +903,17 @@ input.custom {
 
 不仅屏幕阅读器无法访问占位符，而且一旦用户在表单控件中输入任何文本，或者如果表单控件已经有一个值，占位符就会消失。具有自动页面翻译功能的浏览器在翻译时可能会跳过属性，这意味着 `placeholder` 可能不会被翻译。
 
-> **备注：** 尽可能不要使用 [`placeholder`](#placeholder) 属性。如果需要标记 `<input>` 元素，请使用 {{HTMLElement("label")}} 元素。
+> [!NOTE]
+> 尽可能不要使用 [`placeholder`](#placeholder) 属性。如果需要标记 `<input>` 元素，请使用 {{HTMLElement("label")}} 元素。
 
 ### 客户端验证
 
-> **警告：** 客户端验证是有用的，但它并*不能*保证服务器会收到有效的数据。如果数据必须是特定的格式，*总是*应该在服务器端进行验证，如果格式无效，则返回一个 [`400` HTTP 响应](/zh-CN/docs/Web/HTTP/Status/400)。
+> [!WARNING]
+> 客户端验证是有用的，但它并*不能*保证服务器会收到有效的数据。如果数据必须是特定的格式，*总是*应该在服务器端进行验证，如果格式无效，则返回一个 [`400` HTTP 响应](/zh-CN/docs/Web/HTTP/Status/400)。
 
 除了如上文 [UI 伪类](#ui_伪类)部分所述，使用 CSS 根据 {{cssxref(":valid")}} 或 {{cssxref(":invalid")}} 每个输入的当前状态来设计输入的样式之外，浏览器还在（试图）提交表单时提供了客户端验证。在表单提交时，如果有一个表单控件没有通过约束验证，支持的浏览器将在第一个无效的表单控件上显示一个错误信息；根据错误类型显示一个默认信息，或者由你设置的信息。
 
-某些输入类型和其他属性对特定输入的有效值进行了限制。例如，`<input type="number" min="2" max="10" step="2">` 意味着只有数字2、4、6、8 或 10 有效。某些错误可能发生，当值小于 2 时会发生 `rangeUnderflow` 错误，值大于 10 时会发生 `rangeOverflow` 错误，当值在 2 至 10 之间，但不是偶数（不满足 `step` 属性的需求）时会发生 `stepMismatch` 错误，如果值不是一个数字时会发生 `typeMismatch` 错误。
+某些输入类型和其他属性对特定输入的有效值进行了限制。例如，`<input type="number" min="2" max="10" step="2">` 意味着只有数字 2、4、6、8 或 10 有效。某些错误可能发生，当值小于 2 时会发生 `rangeUnderflow` 错误，值大于 10 时会发生 `rangeOverflow` 错误，当值在 2 至 10 之间，但不是偶数（不满足 `step` 属性的需求）时会发生 `stepMismatch` 错误，如果值不是一个数字时会发生 `typeMismatch` 错误。
 
 对于可能的值域是周期性的输入类型（也就是说，在可能的最高值时，值会绕回开始而不是结束），[`max`](#max) 和 [`min`](#min) 属性的值有可能是相反的，这表明允许的值范围从 `min` 开始，绕到可能的最低值，然后继续下去直到达到 `max`。这对日期和时间特别有用，比如你想让范围从晚上 8 点到早上 8 点：
 
@@ -1019,7 +1035,7 @@ function validate(input) {
 
 #### 自定义验证错误示例
 
-如果你想在一个字段验证失败时显示一个自定义的错误信息，你需要使用[约束验证 API](/zh-CN/docs/Learn/Forms/Form_validation#使用_javascript_校验表单)，在 `<input>`（及相关）元素上可用。以下面的表格为例：
+如果你想在一个字段验证失败时显示一个自定义的错误信息，你需要使用[约束验证 API](/zh-CN/docs/Learn_web_development/Extensions/Forms/Form_validation#使用_javascript_校验表单)，在 `<input>`（及相关）元素上可用。以下面的表格为例：
 
 ```html
 <form>
@@ -1043,9 +1059,7 @@ nameInput.addEventListener("invalid", () => {
   if (nameInput.value === "") {
     nameInput.setCustomValidity("输入一个用户名！");
   } else {
-    nameInput.setCustomValidity(
-      "用户名只能包含大写或小写字母，请再试一遍。"
-    );
+    nameInput.setCustomValidity("用户名只能包含大写或小写字母，请再试一遍。");
   }
 });
 ```
@@ -1061,8 +1075,11 @@ nameInput.addEventListener("invalid", () => {
 - 因此，如果在按下提交按钮时，输入值是无效的，将显示其中一个自定义错误信息。
 - 如果它是有效的，它就会像你所期望的那样提交。要做到这一点，必须取消自定义的有效性，通过使用空字符串调用 `setCustomValidity()` 来实现。我们在每次 `input` 事件发生时都要这样做。如果你不这样做，并且之前设置了一个自定义的有效性，那么输入将会认为无效，即使它目前包含一个有效的提交值。
 
-> **备注：** 始终在客户端和服务器端验证输入约束。约束验证并不能消除在*服务器端*进行验证的必要性。无效的值仍然可以由旧的浏览器或坏的行为者发送。
-> **备注：** Firefox 在许多版本中支持一个专有的错误属性——`x-moz-errormessage`，它允许你以类似的方式设置自定义错误信息。从第 66 版开始，这个属性已被移除（见[Firefox bug 1513890](https://bugzil.la/1513890)）。
+> [!NOTE]
+> 始终在客户端和服务器端验证输入约束。约束验证并不能消除在*服务器端*进行验证的必要性。无效的值仍然可以由旧的浏览器或坏的行为者发送。
+
+> [!NOTE]
+> Firefox 在许多版本中支持一个专有的错误属性——`x-moz-errormessage`，它允许你以类似的方式设置自定义错误信息。从第 66 版开始，这个属性已被移除（见[Firefox bug 1513890](https://bugzil.la/1513890)）。
 
 ### 本地化
 
@@ -1196,7 +1213,7 @@ Firefox 使用以下启发式方法来确定验证用户输入的语言（至少
 
 ```html
 <label for="peas">你喜欢豌豆吗？</label>
-<input type="checkbox" name="peas" id="peas">
+<input type="checkbox" name="peas" id="peas" />
 ```
 
 ### 尺寸
@@ -1218,13 +1235,13 @@ Firefox 使用以下启发式方法来确定验证用户输入的语言（至少
 ## 参见
 
 - [表单约束验证](/zh-CN/docs/Web/HTML/Constraint_validation)
-- [你的第一个表单](/zh-CN/docs/Learn/Forms/Your_first_form)
-- [如何构建 Web 表单](/zh-CN/docs/Learn/Forms/How_to_structure_a_web_form)
-- [原生表单控件](/zh-CN/docs/Learn/Forms/Basic_native_form_controls)
-- [发送表单数据](/zh-CN/docs/Learn/Forms/Sending_and_retrieving_form_data)
-- [表单数据验证](/zh-CN/docs/Learn/Forms/Form_validation)
-- [如何构建自定义表单控件](/zh-CN/docs/Learn/Forms/How_to_build_custom_form_controls)
-- [旧式浏览器中的 HTML 表单](/zh-CN/docs/Learn/Forms/HTML_forms_in_legacy_browsers)
-- [为 HTML 表单添加样式](/zh-CN/docs/Learn/Forms/Styling_web_forms)
-- [HTML 表单高级样式](/zh-CN/docs/Learn/Forms/Advanced_form_styling)
-- [CSS 属性兼容性表格](/zh-CN/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [你的第一个表单](/zh-CN/docs/Learn_web_development/Extensions/Forms/Your_first_form)
+- [如何构建 Web 表单](/zh-CN/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form)
+- [原生表单控件](/zh-CN/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls)
+- [发送表单数据](/zh-CN/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [表单数据验证](/zh-CN/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [如何构建自定义表单控件](/zh-CN/docs/Learn_web_development/Extensions/Forms/How_to_build_custom_form_controls)
+- [旧式浏览器中的 HTML 表单](/zh-CN/docs/Learn_web_development/Extensions/Forms/HTML_forms_in_legacy_browsers)
+- [为 HTML 表单添加样式](/zh-CN/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [HTML 表单高级样式](/zh-CN/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling)
+- [CSS 属性兼容性表格](/zh-CN/docs/Learn_web_development/Extensions/Forms)

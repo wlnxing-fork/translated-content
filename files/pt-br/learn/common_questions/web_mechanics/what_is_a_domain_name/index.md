@@ -1,7 +1,6 @@
 ---
 title: O que é um nome de domínio?
 slug: Learn/Common_questions/Web_mechanics/What_is_a_domain_name
-original_slug: Learn/Common_questions/What_is_a_domain_name
 ---
 
 Nesse artigo examinaremos nomes de domínios: o que são, como são estruturados, e como conseguir um.
@@ -42,7 +41,7 @@ Qualquer computador conectado na Internet pode ser alcançado através de um end
 
 ## Active Learning
 
-_There is no active learning available yet. [Please, consider contributing](/pt-BR/docs/MDN/Getting_started)._
+_There is no active learning available yet. [Please, consider contributing](/pt-BR/docs/MDN/Community/Contributing/Getting_started)._
 
 ## Deeper dive
 
@@ -63,7 +62,7 @@ Cada uma dessas partes fornece informações específicas sobre todo o domain na
 
 #### Quem possui um nome de domínio?
 
-Você não pode “comprar um nome de domínio”. Você paga pelo direito de usar um nome de domínio por um ano ou mais. Você pode renovar seu direito, e sua renovação tem prioridade sobre as aplicações de outras pessoas. Mas você nunca possui o nome de domínio.
+Você não pode "comprar um nome de domínio". Você paga pelo direito de usar um nome de domínio por um ano ou mais. Você pode renovar seu direito, e sua renovação tem prioridade sobre as aplicações de outras pessoas. Mas você nunca possui o nome de domínio.
 
 As empresas chamadas registradoras usam registros de nome de domínio para acompanhar as informações técnicas e administrativas que conectam você a seu nome de domínio.
 
@@ -73,7 +72,7 @@ As empresas chamadas registradoras usam registros de nome de domínio para acomp
 
 Para descobrir se um determinado domain name está disponível,
 
-- Ir até um site registrador de nome de domínio. A maioria deles fornece um serviço “whois” que diz se seu nome de domínio está disponível.
+- Ir até um site registrador de nome de domínio. A maioria deles fornece um serviço "whois" que diz se seu nome de domínio está disponível.
 - Alternativamente, se você usa um sistema com shell embutido nele, digite um comnaod `whois` nele, como mostrado aqui para `mozilla.org`:
 
 ```
@@ -117,11 +116,12 @@ Como você pode ver, o domínio não existe no banco de dados `whois` (neste mom
 O processo é bastante simples:
 
 1. Ir para o site de um registrador.
-2. Geralmente há um apelo chamativo “Obeter um domain name” call to action. Clique nele.
+2. Geralmente há um apelo chamativo "Obeter um domain name" call to action. Clique nele.
 3. Preencher o formulário com todos os detalhes requeridos. Certifique-se especialmente de que você não digitou incorretamente o domain name desejado. Uma vez pago, é tarde demais!
 4. O registrador informará quando o domain name estiver registrado corretamente. Dentro de algumas horas, todos os servidores de DNS receberão suas informações de DNS.
 
-> **Nota:** Este tempo é frequentemente chamado de **tempo de propagação.** No entanto, este termo não é preciso, pois a atualização não está se propagando (top → down). Os servidores DNS consultados pelo seu computador (abaixo) são aqueles que buscam as informações do servidor autoritativo (superior) quando precisam.
+> [!NOTE]
+> Este tempo é frequentemente chamado de **tempo de propagação.** No entanto, este termo não é preciso, pois a atualização não está se propagando (top → down). Os servidores DNS consultados pelo seu computador (abaixo) são aqueles que buscam as informações do servidor autoritativo (superior) quando precisam.
 
 #### Atualização de DNS
 
@@ -144,7 +144,7 @@ Como já vimos, quando você deseja exibir uma página da Web em seu navegador, 
 
 Ok, conversamos muito sobre processos e arquitetura. Hora de seguir em frente.
 
-- Se você quer se envolver, é um bom momento para começar a investigar o design e explorar a [anatomia de uma página da web.](/en-US/Learn/Anatomy_of_a_web_page)
-- É importante notar também que alguns aspectos da construção de um site custam dinheiro. Por favor, [consulte quanto custa construir um site](/pt-BR/docs/Learn/How_much_does_it_cost).
+- Se você quer se envolver, é um bom momento para começar a investigar o design e explorar a [anatomia de uma página da web.](/pt-BR/docs/Learn/Common_questions/Design_and_accessibility/Common_web_layouts)
+- É importante notar também que alguns aspectos da construção de um site custam dinheiro. Por favor, [consulte quanto custa construir um site](/pt-BR/docs/Learn/Common_questions/Tools_and_setup/How_much_does_it_cost).
 - Ou leia mais sobre o [nome de domínio](http://en.wikipedia.org/wiki/Domain_name) na Wikipedia.
 - Você também pode encontrar [aqui](https://howdns.works/) uma explicação divertida e colorida de como o DNS funciona.

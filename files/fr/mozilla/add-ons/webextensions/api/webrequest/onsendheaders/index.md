@@ -1,20 +1,9 @@
 ---
 title: webRequest.onSendHeaders
 slug: Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders
-tags:
-  - API
-  - Add-ons
-  - Event
-  - Extensions
-  - Non-standard
-  - Reference
-  - WebExtensions
-  - onSendHeaders
-  - webRequest
-translation_of: Mozilla/Add-ons/WebExtensions/API/webRequest/onSendHeaders
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Cet événement est déclenché juste avant l'envoi des en-têtes. Si votre extension ou une autre extension a modifié les en-têtes dans `{{WebExtAPIRef("webRequest.onBeforeSendHeaders", "onBeforeSendHeaders")}}`, vous verrez la version modifiée ici.
 
@@ -24,12 +13,12 @@ Cet événement est à titre d'information seulement.
 
 ```js
 browser.webRequest.onSendHeaders.addListener(
-  listener,             // function
-  filter,               //  object
-  extraInfoSpec         //  optional array of strings
-)
-browser.webRequest.onSendHeaders.removeListener(listener)
-browser.webRequest.onSendHeaders.hasListener(listener)
+  listener, // function
+  filter, //  object
+  extraInfoSpec, //  optional array of strings
+);
+browser.webRequest.onSendHeaders.removeListener(listener);
+browser.webRequest.onSendHeaders.hasListener(listener);
 ```
 
 Les événements ont trois fonctions :
@@ -142,16 +131,16 @@ function logCookies(e) {
 // "requestHeaders" so we get the headers
 browser.webRequest.onSendHeaders.addListener(
   logCookies,
-  {urls: [targetPage]},
-  ["requestHeaders"]
+  { urls: [targetPage] },
+  ["requestHeaders"],
 );
 ```
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API Chromium [`chrome.webRequest`](https://developer.chrome.com/extensions/webRequest). Cette documentation est dérivée de [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) dans le code Chromium.
+> Cette API est basée sur l'API Chromium [`chrome.webRequest`](https://developer.chrome.com/docs/extensions/reference/api/webRequest). Cette documentation est dérivée de [`web_request.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/web_request.json) dans le code Chromium.
 >
 > Les données de compatibilité relatives à Microsoft Edge sont fournies par Microsoft Corporation et incluses ici sous la licence Creative Commons Attribution 3.0 pour les États-Unis.
 

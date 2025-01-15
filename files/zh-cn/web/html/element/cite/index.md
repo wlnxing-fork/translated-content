@@ -23,7 +23,7 @@ _HTML 引用（Citation）标签_ (**\<cite>**) 表示一个作品的引用，�
   </tr>
   <tr>
    <th scope="row">标签省略</th>
-   <td>{{no_tag_omission}}</td>
+   <td>不允许，开始标签和结束标签都不能省略。</td>
   </tr>
   <tr>
    <th scope="row">允许的父级元素</th>
@@ -38,9 +38,10 @@ _HTML 引用（Citation）标签_ (**\<cite>**) 表示一个作品的引用，�
 
 ## 属性
 
-这个元素仅包含了 所有的[全局属性](/zh-CN/docs/HTML/Global_attributes).
+这个元素仅包含了 所有的[全局属性](/zh-CN/docs/Web/HTML/Global_attributes).
 
-> **备注：** 适用场合可能包括一本书，一张纸，一篇散文，一首诗，一个分数，一首歌，一部电影，一个电视节目，一个游戏，一个雕塑，一幅画，戏剧制作，一个剧本，一个歌剧，一种音乐，一个展览，一个法律案件报告，一个计算机程序，一个网站，一个网页，博客或评论，论坛帖子或评论，鸣叫，或者书面或口头陈述，等等。
+> [!NOTE]
+> 适用场合可能包括一本书，一张纸，一篇散文，一首诗，一个分数，一首歌，一部电影，一个电视节目，一个游戏，一个雕塑，一幅画，戏剧制作，一个剧本，一个歌剧，一种音乐，一个展览，一个法律案件报告，一个计算机程序，一个网站，一个网页，博客或评论，论坛帖子或评论，鸣叫，或者书面或口头陈述，等等。
 >
 > - W3C 规范，对创造性的工作可能包括作者的名字，而 WHATWG 宣布，它可能不包括在任何情况下，一个人的名字。
 > - 在 blockquote 元素或者 q 元素上使用 cite 或者 blockquote 属性来标明参考的在线资源。
@@ -80,7 +81,7 @@ _HTML 引用（Citation）标签_ (**\<cite>**) 表示一个作品的引用，�
 
 值得注意的是，W3C 标准允许在 `<cite>` 元素中包含引用内容的作者信息。然而 WHATWG 规范不允许在 `<cite>` 元素中出现人名。
 
-要标明{{HTMLElement("blockquote")}} 或 {{HTMLElement("q")}}之中内容的引用来源，可以使用元素的{{htmlattrxref("cite", "blockquote")}}属性。
+要标明{{HTMLElement("blockquote")}} 或 {{HTMLElement("q")}}之中内容的引用来源，可以使用元素的[`cite`](/zh-CN/docs/Web/HTML/Element/blockquote#cite)属性。
 
 通常，浏览器默认使用斜体来展示`<cite>`元素中的内容。可以通过指定`<cite>`元素的{{cssxref("font-style")}}样式来覆盖这种默认行为。
 

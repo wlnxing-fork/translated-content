@@ -1,12 +1,9 @@
 ---
 title: Инструменты разработчика
 slug: Glossary/Developer_Tools
-tags:
-  - Инспектор
-  - инструменты
-translation_of: Glossary/Developer_Tools
-original_slug: Глоссарий/Инструменты_разработчика
 ---
+
+{{GlossarySidebar}}
 
 Инструменты разработчика (от англ. "development tools" или сокращённо "DevTools") - это программы, которые позволяют создавать, тестировать и отлаживать ({{Glossary("debug")}}) программное обеспечение.
 
@@ -14,8 +11,8 @@ original_slug: Глоссарий/Инструменты_разработчик�
 
 ### Technical reference
 
-- [Firefox Developer Tools](/ru/docs/Tools) on MDN
+- [Firefox Developer Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html) on MDN
 - [Firebug](https://getfirebug.com/) (former developer tool for Firefox)
-- [Chrome DevTools](https://developer.chrome.com/devtools) on chrome.com
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) on chrome.com
 - [Safari Web Inspector](https://developer.apple.com/library/content/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007874-CH1-SW1) on apple.com
 - [Edge Dev Tools](https://docs.microsoft.com/en-us/microsoft-edge/f12-devtools-guide) on microsoft.com

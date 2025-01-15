@@ -1,8 +1,8 @@
 ---
 title: Компиляция Rust в WebAssembly
-slug: WebAssembly/Rust_to_wasm
-translation_of: WebAssembly/Rust_to_wasm
+slug: WebAssembly/Rust_to_Wasm
 ---
+
 {{WebAssemblySidebar}}
 
 Если уже вы написали некоторый код на Rust, вы можете скомпилировать его в WebAssembly! Из этого руководства вы узнаете всё, что вам нужно знать, чтобы скомпилировать проект на Rust в wasm и использовать его в существующем веб-приложении.
@@ -26,7 +26,8 @@ translation_of: WebAssembly/Rust_to_wasm
 
 Чтобы установить Rust, посетите [Install Rust](https://www.rust-lang.org/install.html) страницу и проследуйте всем инструкциям. Так вы установите тулзу, называемую "rustup", которая позволит вам управлять несколькими версиями Rust. По умолчанию, она устанавливает последний стабильный релиз Rust, который вы будете использовать для стандартной разработки на Rust. Rustup устанавливает `rustc`, компилятор Rust, вместе с `cargo`, Rust-овским пакетным менеджером, `rust-std`, стандартной библиотекой Rust, и несколькими вспомогательными доками — `rust-docs`.
 
-> **Примечание:** Обратите внимание на пост-установочную заметку о необходимости добавить cargo `bin` директорию в список `PATH`. Она должна быть добавлена автоматически, но вам нужно будет перезапустить терминал, чтобы изменения вступили в силу.
+> [!NOTE]
+> Обратите внимание на пост-установочную заметку о необходимости добавить cargo `bin` директорию в список `PATH`. Она должна быть добавлена автоматически, но вам нужно будет перезапустить терминал, чтобы изменения вступили в силу.
 
 ### wasm-pack
 
@@ -272,24 +273,24 @@ cd site
 Дальше нам нужно сконфигурировать Webpack. Создайте `webpack.config.js` и введите следующее:
 
 ```js
-const path = require('path');
+const path = require("path");
 module.exports = {
   entry: "./index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
-  mode: "development"
+  mode: "development",
 };
 ```
 
 Теперь нам нужен HTML-файл; создайте `index.html` и поместите в него:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>hello-wasm example</title>
   </head>
   <body>
@@ -302,7 +303,7 @@ module.exports = {
 
 ```js
 const js = import("./node_modules/@yournpmusername/hello-wasm/hello_wasm.js");
-js.then(js => {
+js.then((js) => {
   js.greet("WebAssembly");
 });
 ```
@@ -324,4 +325,4 @@ npm run serve
 
 На этом руководство заканчивается, мы надеемся, что вы сочли его для себя полезным.
 
-В этом направлении кипит бурная и при этом очень интересная деятельность, так что если вы бы хотели помочь что-то улучшить, то загляните в [the Rust Webassembly Working Group](http://fitzgeraldnick.com/2018/02/27/wasm-domain-working-group.html).
+В этом направлении кипит бурная и при этом очень интересная деятельность, так что если вы бы хотели помочь что-то улучшить, то загляните в [the Rust Webassembly Working Group](https://fitzgeraldnick.com/2018/02/27/wasm-domain-working-group.html).

@@ -5,7 +5,7 @@ slug: Web/CSS/perspective-origin
 
 {{CSSRef}}
 
-[CSS](/zh-CN/docs/CSS) 属性 **`perspective-origin`** 指定了观察者的位置，用作 {{cssxref("perspective")}} 属性的消失点。
+[CSS](/zh-CN/docs/Web/CSS) 属性 **`perspective-origin`** 指定了观察者的位置，用作 {{cssxref("perspective")}} 属性的消失点。
 
 {{EmbedInteractiveExample("pages/css/perspective-origin.html")}}
 
@@ -328,7 +328,7 @@ perspective-origin: unset;
 .top {
   background: rgba(196, 196, 0, 0.7);
   transform: rotateX(90deg) translateZ(50px);
-  -webkit-transform: rotateX(90deg) translateZ(50px)
+  -webkit-transform: rotateX(90deg) translateZ(50px);
 }
 
 .bottom {
@@ -338,8 +338,10 @@ perspective-origin: unset;
 }
 
 /* Make the table a little nicer */
-th, p, td {
-  background-color: #EEEEEE;
+th,
+p,
+td {
+  background-color: #eeeeee;
   padding: 10px;
   font-family: sans-serif;
   text-align: left;
@@ -358,4 +360,4 @@ th, p, td {
 
 ## 参见
 
-- [Using CSS Transforms](/zh-CN/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms)
+- [Using CSS Transforms](/zh-CN/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)

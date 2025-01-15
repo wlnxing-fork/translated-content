@@ -9,8 +9,8 @@ slug: Web/API/Document/getElementsByTagName
 
 ## 语法
 
-```
-var elements = document.getElementsByTagName(name);
+```js-nolint
+getElementsByTagName(name)
 ```
 
 - `elements` 是一个由发现的元素出现在树中的顺序构成的动态的 HTML 集合 {{domxref("HTMLCollection")}} (但是看下面的提示) 。
@@ -25,61 +25,62 @@ var elements = document.getElementsByTagName(name);
 注意调用 `getElementsByTagName()` 的不是那个文件节点 document，事实上是使用这个方法 {{domxref("element.getElementsByTagName()")}}。
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>getElementsByTagName example</title>
-  <script>
-    function getAllParaElems() {
-      var allParas = document.getElementsByTagName("p");
-      var num = allParas.length;
-      alert("There are " + num + " paragraph in this document");
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>getElementsByTagName example</title>
+    <script>
+      function getAllParaElems() {
+        var allParas = document.getElementsByTagName("p");
+        var num = allParas.length;
+        alert("There are " + num + " paragraph in this document");
+      }
 
-    function div1ParaElems() {
-      var div1 = document.getElementById("div1");
-      var div1Paras = div1.getElementsByTagName("p");
-      var num = div1Paras.length;
-      alert("There are " + num + " paragraph in #div1");
-    }
+      function div1ParaElems() {
+        var div1 = document.getElementById("div1");
+        var div1Paras = div1.getElementsByTagName("p");
+        var num = div1Paras.length;
+        alert("There are " + num + " paragraph in #div1");
+      }
 
-    function div2ParaElems() {
-      var div2 = document.getElementById("div2");
-      var div2Paras = div2.getElementsByTagName("p");
-      var num = div2Paras.length;
-      alert("There are " + num + " paragraph in #div2");
-    }
-  </script>
-</head>
-<body style="border: solid green 3px">
-  <p>Some outer text</p>
-  <p>Some outer text</p>
+      function div2ParaElems() {
+        var div2 = document.getElementById("div2");
+        var div2Paras = div2.getElementsByTagName("p");
+        var num = div2Paras.length;
+        alert("There are " + num + " paragraph in #div2");
+      }
+    </script>
+  </head>
+  <body style="border: solid green 3px">
+    <p>Some outer text</p>
+    <p>Some outer text</p>
 
-  <div id="div1" style="border: solid blue 3px">
-    <p>Some div1 text</p>
-    <p>Some div1 text</p>
-    <p>Some div1 text</p>
+    <div id="div1" style="border: solid blue 3px">
+      <p>Some div1 text</p>
+      <p>Some div1 text</p>
+      <p>Some div1 text</p>
 
-    <div id="div2" style="border: solid red 3px">
-      <p>Some div2 text</p>
-      <p>Some div2 text</p>
+      <div id="div2" style="border: solid red 3px">
+        <p>Some div2 text</p>
+        <p>Some div2 text</p>
+      </div>
     </div>
-  </div>
 
-  <p>Some outer text</p>
-  <p>Some outer text</p>
+    <p>Some outer text</p>
+    <p>Some outer text</p>
 
-  <button onclick="getAllParaElems();">
-    show all p elements in document</button><br />
+    <button onclick="getAllParaElems();">show all p elements in document</button
+    ><br />
 
-  <button onclick="div1ParaElems();">
-    show all p elements in div1 element</button><br />
+    <button onclick="div1ParaElems();">
+      show all p elements in div1 element</button
+    ><br />
 
-  <button onclick="div2ParaElems();">
-    show all p elements in div2 element</button>
-
-</body>
+    <button onclick="div2ParaElems();">
+      show all p elements in div2 element
+    </button>
+  </body>
 </html>
 ```
 
@@ -91,5 +92,5 @@ var elements = document.getElementsByTagName(name);
 
 ## 参考
 
-- [DOM Level 2 Core: Document.getElementsByTagName](http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-A6C9094)
-- [HTML 5: APIs in HTML documents](http://www.whatwg.org/specs/web-apps/current-work/multipage/dom.html#apis-in-html-documents)
+- [DOM Level 2 Core: Document.getElementsByTagName](https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-A6C9094)
+- [HTML 5: APIs in HTML documents](https://www.whatwg.org/specs/web-apps/current-work/multipage/dom.html#apis-in-html-documents)

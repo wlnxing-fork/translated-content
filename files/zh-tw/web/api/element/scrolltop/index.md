@@ -11,7 +11,7 @@ slug: Web/API/Element/scrollTop
 
 ```js
 // 獲得已經被滾動的距離(pixels)
-var  intElemScrollTop = someElement.scrollTop;
+var intElemScrollTop = someElement.scrollTop;
 ```
 
 `intElemScrollTop` 為 {{domxref("element")}}已經被滾動的距離(pixels ).
@@ -88,6 +88,5 @@ scroller.addEventListener("scroll", (event) => {
 
 ## 參閱
 
-- [W3C Draft CSSOM View Module](http://dev.w3.org/csswg/cssom-view/#dom-element-scrolltop)
-- [MSDN's scrollTop definition](<http://msdn.microsoft.com/en-us/library/ms534618(VS.85).aspx>)
-- [MSDN's Measuring Element Dimension and Location](<http://msdn.microsoft.com/en-us/library/hh781509(v=vs.85).aspx>)
+- [W3C Draft CSSOM View Module](https://drafts.csswg.org/cssom-view/#dom-element-scrolltop)
+- [MSDN's Measuring Element Dimension and Location](<https://learn.microsoft.com/zh-tw/previous-versions/hh781509(v=vs.85)>)

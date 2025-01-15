@@ -34,21 +34,22 @@ if (x) {
 オブジェクトを論理値でない値から論理値へ変換するために `new` を使って `Boolean()` コンストラクターを使わないでください。代わりに、 `Boolean()` を関数として使ったり、[二重否定](/ja/docs/Web/JavaScript/Reference/Operators/Logical_NOT#二重否定_!!)を使用したりすることで同じことが行えます。
 
 ```js
-const good = Boolean(expression);    // これか、もしくは…
-const good2 = !!(expression);        // 　…これを使ってください
+const good = Boolean(expression); // これか、もしくは…
+const good2 = !!expression; // 　…これを使ってください
 const bad = new Boolean(expression); // これは使わないこと！！
 ```
 
 `Boolean` オブジェクトの初期値として何らかのオブジェクトを指定した場合、それが値 `false` を持つ `Boolean` オブジェクトであっても、新しい `Boolean` オブジェクトは値 `true` を持ちます。
 
 ```js
-const myFalse = new Boolean(false);   // Booleanオブジェクト: false
-const g = Boolean(myFalse);           // true
-const myString = new String('Hello'); // Stringオブジェクト
-const s = Boolean(myString);          // true
+const myFalse = new Boolean(false); // Booleanオブジェクト: false
+const g = Boolean(myFalse); // true
+const myString = new String("Hello"); // Stringオブジェクト
+const s = Boolean(myString); // true
 ```
 
-> **警告:** コンストラクターとして `Boolean` を使うことは滅多にありません。
+> [!WARNING]
+> コンストラクターとして `Boolean` を使うことは滅多にありません。
 
 ### 論理値への型強制
 
@@ -62,7 +63,8 @@ const s = Boolean(myString);          // true
 - [`Symbol`](/ja/docs/Web/JavaScript/Reference/Global_Objects/Symbol) は `true` になります。
 - すべてのオブジェクトは `true` になります。
 
-> **メモ:** 非推奨のプロパティ [`document.all`](/ja/docs/Web/API/Document/all) はオブジェクトであるにもかかわらず、論理値に変換されると `false` になります。このプロパティはレガシーで非標準であるため、使用しないでください。
+> [!NOTE]
+> 非推奨のプロパティ [`document.all`](/ja/docs/Web/API/Document/all) はオブジェクトであるにもかかわらず、論理値に変換されると `false` になります。このプロパティはレガシーで非標準であるため、使用しないでください。
 
 > **注意:** [文字列への型強制](/ja/docs/Web/JavaScript/Reference/Global_Objects/String#string_coercion)や[数値への型強制](/ja/docs/Web/JavaScript/Reference/Global_Objects/Number#number_coercion)などの他の型の変換とは異なり、論理値への型強制はオブジェクトからプリミティブに変換しようとするわけではありません。
 
@@ -77,10 +79,10 @@ JavaScriptで型強制と同じ効果を得るには、2つの方法がありま
 
 ```js
 if ([]) {
-  console.log("[] is truthy")
+  console.log("[] is truthy");
 }
 if ([] == false) {
-  console.log("[] == false")
+  console.log("[] == false");
 }
 // [] is truthy
 // [] == false
@@ -114,7 +116,7 @@ truthy な値が `true` と緩く等しくなる可能性はさらに低いで�
 const bNoParam = new Boolean();
 const bZero = new Boolean(0);
 const bNull = new Boolean(null);
-const bEmptyString = new Boolean('');
+const bEmptyString = new Boolean("");
 const bfalse = new Boolean(false);
 ```
 
@@ -122,9 +124,9 @@ const bfalse = new Boolean(false);
 
 ```js
 const btrue = new Boolean(true);
-const btrueString = new Boolean('true');
-const bfalseString = new Boolean('false');
-const bSuLin = new Boolean('Su Lin');
+const btrueString = new Boolean("true");
+const bfalseString = new Boolean("false");
+const bSuLin = new Boolean("Su Lin");
 const bArrayProto = new Boolean([]);
 const bObjProto = new Boolean({});
 ```
@@ -140,5 +142,5 @@ const bObjProto = new Boolean({});
 ## 関連情報
 
 - [Boolean](/ja/docs/Glossary/Boolean)
-- [論理値プリミティブ](/ja/docs/Web/JavaScript/Data_structures#boolean_type)
+- [論理値プリミティブ](/ja/docs/Web/JavaScript/Data_structures#論理型)
 - [ブーリアン型 (Wikipedia)](https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%BC%E3%83%AA%E3%82%A2%E3%83%B3%E5%9E%8B)

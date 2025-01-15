@@ -1,8 +1,8 @@
 ---
-title: Using your new knowledge
+title: Usando seu novo conhecimento
 slug: Learn/CSS/First_steps/Styling_a_biography_page
-original_slug: Learn/CSS/First_steps/Using_your_new_knowledge
 ---
+
 {{LearnSidebar}}{{PreviousMenu("Learn/CSS/First_steps/How_CSS_works", "Learn/CSS/First_steps")}}
 
 Com o que você aprendeu nas últimas lições, você deve perceber que pode formatar simples documentos de texto utilizando CSS, implementado seu próprio estilo neles. Esta avaliação lhe dá a oportunidade de fazer exatamente isto.
@@ -15,7 +15,7 @@ Com o que você aprendeu nas últimas lições, você deve perceber que pode for
         Antes de tentar esta avaliação você deve ter passado pelo resto do
         módulo básico de CSS, além de também possuir uma compreensão básica de
         HTML (estude
-        <a href="/en-US/docs/Learn/HTML/Introduction_to_HTML"
+        <a href="/pt-BR/docs/Learn/HTML/Introduction_to_HTML"
           >Introdução ao HTML</a
         >).
       </td>
@@ -31,7 +31,8 @@ Com o que você aprendeu nas últimas lições, você deve perceber que pode for
 
 Você pode trabalhar com editor ao vivo abaixo, ou pode fazer o [download do ponto de partida](https://github.com/mdn/css-examples/blob/master/learn/getting-started/biog-download.html/) para trabalhar em seu próprio editor de texto. Esta é uma única página de HTML, além do ponto de partida no head do documento. Se preferir, você pode transferir este CSS para um arquivo separado quando criar o exemplo no seu computador. Ou ainda, você pode utilizar uma ferramenta online como por exemplo, o [CodePen](https://codepen.io/), [jsFiddle](https://jsfiddle.net/), ou [Glitch](https://glitch.com/) para realizar estas tarefas..
 
-> **Nota:** Se ficar emperrado, nos procure por ajuda — veja a seção [Assessment or further help](/pt-BR/docs/Learn/CSS/First_steps/Using_your_new_knowledge#Assessment_or_further_help) no final da página.
+> [!NOTE]
+> Se ficar emperrado, nos procure por ajuda — veja a seção [Assessment or further help](/pt-BR/docs/Learn/CSS/First_steps/Styling_a_biography_page#assessment_or_further_help) no final da página.
 
 ## Trabalhando com CSS
 
@@ -64,17 +65,17 @@ Lembre-se de que não há resosta errada aqui — neste momento de seu aprendiza
 
 {{EmbedGHLiveSample("css-examples/learn/getting-started/biog.html", '100%', 1600)}}
 
-## Assessment or further help
+## Avaliação ou ajuda adicional
 
 Se gostaria de ter seu trabalho avaliado, ou se ficou emperrado e gostaria de ajuda:
 
 1. Coloque seu trabalho num editor de texto compartilhado online tal como o [CodePen](https://codepen.io/), [jsFiddle](https://jsfiddle.net/), ou [Glitch](https://glitch.com/).
 2. Escreva um post perguntando por avaliação e/ou ajuda em [MDN Discourse forum Learning category](https://discourse.mozilla.org/c/mdn/learn). Seu post deve incluir:
 
-    - Um título descritivo, tal como "Avaliação desejada para primeiros passos em CSS".
-    - Detalhes do que você já tentou, e o que gostaria que ós fizéssemos, p.e. se você está emperrado e precisa de ajuda, ou se deseja uma avalição.
-    - Um link para o exemplo que você deseja ser avaliadao ou precisa de ajuda, em um editor online compartilhado (como mencionado no passo 1 acima). Esta é uma boa prática a se desenvolver — é muito difícil ajudar alguém com um problema de computação se não é possível ver o código dessa pessoa.
-    - Um link para a atual págia de tarefa ou avaliaçãopara que possamos ver a questão que você está com dúvida.
+   - Um título descritivo, tal como "Avaliação desejada para primeiros passos em CSS".
+   - Detalhes do que você já tentou, e o que gostaria que ós fizéssemos, p.e. se você está emperrado e precisa de ajuda, ou se deseja uma avalição.
+   - Um link para o exemplo que você deseja ser avaliadao ou precisa de ajuda, em um editor online compartilhado (como mencionado no passo 1 acima). Esta é uma boa prática a se desenvolver — é muito difícil ajudar alguém com um problema de computação se não é possível ver o código dessa pessoa.
+   - Um link para a atual págia de tarefa ou avaliaçãopara que possamos ver a questão que você está com dúvida.
 
 ## O que vem a seguir?
 

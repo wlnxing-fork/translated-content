@@ -1,8 +1,9 @@
 ---
 title: Mejorando el Rendimiento Inicial
 slug: Web/Performance/Optimizing_startup_performance
-original_slug: Web/Performance/mejorando_rendimienot_inicial
 ---
+
+{{QuickLinksWithSubPages("Web/Performance")}}
 
 Un aspecto que a menudo se pasa por alto en el desarrollo de software de aplicaciones, incluso entre aquellos enfocados en la optimización del rendimiento, es el rendimiento inicial. ¿Cuánto tiempo demora su aplicación en iniciarse? ¿Parece que se bloquea el dispositivo o el navegador del usuario no responde mientras se carga la aplicación? Eso hace que los usuarios se preocupen de que su aplicación haya fallado, o de que algo anda mal. Siempre es una buena idea invertir tiempo para asegurarse de que la aplicación se inicie de manera correcta. Este artículo ofrece consejos y sugerencias para ayudar a lograr ese objetivo, tanto al escribir una nueva aplicación como al migrar una aplicación de otra plataforma a la Web.
 
@@ -10,7 +11,7 @@ Un aspecto que a menudo se pasa por alto en el desarrollo de software de aplicac
 
 Independientemente de la plataforma, siempre es una buena idea comenzar lo **más rápido** posible. Ya que es un problema universal, no nos vamos a enfocar demasiado en esto. En su lugar, vamos a ver un problema más importante al crear aplicaciones web: comenzar de la manera más **asíncrona** posible. Eso significa no ejecutar todo el código inicial en un mismo controlador de eventos en el hilo principal de la aplicación.
 
-En su lugar, es preferible que el código de la aplicación cree un [Web worker](/es/docs/Web/Guide/Performance/Usando_web_workers) que haga todo lo posible en un hilo de fondo (por ejemplo, para obtener y procesar datos). Luego, todo lo que debe ejecutarse en el hilo principal (como responder a los eventos del usuario o desplegar la interfaz gráfica) debe dividirse en tareas pequeñas para que el ciclo de eventos continúe mientras la aplicación inicia. Esto evitará que la aplicación, el navegador y / o el dispositivo parezcan haber fallado.
+En su lugar, es preferible que el código de la aplicación cree un [Web worker](/es/docs/Web/API/Web_Workers_API/Using_web_workers) que haga todo lo posible en un hilo de fondo (por ejemplo, para obtener y procesar datos). Luego, todo lo que debe ejecutarse en el hilo principal (como responder a los eventos del usuario o desplegar la interfaz gráfica) debe dividirse en tareas pequeñas para que el ciclo de eventos continúe mientras la aplicación inicia. Esto evitará que la aplicación, el navegador y / o el dispositivo parezcan haber fallado.
 
 ¿Por qué es importante ser asíncrono? Aparte de las razones sugeridas anteriormente, considere el impacto de una página o interfaz de usuario que no responde. El usuario no puede cerrar la aplicación si la lanzó por error. Si la aplicación se ejecuta en un navegador, es posible que el usuario obtenga una notificación diciendo "la aplicación no responde". Presentar algún tipo de interfaz, como una barra de progreso, para que el usuario sepa cuánto tiempo más tendrá que esperar mientras se inicia la aplicación es mejor que una interfaz incapaz de responder a las acciones del usuario.
 
@@ -20,7 +21,7 @@ Si está comenzando un proyecto de cero, generalmente es más sencillo escribir 
 
 Por otro lado, migrar una aplicación existente a la Web puede ser una tarea más complicada. Por ejemplo, una aplicación de escritorio no necesita escribirse de forma asíncrona porque generalmente el sistema operativo se encarga de eso, o aplicación que se está ejecutando actualmente es lo único que importa, dependiendo del entorno operativo. La aplicación original puede tener un ciclo principal que puede modificarse para operar de forma asíncrona (intentando ejecutar cada iteración del ciclo principal por separado); el inicio es a menudo un procedimiento monolítico continuo que puede ir actualizando de manera periódica la interfaz gráfica para indicar progreso.
 
-Si bien se puede usar los [Web workers](/es/docs/Web/Guide/Performance/Usando_web_workers)para ejecutar fragmentos de forma asíncrona códigos [JavaScript](/es/docs/JavaScript) muy grandes y/o lentos, hay una gran advertencia: Web workers no tienen accesso a [WebGL](/es/docs/Web/API/WebGL_API) o audio, y no pueden enviar mensajes síncronos al hilo principal, por lo que no se puede hacer un proxy de esos APIs al hilo principal. Todo esto significa que, a menos que se pueda extraer fácilmente los trozos de "cálculo puro" del proceso de inicio en Web workers, se va terminar teniendo que ejecutar la mayor parte o la totalidad del código de inicio en el hilo principal.
+Si bien se puede usar los [Web workers](/es/docs/Web/API/Web_Workers_API/Using_web_workers)para ejecutar fragmentos de forma asíncrona códigos [JavaScript](/es/docs/Web/JavaScript) muy grandes y/o lentos, hay una gran advertencia: Web workers no tienen accesso a [WebGL](/es/docs/Web/API/WebGL_API) o audio, y no pueden enviar mensajes síncronos al hilo principal, por lo que no se puede hacer un proxy de esos APIs al hilo principal. Todo esto significa que, a menos que se pueda extraer fácilmente los trozos de "cálculo puro" del proceso de inicio en Web workers, se va terminar teniendo que ejecutar la mayor parte o la totalidad del código de inicio en el hilo principal.
 
 Sin embargo, incluso código como ese puede ser hecho asíncrono, con un poco de trabajo.
 
@@ -28,7 +29,7 @@ Sin embargo, incluso código como ese puede ser hecho asíncrono, con un poco de
 
 Algunas sugerencias que se pueden aplicar para hacer que el proceso de inicio de la aplicación se lo más asíncrona posible, sin importar si la aplicación es nueva o si se está migrando una que ya existe, son las siguientes:
 
-- Usar los atributos {{ htmlattrxref("defer") }} o {{ htmlattrxref("async") }} en los tag de script que la aplicación Web necesita. Esto permite que el interpretador de HTML no se vea forzado a esperar a que el código se haya descargado y ejecutado para continuar.
+- Usar los atributos [`defer`](/es/docs/Web/HTML/Global_attributes#defer) o [`async`](/es/docs/Web/HTML/Global_attributes#async) en los tag de script que la aplicación Web necesita. Esto permite que el interpretador de HTML no se vea forzado a esperar a que el código se haya descargado y ejecutado para continuar.
 - Si se necesita descodificar archivos de recurso (por ejemplo, descodificar archivos JPEG files y convertirlos en datos de textura para ser usados luegos en WebGL), este es un buen caso de uso para Web workers.
 - When dealing with data supported by the browser (por ejemplo, descodificar images), es mejor utilizar los descodificadores includos en el navegador o el dispositivo en lugar de utilizar un propio migrado del código existente. El descodificador incluído en el navegador es muy probablemente más rápido, y reduce la cantidad de código que se va a necesitar para iniciar la aplicación. Además, es posible que el navegador automáticamente pueda ejecutar en paralelo estos descodificadores.
 - Cualquier procesamiento de información que puede ejecutarse en paralelo debe ser ejecutada en paralelo. No trabaje con porciones de información de manera sequencial; es mejor ejecutarlas en paralelo, siempre que sea posible.
@@ -68,7 +69,7 @@ Hay otras cosas además de ir asíncrono, que pueden ayudarlo a mejorar el tiemp
 - [Apps](/es/docs/Web/Progressive_web_apps)
 - [Games](/es/docs/Games)
 
-## Información del Documento Original:
+## Información del Documento Original
 
 - Autor(s): Alon Zakai
-- Fuente: [BananaBread (or any compiled codebase) Startup Experience](http://mozakai.blogspot.com/2012/07/bananabread-or-any-compiled-codebase.html)
+- Fuente: [BananaBread (or any compiled codebase) Startup Experience](https://mozakai.blogspot.com/2012/07/bananabread-or-any-compiled-codebase.html)

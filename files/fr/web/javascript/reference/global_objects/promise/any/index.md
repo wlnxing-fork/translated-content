@@ -1,14 +1,6 @@
 ---
 title: Promise.any()
 slug: Web/JavaScript/Reference/Global_Objects/Promise/any
-tags:
-  - JavaScript
-  - Method
-  - Méthode
-  - Promise
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Promise/any
-original_slug: Web/JavaScript/Reference/Objets_globaux/Promise/any
 ---
 
 {{JSRef}}
@@ -26,7 +18,7 @@ Promise.any(iterable);
 ### Paramètres
 
 - `iterable`
-  - : Un objet [itérable](/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration) tel qu'un tableau ({{JSxRef("Array")}}) contenant des promesses ({{jsxref("Promise")}}).
+  - : Un objet [itérable](/fr/docs/Web/JavaScript/Reference/Iteration_protocols) tel qu'un tableau ({{JSxRef("Array")}}) contenant des promesses ({{jsxref("Promise")}}).
 
 ### Valeur de retour
 
@@ -89,7 +81,7 @@ const pErr = new Promise((resolve, reject) => {
 
 Promise.any([pErr]).catch((err) => {
   console.log(err);
-})
+});
 // résultat attendu : "AggregateError: No Promise in Promise.any was resolved"
 ```
 
@@ -99,26 +91,25 @@ Dans cet exemple, nous avons une fonction qui requête une image et retourne un 
 
 ```js
 function fetchAndDecode(url) {
-  return fetch(url).then(réponse => {
-    if (!réponse.ok)
-      throw new Error(`Erreur HTTP ! état : ${response.status}`);
-    else
-      return réponse.blob();
-  })
+  return fetch(url).then((réponse) => {
+    if (!réponse.ok) throw new Error(`Erreur HTTP ! état : ${response.status}`);
+    else return réponse.blob();
+  });
 }
 
-let café = fetchAndDecode('coffee.jpg');
-let thé = fetchAndDecode('tea.jpg');
+let café = fetchAndDecode("coffee.jpg");
+let thé = fetchAndDecode("tea.jpg");
 
-Promise.any([café, thé]).then(valeur => {
-  let URLobjet = URL.createObjectURL(valeur);
-  let image = document.createElement('img');
-  image.src = URLobjet;
-  document.body.appendChild(image);
-})
-.catch(e => {
-  console.log(e.message);
-});
+Promise.any([café, thé])
+  .then((valeur) => {
+    let URLobjet = URL.createObjectURL(valeur);
+    let image = document.createElement("img");
+    image.src = URLobjet;
+    document.body.appendChild(image);
+  })
+  .catch((e) => {
+    console.log(e.message);
+  });
 ```
 
 ## Spécifications

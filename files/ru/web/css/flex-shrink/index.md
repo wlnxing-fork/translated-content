@@ -1,11 +1,11 @@
 ---
 title: flex-shrink
 slug: Web/CSS/flex-shrink
-translation_of: Web/CSS/flex-shrink
 ---
+
 {{CSSRef}}
 
-**`flex-shrink`** — свойство [CSS](/ru/docs/CSS), которое определяет фактор сжатия flex-элемента. Flex-элементы будут заполнять контейнер в зависимости от значения `flex-shrink`, когда стандартная ширина flex-элементов шире, чем flex-контейнер.
+**`flex-shrink`** — свойство [CSS](/ru/docs/Web/CSS), которое определяет фактор сжатия flex-элемента. Flex-элементы будут заполнять контейнер в зависимости от значения `flex-shrink`, когда стандартная ширина flex-элементов шире, чем flex-контейнер.
 
 flex-shrink используется вместе со свойствами flex {{cssxref("flex-grow")}} и {{cssxref("flex-basis")}}. Обычно определяется с помощью сокращения {{cssxref("flex")}}.
 
@@ -18,7 +18,7 @@ flex-shrink используется вместе со свойствами flex
 flex-shrink: 2;
 flex-shrink: 0.6;
 
-/* Глобальное значение */
+/* Глобальные значения */
 flex-shrink: inherit;
 flex-shrink: initial;
 flex-shrink: unset;
@@ -62,7 +62,7 @@ flex-shrink: unset;
 
 #content div {
   flex-basis: 120px;
-  border: 3px solid rgba(0,0,0,.2);
+  border: 3px solid rgba(0, 0, 0, 0.2);
 }
 
 .box {
@@ -88,4 +88,4 @@ flex-shrink: unset;
 
 ## Смотрите также
 
-- [Using CSS flexible boxes](/ru/docs/CSS/Using_CSS_flexible_boxes)
+- [Using CSS flexible boxes](/ru/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)

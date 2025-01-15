@@ -1,28 +1,18 @@
 ---
 title: devtools.panels.onThemeChanged
 slug: Mozilla/Add-ons/WebExtensions/API/devtools/panels/onThemeChanged
-tags:
-  - API
-  - Add-ons
-  - DevTools
-  - Reference
-  - WebExtensions
-  - devtools.panels
-  - onThemeChanged
-translation_of: Mozilla/Add-ons/WebExtensions/API/devtools.panels/onThemeChanged
-original_slug: Mozilla/Add-ons/WebExtensions/API/devtools.panels/onThemeChanged
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Remplacement quand le thème de devtools change
 
 ## Syntaxe
 
 ```js
-browser.devtools.panels.onThemeChanged.addListener(listener)
-browser.devtools.panels.onThemeChanged.removeListener(listener)
-browser.devtools.panels.onThemeChanged.hasListener(listener)
+browser.devtools.panels.onThemeChanged.addListener(listener);
+browser.devtools.panels.onThemeChanged.removeListener(listener);
+browser.devtools.panels.onThemeChanged.hasListener(listener);
 ```
 
 Les événements ont trois fonctions :
@@ -43,7 +33,7 @@ Les événements ont trois fonctions :
   - : Function qui sera appelée lors de l'événement. La fonction passera les arguments suivants :
 
     - `themeName`
-      - : `string`. Nom du nouveau thème : ce sera l'une des valeurs autorisées pour [`devtools.panels.themeName`](/fr/docs/Mozilla/Add-ons/WebExtensions/API/devtools.panels/themeName).
+      - : `string`. Nom du nouveau thème : ce sera l'une des valeurs autorisées pour [`devtools.panels.themeName`](/fr/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/themeName).
 
 ## Compatibilité des navigateurs
 
@@ -59,7 +49,7 @@ browser.devtools.panels.onThemeChanged.addListener((newThemeName) => {
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
 > Cette API est basée sur l'API Chromium [`chrome.devtools.panels`](https://developer.chrome.com/extensions/devtools_panels).
 >

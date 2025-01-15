@@ -33,7 +33,7 @@ Um `AudioContext`pode ser um alvo de eventos, portanto, ele implementa a interfa
 
 - {{domxref("AudioContext.onstatechange")}}
 
-  - : Um manipulador de evento que é executado quando um evento do tipo {{event("statechange")}} dispara.
+  - : Um manipulador de evento que é executado quando um evento do tipo [`statechange`](/pt-BR/docs/Web/API/RTCIceTransport/statechange_event) dispara.
 
     Isso ocorre quando o estado `AudioContext` muda, devido ao chamado de um dos métodos de mudança de estado ({{domxref("AudioContext.suspend")}}, {{domxref("AudioContext.resume")}}, or {{domxref("AudioContext.close")}}).
 
@@ -121,15 +121,13 @@ var finish = audioCtx.destination;
 
 ## Especificações
 
-| Especificação                                                                                        | Estado                               | Comentário |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------- |
-| {{SpecName('Web Audio API', '#the-audiocontext-interface', 'AudioContext')}} | {{Spec2('Web Audio API')}} |            |
+{{Specifications}}
 
 ## Compatibilidade com navegadores
 
-{{Compat("api.AudioContext")}}
+{{Compat}}
 
 ## Veja também
 
-- [Usando a Web Audio API](/pt-BR/docs/Web_Audio_API/Using_Web_Audio_API)
+- [Usando a Web Audio API](/pt-BR/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("OfflineAudioContext")}}

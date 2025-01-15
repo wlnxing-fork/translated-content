@@ -1,23 +1,21 @@
 ---
 title: stroke
 slug: Web/SVG/Attribute/stroke
-tags:
-  - SVG
-  - SVG атрибуты
-translation_of: Web/SVG/Attribute/stroke
 ---
 
-« [SVG Attribute reference home](/en/SVG/Attribute)
+{{SVGRef}}
+
+« [SVG Attribute reference home](/en-US/SVG/Attribute)
 
 Атрибут обводки определяет цвет контура в данном графическом элементе. Значение по умолчанию для атрибута обводки — **None**.
 
 ## Контекст использования
 
-| Категория            | Presentation attribute                                                                               |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| Значения             | [\<paint>](/en/SVG/Content_type#Paint), `context-fill`, `context-stroke` |
-| Анимируемый          | Да                                                                                                   |
-| Нормативный документ | [SVG 1.1 (2nd Edition)](http://www.w3.org/TR/SVG/painting.html#StrokeProperty)                       |
+| Категория            | Presentation attribute                                                          |
+| -------------------- | ------------------------------------------------------------------------------- |
+| Значения             | [\<paint>](/en-US/SVG/Content_type#paint), `context-fill`, `context-stroke`     |
+| Анимируемый          | Да                                                                              |
+| Нормативный документ | [SVG 1.1 (2nd Edition)](https://www.w3.org/TR/SVG/painting.html#StrokeProperty) |
 
 ## Примеры
 
@@ -27,7 +25,7 @@ translation_of: Web/SVG/Attribute/stroke
 
 ```html
 <svg height="50" width="300">
-    <path stroke="green" d="M5 20 1215 0" />
+  <path stroke="green" d="M5 20 1215 0" />
 </svg>
 ```
 
@@ -37,7 +35,7 @@ translation_of: Web/SVG/Attribute/stroke
 
 ```html
 <svg height="100" width="100">
-    <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="2" fill="black" />
+  <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="2" fill="black" />
 </svg>
 ```
 
@@ -51,5 +49,5 @@ translation_of: Web/SVG/Attribute/stroke
 
 Следующие элементы могут использовать атрибут `stroke`.
 
-- [Shape elements](/en/SVG/Element#Shape)
-- [Text content elements](/en/SVG/Element#TextContent)
+- [Shape elements](/en-US/SVG/Element#shape)
+- [Text content elements](/en-US/SVG/Element#textcontent)

@@ -2,13 +2,12 @@
 title: background-image
 slug: Web/CSS/background-image
 ---
+
 {{CSSRef}}
 
 [CSS](/ko/docs/Web/CSS) **`background-image`** 속성은 요소의 배경 이미지를 한 개나 여러 개 지정합니다.
 
 {{EmbedInteractiveExample("pages/css/background-image.html")}}
-
-<div class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples">https://github.com/mdn/interactive-examples</a> and send us a pull request.</div>
 
 여러 개의 배경 이미지는 쌓임 맥락에 따라 서로의 위에 놓입니다. 맨 처음 지정한 이미지가 제일 위에(사용자에게 제일 가까운 것 처럼) 위치합니다.
 
@@ -16,7 +15,8 @@ slug: Web/CSS/background-image
 
 브라우저는 값에 유효하지 않은 URI를 지정하는 등 주어진 이미지를 그릴 수 없을 때 `none` 키워드를 사용한 것처럼 처리합니다.
 
-> **참고:** 지정한 이미지가 불투명해서 아래의 배경색을 볼 수 없더라도 {{cssxref("background-color")}}는 지정해야 합니다. 네트워크가 내려가는 등 이미지를 불러올 수 없는 상황에서 배경 색이 대체할 수 있기 때문입니다,
+> [!NOTE]
+> 지정한 이미지가 불투명해서 아래의 배경색을 볼 수 없더라도 {{cssxref("background-color")}}는 지정해야 합니다. 네트워크가 내려가는 등 이미지를 불러올 수 없는 상황에서 배경 색이 대체할 수 있기 때문입니다,
 
 ## 구문
 
@@ -25,9 +25,12 @@ slug: Web/CSS/background-image
 여러 개의 배경 이미지를 지정하려면 쉼표로 구분한 다수의 값을 지정하세요.
 
 ```css
-background-image:
-  linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5)),
-  url('catfront.png');
+background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 0, 255, 0.5)
+  ),
+  url("catfront.png");
 ```
 
 ### 값
@@ -35,7 +38,7 @@ background-image:
 - `none`
   - : 배경 이미지의 부재를 나타내는 키워드입니다.
 - {{cssxref("&lt;image&gt;")}}
-  - : 배경으로 사용할 이미지입니다. [여러 개의 배경 이미지](/ko/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)를 사용할 땐 쉼표로 구분한 다수의 값을 지정하세요.
+  - : 배경으로 사용할 이미지입니다. [여러 개의 배경 이미지](/ko/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)를 사용할 땐 쉼표로 구분한 다수의 값을 지정하세요.
 
 ## 접근성 고려사항
 
@@ -62,13 +65,9 @@ background-image:
 
 ```html
 <div>
-  <p class="catsandstars">
-    This paragraph is full of cats<br />and stars.
-  </p>
+  <p class="catsandstars">This paragraph is full of cats<br />and stars.</p>
   <p>This paragraph is not.</p>
-  <p class="catsandstars">
-    Here are more cats for you.<br />Look at them!
-  </p>
+  <p class="catsandstars">Here are more cats for you.<br />Look at them!</p>
   <p>And no more.</p>
 </div>
 ```
@@ -78,20 +77,17 @@ background-image:
 ```css
 p {
   font-size: 1.5em;
-  color: #FE7F88;
+  color: #fe7f88;
   background-image: none;
   background-color: transparent;
 }
 
 div {
-  background-image:
-      url("mdn_logo_only_color.png");
+  background-image: url("mdn_logo_only_color.png");
 }
 
 .catsandstars {
-  background-image:
-      url("startransparent.gif"),
-      url("catfront.png");
+  background-image: url("startransparent.gif"), url("catfront.png");
   background-color: transparent;
 }
 ```
@@ -110,7 +106,7 @@ div {
 
 ## 같이 보기
 
-- [CSS로 이미지 스프라이트 구현하기](/ko/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS)
+- [CSS로 이미지 스프라이트 구현하기](/ko/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
 - {{HTMLElement("img")}}
 - 이미지 관련 자료형: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
 - 이미지 관련 함수: {{cssxref("linear-gradient")}}, {{cssxref("radial-gradient")}}, {{cssxref("repeating-linear-gradient")}}, {{cssxref("repeating-radial-gradient")}}, {{cssxref("element")}}, {{cssxref("_image", "image()")}}, {{cssxref("image-set")}}, {{cssxref("url", "url()")}}

@@ -1,16 +1,15 @@
 ---
 title: Manipulando Listas
 slug: Learn/CSS/Styling_text/Styling_lists
-original_slug: Web/CSS/Getting_Started/Lists
 ---
 
 {{LearnSidebar}}{{PreviousMenuNext("Learn/CSS/Styling_text/Fundamentals", "Learn/CSS/Styling_text/Styling_links", "Learn/CSS/Styling_text")}}
 
-Este é o 10º seção do [CSS Introdução](/pt-BR/docs/Web/Guide/CSS/Getting_Started) tutorial; ele descreve como você pode usar CSS para especificar o aparecimento de listas. Você cria um novo documento de amostra contendo listas, e um novo estilo que os estilos das listas.
+Este é o 10º seção do [CSS Introdução](/pt-BR/docs/Learn/CSS/First_steps) tutorial; ele descreve como você pode usar CSS para especificar o aparecimento de listas. Você cria um novo documento de amostra contendo listas, e um novo estilo que os estilos das listas.
 
 ## Informação: Lists
 
-Se você aceitou o desafio na [última](/pt-BR/docs/Web/Guide/CSS/Getting_Started/Content) seção, em seguida, você viu como você pode adicionar conteúdo antes de qualquer elemento para exibi-lo como um item da lista.
+Se você aceitou o desafio na [última](/pt-BR/docs/Learn/CSS/Howto/Generated_content) seção, em seguida, você viu como você pode adicionar conteúdo antes de qualquer elemento para exibi-lo como um item da lista.
 
 CSS proporciona propriedades especiais que são projetados para listas. Geralmente é mais conveniente usar estas propriedades sempre que puder.
 
@@ -37,20 +36,24 @@ Exemplo
 Essas regras especificam diferentes marcadores para diferentes classes de item da lista:
 
 ```css
-li.open {list-style: circle;}
-li.closed {list-style: disc;}
+li.open {
+  list-style: circle;
+}
+li.closed {
+  list-style: disc;
+}
 ```
 
 Quando estas classes são usadas em uma lista, que distinguir entre os itens abertos e fechados (por exemplo, em uma lista de tarefas):
 
 ```html
 <ul>
-  <li class="open"> Lorem ipsum </ li>
-  <li class="closed"> dolor sit </ li>
-  <li class="closed"> Amet consectetuer </ li>
-  <li class="open"> Magna aliquam </ li>
-  <li class="closed"> Autem veleum </ li>
-</ ul>
+  <li class="open">Lorem ipsum</li>
+  <li class="closed">dolor sit</li>
+  <li class="closed">Amet consectetuer</li>
+  <li class="open">Magna aliquam</li>
+  <li class="closed">Autem veleum</li>
+</ul>
 ```
 
 O resultado pode parecer:
@@ -84,7 +87,9 @@ Esta regra especifica que em {{HTMLElement ("OL")}} elementos com a classe `info
 ```
 
 ```css
-ol.info {list-style: upper-latin;}
+ol.info {
+  list-style: upper-latin;
+}
 ```
 
 O {{HTMLElement ("LI")}} elementos da lista herdam esse estilo:
@@ -101,7 +106,7 @@ Browsers diferem na maneira de implementar os estilos para listas. Não espere q
 
 ### Contadores
 
-**Nota:** Alguns navegadores não suportam contadores. O [conteúdo CSS e compatibilidade do navegador](http://www.quirksmode.org/css/contents.html) página no [site de modo Quirks](http://www.quirksmode.org/) contém um gráfico detalhado de compatibilidade do navegador para este e outros recursos CSS. Páginas individuais na [referência CSS](/pt-BR/docs/Web/CSS/Reference) neste local também têm tabelas de compatibilidade do navegador.
+**Nota:** Alguns navegadores não suportam contadores. O [conteúdo CSS e compatibilidade do navegador](https://www.quirksmode.org/css/contents.html) página no [site de modo Quirks](https://www.quirksmode.org/) contém um gráfico detalhado de compatibilidade do navegador para este e outros recursos CSS. Páginas individuais na [referência CSS](/pt-BR/docs/Web/CSS/Reference) neste local também têm tabelas de compatibilidade do navegador.
 
 Você pode usar contadores para numerar quaisquer elementos, não somente itens da lista. Por exemplo, em alguns documentos você pode querer numerar cabeçalhos ou parágrafos.
 
@@ -122,27 +127,30 @@ Exemplo
 Esta regra inicializa um contador para cada {{HTMLElement ("h3")}} elemento com a classe numeradas:
 
 ```css
-h3.numbered {counter-reset: mynum;}
+h3.numbered {
+  counter-reset: mynum;
+}
 ```
 
 Esta regra mostra e incrementa o contador para cada {{HTMLElement ("p")}} elemento com a classe numeradas:
 
 ```html
-<p class = "numbered"> Lorem ipsum </ p>
-<p class = "numbered"> dolor sit </ p>
-<p class = "numbered"> Amet consectetuer </ p>
-<p class = "numbered"> Magna aliquam </ p>
-<p class = "numbered"> Autem veleum </ p>
+<p class="numbered">Lorem ipsum</p>
+<p class="numbered">dolor sit</p>
+<p class="numbered">Amet consectetuer</p>
+<p class="numbered">Magna aliquam</p>
+<p class="numbered">Autem veleum</p>
 ```
 
 ```css
-body
-   {counter-reset:
-mynum;}
-p.numbered:before
-  {content: counter(mynum) ": ";
+body {
+  counter-reset: mynum;
+}
+p.numbered:before {
+  content: counter(mynum) ": ";
   counter-increment: mynum;
-  font-weight: bold;}
+  font-weight: bold;
+}
 ```
 
 O resultado se parece com isso:
@@ -162,15 +170,14 @@ Você também pode usar contadores em formas mais complexas, por exemplo, para n
 Crie um novo documento HTML, doc2.html. Copie e cole o conteúdo daqui:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Sample document 2</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
-
     <h3 id="oceans">The oceans</h3>
     <ul>
       <li>Arctic</li>
@@ -186,7 +193,6 @@ Crie um novo documento HTML, doc2.html. Copie e cole o conteúdo daqui:
     <p class="numbered">Amet consectetuer</p>
     <p class="numbered">Magna aliquam</p>
     <p class="numbered">Autem veleum</p>
-
   </body>
 </html>
 ```
@@ -195,7 +201,9 @@ Faça uma nova folha de estilo, style2.css. Copie e cole o conteúdo daqui:
 
 ```css
 /* numbered paragraphs */
-h3.numbered {counter-reset: mynum;}
+h3.numbered {
+  counter-reset: mynum;
+}
 
 p.numbered:before {
   content: counter(mynum) ": ";
@@ -240,7 +248,7 @@ Adicione uma regra à sua folha de estilo, para numerar os oceanos usando numera
 Mude sua folha de estilo para identificar os títulos com letras maiúsculas em parênteses como este:
 
 | **(A) The oceans**. . .**(B) Numbered paragraphs**. . . |
-| ----------------------------------------------------------------------- |
+| ------------------------------------------------------- |
 
 [Ver soluções para esses desafios.](/pt-BR/docs/Web/Guide/CSS/Getting_Started/Challenge_solutions#Lists)
 

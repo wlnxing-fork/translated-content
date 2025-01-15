@@ -1,13 +1,6 @@
 ---
 title: IDBObjectStore.indexNames
 slug: Web/API/IDBObjectStore/indexNames
-tags:
-  - API
-  - IDBObjectStore
-  - IndexedDB
-  - Propriété
-  - Reference
-translation_of: Web/API/IDBObjectStore/indexNames
 ---
 
 {{APIRef("IndexedDB")}}
@@ -93,7 +86,7 @@ function addData() {
 
 ## Voir aussi
 
-- [Utiliser IndexedDB](/fr/docs/Web/API/API_IndexedDB/Using_IndexedDB)
+- [Utiliser IndexedDB](/fr/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 - Initier une connexion : {{domxref("IDBDatabase")}}
 - Utiliser les transactions : {{domxref("IDBTransaction")}}
 - Définir un intervalle de clés : {{domxref("IDBKeyRange")}}

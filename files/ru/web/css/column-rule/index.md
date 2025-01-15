@@ -1,9 +1,6 @@
 ---
 title: column-rule
 slug: Web/CSS/column-rule
-tags:
-  - мультиколоночная вёрстка
-translation_of: Web/CSS/column-rule
 ---
 
 {{CSSRef}}
@@ -14,7 +11,8 @@ translation_of: Web/CSS/column-rule
 
 Эта краткая форма записи задаёт индивидуальные `column-rule-*` свойства, обычно задаваемые: {{Cssxref("column-rule-width")}}, {{Cssxref("column-rule-style")}}, и {{Cssxref("column-rule-color")}}.
 
-> **Примечание:** Как и с другими краткими формами записи, любые индивидуальные значения, не указанные явно принимают значение по умолчанию (возможно переопределение значений, заданных ранее с помощью свойств, не являющихся краткими формами).
+> [!NOTE]
+> Как и с другими краткими формами записи, любые индивидуальные значения, не указанные явно принимают значение по умолчанию (возможно переопределение значений, заданных ранее с помощью свойств, не являющихся краткими формами).
 
 ## Синтаксис
 
@@ -24,7 +22,7 @@ column-rule: solid 8px;
 column-rule: solid blue;
 column-rule: thick inset blue;
 
-/* глобальные значения */
+/* Глобальные значения */
 column-rule: inherit;
 column-rule: initial;
 column-rule: unset;
@@ -51,15 +49,23 @@ column-rule: unset;
 
 ```css
 /* Аналогично "medium dotted currentColor" */
-p.foo { column-rule: dotted; }
+p.foo {
+  column-rule: dotted;
+}
 
 /* Аналогично "medium solid blue" */
-p.bar { column-rule: solid blue; }
+p.bar {
+  column-rule: solid blue;
+}
 
 /* Аналогично "8px solid currentColor" */
-p.baz { column-rule: solid 8px; }
+p.baz {
+  column-rule: solid 8px;
+}
 
-p.abc { column-rule: thick inset blue; }
+p.abc {
+  column-rule: thick inset blue;
+}
 ```
 
 ### Example 2
@@ -68,10 +74,9 @@ p.abc { column-rule: thick inset blue; }
 
 ```html
 <p class="content-box">
-  This is a bunch of text split into three columns.
-  Take note of how the `column-rule` property is used
-  to adjust the style, width, and color of the rule
-  that appears between the columns.
+  This is a bunch of text split into three columns. Take note of how the
+  `column-rule` property is used to adjust the style, width, and color of the
+  rule that appears between the columns.
 </p>
 ```
 
@@ -96,6 +101,6 @@ p.abc { column-rule: thick inset blue; }
 
 {{cssinfo}}
 
-## Поддержка браузерами
+## Совместимость с браузерами
 
 {{Compat}}

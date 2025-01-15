@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: grid ロール'
+title: "ARIA: grid ロール"
 slug: Web/Accessibility/ARIA/Roles/grid_role
 ---
 
@@ -7,7 +7,9 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
 
 ```html
 <table role="grid" aria-labelledby="id-select-your-seat">
-  <caption id="id-select-your-seat">座席を選んでください</caption>
+  <caption id="id-select-your-seat">
+    座席を選んでください
+  </caption>
   <tbody role="presentation">
     <tr role="presentation">
       <td></td>
@@ -42,7 +44,7 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
 
 グリッドウィジェットは、テーマに沿ったインタラクティブなコンテンツの 1 つ以上のセルを持つ 1 つ以上の行を含みます。 それは特定の視覚的表現を暗示するものではありませんが、要素間の関連性を暗示します。 用途は、表形式の情報の表示 (データグリッド) と他のウィジェットのグループ化 (レイアウトグリッド) の 2 つのカテゴリーに分類されます。 データグリッドとレイアウトグリッドの両方が同じ ARIA のロール、ステート、およびプロパティを採用している場合でも、そのコンテンツと目的の違いは、キーボードインタラクションのデザインにおいて考慮すべき重要な要因を表面化させます。 詳細については、[WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.2/#grid) を参照してください。
 
-セル要素には、行ヘッダーや列ヘッダーでない限り、グリッドセル ([`gridcell`](/ja/docs/Web/Accessibility/ARIA/Roles/Gridcell_role)) ロールがあります。 ヘッダー要素には、それぞれ行ヘッダー ([`rowheader`](/ja/docs/Web/Accessibility/ARIA/Roles/Rowheader_Role)) ロールと列ヘッダー ([`columnheader`](/ja/docs/Web/Accessibility/ARIA/Roles/Columnheader_Role)) ロールがあります。 セル要素は、行 ([`row`](/ja/docs/Web/Accessibility/ARIA/Roles/Row_Role)) ロールを持つ要素によって所有される必要があります。 行は行グループ ([`rowgroup`](/ja/docs/Web/Accessibility/ARIA/Roles/Rowgroup_Role)) を使用してグループ化できます。
+セル要素には、行ヘッダーや列ヘッダーでない限り、グリッドセル ([`gridcell`](/ja/docs/Web/Accessibility/ARIA/Roles/gridcell_role)) ロールがあります。 ヘッダー要素には、それぞれ行ヘッダー ([`rowheader`](/ja/docs/Web/Accessibility/ARIA/Roles/Rowheader_Role)) ロールと列ヘッダー ([`columnheader`](/ja/docs/Web/Accessibility/ARIA/Roles/Columnheader_Role)) ロールがあります。 セル要素は、行 ([`row`](/ja/docs/Web/Accessibility/ARIA/Roles/row_role)) ロールを持つ要素によって所有される必要があります。 行は行グループ ([`rowgroup`](/ja/docs/Web/Accessibility/ARIA/Roles/rowgroup_role)) を使用してグループ化できます。
 
 グリッドをインタラクティブなウィジェットとして使用する場合は、[キーボードインタラクション](#keyboard_interactions)を実装する必要があります。
 
@@ -52,10 +54,10 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
 
 - [treegrid](/ja/docs/Web/Accessibility/ARIA/Roles/Treegrid_Role) (サブクラス)
   - : グリッドに展開や折りたたみができる列がある場合は、ツリーグリッドを使用できます。
-- [row](/ja/docs/Web/Accessibility/ARIA/Roles/Row_Role)
+- [row](/ja/docs/Web/Accessibility/ARIA/Roles/row_role)
   - : グリッド内の行。
-- [rowgroup](/ja/docs/Web/Accessibility/ARIA/Roles/Rowgroup_Role)
-  - : 1 つ以上の行 ([row](/ja/docs/Web/Accessibility/ARIA/Roles/Row_Role)) を含むグループ。
+- [rowgroup](/ja/docs/Web/Accessibility/ARIA/Roles/rowgroup_role)
+  - : 1 つ以上の行 ([row](/ja/docs/Web/Accessibility/ARIA/Roles/row_role)) を含むグループ。
 
 #### ステートとプロパティ
 
@@ -66,7 +68,8 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
 - [aria-readonly](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-readonly_attribute)
   - : ユーザーがグリッドをナビゲートできるが、グリッドの値を変更できない場合は、`aria-readonly` を `true` に設定するべきです。 デフォルト値は `false` です。
 
-> **メモ:** 多くのユースケースでは、HTML の表 ([`table`](/ja/docs/Web/HTML/Element/table)) 要素で十分であり、その要素にはすでに多くの ARIA ロールが含まれています。
+> [!NOTE]
+> 多くのユースケースでは、HTML の表 ([`table`](/ja/docs/Web/HTML/Element/table)) 要素で十分であり、その要素にはすでに多くの ARIA ロールが含まれています。
 
 ### キーボードインタラクション
 
@@ -102,8 +105,10 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
 ### カレンダーの例
 
 ```html hidden
-<table role="grid" aria-labelledby="calendarheader" aria-readonly=true>
-  <caption id="calendarheader">September 2018</caption>
+<table role="grid" aria-labelledby="calendarheader" aria-readonly="true">
+  <caption id="calendarheader">
+    September 2018
+  </caption>
   <thead role="rowgroup">
     <tr role="row">
       <td></td>
@@ -129,105 +134,47 @@ slug: Web/Accessibility/ARIA/Roles/grid_role
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 36</th>
-      <td role="gridcell" tabindex="-1">
-        2
-      </td>
-      <td role="gridcell" tabindex="-1">
-        3
-      </td>
-      <td role="gridcell" tabindex="-1">
-        4
-      </td>
-      <td role="gridcell" tabindex="-1">
-        5
-      </td>
-      <td role="gridcell" tabindex="-1">
-        6
-      </td>
-      <td role="gridcell" tabindex="-1">
-        7
-      </td>
-      <td role="gridcell" tabindex="-1">
-        8
-      </td>
+      <td role="gridcell" tabindex="-1">2</td>
+      <td role="gridcell" tabindex="-1">3</td>
+      <td role="gridcell" tabindex="-1">4</td>
+      <td role="gridcell" tabindex="-1">5</td>
+      <td role="gridcell" tabindex="-1">6</td>
+      <td role="gridcell" tabindex="-1">7</td>
+      <td role="gridcell" tabindex="-1">8</td>
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 37</th>
-      <td role="gridcell" tabindex="-1">
-        9
-      </td>
-      <td role="gridcell" tabindex="-1">
-        10
-      </td>
-      <td role="gridcell" tabindex="-1">
-        11
-      </td>
-      <td role="gridcell" tabindex="-1">
-        12
-      </td>
-      <td role="gridcell" tabindex="-1">
-        13
-      </td>
-      <td role="gridcell" tabindex="-1">
-        14
-      </td>
-      <td role="gridcell" tabindex="-1">
-        15
-      </td>
+      <td role="gridcell" tabindex="-1">9</td>
+      <td role="gridcell" tabindex="-1">10</td>
+      <td role="gridcell" tabindex="-1">11</td>
+      <td role="gridcell" tabindex="-1">12</td>
+      <td role="gridcell" tabindex="-1">13</td>
+      <td role="gridcell" tabindex="-1">14</td>
+      <td role="gridcell" tabindex="-1">15</td>
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 38</th>
-      <td role="gridcell" tabindex="-1">
-        16
-      </td>
-      <td role="gridcell" tabindex="-1">
-        17
-      </td>
-      <td role="gridcell" tabindex="-1">
-        18
-      </td>
-      <td role="gridcell" tabindex="-1">
-        19
-      </td>
-      <td role="gridcell" tabindex="-1">
-        20
-      </td>
-      <td role="gridcell" tabindex="-1">
-        21
-      </td>
-      <td role="gridcell" tabindex="-1">
-        22
-      </td>
+      <td role="gridcell" tabindex="-1">16</td>
+      <td role="gridcell" tabindex="-1">17</td>
+      <td role="gridcell" tabindex="-1">18</td>
+      <td role="gridcell" tabindex="-1">19</td>
+      <td role="gridcell" tabindex="-1">20</td>
+      <td role="gridcell" tabindex="-1">21</td>
+      <td role="gridcell" tabindex="-1">22</td>
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 39</th>
-      <td role="gridcell" tabindex="-1">
-        23
-      </td>
-      <td role="gridcell" tabindex="-1">
-        24
-      </td>
-      <td role="gridcell" tabindex="-1">
-        25
-      </td>
-      <td role="gridcell" tabindex="-1">
-        26
-      </td>
-      <td role="gridcell" tabindex="-1">
-        27
-      </td>
-      <td role="gridcell" tabindex="-1">
-        28
-      </td>
-      <td role="gridcell" tabindex="-1">
-        29
-      </td>
+      <td role="gridcell" tabindex="-1">23</td>
+      <td role="gridcell" tabindex="-1">24</td>
+      <td role="gridcell" tabindex="-1">25</td>
+      <td role="gridcell" tabindex="-1">26</td>
+      <td role="gridcell" tabindex="-1">27</td>
+      <td role="gridcell" tabindex="-1">28</td>
+      <td role="gridcell" tabindex="-1">29</td>
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 40</th>
-      <td role="gridcell" tabindex="-1">
-        30
-      </td>
+      <td role="gridcell" tabindex="-1">30</td>
       <td>1</td>
       <td>2</td>
       <td>3</td>
@@ -275,32 +222,42 @@ tbody td[role="gridcell"]:hover, tbody td[role="gridcell"]:focus {
 ```js hidden
 var selectables = document.querySelectorAll('table td[role="gridcell"]');
 
-selectables[0].setAttribute('tabindex', 0);
+selectables[0].setAttribute("tabindex", 0);
 
-var trs = document.querySelectorAll('table tbody tr'),
-    row = 0,
-    col = 0,
-    maxrow = trs.length - 1,
-    maxcol = 0;
+var trs = document.querySelectorAll("table tbody tr"),
+  row = 0,
+  col = 0,
+  maxrow = trs.length - 1,
+  maxcol = 0;
 
-Array.prototype.forEach.call(trs, function(gridrow, i){
-  Array.prototype.forEach.call(gridrow.querySelectorAll('td'), function(el, i){
-    el.dataset.row = row;
-    el.dataset.col = col;
-    col = col + 1;
-  });
-  if (col>maxcol) { maxcol = col - 1; }
+Array.prototype.forEach.call(trs, function (gridrow, i) {
+  Array.prototype.forEach.call(
+    gridrow.querySelectorAll("td"),
+    function (el, i) {
+      el.dataset.row = row;
+      el.dataset.col = col;
+      col = col + 1;
+    },
+  );
+  if (col > maxcol) {
+    maxcol = col - 1;
+  }
   col = 0;
   row = row + 1;
 });
 
 function moveto(newrow, newcol) {
-  var tgt = document.querySelector('[data-row="' + newrow + '"][data-col="' + newcol + '"]');
-  if (tgt && (tgt.getAttribute('role')==='gridcell') ) {
-    Array.prototype.forEach.call(document.querySelectorAll('[role=gridcell]'), function(el, i){
-      el.setAttribute('tabindex', '-1');
-    });
-    tgt.setAttribute('tabindex', '0');
+  var tgt = document.querySelector(
+    '[data-row="' + newrow + '"][data-col="' + newcol + '"]',
+  );
+  if (tgt && tgt.getAttribute("role") === "gridcell") {
+    Array.prototype.forEach.call(
+      document.querySelectorAll("[role=gridcell]"),
+      function (el, i) {
+        el.setAttribute("tabindex", "-1");
+      },
+    );
+    tgt.setAttribute("tabindex", "0");
     tgt.focus();
     return true;
   } else {
@@ -308,19 +265,31 @@ function moveto(newrow, newcol) {
   }
 }
 
-document.querySelector('table').addEventListener("keydown", function(event) {
+document.querySelector("table").addEventListener("keydown", function (event) {
   switch (event.key) {
     case "ArrowRight":
-      moveto(parseInt(event.target.dataset.row, 10), parseInt(event.target.dataset.col, 10) + 1);
+      moveto(
+        parseInt(event.target.dataset.row, 10),
+        parseInt(event.target.dataset.col, 10) + 1,
+      );
       break;
     case "ArrowLeft":
-      moveto(parseInt(event.target.dataset.row, 10), parseInt(event.target.dataset.col, 10) - 1);
+      moveto(
+        parseInt(event.target.dataset.row, 10),
+        parseInt(event.target.dataset.col, 10) - 1,
+      );
       break;
     case "ArrowDown":
-      moveto(parseInt(event.target.dataset.row, 10) + 1, parseInt(event.target.dataset.col, 10));
+      moveto(
+        parseInt(event.target.dataset.row, 10) + 1,
+        parseInt(event.target.dataset.col, 10),
+      );
       break;
     case "ArrowUp":
-      moveto(parseInt(event.target.dataset.row, 10) - 1, parseInt(event.target.dataset.col, 10));
+      moveto(
+        parseInt(event.target.dataset.row, 10) - 1,
+        parseInt(event.target.dataset.col, 10),
+      );
       break;
     case "Home":
       if (event.ctrlKey) {
@@ -352,7 +321,12 @@ document.querySelector('table').addEventListener("keydown", function(event) {
           i--;
         } while (result == false);
       } else {
-        moveto(parseInt(event.target.dataset.row, 10), document.querySelector('[data-row="' + event.target.dataset.row + '"]:last-of-type').dataset.col);
+        moveto(
+          parseInt(event.target.dataset.row, 10),
+          document.querySelector(
+            '[data-row="' + event.target.dataset.row + '"]:last-of-type',
+          ).dataset.col,
+        );
       }
       break;
     case "PageUp":
@@ -385,7 +359,9 @@ document.querySelector('table').addEventListener("keydown", function(event) {
 
 ```html
 <table role="grid" aria-labelledby="calendarheader">
-  <caption id="calendarheader">September 2018</caption>
+  <caption id="calendarheader">
+    September 2018
+  </caption>
   <thead role="rowgroup">
     <tr role="row">
       <td></td>
@@ -411,27 +387,13 @@ document.querySelector('table').addEventListener("keydown", function(event) {
     </tr>
     <tr role="row">
       <th scope="row" role="rowheader">Week 36</th>
-      <td role="gridcell" tabindex="-1">
-        2
-      </td>
-      <td role="gridcell" tabindex="-1">
-        3
-      </td>
-      <td role="gridcell" tabindex="-1">
-        4
-      </td>
-      <td role="gridcell" tabindex="-1">
-        5
-      </td>
-      <td role="gridcell" tabindex="-1">
-        6
-      </td>
-      <td role="gridcell" tabindex="-1">
-        7
-      </td>
-      <td role="gridcell" tabindex="-1">
-        8
-      </td>
+      <td role="gridcell" tabindex="-1">2</td>
+      <td role="gridcell" tabindex="-1">3</td>
+      <td role="gridcell" tabindex="-1">4</td>
+      <td role="gridcell" tabindex="-1">5</td>
+      <td role="gridcell" tabindex="-1">6</td>
+      <td role="gridcell" tabindex="-1">7</td>
+      <td role="gridcell" tabindex="-1">8</td>
     </tr>
     <!-- … Additional Rows … -->
   </tbody>
@@ -447,7 +409,8 @@ table {
   font-variant-numeric: tabular-nums;
 }
 
-tbody th, tbody td {
+tbody th,
+tbody td {
   padding: 5px;
 }
 
@@ -461,8 +424,10 @@ tbody td[role="gridcell"] {
   color: #000;
 }
 
-tbody td[role="gridcell"]:hover, tbody td[role="gridcell"]:focus {
-  background-color: #f6f6f6; outline: 3px solid blue;
+tbody td[role="gridcell"]:hover,
+tbody td[role="gridcell"]:focus {
+  background-color: #f6f6f6;
+  outline: 3px solid blue;
 }
 ```
 
@@ -471,32 +436,42 @@ tbody td[role="gridcell"]:hover, tbody td[role="gridcell"]:focus {
 ```js
 var selectables = document.querySelectorAll('table td[role="gridcell"]');
 
-selectables[0].setAttribute('tabindex', 0);
+selectables[0].setAttribute("tabindex", 0);
 
-var trs = document.querySelectorAll('table tbody tr'),
-    row = 0,
-    col = 0,
-    maxrow = trs.length - 1,
-    maxcol = 0;
+var trs = document.querySelectorAll("table tbody tr"),
+  row = 0,
+  col = 0,
+  maxrow = trs.length - 1,
+  maxcol = 0;
 
-Array.prototype.forEach.call(trs, function(gridrow, i){
-  Array.prototype.forEach.call(gridrow.querySelectorAll('td'), function(el, i){
-    el.dataset.row = row;
-    el.dataset.col = col;
-    col = col + 1;
-  });
-  if (col>maxcol) { maxcol = col - 1; }
+Array.prototype.forEach.call(trs, function (gridrow, i) {
+  Array.prototype.forEach.call(
+    gridrow.querySelectorAll("td"),
+    function (el, i) {
+      el.dataset.row = row;
+      el.dataset.col = col;
+      col = col + 1;
+    },
+  );
+  if (col > maxcol) {
+    maxcol = col - 1;
+  }
   col = 0;
   row = row + 1;
 });
 
 function moveto(newrow, newcol) {
-  var tgt = document.querySelector('[data-row="' + newrow + '"][data-col="' + newcol + '"]');
-  if (tgt && (tgt.getAttribute('role')==='gridcell') ) {
-    Array.prototype.forEach.call(document.querySelectorAll('[role=gridcell]'), function(el, i){
-      el.setAttribute('tabindex', '-1');
-    });
-    tgt.setAttribute('tabindex', '0');
+  var tgt = document.querySelector(
+    '[data-row="' + newrow + '"][data-col="' + newcol + '"]',
+  );
+  if (tgt && tgt.getAttribute("role") === "gridcell") {
+    Array.prototype.forEach.call(
+      document.querySelectorAll("[role=gridcell]"),
+      function (el, i) {
+        el.setAttribute("tabindex", "-1");
+      },
+    );
+    tgt.setAttribute("tabindex", "0");
     tgt.focus();
     return true;
   } else {
@@ -504,19 +479,31 @@ function moveto(newrow, newcol) {
   }
 }
 
-document.querySelector('table').addEventListener("keydown", function(event) {
+document.querySelector("table").addEventListener("keydown", function (event) {
   switch (event.key) {
     case "ArrowRight":
-      moveto(parseInt(event.target.dataset.row, 10), parseInt(event.target.dataset.col, 10) + 1);
+      moveto(
+        parseInt(event.target.dataset.row, 10),
+        parseInt(event.target.dataset.col, 10) + 1,
+      );
       break;
     case "ArrowLeft":
-      moveto(parseInt(event.target.dataset.row, 10), parseInt(event.target.dataset.col, 10) - 1);
+      moveto(
+        parseInt(event.target.dataset.row, 10),
+        parseInt(event.target.dataset.col, 10) - 1,
+      );
       break;
     case "ArrowDown":
-      moveto(parseInt(event.target.dataset.row, 10) + 1, parseInt(event.target.dataset.col, 10));
+      moveto(
+        parseInt(event.target.dataset.row, 10) + 1,
+        parseInt(event.target.dataset.col, 10),
+      );
       break;
     case "ArrowUp":
-      moveto(parseInt(event.target.dataset.row, 10) - 1, parseInt(event.target.dataset.col, 10));
+      moveto(
+        parseInt(event.target.dataset.row, 10) - 1,
+        parseInt(event.target.dataset.col, 10),
+      );
       break;
     case "Home":
       if (event.ctrlKey) {
@@ -548,7 +535,12 @@ document.querySelector('table').addEventListener("keydown", function(event) {
           i--;
         } while (result == false);
       } else {
-        moveto(parseInt(event.target.dataset.row, 10), document.querySelector('[data-row="' + event.target.dataset.row + '"]:last-of-type').dataset.col);
+        moveto(
+          parseInt(event.target.dataset.row, 10),
+          document.querySelector(
+            '[data-row="' + event.target.dataset.row + '"]:last-of-type',
+          ).dataset.col,
+        );
       }
       break;
     case "PageUp":
@@ -585,7 +577,7 @@ document.querySelector('table').addEventListener("keydown", function(event) {
 
 [キーボードインタラクション](#keyboard_interactions)が適切に実装されていても、矢印キーを使用しなければならないことに気づかないユーザーもいます。 グリッド (`grid`) ロールを使用して、必要な機能性とインタラクションが最もよく達成できることを確認してください。
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
@@ -596,11 +588,11 @@ TBD
 ## 関連情報
 
 - [ARIA composite ロール](/ja/docs/Web/Accessibility/ARIA/Roles/composite_Role)
-- [ARIA table ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Table_Role)
+- [ARIA table ロール](/ja/docs/Web/Accessibility/ARIA/Roles/table_role)
 - [ARIA treegrid ロール](/ja/docs/Web/Accessibility/ARIA/Roles/treegrid_Role)
-- [ARIA row ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Row_Role)
-- [ARIA rowgroup ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Rowgroup_Role)
-- [ARIA: gridcell ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Gridcell_role)
+- [ARIA row ロール](/ja/docs/Web/Accessibility/ARIA/Roles/row_role)
+- [ARIA rowgroup ロール](/ja/docs/Web/Accessibility/ARIA/Roles/rowgroup_role)
+- [ARIA: gridcell ロール](/ja/docs/Web/Accessibility/ARIA/Roles/gridcell_role)
 - [ARIA: rowheader ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Rowheader_Role)
 - [ARIA: columnheader ロール](/ja/docs/Web/Accessibility/ARIA/Roles/Columnheader_Role)
 - [HTML の表要素](/ja/docs/Web/HTML/Element/table)

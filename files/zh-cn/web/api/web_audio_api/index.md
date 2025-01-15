@@ -29,7 +29,8 @@ Web Audio API 使用户可以在**音频上下文**（AudioContext）中进行�
 
 Web Audio API 也使我们能够控制音频的*空间化*。在基于*源 - 侦听器模型*的系统中，它允许控制*平移模型*和处理*距离引起的衰减*或移动源（移动侦听）引起的*多普勒效应*。
 
-> **备注：** 你可以阅读我们关于 Web Audio API 的文章来了解更多细节 [Web Audio API 背后的基本概念](/zh-CN/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API)。
+> [!NOTE]
+> 你可以阅读我们关于 Web Audio API 的文章来了解更多细节 [Web Audio API 背后的基本概念](/zh-CN/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API)。
 
 ## Web Audio API 接口
 
@@ -91,7 +92,7 @@ Web Audio API 使用的音频源接口。
 - {{domxref("AudioDestinationNode")}}
   - : **`AudioDestinationNode`** 定义了最后音频要输出到哪里，通常是输出到你的扬声器。
 - {{domxref("MediaStreamAudioDestinationNode")}}
-  - : **`MediaStreamAudioDestinationNode`** 定义了使用 [WebRTC](/zh-CN/docs/WebRTC) 的{{domxref("MediaStream")}}（只包含单个 AudioMediaStreamTrack）应该连接的目的地，AudioMediaStreamTrack 的使用方式和从{{ domxref("MediaDevices.getUserMedia", "getUserMedia()") }}中得到{{domxref("MediaStream")}}相似。这个接口是{{domxref("AudioNode")}}类型的音频目的地。
+  - : **`MediaStreamAudioDestinationNode`** 定义了使用 [WebRTC](/zh-CN/docs/Web/API/WebRTC_API) 的{{domxref("MediaStream")}}（只包含单个 AudioMediaStreamTrack）应该连接的目的地，AudioMediaStreamTrack 的使用方式和从{{ domxref("MediaDevices.getUserMedia", "getUserMedia()") }}中得到{{domxref("MediaStream")}}相似。这个接口是{{domxref("AudioNode")}}类型的音频目的地。
 
 ### 数据分析和可视化
 
@@ -122,7 +123,8 @@ Web Audio API 使用的音频源接口。
 
 可以编写 JavaScript 代码来处理音频数据。当然，这需要用到下面的接口和事件。
 
-> **备注：** 这些功能在 Web Audio API 的 2014 年 8 月 9 日版本中已经标记为不推荐的，这些功能很快会被[Audio_Workers](#audio_workers)代替。
+> [!NOTE]
+> 这些功能在 Web Audio API 的 2014 年 8 月 9 日版本中已经标记为不推荐的，这些功能很快会被[Audio_Workers](#audio_workers)代替。
 
 - {{domxref("ScriptProcessorNode")}}
   - : **`ScriptProcessorNode`** 接口用于通过 JavaScript 代码生成，处理，分析音频。它是一个{{domxref("AudioNode")}}类型的音频处理模块，但是它与两个缓冲区相连接，一个缓冲区里包含当前的输入数据，另一个缓冲区里包含着输出数据。每当新的音频数据被放入输入缓冲区，就会产生一个{{domxref("AudioProcessingEvent")}}事件，当这个事件处理结束时，输出缓冲区里应该写好了新数据。
@@ -144,7 +146,7 @@ Web Audio API 使用的音频源接口。
 
 ### 音频工作者
 
-在了解这一部分内容之前，你可以先了解一个新的 WebWorker 方面的内容。音频工作者提供了一种可以在一个[WebWorker](/zh-CN/docs/Web/API/Web_Workers_API/Using_web_workers)上下文中直接进行音频处理的方式。现在已经定义了一些这部分功能的新接口，接口定义是在 2014 年的 8 月 29 日文档中。到目前为止，还没有浏览器已经对这些接口进行了实现。当这些接口被实现后，{{domxref("ScriptProcessorNode")}}和[前文](/zh-CN/docs/Web/API/Web_Audio_API#Audio_processing_via_JavaScript)中提到的其他接口都会被替代。
+在了解这一部分内容之前，你可以先了解一个新的 WebWorker 方面的内容。音频工作者提供了一种可以在一个[WebWorker](/zh-CN/docs/Web/API/Web_Workers_API/Using_web_workers)上下文中直接进行音频处理的方式。现在已经定义了一些这部分功能的新接口，接口定义是在 2014 年的 8 月 29 日文档中。到目前为止，还没有浏览器已经对这些接口进行了实现。当这些接口被实现后，{{domxref("ScriptProcessorNode")}}和[前文](#Audio_processing_via_JavaScript)中提到的其他接口都会被替代。
 
 - {{domxref("AudioWorkerNode")}}
   - : AudioWorkerNode 也是{{domxref("AudioNode")}}类型，但是它用于与工作者线程合作来直接完成音频的生成，处理或分析等操作。
@@ -174,7 +176,7 @@ var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); // defi
 
 var voiceSelect = document.getElementById("voice"); // select box for selecting voice effect options
 var visualSelect = document.getElementById("visual"); // select box for selecting audio visualization options
-var mute = document.querySelector('.mute'); // mute button
+var mute = document.querySelector(".mute"); // mute button
 var drawVisual; // requestAnimationFrame
 
 var analyser = audioCtx.createAnalyser();
@@ -182,28 +184,29 @@ var distortion = audioCtx.createWaveShaper();
 var gainNode = audioCtx.createGain();
 var biquadFilter = audioCtx.createBiquadFilter();
 
-function makeDistortionCurve(amount) { // function to make curve shape for distortion/wave shaper node to use
-  var k = typeof amount === 'number' ? amount : 50,
+function makeDistortionCurve(amount) {
+  // function to make curve shape for distortion/wave shaper node to use
+  var k = typeof amount === "number" ? amount : 50,
     n_samples = 44100,
     curve = new Float32Array(n_samples),
     deg = Math.PI / 180,
     i = 0,
     x;
-  for ( ; i < n_samples; ++i ) {
-    x = i * 2 / n_samples - 1;
-    curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
+  for (; i < n_samples; ++i) {
+    x = (i * 2) / n_samples - 1;
+    curve[i] = ((3 + k) * x * 20 * deg) / (Math.PI + k * Math.abs(x));
   }
   return curve;
-};
+}
 
-navigator.getUserMedia (
+navigator.getUserMedia(
   // constraints - only audio needed for this app
   {
-    audio: true
+    audio: true,
   },
 
   // Success callback
-  function(stream) {
+  function (stream) {
     source = audioCtx.createMediaStreamSource(stream);
     source.connect(analyser);
     analyser.connect(distortion);
@@ -213,13 +216,12 @@ navigator.getUserMedia (
 
     visualize(stream);
     voiceChange();
-
   },
 
   // Error callback
-  function(err) {
-    console.log('The following gUM error occured: ' + err);
-  }
+  function (err) {
+    console.log("The following gUM error occured: " + err);
+  },
 );
 
 function visualize(stream) {
@@ -229,7 +231,7 @@ function visualize(stream) {
   var visualSetting = visualSelect.value;
   console.log(visualSetting);
 
-  if(visualSetting == "sinewave") {
+  if (visualSetting == "sinewave") {
     analyser.fftSize = 2048;
     var bufferLength = analyser.frequencyBinCount; // half the FFT value
     var dataArray = new Uint8Array(bufferLength); // create an array to store the data
@@ -237,28 +239,26 @@ function visualize(stream) {
     canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
     function draw() {
-
       drawVisual = requestAnimationFrame(draw);
 
       analyser.getByteTimeDomainData(dataArray); // get waveform data and put it into the array created above
 
-      canvasCtx.fillStyle = 'rgb(200, 200, 200)'; // draw wave with canvas
+      canvasCtx.fillStyle = "rgb(200, 200, 200)"; // draw wave with canvas
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
       canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+      canvasCtx.strokeStyle = "rgb(0, 0, 0)";
 
       canvasCtx.beginPath();
 
-      var sliceWidth = WIDTH * 1.0 / bufferLength;
+      var sliceWidth = (WIDTH * 1.0) / bufferLength;
       var x = 0;
 
-      for(var i = 0; i < bufferLength; i++) {
-
+      for (var i = 0; i < bufferLength; i++) {
         var v = dataArray[i] / 128.0;
-        var y = v * HEIGHT/2;
+        var y = (v * HEIGHT) / 2;
 
-        if(i === 0) {
+        if (i === 0) {
           canvasCtx.moveTo(x, y);
         } else {
           canvasCtx.lineTo(x, y);
@@ -267,54 +267,52 @@ function visualize(stream) {
         x += sliceWidth;
       }
 
-      canvasCtx.lineTo(canvas.width, canvas.height/2);
+      canvasCtx.lineTo(canvas.width, canvas.height / 2);
       canvasCtx.stroke();
-    };
+    }
 
     draw();
-
-  } else if(visualSetting == "off") {
+  } else if (visualSetting == "off") {
     canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
     canvasCtx.fillStyle = "red";
     canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
   }
-
 }
 
 function voiceChange() {
-  distortion.curve = new Float32Array;
+  distortion.curve = new Float32Array();
   biquadFilter.gain.value = 0; // reset the effects each time the voiceChange function is run
 
   var voiceSetting = voiceSelect.value;
   console.log(voiceSetting);
 
-  if(voiceSetting == "distortion") {
+  if (voiceSetting == "distortion") {
     distortion.curve = makeDistortionCurve(400); // apply distortion to sound using waveshaper node
-  } else if(voiceSetting == "biquad") {
+  } else if (voiceSetting == "biquad") {
     biquadFilter.type = "lowshelf";
     biquadFilter.frequency.value = 1000;
     biquadFilter.gain.value = 25; // apply lowshelf filter to sounds using biquad
-  } else if(voiceSetting == "off") {
+  } else if (voiceSetting == "off") {
     console.log("Voice settings turned off"); // do nothing, as off option was chosen
   }
-
 }
 
 // event listeners to change visualize and voice settings
 
-visualSelect.onchange = function() {
+visualSelect.onchange = function () {
   window.cancelAnimationFrame(drawVisual);
   visualize(stream);
-}
+};
 
-voiceSelect.onchange = function() {
+voiceSelect.onchange = function () {
   voiceChange();
-}
+};
 
 mute.onclick = voiceMute;
 
-function voiceMute() { // toggle to mute and unmute sound
-  if(mute.id == "") {
+function voiceMute() {
+  // toggle to mute and unmute sound
+  if (mute.id == "") {
     gainNode.gain.value = 0; // gain set to 0 to mute sound
     mute.id = "activated";
     mute.innerHTML = "Unmute";
@@ -338,11 +336,11 @@ function voiceMute() { // toggle to mute and unmute sound
 
 - [Using the Web Audio API](/zh-CN/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Visualizations with Web Audio API](/zh-CN/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
-- [Voice-change-O-matic example](http://mdn.github.io/voice-change-o-matic/)
-- [Violent Theremin example](http://mdn.github.io/violent-theremin/)
-- [Web audio spatialisation basics](/zh-CN/docs/Web/API/Web_Audio_API/Web_audio_spatialisation_basics)
-- [Mixing Positional Audio and WebGL](http://www.html5rocks.com/tutorials/webaudio/positional_audio/)
-- [Developing Game Audio with the Web Audio API](http://www.html5rocks.com/tutorials/webaudio/games/)
-- [Porting webkitAudioContext code to standards based AudioContext](/zh-CN/docs/Web/API/Web_Audio_API/Porting_webkitAudioContext_code_to_standards_based_AudioContext)
+- [Voice-change-O-matic example](https://mdn.github.io/voice-change-o-matic/)
+- [Violent Theremin example](https://mdn.github.io/violent-theremin/)
+- [Web audio spatialisation basics](/zh-CN/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [Mixing Positional Audio and WebGL](https://www.html5rocks.com/tutorials/webaudio/positional_audio/)
+- [Developing Game Audio with the Web Audio API](https://www.html5rocks.com/tutorials/webaudio/games/)
+- [Porting webkitAudioContext code to standards based AudioContext](/zh-CN/docs/Web/API/Web_Audio_API)
 - [Tones](https://github.com/bit101/tones): a simple library for playing specific tones/notes using the Web Audio API.
-- [howler.js](https://github.com/goldfire/howler.js/): a JS audio library that defaults to [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) and falls back to [HTML5 Audio](http://www.whatwg.org/specs/web-apps/current-work/#the-audio-element), as well as providing other useful features.
+- [howler.js](https://github.com/goldfire/howler.js/): a JS audio library that defaults to [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) and falls back to [HTML5 Audio](https://www.whatwg.org/specs/web-apps/current-work/#the-audio-element), as well as providing other useful features.

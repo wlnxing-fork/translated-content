@@ -20,18 +20,19 @@ x - y
 ### Subtração com números
 
 ```js
-5 - 3     // 2
-3 - 5     // -2
+5 - 3; // 2
+3 - 5; // -2
 ```
 
 ### Subtração com strings
 
-> **Warning:** Note que o JavaScript sempre tentará converter uma String em numero número
+> [!WARNING]
+> Note que o JavaScript sempre tentará converter uma String em numero número
 
 ```js
-'foo' - 3 // NaN
-'5' - 1   // 4
-'10' - 5  // 5 
+"foo" - 3; // NaN
+"5" - 1; // 4
+"10" - 5; // 5
 ```
 
 ## Especificações

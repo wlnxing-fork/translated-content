@@ -3,7 +3,7 @@ title: ProgressEvent
 slug: Web/API/ProgressEvent
 ---
 
-{{APIRef("DOM Events")}}
+{{APIRef("XMLHttpRequest API")}}
 
 **`ProgressEvent`** 接口是测量如 HTTP 请求（一个`XMLHttpRequest`，或者一个 {{HTMLElement("img")}}，{{HTMLElement("audio")}}，{{HTMLElement("video")}}，{{HTMLElement("style")}} 或 {{HTMLElement("link")}} 等底层资源的加载）等底层流程进度的事件。
 
@@ -38,18 +38,18 @@ _同时继承它的父元素 {{domxref("Event")}} 的方法。_
 
 ```js
 var progressBar = document.getElementById("p"),
-    client = new XMLHttpRequest()
-client.open("GET", "magical-unicorns")
-client.onprogress = function(pe) {
-  if(pe.lengthComputable) {
-    progressBar.max = pe.total
-    progressBar.value = pe.loaded
+  client = new XMLHttpRequest();
+client.open("GET", "magical-unicorns");
+client.onprogress = function (pe) {
+  if (pe.lengthComputable) {
+    progressBar.max = pe.total;
+    progressBar.value = pe.loaded;
   }
-}
-client.onloadend = function(pe) {
-  progressBar.value = pe.loaded
-}
-client.send()
+};
+client.onloadend = function (pe) {
+  progressBar.value = pe.loaded;
+};
+client.send();
 ```
 
 ## 规范

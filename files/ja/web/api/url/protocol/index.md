@@ -1,40 +1,36 @@
 ---
-title: URL.protocol
+title: "URL: protocol プロパティ"
+short-title: protocol
 slug: Web/API/URL/protocol
+l10n:
+  sourceCommit: 4de6f76bbfd76229db78ffb7d52cf6b4cb9f31f8
 ---
 
-{{ApiRef("URL API")}}
+{{ApiRef("URL API")}} {{AvailableInWorkers}}
 
-{{domxref("URL")}} インターフェイスの **`protocol`** プロパティは、最後の `':'` を含む URL のプロトコルスキームを表す {{domxref("USVString")}} です。
+**`protocol`** は {{domxref("URL")}} インターフェイスのプロパティで、最後の `':'` を含む URL のプロトコルスキームを表す文字列です。
 
-{{AvailableInWorkers}}
+## 値
 
-## 構文
-
-```
-string = object.protocol;
-object.protocol = string;
-```
-
-### 値
-
-{{domxref("USVString")}}。
+文字列です。
 
 ## 例
 
 ```js
-var url = new URL('https://developer.mozilla.org/en-US/docs/Web/API/URL/protocol');
-var result = url.protocol; // 戻り値: "https:"
+const url = new URL(
+  "https://developer.mozilla.org/ja/docs/Web/API/URL/protocol",
+);
+console.log(url.protocol); // "https:" とログ出力
 ```
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
 ## ブラウザーの互換性
 
-{{Compat("api.URL.protocol")}}
+{{Compat}}
 
 ## 関連情報
 
-- {{domxref("URL")}} インターフェイスに属します。
+- 所属先の {{domxref("URL")}} インターフェイス

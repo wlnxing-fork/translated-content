@@ -1,12 +1,13 @@
 ---
-title: '-moz-user-input'
+title: "-moz-user-input"
 slug: Web/CSS/-moz-user-input
 ---
+
 {{Non-standard_header}}{{CSSRef}}
 
 ## Resumen
 
-En las aplicaciones Mozilla , `-moz-user-input` determina si un elemento aceptará entrada por parte del usuario. `user-focus`, una propiedad similar fue propuesta en [primeros borradores de un predecesor de la especificación CSS3 UI](http://www.w3.org/TR/2000/WD-css3-userint-20000216) pero fue rechazada posteriormente por el grupo de trabajo..
+En las aplicaciones Mozilla , `-moz-user-input` determina si un elemento aceptará entrada por parte del usuario. `user-focus`, una propiedad similar fue propuesta en [primeros borradores de un predecesor de la especificación CSS3 UI](https://www.w3.org/TR/2000/WD-css3-userint-20000216) pero fue rechazada posteriormente por el grupo de trabajo..
 
 {{cssinfo}}
 

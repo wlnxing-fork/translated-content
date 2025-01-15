@@ -66,7 +66,9 @@ const z = new BigUint64Array(buffer, 8, 4);
 console.log(z.byteOffset); // 8
 
 // 순회로부터 생성
-const iterable = function*() { yield* [1n, 2n, 3n]; }();
+const iterable = (function* () {
+  yield* [1n, 2n, 3n];
+})();
 const biguint64FromIterable = new BigUint64Array(iterable);
 console.log(biguint64FromIterable);
 // BigUint64Array [1n, 2n, 3n]
@@ -82,6 +84,6 @@ console.log(biguint64FromIterable);
 
 ## 같이 보기
 
-- [JavaScript 형식화 배열](/ko/docs/Web/JavaScript/Typed_arrays)
+- [JavaScript 형식화 배열](/ko/docs/Web/JavaScript/Guide/Typed_arrays)
 - {{jsxref("BigInt64Array")}}
 - {{jsxref("DataView")}}

@@ -35,9 +35,9 @@ var myHeaders = new Headers(); // Currently empty
 你可以使用 {{domxref("Headers.append")}} 来向 myHeaders 添加一个头信息，然后使用 `has()` 方法来测试是否添加成功：
 
 ```js
-myHeaders.append('Content-Type', 'image/jpeg');
-myHeaders.has('Content-Type'); // Returns true
-myHeaders.has('Accept-Encoding'); // Returns false
+myHeaders.append("Content-Type", "image/jpeg");
+myHeaders.has("Content-Type"); // Returns true
+myHeaders.has("Accept-Encoding"); // Returns false
 ```
 
 ## Specifications
@@ -50,6 +50,6 @@ myHeaders.has('Accept-Encoding'); // Returns false
 
 ## See also
 
-- [ServiceWorker API](/zh-CN/docs/Web/API/ServiceWorker_API)
-- [HTTP access control (CORS)](/zh-CN/docs/Web/HTTP/Access_control_CORS)
+- [ServiceWorker API](/zh-CN/docs/Web/API/Service_Worker_API)
+- [HTTP access control (CORS)](/zh-CN/docs/Web/HTTP/CORS)
 - [HTTP](/zh-CN/docs/Web/HTTP)

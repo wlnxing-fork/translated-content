@@ -1,10 +1,8 @@
 ---
 title: column-rule-color
 slug: Web/CSS/column-rule-color
-tags:
-  - мультиколоночная вёрстка
-translation_of: Web/CSS/column-rule-color
 ---
+
 {{CSSRef}}
 
 [CSS](/ru/docs/Web/CSS) свойство **`column-rule-color`** устанавливает цвет линии, расположенной между колонками при мультиколоночной вёрстке.
@@ -42,10 +40,11 @@ column-rule-color: unset;
 ### HTML
 
 ```html
-<p>This is a bunch of text split into three columns.
-   The `column-rule-color` property is used to change
-   the color of the line that is drawn between columns.
-   Don't you think that's wonderful?</p>
+<p>
+  This is a bunch of text split into three columns. The `column-rule-color`
+  property is used to change the color of the line that is drawn between
+  columns. Don't you think that's wonderful?
+</p>
 ```
 
 ### CSS
@@ -68,7 +67,7 @@ p {
 
 {{cssinfo}}
 
-## Поддержка браузерами
+## Совместимость с браузерами
 
 {{Compat}}
 
@@ -76,4 +75,4 @@ p {
 
 - The {{cssxref("&lt;color&gt;")}} data type
 - Other color-related properties: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, and {{cssxref("caret-color")}}
-- [Applying color to HTML elements using CSS](/ru/docs/Web/HTML/Applying_color)
+- [Applying color to HTML elements using CSS](/ru/docs/Web/CSS/CSS_colors/Applying_color)

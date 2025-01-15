@@ -9,7 +9,8 @@ slug: Web/JavaScript/Reference/Statements/label
 
 {{EmbedInteractiveExample("pages/js/statement-label.html")}}
 
-> **備註：** 標記的迴圈或程式碼區塊非常罕見。通常可以使用函式呼叫而不是使用迴圈跳轉。
+> [!NOTE]
+> 標記的迴圈或程式碼區塊非常罕見。通常可以使用函式呼叫而不是使用迴圈跳轉。
 
 ## 語法
 
@@ -29,7 +30,7 @@ label :
 
 需要注意的是 JavaScript **沒有** `goto` 陳述式，標記只能和 `break` 或 `continue` 一起使用。
 
-在[嚴格模式](/zh-TW/docs/Web/JavaScript/Reference/Strict_mode)中，你不能使用 “`let`” 作為標籤名稱。它會拋出一個[`SyntaxError`](/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError)（let 是一個保留的識別符號）。
+在[嚴格模式](/zh-TW/docs/Web/JavaScript/Reference/Strict_mode)中，你不能使用 「`let`」 作為標籤名稱。它會拋出一個[`SyntaxError`](/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError)（let 是一個保留的識別符號）。
 
 ## 範例
 
@@ -38,15 +39,15 @@ label :
 ```js
 var i, j;
 
-loop1:
-for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
-   loop2:
-   for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
-      if (i === 1 && j === 1) {
-         continue loop1;
-      }
-      console.log('i = ' + i + ', j = ' + j);
-   }
+loop1: for (i = 0; i < 3; i++) {
+  //The first for statement is labeled "loop1"
+  loop2: for (j = 0; j < 3; j++) {
+    //The second for statement is labeled "loop2"
+    if (i === 1 && j === 1) {
+      continue loop1;
+    }
+    console.log("i = " + i + ", j = " + j);
+  }
 }
 
 // Output is:
@@ -68,8 +69,7 @@ for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
 var itemsPassed = 0;
 var i, j;
 
-top:
-for (i = 0; i < items.length; i++) {
+top: for (i = 0; i < items.length; i++) {
   for (j = 0; j < tests.length; j++) {
     if (!tests[j].pass(items[i])) {
       continue top;
@@ -85,15 +85,15 @@ for (i = 0; i < items.length; i++) {
 ```js
 var i, j;
 
-loop1:
-for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
-   loop2:
-   for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
-      if (i === 1 && j === 1) {
-         break loop1;
-      }
-      console.log('i = ' + i + ', j = ' + j);
-   }
+loop1: for (i = 0; i < 3; i++) {
+  //The first for statement is labeled "loop1"
+  loop2: for (j = 0; j < 3; j++) {
+    //The second for statement is labeled "loop2"
+    if (i === 1 && j === 1) {
+      break loop1;
+    }
+    console.log("i = " + i + ", j = " + j);
+  }
 }
 
 // Output is:
@@ -112,8 +112,7 @@ for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
 var allPass = true;
 var i, j;
 
-top:
-for (i = 0; items.length; i++)
+top: for (i = 0; items.length; i++)
   for (j = 0; j < tests.length; i++)
     if (!tests[j].pass(items[i])) {
       allPass = false;
@@ -127,11 +126,11 @@ for (i = 0; items.length; i++)
 
 ```js
 foo: {
-  console.log('face');
+  console.log("face");
   break foo;
-  console.log('this will not be executed');
+  console.log("this will not be executed");
 }
-console.log('swap');
+console.log("swap");
 
 // this will log:
 
@@ -141,7 +140,7 @@ console.log('swap');
 
 ### 標記的函式宣告式
 
-從 ECMAScript 2015 開始，標準的函式宣告式現在對規範的 [Web 相容性附件](http://www.ecma-international.org/ecma-262/6.0/#sec-labelled-function-declarations)中的非嚴格程式碼進行了標準化。
+從 ECMAScript 2015 開始，標準的函式宣告式現在對規範的 [Web 相容性附件](https://262.ecma-international.org/6.0/#sec-labelled-function-declarations)中的非嚴格程式碼進行了標準化。
 
 ```js
 L: function F() {}
@@ -150,7 +149,7 @@ L: function F() {}
 在[嚴格模式](/zh-TW/docs/Web/JavaScript/Reference/Strict_mode)中，這會拋出 {{jsxref("SyntaxError")}} 例外：
 
 ```js
-'use strict';
+"use strict";
 L: function F() {}
 // SyntaxError: functions cannot be labelled
 ```

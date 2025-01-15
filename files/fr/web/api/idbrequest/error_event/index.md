@@ -1,15 +1,13 @@
 ---
 title: IDBRequest.onerror
 slug: Web/API/IDBRequest/error_event
-translation_of: Web/API/IDBRequest/onerror
-original_slug: Web/API/IDBRequest/onerror
 ---
 
 {{ APIRef("IndexedDB") }}
 
-le gestionnaire d'événement **`onerror`** de l'interface {{domxref("IDBRequest")}} capte l'événement [`error`](/fr/docs/Web/Events/error), déclenché quand une requête renvoie une erreur.
+le gestionnaire d'événement **`onerror`** de l'interface {{domxref("IDBRequest")}} capte l'événement [`error`](/fr/docs/Web/API/HTMLElement/error_event), déclenché quand une requête renvoie une erreur.
 
-Le gestionnaire d'événement reçoit l'événement [error](/fr/docs/Web/Events/error) avec le type="error" en paramètre.
+Le gestionnaire d'événement reçoit l'événement [error](/fr/docs/Web/API/HTMLElement/error_event) avec le type="error" en paramètre.
 
 {{AvailableInWorkers}}
 
@@ -27,12 +25,14 @@ L'exemple suivant demande un titre d'enregistrement donné, `onsuccess` obtient 
 var title = "Walk dog";
 
 // Ouvrez une transaction comme d'habitude
-var objectStore = db.transaction(['toDoList'], "readwrite").objectStore('toDoList');
+var objectStore = db
+  .transaction(["toDoList"], "readwrite")
+  .objectStore("toDoList");
 
 // Obtenez l'objet toDoList qui a ce titre
 var objectStoreTitleRequest = objectStore.get(title);
 
-objectStoreTitleRequest.onsuccess = function() {
+objectStoreTitleRequest.onsuccess = function () {
   // Prenez l'objet de données renvoyé comme résultat
   var data = objectStoreTitleRequest.result;
 
@@ -43,14 +43,17 @@ objectStoreTitleRequest.onsuccess = function() {
   var updateTitleRequest = objectStore.put(data);
 
   // Lorsque cette requête réussit, appelle de la fonction displayData() pour mettre à jour l'affichage
-  updateTitleRequest.onsuccess = function() {
+  updateTitleRequest.onsuccess = function () {
     displayData();
   };
 };
 
-objectStoreTitleRequest.onerror = function() {
+objectStoreTitleRequest.onerror = function () {
   // Si une erreur se produit à la demande, on l'affiche
-  console.log("Il y a eu une erreur dans la récupération des données: " + objectStoreTitleRequest.error);
+  console.log(
+    "Il y a eu une erreur dans la récupération des données: " +
+      objectStoreTitleRequest.error,
+  );
 };
 ```
 
@@ -65,7 +68,7 @@ objectStoreTitleRequest.onerror = function() {
 ## Voir aussi
 
 - [Using IndexedDB](/fr/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- [Error Event](/fr/docs/Web/Events/error)
+- [Error Event](/fr/docs/Web/API/HTMLElement/error_event)
 - Starting transactions: {{domxref("IDBDatabase")}}
 - Using transactions: {{domxref("IDBTransaction")}}
 - Setting a range of keys: {{domxref("IDBKeyRange")}}

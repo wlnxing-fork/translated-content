@@ -1,26 +1,18 @@
 ---
 title: Reflect.has()
 slug: Web/JavaScript/Reference/Global_Objects/Reflect/has
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Méthode
-  - Reference
-  - Reflect
-translation_of: Web/JavaScript/Reference/Global_Objects/Reflect/has
-original_slug: Web/JavaScript/Reference/Objets_globaux/Reflect/has
 ---
 
 {{JSRef}}
 
-La méthode statique **`Reflect.has()`** fonctionne comme [l'opérateur `in`](/fr/docs/Web/JavaScript/Reference/Opérateurs/L_opérateur_in) mais sous forme d'une fonction.
+La méthode statique **`Reflect.has()`** fonctionne comme [l'opérateur `in`](/fr/docs/Web/JavaScript/Reference/Operators/in) mais sous forme d'une fonction.
 
 {{EmbedInteractiveExample("pages/js/reflect-has.html")}}
 
 ## Syntaxe
 
 ```js
-Reflect.has(cible, cléPropriété)
+Reflect.has(cible, cléPropriété);
 ```
 
 ### Paramètres
@@ -40,24 +32,29 @@ Une erreur {{jsxref("TypeError")}} si `cible` n'est pas un {{jsxref("Object")}}.
 
 ## Description
 
-La méthode `Reflect.has` vous permet de vérifier si une propriété est présente sur un objet. C'est une fonction qui agit comme l'opérateur [`in`](/fr/docs/Web/JavaScript/Reference/Opérateurs/L_opérateur_in).
+La méthode `Reflect.has` vous permet de vérifier si une propriété est présente sur un objet. C'est une fonction qui agit comme l'opérateur [`in`](/fr/docs/Web/JavaScript/Reference/Operators/in).
 
 ## Exemples
 
 ```js
-Reflect.has({x: 0}, "x"); // true
-Reflect.has({x: 0}, "y"); // false
+Reflect.has({ x: 0 }, "x"); // true
+Reflect.has({ x: 0 }, "y"); // false
 
 // renvoie true pour les propriétés présentes
 // grâce à la chaîne de prototypes
-Reflect.has({x: 0}, "toString");
+Reflect.has({ x: 0 }, "toString");
 
 // Proxy avec la méthode .has()
-obj = new Proxy({}, {
-  has(t, k) { return k.startsWith("bou"); }
-});
+obj = new Proxy(
+  {},
+  {
+    has(t, k) {
+      return k.startsWith("bou");
+    },
+  },
+);
 Reflect.has(obj, "bouchon"); // true
-Reflect.has(obj, "bonbon");  // false
+Reflect.has(obj, "bonbon"); // false
 ```
 
 ## Spécifications
@@ -71,4 +68,4 @@ Reflect.has(obj, "bonbon");  // false
 ## Voir aussi
 
 - {{jsxref("Reflect")}}
-- [Opérateur `in`](/fr/docs/Web/JavaScript/Reference/Opérateurs/L_opérateur_in)
+- [Opérateur `in`](/fr/docs/Web/JavaScript/Reference/Operators/in)

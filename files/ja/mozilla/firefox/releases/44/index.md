@@ -23,7 +23,7 @@ l10n:
 
 ### HTML
 
-- [`<link rel="prefetch">`](/ja/docs/Web/HTTP/Link_prefetching_FAQ) が、{{htmlattrxref("crossorigin", "link")}} 属性に従うようになりました ([Firefox バグ 1214819](https://bugzil.la/1214819))。
+- [`<link rel="prefetch">`](/ja/docs/Glossary/Prefetch) が、[`crossorigin`](/ja/docs/Web/HTML/Element/link#crossorigin) 属性に従うようになりました ([Firefox バグ 1214819](https://bugzil.la/1214819))。
 
 ### CSS
 
@@ -85,7 +85,7 @@ l10n:
 #### 変更点
 
 - グローバルレベルにおける [`let`](/ja/docs/Web/JavaScript/Reference/Statements/let) および [`const`](/ja/docs/Web/JavaScript/Reference/Statements/const) のバインディングを、ES2015 に準拠させました。[Firefox バグ 589199](https://bugzil.la/589199) およびブログ記事 ["Breaking changes in let and const in Firefox Nightly 44"](https://blog.mozilla.org/addons/2015/10/14/breaking-changes-let-const-firefox-nightly-44/) をご覧ください。また、`let` が既定でウェブ JavaScript （厳格モードおよび非厳格モード）で使用できるようになり、バージョンのオプトインが不要になりました ([Firefox バグ 932517](https://bugzil.la/932517))。
-- [型付き配列](/ja/docs/Web/JavaScript/Typed_arrays) ({{jsxref("Int8Array", "Int8Array")}} や {{jsxref("ArrayBuffer", "ArrayBuffer")}} など) のコンストラクターを {{jsxref("Operators/new", "new")}} 演算子をつけずに関数として呼び出した場合に、ES6 仕様に従って {{jsxref("TypeError")}} が発生するようになりました ([Firefox バグ 980945](https://bugzil.la/980945)、[Firefox バグ 1214936](https://bugzil.la/1214936))。
+- [型付き配列](/ja/docs/Web/JavaScript/Guide/Typed_arrays) ({{jsxref("Int8Array", "Int8Array")}} や {{jsxref("ArrayBuffer", "ArrayBuffer")}} など) のコンストラクターを {{jsxref("Operators/new", "new")}} 演算子をつけずに関数として呼び出した場合に、ES6 仕様に従って {{jsxref("TypeError")}} が発生するようになりました ([Firefox バグ 980945](https://bugzil.la/980945)、[Firefox バグ 1214936](https://bugzil.la/1214936))。
 - {{jsxref("RegExp")}} のスティッキーフラグが、ES2015 標準の [anchored sticky regular expressions](/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky#anchored_sticky_flag) に従うようになりました ([Firefox バグ 773687](https://bugzil.la/773687))。
 - JavaScript シェル (SpiderMonkey の REPL) の既定 JS バージョンが、ウェブ互換の JS バージョンになりました (JS1.7 以降ではありません) ([Firefox バグ 1192329](https://bugzil.la/1192329))。
 
@@ -130,7 +130,7 @@ l10n:
 #### サービスワーカー
 
 - `ServiceWorkerMessageEvent` および {{domxref("ExtendableMessageEvent")}} インターフェイスを実装しました ([Firefox バグ 1143717](https://bugzil.la/1143717) および [Firefox バグ 1207068](https://bugzil.la/1207068))。
-- {{domxref("Headers")}} オブジェクトがペア反復子に対応しました。すなわち、 {{domxref("Headers.entries()")}}, {{domxref("Headers.keys()")}}, {{domxref("Headers.values()")}} の各メソッドが利用できるようになりました。 {{jsxref("Symbol.iterator")}} も既定の反復子を返すようになりました ([Firefox バグ 1108181](https://bugzil.la/1108181))。
+- {{domxref("Headers")}} オブジェクトが組イテレーターに対応しました。すなわち、 {{domxref("Headers.entries()")}}, {{domxref("Headers.keys()")}}, {{domxref("Headers.values()")}} の各メソッドが利用できるようになりました。 {{jsxref("Symbol.iterator")}} も既定のイテレーターを返すようになりました ([Firefox バグ 1108181](https://bugzil.la/1108181))。
 - {{domxref('XMLHttpRequest')}} API がサービスワーカーで無効化されました ([Firefox バグ 931243](https://bugzil.la/931243))。
 - {{domxref("FetchEvent")}} インターフェイスが {{domxref("ExtendableEvent")}} を継承するようになり、 {{domxref("ExtendableEvent.waitUntil()")}} メソッドにアクセスできるようになりました ([Firefox バグ 1214772](https://bugzil.la/1214772))。
 - 仕様書の最新の変更に従い、 `FetchEvent.client` が削除されました ([Firefox バグ 1218135](https://bugzil.la/1218135))。
@@ -152,7 +152,7 @@ l10n:
 - {{domxref("RTCDataChannel.bufferedAmountLowThreshold")}} プロパティおよび {{domxref("RTCDataChannel.bufferedamountlow_event", "bufferedamountlow")}} イベントを実装しました ([Firefox バグ 1178091](https://bugzil.la/1178091))。
 - {{domxref("RTCPeerConnection.canTrickleIceCandidates")}} 属性を追加して、非標準メソッド {{domxref("RTCPeerConnection.updateIce()")}} を削除しました ([Firefox バグ 1209744](https://bugzil.la/1209744))。
 - {{domxref("MediaStream")}} インターフェイスで {{domxref("MediaStream.addTrack()")}} および {{domxref("MediaStream.removeTrack()")}} メソッドに対応しました ([Firefox バグ 1103188](https://bugzil.la/1103188))。
-- {{domxref("MediaStream.MediaStream", "MediaStream()")}} コンストラクタを実装しました ([Firefox バグ 1070216](https://bugzil.la/1070216))。
+- {{domxref("MediaStream.MediaStream", "MediaStream()")}} コンストラクターを実装しました ([Firefox バグ 1070216](https://bugzil.la/1070216))。
 - {{domxref("RTCOfferOptions")}} の、非標準である制約的なオプションリストの対応を廃止しました。
 
 #### 新規 API
@@ -162,8 +162,8 @@ l10n:
 
 #### その他
 
-- {{domxref("URLSearchParams")}} オブジェクトでペア反復子に対応しました。{{domxref("URLSearchParams.entries()")}}、{{domxref("URLSearchParams.keys()")}}、{{domxref("URLSearchParams.values()")}} の各メソッドを使用できます。また {{jsxref("Symbol.iterator")}} は、既定の反復子を返すようになりました ([Firefox バグ 1085284](https://bugzil.la/1085284))。
-- {{domxref("FormData")}} オブジェクトでペア反復子に対応しました。{{domxref("FormData.entries()")}}、{{domxref("FormData.keys")}}、{{domxref("FormData.values()")}} の各メソッドを使用できます。また {{jsxref("Symbol.iterator")}} は、既定の反復子を返すようになりました ([Firefox バグ 1127703](https://bugzil.la/1127703))。
+- {{domxref("URLSearchParams")}} オブジェクトで組イテレーターに対応しました。{{domxref("URLSearchParams.entries()")}}、{{domxref("URLSearchParams.keys()")}}、{{domxref("URLSearchParams.values()")}} の各メソッドを使用できます。また {{jsxref("Symbol.iterator")}} は、既定のイテレーターを返すようになりました ([Firefox バグ 1085284](https://bugzil.la/1085284))。
+- {{domxref("FormData")}} オブジェクトで組イテレーターに対応しました。{{domxref("FormData.entries()")}}、{{domxref("FormData.keys")}}、{{domxref("FormData.values()")}} の各メソッドを使用できます。また {{jsxref("Symbol.iterator")}} は、既定のイテレーターを返すようになりました ([Firefox バグ 1127703](https://bugzil.la/1127703))。
 - {{domxref("XMLHttpRequest.send()")}} を HTML 文書で使用したとき、`application/xml` に代わり `text/html` を使用するようになりました ([Firefox バグ 918771](https://bugzil.la/918771))。
 - 音声合成 (text-to-speech) を Mac および Linux 向けのデスクトップ版 Firefox に実装しました。ただし、`about:config` の `media.webspeech.synth.enabled` フラグで無効化しています ([Firefox バグ 1003452](https://bugzil.la/1003452)、[Firefox バグ 1003464](https://bugzil.la/1003464))。詳しくは [Web Speech API](/ja/docs/Web/API/Web_Speech_API) をご覧ください。
 - {{HTMLElement("frame")}} または {{HTMLElement('object')}} の内部にある要素は、全画面表示できないようになりました ([Firefox バグ 1212299](https://bugzil.la/1212299))。

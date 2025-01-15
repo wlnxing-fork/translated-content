@@ -20,9 +20,9 @@ A {{domxref("Boolean")}}; returns `true` if the {{domxref("document")}} currentl
 ## Examples
 
 ```js
-var mql = window.matchMedia('(max-width: 600px)');
+var mql = window.matchMedia("(max-width: 600px)");
 
-if(mql.matches) {
+if (mql.matches) {
   // media query test returning true
 }
 ```
@@ -37,8 +37,8 @@ if(mql.matches) {
 
 ## See also
 
-- [Media queries](/es/docs/CSS/Media_queries)
-- [Using media queries from code](/es/docs/CSS/Using_media_queries_from_code)
+- [Media queries](/es/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+- [Using media queries from code](/es/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
 - {{domxref("window.matchMedia()")}}
 - {{domxref("MediaQueryList")}}
 - {{domxref("MediaQueryListEvent")}}

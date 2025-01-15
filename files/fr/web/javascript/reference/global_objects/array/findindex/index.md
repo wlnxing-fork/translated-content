@@ -1,16 +1,6 @@
 ---
 title: Array.prototype.findIndex()
 slug: Web/JavaScript/Reference/Global_Objects/Array/findIndex
-tags:
-  - Array
-  - ECMAScript6
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-  - polyfill
-translation_of: Web/JavaScript/Reference/Global_Objects/Array/findIndex
-original_slug: Web/JavaScript/Reference/Objets_globaux/Array/findIndex
 ---
 
 {{JSRef}}
@@ -55,7 +45,7 @@ S'il existe un tel élément, `findIndex` renverra immédiatement l'index de l'�
 
 `callback` possède trois arguments : la valeur de l'élément, l'index de l'élément et l'objet Array qui est parcouru
 
-Si l'argument `argumentThis` est fourni à la méthode `findIndex`, il sera utilisé comme « contexte » [`this`](/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_this) pour chaque appel de `callback`. S'il n'est pas fourni, {{jsxref("undefined")}} sera utilisé.
+Si l'argument `argumentThis` est fourni à la méthode `findIndex`, il sera utilisé comme « contexte » [`this`](/fr/docs/Web/JavaScript/Reference/Operators/this) pour chaque appel de `callback`. S'il n'est pas fourni, {{jsxref("undefined")}} sera utilisé.
 
 `findIndex` ne modifie pas le tableau sur laquelle elle est appelée. Les éléments qui seront traités par `findIndex` sont « récoltés » avant le premier appel de `callback`. Tout élément qui sera ajouté au tableau après l'appel de `findIndex` ne sera pas utilisé avec `callback`. Si un élément existant, pas encore visité, est modifié par `callback`, la valeur qui sera passé au `callback` pour cet élément modifié sera celle que `findIndex` utilise lorsqu'elle utilise l'index de l'élément en question. Les éléments supprimés sont bien parcourus.
 
@@ -84,14 +74,14 @@ console.log([4, 6, 7, 12].findIndex(estPremier)); // 2
 
 ### Trouver un index avec une fonction fléchée
 
-Dans cet exemple, on utilise [une fonction fléchée](/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fléchées) pour trouver l'index d'un élément :
+Dans cet exemple, on utilise [une fonction fléchée](/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions) pour trouver l'index d'un élément :
 
 ```js
 const fruits = ["pomme", "banane", "melon", "fraise", "raisin"];
 
-const index = fruits.findIndex(fruit => fruit === "fraise");
+const index = fruits.findIndex((fruit) => fruit === "fraise");
 console.log(index); // 3
-console.log(fruits[index]); // fraise 
+console.log(fruits[index]); // fraise
 ```
 
 ## Prothèse d'émulation (_polyfill_)
@@ -99,9 +89,9 @@ console.log(fruits[index]); // fraise
 ```js
 // https://tc39.github.io/ecma262/#sec-array.prototype.findindex
 if (!Array.prototype.findIndex) {
-  Object.defineProperty(Array.prototype, 'findIndex', {
-    value: function(predicate) {
-     // 1. Let O be ? ToObject(this value).
+  Object.defineProperty(Array.prototype, "findIndex", {
+    value: function (predicate) {
+      // 1. Let O be ? ToObject(this value).
       if (this == null) {
         throw new TypeError('"this" is null or not defined');
       }
@@ -112,8 +102,8 @@ if (!Array.prototype.findIndex) {
       var len = o.length >>> 0;
 
       // 3. If IsCallable(predicate) is false, throw a TypeError exception.
-      if (typeof predicate !== 'function') {
-        throw new TypeError('predicate must be a function');
+      if (typeof predicate !== "function") {
+        throw new TypeError("predicate must be a function");
       }
 
       // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
@@ -140,7 +130,7 @@ if (!Array.prototype.findIndex) {
       return -1;
     },
     configurable: true,
-    writable: true
+    writable: true,
   });
 }
 ```

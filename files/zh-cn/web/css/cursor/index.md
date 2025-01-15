@@ -20,8 +20,12 @@ cursor: auto;
 cursor: url(hand.cur), pointer;
 
 /* URL 和 xy 的坐标偏移值，最后提供一个关键字值作为备用 */
-cursor:  url(cursor1.png) 4 12, auto;
-cursor:  url(cursor2.png) 2 2, pointer;
+cursor:
+  url(cursor1.png) 4 12,
+  auto;
+cursor:
+  url(cursor2.png) 2 2,
+  pointer;
 
 /* 全局属性 */
 cursor: inherit;
@@ -36,7 +40,10 @@ cursor 属性为零个或多个[\<url>](/zh-CN/docs/Web/CSS/cursor#%3Curl%3E)值
 例如，下面的例子使用\<url>值指定两个图像，为第二个图像提供\<x>\<y>坐标，如果两个图像都无法加载，则返回`progress`关键字值：
 
 ```css
-cursor: url(one.svg), url(two.svg) 5 5, progress;
+cursor:
+  url(one.svg),
+  url(two.svg) 5 5,
+  progress;
 ```
 
 ### 值
@@ -147,7 +154,7 @@ cursor: url(one.svg), url(two.svg) 5 5, progress;
           <td><code>no-drop</code></td>
           <td><img alt="no-drop.gif" class="lwrap" src="no-drop.gif" /></td>
           <td>
-            当前位置不能扔下<br />{{ bug("275173") }}Windows 或 Mac OS X 中
+            当前位置不能扔下<br /><a href="https://bugzil.la/275173">Firefox bug 275173</a>Windows 或 Mac OS X 中
             "no-drop 与 not-allowed 相同".
           </td>
         </tr>
@@ -174,7 +181,7 @@ cursor: url(one.svg), url(two.svg) 5 5, progress;
           <td><code>all-scroll</code></td>
           <td><img alt="all-scroll.gif" src="all-scroll.gif" /></td>
           <td>
-            元素可任意方向滚动（平移）.<br />{{ bug("275174") }}Windows
+            元素可任意方向滚动（平移）.<br /><a href="https://bugzil.la/275174">Firefox bug 275174</a>Windows
             中，"<em>all-scroll</em> 与 <em>move 相同</em>".
           </td>
         </tr>
@@ -308,7 +315,7 @@ cursor: url(one.svg), url(two.svg) 5 5, progress;
 
 ## 示例
 
-```
+```css
 .foo {
   cursor: crosshair;
 }
@@ -336,6 +343,6 @@ cursor: url(one.svg), url(two.svg) 5 5, progress;
 - [Using URL values for the cursor property](/zh-CN/docs/CSS/Using_URL_values_for_the_cursor_property)
 - {{ cssxref("pointer-events") }}
 - {{cssxref("url()", "url()")}} function
-- [Webkit's cursor demos](http://trac.webkit.org/export/37902/trunk/WebCore/manual-tests/cursor.html) (including the extended ones: `zoom`, `zoom-out`, `grab`, `grabbing`)
+- [Webkit's cursor demos](https://trac.webkit.org/export/37902/trunk/WebCore/manual-tests/cursor.html) (including the extended ones: `zoom`, `zoom-out`, `grab`, `grabbing`)
 - [Cursor Property (MSDN)](http://msdn.microsoft.com/en-us/library/aa358795.aspx)
 - [CSS 2.1 and CSS 3 cursor propery test](http://www.elektronotdienst-nuernberg.de/bugs/cursor.html)

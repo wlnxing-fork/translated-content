@@ -25,7 +25,7 @@ Firefox 59 以降、サービスワーカーが {{domxref("FetchEvent.respondWit
 
 たいていのネットワークリクエストに対して、最終 URL を観測できないためこの変更は影響ありません。しかし、少しだけ関係する場合があります。
 
-- {{domxref("fetch()")}} が介入された場合、結果の {{domxref("Response.url")}} で最終 URL を観測できます。
+- {{domxref("Window/fetch", "fetch()")}} が介入された場合、結果の {{domxref("Response.url")}} で最終 URL を観測できます。
 - [ワーカー](/ja/docs/Web/API/Web_Workers_API)スクリプトが介入された場合、最終 URL は [`self.location`](/ja/docs/Web/API/WorkerGlobalScope/location) をセットするのに使われ、ワーカースクリプトの相対 URL の代わりのベース URL として使われます。
 - スタイルシートが介入された場合、最終 URL は相対的な {{cssxref("@import")}} 読み込みの代わりのベース URL として使われます。
 
@@ -58,16 +58,18 @@ respondWith(response)
 この fetch イベントはキャッシュ API からのレスポンスを返そうとし、ない場合にはネットワークにフォールバックします。
 
 ```js
-addEventListener('fetch', (event) => {
+addEventListener("fetch", (event) => {
   // 既定の動作を抑止し、リクエストを自分で処理します。
-  event.respondWith((async () => {
-    // キャッシュからレスポンスを取得しようとします。
-    const cachedResponse = await caches.match(event.request);
-    // 見つかったらそれを返します。
-    if (cachedResponse) return cachedResponse;
-    // キャッシュ内に一致するものが見つからなかった場合は、ネットワークを使用します。
-    return fetch(event.request);
-  })());
+  event.respondWith(
+    (async () => {
+      // キャッシュからレスポンスを取得しようとします。
+      const cachedResponse = await caches.match(event.request);
+      // 見つかったらそれを返します。
+      if (cachedResponse) return cachedResponse;
+      // キャッシュ内に一致するものが見つからなかった場合は、ネットワークを使用します。
+      return fetch(event.request);
+    })(),
+  );
 });
 ```
 

@@ -1,8 +1,6 @@
 ---
 title: <header>
 slug: Web/HTML/Element/header
-translation_of: Web/HTML/Element/header
-browser-compat: html.elements.header
 ---
 
 {{HTMLSidebar}}
@@ -88,9 +86,13 @@ Cet élément ne possède que les [attributs universels](/fr/docs/Web/HTML/Globa
 ```html
 <header>
   <h1>Titre principal</h1>
-  <img src="mdn-logo-sm.png" alt="Logo de MDN">
+  <img src="mdn-logo-sm.png" alt="Logo de MDN" />
 </header>
 ```
+
+#### Résultat
+
+{{EmbedLiveSample('','100%', '430')}}
 
 ### En-tête d'un article
 
@@ -98,16 +100,25 @@ Cet élément ne possède que les [attributs universels](/fr/docs/Web/HTML/Globa
 <article>
   <header>
     <h2>La planète Terre</h2>
-    <p>Publié le mercredi <time datetime="2017-10-04">4 octobre 2017</time> par Jeanne Smith</p>
+    <p>
+      Publié le mercredi <time datetime="2017-10-04">4 octobre 2017</time> par
+      Jeanne Smith
+    </p>
   </header>
   <p>Nous vivons sur une planète bleue et verte</p>
-  <p><a href="https://example.com/the-planet-earth/">Poursuivre la lecture…</a></p>
+  <p>
+    <a href="https://example.com/the-planet-earth/">Poursuivre la lecture…</a>
+  </p>
 </article>
 ```
 
+#### Résultat
+
+{{EmbedLiveSample('','100%','270')}}
+
 ## Accessibilité
 
-L'élément `<header>` définit un point de repère [`banner`](/fr/docs/Web/Accessibility/ARIA/Roles/Banner_role) lorsque son contexte est un élément [`<body>`](/fr/docs/Web/HTML/Element/body). Lorsqu'un élément HTML `<header>` descend de certains éléments (tels que [`<article>`](/fr/docs/Web/HTML/Element/article), [`<aside>`](/fr/docs/Web/HTML/Element/aside), [`<main>`](/fr/docs/Web/HTML/Element/main), [`<nav>`](/fr/docs/Web/HTML/Element/nav) ou [`<section>`](/fr/docs/Web/HTML/Element/section)), il n'est pas considéré comme un repère `banner`.
+L'élément `<header>` définit un point de repère [`banner`](/fr/docs/Web/Accessibility/ARIA/Roles/banner_role) lorsque son contexte est un élément [`<body>`](/fr/docs/Web/HTML/Element/body). Lorsqu'un élément HTML `<header>` descend de certains éléments (tels que [`<article>`](/fr/docs/Web/HTML/Element/article), [`<aside>`](/fr/docs/Web/HTML/Element/aside), [`<main>`](/fr/docs/Web/HTML/Element/main), [`<nav>`](/fr/docs/Web/HTML/Element/nav) ou [`<section>`](/fr/docs/Web/HTML/Element/section)), il n'est pas considéré comme un repère `banner`.
 
 ## Spécifications
 

@@ -1,9 +1,11 @@
 ---
-title: WebGLRenderingContext.readPixels()
+title: WebGLRenderingContext：readPixels() 方法
 slug: Web/API/WebGLRenderingContext/readPixels
+l10n:
+  sourceCommit: 2b942f0d8f84641c233d701cb5d1f4e6c23120ff
 ---
 
-{{APIRef("WebGL")}}
+{{APIRef("WebGL")}}{{AvailableInWorkers}}
 
 [WebGL API](/zh-CN/docs/Web/API/WebGL_API) 的 **`WebGLRenderingContext.readPixels()`** 方法从当前的颜色帧缓冲（framebuffer）中读取指定矩形的像素矩阵并转换为 {{jsxref("TypedArray")}} 或 {{jsxref("DataView")}} 对象。
 
@@ -73,7 +75,7 @@ readPixels(x, y, width, height, format, type, pixels, dstOffset)
 
 - `pixels`
 
-  - : 用于读取数据的对象，必须与参数 `type` 的类型相匹配:
+  - : 用于读取数据的对象，必须与参数 `type` 的类型相匹配：
 
     - {{jsxref("Uint8Array")}}：`gl.UNSIGNED_BYTE`。
     - {{jsxref("Uint16Array")}}：`gl.UNSIGNED_SHORT_5_6_5`、`gl.UNSIGNED_SHORT_4_4_4_4` 或 `gl.UNSIGNED_SHORT_5_5_5_1`。
@@ -91,7 +93,7 @@ readPixels(x, y, width, height, format, type, pixels, dstOffset)
 - `gl.INVALID_ENUM`：如果 `format` 或 `type` 不是可接受的值，则会引发此错误。
 - `gl.INVALID_OPERATION`：抛出此错误可能的原因：
 
-  - `type` 是 `gl.UNSIGNED_SHORT_5_6_5` 且 `format` 不是 `gl.RGB` 。
+  - `type` 是 `gl.UNSIGNED_SHORT_5_6_5` 且 `format` 不是 `gl.RGB`。
   - `type` 是 `gl.UNSIGNED_SHORT_4_4_4_4` 且 `format` 不是 `gl.RGBA`。
   - `type` 与类型化数组 `pixels` 的类型不匹配。
 
@@ -100,10 +102,20 @@ readPixels(x, y, width, height, format, type, pixels, dstOffset)
 ## 示例
 
 ```js
-const canvas = document.getElementById('canvas');
-const gl = canvas.getContext('webgl');
-const pixels = new Uint8Array(gl.drawingBufferWidth * gl.drawingBufferHeight * 4);
-gl.readPixels(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+const canvas = document.getElementById("canvas");
+const gl = canvas.getContext("webgl");
+const pixels = new Uint8Array(
+  gl.drawingBufferWidth * gl.drawingBufferHeight * 4,
+);
+gl.readPixels(
+  0,
+  0,
+  gl.drawingBufferWidth,
+  gl.drawingBufferHeight,
+  gl.RGBA,
+  gl.UNSIGNED_BYTE,
+  pixels,
+);
 console.log(pixels); // Uint8Array
 ```
 
@@ -117,4 +129,4 @@ console.log(pixels); // Uint8Array
 
 ## 参见
 
-- [类型化数组](/zh-CN/docs/Web/JavaScript/Typed_arrays)
+- [类型化数组](/zh-CN/docs/Web/JavaScript/Guide/Typed_arrays)

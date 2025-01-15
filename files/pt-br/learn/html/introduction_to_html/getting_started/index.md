@@ -1,7 +1,6 @@
 ---
 title: Iniciando com HTML
 slug: Learn/HTML/Introduction_to_HTML/Getting_started
-original_slug: Aprender/HTML/Introducao_ao_HTML/Getting_started
 ---
 
 {{LearnSidebar}}{{NextMenu("Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML", "Learn/HTML/Introduction_to_HTML")}}
@@ -70,11 +69,13 @@ Caso você cometa um erro, você pode usar o botão _Resetar_ para desfazer a a�
 
 ```html hidden
 <h2>Saída ao vivo</h2>
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Código editável</h2>
-<p class="a11y-label">Pressione Esc para afastar o foco da área de código (Tab insere um caractere de tabulação).</p>
+<p class="a11y-label">
+  Pressione Esc para afastar o foco da área de código (Tab insere um caractere
+  de tabulação).
+</p>
 
 <textarea id="code" class="playable-code" style="min-height: 100px;width: 95%">
   Este é meu texto.
@@ -88,7 +89,7 @@ Caso você cometa um erro, você pode usar o botão _Resetar_ para desfazer a a�
 
 ```css hidden
 html {
-  font-family: 'Open Sans Light',Helvetica,Arial,sans-serif;
+  font-family: "Open Sans Light", Helvetica, Arial, sans-serif;
 }
 
 h2 {
@@ -109,10 +110,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -120,38 +121,38 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Mostrar solução';
+  solution.value = "Mostrar solução";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Mostrar solução') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Mostrar solução") {
     textarea.value = solutionEntry;
-    solution.value = 'Ocultar solução';
+    solution.value = "Ocultar solução";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Mostrar solução';
+    solution.value = "Mostrar solução";
   }
   updateCode();
 });
 
-var htmlSolution = '<em>Este é meu texto.</em>';
+var htmlSolution = "<em>Este é meu texto.</em>";
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -163,8 +164,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -175,10 +179,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Mostrar solução') {
+  if (solution.value === "Mostrar solução") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -216,40 +220,49 @@ Há duas categorias importantes no HTML, que você precisa conhecer. Eles são e
 Veja o seguinte exemplo:
 
 ```html
-<em>primeiro</em><em>segundo</em><em>terceiro</em>
+<em>primeiro</em>
+<em>segundo</em>
+<em>terceiro</em>
 
-<p>quarto</p><p>quinto</p><p>sexto</p>
+<p>quarto</p>
+<p>quinto</p>
+<p>sexto</p>
 ```
 
 O elemento {{htmlelement("em")}} é inline, então como você pode ver abaixo, os três primeiros elementos ficam na mesma linha uns dos outros sem espaço entre eles. O {{htmlelement("p")}}, por outro lado, é um elemento em bloco, então cada elemento aparece em uma nova linha, com espaço acima e abaixo de cada um (o espaçamento é devido à [estilização CSS](/pt-BR/docs/Learn/CSS/First_steps) padrão que o browser aplica aos parágrafos).
 
 {{ EmbedLiveSample('Elementos_em_bloco_versus_elementos_inline', 700, 200, "", "") }}
 
-> **Nota:** o HTML5 redefiniu as categorias de elemento em HTML5: veja [Categorias de conteúdo de elementos](http://www.whatwg.org/specs/web-apps/current-work/complete/section-index.html#element-content-categories). Enquanto essas definições são mais precisas e menos ambíguas que as anteriores, elas são muito mais complicadas de entender do que "em bloco" e "inline", então usaremos estas ao longo deste tópico.
+> [!NOTE]
+> o HTML5 redefiniu as categorias de elemento em HTML5: veja [Categorias de conteúdo de elementos](https://www.whatwg.org/specs/web-apps/current-work/complete/section-index.html#element-content-categories). Enquanto essas definições são mais precisas e menos ambíguas que as anteriores, elas são muito mais complicadas de entender do que "em bloco" e "inline", então usaremos estas ao longo deste tópico.
 
-> **Nota:** Os termos "bloco" e "inline", conforme usados neste tópico, não devem ser confundidos com os [tipos de caixas CSS](/pt-BR/docs/Learn/CSS/Introduction_to_CSS/Box_model#Types_of_CSS_boxes) com os mesmos nomes. Embora eles se correlacionem por padrão, alterar o tipo de exibição CSS não altera a categoria do elemento e não afeta em quais elementos ele pode conter e em quais elementos ele pode estar contido. Um dos motivos pelos quais o HTML5 abandonou esses termos foi evitar essa confusão bastante comum.
+> [!NOTE]
+> Os termos "bloco" e "inline", conforme usados neste tópico, não devem ser confundidos com os [tipos de caixas CSS](/pt-BR/docs/Learn/CSS/Building_blocks/The_box_model#types_of_css_boxes) com os mesmos nomes. Embora eles se correlacionem por padrão, alterar o tipo de exibição CSS não altera a categoria do elemento e não afeta em quais elementos ele pode conter e em quais elementos ele pode estar contido. Um dos motivos pelos quais o HTML5 abandonou esses termos foi evitar essa confusão bastante comum.
 
-> **Nota:** Você pode encontrar páginas de referência úteis que incluem uma lista de elementos inline e em bloco — veja [elementos em bloco](/pt-BR/docs/Web/HTML/Block-level_elements) e [elementos inline](/pt-BR/docs/Web/HTML/Inline_elements).
+> [!NOTE]
+> Você pode encontrar páginas de referência úteis que incluem uma lista de elementos inline e em bloco — veja [elementos em bloco](/pt-BR/docs/Glossary/Block-level_content) e [elementos inline](/pt-BR/docs/Glossary/Inline-level_content).
 
 ### Elementos vazios
 
 Nem todos os elementos seguem o padrão acima de: tag de abertura, conteúdo, tag de fechamento. Alguns elementos consistem apenas em uma única tag, que é geralmente usada para inserir/incorporar algo no documento no lugar em que ele é incluído. Por exemplo, o elemento {{htmlelement("img")}} insere uma imagem em uma página na posição em que ele é incluído:
 
 ```html
-<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png">
+<img
+  src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" />
 ```
 
 Isto exibirá em sua página:
 
 {{ EmbedLiveSample('Elementos_vazios', 700, 300, "", "", "hide-codepen-jsfiddle") }}
 
-> **Nota:** Elementos vazios são também chamados de _void elements_.
+> [!NOTE]
+> Elementos vazios são também chamados de _void elements_.
 
 ## Atributos
 
 Elementos também podem conter atributos, que se apresentam da seguinte forma:
 
-![&lt;p class="editor-note">My cat is very grumpy&lt;/p>](grumpy-cat-attribute-small.png)
+![My cat is very grumpy](grumpy-cat-attribute-small.png)
 
 Atributos contém informação extra sobre o elemento, mas que você não deseja que apareça no conteúdo. Neste caso, o atributo `class` permite que você dê ao elemento um nome de identificação, que pode ser usada mais tarde para direcionar informação de estilo ao elemento e outras coisas.
 
@@ -274,24 +287,26 @@ Edite a linha abaixo na área de Entrada para transformá-la em um link para o s
 
 Você poderá ver as atualizações das alterações ao vivo na área Saída. Você deve ver um link que, quando passa o mouse sobre ele, exibe o valor do atributo `title` e, quando clicado, navega para o endereço da web no atributo `href`. Lembre-se de que você precisa incluir um espaço entre o nome do elemento e cada atributo.
 
-Caso você cometa um erro, você poderá desfazê-lo usando o botão _Reset_ar. Caso você realmente não saiba como fazer, pressione o botão _Mostrar solução_ para ver a resposta.
+Caso você cometa um erro, você poderá desfazê-lo usando o botão _Reset_ ar. Caso você realmente não saiba como fazer, pressione o botão _Mostrar solução_ para ver a resposta.
 
 ```html hidden
 <h2>Saída ao vivo</h2>
 
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Código editável</h2>
-<p class="a11y-label">Pressione Esc para afastar o foco da área de código (Tab insere um caractere de tabulação).</p>
+<p class="a11y-label">
+  Pressione Esc para afastar o foco da área de código (Tab insere um caractere
+  de tabulação).
+</p>
 
 <textarea id="code" class="input" style="min-height: 100px;width: 95%">
   &lt;p&gt;Um link para o meu site favorito.&lt;/p&gt;
 </textarea>
 
 <div class="playable-buttons">
-  <input id="reset" type="button" value="Resetar">
-  <input id="solution" type="button" value="Mostrar solução">
+  <input id="reset" type="button" value="Resetar" />
+  <input id="solution" type="button" value="Mostrar solução" />
 </div>
 ```
 
@@ -318,10 +333,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -329,38 +344,39 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Mostrar solução';
+  solution.value = "Mostrar solução";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Mostrar solução') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Mostrar solução") {
     textarea.value = solutionEntry;
-    solution.value = 'Ocultar solução';
+    solution.value = "Ocultar solução";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Mostrar solução';
+    solution.value = "Mostrar solução";
   }
   updateCode();
 });
 
-var htmlSolution = '<p>Um link para o meu <a href="https://www.mozilla.org/" title="Página da Mozilla" target="_blank"> site favorito</a>.</p>';
+var htmlSolution =
+  '<p>Um link para o meu <a href="https://www.mozilla.org/" title="Página da Mozilla" target="_blank"> site favorito</a>.</p>';
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -372,8 +388,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -384,10 +403,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Mostrar solução') {
+  if (solution.value === "Mostrar solução") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -401,7 +420,7 @@ textarea.onkeyup = function(){
 
 ### Atributos boleanos
 
-Às vezes você verá atributos escritos sem valores — isso é permitido nos chamados atributos boleanos, e eles podem ter somente um valor, que é geralmente o mesmo nome do atributo. Por exemplo, o atributo {{htmlattrxref("disabled", "input")}} você pode atribuir para os elementos de entrada de formulários, se desejar que estes estejam desativados (acinzentados), para que o usuário não possa inserir nenhum dado neles.
+Às vezes você verá atributos escritos sem valores — isso é permitido nos chamados atributos boleanos, e eles podem ter somente um valor, que é geralmente o mesmo nome do atributo. Por exemplo, o atributo [`disabled`](/pt-BR/docs/Web/HTML/Element/input#disabled) você pode atribuir para os elementos de entrada de formulários, se desejar que estes estejam desativados (acinzentados), para que o usuário não possa inserir nenhum dado neles.
 
 ```
 <input type="text" disabled="disabled">
@@ -411,10 +430,10 @@ De forma abreviada, é perfeitamente permitido escrever isso da seguinte maneira
 
 ```html
 <!-- o uso do atributo disabled impede que o usuário final insira texto na caixa de entrada -->
-<input type="text" disabled>
+<input type="text" disabled />
 
 <!-- O usuário pode inserir texto na caixa de entrada a seguir, pois não contém o atributo disabled -->
-<input type="text">
+<input type="text" />
 ```
 
 Ambos resultarão em uma _Saída_ da seguinte forma:
@@ -448,7 +467,7 @@ Você pode perceber que os valores dos atributos exemplificados neste artigo est
 ```html
 <a href="http://www.example.com">Um link para o exemplo.</a>
 
-<a href='http://www.example.com'>Um link para o exemplo.</a>
+<a href="http://www.example.com">Um link para o exemplo.</a>
 ```
 
 Entretanto, você deve se certificar de não misturar os dois tipos de aspas juntos. O exemplo a seguir está errado!
@@ -460,7 +479,9 @@ Entretanto, você deve se certificar de não misturar os dois tipos de aspas jun
 Se utilizar um tipo de aspas no seu HTML, você pode inserir o outro tipo de aspas no texto, por exemplo, que não ocorrerá erro, desta forma:
 
 ```html
-<a href="http://www.example.com" title="Isn't this fun?">A link to my example.</a>
+<a href="http://www.example.com" title="Isn't this fun?"
+  >A link to my example.</a
+>
 ```
 
 No entanto, se você quiser incluir aspas, dentro de aspas onde ambas as aspas são do mesmo tipo (aspas simples ou aspas duplas), será necessário usar entidades HTML para as aspas. Por exemplo, isso irá quebrar:
@@ -472,7 +493,9 @@ No entanto, se você quiser incluir aspas, dentro de aspas onde ambas as aspas s
 Então você precisa fazer isso:
 
 ```html
-<a href='http://www.example.com' title='Isn&#39;t this fun?'>A link to my example.</a>
+<a href="http://www.example.com" title="Isn&#39;t this fun?"
+  >A link to my example.</a
+>
 ```
 
 ## Anatomia de um documento HTML
@@ -480,10 +503,10 @@ Então você precisa fazer isso:
 Já vimos os conceitos básicos dos elementos individuais do HTML, mas eles não são muito úteis sozinhos, Vamos aprender como estes elementos individuais são combinados entre si para criar uma página HTML inteira:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>My test page</title>
   </head>
   <body>
@@ -496,12 +519,11 @@ Neste código nós temos:
 
 1. `<!DOCTYPE html>`: O doctype. Nas névoas do tempo, quando o HTML era recente (por volta de 1991/2), doctypes funcionavam como links para uma série de regras as quais uma página HTML tinha que seguir para ser considerada uma página com um bom HTML, o que poderia significar a verificação automática de erros e outras coisas úteis. Ele costumava ser assim:
 
-    ```
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    ```
+   ```html
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   ```
 
-    No entanto, atualmente, ninguém se importa com eles, e eles são realmente apenas um artefato histórico que precisa ser incluído para que tudo funcione corretamente. \<! DOCTYPE html> é a menor cadeia de caracteres que conta como um doctype válido; é tudo o que você realmente precisa saber.
+   No entanto, atualmente, ninguém se importa com eles, e eles são realmente apenas um artefato histórico que precisa ser incluído para que tudo funcione corretamente. `<!DOCTYPE html>` é a menor cadeia de caracteres que conta como um doctype válido; é tudo o que você realmente precisa saber.
 
 2. `<html></html>`: O elemento [`<html>`](/pt-BR/docs/Web/HTML/Element/html) envolve o conteúdo da página inteira e é conhecido como o "elemento raiz" da página HTML.
 3. `<head></head>`: O elemento [`<head>`](/pt-BR/docs/Web/HTML/Element/head) atua como um container para todo o conteúdo da página HTML que não é visível para os visitantes do site. Isso inclui palavras-chave e a descrição da página que você quer que apareça nos resultados de busca, o CSS para estilizar o conteúdo da página (apesar de ser recomendado faze-lo num aquivo separado), declaração de conjunto de caracteres, e etc. Você aprenderá mais sobre isso no próximo artigo da série.
@@ -518,7 +540,8 @@ Se você quiser experimentar como funciona um documento HTML no seu computador, 
 3. Colar o código no novo arquivo de texto.
 4. Salvar o arquivo com o nome `index.html`.
 
-> **Nota:** Você também pode encontrar o template básico de HTML no [MDN Learning Area Github repo](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/getting-started/index.html).
+> [!NOTE]
+> Você também pode encontrar o template básico de HTML no [MDN Learning Area Github repo](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/getting-started/index.html).
 
 Você pode abrir este arquivo no navegador para ver como o código renderizado se apresenta, e então, editar o código e atualizar a página no navegador para ver o resultado com as mudanças. Inicialmente será exibido assim:
 
@@ -535,19 +558,21 @@ Caso você cometa um erro, você poderá desfazê-lo usando o botão _Resetar_. 
 ```html hidden
 <h2>Saída ao vivo</h2>
 
-<div class="output" style="min-height: 50px;">
-</div>
+<div class="output" style="min-height: 50px;"></div>
 
 <h2>Código editável</h2>
-<p class="a11y-label">Pressione Esc para afastar o foco da área de código (Tab insere um caractere de tabulação).</p>
+<p class="a11y-label">
+  Pressione Esc para afastar o foco da área de código (Tab insere um caractere
+  de tabulação).
+</p>
 
 <textarea id="code" class="input" style="min-height: 100px;width: 95%">
   &lt;p&gt;Esta é minha página&lt;/p&gt;
 </textarea>
 
 <div class="playable-buttons">
-  <input id="reset" type="button" value="Resetar">
-  <input id="solution" type="button" value="Mostrar Solução">
+  <input id="reset" type="button" value="Resetar" />
+  <input id="solution" type="button" value="Mostrar Solução" />
 </div>
 ```
 
@@ -557,7 +582,7 @@ html {
 }
 
 h1 {
- color: blue;
+  color: blue;
 }
 
 h2 {
@@ -582,10 +607,10 @@ body {
 ```
 
 ```js hidden
-var textarea = document.getElementById('code');
-var reset = document.getElementById('reset');
-var solution = document.getElementById('solution');
-var output = document.querySelector('.output');
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var solution = document.getElementById("solution");
+var output = document.querySelector(".output");
 var code = textarea.value;
 var userEntry = textarea.value;
 
@@ -593,38 +618,39 @@ function updateCode() {
   output.innerHTML = textarea.value;
 }
 
-reset.addEventListener('click', function() {
+reset.addEventListener("click", function () {
   textarea.value = code;
   userEntry = textarea.value;
   solutionEntry = htmlSolution;
-  solution.value = 'Mostrar Solução';
+  solution.value = "Mostrar Solução";
   updateCode();
 });
 
-solution.addEventListener('click', function() {
-  if(solution.value === 'Mostrar Solução') {
+solution.addEventListener("click", function () {
+  if (solution.value === "Mostrar Solução") {
     textarea.value = solutionEntry;
-    solution.value = 'Ocultar Solução';
+    solution.value = "Ocultar Solução";
   } else {
     textarea.value = userEntry;
-    solution.value = 'Mostrar Solução';
+    solution.value = "Mostrar Solução";
   }
   updateCode();
 });
 
-var htmlSolution = '<h1>Algumas músicas</h1><p>Gosto muito de <strong> tocar bateria </strong>. Um dos meus bateristas favoritos é Neal Peart, que toca na banda <a href="https://pt.wikipedia.org/wiki/Rush" title="Artigo da Rush na Wikipedia">Rush</a>. Meu álbum favorito do Rush atualmente é <a href="http://www.deezer.com/album/942295">Moving Pictures</a>.</p><img src="http://www.cygnus-x1.net/links/rush/images/albums/sectors/sector2-movingpictures-cover-s.jpg">';
+var htmlSolution =
+  '<h1>Algumas músicas</h1><p>Gosto muito de <strong> tocar bateria </strong>. Um dos meus bateristas favoritos é Neal Peart, que toca na banda <a href="https://pt.wikipedia.org/wiki/Rush" title="Artigo da Rush na Wikipedia">Rush</a>. Meu álbum favorito do Rush atualmente é <a href="http://www.deezer.com/album/942295">Moving Pictures</a>.</p><img src="http://www.cygnus-x1.net/links/rush/images/albums/sectors/sector2-movingpictures-cover-s.jpg">';
 var solutionEntry = htmlSolution;
 
-textarea.addEventListener('input', updateCode);
-window.addEventListener('load', updateCode);
+textarea.addEventListener("input", updateCode);
+window.addEventListener("load", updateCode);
 
 // stop tab key tabbing out of textarea and
 // make it write a tab at the caret position instead
 
-textarea.onkeydown = function(e){
+textarea.onkeydown = function (e) {
   if (e.keyCode === 9) {
     e.preventDefault();
-    insertAtCaret('\t');
+    insertAtCaret("\t");
   }
 
   if (e.keyCode === 27) {
@@ -636,8 +662,11 @@ function insertAtCaret(text) {
   var scrollPos = textarea.scrollTop;
   var caretPos = textarea.selectionStart;
 
-  var front = (textarea.value).substring(0, caretPos);
-  var back = (textarea.value).substring(textarea.selectionEnd, textarea.value.length);
+  var front = textarea.value.substring(0, caretPos);
+  var back = textarea.value.substring(
+    textarea.selectionEnd,
+    textarea.value.length,
+  );
   textarea.value = front + text + back;
   caretPos = caretPos + text.length;
   textarea.selectionStart = caretPos;
@@ -648,10 +677,10 @@ function insertAtCaret(text) {
 
 // Update the saved userCode every time the user updates the text area code
 
-textarea.onkeyup = function(){
+textarea.onkeyup = function () {
   // We only want to save the state when the user code is being shown,
   // not the solution, so that solution is not saved over the user code
-  if(solution.value === 'Mostrar Solução') {
+  if (solution.value === "Mostrar Solução") {
     userEntry = textarea.value;
   } else {
     solutionEntry = textarea.value;
@@ -667,7 +696,7 @@ textarea.onkeyup = function(){
 
 Nos exemplos anteriores, você pode ter percebido a presença de espaços em branco nos códigos — isto não é necessário; os dois trechos de códigos a seguir são equivalentes:
 
-```html
+```html-nolint
 <p>Dogs are silly.</p>
 
 <p>Dogs        are
@@ -692,7 +721,7 @@ Temos que usar referências de caracteres — códigos especiais que representam
 
 No exemplo abaixo, você pode ver dois parágrafos, que estão falando sobre tecnologias da web:
 
-```html
+```html-noint
 <p>Em HTML, você define um parágrafo usando o elemento <p>.</p>
 
 <p>Em HTML, você define um parágrafo usando o elemento &lt;p&gt;.</p>
@@ -702,7 +731,8 @@ Na saída ao vivo abaixo, você pode ver que o primeiro parágrafo deu errado, p
 
 {{EmbedLiveSample('Referências_de_entidades_incluindo_caracteres_especiais_no_HTML', 7700, 200, "", "", "hide-codepen-jsfiddle")}}
 
-> **Nota:** A tabela com todas as referências de caracteres disponíveis em HTML pode ser encontrada na Wikipédia: [List of XML and HTML character entity references](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references). Observe que você não precisa usar referências de entidade para outros símbolos, pois os navegadores modernos manipularão os símbolos reais muito bem, desde que a codificação de caracteres do HTML esteja definida como UTF-8.
+> [!NOTE]
+> A tabela com todas as referências de caracteres disponíveis em HTML pode ser encontrada na Wikipédia: [List of XML and HTML character entity references](http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references). Observe que você não precisa usar referências de entidade para outros símbolos, pois os navegadores modernos manipularão os símbolos reais muito bem, desde que a codificação de caracteres do HTML esteja definida como UTF-8.
 
 ## Comentários no HTML
 
@@ -724,10 +754,11 @@ Como você pode ver abaixo, o primeiro parágrafo fica visível na saída ao viv
 
 Você chegou ao final do artigo — esperamos que tenha gostado do seu tour pelos princípios básicos do HTML! Nesse ponto, você deve entender como é a linguagem, como ela funciona em um nível básico e ser capaz de escrever alguns elementos e atributos. Este é o lugar perfeito para se estar agora, já que os artigos subseqüentes deste módulo abordarão algumas das coisas que você já examinou com mais detalhes e introduzirão alguns novos conceitos da linguagem. Fique ligado!
 
-> **Nota:** Nesse ponto, à medida que você começa a aprender mais sobre HTML, também pode querer explorar os conceitos básicos de Cascading Style Sheets, ou [CSS](/pt-BR/docs/Aprender/CSS). CSS é a linguagem usada para estilizar suas páginas da web (por exemplo, alterando a fonte ou as cores ou alterando o layout da página). HTML e CSS vão muito bem juntos, como você descobrirá em breve.
+> [!NOTE]
+> Nesse ponto, à medida que você começa a aprender mais sobre HTML, também pode querer explorar os conceitos básicos de Cascading Style Sheets, ou [CSS](/pt-BR/docs/Learn/CSS). CSS é a linguagem usada para estilizar suas páginas da web (por exemplo, alterando a fonte ou as cores ou alterando o layout da página). HTML e CSS vão muito bem juntos, como você descobrirá em breve.
 
 ## Veja também
 
-- [Aplicando cores a elementos HTML usando CSS](/pt-BR/docs/Web/HTML/Applying_color)
+- [Aplicando cores a elementos HTML usando CSS](/pt-BR/docs/Web/CSS/CSS_colors/Applying_color)
 
 {{NextMenu("Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML", "Learn/HTML/Introduction_to_HTML")}}

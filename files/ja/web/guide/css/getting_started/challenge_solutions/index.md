@@ -3,7 +3,7 @@ title: Challenge solutions
 slug: Web/Guide/CSS/Getting_started/Challenge_solutions
 ---
 
-このページは、 [CSS Getting Started](/ja/CSS/Getting_Started) チュートリアルにあるチャレンジの解答例です。これ以外の解答も考えられます。以下の章名はチュートリアルページのタイトルと一致します。
+このページは、 [CSS Getting Started](/ja/docs/Learn/CSS) チュートリアルにあるチャレンジの解答例です。これ以外の解答も考えられます。以下の章名はチュートリアルページのタイトルと一致します。
 
 ## CSS をなぜ用いるか
 
@@ -12,7 +12,7 @@ slug: Web/Guide/CSS/Getting_started/Challenge_solutions
 - Challenge
   - : Without looking up a reference, find five more color names that work in your stylesheet.
 - Solution
-  - : CSS supports common color names like `orange`, `yellow`, `blue`, `green`, or `black`. It also supports some more exotic color names like `chartreuse`, `fuschia`, or `burlywood`. See [CSS Color value](/ja/CSS/color_value) for a complete list as well as other ways of specifying colors.
+  - : CSS supports common color names like `orange`, `yellow`, `blue`, `green`, or `black`. It also supports some more exotic color names like `chartreuse`, `fuschia`, or `burlywood`. See [CSS Color value](/ja/docs/Web/CSS/color_value) for a complete list as well as other ways of specifying colors.
 
 ## どのように CSS は動作するのか
 
@@ -34,8 +34,13 @@ slug: Web/Guide/CSS/Getting_started/Challenge_solutions
   - : Move the declaration for underlining from the rule for {{ HTMLElement("p") }} to the one for {{ HTMLElement("strong") }}. The resulting file looks like this:
 
     ```css
-    p {color: blue; }
-    strong {color: orange; text-decoration: underline;}
+    p {
+      color: blue;
+    }
+    strong {
+      color: orange;
+      text-decoration: underline;
+    }
     ```
 
 Later sections of this tutorial describe style rules and declarations in greater detail.
@@ -51,7 +56,9 @@ Later sections of this tutorial describe style rules and declarations in greater
   - : Add a rule with an ID selector of `#second` and a declaration `color: blue;`, as shown below:
 
     ```css
-    #second { color: blue; }
+    #second {
+      color: blue;
+    }
     ```
 
     A more specific selector, `p#second` also works.
@@ -65,7 +72,9 @@ Later sections of this tutorial describe style rules and declarations in greater
   - : Change the selector of the new rule to be a tag selector using `p`:
 
     ```css
-    p { color: blue; }
+    p {
+      color: blue;
+    }
     ```
 
 The rules for the other colors all have more specific selectors, so they override the blue of the paragraph.
@@ -99,7 +108,7 @@ The rules for the other colors all have more specific selectors, so they overrid
   - : Add the following style declaration to the `strong` rule:
 
     ```css
-      font: 200% serif;
+    font: 200% serif;
     ```
 
     If you use separate declarations for `font-size` and `font-family`, then the `font-style` setting on the first paragraph is _not_ overridden.
@@ -145,7 +154,7 @@ The rules for the other colors all have more specific selectors, so they overrid
   - : 次のルールをスタイルシートに追加します:
 
     ```css
-    p:before{
+    p:before {
       content: url("yellow-pin.png");
     }
     ```
@@ -176,7 +185,9 @@ The rules for the other colors all have more specific selectors, so they overrid
 
     ```css
     /* numbered headings */
-    body {counter-reset: headnum;}
+    body {
+      counter-reset: headnum;
+    }
     h3:before {
       content: "(" counter(headnum, upper-latin) ") ";
       counter-increment: headnum;

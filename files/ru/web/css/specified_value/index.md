@@ -1,11 +1,6 @@
 ---
 title: Указанное значение
 slug: Web/CSS/specified_value
-tags:
-  - CSS
-  - CSS Reference
-translation_of: Web/CSS/specified_value
-original_slug: Web/CSS/Указанное_значение
 ---
 
 {{CSSRef}}
@@ -18,9 +13,7 @@ original_slug: Web/CSS/Указанное_значение
 
 ## Спецификации
 
-| Спецификация                                                                                     | Статус                   | Комментарий             |
-| ------------------------------------------------------------------------------------------------ | ------------------------ | ----------------------- |
-| {{SpecName("CSS2.1", "cascade.html#specified-value", "cascaded value")}} | {{Spec2("CSS2.1")}} | Изначальное определение |
+{{Specifications}}
 
 ## Смотрите также
 
@@ -30,11 +23,11 @@ original_slug: Web/CSS/Указанное_значение
   - [@-правила](/ru/docs/Web/CSS/At-rule)
   - [комментарии](/ru/docs/Web/CSS/Comments)
   - [специфичность](/ru/docs/Web/CSS/Specificity)
-  - [наследование](/ru/docs/Web/CSS/inheritance)
-  - [блочная модель](/ru/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [наследование](/ru/docs/Web/CSS/Inheritance)
+  - [блочная модель](/ru/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [режимы компоновки](/ru/docs/Web/CSS/Layout_mode)
   - [модели визуального форматирования](/ru/docs/Web/CSS/Visual_formatting_model)
-  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значения
     - [начальные](/ru/docs/Web/CSS/initial_value)
     - [вычисленные](/ru/docs/Web/CSS/computed_value)

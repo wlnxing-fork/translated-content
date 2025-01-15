@@ -29,7 +29,7 @@ l10n:
   - これらの要素のデフォルトのスタイルが、仕様書に合致するようになりました ([Firefox バグ 1258657](https://bugzil.la/1258657))。
   - {{domxref("HTMLDetailsElement/toggle_event", "toggle")}} イベントが、{{HTMLElement("details")}} 要素を開いたり閉じたりしたときに送られるようになりました ([Firefox バグ 1225412](https://bugzil.la/1225412))。
 
-- {{htmlattrxref("meta", "referrer")}} 属性で、値 `no-referrer-when-downgrade` および `origin-when-cross-origin` をサポートしました ([Firefox バグ 1178337](https://bugzil.la/1178337))。
+- [`meta`](/ja/docs/Web/HTML/Element/referrer#meta) 属性で、値 `no-referrer-when-downgrade` および `origin-when-cross-origin` をサポートしました ([Firefox バグ 1178337](https://bugzil.la/1178337))。
 
 ### CSS
 
@@ -57,7 +57,7 @@ l10n:
   - `-webkit-box-direction`、`-webkit-box-orient` ([Firefox バグ 1262049](https://bugzil.la/1262049).
   - {{cssxref("display")}} プロパティの値 `-webkit-inline-box` を、`inline-flex` の別名としてサポートしました ([Firefox バグ 1257661](https://bugzil.la/1257661))。
   - `-webkit-flex-direction`、`-webkit-flex-wrap`、`-webkit-flex-flow`、`-webkit-order`、`-webkit-flex`、`-webkit-flex-grow`、`-webkit-flex-shrink`、`-webkit-flex-basis`、`-webkit-justify-content`、`-webkit-align-items`、`-webkit-align-self`、`-webkit-align-content` を接頭辞なしプロパティの別名として、また {{cssxref("display")}} プロパティの値 `-webkit-flex` および `-webkit-inline-flex` を接頭辞なし値の別名として追加しました ([Firefox バグ 1274096](https://bugzil.la/1274096))。
-  - `-webkit-box-flex`、`-webkit-box-ordinal-group`、`-webkit-box-align`、`-webkit-box-pack` プロパティおよび {{cssxref("display")}} プロパティの値 `-webkit-box` を、最新の [CSS フレックスボックス](/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox) の別名として追加しました ([Firefox バグ 1208635](https://bugzil.la/1208635))。
+  - `-webkit-box-flex`、`-webkit-box-ordinal-group`、`-webkit-box-align`、`-webkit-box-pack` プロパティおよび {{cssxref("display")}} プロパティの値 `-webkit-box` を、最新の [CSS フレックスボックス](/ja/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox) の別名として追加しました ([Firefox バグ 1208635](https://bugzil.la/1208635))。
 
 - {{cssxref("background-clip")}} の値 `text` が、(Release 以外のビルドだけでなく) すべてのタイプの Firefox で使用可能になりました ([Firefox バグ 1263516](https://bugzil.la/1263516))。
 - {{cssxref("position")}} プロパティの値 `absolute` を、最上位レイヤーの要素でサポートしました ([Firefox バグ 1236828](https://bugzil.la/1236828))。
@@ -70,15 +70,15 @@ l10n:
 - {{jsxref("String.prototype.padStart()")}} および {{jsxref("String.prototype.padEnd()")}} メソッドを実装しました ([Firefox バグ 1260509](https://bugzil.la/1260509))。
 - ES2015 (ES6) の {{jsxref("Symbol.unscopables")}} および {{jsxref("Array.@@unscopables", "Array.prototype[@@unscopables]")}} プロパティを実装しました ([Firefox バグ 1054759](https://bugzil.la/1054759) および [Firefox バグ 1258163](https://bugzil.la/1258163))。
 - ES2015 (ES6) の {{jsxref("Symbol.isConcatSpreadable")}} シンボルを実装しました ([Firefox バグ 1041586](https://bugzil.la/1041586))。
-- ES2015 (ES6) の {{jsxref("Array.@@species", "Array[@@species]")}} getter を実装しました ([Firefox バグ 1165052](https://bugzil.la/1165052))。
-- ES2015 (ES6) の {{jsxref("ArrayBuffer.@@species", "ArrayBuffer[@@species]")}} getter および {{jsxref("TypedArray.@@species", "%TypedArray%[@@species]")}} getter を実装しました ([Firefox バグ 1165053](https://bugzil.la/1165053))。
+- ES2015 (ES6) の {{jsxref("Array.Symbol.species", "Array[Symbol.species]")}} getter を実装しました ([Firefox バグ 1165052](https://bugzil.la/1165052))。
+- ES2015 (ES6) の {{jsxref("ArrayBuffer.Symbol.species", "ArrayBuffer[Symbol.species]")}} getter および {{jsxref("TypedArray.Symbol.species", "%TypedArray%[Symbol.species]")}} getter を実装しました ([Firefox バグ 1165053](https://bugzil.la/1165053))。
 - ECMAScript Internationalization API 草案の {{jsxref("Intl.getCanonicalLocales()")}} メソッドを実装しました ([Firefox バグ 1263040](https://bugzil.la/1263040))。
 
 #### 非推奨化および削除
 
 - 非推奨の [古い Proxy API](/ja/docs/Archive/Web/Old_Proxy_API) (`Proxy.create` および `Proxy.createFunction()`) を廃止しました。代わりに標準の {{jsxref("Proxy")}} オブジェクトを使用してください ([Firefox バグ 892903](https://bugzil.la/892903))。
 - `String.prototype.contains()` メソッドを削除しました (バージョン 40 より非推奨でした)。代わりに {{jsxref("String.prototype.includes()")}} メソッドを使用してください ([Firefox バグ 1103588](https://bugzil.la/1103588))。
-- 非標準の `RegExp.multiline` プロパティ ({{jsxref("RegExp.prototype.multiline")}} ではありません) を削除しました。代わりに標準の [m フラグ](/ja/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags) を使用してください ([Firefox バグ 1219757](https://bugzil.la/1219757))。
+- 非標準の `RegExp.multiline` プロパティ ({{jsxref("RegExp.prototype.multiline")}} ではありません) を削除しました。代わりに標準の [m フラグ](/ja/docs/Web/JavaScript/Guide/Regular_expressions#フラグを用いた高度な検索) を使用してください ([Firefox バグ 1219757](https://bugzil.la/1219757))。
 - [`Object.prototype.__defineGetter__()`](/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) および [`Object.prototype.__defineSetter__()`](/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) メソッドは、オブジェクトを伴わないグローバルスコープでは呼び出すことができなくなりました ([Firefox バグ 1253016](https://bugzil.la/1253016))。
 
 ### インターフェイス/API/DOM

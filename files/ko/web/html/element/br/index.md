@@ -1,5 +1,5 @@
 ---
-title: '<br>: 줄바꿈 요소'
+title: "<br>: 줄바꿈 요소"
 slug: Web/HTML/Element/br
 ---
 
@@ -9,15 +9,14 @@ slug: Web/HTML/Element/br
 
 {{EmbedInteractiveExample("pages/tabbed/br.html", "tabbed-standard")}}
 
-<p class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples">https://github.com/mdn/interactive-examples </a>and send us a pull request.</p>
-
 위 예제에서 확인할 수 있듯, `<br>` 요소는 텍스트를 끊고 싶은 지점에 삽입해야 합니다. `<br>` 이후의 텍스트는 텍스트 블록의 다음 줄에서 다시 시작합니다.
 
-> **참고:** 문단 사이에 여백을 두기 위한 용도로 `<br>`을 사용하지 마세요. 대신 {{htmlelement("p")}} 요소로 감싼 후 [CSS](/ko/docs/Web/CSS)의 {{cssxref("margin")}} 속성으로 여백의 크기를 조절하세요.
+> [!NOTE]
+> 문단 사이에 여백을 두기 위한 용도로 `<br>`을 사용하지 마세요. 대신 {{htmlelement("p")}} 요소로 감싼 후 [CSS](/ko/docs/Web/CSS)의 {{cssxref("margin")}} 속성으로 여백의 크기를 조절하세요.
 
 ## 특성
 
-이 요소는 [전역 특성](/ko/docs/HTML/Global_attributes)만 포함합니다.
+이 요소는 [전역 특성](/ko/docs/Web/HTML/Global_attributes)만 포함합니다.
 
 ## CSS 스타일링
 
@@ -28,10 +27,10 @@ slug: Web/HTML/Element/br
 ## 예제
 
 ```html
-Mozilla Foundation<br>
-1981 Landings Drive<br>
-Building K<br>
-Mountain View, CA 94043-0801<br>
+Mozilla Foundation<br />
+1981 Landings Drive<br />
+Building K<br />
+Mountain View, CA 94043-0801<br />
 USA
 ```
 

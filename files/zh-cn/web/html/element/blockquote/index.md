@@ -5,7 +5,7 @@ slug: Web/HTML/Element/blockquote
 
 {{HTMLSidebar}}
 
-**HTML `<blockquote>` 元素**（或者 HTML 块级引用元素），代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进（[注](/zh-CN/docs/Web/HTML/Element/blockquote#Notes) 中说明了如何更改）。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 {{HTMLElement("cite")}} 元素。
+**HTML `<blockquote>` 元素**（或者 HTML 块级引用元素），代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进（[注](#Notes) 中说明了如何更改）。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 {{HTMLElement("cite")}} 元素。
 
 {{EmbedInteractiveExample("pages/tabbed/blockquote.html","tabbed-standard")}}
 
@@ -20,8 +20,8 @@ slug: Web/HTML/Element/blockquote
    <td><a href="/zh-CN/docs/HTML/Content_categories#Flow_content">Flow content</a>.</td>
   </tr>
   <tr>
-   <th scope="row">Tag omission</th>
-   <td>{{no_tag_omission}}</td>
+   <th scope="row">标签省略</th>
+   <td>不允许，开始标签和结束标签都不能省略。</td>
   </tr>
   <tr>
    <th scope="row">Permitted parents</th>
@@ -42,10 +42,10 @@ slug: Web/HTML/Element/blockquote
 
 此元素的属性包含 [全局属性](/zh-CN/docs/Web/HTML/Global_attributes)。
 
-- {{htmlattrdef("cite")}}
+- `cite`
   - : 是一个标注引用的信息的来源文档或者相关信息的 URL。通常用来描述能够解释引文的上下文或者引用的信息。
 
-## 使用备注
+## 使用说明
 
 若要修改被引用内容的缩进距离，可以使用 {{Glossary("CSS")}} {{cssxref("margin-left")}} 和/或 {{cssxref("margin-right")}} 属性，或使用 {{cssxref("margin")}} 缩写属性。
 
@@ -59,17 +59,15 @@ slug: Web/HTML/Element/blockquote
 
 ```html
 <blockquote cite="https://tools.ietf.org/html/rfc1149">
-  <p>Avian carriers can provide high delay, low
-  throughput, and low altitude service.  The
-  connection topology is limited to a single
-  point-to-point path for each carrier, used with
-  standard carriers, but many carriers can be used
-  without significant interference with each other,
-  outside of early spring.  This is because of the 3D
-  ether space available to the carriers, in contrast
-  to the 1D ether used by IEEE802.3.  The carriers
-  have an intrinsic collision avoidance system, which
-  increases availability.</p>
+  <p>
+    Avian carriers can provide high delay, low throughput, and low altitude
+    service. The connection topology is limited to a single point-to-point path
+    for each carrier, used with standard carriers, but many carriers can be used
+    without significant interference with each other, outside of early spring.
+    This is because of the 3D ether space available to the carriers, in contrast
+    to the 1D ether used by IEEE802.3. The carriers have an intrinsic collision
+    avoidance system, which increases availability.
+  </p>
 </blockquote>
 ```
 

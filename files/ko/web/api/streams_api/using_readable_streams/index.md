@@ -2,17 +2,20 @@
 title: Using readable streams
 slug: Web/API/Streams_API/Using_readable_streams
 ---
+
 {{apiref("Streams")}}
 
-자바스크립트 개발자로서, 프로그래밍적으로 네트워크로부터 받은 데이터 스트림을 Chunk단위로 읽고 다루는 것은 매우 유용합니다! 그러나 어떻게 스트림 API의 Readable stream을 잘 사용할수 있을까요. 이번 내용은 그것을 설명하고 있습니다.
+JavaScript 개발자로서, 프로그래밍적으로 네트워크로부터 받은 데이터 스트림을 Chunk단위로 읽고 다루는 것은 매우 유용합니다! 그러나 어떻게 스트림 API의 Readable stream을 잘 사용할수 있을까요. 이번 내용은 그것을 설명하고 있습니다.
 
-> **참고:** This article assumes that you understand the use cases of readable streams, and are aware of the high-level concepts. If not, we suggest that you first read the [Streams concepts and usage overview](/ko/docs/Web/API/Streams_API#Concepts_and_usage) and dedicated [Streams API concepts](/ko/docs/Web/API/Streams_API/Concepts) article, then come back.
+> [!NOTE]
+> This article assumes that you understand the use cases of readable streams, and are aware of the high-level concepts. If not, we suggest that you first read the [Streams concepts and usage overview](/ko/docs/Web/API/Streams_API#concepts_and_usage) and dedicated [Streams API concepts](/ko/docs/Web/API/Streams_API/Concepts) article, then come back.
 
-> **참고:** If you are looking for information on writable streams try [Using writable streams](/ko/docs/Web/API/Streams_API/Using_writable_streams) instead.
+> [!NOTE]
+> If you are looking for information on writable streams try [Using writable streams](/ko/docs/Web/API/Streams_API/Using_writable_streams) instead.
 
 ## Browser support
 
-파이어폭스 65+ 와 크롬 42+ 에서 Fetch Body 객체를 스트림으로서 사용 할수 있고, custom readable 스트림을 만들수 있습니다. 현재 [Pipe chains](/ko/docs/Web/API/Streams_API/Concepts#Pipe_chains)의 경우 오직 크롬에서만 지원하고 있고 그 기능은 변경될 수 있습니다.
+Firefox 65+ 와 크롬 42+ 에서 Fetch Body 객체를 스트림으로서 사용 할수 있고, custom readable 스트림을 만들수 있습니다. 현재 [Pipe chains](/ko/docs/Web/API/Streams_API/Concepts#Pipe_chains)의 경우 오직 크롬에서만 지원하고 있고 그 기능은 변경될 수 있습니다.
 
 ## Finding some examples
 
@@ -28,9 +31,9 @@ slug: Web/API/Streams_API/Using_readable_streams
 
 ```js
 // 오리지널 이미지를 Fetch 함
-fetch('./tortoise.png')
-// body 를 ReadableStream으로 가공함
-.then(response => response.body)
+fetch("./tortoise.png")
+  // body 를 ReadableStream으로 가공함
+  .then((response) => response.body);
 ```
 
 이것은 우리에게 {{domxref("ReadableStream")}} 객체를 제공해 줍니다.
@@ -118,7 +121,8 @@ if (done) {
 }
 ```
 
-> **참고:** 여기서 사용한 `close()` 는 새로만든 커스텀 스트림의 일부이며 오리지널 스트림의 것이 아닙니다. 커스텀 스트림에 대해서는 다음섹션에서 더 자세히 살펴 볼 예정입니다.
+> [!NOTE]
+> 여기서 사용한 `close()` 는 새로만든 커스텀 스트림의 일부이며 오리지널 스트림의 것이 아닙니다. 커스텀 스트림에 대해서는 다음섹션에서 더 자세히 살펴 볼 예정입니다.
 
 만약 `done` 이 `true` 가 아니라면, 우선 읽어 드린 Chunk를 처리하고 (`value` 속성), `pump()` 함수를 재귀적으로 다시 호출 함으로서 다음 chunk를 읽어 드립니다.
 
@@ -230,15 +234,15 @@ const stream = new ReadableStream({
       // Add the string to the stream
       controller.enqueue(string);
       // show it on the screen
-      let listItem = document.createElement('li');
+      let listItem = document.createElement("li");
       listItem.textContent = string;
       list1.appendChild(listItem);
     }, 1000);
-    button.addEventListener('click', function() {
+    button.addEventListener("click", function () {
       clearInterval(interval);
       readStream();
       controller.close();
-    })
+    });
   },
   pull(controller) {
     // We don't really need a pull in this example
@@ -247,7 +251,7 @@ const stream = new ReadableStream({
     // This is called if the reader cancels,
     // so we should stop generating strings
     clearInterval(interval);
-  }
+  },
 });
 ```
 
@@ -272,8 +276,9 @@ function readStream() {
 
     charsReceived += value.length;
     const chunk = value;
-    let listItem = document.createElement('li');
-    listItem.textContent = 'Read ' + charsReceived + ' characters so far. Current chunk = ' + chunk;
+    let listItem = document.createElement("li");
+    listItem.textContent =
+      "Read " + charsReceived + " characters so far. Current chunk = " + chunk;
     list2.appendChild(listItem);
 
     result += chunk;
@@ -300,10 +305,10 @@ function readStream() {
 
 ```js
 function teeStream() {
-    const teedOff = stream.tee();
-    readStream(teedOff[0], list2);
-    readStream(teedOff[1], list3);
-  }
+  const teedOff = stream.tee();
+  readStream(teedOff[0], list2);
+  readStream(teedOff[1], list3);
+}
 ```
 
 ## Pipe chains
@@ -316,15 +321,15 @@ We have created an example called [Unpack Chunks of a PNG](https://github.com/md
 
 ```js
 // Fetch the original image
-fetch('png-logo.png')
-// Retrieve its body as ReadableStream
-.then(response => response.body)
-// Create a gray-scaled PNG stream out of the original
-.then(rs => logReadableStream('Fetch Response Stream', rs))
-.then(body => body.pipeThrough(new PNGTransformStream()))
-.then(rs => logReadableStream('PNG Chunk Stream', rs))
+fetch("png-logo.png")
+  // Retrieve its body as ReadableStream
+  .then((response) => response.body)
+  // Create a gray-scaled PNG stream out of the original
+  .then((rs) => logReadableStream("Fetch Response Stream", rs))
+  .then((body) => body.pipeThrough(new PNGTransformStream()))
+  .then((rs) => logReadableStream("PNG Chunk Stream", rs));
 ```
 
 ## Summary
 
-That explains the basics of “default” readable streams. We’ll explain bytestreams in a separate future article, once they are available in browsers.
+That explains the basics of "default" readable streams. We'll explain bytestreams in a separate future article, once they are available in browsers.

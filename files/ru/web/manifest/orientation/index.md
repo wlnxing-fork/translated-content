@@ -1,11 +1,6 @@
 ---
 title: orientation
 slug: Web/Manifest/orientation
-tags:
-  - Manifest
-  - Orientation
-  - Web
-translation_of: Web/Manifest/orientation
 ---
 
 {{QuickLinksWithSubpages('/ru/docs/Web/Manifest')}}
@@ -35,7 +30,8 @@ translation_of: Web/Manifest/orientation
 
 > **Примечание:** `orientation` и/или его конкретные значения могут не поддерживаться пользовательским агентом в различных режимах отображения, поскольку их поддержка не имеет смысла для конкретного контекста.
 
-> **Примечание:** Ориентация может быть изменена во время выполнения через {{domxref('Screen/orientation', 'API Ориентации экрана')}}.
+> [!NOTE]
+> Ориентация может быть изменена во время выполнения с помощью [Screen Orientation API](/ru/docs/Web/API/Screen_Orientation_API).
 
 ## Значения
 
@@ -56,12 +52,10 @@ translation_of: Web/Manifest/orientation
 "orientation": "portrait-primary"
 ```
 
-## Specifications
+## Спецификации
 
-| Specification                                                                        | Status                       | Comment             | Feedback                                                                         |
-| ------------------------------------------------------------------------------------ | ---------------------------- | ------------------- | -------------------------------------------------------------------------------- |
-| {{SpecName('Manifest', '#orientation-member', 'orientation')}} | {{Spec2('Manifest')}} | Initial definition. | [Web App Manifest Working Group drafts](https://github.com/w3c/manifest/issues/) |
+{{Specifications}}
 
-## Browser compatibility
+## Совместимость с браузерами
 
 {{Compat}}

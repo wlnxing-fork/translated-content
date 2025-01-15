@@ -1,7 +1,6 @@
 ---
-title: '<mark>: el elemento de resaltado de texto'
+title: "<mark>: el elemento de resaltado de texto"
 slug: Web/HTML/Element/mark
-original_slug: Web/HTML/Elemento/mark
 ---
 
 {{HTMLSidebar}}
@@ -28,7 +27,7 @@ El **Elemento HTML Mark `<mark>`** representa un texto **marcado** o **resaltado
     </tr>
     <tr>
       <th>Omisión de etiquetas</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Ninguna, tanto la etiqueta inicial como la final son obligatorias.</td>
     </tr>
     <tr>
       <th>Elementos padre permitidos</th>
@@ -65,7 +64,7 @@ El **Elemento HTML Mark `<mark>`** representa un texto **marcado** o **resaltado
 
 ## Atributos
 
-Este elemento no tiene atributos que no sean los [atributos globales](/es/docs/Web/HTML/Atributos_Globales), comunes a todos los elementos.
+Este elemento no tiene atributos que no sean los [atributos globales](/es/docs/Web/HTML/Global_attributes), comunes a todos los elementos.
 
 ## Notas de uso
 
@@ -73,7 +72,8 @@ Este elemento no tiene atributos que no sean los [atributos globales](/es/docs/W
 - Por otro lado, `<mark>` indica una parte del contenido del documento que probablemente sea relevante para el usuario. Por ejemplo, se puede utilizar en una página que muestra los resultados de búsqueda para resaltar cada uno de estos por palabra.
 - No uses el elemento `<mark>` para resaltado de sintaxis; usa el elemento {{ HTMLElement("span") }} para este fin.
 
-> **Nota:** No se debe confundir el elemento `<mark>` con el elemento {{ HTMLElement("strong") }}. El elemento {{ HTMLElement("strong") }} se utiliza para denotar intervalos de texto de especial _importancia,_ mientras que el elemento `<mark>` se utiliza para denotar intervalos de texto de especial _relevancia._
+> [!NOTE]
+> No se debe confundir el elemento `<mark>` con el elemento {{ HTMLElement("strong") }}. El elemento {{ HTMLElement("strong") }} se utiliza para denotar intervalos de texto de especial _importancia,_ mientras que el elemento `<mark>` se utiliza para denotar intervalos de texto de especial _relevancia._
 
 ## Ejemplos
 
@@ -83,11 +83,10 @@ En este ejemplo, \<mark> se utiliza para resaltar texto en una cita que es de pa
 
 ```html
 <blockquote>
-  It is a period of civil war. Rebel spaceships, striking from a
-  hidden base, have won their first victory against the evil
-  Galactic Empire. During the battle, <mark>Rebel spies managed
-  to steal secret plans</mark> to the Empire’s ultimate weapon,
-  the DEATH STAR, an armored space station with enough power to
+  It is a period of civil war. Rebel spaceships, striking from a hidden base,
+  have won their first victory against the evil Galactic Empire. During the
+  battle, <mark>Rebel spies managed to steal secret plans</mark> to the Empire’s
+  ultimate weapon, the DEATH STAR, an armored space station with enough power to
   destroy an entire planet.
 </blockquote>
 ```
@@ -101,15 +100,17 @@ El resultado sería:
 Este ejemplo demuestra el uso de `<mark>` para marcar resultados de búsqueda en el fragmento.
 
 ```html
-<p>It is a dark time for the Rebellion. Although the Death
-Star has been destroyed, <mark class="match">Imperial</mark>
-troops have driven the Rebel forces from their hidden base and
-pursued them across the galaxy.</p>
+<p>
+  It is a dark time for the Rebellion. Although the Death Star has been
+  destroyed, <mark class="match">Imperial</mark> troops have driven the Rebel
+  forces from their hidden base and pursued them across the galaxy.
+</p>
 
-<p>Evading the dreaded <mark class="match">Imperial</mark>
-Starfleet, a group of freedom fighters led by Luke Skywalker
-has established a new secret base on the remote ice world of
-Hoth.</p>
+<p>
+  Evading the dreaded <mark class="match">Imperial</mark> Starfleet, a group of
+  freedom fighters led by Luke Skywalker has established a new secret base on
+  the remote ice world of Hoth.
+</p>
 ```
 
 Para ayudar a distinguir el uso de `<mark>` en los resultados de búsqueda de otro uso potencial, este ejemplo aplica la clase "match" a cada coincidencia.
@@ -128,4 +129,4 @@ El resultado se vería:
 
 ## Consulta también
 
-- Otros [elementos de la semántica a nivel de texto](/en/HTML/Text-level_semantics_elements) : {{ HTMLElement("a") }}, {{ HTMLElement("em") }}, {{ HTMLElement("strong") }}, {{ HTMLElement("cite") }} , {{ HTMLElement("q") }} , {{ HTMLElement("dfn") }}, {{ HTMLElement("abbr") }}, {{ HTMLElement("time") }} , {{ HTMLElement("code") }} ,{{ HTMLElement("var") }}, {{ HTMLElement("samp") }} ,{{ HTMLElement("kbd") }} ,{{ HTMLElement("sub") }} , {{ HTMLElement("sup") }} ,{{ HTMLElement("i") }} , {{ HTMLElement("b") }}, {{ HTMLElement("mark") }} , {{ HTMLElement("ruby") }} , {{ HTMLElement("rp") }} , {{ HTMLElement("rt") }} , {{ HTMLElement("bdo") }}, {{ HTMLElement("span") }} , {{ HTMLElement("br") }} , {{ HTMLElement("wbr") }}.
+- Otros [elementos de la semántica a nivel de texto](/es/docs/HTML/Text-level_semantics_elements) : {{ HTMLElement("a") }}, {{ HTMLElement("em") }}, {{ HTMLElement("strong") }}, {{ HTMLElement("cite") }} , {{ HTMLElement("q") }} , {{ HTMLElement("dfn") }}, {{ HTMLElement("abbr") }}, {{ HTMLElement("time") }} , {{ HTMLElement("code") }} ,{{ HTMLElement("var") }}, {{ HTMLElement("samp") }} ,{{ HTMLElement("kbd") }} ,{{ HTMLElement("sub") }} , {{ HTMLElement("sup") }} ,{{ HTMLElement("i") }} , {{ HTMLElement("b") }}, {{ HTMLElement("mark") }} , {{ HTMLElement("ruby") }} , {{ HTMLElement("rp") }} , {{ HTMLElement("rt") }} , {{ HTMLElement("bdo") }}, {{ HTMLElement("span") }} , {{ HTMLElement("br") }} , {{ HTMLElement("wbr") }}.

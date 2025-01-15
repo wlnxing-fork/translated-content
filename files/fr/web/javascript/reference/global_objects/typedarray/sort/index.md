@@ -1,28 +1,18 @@
 ---
 title: TypedArray.prototype.sort()
 slug: Web/JavaScript/Reference/Global_Objects/TypedArray/sort
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-  - TypedArray
-  - TypedArrays
-translation_of: Web/JavaScript/Reference/Global_Objects/TypedArray/sort
-original_slug: Web/JavaScript/Reference/Objets_globaux/TypedArray/sort
 ---
 
 {{JSRef}}
 
-La méthode **`sort()`** permet de trier numériquement les éléments d'un tableau typé, à même ce tableau. Cette méthode utilise le même algorithme que {{jsxref("Array.prototype.sort()")}} en triant les valeurs par ordre numérique plutôt que par ordre lexicographique*.* Par la suite, _TypedArray_ désigne l'un des [types de tableau typé](/fr/docs/Web/JavaScript/Reference/Objets_globaux/TypedArray#Les_objets_TypedArray) here.
+La méthode **`sort()`** permet de trier numériquement les éléments d'un tableau typé, à même ce tableau. Cette méthode utilise le même algorithme que {{jsxref("Array.prototype.sort()")}} en triant les valeurs par ordre numérique plutôt que par ordre lexicographique*.* Par la suite, _TypedArray_ désigne l'un des [types de tableau typé](/fr/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#les_objets_typedarray) here.
 
 {{EmbedInteractiveExample("pages/js/typedarray-sort.html")}}
 
 ## Syntaxe
 
 ```js
-typedarray.sort([fonctionComparaison])
+typedarray.sort([fonctionComparaison]);
 ```
 
 ### Paramètres

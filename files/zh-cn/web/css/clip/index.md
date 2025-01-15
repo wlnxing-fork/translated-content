@@ -9,19 +9,24 @@ slug: Web/CSS/clip
 
 `clip` 属性定义了元素的哪一部分是可见的。`clip` 属性只适用于 {{ cssxref("position","position:absolute") }} 的元素。
 
-> **警告：** 这个属性已被废弃。建议使用 {{cssxref("clip-path")}} 。
-
-{{cssinfo}}
+> [!WARNING]
+> 这个属性已被废弃。建议使用 {{cssxref("clip-path")}} 。
 
 ## 语法
 
-[形式语法](/zh-CN/docs/CSS/Value_definition_syntax): {{csssyntax("clip")}}
+```css
+/* 关键字值 */
+clip: auto;
 
-```
-clip: rect(1px, 10em, 3rem, 2ch)
-clip: auto
+/* <shape> 值 */
+clip: rect(1px, 10em, 3rem, 2ch);
 
-clip: inherit
+/* 全局值 */
+clip: inherit;
+clip: initial;
+clip: revert;
+clip: revert-layer;
+clip: unset;
 ```
 
 ### 值
@@ -46,6 +51,14 @@ clip: inherit
 - `auto`
   - : 元素不裁剪 (默认值)
 
+## 形式定义
+
+{{cssinfo}}
+
+## 形式语法
+
+{{csssyntax}}
+
 ## 示例
 
 ### 裁剪图像
@@ -54,17 +67,9 @@ clip: inherit
 
 ```html
 <p class="dotted-border">
-  <img
-    src="macarons.png"
-    title="Original graphic" />
-  <img
-    id="top-left"
-    src="macarons.png"
-    title="Graphic clipped to upper left" />
-  <img
-    id="middle"
-    src="macarons.png"
-    title="Graphic clipped towards middle" />
+  <img src="macarons.png" title="Original graphic" />
+  <img id="top-left" src="macarons.png" title="Graphic clipped to upper left" />
+  <img id="middle" src="macarons.png" title="Graphic clipped towards middle" />
   <img
     id="bottom-right"
     src="macarons.png"

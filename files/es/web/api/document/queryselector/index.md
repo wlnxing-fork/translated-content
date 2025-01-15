@@ -13,8 +13,8 @@ element = document.querySelector(selectores);
 
 Donde:
 
-- `element` es un objeto de tipo [element](/es/docs/DOM/element).
-- `selectores` es una cadena de caracteres que contiene uno o más [selectores CSS](/es/docs/Web/Guide/CSS/Getting_Started/Selectors) separados por coma.
+- `element` es un objeto de tipo [element](/es/docs/Web/API/Element).
+- `selectores` es una cadena de caracteres que contiene uno o más [selectores CSS](/es/docs/Learn/CSS/Building_blocks/Selectors) separados por coma.
 
 ## Ejemplo
 
@@ -47,15 +47,15 @@ var el = document.querySelector("div.user-panel.main input[name='login']");
 <div id="foo:bar"></div>
 
 <script>
-  console.log('#foo\bar');               // "#fooar"
-  document.querySelector('#foo\bar');    // No coincide con nada
+  console.log("#foo\bar"); // "#fooar"
+  document.querySelector("#foo\bar"); // No coincide con nada
 
-  console.log('#foo\\bar');              // "#foo\bar"
-  console.log('#foo\\\\bar');            // "#foo\\bar"
-  document.querySelector('#foo\\\\bar'); // Coincide con el primer div
+  console.log("#foo\\bar"); // "#foo\bar"
+  console.log("#foo\\\\bar"); // "#foo\\bar"
+  document.querySelector("#foo\\\\bar"); // Coincide con el primer div
 
-  document.querySelector('#foo:bar');    // No coincide con nada
-  document.querySelector('#foo\\:bar');  // Coincide con el segundo div
+  document.querySelector("#foo:bar"); // No coincide con nada
+  document.querySelector("#foo\\:bar"); // Coincide con el segundo div
 </script>
 ```
 

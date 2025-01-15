@@ -12,7 +12,7 @@ Retorna el objeto statusbar, la visibilidad se puede alternar en la ventana.
 ## Sintaxis
 
 ```js
-objRef = window.statusbar
+objRef = window.statusbar;
 ```
 
 ## Ejemplo
@@ -20,22 +20,23 @@ objRef = window.statusbar
 El siguiente ejemplo HTML muestra una forma de utilizar la propiedad visible de los diversos objetos de "bar", y tambien el cambio de privilegios nesesarios para escribir en la propiedad visible para cada una de las ventanas existentes.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>Various DOM Tests</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Various DOM Tests</title>
 
-<script>
-// cambia el estado de la barra en la ventana existente
-netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserWrite");
-window.statusbar.visible=!window.statusbar.visible;
-</script>
-
-</head>
-<body>
-  <p>Various DOM Tests</p>
-</body>
+    <script>
+      // cambia el estado de la barra en la ventana existente
+      netscape.security.PrivilegeManager.enablePrivilege(
+        "UniversalBrowserWrite",
+      );
+      window.statusbar.visible = !window.statusbar.visible;
+    </script>
+  </head>
+  <body>
+    <p>Various DOM Tests</p>
+  </body>
 </html>
 ```
 
@@ -51,4 +52,4 @@ Para alternar la visibilidad de las barras, debe de firmar sus scripts o abilita
 
 ## Ver tambien
 
-- [window.locationbar](/es/docs/Web/API/Window.locationbar), [window.menubar](/es/docs/Web/API/Window.menubar), [window.personalbar](/es/docs/Web/API/Window.personalbar), [window.scrollbars](/es/docs/Web/API/Window.scrollbars), [window.toolbar](/es/docs/Web/API/Window.toolbar)
+- [window.locationbar](/es/docs/Web/API/Window/locationbar), [window.menubar](/es/docs/Web/API/Window/menubar), [window.personalbar](/es/docs/Web/API/Window/personalbar), [window.scrollbars](/es/docs/Web/API/Window/scrollbars), [window.toolbar](/es/docs/Web/API/Window/toolbar)

@@ -5,7 +5,7 @@ slug: Web/API/IDBObjectStore/add
 
 {{ APIRef("IndexedDB") }}
 
-{{domxref("IDBObjectStore")}} 接口中的 **`add()`** 方法返回一个 {{domxref("IDBRequest")}} 对象，在单独的线程中创建一个结构（[structured clone](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-dom-interfaces.html#structured-clone)）化克隆值，并且在对象存储中存储这个克隆值。这个方法用作在一个对象存储中添加一条新的记录。
+{{domxref("IDBObjectStore")}} 接口中的 **`add()`** 方法返回一个 {{domxref("IDBRequest")}} 对象，在单独的线程中创建一个结构（[structured clone](https://www.whatwg.org/specs/web-apps/current-work/multipage/common-dom-interfaces.html#structured-clone)）化克隆值，并且在对象存储中存储这个克隆值。这个方法用作在一个对象存储中添加一条新的记录。
 
 要确定添加操作是否成功完成，可以监听事务的 `complete` 事件。除了 `IDBObjectStore.add` 请求 `success` 事件之外，因为事务在成功被触发后仍然可能失败。换句话说，成功事件只有在事务成功排队后才会触发。
 
@@ -15,9 +15,9 @@ slug: Web/API/IDBObjectStore/add
 
 ## 语法
 
-```
-var request = objectStore.add(value);
-var request = objectStore.add(value, key);
+```js-nolint
+add(value)
+add(value, key)
 ```
 
 ### 参数
@@ -98,8 +98,8 @@ var request = objectStore.add(value, key);
 // Let us open our database
 var DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
-DBOpenRequest.onsuccess = function(event) {
-  note.innerHTML += '<li>Database initialised.</li>';
+DBOpenRequest.onsuccess = function (event) {
+  note.innerHTML += "<li>Database initialised.</li>";
 
   // store the result of opening the database in the db variable.
   // This is used a lot below
@@ -111,18 +111,29 @@ DBOpenRequest.onsuccess = function(event) {
 
 function addData() {
   // Create a new object ready to insert into the IDB
-  var newItem = [ { taskTitle: "Walk dog", hours: 19, minutes: 30, day: 24, month: "December", year: 2013, notified: "no" } ];
+  var newItem = [
+    {
+      taskTitle: "Walk dog",
+      hours: 19,
+      minutes: 30,
+      day: 24,
+      month: "December",
+      year: 2013,
+      notified: "no",
+    },
+  ];
 
   // open a read/write db transaction, ready for adding the data
   var transaction = db.transaction(["toDoList"], "readwrite");
 
   // report on the success of the transaction completing, when everything is done
-  transaction.oncomplete = function(event) {
-    note.innerHTML += '<li>Transaction completed.</li>';
+  transaction.oncomplete = function (event) {
+    note.innerHTML += "<li>Transaction completed.</li>";
   };
 
-  transaction.onerror = function(event) {
-  note.innerHTML += '<li>Transaction not opened due to error. Duplicate items not allowed.</li>';
+  transaction.onerror = function (event) {
+    note.innerHTML +=
+      "<li>Transaction not opened due to error. Duplicate items not allowed.</li>";
   };
 
   // create an object store on the transaction
@@ -131,22 +142,22 @@ function addData() {
   // Make a request to add our newItem object to the object store
   var objectStoreRequest = objectStore.add(newItem[0]);
 
-  objectStoreRequest.onsuccess = function(event) {
+  objectStoreRequest.onsuccess = function (event) {
     // report the success of our request
-    note.innerHTML += '<li>Request successful.</li>';
+    note.innerHTML += "<li>Request successful.</li>";
   };
-};
+}
 ```
 
-## Specification
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Using IndexedDB](/zh-CN/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 - Starting transactions: {{domxref("IDBDatabase")}}

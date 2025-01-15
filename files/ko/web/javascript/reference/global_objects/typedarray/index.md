@@ -19,38 +19,39 @@ slug: Web/JavaScript/Reference/Global_Objects/TypedArray
 
 ## TypedArray 객체
 
-| 형식                                     | 값 범위                                                 | 바이트 크기| 설명                                                                        | Web IDL 형식          | 동일한 C 형식               |
-| ---------------------------------------- | --------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------- | --------------------- | ------------------------------- |
-| {{jsxref("Int8Array")}}         | -128 to 127                                                 | 1             | 부호 있는 8비트 2의 보수 정수                                             | `byte`                | `int8_t`                        |
-| {{jsxref("Uint8Array")}}         | 0 to 255                                                    | 1             | 부호 없는 8비트 정수                                                             | `octet`               | `uint8_t`                       |
-| {{jsxref("Uint8ClampedArray")}} | 0 to 255                                                    | 1             | 부호 없는 8비트 정수 (고정)                                                   | `octet`               | `uint8_t`                       |
-| {{jsxref("Int16Array")}}         | -32768 to 32767                                             | 2             | 부호 있는 16비트 2의 보수 정수                                             | `short`               | `int16_t`                       |
-| {{jsxref("Uint16Array")}}         | 0 to 65535                                                  | 2             | 부호 없는 16비트 정수                                                            | `unsigned short`      | `uint16_t`                      |
-| {{jsxref("Int32Array")}}         | -2147483648 to 2147483647                                   | 4             | 부호 있는 32비트 2의 보수 정수                                             | `long`                | `int32_t`                       |
-| {{jsxref("Uint32Array")}}         | 0 to 4294967295                                             | 4             | 부호 없는 32비트 정수                                                            | `unsigned long`       | `uint32_t`                      |
-| {{jsxref("Float32Array")}}     | `-3.4E38`에서 `3.4E38`. `1.2E-38`은 최초 양수  | 4             | 32비트 IEEE 부동 소수점 숫자 (유효한 7자리 숫자, 예: `1.234567`)          | `unrestricted float`  | `float`                         |
-| {{jsxref("Float64Array")}}     | `-1.8E308`에서 `1.8E308`. `5E-324`는 최소 양수 | 8             | 64비트 IEEE 부동 소수점 숫자 (유효한 16자리 숫자, 예: `1.23456789012345`) | `unrestricted double` | `double`                        |
-| {{jsxref("BigInt64Array")}}     | -2<sup>63</sup>에서 2<sup>63</sup> - 1                                           | 8             | 부호 있는 64비트 2의 보수 정수                                             | `bigint`              | `int64_t (signed long long)`    |
-| {{jsxref("BigUint64Array")}}     | 0 에서 2<sup>64</sup> - 1                                               | 8             | 부호 없는 64비트 정수                                                            | `bigint`              | `uint64_t (unsigned long long)` |
+| 형식                            | 값 범위                                        | 바이트 크기 | 설명                                                                      | Web IDL 형식          | 동일한 C 형식                   |
+| ------------------------------- | ---------------------------------------------- | ----------- | ------------------------------------------------------------------------- | --------------------- | ------------------------------- |
+| {{jsxref("Int8Array")}}         | -128 to 127                                    | 1           | 부호 있는 8비트 2의 보수 정수                                             | `byte`                | `int8_t`                        |
+| {{jsxref("Uint8Array")}}        | 0 to 255                                       | 1           | 부호 없는 8비트 정수                                                      | `octet`               | `uint8_t`                       |
+| {{jsxref("Uint8ClampedArray")}} | 0 to 255                                       | 1           | 부호 없는 8비트 정수 (고정)                                               | `octet`               | `uint8_t`                       |
+| {{jsxref("Int16Array")}}        | -32768 to 32767                                | 2           | 부호 있는 16비트 2의 보수 정수                                            | `short`               | `int16_t`                       |
+| {{jsxref("Uint16Array")}}       | 0 to 65535                                     | 2           | 부호 없는 16비트 정수                                                     | `unsigned short`      | `uint16_t`                      |
+| {{jsxref("Int32Array")}}        | -2147483648 to 2147483647                      | 4           | 부호 있는 32비트 2의 보수 정수                                            | `long`                | `int32_t`                       |
+| {{jsxref("Uint32Array")}}       | 0 to 4294967295                                | 4           | 부호 없는 32비트 정수                                                     | `unsigned long`       | `uint32_t`                      |
+| {{jsxref("Float32Array")}}      | `-3.4E38`에서 `3.4E38`. `1.2E-38`은 최초 양수  | 4           | 32비트 IEEE 부동 소수점 숫자 (유효한 7자리 숫자, 예: `1.234567`)          | `unrestricted float`  | `float`                         |
+| {{jsxref("Float64Array")}}      | `-1.8E308`에서 `1.8E308`. `5E-324`는 최소 양수 | 8           | 64비트 IEEE 부동 소수점 숫자 (유효한 16자리 숫자, 예: `1.23456789012345`) | `unrestricted double` | `double`                        |
+| {{jsxref("BigInt64Array")}}     | -2<sup>63</sup>에서 2<sup>63</sup> - 1         | 8           | 부호 있는 64비트 2의 보수 정수                                            | `bigint`              | `int64_t (signed long long)`    |
+| {{jsxref("BigUint64Array")}}    | 0 에서 2<sup>64</sup> - 1                      | 8           | 부호 없는 64비트 정수                                                     | `bigint`              | `uint64_t (unsigned long long)` |
 
 ## 생성자
 
 이 객체는 직접 인스턴스화할 수 없습니다. 대신 {{jsxref("Int8Array")}} 또는 {{jsxref("BigInt64Array")}}와 같은 특정 유형의 배열 인스턴스를 만들 수 있습니다. 이러한 객체에는 모두 생성자에 대한 공통적인 구문이 있습니다.
 
 ```js
-new TypedArray()
-new TypedArray(length)
-new TypedArray(typedArray)
-new TypedArray(object)
+new TypedArray();
+new TypedArray(length);
+new TypedArray(typedArray);
+new TypedArray(object);
 
-new TypedArray(buffer)
-new TypedArray(buffer, byteOffset)
-new TypedArray(buffer, byteOffset, length)
+new TypedArray(buffer);
+new TypedArray(buffer, byteOffset);
+new TypedArray(buffer, byteOffset, length);
 ```
 
-여기서 _TypedArray_ 는 구체적인 유형 중 하나의 생성자입니다.
+여기서 TypedArray 는 구체적인 유형 중 하나의 생성자입니다.
 
-> **참고:** 모든 `TypedArray` 생성자는 [`new`](/ko/docs/Web/JavaScript/Reference/Operators/new)로만 생성할 수 있습니다. `new` 없이 호출하려고 하면 {{jsxref("TypeError")}}가 발생합니다.
+> [!NOTE]
+> 모든 `TypedArray` 생성자는 [`new`](/ko/docs/Web/JavaScript/Reference/Operators/new)로만 생성할 수 있습니다. `new` 없이 호출하려고 하면 {{jsxref("TypeError")}}가 발생합니다.
 
 ## 매개변수
 
@@ -63,6 +64,21 @@ new TypedArray(buffer, byteOffset, length)
 - `buffer`, `byteOffset`,
   `length`
   - : `buffer`와 선택적으로 전달할 수 있는 `byteOffset` 및 `length` 인수가 함께 호출되면, 지정된 {{jsxref("ArrayBuffer")}}를 보는 새로운 형식화 배열 뷰가 생성됩니다. `byteOffset` 및 `length` 매개변수는 형식화 배열 보기에 의해 노출될 메모리 범위를 지정합니다. 둘 다 생략하면 모든 버퍼가 표시되고, `length`만 생략하면 `buffer`의 나머지 부분이 표시됩니다.
+
+### 예외
+
+모든 `TypeArray` 하위 클래스 생성자는 같은 방식으로 동작합니다. 생성자는 모두 아래와 같은 예외를 발생시킵니다.
+
+- {{jsxref("TypeError")}}
+  - : 다음 상황 중 하나일 경우 발생합니다.
+    - `typedArray`가 전달되었으나, [bigint](/ko/docs/Web/JavaScript/Reference/Global_Objects/BigInt) 유형이지만 현 생성자가 그렇지 않을 경우 혹은 그 반대의 경우입니다.
+    - `typeArray`가 전달되었으나, 바라보는 버퍼가 분리되었거나 혹은 분리된 `buffer`가 바로 전달될 경우입니다.
+- {{jsxref("RangeError")}}
+  - : 다음 상황 중 하나일 경우 발생합니다.
+    - 새로운 형식화 배열의 길이가 너무 클 경우입니다.
+    - `buffer`의 길이(`length` 매개변수가 명시되지 않을 경우) 혹은 `byteOffset`이 새로운 형식화 배열의 요소 크기의 정수 배수가 아닐 경우입니다.
+    - `byteOffset`이 유효한 배열 인덱스(0부터 2<sup>53</sup> - 1 사이의 정수)가 아닐 경우입니다.
+    - 버퍼에서 뷰를 만들 때 뷰가 버퍼를 벗어날 경우입니다. 즉, `byteOffset + length * TypedArray.BYTES_PER_ELEMENT > buffer.byteLength`입니다.
 
 ## 정적 속성
 
@@ -171,18 +187,18 @@ int16[0] = 42;
 console.log(int16[0]); // 42
 
 // 프로토타입의 인덱싱된 속성이 참조되지 않음 (Fx 25)
-Int8Array.prototype[20] = 'foo';
-(new Int8Array(32))[20]; // 0
+Int8Array.prototype[20] = "foo";
+new Int8Array(32)[20]; // 0
 // 범위를 벗어나더라도
-Int8Array.prototype[20] = 'foo';
-(new Int8Array(8))[20]; // undefined
+Int8Array.prototype[20] = "foo";
+new Int8Array(8)[20]; // undefined
 // 또는 음수를 사용하더라도
-Int8Array.prototype[-1] = 'foo';
-(new Int8Array(8))[-1]; // undefined
+Int8Array.prototype[-1] = "foo";
+new Int8Array(8)[-1]; // undefined
 
 // 그래도 이름을 지정한 속성은 허용됨 (Fx 30)
-Int8Array.prototype.foo = 'bar';
-(new Int8Array(32)).foo; // "bar"
+Int8Array.prototype.foo = "bar";
+new Int8Array(32).foo; // "bar"
 ```
 
 ### 고정될 수 없음
@@ -195,7 +211,7 @@ Object.freeze(i8);
 // TypeError: Cannot freeze array buffer views with elements
 ```
 
-### ByteOffset는 반드시 정렬되어야 합니다.
+### ByteOffset는 반드시 정렬되어야 합니다
 
 `TypedArray`를 `ArrayBuffer`에 대한 보기로 구성할 때 `byteOffset` 인수는 요소 크기에 맞춰 정렬되어야 합니다. 즉, 오프셋은 B`YTES_PER_ELEMENT`의 배수여야 합니다.
 
@@ -208,7 +224,7 @@ const i32 = new Int32Array(new ArrayBuffer(4), 1);
 const i32 = new Int32Array(new ArrayBuffer(4), 0);
 ```
 
-### ByteLength는 반드시 정렬되어야 합니다.
+### ByteLength는 반드시 정렬되어야 합니다
 
 `byteOffset` 매개변수와 마찬가지로 `TypedArray`의 생성자에 전달된 `ArrayBuffer`의 `byteLength` 속성은 생성자의 `BYTES_PER_ELEMENT`의 배수여야 합니다.
 
@@ -231,8 +247,8 @@ const i32 = new Int32Array(new ArrayBuffer(4));
 
 ## 같이 보기
 
-- [Polyfill of typed arrays in `core-js`](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
-- [JavaScript 형식화 배열](/ko/docs/Web/JavaScript/Typed_arrays)
+- [`core-js`에서의 형식화 배열 폴리필](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
+- [JavaScript 형식화 배열](/ko/docs/Web/JavaScript/Guide/Typed_arrays) 안내서
 - {{jsxref("ArrayBuffer")}}
 - {{jsxref("DataView")}}
-- [TextDecoder](/ko/docs/Web/API/TextDecoder) — 숫자 데이터에서 문자열을 디코딩하는 헬퍼
+- {{domxref("TextDecoder")}}

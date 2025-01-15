@@ -36,7 +36,7 @@ slug: Web/HTML/Element/u
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -130,7 +130,7 @@ CSS는 `spelling` 클래스를 가진 `<u>` 요소에 빨간 물결 밑줄을 �
 
 ```html
 <span class="underline">Today's Special</span>
-<br>
+<br />
 Chicken Noodle Soup With Carrots
 ```
 

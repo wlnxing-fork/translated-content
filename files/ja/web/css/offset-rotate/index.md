@@ -9,7 +9,8 @@ slug: Web/CSS/offset-rotate
 
 {{EmbedInteractiveExample("pages/css/offset-rotate.html")}}
 
-> **メモ:** 初期のころの仕様書では、このプロパティを `motion-rotation` と呼んでいました。
+> [!NOTE]
+> 初期のころの仕様書では、このプロパティを `motion-rotation` と呼んでいました。
 
 ## 構文
 
@@ -23,7 +24,7 @@ offset-rotate: reverse;
 
 /* パスの位置に関係なく、決められた回転を維持する */
 offset-rotate: 90deg;
-offset-rotate: .5turn;
+offset-rotate: 0.5turn;
 
 /* グローバル値 */
 offset-rotate: inherit;
@@ -67,12 +68,12 @@ offset-rotate: unset;
 div {
   width: 40px;
   height: 40px;
-  background: #2BC4A2;
+  background: #2bc4a2;
   margin: 20px;
   clip-path: polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%, 30% 50%);
   animation: move 5000ms infinite alternate ease-in-out;
 
-  offset-path: path('M20,20 C20,50 180,-10 180,20');
+  offset-path: path("M20,20 C20,50 180,-10 180,20");
 }
 div:nth-child(1) {
   offset-rotate: auto;

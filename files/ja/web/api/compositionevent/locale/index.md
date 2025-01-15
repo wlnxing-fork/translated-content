@@ -1,15 +1,17 @@
 ---
-title: CompositionEvent.locale
+title: "CompositionEvent: locale プロパティ"
+short-title: locale
 slug: Web/API/CompositionEvent/locale
 l10n:
-  sourceCommit: bf30e32f3b51f59080f2c76795beadb247a551eb
+  sourceCommit: d76defab4ca13261e9de81ae1df125345f847b0a
 ---
 
 {{deprecated_header}}{{APIRef("UI Events")}}{{Non-standard_header}}
 
 **`locale`** は {{domxref("CompositionEvent")}} インターフェイスの読み取り専用のプロパティで、現在の入力システムのロケール（例えば、結合操作が IME に関連付けられているならばキーボードレイアウトのロケール）を返します。
 
-> **警告:** 対応しているブラウザーでも、このプロパティに含まれる値は信用しないでください。
+> [!WARNING]
+> 対応しているブラウザーでも、このプロパティに含まれる値は信用しないでください。
 > 技術的にはアクセス可能であるとしても、 {{domxref("CompositionEvent")}} を作成する際の設定方法が一貫している保証はありません。
 
 ## 値

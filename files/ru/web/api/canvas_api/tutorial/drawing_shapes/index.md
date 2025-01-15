@@ -1,8 +1,6 @@
 ---
 title: Рисование фигур с помощью canvas
 slug: Web/API/Canvas_API/Tutorial/Drawing_shapes
-translation_of: Web/API/Canvas_API/Tutorial/Drawing_shapes
-original_slug: Web/API/Canvas_API/Tutorial/Рисование_фигур
 ---
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Basic_usage", "Web/API/Canvas_API/Tutorial/Applying_styles_and_colors")}}
@@ -37,21 +35,21 @@ original_slug: Web/API/Canvas_API/Tutorial/Рисование_фигур
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
+  var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext("2d");
 
-    ctx.fillRect(25,25,100,100);
-    ctx.clearRect(45,45,60,60);
-    ctx.strokeRect(50,50,50,50);
+    ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
   }
 }
 ```
@@ -73,7 +71,7 @@ function draw() {
 Создание фигур используя контуры происходит в несколько важных шагов:
 
 1. Сначала вы создаёте контур.
-2. Затем, используя [команды рисования](/ru/docs/Web/API/CanvasRenderingContext2D#Paths), рисуете контур.
+2. Затем, используя [команды рисования](/ru/docs/Web/API/CanvasRenderingContext2D#paths), рисуете контур.
 3. Потом закрываете контур.
 4. Созданный контур вы можете обвести или залить для его отображения.
 
@@ -81,7 +79,7 @@ function draw() {
 
 - {{domxref("CanvasRenderingContext2D.beginPath", "beginPath()")}}
   - : Создаёт новый контур. После создания используется в дальнейшем командами рисования при построении контуров.
-- [Path методы](/ru/docs/Web/API/CanvasRenderingContext2D#Paths)
+- [Path методы](/ru/docs/Web/API/CanvasRenderingContext2D#paths)
   - : Методы для установки различных контуров объекта.
 - {{domxref("CanvasRenderingContext2D.closePath", "closePath()")}}
   - : Закрывает контур, так что будущие команды рисования вновь направлены контекст.
@@ -92,13 +90,15 @@ function draw() {
 
 Первый шаг создания контура заключается в вызове функции **`beginPath()`**. Внутри содержатся контуры в виде набора суб-контуров (линии, дуги и др.), которые вместе образуют форму фигуры. Каждый вызов этого метода очищает набор, и мы можем начинать рисовать новые фигуры.
 
-> **Примечание:** если текущий контур пуст (например, как после вызова `beginPath()` или на вновь созданном canvas), первой командой построения контура всегда является функция **`moveTo()`**. Поэтому мы всегда можем установить начальную позицию рисования контура после перезагрузки.
+> [!NOTE]
+> Если текущий контур пуст (например, как после вызова `beginPath()` или на вновь созданном canvas), первой командой построения контура всегда является функция **`moveTo()`**. Поэтому мы всегда можем установить начальную позицию рисования контура после перезагрузки.
 
 Вторым шагом является вызов методов, определяемых видом контура, который нужно нарисовать. Их мы рассмотрим позднее.
 
 Третий и необязательный шаг - это вызов **`closePath()`**. Этот метод пытается закрыть фигуру, рисуя прямую линию из текущей точки в начальную. Если фигура была уже закрыта или является просто точкой, то функция ничего не делает.
 
-> **Примечание:** Когда вы вызываете **`fill()`**, то каждая открытая фигура закрывается автоматически, так что вы можете не использовать `closePath()`. Это обстоятельство не имеет место в случае вызова `stroke()`.
+> [!NOTE]
+> Когда вы вызываете **`fill()`**, то каждая открытая фигура закрывается автоматически, так что вы можете не использовать `closePath()`. Это обстоятельство не имеет место в случае вызова `stroke()`.
 
 ### Рисование треугольника
 
@@ -106,22 +106,22 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="100" height="100"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="100" height="100"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
     ctx.beginPath();
-    ctx.moveTo(75,50);
-    ctx.lineTo(100,75);
-    ctx.lineTo(100,25);
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
     ctx.fill();
   }
 }
@@ -144,26 +144,26 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-     var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
     ctx.beginPath();
-    ctx.arc(75,75,50,0,Math.PI*2,true); // Внешняя окружность
-    ctx.moveTo(110,75);
-    ctx.arc(75,75,35,0,Math.PI,false);  // рот (по часовой стрелке)
-    ctx.moveTo(65,65);
-    ctx.arc(60,65,5,0,Math.PI*2,true);  // Левый глаз
-    ctx.moveTo(95,65);
-    ctx.arc(90,65,5,0,Math.PI*2,true);  // Правый глаз
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Внешняя окружность
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false); // рот (по часовой стрелке)
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Левый глаз
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Правый глаз
     ctx.stroke();
   }
 }
@@ -175,7 +175,8 @@ function draw() {
 
 Если вы захотите увидеть соединение линии, то можете удалить вызов `moveTo()`.
 
-> **Примечание:** Подробнее о функции `arc()`,посмотрите [Дуги](#дуги) .
+> [!NOTE]
+> Подробнее о функции `arc()`,посмотрите [Дуги](#дуги) .
 
 ### Линии
 
@@ -190,30 +191,30 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
     // Filled triangle
     ctx.beginPath();
-    ctx.moveTo(25,25);
-    ctx.lineTo(105,25);
-    ctx.lineTo(25,105);
+    ctx.moveTo(25, 25);
+    ctx.lineTo(105, 25);
+    ctx.lineTo(25, 105);
     ctx.fill();
 
     // Stroked triangle
     ctx.beginPath();
-    ctx.moveTo(125,125);
-    ctx.lineTo(125,45);
-    ctx.lineTo(45,125);
+    ctx.moveTo(125, 125);
+    ctx.lineTo(125, 45);
+    ctx.lineTo(45, 125);
     ctx.closePath();
     ctx.stroke();
   }
@@ -237,7 +238,8 @@ function draw() {
 
 Рассмотрим детальнее метод _arc()_, который имеет пять параметров: _`x`_ и _`y`_ — это координаты центра окружности, в которой должна быть нарисована дуга. _`radius`_ — не требует пояснений. Углы `startAngle` и `endAngle` определяют начальную и конечную точки дуги в радианах вдоль кривой окружности. Отсчёт происходит от оси x. Параметр `anticlockwise` — логическое значение, которое, если `true`, то рисование дуги совершается против хода часовой стрелки; иначе рисование происходит по ходу часовой стрелки.
 
-> **Примечание:** Углы в функции arc() измеряют в радианах, не в градусах. Для перевода градусов в радианы вы можете использовать JavaScript-выражение: `radians = (Math.PI/180)*degrees`.
+> [!NOTE]
+> Углы в функции arc() измеряют в радианах, не в градусах. Для перевода градусов в радианы вы можете использовать JavaScript-выражение: `radians = (Math.PI/180)*degrees`.
 
 Следующий пример немного сложнее, чем мы рассматривали ранее. Здесь нарисованы 12 различных дуг с разными углами и заливками.
 
@@ -247,35 +249,36 @@ function draw() {
 
 Установка параметра `clockwise` определяет результат; в первой и третьей строках рисование дуг происходит по часовой стрелке, а во второй и четвёртой - против часовой стрелки. Благодаря if-условию верхняя половина дуг образуется с контуром, (обводкой), а нижняя половина дуг - с заливкой.
 
-> **Примечание:** Этот пример требует немного большего холста (canvas), чем другие на этой странице: 150 x 200 pixels.
+> [!NOTE]
+> Этот пример требует немного большего холста (canvas), чем другие на этой странице: 150 x 200 pixels.
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="200"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="200"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
-    for(var i=0;i<4;i++){
-      for(var j=0;j<3;j++){
+    for (var i = 0; i < 4; i++) {
+      for (var j = 0; j < 3; j++) {
         ctx.beginPath();
-        var x = 25+j*50; // x coordinate
-        var y = 25+i*50; // y coordinate
+        var x = 25 + j * 50; // x coordinate
+        var y = 25 + i * 50; // y coordinate
         var radius = 20; // Arc radius
         var startAngle = 0; // Starting point on circle
-        var endAngle = Math.PI+(Math.PI*j)/2; // End point on circle
-        var anticlockwise = i%2==0 ? false : true; // clockwise or anticlockwise
+        var endAngle = Math.PI + (Math.PI * j) / 2; // End point on circle
+        var anticlockwise = i % 2 == 0 ? false : true; // clockwise or anticlockwise
 
         ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
 
-        if (i>1){
+        if (i > 1) {
           ctx.fill();
         } else {
           ctx.stroke();
@@ -311,27 +314,27 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
+  var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext("2d");
 
     // Quadratric curves example
     ctx.beginPath();
-    ctx.moveTo(75,25);
-    ctx.quadraticCurveTo(25,25,25,62.5);
-    ctx.quadraticCurveTo(25,100,50,100);
-    ctx.quadraticCurveTo(50,120,30,125);
-    ctx.quadraticCurveTo(60,120,65,100);
-    ctx.quadraticCurveTo(125,100,125,62.5);
-    ctx.quadraticCurveTo(125,25,75,25);
+    ctx.moveTo(75, 25);
+    ctx.quadraticCurveTo(25, 25, 25, 62.5);
+    ctx.quadraticCurveTo(25, 100, 50, 100);
+    ctx.quadraticCurveTo(50, 120, 30, 125);
+    ctx.quadraticCurveTo(60, 120, 65, 100);
+    ctx.quadraticCurveTo(125, 100, 125, 62.5);
+    ctx.quadraticCurveTo(125, 25, 75, 25);
     ctx.stroke();
   }
 }
@@ -345,27 +348,27 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
     // Cubic curves example
     ctx.beginPath();
-    ctx.moveTo(75,40);
-    ctx.bezierCurveTo(75,37,70,25,50,25);
-    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
-    ctx.bezierCurveTo(20,80,40,102,75,120);
-    ctx.bezierCurveTo(110,102,130,80,130,62.5);
-    ctx.bezierCurveTo(130,62.5,130,25,100,25);
-    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.moveTo(75, 40);
+    ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+    ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+    ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+    ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+    ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+    ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
     ctx.fill();
   }
 }
@@ -389,77 +392,77 @@ function draw() {
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="150" height="150"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
-    roundedRect(ctx,12,12,150,150,15);
-    roundedRect(ctx,19,19,150,150,9);
-    roundedRect(ctx,53,53,49,33,10);
-    roundedRect(ctx,53,119,49,16,6);
-    roundedRect(ctx,135,53,49,33,10);
-    roundedRect(ctx,135,119,25,49,10);
+    roundedRect(ctx, 12, 12, 150, 150, 15);
+    roundedRect(ctx, 19, 19, 150, 150, 9);
+    roundedRect(ctx, 53, 53, 49, 33, 10);
+    roundedRect(ctx, 53, 119, 49, 16, 6);
+    roundedRect(ctx, 135, 53, 49, 33, 10);
+    roundedRect(ctx, 135, 119, 25, 49, 10);
 
     ctx.beginPath();
-    ctx.arc(37,37,13,Math.PI/7,-Math.PI/7,false);
-    ctx.lineTo(31,37);
+    ctx.arc(37, 37, 13, Math.PI / 7, -Math.PI / 7, false);
+    ctx.lineTo(31, 37);
     ctx.fill();
 
-    for(var i=0;i<8;i++){
-      ctx.fillRect(51+i*16,35,4,4);
+    for (var i = 0; i < 8; i++) {
+      ctx.fillRect(51 + i * 16, 35, 4, 4);
     }
 
-    for(i=0;i<6;i++){
-      ctx.fillRect(115,51+i*16,4,4);
+    for (i = 0; i < 6; i++) {
+      ctx.fillRect(115, 51 + i * 16, 4, 4);
     }
 
-    for(i=0;i<8;i++){
-      ctx.fillRect(51+i*16,99,4,4);
+    for (i = 0; i < 8; i++) {
+      ctx.fillRect(51 + i * 16, 99, 4, 4);
     }
 
     ctx.beginPath();
-    ctx.moveTo(83,116);
-    ctx.lineTo(83,102);
-    ctx.bezierCurveTo(83,94,89,88,97,88);
-    ctx.bezierCurveTo(105,88,111,94,111,102);
-    ctx.lineTo(111,116);
-    ctx.lineTo(106.333,111.333);
-    ctx.lineTo(101.666,116);
-    ctx.lineTo(97,111.333);
-    ctx.lineTo(92.333,116);
-    ctx.lineTo(87.666,111.333);
-    ctx.lineTo(83,116);
+    ctx.moveTo(83, 116);
+    ctx.lineTo(83, 102);
+    ctx.bezierCurveTo(83, 94, 89, 88, 97, 88);
+    ctx.bezierCurveTo(105, 88, 111, 94, 111, 102);
+    ctx.lineTo(111, 116);
+    ctx.lineTo(106.333, 111.333);
+    ctx.lineTo(101.666, 116);
+    ctx.lineTo(97, 111.333);
+    ctx.lineTo(92.333, 116);
+    ctx.lineTo(87.666, 111.333);
+    ctx.lineTo(83, 116);
     ctx.fill();
 
     ctx.fillStyle = "white";
     ctx.beginPath();
-    ctx.moveTo(91,96);
-    ctx.bezierCurveTo(88,96,87,99,87,101);
-    ctx.bezierCurveTo(87,103,88,106,91,106);
-    ctx.bezierCurveTo(94,106,95,103,95,101);
-    ctx.bezierCurveTo(95,99,94,96,91,96);
-    ctx.moveTo(103,96);
-    ctx.bezierCurveTo(100,96,99,99,99,101);
-    ctx.bezierCurveTo(99,103,100,106,103,106);
-    ctx.bezierCurveTo(106,106,107,103,107,101);
-    ctx.bezierCurveTo(107,99,106,96,103,96);
+    ctx.moveTo(91, 96);
+    ctx.bezierCurveTo(88, 96, 87, 99, 87, 101);
+    ctx.bezierCurveTo(87, 103, 88, 106, 91, 106);
+    ctx.bezierCurveTo(94, 106, 95, 103, 95, 101);
+    ctx.bezierCurveTo(95, 99, 94, 96, 91, 96);
+    ctx.moveTo(103, 96);
+    ctx.bezierCurveTo(100, 96, 99, 99, 99, 101);
+    ctx.bezierCurveTo(99, 103, 100, 106, 103, 106);
+    ctx.bezierCurveTo(106, 106, 107, 103, 107, 101);
+    ctx.bezierCurveTo(107, 99, 106, 96, 103, 96);
     ctx.fill();
 
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.arc(101,102,2,0,Math.PI*2,true);
+    ctx.arc(101, 102, 2, 0, Math.PI * 2, true);
     ctx.fill();
 
     ctx.beginPath();
-    ctx.arc(89,102,2,0,Math.PI*2,true);
+    ctx.arc(89, 102, 2, 0, Math.PI * 2, true);
     ctx.fill();
   }
 }
@@ -494,12 +497,12 @@ function roundedRect(ctx, x, y, width, height, radius) {
   - : Конструктор **`Path2D()`** возвращает вновь созданный объект `Path2D` необязательно с другим путём в качестве аргумента (создаёт копию) или необязательно со строкой, состоящей из данных пути [SVG path](/ru/docs/Web/SVG/Tutorial/Paths) .
 
 ```js
-new Path2D();     // пустой path объект
+new Path2D(); // пустой path объект
 new Path2D(path); // копирование из другого path
-new Path2D(d);    // path из SVG
+new Path2D(d); // path из SVG
 ```
 
-Все [методы path](/ru/docs/Web/API/CanvasRenderingContext2D#Paths) , такие как `moveTo`, `rect`, `arc`, или `quadraticCurveTo`, и т.п, которые мы уже знаем, доступны для объектов `Path2D`
+Все [методы path](/ru/docs/Web/API/CanvasRenderingContext2D#paths) , такие как `moveTo`, `rect`, `arc`, или `quadraticCurveTo`, и т.п, которые мы уже знаем, доступны для объектов `Path2D`
 
 API `Path2D` также добавляет способ комбинирования путей с использованием метода `addPath`. Это может быть полезно, если вы хотите, например, создавать объекты из нескольких компонентов.
 
@@ -512,17 +515,17 @@ API `Path2D` также добавляет способ комбинирован
 
 ```html hidden
 <html>
- <body onload="draw();">
-   <canvas id="canvas" width="130" height="100"></canvas>
- </body>
+  <body onload="draw();">
+    <canvas id="canvas" width="130" height="100"></canvas>
+  </body>
 </html>
 ```
 
 ```js
 function draw() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
 
     var rectangle = new Path2D();
     rectangle.rect(10, 10, 50, 50);
@@ -544,7 +547,7 @@ function draw() {
 Ещё одна мощная функция нового Canvas `Path2D` API использует данные пути SVG, [SVG path data](/ru/docs/Web/SVG/Tutorial/Paths), для инициализации путей на вашем холсте. Это может позволить вам передавать данные пути и повторно использовать их как в SVG, так и в холсте.
 
 Путь перемещается в точку (`M10 10`), а затем горизонтально перемещается на 80 пунктов вправо (`h 80`), затем на 80 пунктов вниз (`v 80`), затем на 80 пунктов влево (`h -80`), а затем обратно на start (`z`).
-Этот пример можно увидеть на странице [`Path2D` constructor](/ru/docs/Web/API/Path2D.Path2D#Using_SVG_paths).
+Этот пример можно увидеть на странице [`Path2D` constructor](/ru/docs/Web/API/Path2D/Path2D#using_svg_paths).
 
 ```js
 var p = new Path2D("M10 10 h 80 v 80 h -80 Z");

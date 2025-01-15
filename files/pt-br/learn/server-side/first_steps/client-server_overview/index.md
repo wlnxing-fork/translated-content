@@ -31,7 +31,7 @@ Não há código real em discussão porque ainda não escolhemos um framework we
 
 ## Web servers e HTTP (uma introdução)
 
-Navegadores Web se comunicam com [servidores Web](/pt-BR/docs/Learn/Common_questions/What_is_a_web_server) usando o **H**yper**T**ext**T**ransfer **P**rotocol ([HTTP](/pt-BR/docs/Web/HTTP)). Quando você clica em um link em uma página web, envia um formulário, ou faz uma pesquisa, o browser envia uma Requisição HTTP para o servidor.
+Navegadores Web se comunicam com [servidores Web](/pt-BR/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server) usando o **H**yper**T**ext**T**ransfer **P**rotocol ([HTTP](/pt-BR/docs/Web/HTTP)). Quando você clica em um link em uma página web, envia um formulário, ou faz uma pesquisa, o browser envia uma Requisição HTTP para o servidor.
 
 A requisição inclui:
 
@@ -61,7 +61,8 @@ Os sites estáticos e dinâmicos (discutidos nas seções a seguir) usam exatame
 
 Você pode fazer uma simples requisição GET clicando em um link ou buscando em um site (como uma simples ferramenta de pesquisa). Por exemplo, a requisição HTTP enviada quando você realiza uma busa na MDN pelo termo "cliente servidor visão geral" será muito parecido com o texto mostrado abaixo (não será identico porque partes da mensagem depente de seu navegador/configuração.
 
-> **Nota:** O formato das mensagens HTTP é definido em um "padrão da web" ([RFC7230](http://www.rfc-editor.org/rfc/rfc7230.txt)). Você não precisa saber esse nível de detalhe, mas pelo menos agora você sabe de onde vem tudo isso.
+> [!NOTE]
+> O formato das mensagens HTTP é definido em um "padrão da web" ([RFC7230](https://www.rfc-editor.org/rfc/rfc7230.txt)). Você não precisa saber esse nível de detalhe, mas pelo menos agora você sabe de onde vem tudo isso.
 
 #### A requisição
 
@@ -113,7 +114,7 @@ A primeira parte da resposta para esta solicitação é mostrada abaixo. O heade
 
 No final da mensagem vemos o conteúdo do corpo( **body** content) — que contém o HTML real retornado pela solicitação.
 
-```html
+```http
 HTTP/1.1 200 OK
 Server: Apache
 X-Backend-Server: developer1.webapp.scl3.mozilla.com
@@ -126,8 +127,6 @@ X-Frame-Options: DENY
 Allow: GET
 X-Cache-Info: caching
 Content-Length: 41823
-
-
 
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" class="redesign no-js"  data-ffo-opensanslight=false data-ffo-opensans=false >
@@ -148,7 +147,7 @@ Um HTTP `POST` é feito quando você envia um formulário contendo informações
 
 O texto abaixo mostra a solicitação HTTP feita quando um usuário envia novos detalhes de perfil neste site. O formato de requisição é quase o mesmo que o exemplo de solicitação `GET` mostrado anteriormente, embora a primeira linha reconheça esta solicitação como um `POST`.
 
-```html
+```http
 POST https://developer.mozilla.org/en-US/profiles/hamishwillee/edit HTTP/1.1
 Host: developer.mozilla.org
 Connection: keep-alive
@@ -174,7 +173,7 @@ A principal diferença é que o URL não possui parâmetros. Como você pode ver
 
 A resposta de solicitação é mostrada abaixo. O código de status "`302 Found`" diz ao navegador que a postagem foi bem sucedida, e que deve emitir uma segunda solicitação HTTP para carregar a página especificada no campo determinado( `Location` field). As informações são semelhantes às da resposta a uma solicitação `GET` .
 
-```html
+```http
 HTTP/1.1 302 FOUND
 Server: Apache
 X-Backend-Server: developer3.webapp.scl3.mozilla.com
@@ -190,13 +189,15 @@ X-Cache-Info: not cacheable; request wasn't a GET or HEAD
 Content-Length: 0
 ```
 
-> **Nota:** As respostas e solicitações HTTP mostradas nesse exemplo foram capturadas utilizando o aplicativo [Fiddler](https://www.telerik.com/download/fiddler) , mas você pode obter informações semelhantes utilizando web sniffers (e.g. [Websniffer](http://websniffer.cc/)) ou extensões de navegador como o [HttpFox](https://addons.mozilla.org/en-US/firefox/addon/httpfox/). Você pode tentar isso sozinho. Use qualquer uma das ferramentas vinculadas e navegue por um site e edite as informações de perfil para ver os diferentes tipos de solicitações e respostas. A maioria dos navegadores possuem ferramentas que monitoram solicitações de rede(por exemplo, a ferramenta [Network Monitor](/pt-BR/docs/Tools/Network_Monitor) no Firefox).
+> [!NOTE]
+> As respostas e solicitações HTTP mostradas nesse exemplo foram capturadas utilizando o aplicativo [Fiddler](https://www.telerik.com/download/fiddler) , mas você pode obter informações semelhantes utilizando web sniffers (e.g. [WebSniffer](https://websniffer.com/)) ou extensões de navegador como o [HttpFox](https://addons.mozilla.org/en-US/firefox/addon/httpfox/). Você pode tentar isso sozinho. Use qualquer uma das ferramentas vinculadas e navegue por um site e edite as informações de perfil para ver os diferentes tipos de solicitações e respostas. A maioria dos navegadores possuem ferramentas que monitoram solicitações de rede(por exemplo, a ferramenta [Network Monitor](https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html) no Firefox).
 
 ## Sites estáticos
 
 Um site estático é aquele que retorna o mesmo conteúdo codificado do servidor sempre que um recurso específico é solicitado. Por exemplo, se você tiver uma página sobre um produto em `/static/myproduct1.html`, esta mesma página será devolvida a todos os usuários. Se você adicionar outro produto semelhante ao seu site, você precisará adicionar outra página (e.g. `myproduct2.html`) e assim por diante. Isso pode começar a ficar realmente ineficiente - o que acontece quando você chega a milhares de páginas de produtos? Você repetiria muitos códigos em cada página (o modelo básico de página, estrutura, etc.) e, se quisesse alterar qualquer coisa na estrutura da página - como adicionar uma nova seção de "produtos relacionados", por exemplo -, tem que mudar cada página individualmente.
 
-> **Nota:** Os sites estáticos são excelentes quando você tem um pequeno número de páginas e deseja enviar o mesmo conteúdo para todos os usuários. No entanto, eles podem ter um custo significativo para manter à medida que o número de páginas aumenta.
+> [!NOTE]
+> Os sites estáticos são excelentes quando você tem um pequeno número de páginas e deseja enviar o mesmo conteúdo para todos os usuários. No entanto, eles podem ter um custo significativo para manter à medida que o número de páginas aumenta.
 
 Vamos recapitular como isso funciona, olhando novamente para o diagrama de arquitetura de site estático que vimos no último artigo.
 
@@ -272,7 +273,8 @@ urlpatterns = [
 ]
 ```
 
-> **Nota:** Os primeiros parâmetros da função `url()` pode parecer um pouco estranho (e.g. `r'^junior/$'`) porque eles usam uma técnica de correspondência de padrões chamada "expressões regulares"(RegEx, or RE). Você não precisa saber como as expressões regulares funcionam neste ponto, a não ser que elas nos permitam combinar padrões na URL (em vez dos valores codificados acima) e usá-los como parâmetros em nossas funções de visualização. Por exemplo, um RegEx realmente simples pode dizer "corresponde a uma única letra maiúscula, seguida por entre 4 e 7 letras minúsculas."
+> [!NOTE]
+> Os primeiros parâmetros da função `url()` pode parecer um pouco estranho (e.g. `r'^junior/$'`) porque eles usam uma técnica de correspondência de padrões chamada "expressões regulares"(RegEx, or RE). Você não precisa saber como as expressões regulares funcionam neste ponto, a não ser que elas nos permitam combinar padrões na URL (em vez dos valores codificados acima) e usá-los como parâmetros em nossas funções de visualização. Por exemplo, um RegEx realmente simples pode dizer "corresponde a uma única letra maiúscula, seguida por entre 4 e 7 letras minúsculas."
 
 O framework web também torna mais fácil para uma função de visualização buscar informações do banco de dados. A estrutura de nossos dados é definida em modelos, que são classes Python que definem os campos a serem armazenados no banco de dados subjacente. Se tivermos um modelo denominado Team com um campo de "team_type", então podemos usar uma sintaxe de consulta simples para recuperar todas as equipes que possuem um tipo específico.
 

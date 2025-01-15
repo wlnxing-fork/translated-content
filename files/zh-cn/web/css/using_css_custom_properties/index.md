@@ -3,6 +3,8 @@ title: 使用 CSS 自定义属性（变量）
 slug: Web/CSS/Using_CSS_custom_properties
 ---
 
+{{CSSRef}}
+
 **自定义属性**（有时候也被称作**CSS 变量**或者**级联变量**）是由 CSS 作者定义的，它包含的值可以在整个文档中重复使用。由自定义属性标记设定值（比如： **`--main-color: black;`**），由 [var()](/zh-CN/docs/Web/CSS/var) 函数来获取值（比如： `color: var(--main-color);`）复杂的网站都会有大量的 CSS 代码，通常也会有许多重复的值。举个例子，同样一个颜色值可能在成千上百个地方被使用到，如果这个值发生了变化，需要全局搜索并且一个一个替换（很麻烦哎～）。自定义属性在某个地方存储一个值，然后在其他许多地方引用它。另一个好处是语义化的标识。比如，`--main-text-color` 会比 `#00ff00` 更易理解，尤其是这个颜色值在其他上下文中也被使用到。自定义属性受级联的约束，并从其父级继承其值。
 
 ## 基本用法
@@ -25,7 +27,8 @@ element {
 
 然而这条规则不是绝对的，如果有理由去限制你的自定义属性，那么就应该限制。
 
-> **备注：** 自定义属性名是大小写敏感的，`--my-color` 和 `--My-color` 会被认为是两个不同的自定义属性。
+> [!NOTE]
+> 自定义属性名是大小写敏感的，`--my-color` 和 `--My-color` 会被认为是两个不同的自定义属性。
 
 如前所述，使用一个局部变量时用 {{cssxref("var()")}} 函数包裹以表示一个合法的属性值：
 
@@ -81,7 +84,7 @@ element {
 <div>
   <div class="one">1:</div>
   <div class="two">2: Text <span class="five">5 - more text</span></div>
-  <input class="three">
+  <input class="three" />
   <textarea class="four">4: Lorem Ipsum</textarea>
 </div>
 ```
@@ -170,9 +173,10 @@ element {
 
 ## 自定义属性备用值
 
-用 {{cssxref("var()")}} 函数可以定义多个**备用值**(fallback value)，当给定值未定义时将会用备用值替换。这对于 [Custom Elements](/zh-CN/docs/Web/Web_Components/Using_custom_elements) 和 [Shadow DOM](/zh-CN/docs/Web/Web_Components/Using_shadow_DOM) 都很有用。
+用 {{cssxref("var()")}} 函数可以定义多个**备用值**（fallback value），当给定值未定义时将会用备用值替换。这对于 [Custom Element](/zh-CN/docs/Web/API/Web_components/Using_custom_elements) 和 [Shadow DOM](/zh-CN/docs/Web/API/Web_components/Using_shadow_DOM) 都很有用。
 
-> **备注：** 备用值并不是用于实现浏览器兼容性的。如果浏览器不支持 CSS 自定义属性，备用值也没什么用。它仅对支持 CSS 自定义属性的浏览器提供了一个备份机制，该机制仅当给定值未定义或是无效值的时候生效。
+> [!NOTE]
+> 备用值并不是用于实现浏览器兼容性的。如果浏览器不支持 CSS 自定义属性，备用值也没什么用。它仅对支持 CSS 自定义属性的浏览器提供了一个备份机制，该机制仅当给定值未定义或是无效值的时候生效。
 
 函数的第一个参数是[自定义属性](https://www.w3.org/TR/css-variables/#custom-property)的名称。如果提供了第二个参数，则表示备用值，当[自定义属性](https://www.w3.org/TR/css-variables/#custom-property)值无效时生效。第二个参数可以嵌套，但是不能继续平铺展开下去了，例如：
 
@@ -182,17 +186,25 @@ element {
 }
 
 .three {
-  background-color: var(--my-var, var(--my-background, pink)); /* pink if --my-var and --my-background are not defined */
+  background-color: var(
+    --my-var,
+    var(--my-background, pink)
+  ); /* pink if --my-var and --my-background are not defined */
 }
 
 .three {
-  background-color: var(--my-var, --my-background, pink); /* Invalid: "--my-background, pink" */
+  background-color: var(
+    --my-var,
+    --my-background,
+    pink
+  ); /* Invalid: "--my-background, pink" */
 }
 ```
 
 第二个例子展示了如何处理一个以上的 fallback。该技术可能会导致性能问题，因为它花了更多的时间在处理这些变量上。
 
-> **备注：** 像[自定义属性](https://www.w3.org/TR/css-variables/#custom-property)这些 fallback 语法允许使用逗号。比如 `var(--foo, red, blue)` 定义了一个 `red, blue` 的备用值——从第一个逗号到最后的全部内容，都会被作为备用值的一部分。
+> [!NOTE]
+> 像[自定义属性](https://www.w3.org/TR/css-variables/#custom-property)这些 fallback 语法允许使用逗号。比如 `var(--foo, red, blue)` 定义了一个 `red, blue` 的备用值——从第一个逗号到最后的全部内容，都会被作为备用值的一部分。
 
 ## 有效性和值
 
@@ -215,9 +227,15 @@ element {
 ### CSS
 
 ```css
-:root { --text-color: 16px; }
-p { color: blue; }
-p { color: var(--text-color); }
+:root {
+  --text-color: 16px;
+}
+p {
+  color: blue;
+}
+p {
+  color: var(--text-color);
+}
 ```
 
 毫不意外，浏览器将 `--text-color` 的值替换给了 `var(--text-color)`，但是 `16px` 并不是 {{cssxref("color")}} 的合法属性值。代换之后，该属性不会产生任何作用。浏览器会执行如下两个步骤：
@@ -231,7 +249,8 @@ p { color: var(--text-color); }
 
 段落颜色并不是蓝色，因为无效代换导致了它被替换成了默认初始值的黑色。如果你直接写 `color: 16px` 的话，则会导致语法错误，而前面的定义则会生效（段落显示为蓝色）。
 
-> **备注：** 当 CSS 属性 - 值对中存在语法错误，该行则会被忽略。然而如果自定义属性的值无效，它并不会被忽略，从而会导致该值被覆盖为默认值。
+> [!NOTE]
+> 当 CSS 属性 - 值对中存在语法错误，该行则会被忽略。然而如果自定义属性的值无效，它并不会被忽略，从而会导致该值被覆盖为默认值。
 
 ## JavaScript 中的值
 
@@ -247,12 +266,6 @@ getComputedStyle(element).getPropertyValue("--my-var");
 // 修改一个 Dom 节点上的 CSS 变量
 element.style.setProperty("--my-var", jsVar + 4);
 ```
-
-## 浏览器兼容性
-
-{{Compat}}
-
-> **备注：** 自定义属性的前缀 `var-` 是早期标准规定的，后期改为了 `--`。Firefox 31 和以后的版本遵循新的标准。（[Firefox bug 985838](https://bugzil.la/985838)）
 
 ## 参见
 

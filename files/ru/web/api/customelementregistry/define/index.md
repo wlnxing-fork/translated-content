@@ -1,17 +1,17 @@
 ---
 title: Document.registerElement()
 slug: Web/API/CustomElementRegistry/define
-translation_of: Web/API/Document/registerElement
-original_slug: Web/API/Document/registerElement
 ---
 
 {{APIRef("DOM")}}
 
-Метод **`Document.registerElement()`** регистрирует новый кастомный элемент ([custom element](/ru/docs/Web/Web_Components/Custom_Elements)) в браузере и возвращает конструктор для этого нового элемента.
+Метод **`Document.registerElement()`** регистрирует новый кастомный элемент ([custom element](/ru/docs/Web/API/Web_components/Using_custom_elements)) в браузере и возвращает конструктор для этого нового элемента.
 
-> **Примечание:** Это экспериментальная технология. Браузер который вы используете должен поддерживать Веб Компоненты (Web Components). Смотри больше: [Enabling Web Components in Firefox](/ru/docs/Web/Web_Components#Enabling_Web_Components_in_Firefox).
+> [!NOTE]
+> Это экспериментальная технология. Браузер который вы используете должен поддерживать Веб Компоненты (Web Components). Смотри больше: [Enabling Web Components in Firefox](/ru/docs/Web/API/Web_components#enabling_web_components_in_firefox).
 
-> **Примечание:** Устарело. Используйте интерфейс [CustomElementRegistry](/ru/docs/Web/API/CustomElementRegistry) и его метод [define()](/ru/docs/Web/API/CustomElementRegistry/define), чтобы зарегистрировать новый Тег.
+> [!NOTE]
+> Устарело. Используйте интерфейс [CustomElementRegistry](/ru/docs/Web/API/CustomElementRegistry) и его метод [define()](/ru/docs/Web/API/CustomElementRegistry/define), чтобы зарегистрировать новый Тег.
 
 ## Syntax
 
@@ -31,7 +31,7 @@ var constructor = document.registerElement(tag-name, options);
 Here is a very simple example:
 
 ```js
-var Mytag = document.registerElement('my-tag');
+var Mytag = document.registerElement("my-tag");
 ```
 
 Now the new tag is registered in the browser. The `Mytag` variable holds a constructor that you can use to create a `my-tag` element in the document as follows:
@@ -47,11 +47,9 @@ var mytag = document.getElementsByTagName("my-tag")[0];
 mytag.textContent = "I am a my-tag element.";
 ```
 
-## Specifications
+## Спецификации
 
-| Specification                            | Status                               | Comment            |
-| ---------------------------------------- | ------------------------------------ | ------------------ |
-| {{SpecName('Custom Elements')}} | {{Spec2('Custom Elements')}} | Initial definition |
+{{Specifications}}
 
 ## Совместимость с браузерами
 

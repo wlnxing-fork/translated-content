@@ -9,8 +9,9 @@ slug: Web/JavaScript/Reference/Global_Objects/TypedArray/sort
 
 ## 语法
 
-```plain
-typedarray.sort([compareFunction])
+```js-nolint
+sort()
+sort(compareFn)
 ```
 
 ### 参数
@@ -54,6 +55,6 @@ numbers.sort(compareNumbers);
 
 {{Compat}}
 
-## 另见
+## 参见
 
 - {{jsxref("Array.prototype.sort()")}}

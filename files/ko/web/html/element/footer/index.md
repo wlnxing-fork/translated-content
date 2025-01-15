@@ -9,8 +9,6 @@ slug: Web/HTML/Element/footer
 
 {{EmbedInteractiveExample("pages/tabbed/footer.html", "tabbed-standard")}}
 
-The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone [https://github.com/mdn/interactive-examples](https://github.com/mdn/interactive-examples) and send us a pull request.
-
 <table class="properties">
   <tbody>
     <tr>
@@ -39,7 +37,7 @@ The source for this interactive example is stored in a GitHub repository. If you
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -79,8 +77,7 @@ The source for this interactive example is stored in a GitHub repository. If you
 
 ```html
 <footer>
-  Some copyright info or perhaps some author
-  info for an &lt;article&gt;?
+  Some copyright info or perhaps some author info for an &lt;article&gt;?
 </footer>
 ```
 

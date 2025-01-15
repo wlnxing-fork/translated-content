@@ -3,7 +3,7 @@ title: background
 slug: Web/CSS/background
 ---
 
-{{CSSRef("CSS Background")}}
+{{CSSRef}}
 
 **`background`** 是一种 [CSS](/zh-CN/docs/Web/CSS) 简写属性，用于一次性集中定义各种背景属性，包括 color, image, origin 与 size, repeat 方式等等。
 
@@ -76,11 +76,12 @@ background: no-repeat center/80% url("../img/image.png");
 
 ```html
 <p class="topbanner">
-  Starry sky<br/>
-  Twinkle twinkle<br/>
+  Starry sky<br />
+  Twinkle twinkle<br />
   Starry sky
 </p>
-<p class="warning">Here is a paragraph<p>
+<p class="warning">Here is a paragraph</p>
+<p></p>
 ```
 
 ### CSS
@@ -110,5 +111,5 @@ background: no-repeat center/80% url("../img/image.png");
 ## 参见
 
 - {{ cssxref("-moz-background-size") }}, {{ cssxref("-moz-background-inline-policy") }}
-- [使用渐变背景](/zh-CN/docs/CSS/Using_CSS_gradients)
-- [多重背景](/zh-CN/docs/CSS/Multiple_backgrounds)
+- [使用渐变背景](/zh-CN/docs/Web/CSS/CSS_images/Using_CSS_gradients)
+- [多重背景](/zh-CN/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)

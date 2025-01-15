@@ -7,7 +7,7 @@ l10n:
 
 {{HTTPSidebar}}
 
-HTTP の {{HTTPHeader("Content-Security-Policy")}} (CSP) における **`sandbox`** ディレクティブは、 {{HTMLElement("iframe")}} の {{htmlattrxref("sandbox", "iframe")}} 属性と同様に、要求されたリソースに対してサンドボックスを有効にします。これは、ポップアップの防止、プラグインやスクリプトの実行の防止、同一オリジンポリシーの強制などを含むページ操作の制限を適用します。
+HTTP の {{HTTPHeader("Content-Security-Policy")}} (CSP) における **`sandbox`** ディレクティブは、 {{HTMLElement("iframe")}} の [`sandbox`](/ja/docs/Web/HTML/Element/iframe#sandbox) 属性と同様に、要求されたリソースに対してサンドボックスを有効にします。これは、ポップアップの防止、プラグインやスクリプトの実行の防止、同一オリジンポリシーの強制などを含むページ操作の制限を適用します。
 
 <table class="properties">
   <tbody>
@@ -65,7 +65,7 @@ Content-Security-Policy: sandbox <value>;
 - `allow-top-navigation-by-user-activation`
   - : ユーザーの指示で開始された場合に限り、リソースが最上位の閲覧コンテキストを移動させます。
 - `allow-top-navigation-to-custom-protocols`
-  - : ブラウザーに組み込まれている、または[ウェブサイトによって登録された](/ja/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers) `http` 以外のプロトコルへのナビゲーションを可能にします。この機能は `allow-popups` または `allow-top-navigation` キーワードでも有効になる。
+  - : ブラウザーに組み込まれている、または[ウェブサイトによって登録された](/ja/docs/Web/API/Navigator/registerProtocolHandler) `http` 以外のプロトコルへのナビゲーションを可能にします。この機能は `allow-popups` または `allow-top-navigation` キーワードでも有効になる。
 
 ## 例
 
@@ -84,4 +84,4 @@ Content-Security-Policy: sandbox allow-scripts;
 ## 関連情報
 
 - {{HTTPHeader("Content-Security-Policy")}}
-- {{HTMLElement("iframe")}} 要素の {{htmlattrxref("sandbox", "iframe")}} 属性
+- {{HTMLElement("iframe")}} 要素の [`sandbox`](/ja/docs/Web/HTML/Element/iframe#sandbox) 属性

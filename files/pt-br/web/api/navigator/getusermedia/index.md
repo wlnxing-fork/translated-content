@@ -15,38 +15,37 @@ Se o usuário der permissão, a MediaStream (o _track_ do video e/ou audio) , é
 navigator.getUserMedia ( permissoes, callbackSucesso, callbackErro );
 ```
 
-**Exemplo**
+## Exemplo
 
 Este é um exemplo de uso da função getUserMedia() com prefixos específicos dos navegadores.
 
 ```js
-navigator.getMedia = ( navigator.getUserMedia ||
-                       navigator.webkitGetUserMedia ||
-                       navigator.mozGetUserMedia ||
-                       navigator.msGetUserMedia);
+navigator.getMedia =
+  navigator.getUserMedia ||
+  navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia ||
+  navigator.msGetUserMedia;
 
-navigator.getMedia (
+navigator.getMedia(
+  // permissoes
+  {
+    video: true,
+    audio: true,
+  },
 
-   // permissoes
-   {
-      video: true,
-      audio: true
-   },
+  // callbackSucesso
+  function (localMediaStream) {
+    var video = document.querySelector("video");
+    video.src = window.URL.createObjectURL(localMediaStream);
+    video.onloadedmetadata = function (e) {
+      // Faz algo com o vídeo aqui.
+    };
+  },
 
-   // callbackSucesso
-   function(localMediaStream) {
-      var video = document.querySelector('video');
-      video.src = window.URL.createObjectURL(localMediaStream);
-      video.onloadedmetadata = function(e) {
-         // Faz algo com o vídeo aqui.
-      };
-   },
-
-   // callbackErro
-   function(err) {
+  // callbackErro
+  function (err) {
     console.log("O seguinte erro ocorreu: " + err);
-   }
-
+  },
 );
 ```
 
@@ -60,7 +59,7 @@ navigator.getMedia (
 
 ### permissoes
 
-O parâmetro permissoes é um objeto MediaStreamConstraints com dois membros do tipo Boolean: `video` e `audio`. Estes membros descrevem os tipos de mídia habilitados no objeto [LocalMediaStream](/pt-BR/docs/WebRTC/MediaStream_API#LocalMediaStream). Pelo menos um destes membros deve ser especificado para que o argumento seja validado. Se um membro especificado não for suportado pelo navegador, a função getUserMedia invocará a callbackErro com o erro NOT_SUPPORTED_ERROR. Se o navegador não puder encontrar nenhuma fonte de mídia com o tipo especificado, a função getUserMedia invocará a callbackErro com o erro MANDATORY_UNSATISFIED_ERR.
+O parâmetro permissoes é um objeto MediaStreamConstraints com dois membros do tipo Boolean: `video` e `audio`. Estes membros descrevem os tipos de mídia habilitados no objeto [LocalMediaStream](/pt-BR/docs/Web/API/Media_Capture_and_Streams_API#localmediastream). Pelo menos um destes membros deve ser especificado para que o argumento seja validado. Se um membro especificado não for suportado pelo navegador, a função getUserMedia invocará a callbackErro com o erro NOT_SUPPORTED_ERROR. Se o navegador não puder encontrar nenhuma fonte de mídia com o tipo especificado, a função getUserMedia invocará a callbackErro com o erro MANDATORY_UNSATISFIED_ERR.
 
 Se o valor de um membro não estiver especificado no objeto, o valor padrão deste membro será falso. Veja como configurar o objeto permissoes para obter tanto áudio como vídeo:
 
@@ -70,16 +69,16 @@ Se o valor de um membro não estiver especificado no objeto, o valor padrão des
 
 ### callbackSucesso
 
-A função getUserMedia invocará a função especificada em callbackSucesso com o objeto [LocalMediaStream](/pt-BR/docs/WebRTC/MediaStream_API#LocalMediaStream) que contém a fonte de mídia. Você pode associar este objeto com o elemento apropriado e trabalhar com ele, como mostrado no exemplo a seguir:
+A função getUserMedia invocará a função especificada em callbackSucesso com o objeto [LocalMediaStream](/pt-BR/docs/Web/API/Media_Capture_and_Streams_API#localmediastream) que contém a fonte de mídia. Você pode associar este objeto com o elemento apropriado e trabalhar com ele, como mostrado no exemplo a seguir:
 
-```
+```js
 function(localMediaStream) {
    var video = document.querySelector('video');
    video.src = window.URL.createObjectURL(localMediaStream);
    video.onloadedmetadata = function(e) {
       // Faz algo com o vídeo aqui.
    };
-},
+}
 ```
 
 ### callbackErro
@@ -92,12 +91,16 @@ A função getUserMedia invocará a função especificada em callbackErro com um
 | NOT_SUPPORTED_ERROR         | Uma mídia especificada não é suportada pelo navegador.                                 |
 | MANDATORY_UNSATISFIED_ERROR | Nenhuma fonte de mídia do tipo especificado foi encontrada.                            |
 
+## Especificações
+
+{{Specifications}}
+
 ## Compatibilidade com navegadores
 
-{{Compat("api.Navigator.getUserMedia")}}
+{{Compat}}
 
 ## Veja também
 
-- [WebRTC](/pt-BR/docs/WebRTC) - a página introdutória a API
-- [MediaStream API](/pt-BR/docs/WebRTC/MediaStream_API) - a API para objetos de fonte de mídia
-- [Taking webcam photos](/pt-BR/docs/WebRTC/taking_webcam_photos) - um tutorial sobre como usar a getUserMedia()
+- [WebRTC](/pt-BR/docs/Web/API/WebRTC_API) - a página introdutória a API
+- [MediaStream API](/pt-BR/docs/Web/API/Media_Capture_and_Streams_API) - a API para objetos de fonte de mídia
+- [Taking webcam photos](/pt-BR/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos) - um tutorial sobre como usar a getUserMedia()

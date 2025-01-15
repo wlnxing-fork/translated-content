@@ -1,7 +1,6 @@
 ---
 title: Cuantificadores
-slug: Web/JavaScript/Guide/Regular_Expressions/Quantifiers
-original_slug: Web/JavaScript/Guide/Regular_Expressions/Cuantificadores
+slug: Web/JavaScript/Guide/Regular_expressions/Quantifiers
 ---
 
 {{jsSidebar("JavaScript Guide")}}
@@ -14,7 +13,8 @@ Los cuantificadores indican el número de caracteres o expresiones que deben coi
 
 La siguiente tabla también está duplicada en {{JSxRef("../Guide/Regular_Expressions/Cheatsheet", "esta hoja de referencia")}}. No olvides editarla también, ¡gracias!
 
-> **Nota:** A continuación, _elemento_ se refiere no solo a caracteres individuales, sino que también incluye {{JSxRef("../Guide/Regular_Expressions/Character_Classes", "clases de caracteres")}}, {{JSxRef("../Guide/Regular_Expressions/Unicode_Property_Escapes", "escapes de propiedades Unicode")}}, {{JSxRef("../Guide/Regular_Expressions/Grupos_y_rangos", "grupos y rangos")}}.
+> [!NOTE]
+> A continuación, _elemento_ se refiere no solo a caracteres individuales, sino que también incluye {{JSxRef("../Guide/Regular_Expressions/Character_Classes", "clases de caracteres")}}, {{JSxRef("../Guide/Regular_Expressions/Unicode_Property_Escapes", "escapes de propiedades Unicode")}}, {{JSxRef("../Guide/Regular_Expressions/Grupos_y_rangos", "grupos y rangos")}}.
 
 <table class="standard-table">
     <thead>
@@ -99,11 +99,12 @@ var palabraDeUnaLetra = /\b\w\b/g;
 var palabraNoTanLarga = /\b\w{1,6}\b/g;
 var palabraLaaaaarga = /\b\w{10,}\b/g;
 
-var frase = "¿Por qué me tengo que sentar a estudiar las tablas de multiplicar?";
+var frase =
+  "¿Por qué me tengo que sentar a estudiar las tablas de multiplicar?";
 
 console.table(frase.match(palabraDeUnaLetra)); // ["a"]
-console.table(frase.match(palabraNoTanLarga));    // ["Por", "qu", "me", "tengo", "que", "sentar", "a", "las", "tablas", "de"]
-console.table(frase.match(palabraLaaaaarga));      // ["multiplicar"]
+console.table(frase.match(palabraNoTanLarga)); // ["Por", "qu", "me", "tengo", "que", "sentar", "a", "las", "tablas", "de"]
+console.table(frase.match(palabraLaaaaarga)); // ["multiplicar"]
 ```
 
 ### Caracter opcional

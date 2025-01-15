@@ -32,13 +32,14 @@ Les API (<i lang="en">Application Programming Interfaces</i> soit «&nbsp;interf
 
 En guise d'exemple concret, pensez à des branchements électriques dans une maison, appartement ou autre logement. Si vous souhaitez utiliser un appareil dans votre maison, il vous suffit de le brancher dans une prise et cela fonctionne. Vous n'essayez pas de le brancher directement à l'alimentation électrique&nbsp;: le faire serait réellement inefficace, et, si vous n'êtes pas électricienne ou électricien, difficile et dangereux à réaliser.
 
-![Deux multiprises branchées sur deux prises différentes. Chaque multiprise possède deux emplacements&nbsp;: un sur le haut et un sur la face. Sur ces emplacements, des prises simples sont branchées.](plug-socket.png)
+![Deux multiprises branchées sur deux prises différentes. Chaque multiprise possède deux emplacements : un sur le haut et un sur la face. Sur ces emplacements, des prises simples sont branchées.](plug-socket.png)
 
 _Source de l'image&nbsp;: [<i lang="en">Overloaded plug socket</i>](https://www.flickr.com/photos/easy-pics/9518184890/in/photostream/lightbox/) par [The Clear Communication People](https://www.flickr.com/photos/easy-pics/), sur Flickr._
 
 De la même façon, par exemple, pour programmer des graphismes en 3D, il est beaucoup plus facile de le faire en utilisant une API écrite dans un langage de haut niveau comme JavaScript ou Python, plutôt que d'essayer d'écrire du code bas niveau (comme C ou C++) qui contrôle directement le GPU de l'ordinateur ou d'autres fonctions graphiques.
 
-> **Note :** Voir aussi [l'entrée du glossaire pour le terme API](/fr/docs/Glossary/API) pour une description plus détaillée.
+> [!NOTE]
+> Voir aussi [l'entrée du glossaire pour le terme API](/fr/docs/Glossary/API) pour une description plus détaillée.
 
 ### Les API JavaScript côté client
 
@@ -106,7 +107,8 @@ Chaque API JavaScript a son fonctionnement propre. Elles partagent toutefois des
 
 Les API interagissent avec le code en utilisant un ou plusieurs [objets JavaScript](/fr/docs/Learn/JavaScript/Objects), qui servent de conteneurs pour les données utilisées par l'API (contenues dans les propriétés d'objet), et la fonctionnalité rendue disponible par l'API (contenue dans des méthodes d'objet).
 
-> **Note :** Si vous ne connaissez pas encore le fonctionnement des objets, vous devriez revenir en arrière et parcourir le module [objets JavaScript](/fr/docs/Learn/JavaScript/Objects) avant de continuer.
+> [!NOTE]
+> Si vous ne connaissez pas encore le fonctionnement des objets, vous devriez revenir en arrière et parcourir le module [objets JavaScript](/fr/docs/Learn/JavaScript/Objects) avant de continuer.
 
 Prenons comme exemple l'API <i lang="en">Web Audio</i>. Il s'agit d'une API assez complexe avec plusieurs objets. Voici les objets principaux&nbsp;:
 
@@ -123,11 +125,11 @@ Alors comment ces objets interagissent-ils&nbsp;? Si vous regardez notre exemple
 <audio src="outfoxing.mp3"></audio>
 
 <button class="paused">Lire</button>
-<br>
-<input type="range" min="0" max="1" step="0.01" value="1" class="volume">
+<br />
+<input type="range" min="0" max="1" step="0.01" value="1" class="volume" />
 ```
 
-Pour commencer, nous incluons, un élément `<audio>` avec lequel nous intégrons un fichier MP3 dans la page. Nous n'incluons pas de contrôles par défaut du navigateur. Ensuite, nous incluons un [`<button>`](/fr/docs/Web/HTML/Element/Button) que nous utiliserons pour lire et arrêter la musique, et un élément [`<input>`](/fr/docs/Web/HTML/Element/input) de type `range`, que nous utiliserons pour ajuster le volume de la piste en cours de lecture.
+Pour commencer, nous incluons, un élément `<audio>` avec lequel nous intégrons un fichier MP3 dans la page. Nous n'incluons pas de contrôles par défaut du navigateur. Ensuite, nous incluons un [`<button>`](/fr/docs/Web/HTML/Element/button) que nous utiliserons pour lire et arrêter la musique, et un élément [`<input>`](/fr/docs/Web/HTML/Element/input) de type `range`, que nous utiliserons pour ajuster le volume de la piste en cours de lecture.
 
 Ensuite, examinons le JavaScript de cet exemple.
 
@@ -141,9 +143,9 @@ const audioCtx = new AudioContext();
 Ensuite, nous créons des constantes qui stockent les références à nos éléments `<audio>`, `<button>` et `<input>`, et nous utilisons la méthode [`AudioContext.createMediaElementSource()`](/fr/docs/Web/API/AudioContext/createMediaElementSource) pour créer un `MediaElementAudioSourceNode` représentant la source de notre audio (ici, c'est l'élément `<audio>`)&nbsp;:
 
 ```js
-const audioElement = document.querySelector('audio');
-const playBtn = document.querySelector('button');
-const volumeSlider = document.querySelector('.volume');
+const audioElement = document.querySelector("audio");
+const playBtn = document.querySelector("button");
+const volumeSlider = document.querySelector(".volume");
 
 const audioSource = audioCtx.createMediaElementSource(audioElement);
 ```
@@ -152,40 +154,41 @@ Ensuite, nous incluons deux gestionnaires d'évènements qui servent à basculer
 
 ```js
 // lecture/pause de l'audio
-playBtn.addEventListener('click', function() {
+playBtn.addEventListener("click", function () {
   // vérifier si le contexte est en état de suspension (politique de lecture automatique)
-  if (audioCtx.state === 'suspended') {
+  if (audioCtx.state === "suspended") {
     audioCtx.resume();
   }
 
   // si la piste est arrêtée, la lire
-  if (this.getAttribute('class') === 'paused') {
+  if (this.getAttribute("class") === "paused") {
     audioElement.play();
-    this.setAttribute('class', 'playing');
-    this.textContent = 'Pause'
-  // si une piste est en cours de lecture, l'arrêter
-  } else if (this.getAttribute('class') === 'playing') {
+    this.setAttribute("class", "playing");
+    this.textContent = "Pause";
+    // si une piste est en cours de lecture, l'arrêter
+  } else if (this.getAttribute("class") === "playing") {
     audioElement.pause();
-    this.setAttribute('class', 'paused');
-    this.textContent = 'Lire';
+    this.setAttribute("class", "paused");
+    this.textContent = "Lire";
   }
 });
 
 // si la piste se termine
-audioElement.addEventListener('ended', function() {
-  playBtn.setAttribute('class', 'paused');
-  playBtn.textContent = 'Lire';
+audioElement.addEventListener("ended", function () {
+  playBtn.setAttribute("class", "paused");
+  playBtn.textContent = "Lire";
 });
 ```
 
-> **Note :** Vous aurez peut-être remarqué que les méthodes `play()` et `pause()` utilisées pour lire et mettre en pause la piste ne font pas partie de l'API <i lang="en">Web Audio</i>&nbsp;; elles font partie de l'API [`HTMLMediaElement`](/fr/docs/Web/API/HTMLMediaElement). qui est différente mais étroitement liée.
+> [!NOTE]
+> Vous aurez peut-être remarqué que les méthodes `play()` et `pause()` utilisées pour lire et mettre en pause la piste ne font pas partie de l'API <i lang="en">Web Audio</i>&nbsp;; elles font partie de l'API [`HTMLMediaElement`](/fr/docs/Web/API/HTMLMediaElement). qui est différente mais étroitement liée.
 
 Ensuite, nous créons un objet [`GainNode`](/fr/docs/Web/API/GainNode) à l'aide de la méthode [`AudioContext.createGain()`](/fr/docs/Web/API/BaseAudioContext/createGain), qui peut être utilisé pour ajuster le volume de l'audio qui le traverse, et nous créons un autre gestionnaire d'évènements qui modifie la valeur du gain (volume) du graphique audio lorsque la valeur du curseur est modifiée&nbsp;:
 
 ```js
 const gainNode = audioCtx.createGain();
 
-volumeSlider.addEventListener('input', function() {
+volumeSlider.addEventListener("input", function () {
   gainNode.gain.value = this.value;
 });
 ```
@@ -205,23 +208,23 @@ Lorsque vous utilisez une API, vous devez vous assurer que vous savez où se tro
 L'API DOM (<i lang="en">Document Object Model</i>) a également un point d'entrée simple&nbsp;: ses fonctionnalités ont tendance à être trouvées accrochées à l'objet [`Document`](/fr/docs/Web/API/Document), ou à une instance d'un élément HTML que vous voulez modifier d'une manière ou d'une autre, par exemple&nbsp;:
 
 ```js
-const em = document.createElement('em'); // crée un nouvel élément em
-const para = document.querySelector('p'); // référence à un élément p existant
-em.textContent = 'Coucou vous !'; // donne à em du contenu textuel
+const em = document.createElement("em"); // crée un nouvel élément em
+const para = document.querySelector("p"); // référence à un élément p existant
+em.textContent = "Coucou vous !"; // donne à em du contenu textuel
 para.appendChild(em); // intègre em dans le paragraphe
 ```
 
 L'API [Canvas](/fr/docs/Web/API/Canvas_API) repose également sur l'obtention d'un objet de contexte à utiliser pour manipuler les choses, bien que dans ce cas, il s'agisse d'un contexte graphique plutôt que d'un contexte audio. Son objet de contexte est créé en obtenant une référence à l'élément [`<canvas>`](/fr/docs/Web/HTML/Element/canvas) sur lequel vous voulez dessiner, puis en appelant sa méthode [`HTMLCanvasElement.getContext()`](/fr/docs/Web/API/HTMLCanvasElement/getContext)&nbsp;:
 
 ```js
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 ```
 
 Tout ce que nous voulons faire au canevas est ensuite réalisé en appelant les propriétés et les méthodes de l'objet contexte (qui est une instance de [`CanvasRenderingContext2D`](/fr/docs/Web/API/CanvasRenderingContext2D)), par exemple&nbsp;:
 
 ```js
-Ball.prototype.draw = function() {
+Ball.prototype.draw = function () {
   ctx.beginPath();
   ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
@@ -229,7 +232,8 @@ Ball.prototype.draw = function() {
 };
 ```
 
-> **Note :** Vous pouvez voir ce code en action dans notre [démo de balles rebondissantes](https://github.com/mdn/learning-area/blob/main/javascript/apis/introduction/bouncing-balls.html) (voir [le résultat en direct](https://mdn.github.io/learning-area/javascript/apis/introduction/bouncing-balls.html) également).
+> [!NOTE]
+> Vous pouvez voir ce code en action dans notre [démo de balles rebondissantes](https://github.com/mdn/learning-area/blob/main/javascript/apis/introduction/bouncing-balls.html) (voir [le résultat en direct](https://mdn.github.io/learning-area/javascript/apis/introduction/bouncing-balls.html) également).
 
 ### Elles utilisent des évènements pour gérer les changements d'état
 
@@ -241,29 +245,29 @@ Nous avons déjà vu un certain nombre de gestionnaires d'évènements utilisés
 
 ```js
 // lecture/pause de l'audio
-playBtn.addEventListener('click', function() {
+playBtn.addEventListener("click", function () {
   // vérifier si le contexte est en état de suspension (politique de lecture automatique)
-  if (audioCtx.state === 'suspended') {
+  if (audioCtx.state === "suspended") {
     audioCtx.resume();
   }
 
   // si la piste est arrêtée, la lire
-  if (this.getAttribute('class') === 'paused') {
+  if (this.getAttribute("class") === "paused") {
     audioElement.play();
-    this.setAttribute('class', 'playing');
-    this.textContent = 'Pause'
-  // si une piste est en cours de lecture, l'arrêter
-  } else if (this.getAttribute('class') === 'playing') {
+    this.setAttribute("class", "playing");
+    this.textContent = "Pause";
+    // si une piste est en cours de lecture, l'arrêter
+  } else if (this.getAttribute("class") === "playing") {
     audioElement.pause();
-    this.setAttribute('class', 'paused');
-    this.textContent = 'Lire';
+    this.setAttribute("class", "paused");
+    this.textContent = "Lire";
   }
 });
 
 // si la piste se termine
-audioElement.addEventListener('ended', function() {
-  playBtn.setAttribute('class', 'paused');
-  playBtn.textContent = 'Lire';
+audioElement.addEventListener("ended", function () {
+  playBtn.setAttribute("class", "paused");
+  playBtn.textContent = "Lire";
 });
 ```
 
@@ -277,20 +281,11 @@ En outre, certaines API web demandent la permission à la personne pour être ac
 
 Les API <i lang="en">Web Audio</i> et [`HTMLMediaElement`](/fr/docs/Web/API/HTMLMediaElement) sont soumises à un mécanisme de sécurité pour [la lecture automatique](/fr/docs/Web/API/Web_Audio_API/Best_practices#autoplay_policy). Cela signifie essentiellement que vous ne pouvez pas lire automatiquement l'audio lorsqu'une page se charge&nbsp;: vous devez permettre aux personnes consultant le site de déclencher la lecture audio par le biais d'un contrôle comme un bouton. Cette mesure est prise parce que la lecture automatique de l'audio est généralement indésirable.
 
-> **Note :** Selon la rigueur du navigateur, ces mécanismes de sécurité peuvent même empêcher l'exemple de fonctionner localement, c'est-à-dire si vous chargez le fichier d'exemple local dans votre navigateur au lieu de l'exécuter à partir d'un serveur web. Au moment de la rédaction de ce document, notre exemple d'API <i lang="en">Web Audio</i> ne fonctionnait pas localement sur Google Chrome&nbsp;: nous avons dû le mettre sur GitHub pour qu'il fonctionne en étant servi depuis un serveur web.
+> [!NOTE]
+> Selon la rigueur du navigateur, ces mécanismes de sécurité peuvent même empêcher l'exemple de fonctionner localement, c'est-à-dire si vous chargez le fichier d'exemple local dans votre navigateur au lieu de l'exécuter à partir d'un serveur web. Au moment de la rédaction de ce document, notre exemple d'API <i lang="en">Web Audio</i> ne fonctionnait pas localement sur Google Chrome&nbsp;: nous avons dû le mettre sur GitHub pour qu'il fonctionne en étant servi depuis un serveur web.
 
 ## Résumé
 
 À ce stade, vous devriez avoir une bonne idée de ce que sont les API, de leur fonctionnement et de ce que vous pouvez faire avec dans votre code JavaScript. Vous avez probablement hâte de commencer à faire des choses amusantes avec des API spécifiques, alors allez-y&nbsp;! Par la suite, nous verrons comment manipuler des documents avec le DOM (<i lang="en">Document Object Model</i> ou modèle objet de document en français).
 
 {{NextMenu("Learn/JavaScript/Client-side_web_APIs/Manipulating_documents", "Learn/JavaScript/Client-side_web_APIs")}}
-
-## Dans ce module
-
-- **Introduction aux API web**
-- [Manipuler des documents](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
-- [Récupérer des données du serveur](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
-- [API tierces](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs)
-- [Dessiner des graphismes](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics)
-- [API vidéo et audio](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs)
-- [Stockage côté client](/fr/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage)

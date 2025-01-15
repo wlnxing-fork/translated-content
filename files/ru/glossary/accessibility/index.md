@@ -1,12 +1,9 @@
 ---
 title: Доступность
 slug: Glossary/Accessibility
-tags:
-  - Доступность
-  - Глоссарий
-translation_of: Glossary/Accessibility
-original_slug: Глоссарий/Доступность
 ---
+
+{{GlossarySidebar}}
 
 _Веб-доступность_ (**A11Y**) — регламентирует лучшие практики обеспечения работоспособности и доступности сайта вне зависимости от физических и технических ограничений. Доступность описывается и обсуждается {{Glossary("W3C")}} в рамках {{Glossary("WAI","Инициативы по обеспечению доступности")}} (WAI).
 
@@ -19,10 +16,10 @@ _Веб-доступность_ (**A11Y**) — регламентирует лу
 ### Изучение доступности
 
 - [Изучение доступности на MDN](/ru/docs/Learn/Accessibility)
-- [Web Accessibility In Mind](http://webaim.org/)
+- [Web Accessibility In Mind](https://webaim.org/)
 
 ### Технические материалы
 
 - [ARIA документация на MDN](/ru/docs/Web/Accessibility/ARIA)
-- [Инициатива по обеспечению доступности W3C](http://www.w3.org/WAI/)
-- [WAI-ARIA рекомендации](http://www.w3.org/TR/wai-aria/)
+- [Инициатива по обеспечению доступности W3C](https://www.w3.org/WAI/)
+- [WAI-ARIA рекомендации](https://www.w3.org/TR/wai-aria/)

@@ -1,9 +1,6 @@
 ---
 title: Решённое значение
 slug: Web/CSS/resolved_value
-tags:
-  - CSS
-translation_of: Web/CSS/resolved_value
 ---
 
 {{cssref}}
@@ -12,9 +9,7 @@ translation_of: Web/CSS/resolved_value
 
 ## Спецификации
 
-| Спецификация                                                                     | Статус                   | Комментарий             |
-| -------------------------------------------------------------------------------- | ------------------------ | ----------------------- |
-| {{SpecName("CSSOM", "#resolved-values", "resolved value")}} | {{Spec2("CSSOM")}} | Изначальное определение |
+{{Specifications}}
 
 ## Смотрите также
 
@@ -24,11 +19,11 @@ translation_of: Web/CSS/resolved_value
   - [@-правила](/ru/docs/Web/CSS/At-rule)
   - [комментарии](/ru/docs/Web/CSS/Comments)
   - [специфичность](/ru/docs/Web/CSS/Specificity)
-  - [наследование](/ru/docs/Web/CSS/inheritance)
-  - [блочная модель](/ru/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [наследование](/ru/docs/Web/CSS/Inheritance)
+  - [блочная модель](/ru/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [режимы компоновки](/ru/docs/Web/CSS/Layout_mode)
   - [модели визуального форматирования](/ru/docs/Web/CSS/Visual_formatting_model)
-  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Схлопывание отступов](/ru/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значения
     - [начальные](/ru/docs/Web/CSS/initial_value)
     - [вычисленные](/ru/docs/Web/CSS/computed_value)

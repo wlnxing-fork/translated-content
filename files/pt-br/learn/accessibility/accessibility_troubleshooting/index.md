@@ -1,7 +1,6 @@
 ---
-title: 'Avaliação: solucionando problemas de acessibilidade'
+title: "Avaliação: solucionando problemas de acessibilidade"
 slug: Learn/Accessibility/Accessibility_troubleshooting
-original_slug: Learn/Accessibility/Acessibilidade_problemas
 ---
 
 {{LearnSidebar}}{{PreviousMenu("Learn/Accessibility/Mobile", "Learn/Accessibility")}}
@@ -15,7 +14,7 @@ Na avaliação deste módulo, apresentamos a você um site simples com vários p
       <td>
         Conhecimento básico de informática, entendimento básico de HTML, CSS e
         Javascript, uma compreesão dos
-        <a href="/en-US/docs/Learn/Accessibility"
+        <a href="/pt-BR/docs/Learn/Accessibility"
           >artigos anteriores deste curso</a
         >.
       </td>
@@ -53,7 +52,8 @@ O texto é difícil de ler devido ao esquema de cores atual. Você pode fazer um
 2. Você consegue atualizar o texto do artigo para facilitar a navegação de usuários de leitores de telas?
 3. A parte do menu de navegação do site (agrupada em `<div class="nav"></div>`) poderia estar mais acessível se estivesse dentro de um elemento semântico de HTML5 mais adequado. Qual elemento deve ser utilizado? Atualize-o.
 
-> **Nota:** Você precisará atualizar os seletores de CSS que estilizam as respectivas tags para seus equivalentes aos cabeçalhos semânticos. Depois de adicionar elementos de parágrafo, você perceberá que a estilização parecerá bem melhor.
+> [!NOTE]
+> Você precisará atualizar os seletores de CSS que estilizam as respectivas tags para seus equivalentes aos cabeçalhos semânticos. Depois de adicionar elementos de parágrafo, você perceberá que a estilização parecerá bem melhor.
 
 ### As imagens
 

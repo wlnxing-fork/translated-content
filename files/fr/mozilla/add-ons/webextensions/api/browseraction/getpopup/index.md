@@ -1,31 +1,20 @@
 ---
 title: browserAction.getPopup()
 slug: Mozilla/Add-ons/WebExtensions/API/browserAction/getPopup
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Method
-  - Non-standard
-  - Reference
-  - WebExtensions
-  - browserAction
-  - getPopup
-translation_of: Mozilla/Add-ons/WebExtensions/API/browserAction/getPopup
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Obtient le document HTML défini comme la popup pour cette action du navigateur.
 
-Il s'agit d'une fonction asynchrone qui renvoie une [`Promise`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise).
+Il s'agit d'une fonction asynchrone qui renvoie une [`Promise`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
 ## Syntaxe
 
 ```js
 var gettingPopup = browser.browserAction.getPopup(
-  details               // object
-)
+  details, // object
+);
 ```
 
 ### Paramètres
@@ -46,7 +35,7 @@ var gettingPopup = browser.browserAction.getPopup(
 
 ### Valeur retournée
 
-Une [`Promise`](/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise) qui sera remplie avec une chaine cntenant l'URL du document contextuel. Ce sera une URL entièrement qualifiée, telle que `moz-extension://d1d8a2eb-fe60-f646-af30-a866c5b39942/popups/popup2.html`.
+Une [`Promise`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Promise) qui sera remplie avec une chaine cntenant l'URL du document contextuel. Ce sera une URL entièrement qualifiée, telle que `moz-extension://d1d8a2eb-fe60-f646-af30-a866c5b39942/popups/popup2.html`.
 
 ## Exemples
 
@@ -54,7 +43,7 @@ Obtenez l'URL du Popup:
 
 ```js
 function gotPopup(popupURL) {
-  console.log(popupURL)
+  console.log(popupURL);
 }
 
 var gettingPopup = browser.browserAction.getPopup({});
@@ -67,7 +56,7 @@ gettingPopup.then(gotPopup);
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
 > Cette API est basée sur l'API Chromium [`chrome.browserAction`](https://developer.chrome.com/extensions/browserAction). Cette documentation est dérivée de [`browser_action.json`](https://chromium.googlesource.com/chromium/src/+/master/chrome/common/extensions/api/browser_action.json) dans le code de Chromium code.
 >

@@ -1,12 +1,6 @@
 ---
 title: Отправить отзыв об MDN
 slug: MDN/Community
-tags:
-  - Руководство
-  - Сообщество
-  - Чат
-translation_of: MDN/Contribute/Feedback
-original_slug: MDN/Contribute/Feedback
 ---
 
 {{MDNSidebar}}
@@ -24,7 +18,7 @@ original_slug: MDN/Contribute/Feedback
 Для получения дополнительной информации о вкладе в MDN, смотрите:
 
 - [Начало работы](/ru/docs/Project:Getting_started) для идей о вещах, которые вы можете сделать.
-- [Вклад в MDN](/ru/docs/MDN/Contribute)
+- [Вклад в MDN](/ru/docs/MDN/Community/Contributing)
 
 ## Присоединение к беседе
 

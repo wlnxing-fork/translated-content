@@ -47,7 +47,8 @@ audioElement.play();
 
 詳しくは、 [Google Chrome](https://developer.chrome.com/blog/autoplay/) および [WebKit](https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/) の自動再生ポリシーを参照してください。
 
-> **メモ:** 別の言い方をすれば、音声が含まれているメディアの再生は、ユーザー操作がまだ行われていないタブでプログラム的に再生が開始されると、通常はブロックされます。 ブラウザーはさらに他の状況下でブロックすることを選択するかもしれません。
+> [!NOTE]
+> 別の言い方をすれば、音声が含まれているメディアの再生は、ユーザー操作がまだ行われていないタブでプログラム的に再生が開始されると、通常はブロックされます。 ブラウザーはさらに他の状況下でブロックすることを選択するかもしれません。
 
 ## メディア要素の自動再生
 
@@ -55,7 +56,7 @@ audioElement.play();
 
 ### autoplay 属性
 
-コンテンツを自動的に再生する最も簡単な方法は、 {{htmlattrxref("autoplay", "audio")}} 属性を{{HTMLElement("audio")}} 要素または {{HTMLElement("video")}} 要素に追加することです。 これにより、要素の {{domxref("HTMLMediaElement.autoplay", "autoplay")}} プロパティが `true` に設定され、`autoplay` が `true` の場合、次のことが発生した後、メディアはできるだけ早く自動的に再生を開始します。
+コンテンツを自動的に再生する最も簡単な方法は、 [`autoplay`](/ja/docs/Web/HTML/Element/audio#autoplay) 属性を{{HTMLElement("audio")}} 要素または {{HTMLElement("video")}} 要素に追加することです。 これにより、要素の {{domxref("HTMLMediaElement.autoplay", "autoplay")}} プロパティが `true` に設定され、`autoplay` が `true` の場合、次のことが発生した後、メディアはできるだけ早く自動的に再生を開始します。
 
 - ページは自動再生機能を使用することを許可されている
 - 要素はページの読み込み中に作成された
@@ -73,7 +74,7 @@ audioElement.play();
 
 #### 例 2: 自動再生の失敗を検出する
 
-重要なことを自動再生に頼っている場合、または自動再生の失敗が何らかの形でアプリに影響を与える場合は、自動再生が開始されなかったことを知りたいと思うでしょう。 残念ながら、{{htmlattrxref("autoplay", "audio")}} 属性の場合、自動再生が正常に開始されたかどうかを認識するのは困難です。 自動再生が失敗したときに起動されるイベントはありません。 また、設定可能な例外やコールバック、あるいは自動再生が機能したかどうかを示すフラグもメディア要素にありません。 本当にできることは、いくつかの値を調べて、自動再生が機能したかどうかについて山を張ることだけです。
+重要なことを自動再生に頼っている場合、または自動再生の失敗が何らかの形でアプリに影響を与える場合は、自動再生が開始されなかったことを知りたいと思うでしょう。 残念ながら、[`autoplay`](/ja/docs/Web/HTML/Element/audio#autoplay) 属性の場合、自動再生が正常に開始されたかどうかを認識するのは困難です。 自動再生が失敗したときに起動されるイベントはありません。 また、設定可能な例外やコールバック、あるいは自動再生が機能したかどうかを示すフラグもメディア要素にありません。 本当にできることは、いくつかの値を調べて、自動再生が機能したかどうかについて山を張ることだけです。
 
 見方を変えることができるのであれば、メディアの再生がうまくいかなかったときではなく、メディアの再生がうまくいったことを知ることに頼ることをお勧めします。 メディア要素で {{domxref("HTMLMediaElement/play_event", "play")}} イベントが発生するのを待ち受けすることで、これを簡単に行うことができます。
 
@@ -85,7 +86,7 @@ audioElement.play();
 <video src="myvideo.mp4" autoplay onplay="handleFirstPlay(event)"></video>
 ```
 
-ここでは、 {{HTMLElement("video")}} 要素に {{htmlattrxref("autoplay", "video")}} 属性が設定されており、 {{domxref("HTMLMediaElement.play_event", "onplay")}} イベントハンドラーが設定されています。イベントは `handleFirstPlay()` と呼ばれる関数によって処理され、この関数は入力として `play` イベントを受け取ります。
+ここでは、 {{HTMLElement("video")}} 要素に [`autoplay`](/ja/docs/Web/HTML/Element/video#autoplay) 属性が設定されており、 {{domxref("HTMLMediaElement.play_event", "onplay")}} イベントハンドラーが設定されています。イベントは `handleFirstPlay()` と呼ばれる関数によって処理され、この関数は入力として `play` イベントを受け取ります。
 
 `handleFirstPlay()` は次のようになります。
 
@@ -99,7 +100,7 @@ function handleFirstPlay(event) {
 
     vid.onplay = null;
 
-  // 再生が開始された後に行う必要があるものをすべて開始する。
+    // 再生が開始された後に行う必要があるものをすべて開始する。
   }
 }
 ```
@@ -108,13 +109,15 @@ function handleFirstPlay(event) {
 
 この時点で、あなたのサイトやアプリはそれがする必要があるものは何でも始めることができます。
 
-> **メモ:** この方法では、自動再生とユーザーによる手動再生開始は区別されません。
+> [!NOTE]
+> この方法では、自動再生とユーザーによる手動再生開始は区別されません。
 
 ### play() メソッド
 
 用語「自動再生」はまた、スクリプトが、ユーザ入力イベント処理のコンテキストの外側で、音声を含んだメディアの再生を開始しようと試みるシナリオを指します。 これは、メディア要素の {{domxref("HTMLMediaElement.play", "play()")}} メソッドを呼び出すことによって行われます。
 
-> **メモ:** 自動再生設定のサポートは、自動再生の他の手段よりも `autoplay` 属性の方が広く普及しているため、できるだけ `autoplay` 属性を使用することを強くお勧めします。 また、ブラウザーが再生開始の責任を負うようにして、再生のタイミングを最適化します。
+> [!NOTE]
+> 自動再生設定のサポートは、自動再生の他の手段よりも `autoplay` 属性の方が広く普及しているため、できるだけ `autoplay` 属性を使用することを強くお勧めします。 また、ブラウザーが再生開始の責任を負うようにして、再生のタイミングを最適化します。
 
 #### 例: 動画の再生
 
@@ -178,13 +181,14 @@ let playAttempt = setInterval(() => {
 
 ## autoplay 機能ポリシー
 
-上記のブラウザー側での自動再生機能の管理および制御に加えて、ウェブサーバーは自動再生が機能することを許可する意欲を表現することもできます。 {{Glossary("HTTP")}} の {{HTTPHeader("Feature-Policy")}} ヘッダーの [`autoplay`](/ja/docs/Web/HTTP/Headers/Feature-Policy/autoplay) ディレクティブは、メディアの自動再生に使用できるドメインがあれば、それを制御するために使用されます。 既定では、`autoplay` 機能ポリシー (feature policy) は `'self'`（_単一引用符を含む_）に設定されています。 これは、文書と同じドメインでホストされているときに自動再生が許可されることを示します。
+上記のブラウザー側での自動再生機能の管理および制御に加えて、ウェブサーバーは自動再生が機能することを許可する意欲を表現することもできます。 {{Glossary("HTTP")}} の {{HTTPHeader("Feature-Policy")}} ヘッダーの [`autoplay`](/ja/docs/Web/HTTP/Headers/Permissions-Policy/autoplay) ディレクティブは、メディアの自動再生に使用できるドメインがあれば、それを制御するために使用されます。 既定では、`autoplay` 機能ポリシー (feature policy) は `'self'`（_単一引用符を含む_）に設定されています。 これは、文書と同じドメインでホストされているときに自動再生が許可されることを示します。
 
 また、`'none'` を指定して自動再生を完全に無効にしたり、`'*'` を指定してすべてのドメインからの自動再生を許可したり、メディアを自動的に再生できる 1 つ以上の特定のオリジンを指定できます。 これらのオリジンはスペース文字で区切ります。
 
-> **メモ:** 指定された機能ポリシーは、そのフレームとその中にネストされているすべてのフレームに新しい機能ポリシーを設定する {{htmlattrxref("allow", "iframe")}} が含まれていない限り、文書とその中にネストされているすべての {{HTMLElement("iframe")}} に適用されます。
+> [!NOTE]
+> 指定された機能ポリシーは、そのフレームとその中にネストされているすべてのフレームに新しい機能ポリシーを設定する [`allow`](/ja/docs/Web/HTML/Element/iframe#allow) が含まれていない限り、文書とその中にネストされているすべての {{HTMLElement("iframe")}} に適用されます。
 
-`<iframe>` の {{htmlattrxref("allow", "iframe")}} 属性を使用してそのフレームとそのネストされたフレームの機能ポリシーを指定するときは、値 `'src'` を指定して、フレームの {{htmlattrxref("src", "iframe")}} 属性で指定されたものと同じドメインからのメディアの自動再生のみを許可できます。
+`<iframe>` の [`allow`](/ja/docs/Web/HTML/Element/iframe#allow) 属性を使用してそのフレームとそのネストされたフレームの機能ポリシーを指定するときは、値 `'src'` を指定して、フレームの [`src`](/ja/docs/Web/HTML/Element/iframe#src) 属性で指定されたものと同じドメインからのメディアの自動再生のみを許可できます。
 
 ### 例: 文書のドメインからの自動再生のみを許可する
 
@@ -264,7 +268,7 @@ Feature-Policy: autoplay 'none'
   muted></video>
 ```
 
-この動画要素は、ユーザーコントロール（通常は再生/一時停止、動画のタイムラインのスクラブ、音量調整、およびミュート）を含むように構成されています。 また、{{htmlattrxref("muted", "video")}} 属性が含まれているため、動画は自動再生されますが、音声はミュートされています。 ただし、ユーザーはコントロールのミュート解除ボタンをクリックして音声を再度有効にすることができます。
+この動画要素は、ユーザーコントロール（通常は再生/一時停止、動画のタイムラインのスクラブ、音量調整、およびミュート）を含むように構成されています。 また、[`muted`](/ja/docs/Web/HTML/Element/video#muted) 属性が含まれているため、動画は自動再生されますが、音声はミュートされています。 ただし、ユーザーはコントロールのミュート解除ボタンをクリックして音声を再度有効にすることができます。
 
 ## ブラウザー設定オプション
 
@@ -292,4 +296,4 @@ Feature-Policy: autoplay 'none'
 - [ウェブメディア技術](/ja/docs/Web/Media)
 - [動画と音声のコンテンツ](/ja/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)（学習ガイド）
 - [ウェブオーディオ API の使用](/ja/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [クロスブラウザー音声の基本](/ja/docs/Web/Guide/Audio_and_video_delivery/Cross-browser_audio_basics)
+- [クロスブラウザー音声の基本](/ja/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)

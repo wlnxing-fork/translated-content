@@ -1,18 +1,17 @@
 ---
 title: 重新介紹 JavaScript
-slug: Web/JavaScript/Language_Overview
-original_slug: Web/JavaScript/A_re-introduction_to_JavaScript
+slug: Web/JavaScript/Language_overview
 ---
 
 {{jsSidebar}}
 
 ## 介紹
 
-為何需要重新介紹？因為 [JavaScript](/zh_tw/JavaScript) 堪稱是[全世界最被人誤解的程式語言](http://javascript.crockford.com/javascript.html)。儘管 JavaScript 再怎麼的被嘲諷為小兒科，在它誤導人的簡潔下隱藏著強大的語言功能。2005 年是個許多知名 JavaScript 應用程式推出的年度，在在證明：更加瞭解這項科技對任何網頁開發者來說皆是重要的技能。
+為何需要重新介紹？因為 [JavaScript](/zh-TW/docs/Web/JavaScript) 堪稱是[全世界最被人誤解的程式語言](https://crockford.com/javascript/javascript.html)。儘管 JavaScript 再怎麼的被嘲諷為小兒科，在它誤導人的簡潔下隱藏著強大的語言功能。2005 年是個許多知名 JavaScript 應用程式推出的年度，在在證明：更加瞭解這項科技對任何網頁開發者來說皆是重要的技能。
 
 先從該語言的歷史說起。1995 年，Brendan Eich，一位 Netscape （網景）的工程師，創造了 JavaScript。1996 年初，JavaScript 隨著 Netscape 2 首次推出。它原本要被命名為 LiveScript，結果因為行銷策略為了強調昇陽的 Java 程式語言的普遍性，而不幸的被改名 — 即便兩者之間沒有太大的關係。從此之後，這便成為了混淆的元兇。
 
-Microsoft 在幾個月後隨著 IE 3 推出了跟該語言大致上相容的 JScript。Netscape 在 1997 年將該語言送交 [ECMA International](http://www.ecma-international.org/)，一個歐洲標準化組織，而在 1997 年的時候產生了初版的 [ECMAScript](/zh_tw/ECMAScript)。該標準在 1999 年的時候以 [ECMAScript 第三版](http://www.ecma-international.org/publications/standards/Ecma-262.htm)的形式推出了更新，從此之後大致上都相當穩定，不過近期有在研發第四版。
+Microsoft 在幾個月後隨著 IE 3 推出了跟該語言大致上相容的 JScript。Netscape 在 1997 年將該語言送交 [ECMA International](https://ecma-international.org/)，一個歐洲標準化組織，而在 1997 年的時候產生了初版的 [ECMAScript](/zh-TW/ECMAScript)。該標準在 1999 年的時候以 [ECMAScript 第三版](https://ecma-international.org/publications-and-standards/standards/ecma-262/)的形式推出了更新，從此之後大致上都相當穩定，不過近期有在研發第四版。
 
 這個穩定性對開發者來說是相當好的事情，因為它讓不少實作 (implementation) 有時間慢慢趕上。我會把重點放在第三版的語法。為了避免混淆，我會繼續使用 JavaScript 這個名稱。
 
@@ -22,13 +21,13 @@ Microsoft 在幾個月後隨著 IE 3 推出了跟該語言大致上相容的 JSc
 
 先從任何語言最基本的方面講起：型態 (type)。JavaScript 程式可以改變「值」(value)，而這些值各自有其歸屬的型態。JavaScript 的型態有：
 
-- [Number](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Number) （數字）
-- [String](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/String) （字串）
-- [Boolean](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Boolean) （布林值）
-- [Function](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Function) （函式）
-- [Object](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Object) （物件）
+- [Number](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Number) （數字）
+- [String](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/String) （字串）
+- [Boolean](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Boolean) （布林值）
+- [Function](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Function) （函式）
+- [Object](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Object) （物件）
 
-...以及稍微怪一點的 undefined （未定義）和 null （空）。還有，算是一種特殊物件的 [Array](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Array) （陣列）。還有，額外的特殊物件 [Date](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Date) （日期）以及 [Regular Expression](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/RegExp)。另外，如果真的要達到技術上的準確性，連函式也只算是一種特殊的物件。所以型態分佈表看起來應該像這樣：
+...以及稍微怪一點的 undefined （未定義）和 null （空）。還有，算是一種特殊物件的 [Array](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Array) （陣列）。還有，額外的特殊物件 [Date](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Date) （日期）以及 [Regular Expression](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/RegExp)。另外，如果真的要達到技術上的準確性，連函式也只算是一種特殊的物件。所以型態分佈表看起來應該像這樣：
 
 - Number （數字）
 - String （字串）
@@ -43,7 +42,7 @@ Microsoft 在幾個月後隨著 IE 3 推出了跟該語言大致上相容的 JSc
 - Null （空）
 - Undefined （未定義）
 
-其實也有內建的 [Error](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Error) （錯誤）類型，不過，先把重點放在上面的分佈表比較容易。
+其實也有內建的 [Error](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Error) （錯誤）類型，不過，先把重點放在上面的分佈表比較容易。
 
 ### 數字
 
@@ -53,14 +52,14 @@ Microsoft 在幾個月後隨著 IE 3 推出了跟該語言大致上相容的 JSc
 0.1 + 0.2 = 0.30000000000000004
 ```
 
-JavaScript 支援標準的[數字運算子](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Arithmetic_Operators)，包含加法、減法、取餘數、等算術。另外還有一個之前忘記提的內建物件，[Math](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Math) （數學），用以處理較為進階的數學函數和常數：
+JavaScript 支援標準的[數字運算子](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Arithmetic_Operators)，包含加法、減法、取餘數、等算術。另外還有一個之前忘記提的內建物件，[Math](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Math) （數學），用以處理較為進階的數學函數和常數：
 
 ```js
 Math.sin(3.5);
 d = Math.PI * r * r;
 ```
 
-你可以用內建的 [`parseInt()`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Functions/parseInt) 函式將字串轉成整數。這個函式有個可選用的第二個參數（在此建議你一定要指定），用以指定進位數。
+你可以用內建的 [`parseInt()`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Functions/parseInt) 函式將字串轉成整數。這個函式有個可選用的第二個參數（在此建議你一定要指定），用以指定進位數。
 
 ```js
 > parseInt("123", 10)
@@ -85,7 +84,7 @@ d = Math.PI * r * r;
 3
 ```
 
-有個特殊的數字，叫做 [`NaN`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Properties/NaN) （「Not a Number」，「非數字」的簡稱），假如遞進去的字串不是數字，則會回傳 [`NaN`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Properties/NaN) ：
+有個特殊的數字，叫做 [`NaN`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Properties/NaN) （「Not a Number」，「非數字」的簡稱），假如遞進去的字串不是數字，則會回傳 [`NaN`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Properties/NaN) ：
 
 ```js
 > parseInt("hello", 10)
@@ -99,14 +98,14 @@ NaN
 NaN
 ```
 
-你可以用內建的 [`isNaN()`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Functions/isNaN) 函式來判斷一個值是否為 `NaN`：
+你可以用內建的 [`isNaN()`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Functions/isNaN) 函式來判斷一個值是否為 `NaN`：
 
 ```js
 > isNaN(NaN)
 true
 ```
 
-JavaScript 也有特殊的值 [`Infinity`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Properties/Infinity) （無限）以及 `-Infinity` （負無限）：
+JavaScript 也有特殊的值 [`Infinity`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Properties/Infinity) （無限）以及 `-Infinity` （負無限）：
 
 ```js
 > 1 / 0
@@ -117,18 +116,18 @@ Infinity
 
 ### 字串
 
-JavaScript 的字串是一序列的字元。更精確的說，是一序列的 [Unicode 字元](/zh_tw/Core_JavaScript_1.5_Guide/Unicode)，每個字元皆以一個 16 位元的數字作為代表。這讓任何人不需要為國際化感到擔心。
+JavaScript 的字串是一序列的字元。更精確的說，是一序列的 [Unicode 字元](/zh-TW/Core_JavaScript_1.5_Guide/Unicode)，每個字元皆以一個 16 位元的數字作為代表。這讓任何人不需要為國際化感到擔心。
 
 如果你要代表一個單一字元，用長度為 1 的字串即可。
 
-要得知一個字串的長度，請存取該字串的 [`length`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/String/length)（長度）屬性：
+要得知一個字串的長度，請存取該字串的 [`length`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/String/length)（長度）屬性：
 
 ```js
 > "hello".length
 5
 ```
 
-剛剛可是與 JavaScript 物件的第一次接觸呢！字串也是物件喔。字串甚至也有[方法 (method)](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/String#Methods)：
+剛剛可是與 JavaScript 物件的第一次接觸呢！字串也是物件喔。字串甚至也有[方法 (method)](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/String#methods)：
 
 ```js
 > "hello".charAt(0) //位置 0 的字元
@@ -163,7 +162,7 @@ JavaScript 支援布林運算，如 `&&` （邏輯「_與_」，英稱 _and_）�
 
 ### 變數
 
-在 JavaScript，要宣告新變數，使用的是 [`var`](/zh_tw/Core_JavaScript_1.5_Reference/Statements/var) 關鍵字：
+在 JavaScript，要宣告新變數，使用的是 [`var`](/zh-TW/Core_JavaScript_1.5_Reference/Statements/var) 關鍵字：
 
 ```js
 var a;
@@ -177,13 +176,13 @@ var name = "simon";
 JavaScript 的數字運算子有 `+`、`-`、`*`、`/`、以及 `%` - 最後一個是取餘數的運算子（英稱 _mod_）。用來指定值的運算子是 `=`，另外還有複合指定陳述式，如 `+=` 以及 `-=`。這些是用以延伸 `x = x 運算子 y`。
 
 ```js
-x += 5
-x = x + 5
+x += 5;
+x = x + 5;
 ```
 
 你可以用 `++` 和 `--` 來分別增加或是減少數值。這些運算子可以放在變數的開頭或結尾。
 
-[`+` 運算子](/zh_tw/Core_JavaScript_1.5_Reference/Operators/String_Operators)也能把字串連接 (concatenate) 起來:
+[`+` 運算子](/zh-TW/Core_JavaScript_1.5_Reference/Operators/String_Operators)也能把字串連接 (concatenate) 起來:
 
 ```js
 > "hello" + " world"
@@ -201,7 +200,7 @@ hello world
 
 把一個空字串加到一個東西是個將其轉成字串的好方法之一。
 
-JavaScript 中進行[比較](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Comparison_Operators)可以用 `<`、`>`、`<=`、以及 `>=`。這些對字串和數字都有用。等值比較 (equality) 比較沒那麼直接。雙等號運算子（等於）會進行型態強制轉換，假如比較的資料型態不一樣，有時結果會相當有趣：
+JavaScript 中進行[比較](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Comparison_Operators)可以用 `<`、`>`、`<=`、以及 `>=`。這些對字串和數字都有用。等值比較 (equality) 比較沒那麼直接。雙等號運算子（等於）會進行型態強制轉換，假如比較的資料型態不一樣，有時結果會相當有趣：
 
 ```js
 > "dog" == "dog"
@@ -221,7 +220,7 @@ true
 
 另外還有 `!=` （不等於）以及 `!==` （絕對不等於）運算子。
 
-假如你需要用的話，JavaScript 也有[逐位元 (bitwise) 運算子](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Bitwise_Operators)。
+假如你需要用的話，JavaScript 也有[逐位元 (bitwise) 運算子](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Bitwise_Operators)。
 
 ### 控制結構
 
@@ -236,7 +235,7 @@ if (name == "狗狗") {
 } else {
   name = "!" + name;
 }
-name == "貓咪!!"
+name == "貓咪!!";
 ```
 
 JavaScript 有 `while` 迴圈以及 `do-while` 迴圈。前者適合做基本的迴圈，而後者是當你要迴圈至少執行一次就需要用到：
@@ -248,7 +247,7 @@ while (true) {
 
 do {
   var input = get_input();
-} while (inputIsNotValid(input))
+} while (inputIsNotValid(input));
 ```
 
 JavaScript 的 `for` 迴圈跟 C 和 Java 的一樣：可以讓你用一行就提供控制的條件與資訊。
@@ -274,46 +273,46 @@ var name = otherName || "預設";
 JavaScript 也有三元運算子 (tertiary operator)，可以用來寫單行的條件陳述式：
 
 ```js
-var allowed = (age > 18) ? "是" : "否";
+var allowed = age > 18 ? "是" : "否";
 ```
 
 switch 陳述式可以根據一個數字或字串做不同決定：
 
 ```js
-switch(action) {
-    case '畫':
-        drawit(); //開始畫
-        break; //中斷
-    case '吃':
-        eatit(); //開始吃
-        break; //中斷
-    default: //預設
-        donothing(); //不做任何事
+switch (action) {
+  case "畫":
+    drawit(); //開始畫
+    break; //中斷
+  case "吃":
+    eatit(); //開始吃
+    break; //中斷
+  default: //預設
+    donothing(); //不做任何事
 }
 ```
 
 如果你不加個 `break` （中斷）陳述式，執行的程式碼會往下「掉」一層。你很少會需要這樣 - 不過假如你真的要這樣，最好用個註解說明一下，這樣才方便除錯：
 
 ```js
-switch(a) {
-    case 1: //往下「掉」一層
-    case 2:
-        eatit(); //開始吃
-        break; //中斷
-    default: //預設
-        donothing(); //不做任何事
+switch (a) {
+  case 1: //往下「掉」一層
+  case 2:
+    eatit(); //開始吃
+    break; //中斷
+  default: //預設
+    donothing(); //不做任何事
 }
 ```
 
 default 子句 (clause) 是選擇性的，可有可無。如果你喜歡的話，你可以在 switch 部分或 case 部分放表達式 (expression)；兩者之間的比較使用的會是 `===` 運算子：
 
 ```js
-switch(1 + 3){
-    case 2 + 2:
-        yay(); //耶！
-        break; //中斷
-    default: //預設
-        neverhappens(); //根本不會發生
+switch (1 + 3) {
+  case 2 + 2:
+    yay(); //耶！
+    break; //中斷
+  default: //預設
+    neverhappens(); //根本不會發生
 }
 ```
 
@@ -348,7 +347,7 @@ var obj = {};
 一旦建立了，一個物件的屬性可以用兩種方法存取：
 
 ```js
-obj.name = "小明"
+obj.name = "小明";
 var name = obj.name;
 ```
 
@@ -370,13 +369,14 @@ obj["for"] = "Simon"; //沒問題
 
 ```js
 var obj = {
-    name: "胡蘿蔔", //名稱
-    "for": "小華", //給誰
-    details: { //詳細資訊
-        color: "橘", //顏色
-        size: 12 //大小
-    }
-}
+  name: "胡蘿蔔", //名稱
+  for: "小華", //給誰
+  details: {
+    //詳細資訊
+    color: "橘", //顏色
+    size: 12, //大小
+  },
+};
 ```
 
 存取屬性也可以連在一起：
@@ -439,7 +439,7 @@ undefined
 
 ```js
 for (var i = 0; i < a.length; i++) {
-    //處理 a[i]
+  //處理 a[i]
 }
 ```
 
@@ -447,23 +447,23 @@ for (var i = 0; i < a.length; i++) {
 
 ```js
 for (var i = 0, len = a.length; i < len; i++) {
-    //處理 a[i]
+  //處理 a[i]
 }
 ```
 
 一個更棒的寫法是：
 
 ```js
-for (var i = 0, item; item = a[i]; i++) {
-    //處理 item
+for (var i = 0, item; (item = a[i]); i++) {
+  //處理 item
 }
 ```
 
 這裡設定了兩個變數。`for` 迴圈中間指定變數值的部分會被測試是否為「真的」(truthy)－－如果成功了，迴圈便會繼續。由於 `i` 每次都會加一，陣列內的每個項目會被照順序指定到變數 item。當偵測到「假的」(falsy) 項目時（如 `undefined`）迴圈便會停止。
 
-注意－－這個小技巧只該用在你確定不會含有「假的」值的陣列（比如說一陣列的物件或 [DOM](/zh_tw/DOM) 節點）。假如你在可能含有 0 的數字資料或可能含有空字串的字串資料上做迴圈，最好還是用 `i, j` 的方式。
+注意－－這個小技巧只該用在你確定不會含有「假的」值的陣列（比如說一陣列的物件或 [DOM](/zh-TW/docs/Web/API/Document_Object_Model) 節點）。假如你在可能含有 0 的數字資料或可能含有空字串的字串資料上做迴圈，最好還是用 `i, j` 的方式。
 
-另外一個做迴圈的方法是用 [`for...in`](/zh_tw/Core_JavaScript_1.5_Reference/Statements/for...in) 迴圈。不過，假如有人用 `Array.prototype` 新增新的屬性，那些屬性也會被這種迴圈讀到：
+另外一個做迴圈的方法是用 [`for...in`](/zh-TW/Core_JavaScript_1.5_Reference/Statements/for...in) 迴圈。不過，假如有人用 `Array.prototype` 新增新的屬性，那些屬性也會被這種迴圈讀到：
 
 ```js
 for (var i in a) {
@@ -474,7 +474,7 @@ for (var i in a) {
 假如你要在陣列結尾加入項目，最安全的方法是這樣：
 
 ```js
-a[a.length] = item;                 //同 a.push(item);
+a[a.length] = item; //同 a.push(item);
 ```
 
 由於 `a.length` 一定是最高索引數加一，你可以很確定你指定到的是陣列結尾的空間。
@@ -501,8 +501,8 @@ a.sort(cmpfn), a.splice(start, delcount, [item]..), a.unshift([item]..)
 
 ```js
 function add(x, y) {
-    var total = x + y;
-    return total;
+  var total = x + y;
+  return total;
 }
 ```
 
@@ -522,7 +522,7 @@ NaN // undefined 不能進行加法
 5 // 加了前兩數，不理 4
 ```
 
-這或許有些可笑，但函式在內文內還可以存取一個叫做 [`arguments`](/zh_tw/Core_JavaScript_1.5_Reference/Functions/arguments) 的變數，一個類似陣列的物件，內含所有遞給函式的值。改寫一下 add 函式便可以使其接受無限量的值：
+這或許有些可笑，但函式在內文內還可以存取一個叫做 [`arguments`](/zh-TW/Core_JavaScript_1.5_Reference/Functions/arguments) 的變數，一個類似陣列的物件，內含所有遞給函式的值。改寫一下 add 函式便可以使其接受無限量的值：
 
 ```js
 function add() {
@@ -565,7 +565,7 @@ function avgArray(arr) {
 3.5
 ```
 
-但是最好是可以重複利用已經建立好的函式。幸運的是，JavaScript 可以讓你以一陣列的參數來呼叫一個函式。這靠的是使用任何函式物件的 [`apply()`](/zh_tw/Core_JavaScript_1.5_Reference/Global_Objects/Function/apply) 方法。
+但是最好是可以重複利用已經建立好的函式。幸運的是，JavaScript 可以讓你以一陣列的參數來呼叫一個函式。這靠的是使用任何函式物件的 [`apply()`](/zh-TW/Core_JavaScript_1.5_Reference/Global_Objects/Function/apply) 方法。
 
 ```js
 > avg.apply(null, [2, 3, 4, 5])
@@ -577,13 +577,13 @@ function avgArray(arr) {
 JavaScript 可以讓你建立匿名 (anonymous) 函式。
 
 ```js
-var avg = function() {
-    var sum = 0;
-    for (var i = 0, j = arguments.length; i < j; i++) {
-        sum += arguments[i];
-    }
-    return sum / arguments.length;
-}
+var avg = function () {
+  var sum = 0;
+  for (var i = 0, j = arguments.length; i < j; i++) {
+    sum += arguments[i];
+  }
+  return sum / arguments.length;
+};
 ```
 
 這個語法上和 `function avg()` 形式相等。這是非常強大的功能，因為你可以藉此在平常該放表達式的地方塞入一個完整的函式定義。這可以讓你用在各種令人拍案叫絕的技巧上。下列可以把本地 (local) 參數「藏」起來－－像 C 的 block scope 一樣：
@@ -601,33 +601,35 @@ var avg = function() {
 2
 ```
 
-JavaScript 能讓你遞迴地呼叫函式。這在處理樹狀結構的時候特別有用，比如瀏覽器的 [DOM](/zh_tw/DOM)。
+JavaScript 能讓你遞迴地呼叫函式。這在處理樹狀結構的時候特別有用，比如瀏覽器的 [DOM](/zh-TW/docs/Web/API/Document_Object_Model)。
 
 ```js
 function countChars(elm) {
-    if (elm.nodeType == 3) { // TEXT_NODE
-        return elm.nodeValue.length;
-    }
-    var count = 0;
-    for (var i = 0, child; child = elm.childNodes[i]; i++) {
-        count += countChars(child);
-    }
-    return count;
+  if (elm.nodeType == 3) {
+    // TEXT_NODE
+    return elm.nodeValue.length;
+  }
+  var count = 0;
+  for (var i = 0, child; (child = elm.childNodes[i]); i++) {
+    count += countChars(child);
+  }
+  return count;
 }
 ```
 
 以上揭露了一個使用匿名函式的潛在問題：如果匿名函式沒有名稱，那要怎麼樣遞迴地自我呼叫？答案是使用 `arguments` 物件。該物件除了提供一系列的參數以外，還提供了一個叫做 `arguments.callee` 的屬性。這個屬性所指向的是目前的函式，因此可以用來做遞迴的呼叫：
 
 ```js
-var charsInBody = (function(elm) {
-    if (elm.nodeType == 3) { // TEXT_NODE
-        return elm.nodeValue.length;
-    }
-    var count = 0;
-    for (var i = 0, child; child = elm.childNodes[i]; i++) {
-        count += arguments.callee(child);
-    }
-    return count;
+var charsInBody = (function (elm) {
+  if (elm.nodeType == 3) {
+    // TEXT_NODE
+    return elm.nodeValue.length;
+  }
+  var count = 0;
+  for (var i = 0, child; (child = elm.childNodes[i]); i++) {
+    count += arguments.callee(child);
+  }
+  return count;
 })(document.body);
 ```
 
@@ -695,7 +697,7 @@ Simon Willison
 Willison, Simon
 ```
 
-這裡出現了之前沒有提過的 '[`this`](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Special_Operators/this_Operator)' 關鍵字。在一個函式內，「`this`」 指的是目前的物件。其真正的意義是經由你呼叫函數的方式來指定。如果你透過在物件上使用[點或中括號記號](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Member_Operators)來呼叫它，這物件就成為「`this`」。如果在呼叫中沒有使用點記號，「`this`」就會參考到全域物件. 這經常造成錯誤。舉例來說：
+這裡出現了之前沒有提過的 '[`this`](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Special_Operators/this_Operator)' 關鍵字。在一個函式內，「`this`」 指的是目前的物件。其真正的意義是經由你呼叫函數的方式來指定。如果你透過在物件上使用[點或中括號記號](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Member_Operators)來呼叫它，這物件就成為「`this`」。如果在呼叫中沒有使用點記號，「`this`」就會參考到全域物件. 這經常造成錯誤。舉例來說：
 
 ```js
 > s = makePerson("Simon", "Willison")
@@ -710,34 +712,34 @@ undefined undefined
 
 ```js
 function Person(first, last) {
-    this.first = first;
-    this.last = last;
-    this.fullName = function() {
-        return this.first + ' ' + this.last;
-    }
-    this.fullNameReversed = function() {
-        return this.last + ', ' + this.first;
-    }
+  this.first = first;
+  this.last = last;
+  this.fullName = function () {
+    return this.first + " " + this.last;
+  };
+  this.fullNameReversed = function () {
+    return this.last + ", " + this.first;
+  };
 }
 var s = new Person("Simon", "Willison");
 ```
 
-我們引入了另一個關鍵字：「[`new`](/zh_tw/Core_JavaScript_1.5_Reference/Operators/Special_Operators/new_Operator)」。 「`new」`與「`this`」有強烈的關係。 他的作用是產生一個全新的空物件，然後呼叫指定的函式，使用新物件的作為函式的「`this`」。 被「new」呼叫的函式叫做「建構子函數」(constructor functions) 。
+我們引入了另一個關鍵字：「[`new`](/zh-TW/Core_JavaScript_1.5_Reference/Operators/Special_Operators/new_Operator)」。 「`new」`與「`this`」有強烈的關係。 他的作用是產生一個全新的空物件，然後呼叫指定的函式，使用新物件的作為函式的「`this`」。 被「new」呼叫的函式叫做「建構子函數」(constructor functions) 。
 
 此時我們可以發現，每次產生一個新的 Person 物件都會在其內部重新產生兩個新的 function 物件。如果這兩個 function 物件只有一份而讓大家共用不是更好嗎？所以
 
 ```js
 function personFullName() {
-    return this.first + ' ' + this.last;
+  return this.first + " " + this.last;
 }
 function personFullNameReversed() {
-    return this.last + ', ' + this.first;
+  return this.last + ", " + this.first;
 }
 function Person(first, last) {
-    this.first = first;
-    this.last = last;
-    this.fullName = personFullName;
-    this.fullNameReversed = personFullNameReversed;
+  this.first = first;
+  this.last = last;
+  this.fullName = personFullName;
+  this.fullNameReversed = personFullNameReversed;
 }
 ```
 
@@ -747,15 +749,15 @@ function Person(first, last) {
 
 ```js
 function Person(first, last) {
-    this.first = first;
-    this.last = last;
+  this.first = first;
+  this.last = last;
 }
-Person.prototype.fullName = function() {
-    return this.first + ' ' + this.last;
-}
-Person.prototype.fullNameReversed = function() {
-    return this.last + ', ' + this.first;
-}
+Person.prototype.fullName = function () {
+  return this.first + " " + this.last;
+};
+Person.prototype.fullNameReversed = function () {
+  return this.last + ", " + this.first;
+};
 ```
 
 Person.prototype 是一個由所有 Person 物件共享的物件。他將產生一個可供查看的關係鍊 (有個特殊的名字 prototype chain)。任何時候當我們想要使用某個不在 Person 中定義的 property 時，JavaScript 就會到 Person.prototype 裡頭尋找。因此， Person.prototype 就成為一個所有 Person 物件共用且可視的一個共享空間(物件)。這是一個提供強大工具，允許你可以在執行的任何一刻增加物件的相關函式。
@@ -812,9 +814,9 @@ desrever eb won nac sihT
 
 ```js
 function trivialNew(constructor) {
-    var o = {}; // Create an object
-    constructor.apply(o, arguments);
-    return o;
+  var o = {}; // Create an object
+  constructor.apply(o, arguments);
+  return o;
 }
 ```
 
@@ -822,7 +824,7 @@ function trivialNew(constructor) {
 
 ```js
 function lastNameCaps() {
-    return this.last.toUpperCase();
+  return this.last.toUpperCase();
 }
 var s = new Person("Simon", "Willison");
 lastNameCaps.call(s);
@@ -837,11 +839,11 @@ JavaScript 函式宣告可以放在其他函式內。我們之前有在 `makePer
 
 ```js
 function betterExampleNeeded() {
-    var a = 1;
-    function oneMoreThanA() {
-        return a + 1;
-    }
-    return oneMoreThanA();
+  var a = 1;
+  function oneMoreThanA() {
+    return a + 1;
+  }
+  return oneMoreThanA();
 }
 ```
 
@@ -894,9 +896,9 @@ JavaScript 是具有垃圾回收特性的語言，物件的生滅都是由執行
 
 ```js
 function leakMemory() {
-    var el = document.getElementById('el');
-    var o = { 'el': el };
-    el.o = o;
+  var el = document.getElementById("el");
+  var o = { el: el };
+  el.o = o;
 }
 ```
 
@@ -912,10 +914,10 @@ function leakMemory() {
 
 ```js
 function addHandler() {
-    var el = document.getElementById('el');
-    el.onclick = function() {
-        this.style.backgroundColor = 'red';
-    }
+  var el = document.getElementById("el");
+  el.onclick = function () {
+    this.style.backgroundColor = "red";
+  };
 }
 ```
 
@@ -925,11 +927,11 @@ function addHandler() {
 
 ```js
 function addHandler() {
-    var el = document.getElementById('el');
-    el.onclick = function() {
-        this.style.backgroundColor = 'red';
-    }
-    el = null;
+  var el = document.getElementById("el");
+  el.onclick = function () {
+    this.style.backgroundColor = "red";
+  };
+  el = null;
 }
 ```
 
@@ -939,13 +941,12 @@ function addHandler() {
 
 ```js
 function addHandler() {
-    var clickHandler = function() {
-        this.style.backgroundColor = 'red';
-    }
-    (function() {
-        var el = document.getElementById('el');
-        el.onclick = clickHandler;
-    })();
+  var clickHandler = (function () {
+    this.style.backgroundColor = "red";
+  })(function () {
+    var el = document.getElementById("el");
+    el.onclick = clickHandler;
+  })();
 }
 ```
 

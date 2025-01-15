@@ -32,7 +32,7 @@ JavaScript 的 setter 能在嘗試修改指定屬性時，執行給定函式。S
 使用 `set` 語法時，請注意以下情況：
 
 - 可以擁有一個以數字或字串為代表的標示符；
-- 最少要有一個參數（請參見 [Incompatible ES5 change: literal getter and setter functions must now have exactly zero or one arguments](http://whereswalden.com/2010/08/22/incompatible-es5-change-literal-getter-and-setter-functions-must-now-have-exactly-zero-or-one-arguments/) 的詳細資料）；
+- 最少要有一個參數（請參見 [Incompatible ES5 change: literal getter and setter functions must now have exactly zero or one arguments](https://whereswalden.com/2010/08/22/incompatible-es5-change-literal-getter-and-setter-functions-must-now-have-exactly-zero-or-one-arguments/) 的詳細資料）；
 - 不能以有另一個 `set` 的 object literal、或相同屬性入口（data entry）的 data 形式出現（不能使用 `{ set x(v) { }, set x(v) { } }` and `{ x: ..., set x(v) { } }`）
 
 [`delete`](/zh-TW/docs/Web/JavaScript/Reference/Operators/delete) 操作符可移除 setter。
@@ -48,13 +48,13 @@ var language = {
   set current(name) {
     this.log.push(name);
   },
-  log: []
-}
+  log: [],
+};
 
-language.current = 'EN';
+language.current = "EN";
 console.log(language.log); // ['EN']
 
-language.current = 'FA';
+language.current = "FA";
 console.log(language.log); // ['EN', 'FA']
 ```
 
@@ -73,26 +73,32 @@ delete o.current;
 To append a setter to an existing object later at any time, use {{jsxref("Object.defineProperty()")}}.
 
 ```js
-var o = {a: 0};
+var o = { a: 0 };
 
-Object.defineProperty(o, 'b', { set: function(x) { this.a = x / 2; } });
+Object.defineProperty(o, "b", {
+  set: function (x) {
+    this.a = x / 2;
+  },
+});
 
 o.b = 10; // Runs the setter, which assigns 10 / 2 (5) to the 'a' property
-console.log(o.a) // 5
+console.log(o.a); // 5
 ```
 
 ### 使用計算屬性名
 
 ```js
-var expr = 'foo';
+var expr = "foo";
 
 var obj = {
-  baz: 'bar',
-  set [expr](v) { this.baz = v; }
+  baz: "bar",
+  set [expr](v) {
+    this.baz = v;
+  },
 };
 
 console.log(obj.baz); // "bar"
-obj.foo = 'baz';      // 跑 setter
+obj.foo = "baz"; // 跑 setter
 console.log(obj.baz); // "baz"
 ```
 

@@ -1,11 +1,12 @@
 ---
-title: Request.headers
+title: "Request: headers プロパティ"
+short-title: headers
 slug: Web/API/Request/headers
 l10n:
-  sourceCommit: e0e09b1df51489867f2e74c18586d168ba5e00d1
+  sourceCommit: 954612667bafd71241a93e8554e8f11afc474ff3
 ---
 
-{{APIRef("Fetch")}}
+{{APIRef("Fetch API")}}
 
 **`headers`** は {{domxref("Request")}} インターフェイスの読み取り専用プロパティで、リクエストに関連する {{domxref("Headers")}} オブジェクトを保持します。
 
@@ -18,7 +19,7 @@ l10n:
 次のスニペットは、{{domxref("Request.Request()")}} コンストラクターを使って（スクリプトと同じディレクトリーにある画像ファイルのために）新しいリクエストを生成してから、リクエストの headers を変数に保存しています。
 
 ```js
-const myRequest = new Request('flowers.jpg');
+const myRequest = new Request("flowers.jpg");
 const myHeaders = myRequest.headers; // Headers {}
 ```
 
@@ -26,18 +27,18 @@ const myHeaders = myRequest.headers; // Headers {}
 
 ```js
 const myHeaders = new Headers();
-myHeaders.append('Content-Type', 'image/jpeg');
+myHeaders.append("Content-Type", "image/jpeg");
 
 const myInit = {
-  method: 'GET',
+  method: "GET",
   headers: myHeaders,
-  mode: 'cors',
-  cache: 'default'
+  mode: "cors",
+  cache: "default",
 };
 
-const myRequest = new Request('flowers.jpg', myInit);
+const myRequest = new Request("flowers.jpg", myInit);
 
-const myContentType = myRequest.headers.get('Content-Type'); // returns 'image/jpeg'
+const myContentType = myRequest.headers.get("Content-Type"); // returns 'image/jpeg'
 ```
 
 ## 仕様書

@@ -1,7 +1,6 @@
 ---
 title: Como a Internet funciona?
 slug: Learn/Common_questions/Web_mechanics/How_does_the_Internet_work
-original_slug: Learn/Common_questions/How_does_the_Internet_work
 ---
 
 {{LearnSidebar}}
@@ -45,7 +44,8 @@ A **Internet** é a espinha dorsal da Web, a infraestrutura técnica que faz a W
 
 Quando dois computadores precisam se comunicar, você precisa conectá-los, seja fisicamente (normalmente com um [Cabo de rede](https://pt.wikipedia.org/wiki/Cabo_de_par_tran%C3%A7ado)) ou de uma forma sem fio (por exemplo com sistemas [WiFi](https://pt.wikipedia.org/wiki/Wi-Fi) ou [Bluetooth](https://pt.wikipedia.org/wiki/Bluetooth)). Todos os computadores modernos suportam alguma(s) dessas conexões.
 
-> **Nota:** Até o final deste artigo nós estaremos falando apenas a respeito de cabos físicos, mas redes sem fio funcionam da mesma forma
+> [!NOTE]
+> Até o final deste artigo nós estaremos falando apenas a respeito de cabos físicos, mas redes sem fio funcionam da mesma forma
 
 ![Dois computadores conectados](internet-schema-1.png)
 
@@ -69,7 +69,7 @@ Conectando computadores a roteadores, e então roteadores a roteadores nós pode
 
 ![Roteadores conectados a roteadores](internet-schema-5.png)
 
-Esta rede é muito parecida com o que chamamos de Internet, mas alguma coisa está faltando. Nós construímos tais redes para nossos próprios fins. Existem outras redes além das nossas ligadas em outros lugares: nossos amigos, vizinhos, qualquer pessoa pode ter uma rede de computadores. Mas é inviável ligarmos cabos entre nossas casas e o resto do mundo, então como nos podemos lidar com isso? Muito bem, já existem cabos ligados a sua casa, como por exemplo, cabos de eletricidade e telefone. A estrutura do telefone já conecta nossa casa com o resto do mundo, então é exatamente o que nós precisamos. Para conectar nossa rede a rede telefônica, precisamos de um equipamento especial chamado _modem_. Este *modem* transforma a informação da nossa rede em uma informação gerenciável pela rede telefônica e vice-versa.
+Esta rede é muito parecida com o que chamamos de Internet, mas alguma coisa está faltando. Nós construímos tais redes para nossos próprios fins. Existem outras redes além das nossas ligadas em outros lugares: nossos amigos, vizinhos, qualquer pessoa pode ter uma rede de computadores. Mas é inviável ligarmos cabos entre nossas casas e o resto do mundo, então como nos podemos lidar com isso? Muito bem, já existem cabos ligados a sua casa, como por exemplo, cabos de eletricidade e telefone. A estrutura do telefone já conecta nossa casa com o resto do mundo, então é exatamente o que nós precisamos. Para conectar nossa rede a rede telefônica, precisamos de um equipamento especial chamado _modem_. Este _modem_ transforma a informação da nossa rede em uma informação gerenciável pela rede telefônica e vice-versa.
 
 ![Um roteador conectado a um modem](internet-schema-6.png)
 
@@ -107,5 +107,5 @@ Tanto as intranets quanto as extranets são executadas no mesmo tipo de infraest
 ## Próximos passos
 
 - [Como a Web funciona](/pt-BR/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
-- [Entendendo a diferença entre uma página web, um website, um servidor web e um mecânismo de pesquisa](/pt-BR/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
-- [Entendendo nomes de domínio](/pt-BR/docs/Learn/Common_questions/What_is_a_domain_name)
+- [Entendendo a diferença entre uma página web, um website, um servidor web e um mecânismo de pesquisa](/pt-BR/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines)
+- [Entendendo nomes de domínio](/pt-BR/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name)

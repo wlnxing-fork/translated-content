@@ -1,5 +1,5 @@
 ---
-title: 'At 规则'
+title: At 规则
 slug: Web/CSS/At-rule
 ---
 
@@ -57,6 +57,10 @@ slug: Web/CSS/At-rule
 
 既然条件规则组可以嵌套语句，那么嵌套层级不定。
 
+## 使用 CSS 嵌套来嵌套 @layer
+
+[级联层](/zh-CN/docs/Web/CSS/@layer)可以嵌套以[创建嵌套层](/zh-CN/docs/Web/CSS/@layer#嵌套层)。它们用 `.`（点）连接。这也可以使用 [CSS 嵌套](/zh-CN/docs/Web/CSS/CSS_nesting/Nesting_at-rules#嵌套级联层（layer）)来实现。
+
 ## 索引
 
 - {{cssxref("@charset")}}
@@ -86,11 +90,11 @@ slug: Web/CSS/At-rule
   - [CSS 语法](/zh-CN/docs/Web/CSS/Syntax)
   - [注释](/zh-CN/docs/Web/CSS/Comments)
   - [优先级](/zh-CN/docs/Web/CSS/Specificity)
-  - [继承](/zh-CN/docs/Web/CSS/inheritance)
-  - [盒模型](/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [继承](/zh-CN/docs/Web/CSS/Inheritance)
+  - [盒模型](/zh-CN/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [布局模式](/zh-CN/docs/Web/CSS/Layout_mode)
   - [视觉格式化模型](/zh-CN/docs/Web/CSS/Visual_formatting_model)
-  - [外边距重叠](/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [外边距重叠](/zh-CN/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - 值
     - [初始值](/zh-CN/docs/Web/CSS/initial_value)
     - [计算值](/zh-CN/docs/Web/CSS/computed_value)
@@ -99,3 +103,4 @@ slug: Web/CSS/At-rule
   - [值定义语法](/zh-CN/docs/Web/CSS/Value_definition_syntax)
   - [简写属性](/zh-CN/docs/Web/CSS/Shorthand_properties)
   - [可替换元素](/zh-CN/docs/Web/CSS/Replaced_element)
+  - [CSS 嵌套模块](/zh-CN/docs/Web/CSS/CSS_nesting)

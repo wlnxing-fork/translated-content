@@ -1,13 +1,6 @@
 ---
 title: Affectation après OU logique (||=)
 slug: Web/JavaScript/Reference/Operators/Logical_OR_assignment
-tags:
-  - JavaScript
-  - Language feature
-  - Logical Operator
-  - Operator
-  - Reference
-browser-compat: javascript.operators.logical_or_assignment
 ---
 
 {{jsSidebar("Operators")}}
@@ -19,7 +12,7 @@ L'opérateur d'affectation après OU logique (`x ||= y`) n'affecte la valeur de 
 ## Syntaxe
 
 ```js
-expr1 ||= expr2
+expr1 ||= expr2;
 ```
 
 ## Description
@@ -57,12 +50,12 @@ On notera que ce comportement est différent entre les opérateurs binaires et l
 Dans l'exemple qui suit, si `paroles` est vide, on y place une valeur par défaut :
 
 ```js
-document.getElementById('paroles').textContent ||= 'Aucune parole.'
+document.getElementById("paroles").textContent ||= "Aucune parole.";
 ```
 
 Ici, la notion de court-circuit est utile, car l'élément ne sera pas mis à jour si ce n'est pas nécessaire. Il n'y aura pas d'effet de bord indésiré comme une autre étape de rendu ou la perte du focus, etc.
 
-Attention toutefois à la valeur qu'on teste. Si on souhaite affecter une valeur lorsqu'on rencontre une chaîne de caractère vide (équivalente à faux), on pourra utiliser `||=`. Sinon, si on souhaite uniquement distinguer [`null`](/fr/docs/Web/JavaScript/Reference/Global_Objects/null) ou [`undefined`](/fr/docs/Web/JavaScript/Reference/Global_Objects/null), on utilisera l'opérateur [`??=`](/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator).
+Attention toutefois à la valeur qu'on teste. Si on souhaite affecter une valeur lorsqu'on rencontre une chaîne de caractère vide (équivalente à faux), on pourra utiliser `||=`. Sinon, si on souhaite uniquement distinguer [`null`](/fr/docs/Web/JavaScript/Reference/Operators/null) ou [`undefined`](/fr/docs/Web/JavaScript/Reference/Operators/null), on utilisera l'opérateur [`??=`](/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing).
 
 ## Spécifications
 
@@ -75,7 +68,7 @@ Attention toutefois à la valeur qu'on teste. Si on souhaite affecter une valeur
 ## Voir aussi
 
 - [L'opérateur OU logique (||)](/fr/docs/Web/JavaScript/Reference/Operators/Logical_OR)
-- [L'opérateur de coalescence des nuls (`??`)](/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [L'opérateur de coalescence des nuls (`??`)](/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [L'opérateur d'affectation après OU binaire (`|=`)](/fr/docs/Web/JavaScript/Reference/Operators/Bitwise_OR_assignment)
 - [Le type `Boolean`](/fr/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 - [_Truthy_](/fr/docs/Glossary/Truthy)

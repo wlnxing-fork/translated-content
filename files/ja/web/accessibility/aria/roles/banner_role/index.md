@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: banner ロール'
+title: "ARIA: banner ロール"
 slug: Web/Accessibility/ARIA/Roles/banner_role
 ---
 
@@ -7,7 +7,7 @@ slug: Web/Accessibility/ARIA/Roles/banner_role
 
 ```html
 <div role="banner">
-  <img src="companylogo.svg" alt="会社名"/>
+  <img src="companylogo.svg" alt="会社名" />
   <h1>タイトル</h1>
   <p>サブタイトル</p>
 </div>
@@ -43,8 +43,10 @@ HTML5 の {{htmlelement("header")}} 要素は、{{htmlelement("aside")}}、{{htm
 
 ```html
 <div role="banner">
-  <a href="#nav" id="skipToMenu" class="skiptocontent">キーボードナビゲーションへ飛ぶ</a>
-  <img src="images/w3c.png" alt="W3C ロゴ">
+  <a href="#nav" id="skipToMenu" class="skiptocontent"
+    >キーボードナビゲーションへ飛ぶ</a
+  >
+  <img src="images/w3c.png" alt="W3C ロゴ" />
   <h1>ARIA ランドマーク</h1>
   <p>容易なナビゲーションのためのページのサブセクションの特定</p>
 </div>
@@ -54,8 +56,10 @@ HTML5 の {{htmlelement("header")}} 要素は、{{htmlelement("aside")}}、{{htm
 
 ```html
 <header>
-  <a href="#nav" id="skipToMenu" class="skiptocontent">キーボードナビゲーションへ飛ぶ</a>
-  <img src="images/w3c.png" alt="W3C ロゴ">
+  <a href="#nav" id="skipToMenu" class="skiptocontent"
+    >キーボードナビゲーションへ飛ぶ</a
+  >
+  <img src="images/w3c.png" alt="W3C ロゴ" />
   <h1>ARIA ランドマーク</h1>
   <p>容易なナビゲーションのためのページのサブセクションの特定</p>
 </header>
@@ -65,7 +69,7 @@ HTML5 の {{htmlelement("header")}} 要素は、{{htmlelement("aside")}}、{{htm
 
 `<header>` 要素を使用して、ページの任意のサブセクションの子孫でないことを保証するのが最善ですが、場合によっては基になる HTML にアクセスできないことがあります。 この場合、JavaScript を使用してページのメインヘッダーにバナー (`banner`) ロールを追加できます。 この方法でページのバナーを特定すると、サイトのアクセシビリティが向上します。
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 

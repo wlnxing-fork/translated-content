@@ -1,25 +1,15 @@
 ---
 title: sidebarAction.setPanel()
 slug: Mozilla/Add-ons/WebExtensions/API/sidebarAction/setPanel
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Method
-  - Reference
-  - WebExtensions
-  - setPanel
-  - sidebarAction
-translation_of: Mozilla/Add-ons/WebExtensions/API/sidebarAction/setPanel
 ---
 
-{{AddonSidebar()}}
+{{AddonSidebar}}
 
 Définit le panneau de la barre latérale: c'est-à-dire le document HTML qui définit le contenu de cette barre latérale.
 
 ## Types de panneau
 
-Les barres latérales ont toujours un _"panneau manifest"_, qui est le panneau défini dans la clé de manifest [`sidebar_action`](/fr/Add-ons/WebExtensions/manifest.json/sidebar_action).
+Les barres latérales ont toujours un _"panneau manifest"_, qui est le panneau défini dans la clé de manifest [`sidebar_action`](/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json/sidebar_action).
 
 Si vous définissez un nouveau panneau à l'aide de `setPanel()`, et incluez l'option `tabId` le panneau est défini uniquement pour l'onglet donné. Ce panneau est appelé "tab-specific panel".
 
@@ -31,8 +21,8 @@ Si vous définissez un nouveau panneau en utilisant `setPanel()`, et omettez les
 
 ```js
 browser.sidebarAction.setPanel(
-  details // object
-)
+  details, // object
+);
 ```
 
 ### Paramètres
@@ -73,9 +63,9 @@ var thatPanel = browser.runtime.getURL("/that.html");
 
 function toggle(panel) {
   if (panel === thisPanel) {
-    browser.sidebarAction.setPanel({panel: thatPanel});
+    browser.sidebarAction.setPanel({ panel: thatPanel });
   } else {
-    browser.sidebarAction.setPanel({panel: thisPanel});
+    browser.sidebarAction.setPanel({ panel: thisPanel });
   }
 }
 
@@ -90,7 +80,7 @@ browser.browserAction.onClicked.addListener(() => {
 
 {{WebExtExamples}}
 
-> **Note :**
+> [!NOTE]
 >
 > Cette API est basée sur l'API Opera [`chrome.sidebarAction`](https://dev.opera.com/extensions/sidebar-action-api/).
 >

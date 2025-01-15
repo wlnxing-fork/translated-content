@@ -18,7 +18,7 @@ new ArrayBuffer(length)
 new ArrayBuffer(length, options)
 ```
 
-> **メモ:** `ArrayBuffer()` は [`new`](/ja/docs/Web/JavaScript/Reference/Operators/new) でのみ構築することができます。`new` 梨で呼び出そうとすると、{{jsxref("TypeError")}} が発生します。
+> **メモ:** `ArrayBuffer()` は [`new`](/ja/docs/Web/JavaScript/Reference/Operators/new) でのみ構築することができます。`new` 無しで呼び出そうとすると、{{jsxref("TypeError")}} が発生します。
 
 ### 引数
 
@@ -74,5 +74,5 @@ buffer.resize(12);
 ## 関連情報
 
 - [`ArrayBuffer` のポリフィル (`core-js`)](https://github.com/zloirock/core-js#ecmascript-typed-arrays)
-- [JavaScript 型付き配列](/ja/docs/Web/JavaScript/Typed_arrays)
+- [JavaScript 型付き配列](/ja/docs/Web/JavaScript/Guide/Typed_arrays)
 - {{jsxref("SharedArrayBuffer")}}

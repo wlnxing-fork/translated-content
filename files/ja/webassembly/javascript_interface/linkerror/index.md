@@ -1,7 +1,6 @@
 ---
 title: WebAssembly.LinkError
 slug: WebAssembly/JavaScript_interface/LinkError
-original_slug: Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError
 ---
 
 {{WebAssemblySidebar}}
@@ -10,7 +9,7 @@ original_slug: Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError
 
 ## コンストラクター
 
-- [`WebAssembly.LinkError()`](/ja/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError/LinkError)
+- [`WebAssembly.LinkError()`](/ja/docs/WebAssembly/JavaScript_interface/LinkError/LinkError)
   - : 新しい `WebAssembly.LinkError` オブジェクトを生成します。
 
 ## インスタンスプロパティ
@@ -43,15 +42,15 @@ original_slug: Web/JavaScript/Reference/Global_Objects/WebAssembly/LinkError
 
 ```js
 try {
-  throw new WebAssembly.LinkError('Hello', 'someFile', 10);
+  throw new WebAssembly.LinkError("Hello", "someFile", 10);
 } catch (e) {
   console.log(e instanceof LinkError); // true
-  console.log(e.message);                 // "Hello"
-  console.log(e.name);                    // "LinkError"
-  console.log(e.fileName);                // "someFile"
-  console.log(e.lineNumber);              // 10
-  console.log(e.columnNumber);            // 0
-  console.log(e.stack);                   // コードが実行されていた位置を返す
+  console.log(e.message); // "Hello"
+  console.log(e.name); // "LinkError"
+  console.log(e.fileName); // "someFile"
+  console.log(e.lineNumber); // 10
+  console.log(e.columnNumber); // 0
+  console.log(e.stack); // コードが実行されていた位置を返す
 }
 ```
 

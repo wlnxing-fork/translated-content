@@ -1,7 +1,6 @@
 ---
 title: rotateY()
 slug: Web/CSS/transform-function/rotateY
-original_slug: Web/CSS/transform-function/rotateY()
 ---
 
 {{CSSRef}}
@@ -14,13 +13,14 @@ original_slug: Web/CSS/transform-function/rotateY()
 
 > **备注：** `rotateY(a)` 相当于 `rotate3d(0, 1, 0, a)`.
 
-> **备注：** 与二维平面上的旋转不同，三维旋转的组合顺序通常是不可交换的。换句话说，三维旋转的应用顺序，将会影响最终结果。
+> [!NOTE]
+> 与二维平面上的旋转不同，三维旋转的组合顺序通常是不可交换的。换句话说，三维旋转的应用顺序，将会影响最终结果。
 
 ## 语法
 
 **`rotateY()`** 引起的旋转量由{{cssxref("&lt;angle&gt;")}}指定。如果为正，则顺时针方向移动；如果为负，则逆时针方向移动。
 
-```
+```css
 rotateY(a)
 ```
 
@@ -110,11 +110,11 @@ div {
 
 {{Specifications}}
 
-## 浏览器兼容
+## 浏览器兼容性
 
 {{Compat}}
 
-## 另请参阅
+## 参见
 
 - {{cssxref("transform")}}
 - {{cssxref("&lt;transform-function&gt;")}}

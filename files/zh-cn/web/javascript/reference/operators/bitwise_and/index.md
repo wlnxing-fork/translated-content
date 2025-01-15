@@ -1,7 +1,6 @@
 ---
 title: 按位与（&）
 slug: Web/JavaScript/Reference/Operators/Bitwise_AND
-original_slug: Web/JavaScript/Reference/Operators/按位与
 ---
 
 {{jsSidebar("Operators")}}
@@ -20,7 +19,7 @@ a & b
 
 操作数被转换为 32 位整数，并由一系列位（0 和 1）表示。超过 32 位的数字将丢弃其最高有效位。例如，以下大于 32 位的整数将被转换为 32 位整数：
 
-```
+```plain
 Before: 11100110111110100000000000000110000000000001
 After:              10100000000000000110000000000001
 ```
@@ -38,7 +37,7 @@ After:              10100000000000000110000000000001
 | 1   | 0   | 0       |
 | 1   | 1   | 1       |
 
-```
+```plain
      9 (base 10) = 00000000000000000000000000001001 (base 2)
     14 (base 10) = 00000000000000000000000000001110 (base 2)
                    --------------------------------
@@ -67,5 +66,5 @@ After:              10100000000000000110000000000001
 
 ## 参见
 
-- [JS 指南中的位运算符](/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_Operators#位运算符)
+- [JS 指南中的位运算符](/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_operators#位运算符)
 - [按位与赋值运算符](/zh-CN/docs/Web/JavaScript/Reference/Operators/Bitwise_AND_assignment)

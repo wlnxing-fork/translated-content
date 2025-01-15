@@ -13,7 +13,8 @@ La propiedad CSS **`border-bottom-right-radius`** establece el redondeo de la es
 
 Un fondo, siendo una imagen o color, está limitado a los bordes, incluso a los redondeados; la posición exacta del corte será definida por el valor de la propiedad {{cssxref("background-clip")}}.
 
-> **Nota:** Si el valor de esta propiedad no se establece en una propiedad reducida {{cssxref("border-radius")}} que es aplicada al elemento después de la propiedad `border-bottom-right-radius`, el valor de esta propiedad es restaurado a su valor inicial por la [propiedad de forma reducida](/es/docs/Web/CSS/Shorthand_properties).
+> [!NOTE]
+> Si el valor de esta propiedad no se establece en una propiedad reducida {{cssxref("border-radius")}} que es aplicada al elemento después de la propiedad `border-bottom-right-radius`, el valor de esta propiedad es restaurado a su valor inicial por la [propiedad de forma reducida](/es/docs/Web/CSS/Shorthand_properties).
 
 {{cssinfo}}
 
@@ -137,7 +138,7 @@ div {
   border-bottom-right-radius: 40%;
   height: 100px;
   width: 100px;
-  background-color: rgb(250,20,70);
+  background-color: rgb(250, 20, 70);
   background-clip: content-box;
 }
 ```

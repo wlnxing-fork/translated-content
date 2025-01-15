@@ -1,8 +1,6 @@
 ---
 title: Обработка коллизий
 slug: Games/Tutorials/2D_breakout_game_Phaser/Collision_detection
-translation_of: Games/Tutorials/2D_breakout_game_Phaser/Collision_detection
-original_slug: Games/Tutorials/Создание_2D_Breakout_игры_на_Phaser/Обработка_коллизий
 ---
 
 {{GamesSidebar}}{{PreviousNext("Games/Tutorials/Создание_2D_Breakout_игры_на_Phaser/Создание_кирпичей", "Games/Tutorials/Создание_2D_Breakout_игры_на_Phaser/Очки")}}
@@ -17,9 +15,9 @@ original_slug: Games/Tutorials/Создание_2D_Breakout_игры_на_Phaser
 
 ```js
 function update() {
-    game.physics.arcade.collide(ball, paddle);
-    game.physics.arcade.collide(ball, bricks, ballHitBrick);
-    paddle.x = game.input.x || game.world.width*0.5;
+  game.physics.arcade.collide(ball, paddle);
+  game.physics.arcade.collide(ball, bricks, ballHitBrick);
+  paddle.x = game.input.x || game.world.width * 0.5;
 }
 ```
 
@@ -27,7 +25,7 @@ function update() {
 
 ```js
 function ballHitBrick(ball, brick) {
-    brick.kill();
+  brick.kill();
 }
 ```
 
@@ -35,7 +33,7 @@ function ballHitBrick(ball, brick) {
 
 Спасибо Phaser за то, что передал нам в функцию эти два параметра — мячик и тот кирпич, с которым у мячика произошла коллизия. А дальше мы просто удаляем кирпич с экрана, вызвав у него функцию `kill()`.
 
-Вы думали, что нам придётся писать много кода для отслеживания коллизий, как мы это делали на [чистом JavaScript](/ru/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript/Collision_detection)? В этом и прелесть фреймворков — рутину они сделают за нас, а мы, в это время, можем сосредоточиться на действительно интересных вещах.
+Вы думали, что нам придётся писать много кода для отслеживания коллизий, как мы это делали на [чистом JavaScript](/ru/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection)? В этом и прелесть фреймворков — рутину они сделают за нас, а мы, в это время, можем сосредоточиться на действительно интересных вещах.
 
 ## Сравните свой код
 

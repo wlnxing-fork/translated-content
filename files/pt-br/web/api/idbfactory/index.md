@@ -5,14 +5,14 @@ slug: Web/API/IDBFactory
 
 {{APIRef("IndexedDB")}}
 
-A interface IDBFactory, pertencente a [IndexedDB API](/pt-BR/docs/IndexedDB) , permite que aplicativos acessem de forma assíncrona os bancos de dados indexados. O objeto que implementa a interface é o window\.indexedDB, com este objeto é possível criar, acessar, modificar e excluir informações de um banco de dados.
+A interface IDBFactory, pertencente a [IndexedDB API](/pt-BR/docs/Web/API/IndexedDB_API) , permite que aplicativos acessem de forma assíncrona os bancos de dados indexados. O objeto que implementa a interface é o window\.indexedDB, com este objeto é possível criar, acessar, modificar e excluir informações de um banco de dados.
 
 {{AvailableInWorkers}}
 
 ## Métodos
 
 - {{domxref("IDBFactory.open")}}
-  - : Realizar a abertura de uma [conexão com uma base de dados](/pt-BR/docs/IndexedDB#gloss_database_connection).
+  - : Realizar a abertura de uma [conexão com uma base de dados](/pt-BR/docs/Web/API/IndexedDB_API#gloss_database_connection).
 - {{domxref("IDBFactory.deleteDatabase")}}
   - : Remove uma base de dados.
 - {{domxref("IDBFactory.cmp")}}
@@ -20,8 +20,8 @@ A interface IDBFactory, pertencente a [IndexedDB API](/pt-BR/docs/IndexedDB) , p
 
 ### Métodos Obsoletos
 
-- [`IDBFactory.open`](/en-US/docs/Web/API/IDBFactory.open-obsolete), a versão original
-  - : Este método realizava [conexão com uma base de dados](/pt-BR/docs/IndexedDB#gloss_database_connection), ele ainda é usado em alguns navegadores.
+- [`IDBFactory.open`](/pt-BR/docs/Web/API/IDBFactory/open), a versão original
+  - : Este método realizava [conexão com uma base de dados](/pt-BR/docs/Web/API/IndexedDB_API#gloss_database_connection), ele ainda é usado em alguns navegadores.
 
 ## Exemplo
 
@@ -31,39 +31,44 @@ No código abaixo, realizamos uma conexão com um banco de dados e incluímos ma
 var note = document.querySelector("ul");
 
 // In the following line, you should include the prefixes of implementations you want to test.
-window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+window.indexedDB =
+  window.indexedDB ||
+  window.mozIndexedDB ||
+  window.webkitIndexedDB ||
+  window.msIndexedDB;
 // DON'T use "var indexedDB = ..." if you're not in a function.
 // Moreover, you may need references to some window.IDB* objects:
-window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
-window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
+window.IDBTransaction =
+  window.IDBTransaction ||
+  window.webkitIDBTransaction ||
+  window.msIDBTransaction;
+window.IDBKeyRange =
+  window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
 // (Mozilla has never prefixed these objects, so we don't need window.mozIDB*)
 
 // Let us open version 4 of our database
 var DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
 // these two event handlers act on the database being opened successfully, or not
-DBOpenRequest.onerror = function(event) {
-  note.innerHTML += '<li>Error loading database.</li>';
+DBOpenRequest.onerror = function (event) {
+  note.innerHTML += "<li>Error loading database.</li>";
 };
 
-DBOpenRequest.onsuccess = function(event) {
-  note.innerHTML += '<li>Database initialised.</li>';
+DBOpenRequest.onsuccess = function (event) {
+  note.innerHTML += "<li>Database initialised.</li>";
 
   // store the result of opening the database in the db variable. This is used a lot later on, for opening transactions and suchlike.
   db = DBOpenRequest.result;
 };
 ```
 
-## Specifications
+## Especificações
 
-| Specification                                                                        | Status                           | Comment |
-| ------------------------------------------------------------------------------------ | -------------------------------- | ------- |
-| {{SpecName('IndexedDB', '#idl-def-IDBFactory', 'IDBFactory')}} | {{Spec2('IndexedDB')}}     |         |
-| {{SpecName("IndexedDB 2", "#factory-interface", "IDBFactory")}} | {{Spec2("IndexedDB 2")}} |         |
+{{Specifications}}
 
-## Browser compatibility
+## Compatibilidade com navegadores
 
-{{Compat("api.IDBFactory")}}
+{{Compat}}
 
 ## See also
 

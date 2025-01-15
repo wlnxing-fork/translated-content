@@ -5,7 +5,7 @@ slug: Web/CSS/text-decoration-line
 
 {{CSSRef}}
 
-[CSS](/zh-CN/docs/CSS) 属性 **`text-decoration-line`** 用于设置元素中的文本的修饰类型。当要设置多个线修饰属性时，用 {{cssxref("text-decoration")}} 简写属性会比分别写多个属性更方便。
+[CSS](/zh-CN/docs/Web/CSS) 属性 **`text-decoration-line`** 用于设置元素中的文本的修饰类型。当要设置多个线修饰属性时，用 {{cssxref("text-decoration")}} 简写属性会比分别写多个属性更方便。
 
 ```css
 /* Keyword values */
@@ -14,8 +14,8 @@ text-decoration-line: underline;
 text-decoration-line: overline;
 text-decoration-line: line-through;
 text-decoration-line: blink;
-text-decoration-line: underline overline;               /* Two decoration lines */
-text-decoration-line: overline underline line-through;  /* Multiple decoration lines */
+text-decoration-line: underline overline; /* Two decoration lines */
+text-decoration-line: overline underline line-through; /* Multiple decoration lines */
 
 /* Global values */
 text-decoration-line: inherit;

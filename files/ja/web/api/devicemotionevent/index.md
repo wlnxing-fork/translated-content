@@ -9,7 +9,8 @@ l10n:
 
 **`DeviceMotionEvent`** インターフェイスは、ウェブ開発者に端末の位置と方向の変化のスピードに関する情報を提供します。
 
-> **警告:** 現在、Firefox と Chrome は同じ方法で座標を処理しません。これらを使用する際は、注意してください。
+> [!WARNING]
+> 現在、Firefox と Chrome は同じ方法で座標を処理しません。これらを使用する際は、注意してください。
 
 {{InheritanceDiagram}}
 
@@ -32,7 +33,7 @@ l10n:
 ## 例
 
 ```js
-window.addEventListener('devicemotion', (event) => {
+window.addEventListener("devicemotion", (event) => {
   console.log(`${event.acceleration.x} m/s2`);
 });
 ```

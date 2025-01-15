@@ -1,16 +1,17 @@
 ---
 title: Document.registerElement()
 slug: Web/API/CustomElementRegistry/define
-original_slug: Web/API/Document/registerElement
 ---
 
 {{APIRef("DOM")}}{{Deprecated_header}}
 
-> **警告：** document.registerElement() 已經被棄用，建議使用 [customElements.define()](/zh-TW/docs/Web/API/CustomElementRegistry/define).
+> [!WARNING]
+> document.registerElement() 已經被棄用，建議使用 [customElements.define()](/zh-TW/docs/Web/API/CustomElementRegistry/define).
 
 **`document.registerElement()`** 可以在瀏覽器中註冊一個新的自訂標籤(元素)and returns a constructor for the new element.
 
-> **備註：** This is an experimental technology. The browser you use it in must support Web Components. See [Enabling Web Components in Firefox](/zh-TW/docs/Web/Web_Components#Enabling_Web_Components_in_Firefox).
+> [!NOTE]
+> This is an experimental technology. The browser you use it in must support Web Components. See [Enabling Web Components in Firefox](/zh-TW/docs/Web/API/Web_components#enabling_web_components_in_firefox).
 
 ## 語法
 
@@ -30,7 +31,7 @@ var constructor = document.registerElement(tag-name, options);
 這是一個非常簡單的例子:
 
 ```js
-var Mytag = document.registerElement('my-tag');
+var Mytag = document.registerElement("my-tag");
 ```
 
 現在新的標籤已經在瀏覽器中註冊了. The `Mytag` variable holds a constructor that you can use to create a `my-tag` element in the document as follows:
@@ -52,4 +53,4 @@ mytag.textContent = "I am a my-tag element.";
 
 ## 也看一下
 
-- [Custom Elements](/zh-TW/docs/Web/Web_Components/Custom_Elements)
+- [Custom Elements](/zh-TW/docs/Web/API/Web_components/Using_custom_elements)

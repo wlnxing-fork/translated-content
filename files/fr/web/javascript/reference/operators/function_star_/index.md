@@ -1,15 +1,6 @@
 ---
 title: Expression function*
 slug: Web/JavaScript/Reference/Operators/function*
-tags:
-  - ECMAScript 2015
-  - Function
-  - Iterator
-  - JavaScript
-  - Operator
-  - Reference
-translation_of: Web/JavaScript/Reference/Operators/function*
-original_slug: Web/JavaScript/Reference/Opérateurs/function*
 ---
 
 {{jsSidebar("Operators")}}
@@ -37,15 +28,15 @@ function* [nom]([param1[, param2[, …, paramN]]]) {
 
 ## Description
 
-Une expression `function*` est très semblable à une instruction {{jsxref('Instructions/function*', 'function*')}}, elle possède également une syntaxe similaire. La différence principale entre une expression `function*` et une instruction `function*` est le nom de la fonction. En effet, dans les expressions, le nom peut être omis pour créer une fonction génératrice _anonyme_. Voir également le chapitre sur les [fonctions](/fr/docs/Web/JavaScript/Reference/Fonctions) pour plus d'informations.
+Une expression `function*` est très semblable à une instruction {{jsxref('Instructions/function*', 'function*')}}, elle possède également une syntaxe similaire. La différence principale entre une expression `function*` et une instruction `function*` est le nom de la fonction. En effet, dans les expressions, le nom peut être omis pour créer une fonction génératrice _anonyme_. Voir également le chapitre sur les [fonctions](/fr/docs/Web/JavaScript/Reference/Functions) pour plus d'informations.
 
 ## Exemples
 
 L'exemple qui suit illustre comment définir une génératrice anonyme et l'affecter à une variable `x`. Cette fonction génèrera le carré de son argument :
 
 ```js
-var x = function*(y) {
-   yield y * y;
+var x = function* (y) {
+  yield y * y;
 };
 ```
 
@@ -61,10 +52,10 @@ var x = function*(y) {
 
 - L'instruction {{jsxref("Instructions/function*", "function*")}}
 - L'objet {{jsxref("GeneratorFunction")}}
-- [Le protocole itérateur](/fr/docs/Web/JavaScript/Guide/The_Iterator_protocol)
+- [Le protocole itérateur](/fr/docs/Web/JavaScript/Reference/Iteration_protocols)
 - {{jsxref("Opérateurs/yield", "yield")}}
 - {{jsxref("Opérateurs/yield*", "yield*")}}
 - L'objet {{jsxref("Function")}}
 - L'instruction {{jsxref("Instructions/function", "function")}}
 - L'expression {{jsxref("Opérateurs/L_opérateur_function", "function")}}
-- {{jsxref("Fonctions", "Fonctions et portée des fonctions","","1")}}
+- {{jsxref("Fonctions", "Fonctions et portée des fonctions","",1)}}

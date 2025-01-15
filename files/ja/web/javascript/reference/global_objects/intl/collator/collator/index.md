@@ -15,9 +15,9 @@ slug: Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator
 ## 構文
 
 ```js
-new Intl.Collator()
-new Intl.Collator(locales)
-new Intl.Collator(locales, options)
+new Intl.Collator();
+new Intl.Collator(locales);
+new Intl.Collator(locales, options);
 ```
 
 ### 引数
@@ -28,7 +28,8 @@ new Intl.Collator(locales, options)
 
     次の Unicode 拡張キーが使用可能です。
 
-    > **メモ:** これらのキーは通常、 `options` でも設定することができます（下記でリストアップします）。両方が設定されている場合は、 `options` のプロパティが優先されます。
+    > [!NOTE]
+    > これらのキーは通常、 `options` でも設定することができます（下記でリストアップします）。両方が設定されている場合は、 `options` のプロパティが優先されます。
 
     - `co`
       - : 特定のロケールにおける比較方法の変化形を指定します。指定可能な値は次の通りです。
@@ -48,7 +49,8 @@ new Intl.Collator(locales, options)
         - `trad`
         - `unihan`
         - `zhuyin`
-        > **メモ:** このオプションは `options` プロパティ "`collation`" からも設定できます。
+          > [!NOTE]
+          > このオプションは `options` プロパティ "`collation`" からも設定できます。
     - `kn`
       - : "1" < "2" < "10" のような数値照合順序を使用するかどうかを指定します。設定可能な値は "`true`" と "`false`" です。
         このオプションは、 `options` の "`numeric`" プロパティでも設定することができます。
@@ -80,13 +82,15 @@ new Intl.Collator(locales, options)
 
       - : "1" < "2" < "10" のように数値として比較を行うかどうかです。可能な値は `true` および `false` です。既定値は `false` です。
 
-        > **メモ:** このオプションは Unicode 拡張キーの `kn` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
+        > [!NOTE]
+        > このオプションは Unicode 拡張キーの `kn` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
 
     - `caseFirst`
 
       - : 大文字と小文字のどちらを先に並べるかです。指定可能な値は "`upper`", "`lower`", "`false`" （ロケールの既定の動作）です。大文字と小文字のどちらを先に並べるかは `options` のプロパティでも Unicode 拡張キーでも指定可能です。両方で指定された場合、 `options` プロパティの指定が優先されます。
 
-        > **メモ:** このオプションは Unicode 拡張キーの `kf` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
+        > [!NOTE]
+        > このオプションは Unicode 拡張キーの `kf` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
 
     - `collation`
       - : 特定のロケールにおける比較方法の変化形を指定します。指定可能な値は次の通りです。
@@ -106,7 +110,8 @@ new Intl.Collator(locales, options)
         - `trad`
         - `unihan`
         - `zhuyin`
-        > **メモ:** このオプションは Unicode 拡張キーの `co` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
+          > [!NOTE]
+          > このオプションは Unicode 拡張キーの `co` でも設定することができます。両方が指定された場合は、この `options` のプロパティが優先されます。
 
 ## 例
 
@@ -115,9 +120,9 @@ new Intl.Collator(locales, options)
 次の例では、文字列が別の文字列の前であるか、後であるか、または同じレベルで発生したのかの様々な可能性のある結果を示しています。
 
 ```js
-console.log(new Intl.Collator().compare('a', 'c')); // → 負の値
-console.log(new Intl.Collator().compare('c', 'a')); // → 正の値
-console.log(new Intl.Collator().compare('a', 'a')); // → 0
+console.log(new Intl.Collator().compare("a", "c")); // → 負の値
+console.log(new Intl.Collator().compare("c", "a")); // → 正の値
+console.log(new Intl.Collator().compare("a", "a")); // → 0
 ```
 
 上記のコードで示された結果は、ブラウザーやブラウザーのバージョンによって異なる可能性があることに注意してください。これは、値が実装固有のものであるためです。つまり、仕様では前後の値が負と正の値であることだけが要求されています。

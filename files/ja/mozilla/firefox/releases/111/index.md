@@ -2,7 +2,7 @@
 title: Firefox 111 for developers
 slug: Mozilla/Firefox/Releases/111
 l10n:
-  sourceCommit: 8675dfc40818fe6f779ce823ee7c44ca856f0c90
+  sourceCommit: 1b4f28b8a92b0839dc7cb0af67166385764a8585
 ---
 
 {{FirefoxSidebar}}
@@ -52,11 +52,11 @@ l10n:
 
 ### API
 
-- [File System Access API](/ja/docs/Web/API/File_System_Access_API) を使用するときに、[Origin private file system (OPFS)](/ja/docs/Web/API/File_System_Access_API#origin_private_file_system) をサポートしました。
+- [File System Access API](/ja/docs/Web/API/File_System_API) を使用するときに、[Origin private file system (OPFS)](/ja/docs/Web/API/File_System_API#origin_private_file_system) をサポートしました。
   このファイルシステムのデータはオリジンに固有です。ファイルへアクセスするために許可プロンプトは必須でなく、またサイトやオリジンがストレージを削除するとデータが消去されます。
   OPFS はメインスレッドまたは worker で `navigator.storage.getDirectory()` を呼び出すことにより、{{domxref("StorageManager.getDirectory()")}} メソッドでアクセスできます。
   詳しくは [Firefox bug 1785123](https://bugzil.la/1785123) をご覧ください。
-- HTTP の [`Authorization`](/ja/docs/Web/HTTP/Headers/Authorization) ヘッダーを、クロスオリジンのリダイレクトが発生する [`fetch()`](/ja/docs/Web/API/fetch) および [`XMLHttpRequest`](/ja/docs/Web/API/XMLHttpRequest) 要求から削除しました (`fetch()` のヘッダーは、[`option.headers`](/ja/docs/Web/API/fetch#headers) 引数を使用して開発者が追加できます)。
+- HTTP の [`Authorization`](/ja/docs/Web/HTTP/Headers/Authorization) ヘッダーを、クロスオリジンのリダイレクトが発生する [`fetch()`](/ja/docs/Web/API/Window/fetch) および [`XMLHttpRequest`](/ja/docs/Web/API/XMLHttpRequest) 要求から削除しました (`fetch()` のヘッダーは、[`option.headers`](/ja/docs/Web/API/Window/fetch#headers) 引数を使用して開発者が追加できます)。
   詳しくは [Firefox bug 1802086](https://bugzil.la/1802086) をご覧ください。
 
 #### DOM
@@ -67,7 +67,7 @@ l10n:
 
 - [`RTCInboundRtpStreamStats.trackIdentifier`](/ja/docs/Web/API/RTCInboundRtpStreamStats#trackidentifier) をサポートしました。
   これにより開発者は、{{domxref("RTCPeerConnection.getStats()")}} を使用しているときに `inbound-rtp` 統計値と特定のトラックを関連づけることができます。
-  (詳しくは [Firefox bug 1680606](https://bugzil.la/1680606) をご覧ください)
+  (詳しくは [Firefox bug 1804676](https://bugzil.la/1804676) をご覧ください)
 
 #### 廃止
 

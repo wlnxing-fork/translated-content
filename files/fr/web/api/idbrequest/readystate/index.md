@@ -1,13 +1,6 @@
 ---
 title: IDBRequest.readyState
 slug: Web/API/IDBRequest/readyState
-tags:
-  - API
-  - IDBRequest
-  - IndexedDB
-  - Propriété
-  - Reference
-translation_of: Web/API/IDBRequest/readyState
 ---
 
 {{APIRef("IndexedDB")}}
@@ -36,12 +29,14 @@ Dans l'exemple qui suit, on effectue une requête sur un enregistrement avec un 
 var title = "Walk dog";
 
 // On ouvre une transaction
-var objectStore = db.transaction(['toDoList'], "readwrite").objectStore('toDoList');
+var objectStore = db
+  .transaction(["toDoList"], "readwrite")
+  .objectStore("toDoList");
 
 // On récupère l'enregistrement avec le titre souhaité
 var objectStoreTitleRequest = objectStore.get(title);
 
-objectStoreTitleRequest.onsuccess = function() {
+objectStoreTitleRequest.onsuccess = function () {
   // On récupère les données du résultat de la requête
   var data = objectStoreTitleRequest.result;
 
@@ -59,7 +54,7 @@ objectStoreTitleRequest.onsuccess = function() {
   // Lorsque cette deuxième requête est appliquée,
   // on exécute la fonction displayData() afin d'afficher
   // les données à jour
-  updateTitleRequest.onsuccess = function() {
+  updateTitleRequest.onsuccess = function () {
     displayData();
   };
 };
@@ -75,7 +70,7 @@ objectStoreTitleRequest.onsuccess = function() {
 
 ## Voir aussi
 
-- [Manipuler IndexedDB](/fr/docs/Web/API/API_IndexedDB/Using_IndexedDB)
+- [Manipuler IndexedDB](/fr/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 - Démarrer des transactions : {{domxref("IDBDatabase")}}
 - Manipuler des transactions : {{domxref("IDBTransaction")}}
 - Définir un intervalle de clés : {{domxref("IDBKeyRange")}}

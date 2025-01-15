@@ -1,7 +1,6 @@
 ---
 title: Number.NaN
 slug: Web/JavaScript/Reference/Global_Objects/Number/NaN
-original_slug: Web/JavaScript/Referencia/Objetos_globales/Number/NaN
 ---
 
 {{JSRef}}
@@ -29,7 +28,7 @@ function sanitise(x) {
 
 ### Testing against NaN
 
-See [Testing against NaN](/es/docs/Web/JavaScript/Reference/Global_Objects/NaN#Testing_against_NaN) on the `NaN` page.
+See [Testing against NaN](/es/docs/Web/JavaScript/Reference/Global_Objects/NaN#testing_against_nan) on the `NaN` page.
 
 ## Especificaciones
 

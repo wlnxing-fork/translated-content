@@ -34,7 +34,7 @@ slug: Web/JavaScript/Reference/Global_Objects/Symbol/match
 var re = /foo/;
 re[Symbol.match] = false;
 "/foo/".startsWith(re); // true
-"/baz/".endsWith(re);   // false
+"/baz/".endsWith(re); // false
 ```
 
 ## 规范
@@ -45,9 +45,12 @@ re[Symbol.match] = false;
 
 {{Compat}}
 
-## 相关链接
+## 参见
 
+- [`core-js` 中 `Symbol.match` 的 polyfill](https://github.com/zloirock/core-js#ecmascript-symbol)
+- {{jsxref("Symbol.matchAll")}}
 - {{jsxref("Symbol.replace")}}
 - {{jsxref("Symbol.search")}}
 - {{jsxref("Symbol.split")}}
-- {{jsxref("RegExp.@@match", "RegExp.prototype[@@match]()")}}
+- {{jsxref("String.prototype.match()")}}
+- [`RegExp.prototype[Symbol.match]()`](/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match)

@@ -9,7 +9,8 @@ l10n:
 
 {{domxref("DataTransferItem")}} で記述された項目がファイルの場合、 `webkitGetAsEntry()` はそれを表す {{domxref("FileSystemFileEntry")}} または {{domxref("FileSystemDirectoryEntry")}} を返します。ファイルでない場合は `null` を返します。
 
-> **メモ:** この関数は、現時点では Firefox を含む非 WebKit ブラウザーでは `webkitGetAsEntry()` として実装されています。将来的には `getAsEntry()` に改名される可能性があるので、両方の関数を探して防御的なコードを記述すべきです。
+> [!NOTE]
+> この関数は、現時点では Firefox を含む非 WebKit ブラウザーでは `webkitGetAsEntry()` として実装されています。将来的には `getAsEntry()` に改名される可能性があるので、両方の関数を探して防御的なコードを記述すべきです。
 
 ## 構文
 
@@ -67,13 +68,17 @@ HTMLは、ドロップゾーンそのものを、ID `"dropzone"` を持つ {{HTM
   vertical-align: middle;
   text-align: center;
   color: black;
-  font: bold 2em "Arial", sans-serif;
+  font:
+    bold 2em "Arial",
+    sans-serif;
   width: 300px;
   height: 100px;
 }
 
 body {
-  font: 14px "Arial", sans-serif;
+  font:
+    14px "Arial",
+    sans-serif;
 }
 ```
 
@@ -82,7 +87,8 @@ body {
 最初に、再帰的な関数である `scanFiles()` を見ていきましょう。
 この関数は、スキャンして処理するファイルシステムの項目を表す {{domxref("FileSystemEntry")}} を入力として受け取り（`item` 引数）、その内容のリストを格納する要素（`container` 引数）を受け取ります。
 
-> **メモ:** ディレクトリー内のすべてのファイルを読み込むには、空の配列を返すまで `readEntries` を繰り返し呼び出す必要があります。
+> [!NOTE]
+> ディレクトリー内のすべてのファイルを読み込むには、空の配列を返すまで `readEntries` を繰り返し呼び出す必要があります。
 > Chromium ベースのブラウザーでは、以下の例では最大 100 件までしか返しません。
 
 ```js
@@ -94,7 +100,7 @@ function scanFiles(item, container) {
   elem.textContent = item.name;
   container.appendChild(elem);
 
- if (item.isDirectory) {
+  if (item.isDirectory) {
     let directoryReader = item.createReader();
     let directoryContainer = document.createElement("ul");
     container.appendChild(directoryContainer);
@@ -123,28 +129,36 @@ function scanFiles(item, container) {
 次に、イベントハンドラーが決まります。まず、{{domxref("HTMLElement/dragover_event", "dragover")}} イベントが既定のハンドラーで処理されないようにして、ドロップゾーンがドロップを受け取れるようにします。
 
 ```js
-dropzone.addEventListener("dragover", (event) => {
-  event.preventDefault();
-}, false);
+dropzone.addEventListener(
+  "dragover",
+  (event) => {
+    event.preventDefault();
+  },
+  false,
+);
 ```
 
 このコースのイベントハンドラーは、もちろん {{domxref("HTMLElement/drop_event", "drop")}} イベントに対するハンドラーであり、すべてを開始させます。
 
 ```js
-dropzone.addEventListener("drop", (event) => {
-  let items = event.dataTransfer.items;
+dropzone.addEventListener(
+  "drop",
+  (event) => {
+    let items = event.dataTransfer.items;
 
-  event.preventDefault();
-  listing.textContent = "";
+    event.preventDefault();
+    listing.textContent = "";
 
-  for (let i=0; i<items.length; i++) {
-    let item = items[i].webkitGetAsEntry();
+    for (let i = 0; i < items.length; i++) {
+      let item = items[i].webkitGetAsEntry();
 
-    if (item) {
+      if (item) {
         scanFiles(item, listing);
+      }
     }
-  }
-}, false);
+  },
+  false,
+);
 ```
 
 これは、ドロップされたアイテムを表す {{domxref("DataTransferItem")}} オブジェクトのリストを `event.dataTransfer.items` から取得します。

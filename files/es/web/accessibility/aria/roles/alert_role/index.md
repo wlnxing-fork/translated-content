@@ -1,8 +1,9 @@
 ---
 title: Using the alert role
 slug: Web/Accessibility/ARIA/Roles/alert_role
-original_slug: Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role
 ---
+
+{{AccessibilitySidebar}}
 
 ### Descripción
 
@@ -28,7 +29,8 @@ Productos de tecnología asistencial deben escuchar por dicho evento y notificar
 - Lectores de pantalla pueden interrumpir la entrada actual (sea por voz o braile) e inmediatamente anunciar o desplegar el mensaje de alerta.
 - Lupas de pantalla pueden indicar visualmente que una alerta ha ocurrido y que texto tuvo la alerta.
 
-> **Nota:** Opiniones pueden diferir en como tecnologías de asistencia deben manejar esta técnica. La información proveida anteriormente es una de estas opiniones y por lo tanto no es normativa.
+> [!NOTE]
+> Opiniones pueden diferir en como tecnologías de asistencia deben manejar esta técnica. La información proveida anteriormente es una de estas opiniones y por lo tanto no es normativa.
 
 ### Ejemplos
 
@@ -37,7 +39,9 @@ Productos de tecnología asistencial deben escuchar por dicho evento y notificar
 The snippet below shows how the alert role is added directly into the html source code. The moment the element finishes loading the screen reader should be notified of the alert. If the element was already in the original source code when the page loaded, the screen reader will announce the error immediately after announcing the page title.
 
 ```html
-<h2 role="alert">Your form could not be submitted because of 3 validation errors.</h2>
+<h2 role="alert">
+  Your form could not be submitted because of 3 validation errors.
+</h2>
 ```
 
 #### Ejemplo 2: Dinámicamente añadir un elemento con el rol de alerta
@@ -47,7 +51,9 @@ This snippet dynamically creates an element with an alert role and adds it to th
 ```js
 var myAlert = document.createElement("p");
 myAlert.setAttribute("role", "alert");
-var myAlertText = document.createTextNode("You must agree with our terms of service to create an account.");
+var myAlertText = document.createTextNode(
+  "You must agree with our terms of service to create an account.",
+);
 myAlert.appendChild(myAlertText);
 document.body.appendChild(myAlert);
 ```
@@ -55,7 +61,9 @@ document.body.appendChild(myAlert);
 **Note:** The same result can be achieved with less code when using a script library like jQuery:
 
 ```js
-$("<p role='alert'>You must agree with our terms of service to create an account.</p>").appendTo(document.body);
+$(
+  "<p role='alert'>You must agree with our terms of service to create an account.</p>",
+).appendTo(document.body);
 ```
 
 #### Ejemplo 3: Añadir un rol de alerta a un elemento ya existente
@@ -79,12 +87,14 @@ If an element already has `role="alert"`and is initially hidden using CSS, makin
 
 ```css
 .hidden {
-  display:none;
+  display: none;
 }
 ```
 
 ```html
-<p id="expirationWarning" role="alert" class="hidden">Your log in session will expire in 2 minutes</p>
+<p id="expirationWarning" role="alert" class="hidden">
+  Your log in session will expire in 2 minutes
+</p>
 ```
 
 ```js
@@ -96,7 +106,7 @@ document.getElementById("expirationWarning").className = "";
 
 - Usar el rol de alerta en un elemento implica que ese elemento tiene `aria-live="assertive"`.
 - El rol de alerta solo debería ser utilizada para contenido de texto estático. El elemento que en el que el rol de alerta es utilizado no debe ser capaz de recibir el foco, pues lectores de pantalla automáticamente anunciarán la alerta sin importar donde el foco del teclado esta actualmente localizado.
-- Si una alerta también provee controles interactivos (como controles del formulario que permitan al usuario rectificar un problema, o un boton de "OK" que descarte la alerta) el rol de [alertdialog](/en/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role) debe ser utilizado en lugar de éste.
+- Si una alerta también provee controles interactivos (como controles del formulario que permitan al usuario rectificar un problema, o un boton de "OK" que descarte la alerta) el rol de [alertdialog](/en-US/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role) debe ser utilizado en lugar de éste.
 
 ### Atributos ARIA utilizados
 
@@ -104,8 +114,8 @@ document.getElementById("expirationWarning").className = "";
 
 ### Técnicas ARIA relacionadas
 
-- [Utilizando el rol alertdialog](/en/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role)
-- [Utilizando la propiedad aria-invalid](/en/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_property)
+- [Utilizando el rol alertdialog](/en-US/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role)
+- [Utilizando la propiedad aria-invalid](/en-US/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_property)
 
 ### Compatibilidad
 

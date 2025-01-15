@@ -9,8 +9,8 @@ slug: Web/JavaScript/Reference/Global_Objects/TypedArray/reverse
 
 ## 语法
 
-```plain
-typedarray.reverse();
+```js-nolint
+reverse()
 ```
 
 ### 返回值
@@ -34,6 +34,6 @@ console.log(uint8); // Uint8Array [3, 2, 1]
 
 {{Compat}}
 
-## 另见
+## 参见
 
 - {{jsxref("Array.prototype.reverse()")}}

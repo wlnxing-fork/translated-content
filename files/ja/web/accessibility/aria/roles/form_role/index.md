@@ -1,5 +1,5 @@
 ---
-title: 'ARIA: form ロール'
+title: "ARIA: form ロール"
 slug: Web/Accessibility/ARIA/Roles/form_role
 ---
 
@@ -13,11 +13,12 @@ slug: Web/Accessibility/ARIA/Roles/form_role
 
 これは、ユーザーの連絡先を収集して保存するフォームです。
 
-> **警告:** 十分に正当な理由がない限り、ARIA の フォーム (`form`) ロールではなく、HTML の {{htmlelement("form")}} 要素を使用してフォームコントロールを格納してください。 HTML の `<form>` 要素は、支援技術にフォームがあることを伝えるのに十分です。
+> [!WARNING]
+> 十分に正当な理由がない限り、ARIA の フォーム (`form`) ロールではなく、HTML の {{htmlelement("form")}} 要素を使用してフォームコントロールを格納してください。 HTML の `<form>` 要素は、支援技術にフォームがあることを伝えるのに十分です。
 
 ## 説明
 
-フォーム (`form`) ランドマーク ([landmark](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles)) は、(メイン ([`main`](/ja/docs/Web/Accessibility/ARIA/Roles/Main_role)) や検索 ([`search`](/ja/docs/Web/Accessibility/ARIA/Roles/Search_role)) など) 他の名前付きランドマークが適切でない場合に、全体として結合してフォームを作成する、項目とオブジェクトのコレクションを含むコンテンツのリージョンを識別します。
+フォーム (`form`) ランドマーク ([landmark](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles)) は、(メイン ([`main`](/ja/docs/Web/Accessibility/ARIA/Roles/main_role)) や検索 ([`search`](/ja/docs/Web/Accessibility/ARIA/Roles/search_role)) など) 他の名前付きランドマークが適切でない場合に、全体として結合してフォームを作成する、項目とオブジェクトのコレクションを含むコンテンツのリージョンを識別します。
 
 > **メモ:** {{htmlelement("form")}} 要素を使用すると、アクセス可能な名前が提供されている場合、コンテンツのセクションがフォーム (`form`) ランドマークとして自動的に伝えられます。 開発者は、ARIA を使用するよりも正しい意味論の HTML 要素を使用することを常に好むべきです。
 
@@ -43,24 +44,34 @@ slug: Web/Accessibility/ARIA/Roles/form_role
 ```html
 <div role="form" id="send-comment" aria-label="コメントを追加">
   <label for="username">ユーザー名</label>
-  <input id="username" name="username" autocomplete="nickname" autocorrect="off" type="text">
+  <input
+    id="username"
+    name="username"
+    autocomplete="nickname"
+    autocorrect="off"
+    type="text" />
 
   <label for="email">電子メール</label>
-  <input id="email" name="email" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" type="text">
+  <input
+    id="email"
+    name="email"
+    autocomplete="email"
+    autocapitalize="off"
+    autocorrect="off"
+    spellcheck="false"
+    type="text" />
 
   <label for="comment">コメント</label>
   <textarea id="comment" name="comment"></textarea>
 
-  <input value="コメント" type="submit">
+  <input value="コメント" type="submit" />
 </div>
 ```
 
 代わりに `<form>` を使用することをお勧めします。
 
 ```html
-<form id="send-comment" aria-label="コメントを追加">
-  ....
-</form>
+<form id="send-comment" aria-label="コメントを追加">....</form>
 ```
 
 ## アクセシビリティに関する懸念
@@ -107,7 +118,7 @@ slug: Web/Accessibility/ARIA/Roles/form_role
 
 - [ランドマークブラウザー拡張](https://matatk.agrip.org.uk/landmarks/)（英語）
 
-## 仕様
+## 仕様書
 
 {{Specifications}}
 
@@ -120,7 +131,7 @@ TBD
 - {{htmlelement("form")}}: フォーム要素
 - {{htmlelement("legend")}}: 凡例要素
 - [form (role): Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/#form)
-- [HTML のセクションとアウトラインの使用](/ja/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines)
+- [HTML のセクションとアウトラインの使用](/ja/docs/Web/HTML/Element/Heading_Elements)
 - [ランドマークロール: ARIA を使用する: ロール、ステート、プロパティ](/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques#landmark_roles)
 - [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
 - [Using WAI-ARIA Landmarks – 2013 | The Paciello Group](https://developer.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)

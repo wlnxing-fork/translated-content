@@ -9,7 +9,8 @@ slug: Web/CSS/clip
 
 La propiedad de CSS `clip` define qué porción de un elemento es visible. La propiedad `clip` se aplica solamente sobre elementos con {{ cssxref("position","position:absolute") }} o {{cssxref("position", "position:fixed")}}.
 
-> **Advertencia:** This property is deprecated. Use {{cssxref("clip-path")}} instead.
+> [!WARNING]
+> This property is deprecated. Use {{cssxref("clip-path")}} instead.
 
 {{cssinfo}}
 
@@ -52,19 +53,24 @@ clip: inherit
 ## Ejemplos
 
 ```css
-p { border:dotted;  position:relative; }
+p {
+  border: dotted;
+  position: relative;
+}
 
 #img2 {
-  position:absolute;  left:263px;
+  position: absolute;
+  left: 263px;
 
   clip: rect(40px, 200px, 150px, 30px);
   /* sintáxis estándar, no soportada por Internet Explorer 4-7 */
 }
 
 #img3 {
-  position: absolute; left:526px;
+  position: absolute;
+  left: 526px;
 
-  clip: rect(40px  200px  150px  30px);
+  clip: rect(40px 200px 150px 30px);
   /* sintáxis no-estándar, pero soportada por todos los exploradores importantes incluyendo Firefox y IE */
 }
 ```

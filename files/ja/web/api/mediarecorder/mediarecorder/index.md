@@ -27,7 +27,7 @@ new MediaRecorder(stream, options)
   - : 以下のプロパティを含むことができる辞書オブジェクト。
 
     - `mimeType`
-      - : 生成されるメディアの形式を指定する MIME タイプです。コンテナー形式を指定することもできますし（ブラウザーは音声と映像のために好ましいコーデックを選択します）、 [`codecs`引数](/en-US/docs/Web/Media/Formats/codecs_parameter)や `profiles` 引数を使って、どのコーデックを使い、どう設定するのかという詳細情報を提供することもできます。
+      - : 生成されるメディアの形式を指定する MIME タイプです。コンテナー形式を指定することもできますし（ブラウザーは音声と映像のために好ましいコーデックを選択します）、 [`codecs`引数](/ja/docs/Web/Media/Formats/codecs_parameter)や `profiles` 引数を使って、どのコーデックを使い、どう設定するのかという詳細情報を提供することもできます。
         アプリケーションは `mimeType` が {{Glossary("user agent") }} で対応しているかどうかを事前に調べることができます。そのためには {{domxref("MediaRecorder.isTypeSupported()")}} を呼び出す必要があります。
     - `audioBitsPerSecond`
       - : メディアの音声コンポーネントに選択したビットレート。
@@ -36,9 +36,11 @@ new MediaRecorder(stream, options)
     - `bitsPerSecond`
       - : メディアの音声コンポーネントおよび映像コンポーネントに選択したビットレート。 上記の 2 つのプロパティの代わりにこれを指定することができます。 これを上記のプロパティのいずれかと一緒に指定している場合、これは指定していないものに使用されます。
 
-    > **メモ:** 映像や音声にビット/秒の値を指定していない場合、映像が採用している既定値は 2.5Mbps ですが、音声の既定値はサンプルレートとチャネル数に応じて決まります。
+    > [!NOTE]
+    > 映像や音声にビット/秒の値を指定していない場合、映像が採用している既定値は 2.5Mbps ですが、音声の既定値はサンプルレートとチャネル数に応じて決まります。
 
-    > **メモ:** 映像の解像度やフレームレートなどの設定は {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} を呼び出す際に制約として指定され、ここでの MediaRecorder API では指定されません。
+    > [!NOTE]
+    > 映像の解像度やフレームレートなどの設定は {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} を呼び出す際に制約として指定され、ここでの MediaRecorder API では指定されません。
 
 ### 例外
 
@@ -56,15 +58,15 @@ if (navigator.mediaDevices.getUserMedia) {
 
   const onSuccess = (stream) => {
     const options = {
-      audioBitsPerSecond : 128000,
-      videoBitsPerSecond : 2500000,
-      mimeType : 'video/mp4'
-    }
+      audioBitsPerSecond: 128000,
+      videoBitsPerSecond: 2500000,
+      mimeType: "video/mp4",
+    };
     const mediaRecorder = new MediaRecorder(stream, options);
     m = mediaRecorder;
 
     // …
-  }
+  };
 }
 ```
 

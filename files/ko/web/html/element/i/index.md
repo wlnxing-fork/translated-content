@@ -34,7 +34,7 @@ slug: Web/HTML/Element/i
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -77,7 +77,9 @@ slug: Web/HTML/Element/i
 다음 예제는 외국어를 강조하기 위해 `<i>` 요소를 사용합니다.
 
 ```html
-<p>라틴어 문구 <i>Veni, vidi, vici</i>는 음악과 예술, 문학에 자주 등장합니다.</p>
+<p>
+  라틴어 문구 <i>Veni, vidi, vici</i>는 음악과 예술, 문학에 자주 등장합니다.
+</p>
 ```
 
 ### 결과

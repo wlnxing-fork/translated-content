@@ -3,11 +3,14 @@ title: FormData.values()
 slug: Web/API/FormData/values
 ---
 
-{{APIRef("XMLHttpRequest")}}
+{{AvailableInWorkers}}
+
+{{APIRef("XMLHttpRequest API")}}
 
 **`FormData.values()`** 메서드는 이 객체에 포함 된 모든 value를 통과하는 {{jsxref("Iteration_protocols",'iterator')}}를 반환합니다. value는 {{domxref("USVString")}} 또는 {{domxref("Blob")}} 객체입니다.
 
-> **참고:** 이 메서드는 [Web Worker](/ko/docs/Web/API/Web_Workers_API)에서 사용할 수 있습니다.
+> [!NOTE]
+> 이 메서드는 [Web Worker](/ko/docs/Web/API/Web_Workers_API)에서 사용할 수 있습니다.
 
 ## Syntax
 
@@ -24,12 +27,12 @@ formData.values();
 ```js
 // Create a test FormData object
 var formData = new FormData();
-formData.append('key1', 'value1');
-formData.append('key2', 'value2');
+formData.append("key1", "value1");
+formData.append("key2", "value2");
 
 // Display the values
 for (var value of formData.values()) {
-   console.log(value);
+  console.log(value);
 }
 ```
 
@@ -51,6 +54,6 @@ value2
 ## See also
 
 - {{domxref("XMLHTTPRequest")}}
-- [Using XMLHttpRequest](/ko/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest)
-- [Using FormData objects](/ko/docs/DOM/XMLHttpRequest/FormData/Using_FormData_Objects)
+- [Using XMLHttpRequest](/ko/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
+- [Using FormData objects](/ko/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}

@@ -1,5 +1,5 @@
 ---
-title: ':user-valid (:-moz-ui-valid)'
+title: ":user-valid (:-moz-ui-valid)"
 slug: Web/CSS/:user-valid
 ---
 
@@ -7,7 +7,8 @@ slug: Web/CSS/:user-valid
 
 **`:user-valid`** は CSS の[擬似クラス](/ja/docs/Web/CSS/Pseudo-classes)で、[制約検証](/ja/docs/Learn/Forms#constraint_validation)に基づき値の検証が正しく行われた有効なフォーム要素を表します。ただし、 {{cssxref(":valid")}} とは異なり、ユーザーが操作した後にのみ一致します。
 
-> **メモ:** この擬似クラスは標準外の `:-moz-ui-valid` 擬似クラスと同じように動作します。
+> [!NOTE]
+> この擬似クラスは標準外の `:-moz-ui-valid` 擬似クラスと同じように動作します。
 
 この擬似クラスは、以下の基準に則って適用されます。
 
@@ -34,7 +35,12 @@ slug: Web/CSS/:user-valid
 ```html
 <form>
   <label for="email">Email *: </label>
-  <input id="email" name="email" type="email" value="test@example.com" required>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    value="test@example.com"
+    required />
   <span></span>
 </form>
 ```
@@ -45,7 +51,7 @@ input:user-valid {
 }
 
 input:user-valid + span::before {
-  content: '✓';
+  content: "✓";
   color: green;
 }
 ```

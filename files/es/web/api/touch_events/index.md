@@ -1,8 +1,9 @@
 ---
 title: Eventos de toque
 slug: Web/API/Touch_events
-original_slug: DOM/Touch_events
 ---
+
+{{DefaultAPISidebar("Touch Events")}}
 
 Con el fin de proporcionar soporte de calidad para usuarios de interfaces táctiles, los eventos táctiles dan la posibilidad de interpretar la actividad de los dedos en pantallas táctiles o trackpads.
 
@@ -31,7 +32,8 @@ Con el fin de proporcionar soporte de calidad para usuarios de interfaces tácti
 
 Este ejemplo muestra múltiples puntos de toques al mismo tiempo, permitiendo al usuario dibujar en un {{ HTMLElement("canvas") }} con más de un dedo a la vez. Esto funciona solamente en un navegador que soporte eventos táctiles.
 
-> **Nota:** El texto de abajo usa el término "dedo" cuando describe el contacto con la superficie, pero esto podría ser, por supuesto, también un _stylus_ u otro método de contacto.
+> [!NOTE]
+> El texto de abajo usa el término "dedo" cuando describe el contacto con la superficie, pero esto podría ser, por supuesto, también un _stylus_ u otro método de contacto.
 
 ### Configurando los eventos de manipulación
 
@@ -61,11 +63,11 @@ function handleStart(evt) {
   var ctx = el.getContext("2d");
   var touches = evt.changedTouches;
 
-  for (var i=0; i<touches.length; i++) {
+  for (var i = 0; i < touches.length; i++) {
     ongoingTouches.push(touches[i]);
     var color = colorForTouch(touches[i]);
     ctx.fillStyle = color;
-    ctx.fillRect(touches[i].pageX-2, touches[i].pageY-2, 4, 4);
+    ctx.fillRect(touches[i].pageX - 2, touches[i].pageY - 2, 4, 4);
   }
 }
 ```
@@ -87,7 +89,7 @@ function handleMove(evt) {
 
   ctx.lineWidth = 4;
 
-  for (var i=0; i<touches.length; i++) {
+  for (var i = 0; i < touches.length; i++) {
     var color = colorForTouch(touches[i]);
     var idx = ongoingTouchIndexById(touches[i].identifier);
 
@@ -97,7 +99,7 @@ function handleMove(evt) {
     ctx.lineTo(touches[i].pageX, touches[i].pageY);
     ctx.closePath();
     ctx.stroke();
-    ongoingTouches.splice(idx, 1, touches[i]);  // swap in the new touch record
+    ongoingTouches.splice(idx, 1, touches[i]); // swap in the new touch record
   }
 }
 ```
@@ -106,7 +108,7 @@ Esto se repite también en los toques cambiados, pero mira en nuestra matriz de 
 
 Esto nos permite conseguir las coordenadas de la posición previa de cada toque y usar el método apropiado de contexto para dibujar un segmento de línea uniendo dos posiciones a la vez.
 
-Después de dibujar la línea, llamamos a [`Array.splice()`](/en/JavaScript/Reference/Global_Objects/Array/splice) para reemplazar la información previa sobre el punto de toque con la información actual de la matriz `ongoingTouches`.
+Después de dibujar la línea, llamamos a [`Array.splice()`](/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) para reemplazar la información previa sobre el punto de toque con la información actual de la matriz `ongoingTouches`.
 
 ### Manejando el final de un toque
 
@@ -121,7 +123,7 @@ function handleEnd(evt) {
 
   ctx.lineWidth = 4;
 
-  for (var i=0; i<touches.length; i++) {
+  for (var i = 0; i < touches.length; i++) {
     var color = colorForTouch(touches[i]);
     var idx = ongoingTouchIndexById(touches[i].identifier);
 
@@ -129,12 +131,12 @@ function handleEnd(evt) {
     ctx.beginPath();
     ctx.moveTo(ongoingTouches[i].pageX, ongoingTouches[i].pageY);
     ctx.lineTo(touches[i].pageX, touches[i].pageY);
-    ongoingTouches.splice(i, 1);  // remove it; we're done
+    ongoingTouches.splice(i, 1); // remove it; we're done
   }
 }
 ```
 
-Esto es muy similar a la función previa; la única diferencia real es que cuando llamamos a [`Array.splice()`](/en/JavaScript/Reference/Global_Objects/Array/splice), simplemente remueve la antigua entrada de la lista de toques en marcha, sin añadir la información actualizada. El resultado es que detenemos el seguimiento del punto de toque.
+Esto es muy similar a la función previa; la única diferencia real es que cuando llamamos a [`Array.splice()`](/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice), simplemente remueve la antigua entrada de la lista de toques en marcha, sin añadir la información actualizada. El resultado es que detenemos el seguimiento del punto de toque.
 
 ### Manejando los toques cancelados
 
@@ -145,8 +147,8 @@ function handleCancel(evt) {
   evt.preventDefault();
   var touches = evt.changedTouches;
 
-  for (var i=0; i<touches.length; i++) {
-    ongoingTouches.splice(i, 1);  // remove it; we're done
+  for (var i = 0; i < touches.length; i++) {
+    ongoingTouches.splice(i, 1); // remove it; we're done
   }
 }
 ```
@@ -177,18 +179,18 @@ La función `ongoingTouchIndexById()` abajo explora mediante la matriz `ongoingT
 
 ```js
 function ongoingTouchIndexById(idToFind) {
-  for (var i=0; i<ongoingTouches.length; i++) {
+  for (var i = 0; i < ongoingTouches.length; i++) {
     var id = ongoingTouches[i].identifier;
 
     if (id == idToFind) {
       return i;
     }
   }
-  return -1;    // not found
+  return -1; // not found
 }
 ```
 
-[Ver ejemplo en vivo](/samples/domref/touchevents.html)
+[Ver ejemplo en vivo](https://mdn.dev/archives/media/samples/domref/touchevents.html)
 
 ## Consejos adicionales
 

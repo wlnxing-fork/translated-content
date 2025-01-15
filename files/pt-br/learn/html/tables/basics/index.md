@@ -1,7 +1,6 @@
 ---
 title: HTML table basics
 slug: Learn/HTML/Tables/Basics
-original_slug: Aprender/HTML/Tables/Basics
 ---
 
 {{LearnSidebar}}{{NextMenu("Aprender/HTML/Tabelas/Avançado", "Aprender/HTML/Tabelas")}}
@@ -14,7 +13,7 @@ Este artigo é uma introdução às tabelas HTML, cobrindo o básico, como linha
       <th scope="row">Pré-requisitos:</th>
       <td>
         Noções básicas de HTML (consulte
-        <a href="/en-US/docs/Learn/HTML/Introduction_to_HTML"
+        <a href="/pt-BR/docs/Learn/HTML/Introduction_to_HTML"
           >Introdução ao HTML</a
         >
         ).
@@ -198,13 +197,13 @@ Quando criadas corretamente, até pessoas cegas podem interpretar dados tabulare
 
 Você também pode dar uma olhada [neste exemplo real](https://mdn.github.io/learning-area/html/tables/assessment-finished/planets-data.html) no GitHub! Uma coisa que você perceberá é que essa tabela parece um pouco mais legível lá — isso ocorre porque a tabela que você vê acima nesta página tem o mínimo de estilização, enquanto a versão do GitHub tem um CSS expressivo aplicado.
 
-Não se iluda; para que tabelas sejam de fato efetivas na web, você precisa fornecer algumas informações de estilo com [CSS](/pt-BR/docs/Learn/CSS), bem como uma boa estrutura sólida com HTML. Neste módulo nos iremos focar na parte do HTML; Para saber mais sobre a parte do CSS você deve visitar nosso artigo [Estilizando Tabelas](/pt-BR/docs/Learn/CSS/Styling_boxes/Styling_tables) depois que você finalizar este.
+Não se iluda; para que tabelas sejam de fato efetivas na web, você precisa fornecer algumas informações de estilo com [CSS](/pt-BR/docs/Learn/CSS), bem como uma boa estrutura sólida com HTML. Neste módulo nos iremos focar na parte do HTML; Para saber mais sobre a parte do CSS você deve visitar nosso artigo [Estilizando Tabelas](/pt-BR/docs/Learn/CSS/Building_blocks/Styling_tables) depois que você finalizar este.
 
 Nós não focaremos em CSS neste módulo, mas nós forneceremos uma mínima folha de estilo CSS para você usar que fará suas tabelas mais legíveis que o padrão que teria sem nenhuma estilização. Você pode procurar a [folha de estilo aqui](https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css), e você pode também procurar um [template HTML](https://github.com/mdn/learning-area/blob/master/html/tables/basic/blank-template.html) que aplica a folha de estilo — juntos eles serão um bom ponto de partida para serem implementados com tabelas HTML.
 
 ### Quando NÃO utilizar tabelas HTML?
 
-Tabelas HTML devem ser usadas para exibir dados tabulares - foram projetadas para isso. Infelizmente, muitas pessoas se acostumaram a usar tabelas HTML para diagramar páginas web, por exemplo, uma linha para conter o cabeçalho, outra linha para conter as colunas de conteúdo, uma linha para conter o rodapé, etc. Mais detalhes e um exemplo podem ser encontrados em [Page Layouts](/pt-BR/docs/Learn/Accessibility/HTML#Page_layouts) de nosso [Accessibility Learning Module](/pt-BR/docs/Learn/Accessibility). Isso era muito comum porque o suporte à CCS entre diferentes navegadores era muito ruim; tabelas sendo usadas para leiaute não são comuns nos dias de hoje mas ainda podem ser encontradas em alguns cantos da web.
+Tabelas HTML devem ser usadas para exibir dados tabulares - foram projetadas para isso. Infelizmente, muitas pessoas se acostumaram a usar tabelas HTML para diagramar páginas web, por exemplo, uma linha para conter o cabeçalho, outra linha para conter as colunas de conteúdo, uma linha para conter o rodapé, etc. Mais detalhes e um exemplo podem ser encontrados em [Page Layouts](/pt-BR/docs/Learn/Accessibility/HTML#page_layouts) de nosso [Accessibility Learning Module](/pt-BR/docs/Learn/Accessibility). Isso era muito comum porque o suporte à CCS entre diferentes navegadores era muito ruim; tabelas sendo usadas para leiaute não são comuns nos dias de hoje mas ainda podem ser encontradas em alguns cantos da web.
 
 Em resumo, usar tabelas para leiuate no lugar de usar [técnicas de leiaute CSS](/pt-BR/docs/Learn/CSS/CSS_layout) é uma péssima ideia. Os principais motivos são os seguintes:
 
@@ -220,18 +219,18 @@ Falamos o suficiente sobre teoria de tabelas, então, vamos partir para um exemp
 2. O conteúdo de cada tabela fica contido entre as duas tags : **[`<table></table>`](/pt-BR/docs/Web/HTML/Element/table)**. Acrescente-as dentro da seção body de seu HTML.
 3. O menor contêiner dentro de uma tabela é uma célula da tabela, que é criada por um elemento **[`<td>`](/pt-BR/docs/Web/HTML/Element/td)** ('td' significa 'dados da tabela'). Adicione as linhas seguintes dentro das tags da tabela:
 
-    ```html
-    <td>Hi, I'm your first cell.</td>
-    ```
+   ```html
+   <td>Hi, I'm your first cell.</td>
+   ```
 
 4. Se quisermos uma linha da tabela com quatro células, precisamos copiar essas tags três vezes. Altere o conteúdo da sua tabela para ficar dessa maneira:
 
-    ```html
-    <td>Hi, I'm your first cell.</td>
-    <td>I'm your second cell.</td>
-    <td>I'm your third cell.</td>
-    <td>I'm your fourth cell.</td>
-    ```
+   ```html
+   <td>Hi, I'm your first cell.</td>
+   <td>I'm your second cell.</td>
+   <td>I'm your third cell.</td>
+   <td>I'm your fourth cell.</td>
+   ```
 
 Como podemos ver, as células não são posicionadas uma abaixo da outra, em vez disso elas são automaticamente alinhadas umas com as outras na mesma linha. Cada elemento `<td>` cria uma única célula que juntas formam a primeira linha. Cada célula adicionada faz a linha crescer e se tornar mais longa.
 
@@ -239,14 +238,14 @@ Para evitar que a linha cresça e começar a posicionar células em uma segunda 
 
 1. Coloque as quatro células recém criadas dentro das tags `<tr>` tags, dessa maneira:
 
-    ```html
-    <tr>
-      <td>Hi, I'm your first cell.</td>
-      <td>I'm your second cell.</td>
-      <td>I'm your third cell.</td>
-      <td>I'm your fourth cell.</td>
-    </tr>
-    ```
+   ```html
+   <tr>
+     <td>Hi, I'm your first cell.</td>
+     <td>I'm your second cell.</td>
+     <td>I'm your third cell.</td>
+     <td>I'm your fourth cell.</td>
+   </tr>
+   ```
 
 2. Agora que uma linha foi criada, vamos tentar criar mais uma ou duas linhas — cada linha precisa estar cercada por um elemento `<tr>`, com cada célula contida dentro de um elemento `<td>`.
 
@@ -256,7 +255,8 @@ Isso deve resultar em uma tabela que vai parecer com algo assim:
 | ------------------------ | --------------------- | -------------------- | --------------------- |
 | Second row, first cell.  | Cell 2.               | Cell 3.              | Cell 4.               |
 
-> **Nota:** Você também pode encontrar esse código no GitHub em [simple-table.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/simple-table.html) ([veja ao vivo também](http://mdn.github.io/learning-area/html/tables/basic/simple-table.html)).
+> [!NOTE]
+> Você também pode encontrar esse código no GitHub em [simple-table.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/simple-table.html) ([veja ao vivo também](https://mdn.github.io/learning-area/html/tables/basic/simple-table.html)).
 
 ## Adicionar cabeçalhos com o elemento \<th>
 
@@ -321,13 +321,15 @@ Vamos tentar melhorar essa tabela.
 2. Para reconhecer os cabeçalhos de uma tabela como cabeçalhos, tanto visualmente como semanticamente, podemos usar o elemento **[`<th>`](/pt-BR/docs/Web/HTML/Element/th)** ('th' significa 'cabeçalho da tabela'). Ele funciona da mesma maneira que um `<td>`, exceto que denota um cabeçalho, e não uma célula normal. Abra o arquivo HTML, e mude todos os elementos `<td>` que envolvem os cabeçalhos das tabelas para o elemento `<th>`.
 3. Salve o HTML e abra em um navegador, e veja que os cabeçalhos agora se parecem mais com cabeçalhos.
 
-> **Nota:** Encontre esse exemplo pronto em [dogs-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/dogs-table-fixed.html) no GitHub ([veja ao vivo também](http://mdn.github.io/learning-area/html/tables/basic/dogs-table-fixed.html)).
+> [!NOTE]
+> Encontre esse exemplo pronto em [dogs-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/dogs-table-fixed.html) no GitHub ([veja ao vivo também](https://mdn.github.io/learning-area/html/tables/basic/dogs-table-fixed.html)).
 
 ### Por que os cabeçalhos são úteis?
 
 Já respondemos parcialmente essa pergunta - fica mais fácil encontrar os dados que estamos procurando quando o cabeçalho se destaca claramente, e o design simplesmente aparece mais bonito.
 
-> **Nota:** Cabeçalhos de tabelas têm alguns estilos padronizados — eles são fortes e centralizados mesmo que você não use nenhum estilo para a tabela, para ajudar a destacá-los.
+> [!NOTE]
+> Cabeçalhos de tabelas têm alguns estilos padronizados — eles são fortes e centralizados mesmo que você não use nenhum estilo para a tabela, para ajudar a destacá-los.
 
 Cabeçalhos de tabelas também têm um benefício extra - juntamente com o atributo `scope` (que vamos aprender no próximo artigo), eles permitem tornar as tabelas mais acessíveis associando cada cabeçalho com todos os dados em uma mesma linha ou coluna. Leitores de tela podem então ler em voz alta uma coluna ou linha inteira de dados de uma vez só, o que é muito mais útil.
 
@@ -385,13 +387,15 @@ Vamos usar `colspan` e `rowspan` para melhorar essa tabela.
 3. Por fim, use `rowspan` para fazer "Horse" e "Chicken" se estender por duas linhas.
 4. Salve e abra o código em um navegador para ver a melhoria.
 
-> **Nota:** Encontre o exemplo pronto em [animals-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/animals-table-fixed.html) no GitHub ([veja ao vivo também](http://mdn.github.io/learning-area/html/tables/basic/animals-table-fixed.html)).
+> [!NOTE]
+> Encontre o exemplo pronto em [animals-table-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/animals-table-fixed.html) no GitHub ([veja ao vivo também](https://mdn.github.io/learning-area/html/tables/basic/animals-table-fixed.html)).
 
 ## Provendo estilos comuns para colunas
 
 Existe uma última característica da qual vamos falar nesse artigo, antes de prosseguir. HTML tem um método de definir informação de estilo para uma coluna inteira de dados de uma só vez — o elemento **[`<col>`](/pt-BR/docs/Web/HTML/Element/col)** e **[`<colgroup>`](/pt-BR/docs/Web/HTML/Element/colgroup)**. Eles existem por que pode ser um pouco entediante e ineficiente ter de especificar o estilo de colunas - temos de especificar as informações de estilo para _cada_ `<td>` ou `<th>` da coluna, ou usar um seletor complexo como o {{cssxref(":nth-child()")}}.
 
-> **Nota:** Estilizar colunas dessa maneira está [limitada para umas poucas propriedades](https://www.w3.org/TR/CSS22/tables.html#columns): [`border`](/pt-BR/docs/Web/CSS/border), [`background`](/pt-BR/docs/Web/CSS/background), [`width`](/pt-BR/docs/Web/CSS/width), e [`visibility`](/pt-BR/docs/Web/CSS/visibility). Para ajustar outras propriedades devemos aplicar o estilo para cada `<td>` ou `<th>` da coluna, ou usar um seletor complexo como um {{cssxref(":nth-child()")}}.
+> [!NOTE]
+> Estilizar colunas dessa maneira está [limitada para umas poucas propriedades](https://www.w3.org/TR/CSS22/tables.html#columns): [`border`](/pt-BR/docs/Web/CSS/border), [`background`](/pt-BR/docs/Web/CSS/background), [`width`](/pt-BR/docs/Web/CSS/width), e [`visibility`](/pt-BR/docs/Web/CSS/visibility). Para ajustar outras propriedades devemos aplicar o estilo para cada `<td>` ou `<th>` da coluna, ou usar um seletor complexo como um {{cssxref(":nth-child()")}}.
 
 Veja o simples exemplo a seguir:
 
@@ -424,8 +428,8 @@ Não é o ideal, uma vez que temos de repetir os dados de estilo em todas as tr�
 ```html
 <table>
   <colgroup>
-    <col>
-    <col style="background-color: yellow">
+    <col />
+    <col style="background-color: yellow" />
   </colgroup>
   <tr>
     <th>Data 1</th>
@@ -448,7 +452,7 @@ Para aplicar as informações de estilo para as duas colunas, podemos incluir ap
 
 ```html
 <colgroup>
-  <col style="background-color: yellow" span="2">
+  <col style="background-color: yellow" span="2" />
 </colgroup>
 ```
 
@@ -458,7 +462,7 @@ Como `colspan` e `rowspan`, `span` aceita um valor de número sem unidade que es
 
 Agora é hora de tentar sozinho.
 
-Abaixo encontram-se os horários de uma professora de línguas. Na sexta-feira ela tem uma nova aula ensinando holandês todos os dias, mas ela também ensina alemão alguns poucos períodos das terças-feiras e quintas-feiras. Ela quer destacar as colunas contendo os dias que têm aula.
+Abaixo encontram-se os horários de uma professora de línguas. Na sexta-feira ela tem uma nova aula ensinando holandês o dia todo, mas ela também ensina alemão alguns poucos períodos das terças-feiras e quintas-feiras. Ela quer destacar as colunas contendo os dias que têm aula.
 
 {{EmbedGHLiveSample("learning-area/html/tables/basic/timetable-fixed.html", '100%', 320)}}
 
@@ -473,7 +477,7 @@ Recrie a tabela seguindo os passos abaixo.
 7. Adicione uma cor de fundo diferente e uma borda para a sexta coluna, para indicar que este é um dia especial e ela está dando uma nova aula. Os valores dos atributos `style` são `background-color:#DCC48E; border:4px solid #C1437A;`
 8. Os dois últimos dias são dias livres, então apenas ajuste para nenhuma cor de fundo, mas defina uma largura; o valor do atributo `style` é `width: 42px;`
 
-Veja se consegue seguir o exemplo. Se você tiver dúvidas ou quiser verificar seu trabalho, pode encontrar nossa versão no GitHub como [schedule-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html) ( [veja ao vivo também](http://mdn.github.io/learning-area/html/tables/basic/timetable-fixed.html) ).
+Veja se consegue seguir o exemplo. Se você tiver dúvidas ou quiser verificar seu trabalho, pode encontrar nossa versão no GitHub como [schedule-fixed.html](https://github.com/mdn/learning-area/blob/master/html/tables/basic/timetable-fixed.html) ( [veja ao vivo também](https://mdn.github.io/learning-area/html/tables/basic/timetable-fixed.html) ).
 
 ## Resumo
 

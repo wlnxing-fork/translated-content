@@ -1,12 +1,6 @@
 ---
-title: '<summary> : l''élément de révélation d''un résumé'
+title: "<summary> : l'élément de révélation d'un résumé"
 slug: Web/HTML/Element/summary
-tags:
-  - Element
-  - HTML
-  - Reference
-  - Web
-translation_of: Web/HTML/Element/summary
 ---
 
 {{HTMLSidebar}}
@@ -17,13 +11,13 @@ L'élément HTML **`<summary>`** représente une boîte permettant de révéler 
 
 ## Attributs
 
-Cet élément inclut uniquement [les attributs universels](/fr/docs/Web/HTML/Attributs_universels).
+Cet élément inclut uniquement [les attributs universels](/fr/docs/Web/HTML/Global_attributes).
 
 ## Notes d'utilisation
 
 Un élément `<summary>` peut contenir des éléments de titre, du texte simple ou tout contenu HTML pouvant être placé au sein d'un paragraphe.
 
-Un élément `<summary>` peut uniquement être utilisé comme le premier élément fils d'un élément `<details>`. Lorsque l'utilisateur clique sur le résumé, l'élément `<details>` parent change d'état (affiché ou masqué) et un évènement [`toggle`](/fr/docs/Web/API/HTMLDetailsElement/toggle_event) est envoyé à l'élément `<details>` (ce qui permet de détecter un changement d'état via un script).
+Un élément `<summary>` peut uniquement être utilisé comme le premier élément fils d'un élément `<details>`. Lorsque l'utilisateur clique sur le résumé, l'élément `<details>` parent change d'état (affiché ou masqué) et un évènement [`toggle`](/fr/docs/Web/API/HTMLElement/toggle_event) est envoyé à l'élément `<details>` (ce qui permet de détecter un changement d'état via un script).
 
 ### Libellé par défaut
 
@@ -46,14 +40,13 @@ Voir la section ci-après sur la compatibilité des navigateurs à ce sujet car 
 ```html
 <details open>
   <summary>Détails produit</summary>
-  <p>Ce produit a été fabriqué par
-  ACME et respecte les pandas.</p>
+  <p>Ce produit a été fabriqué par ACME et respecte les pandas.</p>
 </details>
 ```
 
 #### Résultat
 
-{{EmbedLiveSample("Exemple_simple","100%","160")}}
+{{EmbedLiveSample("","100%","160")}}
 
 ### Utilisation de titres
 
@@ -74,7 +67,7 @@ Il est possible d'utiliser des titres au sein d'un résumé.
 
 #### Résultat
 
-{{EmbedLiveSample("Utilisation_de_titres", 650, 120)}}
+{{EmbedLiveSample("", 650, 120)}}
 
 ### Utiliser avec divers éléments HTML
 
@@ -93,7 +86,7 @@ Il est possible d'utiliser des titres au sein d'un résumé.
 
 #### Résultat
 
-{{EmbedLiveSample("Utiliser_avec_divers_éléments_HTML", 650, 120)}}
+{{EmbedLiveSample("", 650, 120)}}
 
 ## Résumé technique
 

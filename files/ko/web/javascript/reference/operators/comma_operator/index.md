@@ -1,6 +1,6 @@
 ---
 title: 쉼표 연산자
-slug: Web/JavaScript/Reference/Operators/Comma_Operator
+slug: Web/JavaScript/Reference/Operators/Comma_operator
 ---
 
 {{jsSidebar("Operators")}}
@@ -38,17 +38,17 @@ for (let i = 0, j = 9; i <= 9; i++, j--) {
 }
 ```
 
-쉼표 연산자를 할당에 사용하면, 할당 연산이 표현식에 포함되지 않아 예상한 결과와는 다소 다를 수 있습니다. 다음 예제에서, `a`는 `b = 3`의 값(3)을 할당받지만, `c = 4` 표현식 역시 평가되어 콘솔에 기록됩니다. [연산자 우선순위와 결합성](/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) 때문입니다.
+쉼표 연산자를 할당에 사용하면, 할당 연산이 표현식에 포함되지 않아 예상한 결과와는 다소 다를 수 있습니다. 다음 예제에서, `a`는 `b = 3`의 값(3)을 할당받지만, `c = 4` 표현식 역시 평가되어 콘솔에 기록됩니다. [연산자 우선순위와 결합성](/ko/docs/Web/JavaScript/Reference/Operators/Operator_precedence) 때문입니다.
 
 ```js
 var a, b, c;
 
-a = b = 3, c = 4; // 콘솔에는 4를 반환
+(a = b = 3), (c = 4); // 콘솔에는 4를 반환
 console.log(a); // 3 (제일 왼쪽)
 
 var x, y, z;
 
-x = (y = 5, z = 6); // 콘솔에는 6을 반환
+x = ((y = 5), (z = 6)); // 콘솔에는 6을 반환
 console.log(x); // 6 (제일 오른쪽)
 ```
 
@@ -57,10 +57,10 @@ console.log(x); // 6 (제일 오른쪽)
 쉼표 연산자를 사용하는 다른 방법은 값을 반환하기 전에 연산을 수행하는 것입니다. 쉼표 연산자는 마지막 표현식의 평가 결과만 반환하지만, 이전 피연산자에 대해서도 평가는 수행하므로 다음과 같은 코드를 작성할 수 있습니다.
 
 ```js
-function myFunc () {
+function myFunc() {
   var x = 0;
 
-  return (x += 1, x); // ++x 와 같은 효과
+  return (x += 1), x; // ++x 와 같은 효과
 }
 ```
 

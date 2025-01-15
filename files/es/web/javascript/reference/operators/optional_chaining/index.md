@@ -1,7 +1,6 @@
 ---
 title: Encadenamiento opcional
 slug: Web/JavaScript/Reference/Operators/Optional_chaining
-original_slug: Web/JavaScript/Referencia/Operadores/Encadenamiento_opcional
 ---
 
 {{JSSidebar("Operators")}}
@@ -43,7 +42,7 @@ Al usar el operador `?.` en lugar de solo el `.`, JavaScript sabe verificar impl
 
 Esto es equivalente a lo siguiente, excepto que la variable temporal es de hecho no creada:
 
-```js
+```js-nolint
 let temp = obj.first;
 let nestedProp = ((temp === null || temp === undefined) ? undefined : temp.second);
 ```
@@ -58,20 +57,21 @@ El uso de encadenamiento opcional con llamadas a funciones hace que la expresió
 let result = someInterface.customMethod?.();
 ```
 
-> **Nota:** Si hay una propiedad con ese nombre y que no es una función, usar `?.` aún levantará una excepción {{JSxRef("TypeError")}} (`x.y is not a function`).
+> [!NOTE]
+> Si hay una propiedad con ese nombre y que no es una función, usar `?.` aún levantará una excepción {{JSxRef("TypeError")}} (`x.y is not a function`).
 
 #### Manejo de callbacks opcionales o manejadores de eventos
 
-Si utiliza callbacks o métodos de recuperación de un objeto con[una asignación de desestructuración](/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring), es posible que tenga valores inexistentes que no puede llamar como funciones a menos que haya probado su existencia. Usando `?.`, Puede evitar esta prueba adicional:
+Si utiliza callbacks o métodos de recuperación de un objeto con[una asignación de desestructuración](/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring), es posible que tenga valores inexistentes que no puede llamar como funciones a menos que haya probado su existencia. Usando `?.`, Puede evitar esta prueba adicional:
 
 ```js
 // Escrito a partir de ES2019
 function doSomething(onContent, onError) {
   try {
     // ... hacer algo con los datos
-  }
-  catch (err) {
-    if (onError) { // Probando si onError realmente existe
+  } catch (err) {
+    if (onError) {
+      // Probando si onError realmente existe
       onError(err.message);
     }
   }
@@ -82,9 +82,8 @@ function doSomething(onContent, onError) {
 // Usando encadenamiento opcional con llamado de funciones
 function doSomething(onContent, onError) {
   try {
-   // ... hacer algo con los datos
-  }
-  catch (err) {
+    // ... hacer algo con los datos
+  } catch (err) {
     onError?.(err.message); // Sin excepción si onError esta undefined
   }
 }
@@ -92,10 +91,10 @@ function doSomething(onContent, onError) {
 
 ### Encadenamiento opcional con expresiones
 
-También puede usar el operador de encadenamiento opcional al acceder a propiedades con una expresión usando [la notación de corchetes](/es/docs/Web/JavaScript/Reference/Operators/Property_Accessors#Bracket_notation):
+También puede usar el operador de encadenamiento opcional al acceder a propiedades con una expresión usando [la notación de corchetes](/es/docs/Web/JavaScript/Reference/Operators/Property_accessors#bracket_notation):
 
 ```js
-let nestedProp = obj?.['prop' + 'Name'];
+let nestedProp = obj?.["prop" + "Name"];
 ```
 
 ### El encadenamiento opcional no es válido al lado izquierdo de una asignación
@@ -119,7 +118,7 @@ Este ejemplo busca el valor de la propiedad `name` para el miembro `bar` en un m
 
 ```js
 let myMap = new Map();
-myMap.set("foo", {name: "baz", desc: "inga"});
+myMap.set("foo", { name: "baz", desc: "inga" });
 
 let nameBar = myMap.get("bar")?.name;
 ```
@@ -145,8 +144,8 @@ let customer = {
   name: "Carl",
   details: {
     age: 82,
-    location: "Paradise Falls" // "detailed address" es desconocida
-  }
+    location: "Paradise Falls", // "detailed address" es desconocida
+  },
 };
 let customerCity = customer.details?.address?.city;
 
@@ -161,7 +160,7 @@ El {{JSxRef("Operators/Nullish_Coalescing_Operator", "operador de fusión nulo",
 ```js
 let customer = {
   name: "Carl",
-  details: { age: 82 }
+  details: { age: 82 },
 };
 const customerCity = customer?.city ?? "Unknown city";
 console.log(customerCity); // Unknown city

@@ -1,13 +1,6 @@
 ---
 title: notifications
 slug: Mozilla/Add-ons/WebExtensions/API/notifications
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Notifications
-  - WebExtensions
-translation_of: Mozilla/Add-ons/WebExtensions/API/notifications
 ---
 
 {{AddonSidebar}}
@@ -55,6 +48,6 @@ La notification est identique sur tous les systèmes d'exploitation de bureau. Q
 
 {{WebExtExamples("h2")}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API Chromium [`chrome.notifications`](https://developer.chrome.com/extensions/notifications).
+> Cette API est basée sur l'API Chromium [`chrome.notifications`](https://developer.chrome.com/docs/extensions/reference/api/notifications).

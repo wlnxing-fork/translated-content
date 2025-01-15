@@ -1,12 +1,6 @@
 ---
 title: Reflect.get()
 slug: Web/JavaScript/Reference/Global_Objects/Reflect/get
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Reflect
-  - метод
-translation_of: Web/JavaScript/Reference/Global_Objects/Reflect/get
 ---
 
 {{JSRef}}
@@ -40,7 +34,7 @@ Reflect.get(target, propertyKey[, receiver])
 
 ## Описание
 
-Метод `Reflect.get` позволяет получить значение свойства некоторого объекта. Он похож на обычный доступ к значению свойства объекта [значению свойства объекта](/ru/docs/Web/JavaScript/Reference/Operators/Property_Accessors), только с синтаксисом функции.
+Метод `Reflect.get` позволяет получить значение свойства некоторого объекта. Он похож на обычный доступ к значению свойства объекта [значению свойства объекта](/ru/docs/Web/JavaScript/Reference/Operators/Property_accessors), только с синтаксисом функции.
 
 ## Примеры
 
@@ -49,28 +43,30 @@ Reflect.get(target, propertyKey[, receiver])
 ```js
 // Объект
 var obj = { x: 1, y: 2 };
-Reflect.get(obj, 'x'); // 1
+Reflect.get(obj, "x"); // 1
 
 // Массив
-Reflect.get(['ноль', 'один'], 1); // "один"
+Reflect.get(["ноль", "один"], 1); // "один"
 
 // Proxy, перехватывающий get
-var x = {p: 1};
+var x = { p: 1 };
 var obj = new Proxy(x, {
-  get(t, k, r) { return k + 'bar'; }
+  get(t, k, r) {
+    return k + "bar";
+  },
 });
-Reflect.get(obj, 'foo'); // "foobar"
+Reflect.get(obj, "foo"); // "foobar"
 ```
 
 ## Спецификации
 
 {{Specifications}}
 
-## Поддержка браузерами
+## Совместимость с браузерами
 
 {{Compat}}
 
 ## Смотрите также
 
 - {{jsxref("Reflect")}}
-- [Property accessors](/ru/docs/Web/JavaScript/Reference/Operators/Property_Accessors)
+- [Property accessors](/ru/docs/Web/JavaScript/Reference/Operators/Property_accessors)

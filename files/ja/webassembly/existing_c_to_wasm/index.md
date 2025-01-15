@@ -1,8 +1,6 @@
 ---
 title: 既存の C モジュールから WebAssembly へのコンパイル
-slug: WebAssembly/existing_C_to_wasm
-l10n:
-  sourceCommit: 891c7c231987ebd17a7410b3c7aab82af15e4248
+slug: WebAssembly/existing_C_to_Wasm
 ---
 
 {{WebAssemblySidebar}}
@@ -40,7 +38,8 @@ $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
     libwebp/src/{dec,dsp,demux,enc,mux,utils}/*.c
 ```
 
-> **メモ:** この方法はすべての C プロジェクトでうまくいく訳ではありません。多くのプロジェクトでは、コンパイルの前にシステム固有のコードを生成するため、 autoconf/automake に依存しています。 Emscripten は、これらのコマンドをラップして適切な引数を注入するための `emconfigure` と `emmake` を提供しています。詳細は [Emscripten のドキュメント](https://emscripten.org/docs/compiling/Building-Projects.html)を読んでください。
+> [!NOTE]
+> この方法はすべての C プロジェクトでうまくいく訳ではありません。多くのプロジェクトでは、コンパイルの前にシステム固有のコードを生成するため、 autoconf/automake に依存しています。 Emscripten は、これらのコマンドをラップして適切な引数を注入するための `emconfigure` と `emmake` を提供しています。詳細は [Emscripten のドキュメント](https://emscripten.org/docs/compiling/Building-Projects.html)を読んでください。
 
 これで、新しいモジュールを読み込むために必要なのは HTML と JavaScript だけになりました。
 
@@ -49,7 +48,7 @@ $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
 <script>
   Module.onRuntimeInitialized = async () => {
     const api = {
-      version: Module.cwrap('version', 'number', []),
+      version: Module.cwrap("version", "number", []),
     };
     console.log(api.version());
   };
@@ -60,7 +59,8 @@ $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
 
 ![正しいバージョン番号を示すデベロッパーツールのコンソールのスクリーンショット](version.png)
 
-> **メモ:** libwebp は現在のバージョン a.b.c を 16 進数の 0xabc で返します。例えば、v0.6.1 は 0x000601 = 1537 としてエンコードされています。
+> [!NOTE]
+> libwebp は現在のバージョン a.b.c を 16 進数の 0xabc で返します。例えば、v0.6.1 は 0x000601 = 1537 としてエンコードされています。
 
 ### JavaScript から Wasm に画像を取得する
 
@@ -69,16 +69,16 @@ $ emcc -O3 -s WASM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' \
 最初に答えなければならない質問は、どうやって画像を wasm に入れるのかということです。libwebp の [Encoding API](https://developers.google.com/speed/webp/docs/api#simple_encoding_api) を見ると、RGB、RGBA、BGR、BGRA のバイト列を期待していることがわかります。幸いにも Canvas API には {{domxref("CanvasRenderingContext2D.getImageData")}} があり、RGBA の画像データを含む {{jsxref("Uint8ClampedArray")}}が得られます。
 
 ```js
- async function loadImage(src) {
+async function loadImage(src) {
   // Load image
   const imgBlob = await fetch(src).then((resp) => resp.blob());
   const img = await createImageBitmap(imgBlob);
   // Make canvas same size as image
-  const canvas = document.createElement('canvas');
+  const canvas = document.createElement("canvas");
   canvas.width = img.width;
   canvas.height = img.height;
   // Draw image onto canvas
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
   ctx.drawImage(img, 0, 0);
   return ctx.getImageData(0, 0, img.width, img.height);
 }
@@ -104,16 +104,16 @@ void destroy_buffer(uint8_t* p) {
 
 ```js
 const api = {
-  version: Module.cwrap('version', 'number', []),
-  create_buffer: Module.cwrap('create_buffer', 'number', ['number', 'number']),
-  destroy_buffer: Module.cwrap('destroy_buffer', '', ['number']),
-  encode: Module.cwrap("encode", "", ["number","number","number","number",]),
+  version: Module.cwrap("version", "number", []),
+  create_buffer: Module.cwrap("create_buffer", "number", ["number", "number"]),
+  destroy_buffer: Module.cwrap("destroy_buffer", "", ["number"]),
+  encode: Module.cwrap("encode", "", ["number", "number", "number", "number"]),
   free_result: Module.cwrap("free_result", "", ["number"]),
   get_result_pointer: Module.cwrap("get_result_pointer", "number", []),
   get_result_size: Module.cwrap("get_result_size", "number", []),
 };
 
-const image = await loadImage('./image.jpg');
+const image = await loadImage("./image.jpg");
 const p = api.create_buffer(image.width, image.height);
 Module.HEAP8.set(image.data, p);
 // ... call encoder ...
@@ -161,7 +161,11 @@ int get_result_size() {
 api.encode(p, image.width, image.height, 100);
 const resultPointer = api.get_result_pointer();
 const resultSize = api.get_result_size();
-const resultView = new Uint8Array(Module.HEAP8.buffer, resultPointer, resultSize);
+const resultView = new Uint8Array(
+  Module.HEAP8.buffer,
+  resultPointer,
+  resultSize,
+);
 const result = new Uint8Array(resultView);
 api.free_result(resultPointer);
 ```
@@ -177,11 +181,11 @@ api.free_result(resultPointer);
 これで完了です。 WebP エンコーダーをコンパイルし、 JPEG 画像を WebP にトランスコードしました。うまくいったことを証明するために、結果のバッファーを blob にして`<img>`要素で使用してください。
 
 ```js
-const blob = new Blob([result], {type: 'image/webp'});
+const blob = new Blob([result], { type: "image/webp" });
 const blobURL = URL.createObjectURL(blob);
-const img = document.createElement('img');
+const img = document.createElement("img");
 img.src = blobURL;
-document.body.appendChild(img)
+document.body.appendChild(img);
 ```
 
 見よ、新しい WebP 画像の栄光を。

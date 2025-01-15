@@ -1,14 +1,16 @@
 ---
 title: Perceivable
 slug: Web/Accessibility/Understanding_WCAG/Perceivable
-original_slug: Web/Accesibilidad/Understanding_WCAG/Perceivable
 ---
+
+{{AccessibilitySidebar}}
 
 Este artículo ofrece consejos prácticos sobre cómo hacer que tu sitio web cumpla con los criterios de **Percepción** de WCAG 2.0 y 2.1. Los estados perceptivos que los usuarios deben poder reconocer utilizando alguno de sus sentidos.
 
-> **Nota:** Para leer las definiciones de la W3C sobre Percepción y las guías para cumplir con los criterios dirígete a [Principle 1: Perceivable - Information and user interface components must be presentable to users in ways they can perceive.](https://www.w3.org/TR/WCAG21/#perceivable)
+> [!NOTE]
+> Para leer las definiciones de la W3C sobre Percepción y las guías para cumplir con los criterios dirígete a [Principle 1: Perceivable - Information and user interface components must be presentable to users in ways they can perceive.](https://www.w3.org/TR/WCAG21/#perceivable)
 
-## Pauta 1.1 — Dar alternativas de texto para contenido no textual.
+## Pauta 1.1 — Dar alternativas de texto para contenido no textual
 
 La clave aquí es convertir el texto a otros formatos que puedan ser entendidos por personas con otras capacidades; ya sea si utilizan un screen-reader, zoom o un lector de braille. El contenido no textual se refiere a elementos multimedia como imágenes, audio y vídeo.
 
@@ -28,7 +30,7 @@ La clave aquí es convertir el texto a otros formatos que puedan ser entendidos 
         alternativo.
       </td>
       <td>
-        <a href="/en-US/docs/Learn/Accessibility/HTML#Text_alternatives"
+        <a href="/es/docs/Learn/Accessibility/HTML#Text_alternatives"
           >Texto alternativo.</a
         >
       </td>
@@ -44,12 +46,12 @@ La clave aquí es convertir el texto a otros formatos que puedan ser entendidos 
       <td>
         <p>
           Una alternativa textual o una tabla puede resolverlo (ver
-          <a href="/en-US/docs/Learn/HTML/Tables/Advanced"
+          <a href="/es/docs/Learn/HTML/Tables/Advanced"
             >HTML table advanced features and accessibility</a
           >
           y
           <a
-            href="/en-US/docs/Learn/Accessibility/HTML#Other_text_alternative_mechanisms"
+            href="/es/docs/Learn/Accessibility/HTML#Other_text_alternative_mechanisms"
             >Other text alternative mechanisms</a
           >
           para leer sobre el argumento en contra de <code>longdesc</code>.
@@ -64,19 +66,19 @@ La clave aquí es convertir el texto a otros formatos que puedan ser entendidos 
       <td>
         <p>
           Ver
-          <a href="/en-US/docs/Learn/Accessibility/HTML#Text_alternatives"
+          <a href="/es/docs/Learn/Accessibility/HTML#Text_alternatives"
             >alternativas de texto</a
           >
           para opciones de captions, y
-          <a href="/en-US/docs/Learn/Accessibility/Multimedia#Audio_transcripts"
+          <a href="/es/docs/Learn/Accessibility/Multimedia#Audio_transcripts"
             >Audio transcripts</a
           >,
-          <a href="/en-US/docs/Learn/Accessibility/Multimedia#Video_text_tracks"
+          <a href="/es/docs/Learn/Accessibility/Multimedia#Video_text_tracks"
             >Video text tracks</a
           >
           o
           <a
-            href="/en-US/docs/Learn/Accessibility/Multimedia#Other_multimedia_content"
+            href="/es/docs/Learn/Accessibility/Multimedia#Other_multimedia_content"
             >Other multimedia content</a
           >
           para otras alternativas.
@@ -92,7 +94,7 @@ La clave aquí es convertir el texto a otros formatos que puedan ser entendidos 
         Deberás asegurarte de que los botones describan su función (por ejemplo,
         <code>&#x3C;button>Subir imagen&#x3C;/button></code>). Para más
         información ver
-        <a href="/en-US/docs/Learn/Accessibility/HTML#UI_controls"
+        <a href="/es/docs/Learn/Accessibility/HTML#UI_controls"
           >UI controls</a
         >.
       </td>
@@ -123,9 +125,10 @@ La clave aquí es convertir el texto a otros formatos que puedan ser entendidos 
   </tbody>
 </table>
 
-> **Nota:** Ver también [WCAG description for Guideline 1.1: Text alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives).
+> [!NOTE]
+> Ver también [WCAG description for Guideline 1.1: Text alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives).
 
-## Pauta 1.2 — Proporcionar alternativas para los medios tempo-dependientes.
+## Pauta 1.2 — Proporcionar alternativas para los medios tempo-dependientes
 
 Los medios tempo-dependientes se refieren a multimedia con una duración (audio y vídeo, por ejemplo). Ten en cuenta que si este contenido multimedia funciona como una alternativa a un contenido textual no necesitas proveer otra alternavtiva.
 
@@ -141,7 +144,8 @@ Los medios tempo-dependientes se refieren a multimedia con una duración (audio 
 | 1.2.8 Provee una alternativa para los elementos multimedia pre-grabados (AAA) | For all content that features video, a descriptive text transcript should be provided, for example a script of the movie you are watching. This is for the benefit of hearing impaired viewers who cannot hear the content.                                                                     | See [Audio transcripts](/es/docs/Learn/Accessibility/Multimedia#Audio_transcripts) for transcript information.                                                                                                                                                                                                                                                |
 | 1.2.9 Provee una transcripción para el audio en vivo (AAA)                    | For any live audio content being broadcast, a descriptive text should be provided, for example a script of the play or musical you are listening to. This is for the benefit of hearing impaired viewers who cannot hear the content.                                                           | See [Audio transcripts](/es/docs/Learn/Accessibility/Multimedia#Audio_transcripts) for transcript information.                                                                                                                                                                                                                                                |
 
-> **Nota:** Ver también la descripción de [WCAG Guideline 1.2: Time-based Media: Provide alternatives for time-based media](https://www.w3.org/TR/WCAG21/#time-based-media).
+> [!NOTE]
+> Ver también la descripción de [WCAG Guideline 1.2: Time-based Media: Provide alternatives for time-based media](https://www.w3.org/TR/WCAG21/#time-based-media).
 
 ## Pauta 1.3 — Crear contenido que pueda presentarse de diferentes formas
 
@@ -172,11 +176,11 @@ Esta pauta hace referencia a la posibilidad de que todo contenido pueda ser cons
         </ul>
       </td>
       <td>The whole of
-        <p><a href="/en-US/docs/Learn/Accessibility/HTML">HTML: A good basis for accessibility</a> is packed
+        <p><a href="/es/docs/Learn/Accessibility/HTML">HTML: A good basis for accessibility</a> is packed
           with information about this, but you should particularly refer to <a
-            href="/en-US/docs/Learn/Accessibility/HTML#Good_semantics">Good semantics</a>, <a
-            href="/en-US/docs/Learn/Accessibility/HTML#UI_controls">UI controls</a>, and <a
-            href="/en-US/docs/Learn/Accessibility/HTML#Text_alternatives">Text alternatives</a>.</p>
+            href="/es/docs/Learn/Accessibility/HTML#Good_semantics">Good semantics</a>, <a
+            href="/es/docs/Learn/Accessibility/HTML#UI_controls">UI controls</a>, and <a
+            href="/es/docs/Learn/Accessibility/HTML#Text_alternatives">Text alternatives</a>.</p>
       </td>
     </tr>
     <tr>
@@ -185,7 +189,7 @@ Esta pauta hace referencia a la posibilidad de que todo contenido pueda ser cons
         presented in an unusual way. The order should be made obvious by use of correct semantic elements (e.g.
         headings, paragraphs), with CSS being used to create any unusual layout styles, irrespective of the
         markup.</td>
-      <td>Again, refer to <a href="/en-US/docs/Learn/Accessibility/HTML">HTML: A good basis for accessibility</a>.
+      <td>Again, refer to <a href="/es/docs/Learn/Accessibility/HTML">HTML: A good basis for accessibility</a>.
       </td>
     </tr>
     <tr>
@@ -245,7 +249,8 @@ Esta pauta hace referencia a la posibilidad de que todo contenido pueda ser cons
   </tbody>
 </table>
 
-> **Nota:** Ver también la descripción de WCAG: [Guideline 1.3: Adaptable: Create content that can be presented in different ways without losing information or structure.](https://www.w3.org/TR/WCAG21/#adaptable)
+> [!NOTE]
+> Ver también la descripción de WCAG: [Guideline 1.3: Adaptable: Create content that can be presented in different ways without losing information or structure.](https://www.w3.org/TR/WCAG21/#adaptable)
 
 ## Pauta 1.4: Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo
 
@@ -265,8 +270,8 @@ Esta pauta tiene como objetivo la creación de contenido que sea fácil de difer
           required fields purely with a color (like red). Instead (or as well as), something like an asterisk with a
           label of "required" would be more appropriate.</p>
       </td>
-      <td>See <a href="/en-US/docs/Learn/Accessibility/CSS_and_JavaScript#Color_and_color_contrast">Color and color
-          contrast</a> and <a href="/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form#Multiple_labels">Multiple
+      <td>See <a href="/es/docs/Learn/Accessibility/CSS_and_JavaScript#Color_and_color_contrast">Color and color
+          contrast</a> and <a href="/es/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form#Multiple_labels">Multiple
           labels</a>.</td>
     </tr>
     <tr>
@@ -274,7 +279,7 @@ Esta pauta tiene como objetivo la creación de contenido que sea fácil de difer
       <td>For any audio that plays for longer than three seconds, accessible controls should be provided to play and
         pause the audio/video, and mute/adjust volume.</td>
       <td>Use native <code>&lt;button&gt;</code>s to provide accessible keyboard controls, as shown in <a
-          href="/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/Video_player_styling_basics">Video player
+          href="/es/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/Video_player_styling_basics">Video player
           syling basics</a>.</td>
     </tr>
     <tr>
@@ -288,7 +293,7 @@ Esta pauta tiene como objetivo la creación de contenido que sea fácil de difer
             18pt, or 14pt bold.</li>
         </ul>
       </td>
-      <td>See <a href="/en-US/docs/Learn/Accessibility/CSS_and_JavaScript#Color_and_color_contrast">Color and color
+      <td>See <a href="/es/docs/Learn/Accessibility/CSS_and_JavaScript#Color_and_color_contrast">Color and color
           contrast</a>.</td>
     </tr>
     <tr>
@@ -396,4 +401,5 @@ Esta pauta tiene como objetivo la creación de contenido que sea fácil de difer
   </thead>
 </table>
 
-> **Nota:** Ver también la descripción de WCAG: [Guideline 1.4: Distinguishable: Make it easier for users to see and hear content including separating foreground from background.](https://www.w3.org/TR/WCAG21/#distinguishable)[.](https://www.w3.org/TR/WCAG21/#distinguishable)
+> [!NOTE]
+> Ver también la descripción de WCAG: [Guideline 1.4: Distinguishable: Make it easier for users to see and hear content including separating foreground from background.](https://www.w3.org/TR/WCAG21/#distinguishable)[.](https://www.w3.org/TR/WCAG21/#distinguishable)

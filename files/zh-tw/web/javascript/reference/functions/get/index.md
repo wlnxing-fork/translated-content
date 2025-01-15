@@ -30,7 +30,7 @@ slug: Web/JavaScript/Reference/Functions/get
 使用 `get` 語法時，請注意以下情況：
 
 - 可以擁有一個以數字或字串為代表的標示符；
-- 最少要有零個參數（請參見 [Incompatible ES5 change: literal getter and setter functions must now have exactly zero or one arguments](http://whereswalden.com/2010/08/22/incompatible-es5-change-literal-getter-and-setter-functions-must-now-have-exactly-zero-or-one-arguments/) 的詳細資料）
+- 最少要有零個參數（請參見 [Incompatible ES5 change: literal getter and setter functions must now have exactly zero or one arguments](https://whereswalden.com/2010/08/22/incompatible-es5-change-literal-getter-and-setter-functions-must-now-have-exactly-zero-or-one-arguments/) 的詳細資料）
 - 不能以有另一個 `get` 的 object literal、或相同屬性入口（data entry）的 data 形式出現（不能使用 `{ get x() { }, get x() { } }` and `{ x: ..., get x() { } }`）。
 
 getter 可以用 [`delete`](/zh-TW/docs/Web/JavaScript/Reference/Operators/delete) 操作符移除。
@@ -43,12 +43,12 @@ getter 可以用 [`delete`](/zh-TW/docs/Web/JavaScript/Reference/Operators/delet
 
 ```js
 var obj = {
-  log: ['example','test'],
+  log: ["example", "test"],
   get latest() {
     if (this.log.length == 0) return undefined;
     return this.log[this.log.length - 1];
-  }
-}
+  },
+};
 console.log(obj.latest); // "test".
 ```
 
@@ -67,20 +67,26 @@ delete obj.latest;
 若想在任何時候給現有物件添增 getter，請使用 {{jsxref("Object.defineProperty()")}}。
 
 ```js
-var o = {a: 0};
+var o = { a: 0 };
 
-Object.defineProperty(o, 'b', { get: function() { return this.a + 1; } });
+Object.defineProperty(o, "b", {
+  get: function () {
+    return this.a + 1;
+  },
+});
 
-console.log(o.b) // Runs the getter, which yields a + 1 (which is 1)
+console.log(o.b); // Runs the getter, which yields a + 1 (which is 1)
 ```
 
 ### 使用計算屬性名
 
 ```js
-var expr = 'foo';
+var expr = "foo";
 
 var obj = {
-  get [expr]() { return 'bar'; }
+  get [expr]() {
+    return "bar";
+  },
 };
 
 console.log(obj.foo); // "bar"
@@ -118,16 +124,18 @@ get notifier() {
 ```js
 class Example {
   get hello() {
-    return 'world';
+    return "world";
   }
 }
 
 const obj = new Example();
 console.log(obj.hello);
 // "world"
-console.log(Object.getOwnPropertyDescriptor(obj, 'hello'));
+console.log(Object.getOwnPropertyDescriptor(obj, "hello"));
 // undefined
-console.log(Object.getOwnPropertyDescriptor(Object.getPrototypeOf(obj), 'hello'));
+console.log(
+  Object.getOwnPropertyDescriptor(Object.getPrototypeOf(obj), "hello"),
+);
 // { configurable: true, enumerable: false, get: function get hello() { return 'world'; }, set: undefined }
 ```
 

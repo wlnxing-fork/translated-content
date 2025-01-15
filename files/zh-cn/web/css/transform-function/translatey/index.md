@@ -1,7 +1,6 @@
 ---
 title: translateY()
 slug: Web/CSS/transform-function/translateY
-original_slug: Web/CSS/transform-function/translateY()
 ---
 
 {{CSSRef}}
@@ -87,9 +86,9 @@ transform: translateY(50%);
   </tbody>
 </table>
 
-### 语法
+### 形式语法
 
-```
+```plain
 translateY({{cssxref("&lt;length-percentage&gt;")}})
 ```
 

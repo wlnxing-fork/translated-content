@@ -3,7 +3,7 @@ title: ceiling
 slug: Web/XPath/Functions/ceiling
 ---
 
-{{ XsltRef() }}
+{{XsltSidebar}}{{ XsltRef() }}
 
 `ceiling` 関数は小数を評価し、その小数以上の最も小さい整数を返します。
 
@@ -30,7 +30,7 @@ ceiling(number )
 
 ### 定義
 
-[XPath 1.0 4.4](http://www.w3.org/TR/xpath#function-ceiling)
+[XPath 1.0 4.4](https://www.w3.org/TR/xpath#function-ceiling)
 
 ### Gecko での対応
 

@@ -1,7 +1,6 @@
 ---
 title: WebAssembly.Memory()
 slug: WebAssembly/JavaScript_interface/Memory
-original_slug: Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory
 ---
 
 {{WebAssemblySidebar}}
@@ -27,7 +26,8 @@ var myMemory = new WebAssembly.Memory(memoryDescriptor);
     - _maximum {{optional_inline}}_
       - : 以 WebAssembly 页面为单位，可允许 WebAssembly 内存的 `最大值`。当存在此属性时，此参数用于提示引擎预先保留内存。但是，引擎可能会忽略或限制此预留请求。通常情况下大多数 WebAssembly 模块不需要设置 `最大值`。
 
-> **备注：** A WebAssembly 页面的大小为一个常量 65,536 字节，即 64KB。
+> [!NOTE]
+> A WebAssembly 页面的大小为一个常量 65,536 字节，即 64KB。
 
 ### 异常
 
@@ -36,7 +36,7 @@ var myMemory = new WebAssembly.Memory(memoryDescriptor);
 
 ## `Memory` 实例
 
-所有 `Memory` 实例都继承自 `Memory()` 构造函数的 [原型对象](/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory/prototype) — 这个原型可被修改并影响到所有的 `Memory` 实例。
+所有 `Memory` 实例都继承自 `Memory()` 构造函数的 [原型对象](/zh-CN/docs/WebAssembly/JavaScript_interface/Memory) — 这个原型可被修改并影响到所有的 `Memory` 实例。
 
 ### 实例属性
 
@@ -55,14 +55,15 @@ var myMemory = new WebAssembly.Memory(memoryDescriptor);
 有两种方法可以获得 `WebAssembly.Memory` 对象。第一种方法是由 JavaScript 来创建。以下示例创建了一个新的 WebAssembly 内存实例，初始大小为 10 页（640KB），最大值设置为 100 页（6.4MB）。
 
 ```js
-var memory = new WebAssembly.Memory({initial:10, maximum:100});
+var memory = new WebAssembly.Memory({ initial: 10, maximum: 100 });
 ```
 
 获取 `WebAssembly.Memory` 对象的第二种方法是从 WebAssembly 模块中导出。以下示例（详见 GitHub 页面 [memory.html](https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/memory.html) ，也可以 [用浏览器运行查看](https://mdn.github.io/webassembly-examples/js-api-examples/memory.html)）使用 {{jsxref("WebAssembly.instantiateStreaming()")}} 方法实例化已加载的 memory.wasm 字节代码，同时导入上面一行中创建的内存。用它来存储一些值，然后导出一个函数并用它来对一些值进行求和操作。
 
 ```js
-WebAssembly.instantiateStreaming(fetch('memory.wasm'), { js: { mem: memory } })
-.then(obj => {
+WebAssembly.instantiateStreaming(fetch("memory.wasm"), {
+  js: { mem: memory },
+}).then((obj) => {
   var i32 = new Uint32Array(memory.buffer);
   for (var i = 0; i < 10; i++) {
     i32[i] = i;

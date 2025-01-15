@@ -1,16 +1,12 @@
 ---
 title: Cookbook template
 slug: Web/CSS/Layout_cookbook/Contribute_a_recipe/Cookbook_template
-tags:
-  - CSS
-  - Meta
-translation_of: Web/CSS/Layout_cookbook/Contribute_a_recipe/Cookbook_template
-original_slug: Web/CSS/Layout_cookbook/Contribuer_à_une_recette/Cookbook_template
 ---
 
 {{CSSRef}}
 
-> **Note :** Voici un modèle de contenu pour les pages de « recette » CSS. Vous êtes invité⋅e à utiliser cette page comme modèle lorsque vous créez une nouvelle recette.
+> [!NOTE]
+> Voici un modèle de contenu pour les pages de « recette » CSS. Vous êtes invité⋅e à utiliser cette page comme modèle lorsque vous créez une nouvelle recette.
 >
 > _Les commentaires en italiques sont des informations sur l'utilisation de telle ou telle partie du modèle._
 

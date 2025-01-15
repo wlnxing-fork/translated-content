@@ -1,13 +1,9 @@
 ---
 title: Le fonctionnement de l'Internet
 slug: Learn/Common_questions/Web_mechanics/How_does_the_Internet_work
-tags:
-  - Beginner
-  - Internet
-  - WebMechanics
-translation_of: Learn/Common_questions/How_does_the_Internet_work
-original_slug: Learn/Common_questions/How_does_the_Internet_work
 ---
+
+{{QuicklinksWithSubPages("Learn/Common_questions")}}
 
 Dans cet article, nous expliquons ce qu'est l'Internet et comment il fonctionne.
 
@@ -49,7 +45,8 @@ L'**Internet** est l'épine dorsale du Web&nbsp;: il s'agit de l'infrastructure 
 
 Pour que deux ordinateurs puissent communiquer entre eux, ils doivent être liés soit par un lien physique (généralement par un [câble Ethernet](https://fr.wikipedia.org/wiki/Ethernet)), soit sans fil (par exemple, via [WiFi](http://fr.wikipedia.org/wiki/WiFi) ou [Bluetooth](http://fr.wikipedia.org/wiki/Bluetooth)). Tous ces types de connexions sont possibles sur les ordinateurs modernes.
 
-> **Note :** À partir de maintenant, nous ne parlerons que de connexions physiques, mais sachez que les explications ci-dessous sont tout aussi valides pour les réseaux sans fil.
+> [!NOTE]
+> À partir de maintenant, nous ne parlerons que de connexions physiques, mais sachez que les explications ci-dessous sont tout aussi valides pour les réseaux sans fil.
 
 ![Two computers linked together](internet-schema-1.png)
 
@@ -83,7 +80,7 @@ Notre réseau est donc lié à l'infrastructure téléphonique. La prochaine ét
 
 ### Localiser un ordinateur
 
-Lorsque nous souhaitons transmettre un message à un ordinateur, nous devons préciser de quel ordinateur il s'agit. Par conséquent, chaque ordinateur lié à un réseau possède une adresse unique appelée «&nbsp;adresse IP&nbsp;» (où «&nbsp;IP&nbsp;» signifie _Internet Protocol_) qui sert à localiser l'ordinateur. Cette adresse est composée d'une série de nombres séparés par des points, par exemple&nbsp;: `192.168.2.10`  ou de lettres et de chiffres séparés par deux points. `2001:0db8:85a3:0000:0000:8a2e:0370:7334`.
+Lorsque nous souhaitons transmettre un message à un ordinateur, nous devons préciser de quel ordinateur il s'agit. Par conséquent, chaque ordinateur lié à un réseau possède une adresse unique appelée «&nbsp;adresse IP&nbsp;» (où «&nbsp;IP&nbsp;» signifie _Internet Protocol_) qui sert à localiser l'ordinateur. Cette adresse est composée d'une série de nombres séparés par des points, par exemple&nbsp;: `192.168.2.10` ou de lettres et de chiffres séparés par deux points. `2001:0db8:85a3:0000:0000:8a2e:0370:7334`.
 
 C'est une méthode très efficace pour les ordinateurs, mais les humains ont un peu plus de difficulté à retenir de telles adresses numériques. Afin de se faciliter la tâche, un libellé alphabétique, appelé _nom de domaine,_ est souvent associé aux adresses IP. Par example, `google.com` est le nom de domaine associé à l'adresse IP `173.194.121.32`. L'utilisation d'un nom de domaine est ainsi le moyen le plus facile d'atteindre un ordinateur via l'Internet.
 
@@ -95,6 +92,6 @@ Vous aurez peut-être constaté que lorsque nous naviguons sur le Web avec un na
 
 ## Étapes suivantes
 
-- [Le fonctionnement du Web](/fr/Apprendre/Commencer_avec_le_web/Le_fonctionnement_du_Web)
-- [Comprendre la différence entre une page web, un site web, un serveur web et un moteur de recherche](/fr/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
-- [Comprendre les noms de domaine](/fr/Apprendre/Comprendre_noms_de_domaine)
+- [Le fonctionnement du Web](/fr/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
+- [Comprendre la différence entre une page web, un site web, un serveur web et un moteur de recherche](/fr/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines)
+- [Comprendre les noms de domaine](/fr/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name)

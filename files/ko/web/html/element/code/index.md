@@ -1,5 +1,5 @@
 ---
-title: '<code>: 인라인 코드 요소'
+title: "<code>: 인라인 코드 요소"
 slug: Web/HTML/Element/code
 ---
 
@@ -34,7 +34,7 @@ slug: Web/HTML/Element/code
     </tr>
     <tr>
       <th scope="row">태그 생략</th>
-      <td>{{no_tag_omission}}</td>
+      <td>불가능, 시작과 끝에 태그를 추가하는 것은 필수입니다.</td>
     </tr>
     <tr>
       <th scope="row">가능한 부모 요소</th>
@@ -62,8 +62,10 @@ slug: Web/HTML/Element/code
 ## 예제
 
 ```html
-<p>함수 <code>selectAll()</code>는 입력 필드의 모든 텍스트를 선택하므로,
-사용자가 복사 혹은 삭제를 손쉽게 할 수 있습니다.</p>
+<p>
+  함수 <code>selectAll()</code>는 입력 필드의 모든 텍스트를 선택하므로, 사용자가
+  복사 혹은 삭제를 손쉽게 할 수 있습니다.
+</p>
 ```
 
 {{EmbedLiveSample("예제", 640, 70)}}

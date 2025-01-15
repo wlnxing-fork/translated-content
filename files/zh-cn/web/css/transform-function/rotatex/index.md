@@ -1,7 +1,6 @@
 ---
 title: rotateX()
 slug: Web/CSS/transform-function/rotateX
-original_slug: Web/CSS/transform-function/rotateX()
 ---
 
 {{CSSRef}}
@@ -14,13 +13,14 @@ original_slug: Web/CSS/transform-function/rotateX()
 
 > **备注：** `rotateX(a)` 相当于 `rotate3d(1, 0, 0, a)`.
 
-> **备注：** 与二维平面上的旋转不同，三维旋转的组合通常是不可交换的。换句话说，三维旋转的应用顺序，将会影响最终结果。
+> [!NOTE]
+> 与二维平面上的旋转不同，三维旋转的组合通常是不可交换的。换句话说，三维旋转的应用顺序，将会影响最终结果。
 
 ## 语法
 
 **`rotateX()`** 引起的旋转量由{{cssxref("&lt;angle&gt;")}}指定。如果为正，则顺时针方向移动；如果为负，则逆时针方向移动。
 
-```
+```css
 rotateX(a)
 ```
 
@@ -112,7 +112,7 @@ div {
 
 {{Compat}}
 
-## 另请参阅
+## 参见
 
 - {{cssxref("transform")}}
 - {{cssxref("&lt;transform-function&gt;")}}

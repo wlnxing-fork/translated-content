@@ -7,7 +7,8 @@ slug: Web/CSS/white-space
 
 此 CSS **`white-space`** 屬性決定如何處理元素內的空白字元。
 
-> **備註：** 如果要讓文字本身斷行，請改用 {{cssxref("overflow-wrap")}}、{{cssxref("word-break")}} 或 {{cssxref("hyphens")}}。
+> [!NOTE]
+> 如果要讓文字本身斷行，請改用 {{cssxref("overflow-wrap")}}、{{cssxref("word-break")}} 或 {{cssxref("hyphens")}}。
 
 ```css
 /* Keyword values */
@@ -70,33 +71,36 @@ code {
 
 ```css
 pre {
-  word-wrap: break-word;      /* IE 5.5-7 */
+  word-wrap: break-word; /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-  white-space: pre-wrap;      /* Modern browsers */
+  white-space: pre-wrap; /* Modern browsers */
 }
 ```
 
 ## See it in action
 
 ```html hidden
-    <div id="css-code" class="box">
-     p { white-space: <select>
-       <option>normal</option>
-       <option>nowrap</option>
-       <option>pre</option>
-       <option>pre-wrap</option>
-       <option>pre-line</option>
-     </select> }
-    </div>
-    <div id="results" class="box">
-    <p>    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+<div id="css-code" class="box">
+  p { white-space:
+  <select>
+    <option>normal</option>
+    <option>nowrap</option>
+    <option>pre</option>
+    <option>pre-wrap</option>
+    <option>pre-line</option>
+  </select>
+  }
+</div>
+<div id="results" class="box">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>
 ```
 
 ```css hidden
@@ -107,12 +111,12 @@ pre {
 }
 
 #css-code {
-  background-color: rgb(220,220,220);
+  background-color: rgb(220, 220, 220);
   font-size: 16px;
 }
 
 #results {
-  background-color: rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
   overflow-x: scroll;
   height: 400px;
   white-space: normal;
@@ -121,11 +125,11 @@ pre {
 ```
 
 ```js hidden
-var select  = document.querySelector("#css-code select");
+var select = document.querySelector("#css-code select");
 var results = document.querySelector("#results p");
-select.addEventListener("change", function(e) {
-  results.setAttribute("style", "white-space: "+e.target.value);
-})
+select.addEventListener("change", function (e) {
+  results.setAttribute("style", "white-space: " + e.target.value);
+});
 ```
 
 ### Source

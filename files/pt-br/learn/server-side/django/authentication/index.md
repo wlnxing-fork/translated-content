@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial Django Parte 8: Autenticação de usuário e permissões'
+title: "Tutorial Django Parte 8: Autenticação de usuário e permissões"
 slug: Learn/Server-side/Django/Authentication
 ---
 
@@ -13,7 +13,7 @@ Neste tutorial, mostraremos como permitir que os usuários efetuem login no seu 
       <th scope="row">Pré-requisitos:</th>
       <td>
         Conclua todos os tópicos do tutorial anterior, incluindo
-        <a href="/en-US/docs/Learn/Server-side/Django/Sessions"
+        <a href="/pt-BR/docs/Learn/Server-side/Django/Sessions"
           >Django Tutorial Part 7: Sessions framework</a
         >.
       </td>
@@ -32,7 +32,8 @@ Neste tutorial, mostraremos como permitir que os usuários efetuem login no seu 
 
 O Django fornece um sistema de autenticação e autorização ("permissão"), construído sobre a estrutura da sessão discutida no [tutorial anterior](/pt-BR/docs/Learn/Server-side/Django/Sessions), que permite verificar as credenciais do usuário e definir quais ações cada usuário tem permissão para executar. A estrutura inclui modelos internos para `Users` e `Groups` (uma maneira genérica de aplicar permissões a mais de um usuário por vez), permissões/sinalizadores que designam se um usuário pode executar uma tarefa, formulários e exibições para efetuar logon em usuários e exibir ferramentas para restringir o conteúdo.
 
-> **Nota:** De acordo com o Django, o sistema de autenticação pretende ser muito genérico e, portanto, não fornece alguns recursos fornecidos em outros sistemas de autenticação na web. Soluções para alguns problemas comuns estão disponíveis como pacotes de terceiros. Por exemplo, limitação de tentativas de login e autenticação contra terceiros (por exemplo, OAuth).
+> [!NOTE]
+> De acordo com o Django, o sistema de autenticação pretende ser muito genérico e, portanto, não fornece alguns recursos fornecidos em outros sistemas de autenticação na web. Soluções para alguns problemas comuns estão disponíveis como pacotes de terceiros. Por exemplo, limitação de tentativas de login e autenticação contra terceiros (por exemplo, OAuth).
 
 Neste tutorial, mostraremos como habilitar a autenticação do usuário no diretório [LocalLibrary](/pt-BR/docs/Learn/Server-side/Django/Tutorial_local_library_website) website, crie suas próprias páginas de logon e logout, adicione permissões aos seus modelos e controle o acesso às páginas. Usaremos a autenticação/permissões para exibir listas de livros que foram emprestados para usuários e bibliotecários.
 
@@ -44,7 +45,8 @@ Também mostraremos como criar permissões e verificar o status e as permissões
 
 A autenticação foi ativada automaticamente quando [criamos o esqueleto do site](/pt-BR/docs/Learn/Server-side/Django/skeleton_website) (no tutorial 2), para que você não precise fazer mais nada neste momento.
 
-> **Nota:** A configuração necessária foi feita para nós quando criamos o aplicativo usando o comando `django-admin startproject`. As tabelas de banco de dados para usuários e permissões de modelo foram criadas quando chamamos pela primeira vez `python manage.py migrate`.
+> [!NOTE]
+> A configuração necessária foi feita para nós quando criamos o aplicativo usando o comando `django-admin startproject`. As tabelas de banco de dados para usuários e permissões de modelo foram criadas quando chamamos pela primeira vez `python manage.py migrate`.
 
 A configuração está definida nas seções `INSTALLED_APPS` e `MIDDLEWARE` no settings.py (**locallibrary/locallibrary/settings.py**), como mostrado abaixo:
 
@@ -67,7 +69,8 @@ MIDDLEWARE = [
 
 Você já criou seu primeiro usuário quando olhamos para o [site Django admin](/pt-BR/docs/Learn/Server-side/Django/Admin_site) no tutorial 4 (este era um superusuário, criado com o comando `python manage.py createsuperuser)`. Nosso superusuário já está autenticado e tem todas as permissões, portanto, precisamos criar um usuário de teste para representar um usuário normal do site. Usaremos o site de administração para criar nossos grupos de bibliotecas de locais e logins de sites, pois é uma das maneiras mais rápidas de fazer isso.
 
-> **Nota:** Você também pode criar usuários programaticamente, conforme mostrado abaixo. Você precisaria fazer isso, por exemplo, se desenvolvesse uma interface para permitir que os usuários criassem seus próprios logins (você não deve conceder aos usuários acesso ao site de administração).
+> [!NOTE]
+> Você também pode criar usuários programaticamente, conforme mostrado abaixo. Você precisaria fazer isso, por exemplo, se desenvolvesse uma interface para permitir que os usuários criassem seus próprios logins (você não deve conceder aos usuários acesso ao site de administração).
 >
 > ```python
 > from django.contrib.auth.models import User
@@ -99,14 +102,15 @@ Agora vamos criar um usuário:
 3. Digite um nome de **usuário** e uma **senha/confirmação de senha** adequados para o usuário de teste
 4. Pressione **SALVAR** para criar o usuário.
 
-    O site de administração criará o novo usuário e levará você imediatamente para uma tela Alterar usuário, na qual é possível alterar seu **nome de usuário** e adicionar informações aos campos opcionais do modelo de usuário. Esses campos incluem o nome, o sobrenome, o endereço de email e o status e as permissões do usuário (somente o sinalizador **Ativo** deve ser definido). Mais abaixo, você pode especificar os grupos e permissões do usuário e ver datas importantes relacionadas ao usuário (por exemplo, a data de ingresso e a última data de login).![Admin site - add user pt2](admin_authentication_add_user_prt2.png)
+   O site de administração criará o novo usuário e levará você imediatamente para uma tela Alterar usuário, na qual é possível alterar seu **nome de usuário** e adicionar informações aos campos opcionais do modelo de usuário. Esses campos incluem o nome, o sobrenome, o endereço de email e o status e as permissões do usuário (somente o sinalizador **Ativo** deve ser definido). Mais abaixo, você pode especificar os grupos e permissões do usuário e ver datas importantes relacionadas ao usuário (por exemplo, a data de ingresso e a última data de login).![Admin site - add user pt2](admin_authentication_add_user_prt2.png)
 
 5. Na seção _Grupos_, selecione grupo de **Library Members** na lista de _Grupos disponíveis_ e pressione a **seta para a direita** entre as caixas para movê-lo para a caixa _Grupos escolhidos_.![Admin site - add user to group](admin_authentication_user_add_group.png)
 6. Não precisamos fazer mais nada aqui; basta selecionar **SALVAR** novamente, para ir para a lista de usuários.
 
 É isso aí! Agora você tem uma conta de "membro normal da biblioteca" que poderá usar nos testes (depois de implementarmos as páginas para permitir o login).
 
-> **Nota:** Você deve tentar criar outro usuário membro da biblioteca. Além disso, crie um grupo para bibliotecários e adicione um usuário a ele também!
+> [!NOTE]
+> Você deve tentar criar outro usuário membro da biblioteca. Além disso, crie um grupo para bibliotecários e adicione um usuário a ele também!
 
 ## Configurando suas views de autenticação
 
@@ -114,7 +118,8 @@ O Django fornece quase tudo que você precisa para criar páginas de autenticaç
 
 Nesta seção, mostramos como integrar o sistema padrão no site _LocalLibrary_ e criar os modelos. Vamos colocá-los nos principais URLs do projeto.
 
-> **Nota:** Você não precisa usar nenhum desses códigos, mas é provável que queira, porque isso facilita muito as coisas. Você quase certamente precisará alterar o código de manipulação de formulários se alterar seu modelo de usuário (um tópico avançado!), Mas, mesmo assim, ainda poderá usar as funções padrão das views.
+> [!NOTE]
+> Você não precisa usar nenhum desses códigos, mas é provável que queira, porque isso facilita muito as coisas. Você quase certamente precisará alterar o código de manipulação de formulários se alterar seu modelo de usuário (um tópico avançado!), Mas, mesmo assim, ainda poderá usar as funções padrão das views.
 
 > **Nota:**Nesse caso, poderíamos colocar razoavelmente as páginas de autenticação, incluindo os URLs e modelos, dentro do nosso aplicativo de catálogo. No entanto, se tivéssemos vários aplicativos, seria melhor separar esse comportamento de login compartilhado e disponibilizá-lo em todo o site, e é isso que mostramos aqui!
 
@@ -159,7 +164,8 @@ Os URLs (e implicitamente, visualizações) que acabamos de adicionar esperam en
 
 Neste site, colocaremos nossas páginas HTML no diretório **templates/registration/**. Esse diretório deve estar no diretório raiz do projeto, ou seja, o mesmo diretório que a pasta **catalog** e **locallibrary**. Por favor, crie essas pastas agora.
 
-> **Nota:** Sua estrutura de pastas agora deve se parecer como abaixo:
+> [!NOTE]
+> Sua estrutura de pastas agora deve se parecer como abaixo:
 > locallibrary (Django project folder)
 > |\_catalog
 > |\_locallibrary
@@ -183,7 +189,7 @@ TEMPLATES = [
 
 Crie um novo arquivo HTML chamado **/locallibrary/templates/registration/login.html** e forneça o seguinte conteúdo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -244,7 +250,7 @@ Se você navegar para o URL de logout (`http://127.0.0.1:8000/accounts/logout/`)
 
 Crie e abra /**locallibrary/templates/registration/logged_out.html**. Copie o texto abaixo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -267,7 +273,7 @@ Os seguintes modelos podem ser usados como ponto de partida.
 
 Este é o formulário usado para obter o endereço de email do usuário (para enviar o email de redefinição de senha). Crie **/locallibrary/templates/registration/password_reset_form.html** e forneça o seguinte conteúdo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -286,7 +292,7 @@ Este é o formulário usado para obter o endereço de email do usuário (para en
 
 Este formulário é exibido após a coleta do seu endereço de email. Crie **/locallibrary/templates/registration/password_reset_done.html**, e forneça o seguinte conteúdo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -298,7 +304,7 @@ Este formulário é exibido após a coleta do seu endereço de email. Crie **/lo
 
 Este modelo fornece o texto do email em HTML que contém o link de redefinição que enviaremos aos usuários. Crie **/locallibrary/templates/registration/password_reset_email.html** e forneça o seguinte conteúdo:
 
-```html
+```django
 Someone asked for password reset for email \{{ email }}. Follow the link below:
 \{{ protocol}}://\{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
 ```
@@ -307,35 +313,42 @@ Someone asked for password reset for email \{{ email }}. Follow the link below:
 
 É nesta página que você digita sua nova senha depois de clicar no link no e-mail de redefinição de senha. Crie **/locallibrary/templates/registration/password_reset_confirm.html** e forneça o seguinte conteúdo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
-    {% if validlink %}
-        <p>Please enter (and confirm) your new password.</p>
-        <form action="" method="post">
-        {% csrf_token %}
-            <table>
-                <tr>
-                    <td>\{{ form.new_password1.errors }}
-                        <label for="id_new_password1">New password:</label></td>
-                    <td>\{{ form.new_password1 }}</td>
-                </tr>
-                <tr>
-                    <td>\{{ form.new_password2.errors }}
-                        <label for="id_new_password2">Confirm password:</label></td>
-                    <td>\{{ form.new_password2 }}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="Change my password" /></td>
-                </tr>
-            </table>
-        </form>
-    {% else %}
-        <h1>Password reset failed</h1>
-        <p>The password reset link was invalid, possibly because it has already been used. Please request a new password reset.</p>
-    {% endif %}
+  {% if validlink %}
+    <p>Please enter (and confirm) your new password.</p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>
+            \{{ form.new_password1.errors }}
+            <label for="id_new_password1">New password:</label>
+          </td>
+          <td>\{{ form.new_password1 }}</td>
+        </tr>
+        <tr>
+          <td>
+            \{{ form.new_password2.errors }}
+            <label for="id_new_password2">Confirm password:</label>
+          </td>
+          <td>\{{ form.new_password2 }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Change my password" /></td>
+        </tr>
+      </table>
+    </form>
+  {% else %}
+    <h1>Password reset failed</h1>
+    <p>
+      The password reset link was invalid, possibly because it has already been
+      used. Please request a new password reset.
+    </p>
+  {% endif %}
 {% endblock %}
 ```
 
@@ -343,7 +356,7 @@ Someone asked for password reset for email \{{ email }}. Follow the link below:
 
 Este é o último modelo de redefinição de senha, exibido para notificá-lo quando a redefinição de senha for bem-sucedida. Crie **/locallibrary/templates/registration/password_reset_complete.html** e forneça o seguinte conteúdo:
 
-```html
+```django
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -363,7 +376,8 @@ Você pode testar as novas páginas de autenticação tentando fazer login e sai
 
 Você poderá testar a funcionalidade de redefinição de senha no link na página de login. **Esteja ciente de que o Django enviará apenas emails de redefinição para endereços (usuários) que já estão armazenados em seu banco de dados!**
 
-> **Nota:** O sistema de redefinição de senha exige que seu site suporte e-mail, que está além do escopo deste artigo, portanto esta parte ainda não funcionará. Para permitir o teste, coloque a seguinte linha no final do seu arquivo settings.py. Isso registra todos os emails enviados ao console (para que você possa copiar o link de redefinição de senha do console).
+> [!NOTE]
+> O sistema de redefinição de senha exige que seu site suporte e-mail, que está além do escopo deste artigo, portanto esta parte ainda não funcionará. Para permitir o teste, coloque a seguinte linha no final do seu arquivo settings.py. Isso registra todos os emails enviados ao console (para que você possa copiar o link de redefinição de senha do console).
 >
 > ```python
 > EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -383,17 +397,16 @@ Normalmente você primeiro testará contra a variável de template `\{{ user.is_
 
 Abra o template base (**/locallibrary/catalog/templates/base_generic.html**) e copie o texto a seguir no bloco `sidebar`, imediatamente antes da template tag `endblock`.
 
-```html
+```django
   <ul class="sidebar-nav">
-
     ...
 
-   {% if user.is_authenticated %}
-     <li>User: \{{ user.get_username }}</li>
-     <li><a href="{% url 'logout'%}?next=\{{request.path}}">Logout</a></li>
-   {% else %}
-     <li><a href="{% url 'login'%}?next=\{{request.path}}">Login</a></li>
-   {% endif %}
+    {% if user.is_authenticated %}
+      <li>User: \{{ user.get_username }}</li>
+      <li><a href="{% url 'logout'%}?next=\{{request.path}}">Logout</a></li>
+    {% else %}
+      <li><a href="{% url 'login'%}?next=\{{request.path}}">Login</a></li>
+    {% endif %}
   </ul>
 ```
 
@@ -401,7 +414,8 @@ Como você pode ver, usamos template tags `if`-`else`-`endif` para exibir condic
 
 Criamos os URLs dos links de logon e logout usando a template tag `url` e os nomes das respectivas configurações de URL. Observe também como anexamos `?next=\{{request.path}}` no final dos URLs. O que isso faz é adicionar um parâmetro de URL a seguir, contendo o endereço (URL) da página atual, ao final do URL vinculado. Após o usuário ter efetuado login/logout com sucesso, as visualizações usarão este valor "`next`" para redirecionar o usuário de volta à página em que ele clicou pela primeira vez no link de logon/logout.
 
-> **Nota:** Experimente! Se você estiver na página inicial e clicar em Login/Logout na barra lateral, depois que a operação for concluída, você deverá voltar à mesma página.
+> [!NOTE]
+> Experimente! Se você estiver na página inicial e clicar em Login/Logout na barra lateral, depois que a operação for concluída, você deverá voltar à mesma página.
 
 ### Testando nas views
 
@@ -415,7 +429,8 @@ def my_view(request):
     ...
 ```
 
-> **Nota:** Você pode fazer o mesmo tipo de coisa manualmente testando em`request.user.is_authenticated`, mas o decorator é muito mais conveniente!
+> [!NOTE]
+> Você pode fazer o mesmo tipo de coisa manualmente testando em`request.user.is_authenticated`, mas o decorator é muito mais conveniente!
 
 Da mesma forma, a maneira mais fácil de restringir o acesso a usuários logados em suas visualizações baseadas em classe é derivar de `LoginRequiredMixin`. Você precisa declarar esse mixin primeiro na lista de superclasses, antes da classe de visualização principal.
 
@@ -476,7 +491,8 @@ def is_overdue(self):
     return False
 ```
 
-> **Nota:** Primeiro, verificamos se `due_back` está vazio antes de fazer uma comparação. Um campo `due_back` vazio faria com que o Django gerasse um erro em vez de mostrar a página: valores vazios não são comparáveis. Isso não é algo que gostaríamos que nossos usuários experimentassem!
+> [!NOTE]
+> Primeiro, verificamos se `due_back` está vazio antes de fazer uma comparação. Um campo `due_back` vazio faria com que o Django gerasse um erro em vez de mostrar a página: valores vazios não são comparáveis. Isso não é algo que gostaríamos que nossos usuários experimentassem!
 
 Agora que atualizamos nossos modelos, precisaremos fazer novas migrações no projeto e aplicá-las:
 
@@ -509,7 +525,8 @@ class BookInstanceAdmin(admin.ModelAdmin):
 
 Agora que é possível emprestar livros para um usuário específico, vá e empreste vários `BookInstance`. Defina o campo `borrowed` para o usuário de teste, faça o `status` "On loan", e defina datas de vencimento no futuro e no passado.
 
-> **Nota:** Não detalharemos o processo, pois você já sabe como usar o site Admin!
+> [!NOTE]
+> Não detalharemos o processo, pois você já sabe como usar o site Admin!
 
 ### Na view loan
 

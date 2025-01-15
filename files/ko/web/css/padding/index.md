@@ -5,7 +5,7 @@ slug: Web/CSS/padding
 
 {{CSSRef}}
 
-**`padding`** [CSS](/ko/CSS) 속성은 요소의 네 방향 [안쪽 여백 영역](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#padding-area)을 설정합니다. {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}}, {{cssxref("padding-left")}}의 단축 속성입니다.
+**`padding`** [CSS](/ko/docs/Web/CSS) 속성은 요소의 네 방향 [안쪽 여백 영역](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#padding-area)을 설정합니다. {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}}, {{cssxref("padding-left")}}의 단축 속성입니다.
 
 {{EmbedInteractiveExample("pages/css/padding.html")}}
 
@@ -46,7 +46,7 @@ padding 속성은 한 개, 두 개, 세 개, 혹은 네 개의 값으로 지정�
 - **{{cssxref("length")}}**
   - : 여백의 크기로 고정값 사용.
 - {{cssxref("percentage")}}
-  - : 여백의 크기로 [컨테이닝 블록](/ko/docs/Web/CSS/All_About_The_Containing_Block) 너비의 백분율 사용.
+  - : 여백의 크기로 [컨테이닝 블록](/ko/docs/Web/CSS/Containing_block) 너비의 백분율 사용.
 
 ### 형식 구문
 
@@ -82,21 +82,24 @@ h3 {
 ### 더 많은 예제
 
 ```css
-padding: 5%;                /* 모두 5% */
+padding: 5%; /* 모두 5% */
 
-padding: 10px;              /* 모두 10px */
+padding: 10px; /* 모두 10px */
 
-padding: 10px 20px;         /* 상하: 10px */
-                            /* 좌우: 20px */
+padding: 10px 20px;
+/* 상하: 10px */
+/* 좌우: 20px */
 
-padding: 10px 3% 20px;      /* 상: 10px */
-                            /* 좌우: 3% */
-                            /* 하: 20px */
+padding: 10px 3% 20px;
+/* 상: 10px */
+/* 좌우: 3% */
+/* 하: 20px */
 
-padding: 1em 3px 30px 5px;  /* 상:  1em */
-                            /* 우:  3px */
-                            /* 하: 30px */
-                            /* 좌:  5px */
+padding: 1em 3px 30px 5px;
+/* 상:  1em */
+/* 우:  3px */
+/* 하: 30px */
+/* 좌:  5px */
 ```
 
 ## 명세
@@ -111,5 +114,5 @@ padding: 1em 3px 30px 5px;  /* 상:  1em */
 
 ## 같이 보기
 
-- [CSS 기본 박스 모델 입문](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [CSS 기본 박스 모델 입문](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}}, {{cssxref("padding-left")}}.

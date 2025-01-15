@@ -1,7 +1,6 @@
 ---
-title: '502'
+title: "502"
 slug: conflicting/Web/HTTP/Status/502
-original_slug: Glossary/502
 ---
 
 Um erro {{Glossary("HTTP")}} que significa "Bad Gateway".
@@ -12,4 +11,4 @@ Normalmente o servidor de upstream não esta fora (ou seja, não fornece respost
 
 ## Aprenda mais
 
-- [list of HTTP response codes](/pt-BR/docs/Web/HTTP/Response_codes)
+- [list of HTTP response codes](/pt-BR/docs/Web/HTTP/Status)

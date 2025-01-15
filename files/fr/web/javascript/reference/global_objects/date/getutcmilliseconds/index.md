@@ -1,14 +1,6 @@
 ---
 title: Date.prototype.getUTCMilliseconds()
 slug: Web/JavaScript/Reference/Global_Objects/Date/getUTCMilliseconds
-tags:
-  - Date
-  - JavaScript
-  - Méthode
-  - Prototype
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Date/getUTCMilliseconds
-original_slug: Web/JavaScript/Reference/Objets_globaux/Date/getUTCMilliseconds
 ---
 
 {{JSRef}}
@@ -20,14 +12,15 @@ La méthode **`getUTCMilliseconds()`** renvoie les millièmes de secondes pour l
 ## Syntaxe
 
 ```js
-dateObj.getUTCMilliseconds()
+dateObj.getUTCMilliseconds();
 ```
 
 ### Valeur de retour
 
 Un entier entre 0 et 999 correspondant au nombre de millisecondes pour la date indiquée, selon le temps universel.
 
-> **Note :** Le résultat de cette méthode n'est pas le temps "Epoch". Si on veut obtenir le nombre de millisecondes depuis le premier janvier 1970, on utilisera la méthode {{jsxref("Date.prototype.getTime()")}}.
+> [!NOTE]
+> Le résultat de cette méthode n'est pas le temps "Epoch". Si on veut obtenir le nombre de millisecondes depuis le premier janvier 1970, on utilisera la méthode {{jsxref("Date.prototype.getTime()")}}.
 
 ## Exemples
 

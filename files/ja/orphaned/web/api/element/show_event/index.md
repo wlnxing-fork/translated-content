@@ -1,14 +1,13 @@
 ---
-title: 'Element: show イベント'
+title: "Element: show イベント"
 slug: orphaned/Web/API/Element/show_event
-original_slug: Web/API/Element/show_event
 l10n:
   sourceCommit: a122e87245c624ba56197641b4d7b21b643a6021
 ---
 
 {{APIRef}}{{deprecated_header}}{{Non-standard_header}}
 
-**`show`** イベントは、 {{domxref("Element/contextmenu_event", "contextmenu")}} イベントが [`contextmenu` 属性](/ja/docs/Web/HTML/Global_attributes/contextmenu)を持つ要素に発生またはバブリングしたときに発生します。
+**`show`** イベントは、 {{domxref("Element/contextmenu_event", "contextmenu")}} イベントが [`contextmenu` 属性](/ja/docs/Web/HTML/Element/menu)を持つ要素に発生またはバブリングしたときに発生します。
 
 このイベントはキャンセル不可で、バブリングしません。
 

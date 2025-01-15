@@ -1,15 +1,9 @@
 ---
 title: UX
 slug: Glossary/UX
-tags:
-  - Доступность
-  - Composing
-  - Дизайн
-  - Глоссарий
-  - Навигация
-translation_of: Glossary/UX
-original_slug: Глоссарий/UX
 ---
+
+{{GlossarySidebar}}
 
 **UX** — это аббревиатура от User eXperience. Это исследование взаимодействия между пользователями и системой. Его цель — упростить взаимодействие с системой с точки зрения пользователя.
 
@@ -17,4 +11,4 @@ original_slug: Глоссарий/UX
 
 ## Узнайте больше
 
-- [Опыт взаимодействия](https://ru.wikipedia.org/wiki/%D0%9E%D0%BF%D1%8B%D1%82_%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F) на Википедии.
+- [Опыт взаимодействия](https://ru.wikipedia.org/wiki/Опыт_взаимодействия) в Википедии

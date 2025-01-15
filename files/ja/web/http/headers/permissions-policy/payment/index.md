@@ -1,7 +1,6 @@
 ---
-title: 'Feature-Policy: payment'
+title: "Feature-Policy: payment"
 slug: Web/HTTP/Headers/Permissions-Policy/payment
-original_slug: Web/HTTP/Headers/Feature-Policy/payment
 ---
 
 {{HTTPSidebar}} {{SeeCompatTable}}
@@ -32,5 +31,5 @@ Feature-Policy: payment <allowlist>;
 ## 関連情報
 
 - {{HTTPHeader("Feature-Policy")}} ヘッダーフィールド
-- [機能ポリシー](/ja/docs/Web/HTTP/Feature_Policy)
+- [機能ポリシー](/ja/docs/Web/HTTP/Permissions_Policy)
 - [機能ポリシーの使用](/ja/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy)

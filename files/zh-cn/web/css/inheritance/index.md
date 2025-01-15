@@ -1,20 +1,22 @@
 ---
 title: 继承
-slug: Web/CSS/inheritance
+slug: Web/CSS/Inheritance
 ---
 
-{{cssref}}
+{{CSSRef}}
 
-在 css 中，每个[CSS 属性定义](/zh-CN/docs/CSS/CSS_Reference)的概述都指出了这个属性是默认继承的 ("Inherited: Yes") 还是默认不继承的 ("Inherited: no")。这决定了当你没有为元素的属性指定值时该如何计算值。
+在 css 中，每个[CSS 属性定义](/zh-CN/docs/Web/CSS/Reference)的概述都指出了这个属性是默认继承的 ("Inherited: Yes") 还是默认不继承的 ("Inherited: no")。这决定了当你没有为元素的属性指定值时该如何计算值。
 
 ## 继承属性
 
-当元素的一个**继承属性**（inherited property）没有指定值时，则取父元素的同属性的[计算值 computed value](/zh-CN/docs/CSS/computed_value)。只有文档根元素取该属性的概述中给定的[初始值](/zh-CN/docs/CSS/initial_value)（[initial value](/zh-CN/docs/CSS/initial_value)）（这里的意思应该是在该属性本身的定义中的默认值）。
+当元素的一个**继承属性**（inherited property）没有指定值时，则取父元素的同属性的[计算值 computed value](/zh-CN/docs/Web/CSS/computed_value)。只有文档根元素取该属性的概述中给定的[初始值](/zh-CN/docs/Web/CSS/initial_value)（[initial value](/zh-CN/docs/Web/CSS/initial_value)）（这里的意思应该是在该属性本身的定义中的默认值）。
 
 继承属性的一个典型例子就是 {{ Cssxref("color") }} 属性。给出以下样式规则：
 
 ```css
-p { color: green; }
+p {
+  color: green;
+}
 ```
 
 若将其应用在下面这段 HTML 代码上…
@@ -27,18 +29,20 @@ p { color: green; }
 
 ## 非继承属性
 
-当元素的一个**非继承属性**(在 Mozilla code 里有时称之为**reset property** ) 没有指定值时，则取属性的[初始值 initial value](/zh-CN/docs/CSS/initial_value)（该值在该属性的概述里被指定）。
+当元素的一个**非继承属性**(在 Mozilla code 里有时称之为**reset property** ) 没有指定值时，则取属性的[初始值 initial value](/zh-CN/docs/Web/CSS/initial_value)（该值在该属性的概述里被指定）。
 
 非继承属性的一个典型例子就是 {{ Cssxref("border") }} 属性。给出以下样式规则：
 
 ```css
- p { border: medium solid; }
+p {
+  border: medium solid;
+}
 ```
 
 若将其应用在下面这段 HTML 代码上…
 
 ```html
-  <p>This paragraph has <em>emphasized text</em> in it.</p>
+<p>This paragraph has <em>emphasized text</em> in it.</p>
 ```
 
 …文本 "emphasized text" 就没有边框，因为 {{ Cssxref("border-style") }} 属性的初始值为`none`。
@@ -63,7 +67,7 @@ font {
 
 - 控制继承：{{ cssxref("inherit") }}, {{cssxref("initial")}}, {{cssxref("unset")}}, and {{cssxref("revert")}}
 - [CSS 层叠](/zh-CN/docs/Web/CSS/Cascade)
-- [层叠和继承](/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)
+- [层叠和继承](/zh-CN/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts)
 - CSS 重要概念：
 
   - [CSS 语法](/zh-CN/docs/Web/CSS/Syntax)
@@ -71,10 +75,10 @@ font {
   - [注释](/zh-CN/docs/Web/CSS/Comments)
   - [优先级](/zh-CN/docs/Web/CSS/Specificity)
   - [继承](/zh-CN/docs/Web/CSS/inheritance)
-  - [盒模型](/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [盒模型](/zh-CN/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [布局模式](/zh-CN/docs/Web/CSS/Layout_mode)
   - [视觉格式化模型](/zh-CN/docs/Web/CSS/Visual_formatting_model)
-  - [外边距合并](/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [外边距合并](/zh-CN/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - 值
 
     - [初始值](/zh-CN/docs/Web/CSS/initial_value)

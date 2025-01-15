@@ -71,13 +71,15 @@ _Herda propriedades de seus pais, {{domxref("EventTarget")}}_.\[1]
 
   - : Retorna um {{domxref("DOMString")}} representando a parte local do nome qualificado de um elemento.
 
-    > **Nota:** No Firefox 3.5 e nas versões anteriores, a propriedade coloca em caixa alta o nome local de elementos HTML (mas não elementos XHTML). Em versões posteriores, isso não acontece, então a propriedade está em caixa baixa para ambos HTML e XHTML.
+    > [!NOTE]
+    > No Firefox 3.5 e nas versões anteriores, a propriedade coloca em caixa alta o nome local de elementos HTML (mas não elementos XHTML). Em versões posteriores, isso não acontece, então a propriedade está em caixa baixa para ambos HTML e XHTML.
 
 - {{domxref("Node.namespaceURI")}}{{readonlyInline}}
 
   - : O espaço de nomes URI desse nó, ou `null` se não estiver no espaço de nomes.
 
-    > **Nota:** No Firefox 3.5 e nas versões anteriores, elementos HTML estão no espaço de nomes. Em versões posteriores, elementos HTML estão em [`https://www.w3.org/1999/xhtml/`](https://www.w3.org/1999/xhtml/), nas árvores HTML e XML.
+    > [!NOTE]
+    > No Firefox 3.5 e nas versões anteriores, elementos HTML estão no espaço de nomes. Em versões posteriores, elementos HTML estão em [`https://www.w3.org/1999/xhtml/`](https://www.w3.org/1999/xhtml/), nas árvores HTML e XML.
 
 - {{domxref("Node.prefix")}}{{readonlyInline}}
   - : É um {{domxref("DOMString")}} representando o espaço de nomes do nó, ou `null` se nenhum prefixo é especificado.
@@ -96,7 +98,6 @@ _Herda propriedades de seus pais, {{domxref("EventTarget")}}_.\[1]
 - {{domxref("Node.isDefaultNamespace")}}
 - {{domxref("Node.isEqualNode")}}
 - {{domxref("Node.isSameNode")}} {{deprecated_inline}}
-- {{domxref("Node.isSupported")}}
 - {{domxref("Node.lookupPrefix")}}
 - {{domxref("Node.lookupNamespaceURI")}}
 - {{domxref("Node.normalize")}}
@@ -136,7 +137,7 @@ Veja também {{domxref("Node.nodeType")}}
 A função a seguir percorre todos os nós filhos de um nó recursivamente e executa uma função de callback em cada um deles (e no nó pai também).
 
 ```js
-function DOMComb (oParent, oCallback) {
+function DOMComb(oParent, oCallback) {
   if (oParent.hasChildNodes()) {
     for (var oNode = oParent.firstChild; oNode; oNode = oNode.nextSibling) {
       DOMComb(oNode, oCallback);
@@ -154,22 +155,24 @@ DOMComb(parentNode, callbackFunction);
 
 #### Descrição
 
-Percorre todos os nós filhos de `parentNode` recursivamente e o próprio `parentNode` e executa a `callbackFunction` em cada um deles como [`this`](/pt-BR/docs/JavaScript/Reference/Operators/this).
+Percorre todos os nós filhos de `parentNode` recursivamente e o próprio `parentNode` e executa a `callbackFunction` em cada um deles como [`this`](/pt-BR/docs/Web/JavaScript/Reference/Operators/this).
 
 #### Parâmetros
 
 - `parentNode`
-  - : O nó pai ([`Object`](/pt-BR/docs/JavaScript/Reference/Global_Objects/Object)`do tipo Node`).
+  - : O nó pai ([`Object`](/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object)`do tipo Node`).
 - `callbackFunction`
-  - : A função de callback ([`Function`](/pt-BR/docs/JavaScript/Reference/Global_Objects/Function)).
+  - : A função de callback ([`Function`](/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function)).
 
 #### Exemplo de uso
 
 O exemplo a seguir envia para a função `console.log` o conteúdo textual do body:
 
 ```js
-function imprimeConteudo () {
-  if (this.nodeValue) { console.log(this.nodeValue); }
+function imprimeConteudo() {
+  if (this.nodeValue) {
+    console.log(this.nodeValue);
+  }
 }
 
 onload = function () {
@@ -179,7 +182,8 @@ onload = function () {
 
 ## Especificações
 
-- [DOM Level 1 Core: Node interface](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-1950641247)
-- [DOM Level 2 Core: Node interface](https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1950641247)
-- [DOM Level 3 Core: Node interface](https://www.w3.org/TR/DOM-Level-3-Core/core.html#ID-1950641247)
-- [DOM Standard: Node Interface](http://dom.spec.whatwg.org/#interface-node)
+{{Specifications}}
+
+## Compatibilidade com navegadores
+
+{{Compat}}

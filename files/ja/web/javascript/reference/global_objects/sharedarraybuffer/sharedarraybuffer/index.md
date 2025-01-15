@@ -14,8 +14,8 @@ slug: Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/SharedArrayBuffe
 ## 構文
 
 ```js
-new SharedArrayBuffer()
-new SharedArrayBuffer(length)
+new SharedArrayBuffer();
+new SharedArrayBuffer(length);
 ```
 
 ### 引数
@@ -55,4 +55,4 @@ var sab = new SharedArrayBuffer(1024);
 
 - {{jsxref("Atomics")}}
 - {{jsxref("ArrayBuffer")}}
-- [JavaScript の型付き配列](/ja/docs/Web/JavaScript/Typed_arrays)
+- [JavaScript の型付き配列](/ja/docs/Web/JavaScript/Guide/Typed_arrays)

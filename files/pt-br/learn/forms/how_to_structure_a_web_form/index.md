@@ -1,7 +1,6 @@
 ---
 title: Como estruturar um formulário HTML
 slug: Learn/Forms/How_to_structure_a_web_form
-original_slug: Web/Guide/HTML/Forms/How_to_structure_an_HTML_form
 ---
 
 {{LearnSidebar}}
@@ -39,7 +38,8 @@ O elemento {{HTMLElement("form")}} é o elemento que formalmente define o formul
 
 Nós já vimos isto em um artigo anterior:
 
-> **Nota:** É estritamente proíbido aninhar um formulário dentro de outro formulário. Isto pode fazer com que os formulários se comportem de maneira imprevisível baseada no navegador que está sendo utilizado.
+> [!NOTE]
+> É estritamente proíbido aninhar um formulário dentro de outro formulário. Isto pode fazer com que os formulários se comportem de maneira imprevisível baseada no navegador que está sendo utilizado.
 
 Note que, sempre é possível usar um widget de formulário fora de um elemento {{HTMLElement("form")}} mas se o fizer, o widget não terá nada a ver com o formulário. Estes widgets podem ser usados fora de um formulário, mas para tanto você deverá ter um plano especial para eles, pois este não farão nada por si próprios. Você terá de controlar o comportamento deles através de JavaScript.
 
@@ -99,7 +99,7 @@ Observe que um widget pode ser aninhado dentro de seu elemento \<label>, assim:
 
 Mesmo nesses casos, entretanto, é considerada a melhor prática definir o atributo 'for' porque algumas tecnologias assistivas não entendem os relacionamentos implícitos entre labels e widgets.
 
-### Labels são clicáveis também !.
+### Labels são clicáveis também!
 
 Outra vantagem de configurar 'labels' adequadamente é que você pode clicar no label para ativar o widget correspondente, em todos os navegadores. Isso é útil para exemplos como entradas de texto, onde você pode clicar no label, bem como na entrada para focalizá-lo, mas é especialmente útil para botões de opção e caixas de seleção - a área de acerto de tal controle pode ser muito pequena, então é útil para torná-lo o maior possível.
 
@@ -158,7 +158,8 @@ The paragraph at the top defines the rule for required elements. It must be at t
 - In the second example, things are a bit clearer — the label read out along with the input is "name star name edit text", and the labels are still read out separately. Things are still a bit confusing, but it's a bit better this time because the input has a label associated with it.
 - The third example is best — the actual label is read out all together, and the label read out with the input is "name star edit text".
 
-> **Nota:** You might get slightly different results, depending on your screenreader. This was tested in VoiceOver (and NVDA behaves similarly). We'd love to hear about your experiences too.
+> [!NOTE]
+> You might get slightly different results, depending on your screenreader. This was tested in VoiceOver (and NVDA behaves similarly). We'd love to hear about your experiences too.
 
 **Note**: You can find this example on GitHub as [required-labels.html](https://github.com/mdn/learning-area/blob/master/html/forms/html-form-structure/required-labels.html) ([see it live also](https://mdn.github.io/learning-area/html/forms/html-form-structure/required-labels.html)). don't run the example with 2 or 3 of the versions uncommented — screenreaders will definitely get confused if you have multiple labels AND multiple inputs with the same ID!
 
@@ -176,114 +177,116 @@ Temos cada seção desacoplada da funcionalidade contida nos elementos de {{html
 
 ### Active learning: building a form structure
 
-Let's put these ideas into practice and build a slightly more involved form structure — a payment form. This form will contain a number of widget types that you may not yet understand — don't worry about this for now; you'll find out how they work in the next article ([The native form widgets](/pt-BR/docs/Learn/HTML/Forms/The_native_form_widgets)). For now, read the descriptions carefully as you follow the below instructions, and start to form an appreciation of which wrapper elements we are using to structure the form, and why.
+Let's put these ideas into practice and build a slightly more involved form structure — a payment form. This form will contain a number of widget types that you may not yet understand — don't worry about this for now; you'll find out how they work in the next article ([The native form widgets](/pt-BR/docs/Learn/Forms/Basic_native_form_controls)). For now, read the descriptions carefully as you follow the below instructions, and start to form an appreciation of which wrapper elements we are using to structure the form, and why.
 
 1. To start with, make a local copy of our [blank template file](https://github.com/mdn/learning-area/blob/master/html/introduction-to-html/getting-started/index.html) and the [CSS for our payment form](https://github.com/mdn/learning-area/blob/master/html/forms/html-form-structure/payment-form.css) in a new directory on your computer.
 2. First of all, apply the CSS to the HTML by adding the following line inside the HTML {{htmlelement("head")}}:
 
-    ```html
-    <link href="payment-form.css" rel="stylesheet">
-    ```
+   ```html
+   <link href="payment-form.css" rel="stylesheet" />
+   ```
 
 3. Next, start your form off by adding the outer {{htmlelement("form")}} element:
 
-    ```html
-    <form>
-
-    </form>
-    ```
+   ```html
+   <form></form>
+   ```
 
 4. Inside the `<form>` tags, start by adding a heading and paragraph to inform users how required fields are marked:
 
-    ```html
-    <h1>Payment form</h1>
-    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
-    ```
+   ```html
+   <h1>Payment form</h1>
+   <p>
+     Required fields are followed by
+     <strong><abbr title="required">*</abbr></strong
+     >.
+   </p>
+   ```
 
 5. Next we'll add a larger section of code into the form, below our previous entry. Here you'll see that we are wrapping the contact information fields inside a distinct {{htmlelement("section")}} element. Moreover, we have a set of two radio buttons, each of which we are putting inside its own list ({{htmlelement("li")}}) element. Last, we have two standard text {{htmlelement("input")}}s and their associated {{htmlelement("label")}} elements, each contained inside a {{htmlelement("p")}}, plus a password input for entering a password. Add this code to your form now:
 
-    ```html
-    <section>
-        <h2>Contact information</h2>
-        <fieldset>
-          <legend>Title</legend>
-          <ul>
-              <li>
-                <label for="title_1">
-                  <input type="radio" id="title_1" name="title" value="M." >
-                  Mister
-                </label>
-              </li>
-              <li>
-                <label for="title_2">
-                  <input type="radio" id="title_2" name="title" value="Ms.">
-                  Miss
-                </label>
-              </li>
-          </ul>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Name: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="text" id="name" name="username">
-        </p>
-        <p>
-          <label for="mail">
-            <span>E-mail: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="email" id="mail" name="usermail">
-        </p>
-        <p>
-          <label for="pwd">
-            <span>Password: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="password" id="pwd" name="password">
-        </p>
-    </section>
-    ```
+   ```html
+   <section>
+     <h2>Contact information</h2>
+     <fieldset>
+       <legend>Title</legend>
+       <ul>
+         <li>
+           <label for="title_1">
+             <input type="radio" id="title_1" name="title" value="M." />
+             Mister
+           </label>
+         </li>
+         <li>
+           <label for="title_2">
+             <input type="radio" id="title_2" name="title" value="Ms." />
+             Miss
+           </label>
+         </li>
+       </ul>
+     </fieldset>
+     <p>
+       <label for="name">
+         <span>Name: </span>
+         <strong><abbr title="required">*</abbr></strong>
+       </label>
+       <input type="text" id="name" name="username" />
+     </p>
+     <p>
+       <label for="mail">
+         <span>E-mail: </span>
+         <strong><abbr title="required">*</abbr></strong>
+       </label>
+       <input type="email" id="mail" name="usermail" />
+     </p>
+     <p>
+       <label for="pwd">
+         <span>Password: </span>
+         <strong><abbr title="required">*</abbr></strong>
+       </label>
+       <input type="password" id="pwd" name="password" />
+     </p>
+   </section>
+   ```
 
 6. Now we'll turn to the second `<section>` of our form — the payment information. Here we have three distinct widgets along with their labels, each contained inside a `<p>`. The first is a drop down menu ({{htmlelement("select")}}) for selecting credit card type. the second is an `<input>` element of type number, for entering a credit card number. The last one is an `<input>` element of type `date`, for entering the expiration date of the card (this one will come up with a date picker widget in supporting browsers, and fall back to a normal text input in non-supporting browsers). Again, enter the following below the previous section:
 
-    ```html
-    <section>
-        <h2>Payment information</h2>
-        <p>
-          <label for="card">
-            <span>Card type:</span>
-          </label>
-          <select id="card" name="usercard">
-            <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
-            <option value="amex">American Express</option>
-          </select>
-        </p>
-        <p>
-          <label for="number">
-            <span>Card number:</span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="number" id="number" name="cardnumber">
-        </p>
-        <p>
-          <label for="date">
-            <span>Expiration date:</span>
-            <strong><abbr title="required">*</abbr></strong>
-            <em>formatted as yyyy/mm/dd</em>
-          </label>
-          <input type="date" id="date" name="expiration">
-        </p>
-    </section>
-    ```
+   ```html
+   <section>
+     <h2>Payment information</h2>
+     <p>
+       <label for="card">
+         <span>Card type:</span>
+       </label>
+       <select id="card" name="usercard">
+         <option value="visa">Visa</option>
+         <option value="mc">Mastercard</option>
+         <option value="amex">American Express</option>
+       </select>
+     </p>
+     <p>
+       <label for="number">
+         <span>Card number:</span>
+         <strong><abbr title="required">*</abbr></strong>
+       </label>
+       <input type="number" id="number" name="cardnumber" />
+     </p>
+     <p>
+       <label for="date">
+         <span>Expiration date:</span>
+         <strong><abbr title="required">*</abbr></strong>
+         <em>formatted as yyyy/mm/dd</em>
+       </label>
+       <input type="date" id="date" name="expiration" />
+     </p>
+   </section>
+   ```
 
 7. The last section we'll add is a lot simpler, containing only a {{htmlelement("button")}} of type `submit`, for submitting the form data. Add this to the bottom of your form now:
 
-    ```html
-    <p> <button type="submit">Validate the payment</button> </p>
-    ```
+   ```html
+   <p><button type="submit">Validate the payment</button></p>
+   ```
 
 You can see the finished form in action below (also find it on GitHub — see our payment-form.html [source](https://github.com/mdn/learning-area/blob/master/html/forms/html-form-structure/payment-form.html) and [running live](https://mdn.github.io/learning-area/html/forms/html-form-structure/payment-form.html)):
 
@@ -295,6 +298,6 @@ You now have all the knowledge you'll need to properly structure your HTML forms
 
 ## See Also
 
-- [A List Apart: _Sensible Forms: A Form Usability Checklist_](http://www.alistapart.com/articles/sensibleforms/)
+- [A List Apart: _Sensible Forms: A Form Usability Checklist_](https://www.alistapart.com/articles/sensibleforms/)
 
 {{PreviousMenuNext("Learn/HTML/Forms/Your_first_HTML_form", "Learn/HTML/Forms/The_native_form_widgets", "Learn/HTML/Forms")}}

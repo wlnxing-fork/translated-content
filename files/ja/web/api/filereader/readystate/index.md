@@ -20,19 +20,19 @@ l10n:
 - `LOADING`
   - : readAs メソッドが呼び出されました。 {{domxref("File")}} または {{domxref("Blob")}} が読み取り中であり、まだエラーは発生していません。
 - `DONE`
-  - : 読み取り操作が完了しています。これは、 {{domxref("File")}} または {{domxref("Blob")}} の全体がメモリに読み込まれたか、ファイル読み取りエラーが発生したか、 {{domxref("FileReader.abort()", "abort()")}} が呼び出され、読み取りがキャンセルされたか、いずれかを意味します。
+  - : 読み取り操作が完了しています。これは、 {{domxref("File")}} または {{domxref("Blob")}} の全体がメモリーに読み込まれたか、ファイル読み取りエラーが発生したか、 {{domxref("FileReader.abort()", "abort()")}} が呼び出され、読み取りがキャンセルされたか、いずれかを意味します。
 
 ## 例
 
 ```js
 const reader = new FileReader();
-console.log('EMPTY', reader.readyState); // readyState は 0 になります。
+console.log("EMPTY", reader.readyState); // readyState は 0 になります。
 
 reader.readAsText(blob);
-console.log('LOADING', reader.readyState); // readyState は 1 になります。
+console.log("LOADING", reader.readyState); // readyState は 1 になります。
 
 reader.onloadend = () => {
-  console.log('DONE', reader.readyState); // readyState は 2 になります。
+  console.log("DONE", reader.readyState); // readyState は 2 になります。
 };
 ```
 

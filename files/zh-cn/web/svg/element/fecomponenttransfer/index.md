@@ -9,7 +9,7 @@ slug: Web/SVG/Element/feComponentTransfer
 
 计算是使用非预乘色值进行执行的.(译者：什么是非预乘数据：非预乘数据可以理解为例如 rgba(180,160,130,0.8)) 中的 180,160,130，它们没有被除以 255 以及乘以透明度 0.8 而转化为 0\~1 范围的值，当被除以 255 并且乘以 0.8 而转化为 0\~1 范围中的值的预处理被称为 premultiplied color value(预乘数据)).颜色值在每一个通道 (R,G,B,A) 中被分别修改然后输出，这些通道分别是 {{SVGElement("feFuncR")}}, {{SVGElement("feFuncB")}}, {{SVGElement("feFuncG")}}, and {{SVGElement("feFuncA")}}.
 
-## 用法
+## 使用上下文
 
 {{svginfo}}
 
@@ -17,9 +17,9 @@ slug: Web/SVG/Element/feComponentTransfer
 
 ### 全局属性
 
-- [核心属性](/zh-CN/SVG/Attribute#Core) »
-- [外观属性](/zh-CN/SVG/Attribute#Presentation) »
-- [滤镜属性](/zh-CN/SVG/Attribute#Filter) »
+- [核心属性](/zh-CN/docs/SVG/Attribute#core) »
+- [外观属性](/zh-CN/docs/SVG/Attribute#presentation) »
+- [滤镜属性](/zh-CN/docs/SVG/Attribute#filter) »
 - {{ SVGAttr("class") }}
 - {{ SVGAttr("style") }}
 
@@ -29,7 +29,7 @@ slug: Web/SVG/Element/feComponentTransfer
 
 ## DOM 接口
 
-该元素实现了[`SVGFEComponentTransferElement`](/zh-CN/DOM/SVGFEComponentTransferElement)接口。
+该元素实现了 [`SVGFEComponentTransferElement`](/zh-CN/docs/DOM/SVGFEComponentTransferElement) 接口。
 
 ## 示例
 
@@ -38,7 +38,13 @@ slug: Web/SVG/Element/feComponentTransfer
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
   <defs>
-    <linearGradient id="rainbow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="0">
+    <linearGradient
+      id="rainbow"
+      gradientUnits="userSpaceOnUse"
+      x1="0"
+      y1="0"
+      x2="100%"
+      y2="0">
       <stop offset="0" stop-color="#ff0000"></stop>
       <stop offset="0.2" stop-color="#ffff00"></stop>
       <stop offset="0.4" stop-color="#00ff00"></stop>
@@ -81,13 +87,33 @@ slug: Web/SVG/Element/feComponentTransfer
     <text x="0" y="5%">Default</text>
     <rect x="0" y="8%" width="100%" height="20"></rect>
     <text x="0" y="26%">Identity</text>
-    <rect x="0" y="29%" width="100%" height="20" style="filter:url(#identity)"></rect>
+    <rect
+      x="0"
+      y="29%"
+      width="100%"
+      height="20"
+      style="filter:url(#identity)"></rect>
     <text x="0" y="47%">Table lookup</text>
-    <rect x="0" y="50%" width="100%" height="20" style="filter:url(#table)"></rect>
+    <rect
+      x="0"
+      y="50%"
+      width="100%"
+      height="20"
+      style="filter:url(#table)"></rect>
     <text x="0" y="68%">Linear function</text>
-    <rect x="0" y="71%" width="100%" height="20" style="filter:url(#linear)"></rect>
+    <rect
+      x="0"
+      y="71%"
+      width="100%"
+      height="20"
+      style="filter:url(#linear)"></rect>
     <text x="0" y="89%">Gamma function</text>
-    <rect x="0" y="92%" width="100%" height="20" style="filter:url(#gamma)"></rect>
+    <rect
+      x="0"
+      y="92%"
+      width="100%"
+      height="20"
+      style="filter:url(#gamma)"></rect>
   </g>
 </svg>
 ```
@@ -126,4 +152,4 @@ rect {
 - {{ SVGElement("feSpecularLighting") }}
 - {{ SVGElement("feTile") }}
 - {{ SVGElement("feTurbulence") }}
-- [SVG 教程：滤镜效果](/zh-CN/SVG/Tutorial/Filter_effects)
+- [SVG 教程：滤镜效果](/zh-CN/docs/SVG/Tutorial/Filter_effects)

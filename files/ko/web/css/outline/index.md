@@ -9,8 +9,6 @@ slug: Web/CSS/outline
 
 {{EmbedInteractiveExample("pages/css/outline.html")}}
 
-<div class="hidden">The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone <a href="https://github.com/mdn/interactive-examples">https://github.com/mdn/interactive-examples</a> and send us a pull request.</div>
-
 ## 구성 속성
 
 `outline`은 단축 속성으로서 다음의 하위 속성을 포함합니다.
@@ -42,7 +40,8 @@ outline: unset;
 
 `outline` 속성은 아래의 값 중 한 개에서 세 개를 사용해 지정할 수 있으며 순서는 상관하지 않습니다.
 
-> **참고:** 많은 요소의 외곽선은 스타일을 지정하지 않을 경우 보이지 않습니다. 스타일 기본값이 `none`이기 때문인데, 주목할만한 예외는 {{htmlelement("input")}} 요소로 브라우저의 기본 스타일이 적용됩니다.
+> [!NOTE]
+> 많은 요소의 외곽선은 스타일을 지정하지 않을 경우 보이지 않습니다. 스타일 기본값이 `none`이기 때문인데, 주목할만한 예외는 {{htmlelement("input")}} 요소로 브라우저의 기본 스타일이 적용됩니다.
 
 ### 값
 

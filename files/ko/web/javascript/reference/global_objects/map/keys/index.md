@@ -1,14 +1,13 @@
 ---
 title: Map.prototype.keys()
 slug: Web/JavaScript/Reference/Global_Objects/Map/keys
+l10n:
+  sourceCommit: 27180875516cc311342e74b596bfb589b7211e0c
 ---
 
 {{JSRef}}
 
-**`keys()`** 메서드는 객체의 각 요소에 대한 키를 삽입한 순서대로 가지고 있는 새
-[반복자](/ko/docs/Web/JavaScript/Guide/Iterators_and_Generators) 객체를 반환합니다.
-특별한 경우에 이 반복자 객체도 반복 가능하므로
-[for...of](/ko/docs/Web/JavaScript/Reference/Statements/for...of) 루프를 사용할 수 있습니다.
+{{jsxref("Map")}} 인스턴스의 **`keys()`** 메서드는 맵에서 각 요소의 키를 삽입 순서대로 가지는 새로운 [맵 반복자](/ko/docs/Web/JavaScript/Reference/Global_Objects/Iterator) 객체를 반환합니다.
 
 {{EmbedInteractiveExample("pages/js/map-prototype-keys.html")}}
 
@@ -18,9 +17,13 @@ slug: Web/JavaScript/Reference/Global_Objects/Map/keys
 keys()
 ```
 
+### 매개변수
+
+없음.
+
 ### 반환 값
 
-새로운 {{jsxref("Map")}} 반복자 객체.
+새로운 [순회 가능한 반복자 객체](/ko/docs/Web/JavaScript/Reference/Global_Objects/Iterator).
 
 ## 예제
 

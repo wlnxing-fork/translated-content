@@ -10,7 +10,7 @@ slug: Web/API/GeolocationCoordinates/latitude
 ## Sintaxis
 
 ```js
-lat = coordinates.latitude
+lat = coordinates.latitude;
 ```
 
 ## Especificaciones
@@ -23,5 +23,5 @@ lat = coordinates.latitude
 
 ## Mirar también
 
-- [Uso de geolocalización](/es/docs/WebAPI/Using_geolocation)
+- [Uso de geolocalización](/es/docs/Web/API/Geolocation_API)
 - La interfaz {{domxref("Coordinates")}} a la que pertenece.

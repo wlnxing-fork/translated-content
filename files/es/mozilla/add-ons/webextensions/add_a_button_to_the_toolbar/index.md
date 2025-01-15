@@ -23,7 +23,6 @@ Primero, crear una nueva carpeta "botón", y crea un archivo con el nombre de "m
 
 ```json
 {
-
   "description": "Demostrando botones de la barra de herramientas",
   "manifest_version": 2,
   "name": "botón-demo",
@@ -39,11 +38,10 @@ Primero, crear una nueva carpeta "botón", y crea un archivo con el nombre de "m
       "32": "icons/page-32.png"
     }
   }
-
 }
 ```
 
-Esto especifica que tenemos un [background script](/es/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#Background_scripts) llamado "background.js", y un **browser action** (butón) cuyo icono va a estar en la carpeta "icons".
+Esto especifica que tenemos un [background script](/es/docs/Mozilla/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#background_scripts) llamado "background.js", y un **browser action** (butón) cuyo icono va a estar en la carpeta "icons".
 
 Estos iconos son de [bitsies!](https://www.iconfinder.com/iconsets/bitsies) conjunto de iconos creados por Recep Kütük.
 
@@ -59,7 +57,7 @@ Despues, crea "background.js" en la raiz del folder de la extension, y agrega el
 ```js
 function openPage() {
   browser.tabs.create({
-    url: "https://developer.mozilla.org"
+    url: "https://developer.mozilla.org",
   });
 }
 
@@ -70,7 +68,7 @@ Esto esta a la espera de de el navegador se de click; cuando el evento se dispar
 
 En este momento la extension debe de mirarse asi:
 
-```html
+```plain
 button/
     icons/
         page-16.png
@@ -79,7 +77,7 @@ button/
     manifest.json
 ```
 
-Ahora [instala la extensión](/es/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) y da click en el botón:
+Ahora [instala la extensión](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/) y da click en el botón:
 
 {{EmbedYouTube("kwwTowgT-Ys")}}
 
@@ -89,7 +87,6 @@ Vamos a intentar agregar un popup al botón. Remplaza el manifest.json con este 
 
 ```json
 {
-
   "description": "Demostrando botones de la barra de herramientas",
   "manifest_version": 2,
   "name": "botón-demo",
@@ -103,7 +100,6 @@ Vamos a intentar agregar un popup al botón. Remplaza el manifest.json con este 
       "32": "icons/page-32.png"
     }
   }
-
 }
 ```
 
@@ -116,21 +112,20 @@ Realizamos tres cambios:
 Entonces ahora necesitamos crear el popup. Crea un folder llamado "popup" y crea adentro el archivo "choose_page.html" . agregale el siguiente contenido:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="choose_page.css"/>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="choose_page.css" />
   </head>
 
-<body>
-  <div class="page-choice">developer.mozilla.org</div>
-  <div class="page-choice">support.mozilla.org</div>
-  <div class="page-choice">addons.mozilla.org</div>
-  <script src="choose_page.js"></script>
-</body>
-
+  <body>
+    <div class="page-choice">developer.mozilla.org</div>
+    <div class="page-choice">support.mozilla.org</div>
+    <div class="page-choice">addons.mozilla.org</div>
+    <script src="choose_page.js"></script>
+  </body>
 </html>
 ```
 
@@ -139,7 +134,8 @@ Puedes notar que es un nomal archivo HTML que contiene tres elementos {{htmlelem
 Crea el archivo "choose_page.css" adentro de la carpeta "popup" , con el siguiente contenido:
 
 ```css
-html, body {
+html,
+body {
   width: 300px;
 }
 
@@ -152,7 +148,7 @@ html, body {
 }
 
 .page-choice:hover {
-  background-color: #CFF2F2;
+  background-color: #cff2f2;
 }
 ```
 
@@ -161,16 +157,15 @@ Es solo un poco de estilo a nuestro popup.
 Ahora, crea un archivo "choose_page.js" dentro del folder "popup" con el siguiente contenido:
 
 ```js
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
   if (!e.target.classList.contains("page-choice")) {
     return;
   }
 
   var chosenPage = "https://" + e.target.textContent;
   browser.tabs.create({
-    url: chosenPage
+    url: chosenPage,
   });
-
 });
 ```
 
@@ -196,7 +191,7 @@ Ahora vamos a recargar la extensión, click en el botón otra vez e intenta dar 
 
 ## Acciones de página
 
-[Acciones de página](/es/docs/Mozilla/Add-ons/WebExtensions/Page_actions) son como las acciones del navegador, excepto que son acciones relevantes solo para algunas página en particular.
+[Acciones de página](/es/docs/Mozilla/Add-ons/WebExtensions/user_interface/Page_actions) son como las acciones del navegador, excepto que son acciones relevantes solo para algunas página en particular.
 
 Mientras de las acciones del navegaro siembre son mostradas, las acciones de página son solo mostradas en pestañas donde son relevantes. Los botones de las acciones de página son mostradas en la barra URL , en vez de la barra de herramientas del navegador.
 

@@ -3,7 +3,9 @@ title: blur (event)
 slug: Web/API/Element/blur_event
 ---
 
-当一个元素失去焦点的时候 blur 事件被触发。它和 [`focusout`](/zh-CN/docs/Mozilla_event_reference/focusout) 事件的主要区别是 focusout 支持冒泡。
+{{APIRef}}
+
+当一个元素失去焦点的时候 blur 事件被触发。它和 [`focusout`](/zh-CN/docs/Web/API/Element/focusout_event) 事件的主要区别是 focusout 支持冒泡。
 
 ## 常规信息
 
@@ -24,24 +26,24 @@ slug: Web/API/Element/blur_event
 
 ## 属性
 
-| 属性                                     | 类型                                            | 描述                                         |
-| ---------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
+| 属性                               | 类型                                  | 描述                                         |
+| ---------------------------------- | ------------------------------------- | -------------------------------------------- |
 | `target` {{readonlyInline}}        | {{domxref("EventTarget")}}            | 产生该事件的对象 (DOM 树中最顶级的那个对象). |
-| `type` {{readonlyInline}}          | {{domxref("DOMString")}}                | 事件类型。                                   |
-| `bubbles` {{readonlyInline}}       | {{jsxref("Boolean")}}                    | 该事件是否冒泡。                             |
-| `cancelable` {{readonlyInline}}    | {{jsxref("Boolean")}}                    | 该事件是否可取消默认行为。                   |
+| `type` {{readonlyInline}}          | {{domxref("DOMString")}}              | 事件类型。                                   |
+| `bubbles` {{readonlyInline}}       | {{jsxref("Boolean")}}                 | 该事件是否冒泡。                             |
+| `cancelable` {{readonlyInline}}    | {{jsxref("Boolean")}}                 | 该事件是否可取消默认行为。                   |
 | `relatedTarget` {{readonlyInline}} | {{domxref("EventTarget")}} (DOM 元素) | 无                                           |
 
 ## 事件代理
 
-有两种方法来为这个事件实现事件代理：在支持 `focusout` 事件的浏览器中使用 focusout 事件（除了 FireFox 以外的浏览器都支持 focusout）或者通过设置 [`addEventListener`](/zh-CN/docs/DOM/element.addEventListener) 方法的第三个参数 "useCapture" 为 `true：`
+有两种方法来为这个事件实现事件代理：在支持 `focusout` 事件的浏览器中使用 focusout 事件（除了 FireFox 以外的浏览器都支持 focusout）或者通过设置 [`addEventListener`](/zh-CN/docs/Web/API/EventTarget/addEventListener) 方法的第三个参数 "useCapture" 为 `true：`
 
 ### HTML
 
 ```html
 <form id="form">
-  <input type="text" placeholder="text input">
-  <input type="password" placeholder="password">
+  <input type="text" placeholder="text input" />
+  <input type="password" placeholder="password" />
 </form>
 ```
 
@@ -49,12 +51,20 @@ slug: Web/API/Element/blur_event
 
 ```js
 var form = document.getElementById("form");
-form.addEventListener("focus", function( event ) {
-  event.target.style.background = "pink";
-}, true);
-form.addEventListener("blur", function( event ) {
-  event.target.style.background = "";
-}, true);
+form.addEventListener(
+  "focus",
+  function (event) {
+    event.target.style.background = "pink";
+  },
+  true,
+);
+form.addEventListener(
+  "blur",
+  function (event) {
+    event.target.style.background = "";
+  },
+  true,
+);
 ```
 
 {{EmbedLiveSample('事件代理')}}

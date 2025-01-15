@@ -2,13 +2,15 @@
 title: border-bottom-style
 slug: Web/CSS/border-bottom-style
 ---
+
 {{CSSRef}}
 
 **`border-bottom-style`** [CSS](/ko/docs/Web/CSS) 속성은 요소 테두리의 아래쪽 스타일을 지정합니다.
 
 {{EmbedInteractiveExample("pages/css/border-bottom-style.html")}}
 
-> **참고:** 명세는 서로 다른 스타일의 테두리가 꼭지점에서 만날 때 어떻게 그려야 할지는 정의하고 있지 않습니다.
+> [!NOTE]
+> 명세는 서로 다른 스타일의 테두리가 꼭지점에서 만날 때 어떻게 그려야 할지는 정의하고 있지 않습니다.
 
 ## 구문
 
@@ -68,23 +70,44 @@ border-bottom-style: unset;
 /* Define look of the table */
 table {
   border-width: 2px;
-  background-color: #52E385;
+  background-color: #52e385;
 }
-tr, td {
+tr,
+td {
   padding: 3px;
 }
 
 /* border-bottom-style example classes */
-.b1 {border-bottom-style: none;}
-.b2 {border-bottom-style: hidden;}
-.b3 {border-bottom-style: dotted;}
-.b4 {border-bottom-style: dashed;}
-.b5 {border-bottom-style: solid;}
-.b6 {border-bottom-style: double;}
-.b7 {border-bottom-style: groove;}
-.b8 {border-bottom-style: ridge;}
-.b9 {border-bottom-style: inset;}
-.b10 {border-bottom-style: outset;}
+.b1 {
+  border-bottom-style: none;
+}
+.b2 {
+  border-bottom-style: hidden;
+}
+.b3 {
+  border-bottom-style: dotted;
+}
+.b4 {
+  border-bottom-style: dashed;
+}
+.b5 {
+  border-bottom-style: solid;
+}
+.b6 {
+  border-bottom-style: double;
+}
+.b7 {
+  border-bottom-style: groove;
+}
+.b8 {
+  border-bottom-style: ridge;
+}
+.b9 {
+  border-bottom-style: inset;
+}
+.b10 {
+  border-bottom-style: outset;
+}
 ```
 
 #### 결과

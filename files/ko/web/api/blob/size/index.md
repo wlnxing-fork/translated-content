@@ -18,7 +18,7 @@ slug: Web/API/Blob/size
 ### HTML
 
 ```html
-<input type="file" id="input" multiple>
+<input type="file" id="input" multiple />
 <output id="output">파일 선택...</output>
 ```
 
@@ -32,11 +32,11 @@ output {
 ### JavaScript
 
 ```js
-const input = document.getElementById('input');
-const output = document.getElementById('output');
+const input = document.getElementById("input");
+const output = document.getElementById("output");
 
-input.addEventListener('change', (event) => {
-  output.innerText = '';
+input.addEventListener("change", (event) => {
+  output.innerText = "";
 
   for (const file of event.target.files) {
     output.innerText += `${file.name}의 크기는 ${file.size} 바이트입니다.\n`;
@@ -59,4 +59,4 @@ input.addEventListener('change', (event) => {
 ## 같이 보기
 
 - {{domxref("Blob")}}
-- [웹 애플리케이션에서 파일 사용하기](/ko/docs/Web/API/File/Using_files_from_web_applications)
+- [웹 애플리케이션에서 파일 사용하기](/ko/docs/Web/API/File_API/Using_files_from_web_applications)

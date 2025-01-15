@@ -14,18 +14,18 @@ slug: WebAssembly/JavaScript_interface/Module
 
 ## 静态属性
 
-- [`WebAssembly.Module.customSections()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/customSections)
+- [`WebAssembly.Module.customSections()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/customSections_static)
   - : 给定一个 `Module` 和字符串，返回模块中具有给定字符串名称的所有自定义的部分的内容副本。
-- [`WebAssembly.Module.exports()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/exports)
+- [`WebAssembly.Module.exports()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/exports_static)
   - : 给定一个 `Module`，返回一个数组，其中包含所有声明的导出的描述。
-- [`WebAssembly.Module.imports()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/imports)
+- [`WebAssembly.Module.imports()`](/zh-CN/docs/WebAssembly/JavaScript_interface/Module/imports_static)
   - : 给定一个 `Module`，返回一个数组，其中包含所有声明的导入的描述。
 
 ## 示例
 
 ### 将编译后的模块发送到 worker
 
-以下示例将使用 [`WebAssembly.compileStreaming()`](/zh-CN/docs/WebAssembly/JavaScript_interface/compileStreaming) 方法编译 `simple.wasm` 加载后的字节码，并将返回的 `Module` 实例通过 {{domxref("Worker/postMessage", "postMessage()")}} 发送到一个 [worker](/zh-CN/docs/Web/API/Web_Workers_API)。
+以下示例将使用 [`WebAssembly.compileStreaming()`](/zh-CN/docs/WebAssembly/JavaScript_interface/compileStreaming_static) 方法编译 `simple.wasm` 加载后的字节码，并将返回的 `Module` 实例通过 {{domxref("Worker/postMessage", "postMessage()")}} 发送到一个 [worker](/zh-CN/docs/Web/API/Web_Workers_API)。
 
 参见 `index-compile.html` 的[源代码](https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/index-compile.html)，或[查看在线演示](https://mdn.github.io/webassembly-examples/js-api-examples/index-compile.html)。
 
@@ -33,11 +33,11 @@ slug: WebAssembly/JavaScript_interface/Module
 const worker = new Worker("wasm_worker.js");
 
 WebAssembly.compileStreaming(fetch("simple.wasm")).then((mod) =>
-  worker.postMessage(mod)
+  worker.postMessage(mod),
 );
 ```
 
-Worker 函数 [`wasm_worker.js`](https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/wasm_worker.js) 定义了模块需要使用的导入对象。然后，该函数会创建一个事件处理器，以接受主线程发送的模块。在接收到模块后，我们使用 [`WebAssembly.instantiate()`](/zh-CN/docs/WebAssembly/JavaScript_interface/instantiate) 方法创建一个它的实例，然后调用其导出的函数。
+Worker 函数 [`wasm_worker.js`](https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/wasm_worker.js) 定义了模块需要使用的导入对象。然后，该函数会创建一个事件处理器，以接受主线程发送的模块。在接收到模块后，我们使用 [`WebAssembly.instantiate()`](/zh-CN/docs/WebAssembly/JavaScript_interface/instantiate_static) 方法创建一个它的实例，然后调用其导出的函数。
 
 ```js
 const importObject = {

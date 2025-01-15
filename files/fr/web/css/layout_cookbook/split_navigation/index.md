@@ -1,12 +1,6 @@
 ---
 title: Navigation segmentée
 slug: Web/CSS/Layout_cookbook/Split_Navigation
-tags:
-  - CSS
-  - Navigation
-  - flexbox
-translation_of: Web/CSS/Layout_cookbook/Split_Navigation
-original_slug: Web/CSS/Layout_cookbook/Navigation_segmentée
 ---
 
 {{CSSRef}}
@@ -39,4 +33,4 @@ Dans notre exemple, c'est la marge à gauche du dernier élément qui est automa
 
 ## Voir aussi
 
-- [Le module de spécification _CSS Flexible Box Layout_](/fr/docs/Web/CSS/CSS_Flexible_Box_Layout)
+- [Le module de spécification _CSS Flexible Box Layout_](/fr/docs/Web/CSS/CSS_flexible_box_layout)

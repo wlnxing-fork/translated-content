@@ -33,7 +33,8 @@ var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
 - 物件參考（並非為實際的物件）：`concat` 複製物件的參考至新的陣列。不管是原始的還是新的陣列都參考到相同的物件。也就是說，如果一個被參照的物件被修改了，變動會同時反映到新的以及原始的陣列中。
 - 資料型態為字串、數值或是布林（非 {{jsxref("Global_Objects/String", "String")}}、{{jsxref("Global_Objects/Number", "Number")}} 及 {{jsxref("Global_Objects/Boolean", "Boolean")}} 物件）：`concat` 複製字串及數值的值到新的陣列。
 
-> **備註：** 合併（多個）陣列／（多個）值將讓原始的陣列不會被受到影響。此外，任何對新陣列（只有在元素不是物件參考的情況下）的操作都不會影響原始的陣列，反之亦然。
+> [!NOTE]
+> 合併（多個）陣列／（多個）值將讓原始的陣列不會被受到影響。此外，任何對新陣列（只有在元素不是物件參考的情況下）的操作都不會影響原始的陣列，反之亦然。
 
 ## 範例
 
@@ -42,7 +43,7 @@ var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])
 下面的程式碼為合併兩個陣列：
 
 ```js
-var alpha = ['a', 'b', 'c'];
+var alpha = ["a", "b", "c"];
 var numeric = [1, 2, 3];
 
 alpha.concat(numeric);
@@ -55,8 +56,8 @@ alpha.concat(numeric);
 
 ```js
 var num1 = [1, 2, 3],
-    num2 = [4, 5, 6],
-    num3 = [7, 8, 9];
+  num2 = [4, 5, 6],
+  num3 = [7, 8, 9];
 
 var nums = num1.concat(num2, num3);
 
@@ -69,7 +70,7 @@ console.log(nums);
 下面的程式碼為合併三個值到一個陣列中：
 
 ```js
-var alpha = ['a', 'b', 'c'];
+var alpha = ["a", "b", "c"];
 
 var alphaNumeric = alpha.concat(1, [2, 3]);
 

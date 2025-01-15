@@ -27,7 +27,8 @@ selector::pseudo-element {
 
 하나의 선택자에 하나의 의사 요소만 사용할 수 있습니다. 반드시 단순 선택자 뒤에 위치해야 합니다.
 
-> **참고:** 참고: 규칙을 따라 단일 콜론(`:`) 대신 이중 콜론(`::`)을 사용하여 의사 클래스와 의사 요소를 구별해야 합니다. 그러나 과거 W3C 명세에선 이런 구별을 두지 않았으므로 대부분의 브라우저는 기존 의사 요소에 대해 두 구문 모두 지원합니다.
+> [!NOTE]
+> 참고: 규칙을 따라 단일 콜론(`:`) 대신 이중 콜론(`::`)을 사용하여 의사 클래스와 의사 요소를 구별해야 합니다. 그러나 과거 W3C 명세에선 이런 구별을 두지 않았으므로 대부분의 브라우저는 기존 의사 요소에 대해 두 구문 모두 지원합니다.
 
 ## 표준 의사 요소 색인
 
@@ -52,7 +53,38 @@ selector::pseudo-element {
 
 ## 브라우저 호환성
 
-{{compat}}
+<table class="standard-table">
+  <tbody>
+    <tr>
+      <th>브라우저</th>
+      <th>최소 버전</th>
+      <th>지원</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Firefox (Gecko)</td>
+      <td>1.0 (1.0)</td>
+      <td><code>:pseudo-element</code></td>
+    </tr>
+    <tr>
+      <td>1.0 (1.5)</td>
+      <td><code>:pseudo-element ::pseudo-element</code></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Opera</td>
+      <td>4.0</td>
+      <td><code>:pseudo-element</code></td>
+    </tr>
+    <tr>
+      <td>7.0</td>
+      <td><code>:pseudo-element ::pseudo-element</code></td>
+    </tr>
+    <tr>
+      <td>Safari (WebKit)</td>
+      <td>1.0 (85)</td>
+      <td><code>:pseudo-element ::pseudo-element</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ## 같이 보기
 

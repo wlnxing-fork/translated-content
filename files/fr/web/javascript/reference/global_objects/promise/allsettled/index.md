@@ -1,13 +1,6 @@
 ---
 title: Promise.allSettled()
 slug: Web/JavaScript/Reference/Global_Objects/Promise/allSettled
-tags:
-  - JavaScript
-  - Méthode
-  - Promise
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Promise/allSettled
-original_slug: Web/JavaScript/Reference/Objets_globaux/Promise/allSettled
 ---
 
 {{JSRef}}
@@ -25,7 +18,7 @@ p.allSettled(iterable);
 ### Paramètres
 
 - `iterable`
-  - : Un objet [itérable](/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration) tel qu'un tableau ({{jsxref("Array")}}) dont chaque élément est une promesse ({{jsxref("Promise")}}.
+  - : Un objet [itérable](/fr/docs/Web/JavaScript/Reference/Iteration_protocols) tel qu'un tableau ({{jsxref("Array")}}) dont chaque élément est une promesse ({{jsxref("Promise")}}.
 
 ### Valeur de retour
 
@@ -43,7 +36,7 @@ Pour chaque objet contenu dans ce tableau, il y aura une propriété `status` qu
 
 ## Voir aussi
 
-- [Guide - Utiliser les promesses](/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses)
+- [Guide - Utiliser les promesses](/fr/docs/Web/JavaScript/Guide/Using_promises)
 - [Programmation asynchrone à l'aide des promesses](/fr/docs/Learn/JavaScript/Asynchronous/Promises)
 - {{jsxref("Promise")}}
 - {{jsxref("Promise.all()")}}

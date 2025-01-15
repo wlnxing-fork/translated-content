@@ -1,14 +1,6 @@
 ---
 title: omnibox
 slug: Mozilla/Add-ons/WebExtensions/API/omnibox
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Reference
-  - WebExtensions
-  - omnibox
-translation_of: Mozilla/Add-ons/WebExtensions/API/omnibox
 ---
 
 {{AddonSidebar}}
@@ -55,8 +47,8 @@ L'API omnibox fournit à l'extension un moyen de personnaliser les suggestions a
 
 {{WebExtExamples("h2")}}
 
-> **Note :**
+> [!NOTE]
 >
-> Cette API est basée sur l'API Chromium [`chrome.omnibox`](https://developer.chrome.com/extensions/omnibox).
+> Cette API est basée sur l'API Chromium [`chrome.omnibox`](https://developer.chrome.com/docs/extensions/reference/api/omnibox).
 >
 > Les données de compatibilité relatives à Microsoft Edge sont fournies par Microsoft Corporation et incluses ici sous la licence Creative Commons Attribution 3.0 pour les États-Unis.

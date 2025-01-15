@@ -15,6 +15,7 @@ l10n:
 
 - `true` または _空文字列_: 要素が編集可能であることを示す
 - `false`: 要素が編集不可であることを示す
+- `plaintext-only`: 要素の生のテキストは編集可能だが、リッチテキスト形式が無効であることを示す
 
 この属性が値なしで指定された場合、たとえば `<label contenteditable>Example Label</label>` のような場合、値は空文字列として扱われます。
 
@@ -39,4 +40,4 @@ l10n:
 - すべての[グローバル属性](/ja/docs/Web/HTML/Global_attributes)
 - {{domxref("HTMLElement.contentEditable")}} および {{domxref("HTMLElement.isContentEditable")}}
 - CSS の {{cssxref("caret-color")}} プロパティ
-- [HTMLElement の `input` イベント](/ja/docs/Web/API/HTMLElement/input_event)
+- [HTMLElement の `input` イベント](/ja/docs/Web/API/Element/input_event)

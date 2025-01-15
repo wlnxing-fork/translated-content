@@ -5,7 +5,7 @@ slug: Web/API/SyncManager
 
 {{APIRef("Service Workers API")}}{{Non-standard_header}}
 
-[ServiceWorker API](/ja/docs/Web/API/ServiceWorker_API) の **`SyncManager`** インターフェイスは同期登録を登録、及び一覧表示のインターフェイスを提供します。
+[ServiceWorker API](/ja/docs/Web/API/Service_Worker_API) の **`SyncManager`** インターフェイスは同期登録を登録、及び一覧表示のインターフェイスを提供します。
 
 ## プロパティ
 
@@ -24,4 +24,4 @@ slug: Web/API/SyncManager
 
 ## ブラウザの互換性
 
-{{Compat("api.SyncManager")}}
+{{Compat}}

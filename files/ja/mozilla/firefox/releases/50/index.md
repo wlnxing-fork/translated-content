@@ -14,17 +14,17 @@ l10n:
 ### HTML
 
 - {{HTMLElement("bdo")}} の既定のスタイルで、{{cssxref("unicode-bidi")}} の値が `isolate-override` になりました ([Firefox バグ 1249497](https://bugzil.la/1249497))。
-- {{HTMLElement("track")}} 要素の {{htmlattrxref("src", "track")}} 属性の設定が正しく動作するようになりました ([Firefox バグ 1281418](https://bugzil.la/1281418))。
+- {{HTMLElement("track")}} 要素の [`src`](/ja/docs/Web/HTML/Element/track#src) 属性の設定が正しく動作するようになりました ([Firefox バグ 1281418](https://bugzil.la/1281418))。
 - {{HTMLElement("area")}}、{{HTMLElement("a")}}、{{HTMLElement("img")}}、{{HTMLElement("iframe")}}、{{HTMLElement("link")}} 要素の `referrerpolicy` 属性を、デフォルトで有効化しました ([Firefox バグ 1223838](https://bugzil.la/1223838)、[Firefox バグ 1264165](https://bugzil.la/1264165))。
 
 ### CSS
 
 - dashed および dotted スタイルのボーダーに border-radius を設定したとき、角の部分を solid スタイルではなく指定したスタイルで描画するようになりました ([Firefox バグ 382721](https://bugzil.la/382721))。
-- 非標準の {{cssxref(":-moz-full-screen-ancestor")}} 疑似クラスセレクターを削除しました ([Firefox バグ 1199529](https://bugzil.la/1199529))。
+- 非標準の {{cssxref(":-moz-full-screen-ancestor")}} 擬似クラスセレクターを削除しました ([Firefox バグ 1199529](https://bugzil.la/1199529))。
 - 仕様書から削除されたため、および実装していた主要ブラウザーが Firefox だけであったため、{{cssxref("box-sizing")}}`: padding-box` を削除しました ([Firefox バグ 1166728](https://bugzil.la/1166728))。
 - {{cssxref("unicode-bidi")}} プロパティの値 `isolate`、`isolate-override`、`plaintext` の接頭辞を削除しました ([Firefox バグ 1141895](https://bugzil.la/1141895))。
 - Quirk モードでリストのビュレットが、標準準拠モードと同様にリストのサイズを継承するようになりました ([Firefox バグ 648331](https://bugzil.la/648331))。
-- {{cssxref(":in-range")}} および {{cssxref(":out-of-range")}} 疑似クラスが、無効状態または読み取り専用の input に一致しないように動作を変更しました ([Firefox バグ 1264157](https://bugzil.la/1264157))。
+- {{cssxref(":in-range")}} および {{cssxref(":out-of-range")}} 擬似クラスが、無効状態または読み取り専用の input に一致しないように動作を変更しました ([Firefox バグ 1264157](https://bugzil.la/1264157))。
 - {{cssxref(":any-link")}} 擬似クラスの接頭辞を削除しました ([Firefox バグ 843579](https://bugzil.la/843579))。
 - {{cssxref("border-image-repeat")}} で、値 `space` を実装しました ([Firefox バグ 720531](https://bugzil.la/720531))。
 
@@ -53,7 +53,7 @@ l10n:
 
 ### セキュリティ
 
-- {{htmlelement("a")}} 要素の {{htmlattrxref("ping", "a")}} 属性が、[`connect-src`](/ja/docs/Web/HTTP/Headers/Content-Security-Policy#connect-src) [CSP 1.1 ポリシーディレクティブ](/ja/docs/Web/HTTP/Headers/Content-Security-Policy)に従うようになりました ([Firefox バグ 1100181](https://bugzil.la/1100181))。
+- {{htmlelement("a")}} 要素の [`ping`](/ja/docs/Web/HTML/Element/a#ping) 属性が、[`connect-src`](/ja/docs/Web/HTTP/Headers/Content-Security-Policy#connect-src) [CSP 1.1 ポリシーディレクティブ](/ja/docs/Web/HTTP/Headers/Content-Security-Policy)に従うようになりました ([Firefox バグ 1100181](https://bugzil.la/1100181))。
 - [`sandbox`](/ja/docs/Web/HTTP/Headers/Content-Security-Policy#sandbox) [CSP](/ja/docs/Web/HTTP/CSP) ディレクティブをサポートしました ([Firefox バグ 671389](https://bugzil.la/671389))。
 - [workers に content security policy を設定する](/ja/docs/Web/API/Web_Workers_API/Using_web_workers#content_security_policy) ことが可能になりました ([Firefox バグ 959388](https://bugzil.la/959388))。
 - [Content Security Policy](/ja/docs/Web/HTTP/CSP) の制限によりビーコンデータを送信できなかったとき、{{domxref("Navigator.sendBeacon()")}} メソッドで例外が発生しないようになりました。代わりに、想定どおり `false` を返します ([Firefox バグ 1234813](https://bugzil.la/1234813))。
@@ -71,7 +71,7 @@ l10n:
 - {{domxref("EventTarget.addEventListener()")}} の `once` オプションをサポートしました ([Firefox バグ 1287706](https://bugzil.la/1287706))。
 - {{domxref("NodeList")}} インターフェイスがイテレート可能になり、{{domxref("NodeList.forEach()", "forEach()")}}、{{domxref("NodeList.values()", "values()")}}、{{domxref("NodeList.entries()")}}、{{domxref("NodeList.keys()")}} の各メソッドが使用可能になりました ([Firefox バグ 1290636](https://bugzil.la/1290636))。
 - {{domxref("DOMTokenList")}} インターフェイスがイテレート可能になり、{{domxref("DOMTokenList.forEach()", "forEach()")}}、{{domxref("DOMTokenList.values()", "values()")}}、{{domxref("DOMTokenList.entries()")}}、{{domxref("DOMTokenList.keys()")}} の各メソッドが使用可能になりました ([Firefox バグ 1290636](https://bugzil.la/1290636))。
-- {{domxref("Document.createElement()")}} および {{domxref("Document.createElementNS()")}} メソッドで、[カスタム要素](/ja/docs/Web/Web_Components/Using_custom_elements)を作成するための省略可能な引数 `options` を追加しました ([Firefox バグ 1276579](https://bugzil.la/1276579))。
+- {{domxref("Document.createElement()")}} および {{domxref("Document.createElementNS()")}} メソッドで、[カスタム要素](/ja/docs/Web/API/Web_components/Using_custom_elements)を作成するための省略可能な引数 `options` を追加しました ([Firefox バグ 1276579](https://bugzil.la/1276579))。
 
 ### SVG
 
@@ -123,7 +123,7 @@ l10n:
 
 ### バッテリー API
 
-- Firefox 43 から非推奨にしていた {{domxref("navigator.battery")}} プロパティを廃止および削除しました。代わりに、バッテリーの {{jsxref("Promise")}} を取得する {{domxref("navigator.getBattery()")}} メソッドを使用してください。これは {{domxref("BatteryManager")}} が使用可能になったときに完了します。{{domxref("BatteryManager")}} は、promise が成功した場合のハンドラに渡されます ([Firefox バグ 12593355](https://bugzil.la/12593355))。
+- Firefox 43 から非推奨にしていた {{domxref("navigator.battery")}} プロパティを廃止および削除しました。代わりに、バッテリーの {{jsxref("Promise")}} を取得する {{domxref("navigator.getBattery()")}} メソッドを使用してください。これは {{domxref("BatteryManager")}} が使用可能になったときに完了します。{{domxref("BatteryManager")}} は、promise が成功した場合のハンドラーに渡されます ([Firefox バグ 12593355](https://bugzil.la/12593355))。
 
 ### ファイルとディレクトリー
 
@@ -138,7 +138,7 @@ l10n:
     - {{domxref("FileSystemDirectoryEntry")}} ({{domxref("FileSystemDirectoryEntry.removeRecursively", "removeRecursively()")}} を除く)
     - {{domxref("FileSystemDirectoryReader")}}
 
-  - {{HTMLElement("input")}} 要素の {{HTMLattrxref("webkitdirectory", "input")}} 属性および {{domxref("HTMLInputElement.webkitdirectory")}} を実装しました。ファイルではなくディレクトリーを受け入れるように、file 型の input を設定できます ([Firefox バグ 1258489](https://bugzil.la/1258489))。
+  - {{HTMLElement("input")}} 要素の [`webkitdirectory`](/ja/docs/Web/HTML/Element/input#webkitdirectory) 属性および {{domxref("HTMLInputElement.webkitdirectory")}} を実装しました。ファイルではなくディレクトリーを受け入れるように、file 型の input を設定できます ([Firefox バグ 1258489](https://bugzil.la/1258489))。
   - {{domxref("HTMLInputElement.webkitEntries")}} を実装しました。これは、選択されたアイテムを表す {{domxref("FileSystemEntry")}} ベースのオブジェクトの配列を返します。
   - {{domxref("File.webkitRelativePath")}} を実装しました。これは、{{domxref("HTMLInputElement.webkitGetEntries()")}} が返すリスト内のアイテムのひとつである {{domxref("FileSystemDirectoryEntry")}} に含まれているルートに対して相対的な、ファイルのパスを持ちます。
   - この API で何をサポートしているかについて、詳しくは [Firefox におけるファイルとディレクトリー項目 API](/ja/docs/Web/API/File_and_Directory_Entries_API/Firefox_support) をご覧ください。

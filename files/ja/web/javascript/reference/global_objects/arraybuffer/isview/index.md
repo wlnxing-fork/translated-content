@@ -31,15 +31,15 @@ ArrayBuffer.isView(value)
 ### isView の使用
 
 ```js
-ArrayBuffer.isView();                    // false
-ArrayBuffer.isView([]);                  // false
-ArrayBuffer.isView({});                  // false
-ArrayBuffer.isView(null);                // false
-ArrayBuffer.isView(undefined);           // false
+ArrayBuffer.isView(); // false
+ArrayBuffer.isView([]); // false
+ArrayBuffer.isView({}); // false
+ArrayBuffer.isView(null); // false
+ArrayBuffer.isView(undefined); // false
 ArrayBuffer.isView(new ArrayBuffer(10)); // false
 
-ArrayBuffer.isView(new Uint8Array());    // true
-ArrayBuffer.isView(new Float32Array());  // true
+ArrayBuffer.isView(new Uint8Array()); // true
+ArrayBuffer.isView(new Float32Array()); // true
 ArrayBuffer.isView(new Int8Array(10).subarray(0, 3)); // true
 
 const buffer = new ArrayBuffer(2);
@@ -57,4 +57,4 @@ ArrayBuffer.isView(dv); // true
 
 ## 関連情報
 
-- [JavaScript の型付き配列](/ja/docs/Web/JavaScript/Typed_arrays)
+- [JavaScript の型付き配列](/ja/docs/Web/JavaScript/Guide/Typed_arrays)

@@ -1,7 +1,6 @@
 ---
-title: '<progress>: Elemento indicador de progreso'
+title: "<progress>: Elemento indicador de progreso"
 slug: Web/HTML/Element/progress
-original_slug: Web/HTML/Elemento/progress
 ---
 
 {{HTMLSidebar}}
@@ -12,19 +11,19 @@ La etiqueta **HTML `<progress>`** se utiliza para visualizar el progreso de una 
 
 The source for this interactive example is stored in a GitHub repository. If you'd like to contribute to the interactive examples project, please clone [https://github.com/mdn/interactive-examples](https://github.com/mdn/interactive-examples)and send us a pull request.
 
-- _[Categorias de contenido](/es/docs/Web/Guide/HTML/categorias_de_contenido#Flujo_de_contenido)_[Flujo de contenido](/es/docs/Web/Guide/HTML/categorias_de_contenido#Flujo_de_contenido), [contenido de redacción](/es/docs/Web/Guide/HTML/categorias_de_contenido#Contenido_de_redacci%C3%B3n), contenido etiquetable, contenido palpable.
-- _Contenido permitido_ [Contenido de redacción](/es/docs/HTML/Content_categories#Phrasing_content), pero no debe haber ningún elemento de progreso entre sus descendientes
-- _Etiquetas por omisión_ {{no_tag_omission}}
-- _Elementos padres permitidos_ Cualquier elemento que acepte [contenido de redacción](/es/docs/HTML/Content_categories#Phrasing_content).
+- _[Categorias de contenido](/es/docs/Web/HTML/Content_categories#flujo_de_contenido)_[Flujo de contenido](/es/docs/Web/HTML/Content_categories#flujo_de_contenido), [contenido de redacción](/es/docs/Web/Guide/HTML/categorias_de_contenido#Contenido_de_redacci%C3%B3n), contenido etiquetable, contenido palpable.
+- _Contenido permitido_ [Contenido de redacción](/es/docs/Web/HTML/Content_categories#phrasing_content), pero no debe haber ningún elemento de progreso entre sus descendientes
+- _Etiquetas por omisión_ Ninguna, tanto la etiqueta inicial como la final son obligatorias.
+- _Elementos padres permitidos_ Cualquier elemento que acepte [contenido de redacción](/es/docs/Web/HTML/Content_categories#phrasing_content).
 - _DOM interfaz_ {{domxref("HTMLProgressElement")}}
 
 ## Atributos
 
-Este elemento incluye [Atributos Globales](/es/docs/HTML/Global_attributes).
+Este elemento incluye [Atributos Globales](/es/docs/Web/HTML/Global_attributes).
 
-- {{ htmlattrdef("max") }}
+- `max`
   - : Este atributo indica la cantidad de trabajo que demorá la carga, se define en el elemento `progress`. Por ejemplo max="100".
-- {{ htmlattrdef("value") }}
+- `value`
 
   - : Este atributo indica que parte de la tarea ya se ha completado o cargado. Debe especificarse un valor entre 0 y `max`, o entre 0 y 1.0 si `max` está omitido. Si al atributo `value` no se le especifica ningún valor, se estara llevando a cabo la tarea sin que el elemento mueste funcionamiento alguno. Por ejemplo si la carga está al 50% será de 0.5 el valor, en el caso de no especificar max.
 

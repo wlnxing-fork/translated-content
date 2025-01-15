@@ -44,7 +44,7 @@ slug: Web/API/CSSStyleDeclaration
 var styleObj = document.styleSheets[0].cssRules[0].style;
 console.log(styleObj.cssText);
 
-for (var i = styleObj.length; i--;) {
+for (var i = styleObj.length; i--; ) {
   var nameString = styleObj[i];
   styleObj.removeProperty(nameString);
 }
@@ -62,4 +62,4 @@ console.log(styleObj.cssText);
 
 ## 参见
 
-- [DOM CSS Properties](/zh-CN/docs/Web/CSS/CSS_Properties_Reference)
+- [DOM CSS Properties](/zh-CN/docs/Web/CSS/Reference#索引)

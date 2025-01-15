@@ -1,15 +1,6 @@
 ---
 title: Array.prototype.entries()
 slug: Web/JavaScript/Reference/Global_Objects/Array/entries
-tags:
-  - Array
-  - ECMAScript 2015
-  - Iterator
-  - JavaScript
-  - Méthode
-  - Prototype
-translation_of: Web/JavaScript/Reference/Global_Objects/Array/entries
-original_slug: Web/JavaScript/Reference/Objets_globaux/Array/entries
 ---
 
 {{JSRef}}
@@ -21,7 +12,7 @@ La méthode **`entries()`** renvoie un nouvel objet de type **`Array Iterator`**
 ## Syntaxe
 
 ```js
-arr.entries()
+arr.entries();
 ```
 
 ### Valeur de retour
@@ -44,10 +35,10 @@ for (const [index, element] of arr.entries()) {
 
 ### Boucle `for...of`
 
-On peut avoir le même résultat en utilisant une boucle [for...of](/fr/docs/Web/JavaScript/Reference/Instructions/for...of) :
+On peut avoir le même résultat en utilisant une boucle [for...of](/fr/docs/Web/JavaScript/Reference/Statements/for...of) :
 
 ```js
-var arr = ['a', 'b', 'c'];
+var arr = ["a", "b", "c"];
 var eArr = arr.entries();
 
 for (let e of eArr) {
@@ -73,5 +64,5 @@ for (let e of eArr) {
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.some()")}}
-- [`for...of`](/fr/docs/Web/JavaScript/Reference/Instructions/for...of)
-- [Les protocoles d'itération](/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration)
+- [`for...of`](/fr/docs/Web/JavaScript/Reference/Statements/for...of)
+- [Les protocoles d'itération](/fr/docs/Web/JavaScript/Reference/Iteration_protocols)

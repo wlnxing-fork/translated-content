@@ -1,12 +1,12 @@
 ---
-title: 'HTMLDialogElement: close イベント'
+title: "HTMLDialogElement: close イベント"
+short-title: close
 slug: Web/API/HTMLDialogElement/close_event
-original_slug: Web/API/GlobalEventHandlers/onclose
 l10n:
-  sourceCommit: 467a3bda135d24e4dafd3dc26fd812a4d48f7b3a
+  sourceCommit: 981ab25c61986b40213d0c84131432438d5a7903
 ---
 
-{{ APIRef() }}
+{{APIRef}}
 
 `close` イベントは `HTMLDialogElement` オブジェクト上で、これが表すダイアログ ({{htmlelement("dialog")}}) が閉じられたときに発生します。
 
@@ -14,12 +14,12 @@ l10n:
 
 ## 構文
 
-このイベント名を {{domxref("EventTarget.addEventListener", "addEventListener()")}} 等のメソッドで使用するか、イベントハンドラープロパティを設定するかしてください。
+このイベント名を {{domxref("EventTarget.addEventListener", "addEventListener()")}} などのメソッドで使用したり、イベントハンドラープロパティを設定したりします。
 
 ```js
-addEventListener('close', (event) => {});
+addEventListener("close", (event) => {});
 
-onclose = (event) => { };
+onclose = (event) => {};
 ```
 
 ## イベント型
@@ -35,13 +35,13 @@ onclose = (event) => { };
 ```html
 <dialog class="example-dialog">
   <form method="dialog">
-     <button>Close via method="dialog"</button>
+    <button>method="dialog" で閉じる</button>
   </form>
-  <button class="close">Close via .close() method</button>
-  <p>Or hit the <kbd>Esc</kbd> key</p>
+  <button class="close">.close() メソッドで閉じる</button>
+  <p>または <kbd>Esc</kbd> キーを押してください</p>
 </dialog>
 
-<button class="open-dialog">Open dialog</button>
+<button class="open-dialog">ダイアログを開く</button>
 
 <div class="result"></div>
 ```
@@ -56,28 +56,28 @@ div {
 #### JavaScript
 
 ```js
-const result = document.querySelector('.result');
+const result = document.querySelector(".result");
 
-const dialog = document.querySelector('.example-dialog');
-dialog.addEventListener('close', (event) => {
-    result.textContent = 'dialog was closed';
+const dialog = document.querySelector(".example-dialog");
+dialog.addEventListener("close", (event) => {
+  result.textContent = "ダイアログが閉じました";
 });
 
-const openDialog = document.querySelector('.open-dialog');
-openDialog.addEventListener('click', () => {
+const openDialog = document.querySelector(".open-dialog");
+openDialog.addEventListener("click", () => {
   dialog.showModal();
   result.textContent = "";
 });
 
-const closeButton = document.querySelector('.close');
-closeButton.addEventListener('click', () => {
-    dialog.close();
+const closeButton = document.querySelector(".close");
+closeButton.addEventListener("click", () => {
+  dialog.close();
 });
 ```
 
 #### 結果
 
-{{ EmbedLiveSample('Live_example', '100%', '200px') }}
+{{ EmbedLiveSample('ライブ例', '100%', '200px') }}
 
 ## 仕様書
 
@@ -90,3 +90,4 @@ closeButton.addEventListener('click', () => {
 ## 関連情報
 
 - HTML の [`<dialog>`](/ja/docs/Web/HTML/Element/dialog) 要素
+- [`Event`](/ja/docs/Web/API/Event) インターフェイス

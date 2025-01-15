@@ -3,7 +3,7 @@ title: name
 slug: Web/XPath/Functions/name
 ---
 
-{{ XsltRef() }}
+{{XsltSidebar}}{{ XsltRef() }}
 
 `name` 関数は、与えられたノード集合内の最初のノードの QName を表す文字列を返します。
 
@@ -24,7 +24,7 @@ name( [node-set] )
 
 ### 注
 
-- [QName](http://www.w3.org/TR/REC-xml-names/#NT-QName) はノードの修飾名であり、名前空間接頭辞とローカル名が含まれます。
+- [QName](https://www.w3.org/TR/REC-xml-names/#NT-QName) はノードの修飾名であり、名前空間接頭辞とローカル名が含まれます。
 
 ### 定義
 

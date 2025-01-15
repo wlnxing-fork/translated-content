@@ -1,8 +1,9 @@
 ---
-title: Gamepad.timestamp
+title: "Gamepad: timestamp プロパティ"
+short-title: timestamp
 slug: Web/API/Gamepad/timestamp
 l10n:
-  sourceCommit: 1511e914c6b1ce6f88056bfefd48a6aa585cebce
+  sourceCommit: 339595951b78774e951b1a9d215a6db6b856f6b2
 ---
 
 {{APIRef("Gamepad API")}}
@@ -11,7 +12,8 @@ l10n:
 
 このプロパティの背景にある考え方は、ハードウェアにより `axes` や `button` のデータが更新されたかどうかを開発者が判断できるようにすることです。このプロパティの値は `{{domxref("PerformanceTiming")}}` インターフェイスの `navigationStart` 属性との相対的な値になります。値は単調増加しています。つまり、新しい値は常に古い値以上であるため、新旧の値を比較することでデータの更新を判断できます。
 
-> **メモ:** このプロパティは、現在、どこでも対応しているわけではありません。
+> [!NOTE]
+> このプロパティは、現在、どこでも対応しているわけではありません。
 
 ## 値
 

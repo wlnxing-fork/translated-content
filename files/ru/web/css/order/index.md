@@ -1,12 +1,8 @@
 ---
 title: order
 slug: Web/CSS/order
-tags:
-  - CSS
-  - CSS Flexible Boxes
-  - CSS-свойства
-translation_of: Web/CSS/order
 ---
+
 {{CSSRef}}
 
 [CSS](/ru/docs/Web/CSS) свойство **`order`** определяет порядок, используемый для размещения flex элементов в их flex контейнере. Элементы располагаются в восходящем порядке по значению `order`. Элементы с одинаковым значением `order` располагаются в том порядке, в каком они находятся в исходном коде.
@@ -28,7 +24,7 @@ order: unset;
 
 > **Примечание:** `order` воздействует только на **визуальный порядок** элементов, но не логический порядок или табуляцию. **`order`** не должен применяться к невизуальным медиаданным, таким как речь.
 
-Посмотрите [Используем CSS flexible boxes](/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) для более подробной информации и дополнительных свойствах.
+Посмотрите [Используем CSS flexible boxes](/ru/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox) для более подробной информации и дополнительных свойствах.
 
 ### Значения
 
@@ -56,17 +52,29 @@ order: unset;
 Следующий CSS код должен создать классический блок контента окружённый боковыми панелями. Flexible Box Layout Module автоматически создаёт блоки одинаковой высоты и максимально допустимой ширины.
 
 ```css
-main { display: flex;  text-align:center; }
-main > article { flex:1;        order: 2; }
-main > nav     { width: 200px;  order: 1; }
-main > aside   { width: 200px;  order: 3; }
+main {
+  display: flex;
+  text-align: center;
+}
+main > article {
+  flex: 1;
+  order: 2;
+}
+main > nav {
+  width: 200px;
+  order: 1;
+}
+main > aside {
+  width: 200px;
+  order: 3;
+}
 ```
 
 ### Результат
 
 {{ EmbedLiveSample('Пример') }}
 
-## Спецификация
+## Спецификации
 
 {{Specifications}}
 

@@ -1,17 +1,11 @@
 ---
 title: Function.name
 slug: Web/JavaScript/Reference/Global_Objects/Function/name
-tags:
-  - ECMAScript6
-  - Function
-  - JavaScript
-  - Property
-  - Reference
-translation_of: Web/JavaScript/Reference/Global_Objects/Function/name
 ---
+
 {{JSRef}}
 
-Read-only свойство **`name`** глобального объекта {{jsxref("Function")}} и его [экземпляров](/ru/docs/Web/JavaScript/Reference/Global_Objects/Function#Function_instances) содержит название функции созданное во время определения функции или присваивания ссылки на функцию переменной, свойству, аргументу и т. п. Для анонимных функций это свойство может иметь значение `"anonymous"` или пустую строку `""`.
+Read-only свойство **`name`** глобального объекта {{jsxref("Function")}} и его [экземпляров](/ru/docs/Web/JavaScript/Reference/Global_Objects/Function#function_instances) содержит название функции созданное во время определения функции или присваивания ссылки на функцию переменной, свойству, аргументу и т. п. Для анонимных функций это свойство может иметь значение `"anonymous"` или пустую строку `""`.
 
 {{EmbedInteractiveExample("pages/js/function-name.html")}}
 
@@ -19,7 +13,8 @@ Read-only свойство **`name`** глобального объекта {{js
 
 {{js_property_attributes(0,0,1)}}
 
-> **Примечание:** Заметьте, что в нестандартном, pre-ES2015 релизе `configurable` свойство было `false`
+> [!NOTE]
+> Заметьте, что в нестандартном, pre-ES2015 релизе `configurable` свойство было `false`
 
 ## Примеры
 
@@ -38,7 +33,7 @@ alert(doSomething.name); // выведет "doSomething"
 Функции, созданные синтаксисом `new Function(...)` или просто `Function(...)` создают {{jsxref("Function")}} и имеют name "anonymous":
 
 ```js
-(new Function).name; // "anonymous"
+new Function().name; // "anonymous"
 ```
 
 ### Предполагаемые имена функций
@@ -46,9 +41,9 @@ alert(doSomething.name); // выведет "doSomething"
 Переменные и методы могут предположить название анонимной функции из её синтаксической позиции (new in ECMAScript 2015).
 
 ```js
-var f = function() {};
+var f = function () {};
 var object = {
-  someMethod: function() {}
+  someMethod: function () {},
 };
 
 console.log(f.name); // "f"
@@ -59,11 +54,15 @@ console.log(object.someMethod.name); // "someMethod"
 
 ```js
 var object = {
-  someMethod: function object_someMethod() {}
+  someMethod: function object_someMethod() {},
 };
 console.log(object.someMethod.name); // выведет "object_someMethod"
 
-try { object_someMethod } catch(e) { console.log(e); }
+try {
+  object_someMethod;
+} catch (e) {
+  console.log(e);
+}
 // ReferenceError: object_someMethod is not defined
 ```
 
@@ -72,10 +71,10 @@ try { object_someMethod } catch(e) { console.log(e); }
 ```js
 var object = {
   // анонимная функция
-  someMethod: function() {}
+  someMethod: function () {},
 };
 
-object.someMethod.name = 'otherMethod';
+object.someMethod.name = "otherMethod";
 alert(object.someMethod.name); //someMethod
 ```
 
@@ -85,7 +84,7 @@ alert(object.someMethod.name); //someMethod
 
 ```js
 var o = {
-  foo(){}
+  foo() {},
 };
 o.foo.name; // "foo";
 ```
@@ -95,13 +94,13 @@ o.foo.name; // "foo";
 {{jsxref("Function.bind()")}} производит функцию, получающую имя "bound и название самой функции.
 
 ```js
-function foo() {};
+function foo() {}
 foo.bind({}).name; // "bound foo"
 ```
 
 ### Имена функций для getters и setters
 
-Когда используются [`get`](/en-US/docs/Web/JavaScript/Reference/Functions/get) и [set](/ru/docs/Web/JavaScript/Reference/Functions/set), "get" и "set" появятся в имени функции.
+Когда используются [`get`](/ru/docs/Web/JavaScript/Reference/Functions/get) и [set](/ru/docs/Web/JavaScript/Reference/Functions/set), "get" и "set" появятся в имени функции.
 
 ```
 let o = {
@@ -125,7 +124,8 @@ var fooInstance = new Foo();
 console.log(fooInstance.constructor.name); // logs "Foo"
 ```
 
-> **Предупреждение:** Интерпретатор объявит встроенное `Function.name` свойство только если функция не имеет своего собственного свойства _name_ (см. [9.2.11 of the ECMAScript2015 Language Specification](https://www.ecma-international.org/ecma-262/6.0/#sec-setfunctionname)). Однако, в ES2015 статичные методы перезаписывают OwnProperty конструкторов класса-функции (ECMAScript2015, [14.5.14.21.b](https://www.ecma-international.org/ecma-262/6.0/#sec-runtime-semantics-classdefinitionevaluation) + [12.2.6.9](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)).
+> [!WARNING]
+> Интерпретатор объявит встроенное `Function.name` свойство только если функция не имеет своего собственного свойства _name_ (см. [9.2.11 of the ECMAScript2015 Language Specification](https://www.ecma-international.org/ecma-262/6.0/#sec-setfunctionname)). Однако, в ES2015 статичные методы перезаписывают OwnProperty конструкторов класса-функции (ECMAScript2015, [14.5.14.21.b](https://www.ecma-international.org/ecma-262/6.0/#sec-runtime-semantics-classdefinitionevaluation) + [12.2.6.9](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)).
 
 Таким образом, нельзя получить доступ к `name` любого класса со статичным свойством `name():`
 
@@ -168,8 +168,8 @@ console.log(Foo.name); // logs "Hello" if class Foo has a static name() property
 let sym1 = Symbol("foo");
 let sym2 = Symbol();
 let o = {
-  [sym1]: function(){},
-  [sym2]: function(){}
+  [sym1]: function () {},
+  [sym2]: function () {},
 };
 
 o[sym1].name; // "[foo]"
@@ -178,7 +178,8 @@ o[sym2].name; // ""
 
 ## JavaScript минифицированный
 
-> **Предупреждение:** Будьте осторожны, используя `Function.name` и изменения source кода с помощью JavaScript compressors (minifiers) или обфускаторов. Эти инструменты часто используются, как встроенные в JavaScript build pipeline, чтобы сократить размер билда перед деплоем в production. Такие трансформации часто изменяют имена функций.
+> [!WARNING]
+> Будьте осторожны, используя `Function.name` и изменения source кода с помощью JavaScript compressors (minifiers) или обфускаторов. Эти инструменты часто используются, как встроенные в JavaScript build pipeline, чтобы сократить размер билда перед деплоем в production. Такие трансформации часто изменяют имена функций.
 
 Такой source code:
 
@@ -207,9 +208,9 @@ if (b.constructor.name === 'Foo') {
 
 В несжатой версии код выполняется ожидаемо `"'foo' is an instance of 'Foo'"`. В то время, как в сжатой версии он ведёт себя иначе. Если вы полагаетесь на `Function.name`, как в примере, то убедитесь, что pipeline не меняет код или не ожидайте от функции определённого имени.
 
-| Спецификация                                         | Статус               | Комментарии              |
-| ---------------------------------------------------- | -------------------- | ------------------------ |
-| {{SpecName('ES6', '#sec-name', 'name')}} | {{Spec2('ES6')}} | Изначальное определение. |
+## Спецификации
+
+{{Specifications}}
 
 ## Совместимость с браузерами
 

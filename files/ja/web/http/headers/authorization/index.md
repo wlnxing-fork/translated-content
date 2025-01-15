@@ -26,7 +26,7 @@ HTTP の **`Authorization`** リクエストヘッダーは、ユーザーエー
 
 ## 構文
 
-```html
+```http
 Authorization: <type> <credentials>
 ```
 
@@ -36,8 +36,8 @@ Authorization: <type> <credentials>
 
   - : [認証方式](/ja/docs/Web/HTTP/Authentication#認証方式)。一般的には ["Basic"](/ja/docs/Web/HTTP/Authentication#basic_認証方式) です。それ以外に以下のような種類があります。
 
-    - [認証スキームの IANA レジストリ](http://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)
-    - [AWS サーバーの認証 (`AWS4-HMAC-SHA256`)](http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html)
+    - [認証スキームの IANA レジストリ](https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)
+    - [AWS サーバーの認証 (`AWS4-HMAC-SHA256`)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html)
 
 - \<credentials>
 
@@ -46,7 +46,8 @@ Authorization: <type> <credentials>
     - コロンで結合したユーザー名とパスワード (`aladdin:opensesame`)。
     - 結果の文字列は [base64](/ja/docs/Glossary/Base64) でエンコードされます (`YWxhZGRpbjpvcGVuc2VzYW1l`)。
 
-    > **メモ:** Base64 エンコードは暗号化でもハッシュでもありません。この方法の安全性はクリアテキストで認証情報を送るのと同等です (Base64 は可逆エンコーディングです)。 Basic 認証は HTTPS との組み合わせで使用することをお勧めします。
+    > [!NOTE]
+    > Base64 エンコードは暗号化でもハッシュでもありません。この方法の安全性はクリアテキストで認証情報を送るのと同等です (Base64 は可逆エンコーディングです)。 Basic 認証は HTTPS との組み合わせで使用することをお勧めします。
 
 ## 例
 
@@ -58,10 +59,10 @@ Apache や nginx サーバーで HTTP Basic 認証を使用してサイトを保
 
 ## 仕様書
 
-| 仕様書                                               | 題名                                   |
-| ---------------------------------------------------- | -------------------------------------- |
+| 仕様書                                  | 題名                                   |
+| --------------------------------------- | -------------------------------------- |
 | {{RFC("7235", "Authorization", "4.2")}} | HTTP/1.1: Authentication               |
-| {{RFC("7617")}}                                 | The 'Basic' HTTP Authentication Scheme |
+| {{RFC("7617")}}                         | The 'Basic' HTTP Authentication Scheme |
 
 ## 関連情報
 

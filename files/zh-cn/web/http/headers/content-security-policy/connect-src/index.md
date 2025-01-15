@@ -1,5 +1,5 @@
 ---
-title: 'CSP: connect-src'
+title: "CSP: connect-src"
 slug: Web/HTTP/Headers/Content-Security-Policy/connect-src
 ---
 
@@ -7,14 +7,15 @@ slug: Web/HTTP/Headers/Content-Security-Policy/connect-src
 
 HTTP {{HTTPHeader("Content-Security-Policy")}}（内容安全策略，CSP）中的 **`connect-src`** 指令用于限制通过使用脚本接口加载的 URL。其中受限制的 API 如下：
 
-- {{HTMLElement("a")}} {{htmlattrxref("ping", "a")}}
+- {{HTMLElement("a")}} [`ping`](/zh-CN/docs/Web/HTML/Element/a#ping)
 - {{domxref("fetch()")}}
 - {{domxref("XMLHttpRequest")}}
 - {{domxref("WebSocket")}}
 - {{domxref("EventSource")}}
 - {{domxref("Navigator.sendBeacon()")}}
 
-> **备注：** 并不是所有浏览器都能将 `connect-src 'self'` 解析为 websocket 协议，更多信息，请查看这个 [issue](https://github.com/w3c/webappsec-csp/issues/7)。
+> [!NOTE]
+> 并不是所有浏览器都能将 `connect-src 'self'` 解析为 websocket 协议，更多信息，请查看这个 [issue](https://github.com/w3c/webappsec-csp/issues/7)。
 
 <table class="properties">
   <tbody>
@@ -46,9 +47,9 @@ Content-Security-Policy: connect-src <source> <source>;
 
 ### 源
 
-`<source>` 可以是 [CSP 源值](/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#sources)列出来的任意一个。
+`<source>` 可以是 [CSP 源值](/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax#sources)列出来的任意一个。
 
-注意，这套相同的值可以用于所有 {{Glossary("fetch directive", "fetch 指令")}}（以及[许多其他指令](/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#relevant_directives)）。
+注意，这套相同的值可以用于所有 {{Glossary("fetch directive", "fetch 指令")}}（以及[许多其他指令](/zh-CN/docs/Web/HTTP/Headers/Content-Security-Policy#fetch_directive_syntax#relevant_directives)）。
 
 ## 示例
 
@@ -76,7 +77,8 @@ Content-Security-Policy: connect-src https://example.com/
     navigator.sendBeacon("https://not-example.com/", {
       /* … */
     });
-  </script></a>
+  </script></a
+>
 ```
 
 ## 规范
@@ -94,7 +96,7 @@ Content-Security-Policy: connect-src https://example.com/
 ## 参见
 
 - {{HTTPHeader("Content-Security-Policy")}}
-- {{HTMLElement("a")}} {{htmlattrxref("ping", "a")}}
+- {{HTMLElement("a")}} [`ping`](/zh-CN/docs/Web/HTML/Element/a#ping)
 - {{domxref("fetch()")}}
 - {{domxref("XMLHttpRequest")}}
 - {{domxref("WebSocket")}}

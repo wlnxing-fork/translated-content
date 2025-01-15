@@ -3,13 +3,13 @@ title: ProgressEvent()
 slug: Web/API/ProgressEvent/ProgressEvent
 ---
 
-{{APIRef("XMLHttpRequest")}}
+{{APIRef("XMLHttpRequest API")}}
 
 **`ProgressEvent()`** 构造函数返回一个新的 {{domxref("ProgressEvent")}} 对象，表示当前一个漫长处理过程的完成进度。
 
 ## 语法
 
-```js
+```js-nolint
 new ProgressEvent(type)
 new ProgressEvent(type, options)
 ```

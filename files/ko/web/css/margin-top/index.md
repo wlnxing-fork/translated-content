@@ -5,7 +5,7 @@ slug: Web/CSS/margin-top
 
 {{CSSRef}}
 
-**`margin-top`** [CSS](/ko/docs/Web/CSS) 속성은 요소의 위쪽에 [바깥 여백 영역](/ko/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)margin area을 설정합니다. 양수 값은 인접 요소와 거리를 넓히고, 음수 값은 더 좁힙니다.
+**`margin-top`** [CSS](/ko/docs/Web/CSS) 속성은 요소의 위쪽에 [바깥 여백 영역](/ko/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)margin area을 설정합니다. 양수 값은 인접 요소와 거리를 넓히고, 음수 값은 더 좁힙니다.
 
 {{EmbedInteractiveExample("pages/css/margin-top.html")}}
 
@@ -15,9 +15,9 @@ slug: Web/CSS/margin-top
 
 ```css
 /* <length> 값 */
-margin-top: 10px;  /* 절대 길이 */
-margin-top: 1em;   /* 글씨 크기에 상대적 */
-margin-top: 5%;    /* 가장 가까운 블록 컨테이너의 너비에 상대적 */
+margin-top: 10px; /* 절대 길이 */
+margin-top: 1em; /* 글씨 크기에 상대적 */
+margin-top: 5%; /* 가장 가까운 블록 컨테이너의 너비에 상대적 */
 
 /* 키워드 값 */
 margin-top: auto;
@@ -46,10 +46,18 @@ margin-top: unset;
 ## 예제
 
 ```css
-.content { margin-top:   5%; }
-.sidebox { margin-top: 10px; }
-.logo    { margin-top: -5px; }
-#footer  { margin-top:  1em; }
+.content {
+  margin-top: 5%;
+}
+.sidebox {
+  margin-top: 10px;
+}
+.logo {
+  margin-top: -5px;
+}
+#footer {
+  margin-top: 1em;
+}
 ```
 
 ## 명세

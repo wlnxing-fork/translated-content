@@ -35,13 +35,14 @@ La siguiente función crea tres ítems dentro del almacenamiento local.
 
 ```js
 function populateStorage() {
-  localStorage.setItem('bgcolor', 'red');
-  localStorage.setItem('font', 'Helvetica');
-  localStorage.setItem('image', 'myCat.png');
+  localStorage.setItem("bgcolor", "red");
+  localStorage.setItem("font", "Helvetica");
+  localStorage.setItem("image", "myCat.png");
 }
 ```
 
-> **Nota:** Para ver un ejemplo real, vea nuestro [Web Storage Demo](https://mdn.github.io/dom-examples/web-storage/).
+> [!NOTE]
+> Para ver un ejemplo real, vea nuestro [Web Storage Demo](https://mdn.github.io/dom-examples/web-storage/).
 
 ## Especificaciones
 

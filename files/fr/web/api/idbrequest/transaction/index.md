@@ -1,14 +1,14 @@
 ---
 title: IDBRequest.transaction
 slug: Web/API/IDBRequest/transaction
-translation_of: Web/API/IDBRequest/transaction
 ---
 
 {{ APIRef("IndexedDB") }}
 
 La propriété **`transaction`** de l'interface IDBRequest renvoie la {{domxref("IDBTransaction","transaction")}} dans laquelle on fait la requête.La propriètè peut renvoiyer `null` si requête se fait sans transaction, comme un objet IDBRequest renvoyé par {{domxref("IDBFactory.open")}} dans ce cas on est juste connecté à la base de données.
 
-> **Note :** Durant la gestion d'un événement {{domxref("IDBOpenDBRequest.onupgradeneeded", "upgradeneeded")}} qui met à jour la version de la base de données, la propriété **`transaction`** doit être une {{domxref("IDBTransaction","transaction")}} ouverte en {{domxref("IDBTransaction.mode", "mode")}} `"versionchange"`, on peut alors accéder aux {{domxref("IDBObjectStore","magasins d'objets")}} et {{domxref("IDBIndex","index")}} ou annulé la mise à niveau. Après quoi, la propriété **`transaction`** renverra encore `null`.
+> [!NOTE]
+> Durant la gestion d'un événement {{domxref("IDBOpenDBRequest.onupgradeneeded", "upgradeneeded")}} qui met à jour la version de la base de données, la propriété **`transaction`** doit être une {{domxref("IDBTransaction","transaction")}} ouverte en {{domxref("IDBTransaction.mode", "mode")}} `"versionchange"`, on peut alors accéder aux {{domxref("IDBObjectStore","magasins d'objets")}} et {{domxref("IDBIndex","index")}} ou annulé la mise à niveau. Après quoi, la propriété **`transaction`** renverra encore `null`.
 
 {{AvailableInWorkers}}
 
@@ -62,24 +62,24 @@ objectStoreTitleRequest.onerror = function() {
 Cet exemple montre comment la propriété **`transaction`** peut être utilisé pendant une mise à niveau de version pour accéder à des {{domxref("IDBObjectStore","magasins d'objects")}} existants:
 
 ```js
-var openRequest = indexedDB.open('db', 2);
+var openRequest = indexedDB.open("db", 2);
 console.log(openRequest.transaction); // Affiche "null".
 
-openRequest.onupgradeneeded = function(event) {
+openRequest.onupgradeneeded = function (event) {
   console.log(openRequest.transaction.mode); // Affiche "versionchange".
   var db = openRequest.result;
   if (event.oldVersion < 1) {
     // Nouvelle base de données, créer un magasin d'objets "livres".
-    db.createObjectStore('books');
+    db.createObjectStore("books");
   }
   if (event.oldVersion < 2) {
     // Mise à niveau de la base de données v1: ajoute un index sur "title" pour stocker les livres.
-    var bookStore = openRequest.transaction.objectStore('books');
-    bookStore.createIndex('by_title', 'title');
+    var bookStore = openRequest.transaction.objectStore("books");
+    bookStore.createIndex("by_title", "title");
   }
 };
 
-openRequest.onsuccess = function() {
+openRequest.onsuccess = function () {
   console.log(openRequest.transaction); // Affiche "null".
 };
 ```

@@ -1,12 +1,6 @@
 ---
-title: '<q> : l''élément de citation en incise'
+title: "<q> : l'élément de citation en incise"
 slug: Web/HTML/Element/q
-tags:
-  - Element
-  - HTML
-  - Reference
-  - Web
-translation_of: Web/HTML/Element/q
 ---
 
 {{HTMLSidebar}}
@@ -15,13 +9,14 @@ L'élément HTML **`<q>`** indique que le texte qu'il contient est une citation 
 
 {{EmbedInteractiveExample("pages/tabbed/q.html", "tabbed-shorter")}}
 
-> **Note :** La plupart des navigateurs récents ajoutent automatiquement des guillemets autours du contenu d'un élément `<q>` mais il peut être nécessaire d'ajouter une règle CSS pour les ajouter dans les anciens navigateurs.
+> [!NOTE]
+> La plupart des navigateurs récents ajoutent automatiquement des guillemets autours du contenu d'un élément `<q>` mais il peut être nécessaire d'ajouter une règle CSS pour les ajouter dans les anciens navigateurs.
 
 ## Attributs
 
-Comme tous les autres éléments HTML, cet élément inclut [les attributs universels](/fr/docs/Web/HTML/Attributs_universels).
+Comme tous les autres éléments HTML, cet élément inclut [les attributs universels](/fr/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("cite")}}
+- `cite`
   - : La valeur de cet attribut est une URL désignant la source du message ou de l'information citée. Cet attribut est prévu pour fournir des renseignements concernant le contexte ou la référence de cette citation.
 
 ## Exemples
@@ -29,10 +24,11 @@ Comme tous les autres éléments HTML, cet élément inclut [les attributs unive
 ### HTML
 
 ```html
-<p>Chaque fois que Kenny est tué, Stan dira
-   <q cite="http://fr.wikipedia.org/wiki/Kenny_McCormick#Le_dialogue_rituel">
-     Oh mon Dieu, ils ont tué Kenny !
-   </q>.
+<p>
+  Chaque fois que Kenny est tué, Stan dira
+  <q cite="http://fr.wikipedia.org/wiki/Kenny_McCormick#Le_dialogue_rituel">
+    Oh mon Dieu, ils ont tué Kenny ! </q
+  >.
 </p>
 ```
 
@@ -57,7 +53,7 @@ Comme tous les autres éléments HTML, cet élément inclut [les attributs unive
           >Contenu de flux</a
         >,
         <a
-          href="/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu#Contenu_phras.C3.A9"
+          href="/fr/docs/Web/HTML/Catégorie_de_contenu#Contenu_phras.C3.A9"
           >contenu phrasé</a
         >,
         <a href="/fr/docs/Web/HTML/Catégorie_de_contenu#Contenu_tangible"
@@ -69,21 +65,21 @@ Comme tous les autres éléments HTML, cet élément inclut [les attributs unive
       <th scope="row">Contenu autorisé</th>
       <td>
         <a
-          href="/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu#Contenu_phras.C3.A9"
+          href="/fr/docs/Web/HTML/Catégorie_de_contenu#Contenu_phras.C3.A9"
           >Contenu phrasé</a
         >.
       </td>
     </tr>
     <tr>
       <th scope="row">Omission de balises</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Aucune, la balise d'ouverture et la balise de fermeture sont obligatoires.</td>
     </tr>
     <tr>
       <th scope="row">Parents autorisés</th>
       <td>
         Tout élément acceptant du
         <a
-          href="/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu#Contenu_phras.C3.A9"
+          href="/fr/docs/Web/HTML/Catégorie_de_contenu#Contenu_phras.C3.A9"
           >contenu phrasé</a
         >.
       </td>
